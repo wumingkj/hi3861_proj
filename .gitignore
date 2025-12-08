@@ -1,3 +1,4 @@
 .deveco/**
 .vscode/**
 src/out/**
+src\ohos_config.json
