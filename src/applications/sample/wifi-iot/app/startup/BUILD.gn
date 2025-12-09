@@ -16,5 +16,11 @@ source_set("startup") {
         "main.c"
     ]
 
-    include_dirs = [ ]
+    include_dirs = [ 
+        "//base/hiviewdfx/hilog_lite/interfaces/native/kits/hilog_lite"
+    ]
+    
+    deps = [
+        "//base/hiviewdfx/hilog_lite/frameworks/mini:hilog_lite"
+    ]
 }
