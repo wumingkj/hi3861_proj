@@ -11,7 +11,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-static_library("example_demolink") {
+static_library("demolink") {
     sources = [
         "helloworld.c"
     ]
