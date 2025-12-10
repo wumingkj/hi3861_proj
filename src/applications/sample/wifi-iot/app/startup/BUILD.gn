@@ -11,16 +11,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-source_set("startup") {
+static_library("startup") {
     sources = [
         "main.c"
     ]
 
-    include_dirs = [ 
-        "//base/hiviewdfx/hilog_lite/interfaces/native/kits/hilog_lite"
-    ]
-    
-    deps = [
-        "//base/hiviewdfx/hilog_lite/frameworks/mini:hilog_lite"
+    include_dirs = [
+        "//utils/native/lite/include",
+        "//kernel/liteos_m/kal/cmsis",
+        "//base/iot_hardware/peripheral/interfaces/kits",
     ]
 }
