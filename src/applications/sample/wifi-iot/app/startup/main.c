@@ -20,7 +20,7 @@
 #include "iot_gpio.h"
 
 #define LED_INTERVAL_TIME_US 300000
-#define LED_TASK_STACK_SIZE 512
+#define LED_TASK_STACK_SIZE 4096
 #define LED_TASK_PRIO 25
 #define LED_TEST_GPIO 2 // for hispark_pegasus
 enum LedState {
