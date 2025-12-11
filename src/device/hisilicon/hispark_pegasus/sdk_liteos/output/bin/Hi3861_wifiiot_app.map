@@ -35933,7 +35933,7 @@ Linker script and memory map
  .text.Buzzer_BeepPattern
                 0x0000000000496c4c       0x62 ohos\libs\libstartup.a(libstartup.buzzer.o)
                 0x0000000000496c4c                Buzzer_BeepPattern
- .text.OLED_ExampleEntry
+ .text.Main_Entry
                 0x0000000000496cae       0x5c ohos\libs\libstartup.a(libstartup.main.o)
  .text.OLED_Buzzer_TestTask
                 0x0000000000496d0a       0x8c ohos\libs\libstartup.a(libstartup.main.o)
@@ -37483,40 +37483,40 @@ Linker script and memory map
  .rodata.Buzzer_Init.str1.4
                 0x000000000049f5ec       0x1d ohos\libs\libstartup.a(libstartup.buzzer.o)
  *fill*         0x000000000049f609        0x3 
+ .rodata.Main_Entry.str1.4
+                0x000000000049f60c       0x34 ohos\libs\libstartup.a(libstartup.main.o)
  .rodata.OLED_Buzzer_TestTask.str1.4
-                0x000000000049f60c       0x48 ohos\libs\libstartup.a(libstartup.main.o)
- .rodata.OLED_ExampleEntry.str1.4
-                0x000000000049f654       0x3c ohos\libs\libstartup.a(libstartup.main.o)
+                0x000000000049f640       0x48 ohos\libs\libstartup.a(libstartup.main.o)
  .rodata.oled_driver_init.str1.4
-                0x000000000049f690       0x22 ohos\libs\libstartup.a(libstartup.oled_driver.o)
- *fill*         0x000000000049f6b2        0x2 
+                0x000000000049f688       0x22 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+ *fill*         0x000000000049f6aa        0x2 
  .rodata.songti_font_10x13
-                0x000000000049f6b4      0x4d3 ohos\libs\libstartup.a(libstartup.songti_font.o)
-                0x000000000049f6b4                songti_font_10x13
- *fill*         0x000000000049fb87        0x1 
+                0x000000000049f6ac      0x4d3 ohos\libs\libstartup.a(libstartup.songti_font.o)
+                0x000000000049f6ac                songti_font_10x13
+ *fill*         0x000000000049fb7f        0x1 
  .rodata.BuildOSFullName.str1.4
-                0x000000000049fb88       0x23 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
- *fill*         0x000000000049fbab        0x1 
+                0x000000000049fb80       0x23 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+ *fill*         0x000000000049fba3        0x1 
  .rodata.BuildVersionId.str1.4
-                0x000000000049fbac       0x1e ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
- *fill*         0x000000000049fbca        0x2 
+                0x000000000049fba4       0x1e ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+ *fill*         0x000000000049fbc2        0x2 
  .rodata.EMPTY_STR
-                0x000000000049fbcc        0x1 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x000000000049fbc4        0x1 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
  .rodata.GetBuildRootHash.str1.4
-                0x000000000049fbcd        0x1 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
- *fill*         0x000000000049fbcd        0x3 
+                0x000000000049fbc5        0x1 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+ *fill*         0x000000000049fbc5        0x3 
  .rodata.OHOS_OS_NAME
-                0x000000000049fbd0        0xc ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x000000000049fbc8        0xc ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
  .rodata.OHOS_RELEASE_TYPE
-                0x000000000049fbdc        0x4 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x000000000049fbd4        0x4 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
  .rodata.OHOS_SECURITY_PATCH_TAG
-                0x000000000049fbe0        0xb ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
- *fill*         0x000000000049fbeb        0x1 
- .rodata        0x000000000049fbec       0x20 ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
+                0x000000000049fbd8        0xb ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+ *fill*         0x000000000049fbe3        0x1 
+ .rodata        0x000000000049fbe4       0x20 ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
  .rodata.str1.4
-                0x000000000049fc0c       0x1f ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
+                0x000000000049fc04       0x1f ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
                 0x000000000049fc40                . = ALIGN (0x20)
- *fill*         0x000000000049fc2b       0x15 
+ *fill*         0x000000000049fc23       0x1d 
                 0x000000000049fc40                __text_rodata_end_ = .
                 0x000000000049fc40                . = ALIGN (0x20)
 
