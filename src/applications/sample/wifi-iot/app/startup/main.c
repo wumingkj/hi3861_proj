@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <unistd.h>
 #include "ohos_init.h"
 #include "cmsis_os2.h"
@@ -10,28 +11,37 @@ static void OLED_Buzzer_TestTask(void)
     // 初始化OLED和蜂鸣器
     OLED_Init();
     Buzzer_Init();
-    printf("OLED & Buzzer Init Success!\n");
+    printf("OLED & Buzzer PWM Init Success!\n");
 
-    OLED_ShowString(0, 0, "hello world!", 8);
+    const char *str = "Hello, World!";
+    int len = strlen(str);  // 任务循环 - 显示字符串
+    for (int i = 0; i < len; i++) {
+        OLED_ShowChar(0, i * 8, str[i], 8);
+        osDelay(25);
+    }
     
-    // 启动提示音
+    // 启动提示音（非阻塞方式）
     Buzzer_BeepPattern(100, 50, 2); // 短促两声提示
     
     uint32_t counter = 0;
     
     while (1) {
+        // 更新蜂鸣器状态（非阻塞方式）
+        Buzzer_Update();
+        
         // OLED显示
         OLED_Clear();
         OLED_ShowString(0, 0, "HI3861 OLED", 8);
-        OLED_ShowString(0, 8, "BUZZER DEMO", 8);
+        OLED_ShowString(0, 10, "BUZZER PWM", 8);
+        OLED_ShowNum(0, 20, counter, 3, 8);
         OLED_Refresh();
         
-        // 蜂鸣器控制逻辑
-        if (counter % 5 == 0) {
-            // 每5秒长响一次
+        // 蜂鸣器控制逻辑（非阻塞方式）
+        if (counter % 5 == 0 && !Buzzer_IsActive()) {
+            // 每5秒长响一次（如果当前没有蜂鸣）
             Buzzer_Beep(500);
-        } else if (counter % 2 == 0) {
-            // 每2秒短响一次
+        } else if (counter % 2 == 0 && !Buzzer_IsActive()) {
+            // 每2秒短响一次（如果当前没有蜂鸣）
             Buzzer_Beep(100);
         }
         
@@ -40,11 +50,11 @@ static void OLED_Buzzer_TestTask(void)
     }
 }
 
-static void Main_Entry(void)
+static void OLED_ExampleEntry(void)
 {
     osThreadAttr_t attr;
     
-    attr.name = "Main_Task";
+    attr.name = "OLED_Buzzer_Task";
     attr.attr_bits = 0U;
     attr.cb_mem = NULL;
     attr.cb_size = 0U;
@@ -57,4 +67,4 @@ static void Main_Entry(void)
     }
 }
 
-APP_FEATURE_INIT(Main_Entry);
+APP_FEATURE_INIT(OLED_ExampleEntry);
