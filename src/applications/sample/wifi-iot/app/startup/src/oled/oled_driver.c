@@ -17,7 +17,7 @@ static int i2c_write_byte(uint8_t data)
         .receive_len = 0
     };
     
-    return hi_i2c_writedev(OLED_I2C_IDX, OLED_ADDRESS, &i2c_data);
+    return hi_i2c_write(OLED_I2C_IDX, OLED_ADDRESS, &i2c_data);
 }
 
 // 写命令到OLED
@@ -30,7 +30,7 @@ static void oled_write_cmd(uint8_t cmd)
         .receive_buf = NULL,
         .receive_len = 0
     };
-    hi_i2c_writedev(OLED_I2C_IDX, OLED_ADDRESS, &i2c_data);
+    hi_i2c_write(OLED_I2C_IDX, OLED_ADDRESS, &i2c_data);
 }
 
 // 写数据到OLED
@@ -43,7 +43,7 @@ static void oled_write_data(uint8_t data)
         .receive_buf = NULL,
         .receive_len = 0
     };
-    hi_i2c_writedev(OLED_I2C_IDX, OLED_ADDRESS, &i2c_data);
+    hi_i2c_write(OLED_I2C_IDX, OLED_ADDRESS, &i2c_data);
 }
 
 // OLED初始化
