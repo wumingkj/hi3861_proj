@@ -23,7 +23,7 @@ static void OLED_Buzzer_TestTask(void)
         // OLED显示
         OLED_Clear();
         OLED_ShowString(0, 0, "HI3861 OLED", 8);
-        OLED_ShowString(0, 16, "BUZZER DEMO", 8);
+        OLED_ShowString(0, 8, "BUZZER DEMO", 8);
         OLED_Refresh();
         
         // 蜂鸣器控制逻辑
@@ -40,11 +40,11 @@ static void OLED_Buzzer_TestTask(void)
     }
 }
 
-static void OLED_ExampleEntry(void)
+static void Main_Entry(void)
 {
     osThreadAttr_t attr;
     
-    attr.name = "OLED_Buzzer_Task";
+    attr.name = "Main_Task";
     attr.attr_bits = 0U;
     attr.cb_mem = NULL;
     attr.cb_size = 0U;
@@ -57,4 +57,4 @@ static void OLED_ExampleEntry(void)
     }
 }
 
-APP_FEATURE_INIT(OLED_ExampleEntry);
+APP_FEATURE_INIT(Main_Entry);
