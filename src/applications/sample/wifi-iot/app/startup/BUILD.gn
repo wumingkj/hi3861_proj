@@ -25,5 +25,6 @@ static_library("startup") {
         "src/oled",
         "src/fonts",
         "src/buzzer",
+        "//device/hisilicon/hispark_pegasus/sdk_liteos/include",
     ]
 }

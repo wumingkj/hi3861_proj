@@ -1,12 +1,13 @@
 #include "buzzer.h"
-#include "hi_gpio.h"
+#include "hi_types_base.h"
+#include "hi_io.h"
 #include "hi_pwm.h"
 #include <stdio.h>
 #include <unistd.h>
 
 // 蜂鸣器引脚配置 - 使用Hi3861开发板支持的GPIO引脚
-#define BUZZER_PWM_ID      PWM0        // 使用PWM0通道
-#define BUZZER_GPIO_PIN    HI_IO_NAME_GPIO_9  // 使用GPIO9引脚
+#define BUZZER_PWM_ID      HI_PWM_PORT_PWM0        // 使用PWM0通道
+#define BUZZER_GPIO_PIN    HI_IO_NAME_GPIO_9       // 使用GPIO9引脚
 #define BUZZER_PWM_FUNC    HI_IO_FUNC_GPIO_9_PWM0_OUT  // GPIO9的PWM0输出功能
 
 // 蜂鸣器初始化
