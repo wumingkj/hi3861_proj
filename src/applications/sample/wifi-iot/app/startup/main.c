@@ -24,7 +24,6 @@ static void OLED_Buzzer_TestTask(void)
         OLED_Clear();
         OLED_ShowString(0, 0, "HI3861 OLED", 8);
         OLED_ShowString(0, 16, "BUZZER DEMO", 8);
-        OLED_ShowString(0, 32, "TEST123456", 8);
         OLED_Refresh();
         
         // 蜂鸣器控制逻辑
@@ -37,7 +36,7 @@ static void OLED_Buzzer_TestTask(void)
         }
         
         counter++;
-        osDelay(1000); // 延时1秒
+        osDelay(250); // 延时1秒
     }
 }
 
