@@ -11,6 +11,8 @@ static void OLED_Buzzer_TestTask(void)
     OLED_Init();
     Buzzer_Init();
     printf("OLED & Buzzer Init Success!\n");
+
+    OLED_ShowString(0, 0, "hello world!", 8);
     
     // 启动提示音
     Buzzer_BeepPattern(100, 50, 2); // 短促两声提示
@@ -23,7 +25,6 @@ static void OLED_Buzzer_TestTask(void)
         OLED_ShowString(0, 0, "HI3861 OLED", 8);
         OLED_ShowString(0, 16, "BUZZER DEMO", 8);
         OLED_ShowString(0, 32, "TEST123456", 8);
-        OLED_ShowNum(0, 48, counter, 5, 8);
         OLED_Refresh();
         
         // 蜂鸣器控制逻辑
