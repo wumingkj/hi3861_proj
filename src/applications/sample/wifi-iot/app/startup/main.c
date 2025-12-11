@@ -3,7 +3,7 @@
 #include "ohos_init.h"
 #include "cmsis_os2.h"
 #include "oled.h"
-#include "buzzer.h"  // 添加蜂鸣器头文件
+#include "buzzer.h"
 
 static void OLED_Buzzer_TestTask(void)
 {
@@ -49,7 +49,7 @@ static void OLED_ExampleEntry(void)
     attr.cb_mem = NULL;
     attr.cb_size = 0U;
     attr.stack_mem = NULL;
-    attr.stack_size = 4096;
+    attr.stack_size = 8192;
     attr.priority = osPriorityNormal;
     
     if (osThreadNew((osThreadFunc_t)OLED_Buzzer_TestTask, NULL, &attr) == NULL) {

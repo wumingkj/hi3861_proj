@@ -13,12 +13,17 @@
 
 static_library("startup") {
     sources = [
-        "oled.c",
-        "buzzer.c",
-        "main.c"
+        "main.c",
+        "src/oled/oled_driver.c",
+        "src/oled/oled.c",
+        "src/fonts/songti_font.c",
+        "src/buzzer/buzzer.c",
     ]
 
     include_dirs = [
-        "src/utils"
+        "src",
+        "src/oled",
+        "src/fonts",
+        "src/buzzer",
     ]
 }
