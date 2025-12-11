@@ -1,46 +1,43 @@
 #include "buzzer.h"
-#include "hi_types_base.h"
 #include "hi_io.h"
-#include "hi_pwm.h"
-#include <stdio.h>
+#include "hi_gpio.h"
 #include <unistd.h>
 
-// 蜂鸣器引脚配置 - 使用Hi3861开发板支持的GPIO引脚
-#define BUZZER_PWM_ID      HI_PWM_PORT_PWM5        // 使用PWM0通道
-#define BUZZER_GPIO_PIN    HI_IO_NAME_GPIO_14       // 使用GPIO9引脚
-#define BUZZER_PWM_FUNC    HI_IO_FUNC_GPIO_14_PWM5_OUT  // GPIO9的PWM0输出功能
+// 蜂鸣器引脚定义 - 使用GPIO14（根据示例代码）
+#define BEEP_PIN         HI_IO_NAME_GPIO_14
+#define BEEP_GPIO_FUN    HI_IO_FUNC_GPIO_14_GPIO
+
+// 蜂鸣器控制宏
+#define BEEP_ON()        hi_gpio_set_ouput_val(BEEP_PIN, 1)
+#define BEEP_OFF()       hi_gpio_set_ouput_val(BEEP_PIN, 0)
 
 // 蜂鸣器初始化
 void Buzzer_Init(void)
 {
-    // 设置GPIO引脚功能为PWM
-    hi_io_set_func(BUZZER_GPIO_PIN, BUZZER_PWM_FUNC);
-    
-    // 初始化PWM
-    hi_pwm_init(BUZZER_PWM_ID);
-    
+    hi_gpio_init();                                            // GPIO初始化
+    hi_io_set_pull(BEEP_PIN, HI_IO_PULL_UP);                   // 设置GPIO上拉
+    hi_io_set_func(BEEP_PIN, BEEP_GPIO_FUN);                   // 设置IO为GPIO功能
+    hi_gpio_set_dir(BEEP_PIN, HI_GPIO_DIR_OUT);                // 设置GPIO为输出模式
+    BEEP_OFF();                                                // 初始状态关闭蜂鸣器
     printf("Buzzer Initialized Success!\n");
 }
 
 // 蜂鸣器鸣叫
 void Buzzer_Beep(uint16_t duration_ms)
 {
-    // 设置PWM频率为2kHz，占空比50%
-    hi_pwm_set_clock(PWM_CLK_160M);
-    hi_pwm_start(BUZZER_PWM_ID, 2000, 5000); // 2kHz, 50% duty
-    
-    // 使用usleep进行延时（毫秒转微秒）
+    BEEP_ON();
     usleep(duration_ms * 1000);
-    
-    // 停止PWM
-    hi_pwm_stop(BUZZER_PWM_ID);
+    BEEP_OFF();
 }
 
 // 蜂鸣器模式鸣叫
 void Buzzer_BeepPattern(uint16_t on_time, uint16_t off_time, uint8_t count)
 {
-    for (uint8_t i = 0; i < count; i++) {
-        Buzzer_Beep(on_time);
+    while(count--)
+    {
+        BEEP_ON();
+        usleep(on_time * 1000);
+        BEEP_OFF();
         usleep(off_time * 1000);
     }
 }
