@@ -5,9 +5,9 @@
 #include "cmsis_os2.h"
 
 // 蜂鸣器引脚定义 - 使用GPIO14对应的PWM5端口
-#define BEEP_PIN         HI_IO_NAME_GPIO_7
-#define BEEP_PWM_FUN     HI_IO_FUNC_GPIO_7_PWM0_OUT
-#define BEEP_PWM_PORT    HI_PWM_PORT_PWM0
+#define BEEP_PIN         HI_IO_NAME_GPIO_14
+#define BEEP_PWM_FUN     HI_IO_FUNC_GPIO_14_PWM5_OUT
+#define BEEP_PWM_PORT    HI_PWM_PORT_PWM5
 
 // 蜂鸣器参数定义
 #define BEEP_FREQ        2000    // 蜂鸣器频率 2kHz
