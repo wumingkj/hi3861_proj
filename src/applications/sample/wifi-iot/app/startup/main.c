@@ -73,7 +73,8 @@ void OLED_DisplayTask(void* arg)
 // 主任务 - 计数器更新和蜂鸣器控制
 static void Main_Task(void)
 {
-    // 初始化蜂鸣器和DHT11传感器
+    // 初始化OLED、蜂鸣器和DHT11传感器
+    OLED_Init();  // 添加OLED初始化
     Buzzer_Init();
     DHT11_Init();
     printf("Init Success!\n");
