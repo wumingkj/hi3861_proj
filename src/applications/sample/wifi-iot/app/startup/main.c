@@ -32,49 +32,41 @@ static void Sensor_UpdateTask(void) {
     }
 }
 
-// OLED显示任务
-static void OLED_DisplayTask(void) {
-    // 初始化OLED
-    OLED_Init();
-    printf("OLED Init Success!\n");
+// OLED显示任务（使用双缓冲）
+void OLED_DisplayTask(void* arg)
+{
+    (void)arg;
+    
+    // 初始化后缓冲区内容
+    OLED_ShowStringBackbuffer(0, 0, "Temp: -- C", 8);
+    OLED_ShowStringBackbuffer(0, 16, "Humi: -- %", 8);
+    OLED_ShowStringBackbuffer(0, 32, "Counter: 0", 8);
     
     while (1) {
-        uint8_t humidity, temperature;
-        bool connected;
-        uint32_t counter;
-        // 使用互斥锁保护共享数据
-        if (osMutexAcquire(g_data_mutex, osWaitForever) == osOK) {
-            humidity = g_humidity;
-            temperature = g_temperature;
-            connected = g_dht11_connected;
-            counter = g_counter;
-            osMutexRelease(g_data_mutex);
-        }
-        // OLED显示
-        OLED_Clear();
-        if (connected) {
-            // 显示温湿度数据
-            OLED_ShowString(0, 0, "Temp:", 8);
-            OLED_ShowNum(40, 0, temperature, 2, 8);
-            OLED_ShowChar(56, 0, 'C', 8);
+        // 更新后缓冲区内容
+        OLED_ClearBackbuffer();
+        
+        if (g_dht11_connected) {
+            char temp_str[20], humi_str[20];
+            snprintf(temp_str, sizeof(temp_str), "Temp: %d C", g_temperature);
+            snprintf(humi_str, sizeof(humi_str), "Humi: %d %%", g_humidity);
             
-            OLED_ShowString(0, 10, "Humi:", 8);
-            OLED_ShowNum(40, 10, humidity, 2, 8);
-            OLED_ShowString(56, 10, "%", 8);
-            
-            OLED_ShowString(0, 20, "Counter:", 8);
-            OLED_ShowNum(64, 20, counter, 3, 8);
+            OLED_ShowStringBackbuffer(0, 0, temp_str, 8);
+            OLED_ShowStringBackbuffer(0, 16, humi_str, 8);
         } else {
-            OLED_ShowString(0, 0, "DHT11 Not Found!", 8);
-            OLED_ShowString(0, 10, "Check Connection", 8);
-            OLED_ShowString(0, 20, "Counter:", 8);
-            OLED_ShowNum(64, 20, counter, 3, 8);
+            OLED_ShowStringBackbuffer(0, 0, "DHT11 Not Found!", 8);
+            OLED_ShowStringBackbuffer(0, 16, "Check GPIO5", 8);
         }
         
-        OLED_Refresh();
+        char counter_str[20];
+        snprintf(counter_str, sizeof(counter_str), "Counter: %lu", g_counter);
+        OLED_ShowStringBackbuffer(0, 32, counter_str, 8);
         
-        // 每250ms更新一次显示
-        osDelay(250);
+        // 交换缓冲区并刷新（快速刷新）
+        OLED_SwapBuffers();
+        OLED_RefreshFast();
+        
+        osDelay(250); // 250ms
     }
 }
 

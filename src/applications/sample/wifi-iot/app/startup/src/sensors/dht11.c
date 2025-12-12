@@ -13,7 +13,7 @@ bool DHT11_Init(void)
     hi_gpio_set_dir(DHT11_PIN, HI_GPIO_DIR_OUT);
     hi_gpio_set_ouput_val(DHT11_PIN, HI_GPIO_VALUE1); // 初始高电平
     
-    printf("DHT11 Initialized on GPIO1\n");
+    printf("DHT11 Initialized on GPIO%d\n", DHT11_PIN);
     return true;
 }
 

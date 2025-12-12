@@ -25,7 +25,7 @@ bool DS18B20_Init(void)
     hi_io_set_func(DS18B20_PIN, DS18B20_GPIO_FUN);
     hi_gpio_set_dir(DS18B20_PIN, HI_GPIO_DIR_OUT);
     
-    printf("DS18B20 Initialized on GPIO1\n");
+    printf("DS18B20 Initialized on GPIO%d\n", DS18B20_PIN);
     return true;
 }
 
@@ -37,11 +37,11 @@ static bool DS18B20_Reset(void)
     // 拉低总线480-960us
     hi_gpio_set_dir(DS18B20_PIN, HI_GPIO_DIR_OUT);
     hi_gpio_set_ouput_val(DS18B20_PIN, HI_GPIO_VALUE0);
-    Sensor_DelayUs(480);
+    usleep(480);
     
     // 释放总线，等待15-60us
     hi_gpio_set_dir(DS18B20_PIN, HI_GPIO_DIR_IN);
-    Sensor_DelayUs(60);
+    usleep(60);
     
     // 检查存在脉冲
     hi_gpio_value val;
@@ -51,7 +51,7 @@ static bool DS18B20_Reset(void)
     }
     
     // 等待总线恢复
-    Sensor_DelayUs(480);
+    usleep(480);
     
     return presence;
 }
@@ -66,15 +66,15 @@ static void DS18B20_WriteByte(uint8_t data)
         if (data & 0x01) {
             // 写1：拉低1us，然后释放
             hi_gpio_set_ouput_val(DS18B20_PIN, HI_GPIO_VALUE0);
-            Sensor_DelayUs(1);
+            usleep(1);
             hi_gpio_set_dir(DS18B20_PIN, HI_GPIO_DIR_IN);
-            Sensor_DelayUs(60);
+            usleep(60);
         } else {
             // 写0：拉低60us，然后释放
             hi_gpio_set_ouput_val(DS18B20_PIN, HI_GPIO_VALUE0);
-            Sensor_DelayUs(60);
+            usleep(60);
             hi_gpio_set_dir(DS18B20_PIN, HI_GPIO_DIR_IN);
-            Sensor_DelayUs(1);
+            usleep(1);
         }
         data >>= 1;
     }
@@ -89,11 +89,11 @@ static uint8_t DS18B20_ReadByte(void)
         // 拉低总线1us
         hi_gpio_set_dir(DS18B20_PIN, HI_GPIO_DIR_OUT);
         hi_gpio_set_ouput_val(DS18B20_PIN, HI_GPIO_VALUE0);
-        Sensor_DelayUs(1);
+        usleep(1);
         
         // 释放总线，读取数据
         hi_gpio_set_dir(DS18B20_PIN, HI_GPIO_DIR_IN);
-        Sensor_DelayUs(14);
+        usleep(14);
         
         hi_gpio_value val;
         hi_gpio_get_input_val(DS18B20_PIN, &val);
@@ -102,7 +102,7 @@ static uint8_t DS18B20_ReadByte(void)
             data |= 0x80;
         }
         
-        Sensor_DelayUs(45);
+        usleep(45);
     }
     
     return data;
@@ -113,7 +113,7 @@ float DS18B20_ReadTemperature(void)
 {
     if (!DS18B20_Reset()) {
         printf("DS18B20 not present\n");
-        return -999.0f;
+        return -999.99f;
     }
     
     // 跳过ROM匹配
@@ -124,7 +124,7 @@ float DS18B20_ReadTemperature(void)
     
     // 等待转换完成（最大750ms）
     for (int i = 0; i < 750; i++) {
-        Sensor_DelayMs(1);
+        usleep(1000); // 1ms
         hi_gpio_value val;
         hi_gpio_get_input_val(DS18B20_PIN, &val);
         if (val == HI_GPIO_VALUE1) {

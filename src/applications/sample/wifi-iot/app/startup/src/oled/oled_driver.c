@@ -7,18 +7,8 @@
 
 static oled_driver_t g_oled_driver = {0};
 
-// I2C写字节函数
-static int i2c_write_byte(uint8_t data)
-{
-    hi_i2c_data i2c_data = {
-        .send_buf = &data,
-        .send_len = 1,
-        .receive_buf = NULL,
-        .receive_len = 0
-    };
-    
-    return hi_i2c_write(OLED_I2C_IDX, OLED_ADDRESS, &i2c_data);
-}
+// 脏标记机制
+static bool g_dirty_region[OLED_PAGE_NUM] = {false};
 
 // 写命令到OLED
 static void oled_write_cmd(uint8_t cmd)
@@ -107,9 +97,17 @@ void oled_driver_deinit(void)
 void oled_driver_clear(void)
 {
     memset(g_oled_driver.gram, 0, sizeof(g_oled_driver.gram));
+    memset(g_oled_driver.back_buffer, 0, sizeof(g_oled_driver.back_buffer));
+    memset(g_dirty_region, 0, sizeof(g_dirty_region));
 }
 
-// 刷新显示
+// 清空后缓冲区
+void oled_driver_clear_backbuffer(void)
+{
+    memset(g_oled_driver.back_buffer, 0, sizeof(g_oled_driver.back_buffer));
+}
+
+// 刷新显示（原始版本）
 void oled_driver_refresh(void)
 {
     for (uint8_t page = 0; page < OLED_PAGE_NUM; page++) {
@@ -120,6 +118,106 @@ void oled_driver_refresh(void)
         for (uint16_t col = 0; col < OLED_WIDTH; col++) {
             oled_write_data(g_oled_driver.gram[col][page]);
         }
+    }
+}
+
+// 快速刷新显示（优化版本）
+void oled_driver_refresh_fast(void)
+{
+    // 一次性传输整个GRAM到OLED
+    uint8_t buffer[OLED_WIDTH * OLED_PAGE_NUM + 1];
+    buffer[0] = OLED_DATA; // 数据命令
+    
+    // 将GRAM数据复制到缓冲区
+    uint16_t index = 1;
+    for (uint8_t page = 0; page < OLED_PAGE_NUM; page++) {
+        for (uint16_t col = 0; col < OLED_WIDTH; col++) {
+            buffer[index++] = g_oled_driver.gram[col][page];
+        }
+    }
+    
+    // 设置页地址和列地址
+    oled_write_cmd(0xB0); // 页0
+    oled_write_cmd(0x00); // 列地址低4位
+    oled_write_cmd(0x10); // 列地址高4位
+    
+    // 一次性传输所有数据
+    hi_i2c_data i2c_data = {
+        .send_buf = buffer,
+        .send_len = sizeof(buffer),
+        .receive_buf = NULL,
+        .receive_len = 0
+    };
+    hi_i2c_write(OLED_I2C_IDX, OLED_ADDRESS, &i2c_data);
+}
+
+// 部分刷新（只刷新脏页面）
+void oled_driver_refresh_partial(void)
+{
+    for (uint8_t page = 0; page < OLED_PAGE_NUM; page++) {
+        if (g_dirty_region[page]) {
+            oled_write_cmd(0xB0 + page); // 设置页地址
+            oled_write_cmd(0x00);        // 设置列地址低4位
+            oled_write_cmd(0x10);        // 设置列地址高4位
+            
+            for (uint16_t col = 0; col < OLED_WIDTH; col++) {
+                oled_write_data(g_oled_driver.gram[col][page]);
+            }
+            g_dirty_region[page] = false; // 清除脏标记
+        }
+    }
+}
+
+// 标记页面为脏
+static void oled_driver_mark_dirty(uint8_t page)
+{
+    if (page < OLED_PAGE_NUM) {
+        g_dirty_region[page] = true;
+    }
+}
+
+// 画点（前缓冲区）
+void oled_driver_draw_pixel(uint16_t x, uint16_t y, bool set)
+{
+    if (x >= OLED_WIDTH || y >= OLED_HEIGHT) return;
+    
+    uint8_t page = y / 8;
+    uint8_t bit = y % 8;
+    
+    if (set) {
+        g_oled_driver.gram[x][page] |= (1 << bit);
+    } else {
+        g_oled_driver.gram[x][page] &= ~(1 << bit);
+    }
+    
+    // 标记该页面为脏
+    oled_driver_mark_dirty(page);
+}
+
+// 画点（后缓冲区）
+void oled_driver_draw_pixel_backbuffer(uint16_t x, uint16_t y, bool set)
+{
+    if (x >= OLED_WIDTH || y >= OLED_HEIGHT) return;
+    
+    uint8_t page = y / 8;
+    uint8_t bit = y % 8;
+    
+    if (set) {
+        g_oled_driver.back_buffer[x][page] |= (1 << bit);
+    } else {
+        g_oled_driver.back_buffer[x][page] &= ~(1 << bit);
+    }
+}
+
+// 交换缓冲区
+void oled_driver_swap_buffers(void)
+{
+    // 将后缓冲区数据复制到前缓冲区
+    memcpy(g_oled_driver.gram, g_oled_driver.back_buffer, sizeof(g_oled_driver.gram));
+    
+    // 标记所有页面为脏
+    for (uint8_t page = 0; page < OLED_PAGE_NUM; page++) {
+        g_dirty_region[page] = true;
     }
 }
 
@@ -134,21 +232,6 @@ void oled_driver_set_display_mode(oled_display_mode_t mode)
 {
     oled_write_cmd(mode == OLED_DISPLAY_INVERTED ? 0xA7 : 0xA6);
     g_oled_driver.display_mode = mode;
-}
-
-// 画点
-void oled_driver_draw_pixel(uint16_t x, uint16_t y, bool set)
-{
-    if (x >= OLED_WIDTH || y >= OLED_HEIGHT) return;
-    
-    uint8_t page = y / 8;
-    uint8_t bit = y % 8;
-    
-    if (set) {
-        g_oled_driver.gram[x][page] |= (1 << bit);
-    } else {
-        g_oled_driver.gram[x][page] &= ~(1 << bit);
-    }
 }
 
 // 获取驱动状态
