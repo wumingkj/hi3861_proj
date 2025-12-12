@@ -8,8 +8,8 @@
 #include "dht11.h"
 
 // 全局变量用于存储传感器数据
-static uint8_t g_humidity = 0;
-static uint8_t g_temperature = 0;
+static float g_temperature = -999.9f;  // 初始化为-999.9f
+static int g_humidity = -1;            // 初始化为-1
 static bool g_dht11_connected = false;
 static uint32_t g_counter = 0;
 static osMutexId_t g_data_mutex = NULL;
@@ -19,57 +19,135 @@ static uint32_t g_last_sensor_update = 0;
 static uint32_t g_last_oled_update = 0;
 static uint32_t g_last_buzzer_check = 0;
 
-// 常量定义
-#define SENSOR_UPDATE_INTERVAL 2000  // 2秒
-#define OLED_UPDATE_INTERVAL   250   // 250ms
-#define BUZZER_CHECK_INTERVAL  250   // 250ms
+// 新增：连续读取失败计数
+static int g_failed_count = 0;
+#define MAX_FAILED_COUNT 10  // 连续5次失败才显示"not found"
 
-// 传感器数据更新任务（非阻塞版本）
-static void Sensor_UpdateTask(void) {
-    uint8_t humidity, temperature;
+// 常量定义
+#define SENSOR_UPDATE_INTERVAL 2000    // 增加到2秒读取一次，减少干扰
+#define OLED_UPDATE_INTERVAL   500     // 500ms
+#define BUZZER_CHECK_INTERVAL  500     // 500ms
+#define COUNTER_UPDATE_INTERVAL 500    // 500ms
+#define MAX_FAILED_COUNT 3             // 减少到连续3次失败就显示"not found"
+
+// DHT11读取重试机制
+#define DHT11_RETRY_COUNT 3            // 每次读取最多重试3次
+
+// 主任务 - 优化版本
+static void Main_Task(void)
+{
     uint32_t current_time;
     
-    while (1) {
-        current_time = osKernelGetTickCount();
-        
-        // 非阻塞检查：是否到了传感器更新时间
-        if (current_time - g_last_sensor_update >= SENSOR_UPDATE_INTERVAL) {
-            // 读取DHT11温湿度数据
-            bool connected = DHT11_ReadData(&humidity, &temperature);
-            // 使用互斥锁保护共享数据
-            if (osMutexAcquire(g_data_mutex, 0) == osOK) {  // 非阻塞获取锁
-                g_humidity = humidity;
-                g_temperature = temperature;
-                g_dht11_connected = connected;
-                osMutexRelease(g_data_mutex);
-            }
-            g_last_sensor_update = current_time;
-        }
-        
-        // 短延时，让出CPU给其他任务
-        osDelay(10); // 只阻塞10ms
+    // 初始化OLED和蜂鸣器
+    OLED_Init();
+    Buzzer_Init();
+    
+    // 初始化DHT11
+    if (dht11_init() == 0) {
+        printf("DHT11 Init Success!\n");
+        g_dht11_connected = true;
+    } else {
+        printf("DHT11 Init Failed!\n");
+        g_dht11_connected = false;
     }
-}
-
-// OLED显示任务（修复版本）
-void OLED_DisplayTask(void* arg)
-{
-    (void)arg;
-    uint32_t current_time;
-    static uint8_t last_temperature = 0;
-    static uint8_t last_humidity = 0;
+    
+    printf("System Init Success! (Optimized Single Task Mode)\n");
+    
+    // 启动提示音
+    Buzzer_BeepPattern(100, 50, 2);
+    
+    // 初始化时间戳
+    g_last_sensor_update = osKernelGetTickCount();
+    g_last_oled_update = osKernelGetTickCount();
+    g_last_buzzer_check = osKernelGetTickCount();
+    uint32_t last_counter_update = osKernelGetTickCount();
+    
+    // OLED显示相关变量
+    static float last_temperature = -999.9f;
+    static int last_humidity = -1;
     static uint32_t last_counter = 0;
     static bool last_connected = false;
     
     // 初始化显示内容
-    OLED_RequestShowString(0, 0, "Temp: -- C", 8);
-    OLED_RequestShowString(0, 10, "Humi: -- %", 8);
+    OLED_RequestShowString(0, 0, "Temp: -999.9 C", 8);
+    OLED_RequestShowString(0, 10, "Humi: -1 %", 8);
     OLED_RequestShowString(0, 20, "Counter: 0", 8);
+    
+    // 给DHT11足够的稳定时间
+    osDelay(2000); // 等待2秒让DHT11完全稳定
     
     while (1) {
         current_time = osKernelGetTickCount();
         
-        // 非阻塞检查：是否到了OLED更新时间
+        // 1. 传感器读取（2秒间隔，减少干扰）
+        if (current_time - g_last_sensor_update >= SENSOR_UPDATE_INTERVAL) {
+            uint8_t humidity, temperature;
+            uint8_t retry_count = 0;
+            bool read_success = false;
+            
+            // 重试机制：最多重试3次
+            for (retry_count = 0; retry_count < DHT11_RETRY_COUNT; retry_count++) {
+                // 直接调用DHT11库函数读取数据
+                if (dht11_read_data(&temperature, &humidity) == 0) {
+                    read_success = true;
+                    break;
+                }
+                
+                // 如果失败，等待一小段时间再重试
+                if (retry_count < DHT11_RETRY_COUNT - 1) {
+                    osDelay(10); // 等待10ms再重试
+                }
+            }
+            
+            if (read_success) {
+                // 使用互斥锁保护共享数据
+                if (osMutexAcquire(g_data_mutex, 0) == osOK) {
+                    g_humidity = (int)humidity;
+                    g_temperature = (float)temperature;
+                    g_dht11_connected = true;
+                    g_failed_count = 0;  // 重置失败计数
+                    osMutexRelease(g_data_mutex);
+                }
+                // 读取成功时打印信息
+                printf("DHT11 Read Success (重试%d次): Humidity=%d%%, Temperature=%.1f°C\n", 
+                       retry_count, humidity, (float)temperature);
+            } else {
+                // 读取失败
+                if (osMutexAcquire(g_data_mutex, 0) == osOK) {
+                    g_failed_count++;
+                    if (g_failed_count >= MAX_FAILED_COUNT) {
+                        g_dht11_connected = false;
+                        printf("DHT11 Read Failed (连续%d次失败)\n", g_failed_count);
+                    } else {
+                        printf("DHT11 Read Failed (第%d次失败)\n", g_failed_count);
+                    }
+                    osMutexRelease(g_data_mutex);
+                }
+            }
+            
+            g_last_sensor_update = current_time;
+        }
+        
+        // 2. 计数器更新（500ms间隔）
+        if (current_time - last_counter_update >= COUNTER_UPDATE_INTERVAL) {
+            if (osMutexAcquire(g_data_mutex, 0) == osOK) {
+                g_counter++;
+                osMutexRelease(g_data_mutex);
+            }
+            last_counter_update = current_time;
+        }
+        
+        // 3. 蜂鸣器控制（500ms间隔）
+        if (current_time - g_last_buzzer_check >= BUZZER_CHECK_INTERVAL) {
+            if (g_counter % 80 == 0) {  // 调整为80，减少蜂鸣频率
+                Buzzer_Beep(100);
+            }
+            
+            Buzzer_Update();
+            g_last_buzzer_check = current_time;
+        }
+        
+        // 4. OLED显示更新（500ms间隔，但只有数据变化时才更新）
         if (current_time - g_last_oled_update >= OLED_UPDATE_INTERVAL) {
             bool need_update = false;
             
@@ -90,20 +168,29 @@ void OLED_DisplayTask(void* arg)
             }
             
             if (need_update) {
-                // 清空后缓冲区（只清需要更新的区域）
-                oled_driver_clear_backbuffer();
+                // 清空显示缓冲区 - 修复：使用正确的函数
+                oled_driver_clear_backbuffer();  // 使用正确的清除函数
                 
                 // 更新显示内容
                 if (g_dht11_connected) {
                     char temp_str[20], humi_str[20];
-                    snprintf(temp_str, sizeof(temp_str), "Temp: %d C", g_temperature);
-                    snprintf(humi_str, sizeof(humi_str), "Humi: %d %%", g_humidity);
+                    if (g_temperature == -999.9f) {
+                        snprintf(temp_str, sizeof(temp_str), "Temp: -- C");
+                    } else {
+                        snprintf(temp_str, sizeof(temp_str), "Temp: %.1f C", g_temperature);
+                    }
+                    
+                    if (g_humidity == -1) {
+                        snprintf(humi_str, sizeof(humi_str), "Humi: -- %%");
+                    } else {
+                        snprintf(humi_str, sizeof(humi_str), "Humi: %d %%", g_humidity);
+                    }
                     
                     OLED_RequestShowString(0, 0, temp_str, 8);
                     OLED_RequestShowString(0, 10, humi_str, 8);
                 } else {
                     OLED_RequestShowString(0, 0, "DHT11 Not Found!", 8);
-                    OLED_RequestShowString(0, 10, "Check GPIO5", 8);
+                    OLED_RequestShowString(0, 10, "Check GPIO7", 8);  // 修正为GPIO7
                 }
                 
                 char counter_str[20];
@@ -114,58 +201,8 @@ void OLED_DisplayTask(void* arg)
             g_last_oled_update = current_time;
         }
         
-        // 短延时，让出CPU给其他任务
-        osDelay(10); // 只阻塞10ms
-    }
-}
-
-// 主任务 - 计数器更新和蜂鸣器控制（修复版本）
-static void Main_Task(void)
-{
-    uint32_t current_time;
-    
-    // 初始化OLED、蜂鸣器和DHT11传感器
-    OLED_Init();  // 这会自动启动后台刷新任务
-    Buzzer_Init();
-    DHT11_Init();
-    printf("Init Success!\n");
-    
-    // 启动提示音
-    Buzzer_BeepPattern(100, 50, 2);
-    
-    // 初始化时间戳
-    g_last_sensor_update = osKernelGetTickCount();
-    g_last_oled_update = osKernelGetTickCount();
-    g_last_buzzer_check = osKernelGetTickCount();
-    uint32_t last_counter_update = osKernelGetTickCount();
-    
-    while (1) {
-        current_time = osKernelGetTickCount();
-        
-        // 非阻塞更新计数器 - 每25ms更新一次，与OLED显示同步
-        if (current_time - last_counter_update >= OLED_UPDATE_INTERVAL) {
-            if (osMutexAcquire(g_data_mutex, 0) == osOK) {  // 非阻塞获取锁
-                g_counter++;
-                osMutexRelease(g_data_mutex);
-            }
-            last_counter_update = current_time;
-        }
-        
-        // 非阻塞检查：是否到了蜂鸣器检查时间
-        if (current_time - g_last_buzzer_check >= BUZZER_CHECK_INTERVAL) {
-            // 每5秒触发一次蜂鸣器
-            if (g_counter % 20 == 0) {
-                Buzzer_Beep(100);
-            }
-            
-            // 更新蜂鸣器状态
-            Buzzer_Update();
-            
-            g_last_buzzer_check = current_time;
-        }
-        
-        // 短延时，让出CPU给其他任务
-        osDelay(10); // 只阻塞10ms
+        // 统一的延时，让出CPU
+        osDelay(200); // 增加到200ms，大大减少CPU占用
     }
 }
 
@@ -185,50 +222,20 @@ static void Main_Entry(void)
         return;
     }
     
-    // 创建主任务
+    // 只创建一个主任务
     osThreadAttr_t main_attr = {
         .name = "MainTask",
         .attr_bits = 0U,
         .cb_mem = NULL,
         .cb_size = 0U,
-        .stack_mem = 2048,
-        .stack_size = 2048,
+        .stack_mem = NULL,  // 设置为NULL让系统自动分配
+        .stack_size = 8192, // 适当增加栈大小
         .priority = osPriorityNormal
     };
     
-    // 创建OLED显示任务
-    osThreadAttr_t oled_attr = {
-        .name = "OLEDTask",
-        .attr_bits = 0U,
-        .cb_mem = NULL,
-        .cb_size = 0U,
-        .stack_mem = 2048,
-        .stack_size = 2048,
-        .priority = osPriorityNormal
-    };
-    
-    // 创建传感器更新任务
-    osThreadAttr_t sensor_attr = {
-        .name = "SensorTask",
-        .attr_bits = 0U,
-        .cb_mem = NULL,
-        .cb_size = 0U,
-        .stack_mem = 2048,
-        .stack_size = 2048,
-        .priority = osPriorityNormal
-    };
-    
-    // 创建所有任务
+    // 创建单个主任务
     if (osThreadNew((osThreadFunc_t)Main_Task, NULL, &main_attr) == NULL) {
         printf("Failed to create Main_Task!\n");
-    }
-    
-    if (osThreadNew((osThreadFunc_t)OLED_DisplayTask, NULL, &oled_attr) == NULL) {
-        printf("Failed to create OLED_DisplayTask!\n");
-    }
-    
-    if (osThreadNew((osThreadFunc_t)Sensor_UpdateTask, NULL, &sensor_attr) == NULL) {
-        printf("Failed to create Sensor_UpdateTask!\n");
     }
 }
 

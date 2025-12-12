@@ -32,12 +32,14 @@ static bool g_pattern_active = false;
 void Buzzer_Init(void)
 {
     // 配置IO为PWM功能
-    hi_io_set_pull(BEEP_PIN, HI_IO_PULL_UP);
     hi_io_set_func(BEEP_PIN, BEEP_PWM_FUN);
+    hi_io_set_pull(BEEP_PIN, HI_IO_PULL_UP);
     
     // 初始化PWM
     hi_pwm_init(BEEP_PWM_PORT);
-    hi_pwm_set_clock(PWM_CLK_160M);
+    
+    // 设置PWM频率和占空比
+    hi_pwm_start(BEEP_PWM_PORT, BEEP_DUTY, BEEP_FREQ);
     
     // 初始状态停止蜂鸣器
     hi_pwm_stop(BEEP_PWM_PORT);
