@@ -25,9 +25,9 @@ static int g_failed_count = 0;
 
 // 常量定义
 #define SENSOR_UPDATE_INTERVAL 2000    // 增加到2秒读取一次，减少干扰
-#define OLED_UPDATE_INTERVAL   500     // 500ms
+#define OLED_UPDATE_INTERVAL   100     // 500ms
 #define BUZZER_CHECK_INTERVAL  500     // 500ms
-#define COUNTER_UPDATE_INTERVAL 500    // 500ms
+#define COUNTER_UPDATE_INTERVAL 250    // 500ms
 #define MAX_FAILED_COUNT 3             // 减少到连续3次失败就显示"not found"
 
 // DHT11读取重试机制
@@ -73,8 +73,6 @@ static void Main_Task(void)
     OLED_RequestShowString(0, 10, "Humi: -1 %", 8);
     OLED_RequestShowString(0, 20, "Counter: 0", 8);
     
-    // 给DHT11足够的稳定时间
-    osDelay(2000); // 等待2秒让DHT11完全稳定
     
     while (1) {
         current_time = osKernelGetTickCount();
@@ -138,14 +136,14 @@ static void Main_Task(void)
         }
         
         // 3. 蜂鸣器控制（500ms间隔）
-        if (current_time - g_last_buzzer_check >= BUZZER_CHECK_INTERVAL) {
-            if (g_counter % 80 == 0) {  // 调整为80，减少蜂鸣频率
-                Buzzer_Beep(100);
-            }
-            
-            Buzzer_Update();
-            g_last_buzzer_check = current_time;
-        }
+        //if (current_time - g_last_buzzer_check >= BUZZER_CHECK_INTERVAL) {
+        //    if (g_counter % 80 == 0) {  // 调整为80，减少蜂鸣频率
+        //        Buzzer_Beep(100);
+        //    }
+        //    
+        //    Buzzer_Update();
+        //    g_last_buzzer_check = current_time;
+        //}
         
         // 4. OLED显示更新（500ms间隔，但只有数据变化时才更新）
         if (current_time - g_last_oled_update >= OLED_UPDATE_INTERVAL) {
