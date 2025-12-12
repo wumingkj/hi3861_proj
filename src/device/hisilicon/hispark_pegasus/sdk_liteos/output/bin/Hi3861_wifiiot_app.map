@@ -12806,8 +12806,6 @@ Discarded input sections
                 0x0000000000000000       0x4a ohos\libs\libstartup.a(libstartup.buzzer.o)
  .text.Buzzer_IsActive
                 0x0000000000000000       0x32 ohos\libs\libstartup.a(libstartup.buzzer.o)
- .text.Buzzer_Update
-                0x0000000000000000       0x30 ohos\libs\libstartup.a(libstartup.buzzer.o)
  .rodata.Buzzer_Stop.str1.4
                 0x0000000000000000       0x1c ohos\libs\libstartup.a(libstartup.buzzer.o)
  .text          0x0000000000000000        0x0 ohos\libs\libstartup.a(libstartup.ds18b20.o)
@@ -23955,7 +23953,7 @@ Linker script and memory map
                 0x00000000000457d8                _rom_size_total = (__rom_data0_size__ + __rom_text_size__)
                 0x00000000003fd7e0                __rom_data0_load = 0x3fd7e0
 
-.text_non_rom   0x000000000040d3c0    0x92e40
+.text_non_rom   0x000000000040d3c0    0x93040
                 0x000000000040d3c0                . = ALIGN (0x20)
                 0x000000000040d3c0                __text_cache_start2_ = .
  *(.entry.text)
@@ -35971,1719 +35969,1730 @@ Linker script and memory map
  .text.Buzzer_BeepPattern
                 0x0000000000496da6       0x82 ohos\libs\libstartup.a(libstartup.buzzer.o)
                 0x0000000000496da6                Buzzer_BeepPattern
+ .text.Buzzer_Update
+                0x0000000000496e28       0x24 ohos\libs\libstartup.a(libstartup.buzzer.o)
+                0x0000000000496e28                Buzzer_Update
  .text.DHT11_Start
-                0x0000000000496e28       0x9a ohos\libs\libstartup.a(libstartup.dht11.o)
+                0x0000000000496e4c       0x9a ohos\libs\libstartup.a(libstartup.dht11.o)
  .text.DHT11_ReadBit
-                0x0000000000496ec2       0x76 ohos\libs\libstartup.a(libstartup.dht11.o)
+                0x0000000000496ee6       0x76 ohos\libs\libstartup.a(libstartup.dht11.o)
  .text.DHT11_ReadByte
-                0x0000000000496f38       0x40 ohos\libs\libstartup.a(libstartup.dht11.o)
+                0x0000000000496f5c       0x40 ohos\libs\libstartup.a(libstartup.dht11.o)
  .text.DHT11_Init
-                0x0000000000496f78       0x52 ohos\libs\libstartup.a(libstartup.dht11.o)
-                0x0000000000496f78                DHT11_Init
+                0x0000000000496f9c       0x52 ohos\libs\libstartup.a(libstartup.dht11.o)
+                0x0000000000496f9c                DHT11_Init
  .text.DHT11_ReadData
-                0x0000000000496fca       0xa8 ohos\libs\libstartup.a(libstartup.dht11.o)
-                0x0000000000496fca                DHT11_ReadData
+                0x0000000000496fee       0xa8 ohos\libs\libstartup.a(libstartup.dht11.o)
+                0x0000000000496fee                DHT11_ReadData
  .text.Main_Entry
-                0x0000000000497072       0x5c ohos\libs\libstartup.a(libstartup.main.o)
- .text.MainTask
-                0x00000000004970ce      0x150 ohos\libs\libstartup.a(libstartup.main.o)
+                0x0000000000497096      0x104 ohos\libs\libstartup.a(libstartup.main.o)
+ .text.Sensor_UpdateTask
+                0x000000000049719a       0x60 ohos\libs\libstartup.a(libstartup.main.o)
+ .text.OLED_DisplayTask
+                0x00000000004971fa      0x104 ohos\libs\libstartup.a(libstartup.main.o)
+ .text.Main_Task
+                0x00000000004972fe       0x78 ohos\libs\libstartup.a(libstartup.main.o)
  .text.OLED_Init
-                0x000000000049721e       0x26 ohos\libs\libstartup.a(libstartup.oled.o)
-                0x000000000049721e                OLED_Init
+                0x0000000000497376       0x26 ohos\libs\libstartup.a(libstartup.oled.o)
+                0x0000000000497376                OLED_Init
  .text.OLED_Clear
-                0x0000000000497244       0x26 ohos\libs\libstartup.a(libstartup.oled.o)
-                0x0000000000497244                OLED_Clear
+                0x000000000049739c       0x26 ohos\libs\libstartup.a(libstartup.oled.o)
+                0x000000000049739c                OLED_Clear
  .text.OLED_Refresh
-                0x000000000049726a       0x26 ohos\libs\libstartup.a(libstartup.oled.o)
-                0x000000000049726a                OLED_Refresh
+                0x00000000004973c2       0x26 ohos\libs\libstartup.a(libstartup.oled.o)
+                0x00000000004973c2                OLED_Refresh
  .text.OLED_ShowChar
-                0x0000000000497290       0x86 ohos\libs\libstartup.a(libstartup.oled.o)
-                0x0000000000497290                OLED_ShowChar
+                0x00000000004973e8       0x86 ohos\libs\libstartup.a(libstartup.oled.o)
+                0x00000000004973e8                OLED_ShowChar
  .text.OLED_ShowString
-                0x0000000000497316       0x50 ohos\libs\libstartup.a(libstartup.oled.o)
-                0x0000000000497316                OLED_ShowString
+                0x000000000049746e       0x50 ohos\libs\libstartup.a(libstartup.oled.o)
+                0x000000000049746e                OLED_ShowString
  .text.OLED_ShowNum
-                0x0000000000497366       0x48 ohos\libs\libstartup.a(libstartup.oled.o)
-                0x0000000000497366                OLED_ShowNum
+                0x00000000004974be       0x48 ohos\libs\libstartup.a(libstartup.oled.o)
+                0x00000000004974be                OLED_ShowNum
  .text.oled_write_cmd
-                0x00000000004973ae       0x44 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x0000000000497506       0x44 ohos\libs\libstartup.a(libstartup.oled_driver.o)
  .text.oled_write_data
-                0x00000000004973f2       0x48 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x000000000049754a       0x48 ohos\libs\libstartup.a(libstartup.oled_driver.o)
  .text.oled_driver_clear
-                0x000000000049743a       0x36 ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x000000000049743a                oled_driver_clear
+                0x0000000000497592       0x36 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x0000000000497592                oled_driver_clear
  .text.oled_driver_refresh
-                0x0000000000497470       0x6e ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x0000000000497470                oled_driver_refresh
+                0x00000000004975c8       0x6e ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x00000000004975c8                oled_driver_refresh
  .text.oled_driver_init
-                0x00000000004974de      0x13e ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x00000000004974de                oled_driver_init
+                0x0000000000497636      0x13e ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x0000000000497636                oled_driver_init
  .text.oled_driver_draw_pixel
-                0x000000000049761c       0x6c ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x000000000049761c                oled_driver_draw_pixel
+                0x0000000000497774       0x6c ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x0000000000497774                oled_driver_draw_pixel
  .text.songti_font_get_char_width
-                0x0000000000497688       0x26 ohos\libs\libstartup.a(libstartup.songti_font.o)
-                0x0000000000497688                songti_font_get_char_width
+                0x00000000004977e0       0x26 ohos\libs\libstartup.a(libstartup.songti_font.o)
+                0x00000000004977e0                songti_font_get_char_width
  .text.songti_font_get_char_height
-                0x00000000004976ae       0x26 ohos\libs\libstartup.a(libstartup.songti_font.o)
-                0x00000000004976ae                songti_font_get_char_height
+                0x0000000000497806       0x26 ohos\libs\libstartup.a(libstartup.songti_font.o)
+                0x0000000000497806                songti_font_get_char_height
  .text.songti_font_get_char_data
-                0x00000000004976d4       0x44 ohos\libs\libstartup.a(libstartup.songti_font.o)
-                0x00000000004976d4                songti_font_get_char_data
+                0x000000000049782c       0x44 ohos\libs\libstartup.a(libstartup.songti_font.o)
+                0x000000000049782c                songti_font_get_char_data
  .text.GetDeviceType
-                0x0000000000497718       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497718                GetDeviceType
+                0x0000000000497870       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497870                GetDeviceType
  .text.GetManufacture
-                0x0000000000497740       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497740                GetManufacture
+                0x0000000000497898       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497898                GetManufacture
  .text.GetBrand
-                0x0000000000497768       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497768                GetBrand
+                0x00000000004978c0       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004978c0                GetBrand
  .text.GetMarketName
-                0x0000000000497790       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497790                GetMarketName
+                0x00000000004978e8       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004978e8                GetMarketName
  .text.GetProductSeries
-                0x00000000004977b8       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004977b8                GetProductSeries
+                0x0000000000497910       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497910                GetProductSeries
  .text.GetProductModel
-                0x00000000004977e0       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004977e0                GetProductModel
+                0x0000000000497938       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497938                GetProductModel
  .text.GetSoftwareModel
-                0x0000000000497808       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497808                GetSoftwareModel
+                0x0000000000497960       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497960                GetSoftwareModel
  .text.GetHardwareModel
-                0x0000000000497830       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497830                GetHardwareModel
+                0x0000000000497988       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497988                GetHardwareModel
  .text.GetSerial
-                0x0000000000497858       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497858                GetSerial
+                0x00000000004979b0       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004979b0                GetSerial
  .text.GetBootloaderVersion
-                0x0000000000497880       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497880                GetBootloaderVersion
+                0x00000000004979d8       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004979d8                GetBootloaderVersion
  .text.GetSecurityPatchTag
-                0x00000000004978a8       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004978a8                GetSecurityPatchTag
+                0x0000000000497a00       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497a00                GetSecurityPatchTag
  .text.GetAbiList
-                0x00000000004978d4       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004978d4                GetAbiList
+                0x0000000000497a2c       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497a2c                GetAbiList
  .text.GetDisplayVersion
-                0x00000000004978fc       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004978fc                GetDisplayVersion
+                0x0000000000497a54       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497a54                GetDisplayVersion
  .text.GetSdkApiVersion
-                0x0000000000497924       0x26 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497924                GetSdkApiVersion
+                0x0000000000497a7c       0x26 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497a7c                GetSdkApiVersion
  .text.GetFirstApiVersion
-                0x000000000049794a       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x000000000049794a                GetFirstApiVersion
+                0x0000000000497aa2       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497aa2                GetFirstApiVersion
  .text.GetIncrementalVersion
-                0x0000000000497972       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497972                GetIncrementalVersion
+                0x0000000000497aca       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497aca                GetIncrementalVersion
  .text.GetBuildType
-                0x000000000049799a       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x000000000049799a                GetBuildType
+                0x0000000000497af2       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497af2                GetBuildType
  .text.GetBuildUser
-                0x00000000004979c2       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004979c2                GetBuildUser
+                0x0000000000497b1a       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497b1a                GetBuildUser
  .text.GetBuildHost
-                0x00000000004979ea       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004979ea                GetBuildHost
+                0x0000000000497b42       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497b42                GetBuildHost
  .text.GetBuildTime
-                0x0000000000497a12       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497a12                GetBuildTime
+                0x0000000000497b6a       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497b6a                GetBuildTime
  .text.GetBuildRootHash
-                0x0000000000497a3a       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497a3a                GetBuildRootHash
+                0x0000000000497b92       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497b92                GetBuildRootHash
  .text.GetOsReleaseType
-                0x0000000000497a66       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497a66                GetOsReleaseType
+                0x0000000000497bbe       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497bbe                GetOsReleaseType
  .text.BuildOSFullName
-                0x0000000000497a92       0xa0 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497bea       0xa0 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
  .text.GetOSFullName
-                0x0000000000497b32       0x42 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497b32                GetOSFullName
+                0x0000000000497c8a       0x42 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497c8a                GetOSFullName
  .text.BuildVersionId
-                0x0000000000497b74       0x98 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497ccc       0x98 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
  .text.GetVersionId
-                0x0000000000497c0c       0x42 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497c0c                GetVersionId
+                0x0000000000497d64       0x42 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497d64                GetVersionId
  .text.InitWifiGlobalLock
-                0x0000000000497c4e       0x6e ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
+                0x0000000000497da6       0x6e ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
  SORT_BY_NAME(*)(EXCLUDE_FILE(*libasm_flash.o) .got*)
- *fill*         0x0000000000497cbc        0x0 
- .got           0x0000000000497cbc      0x118 build\libs\hi3861\release\no_mesh\libwifi_base.o
-                0x0000000000497cbc                _GLOBAL_OFFSET_TABLE_
- .got.plt       0x0000000000497dd4        0x8 build\libs\hi3861\release\no_mesh\libwifi_base.o
-                0x0000000000497de0                . = ALIGN (0x20)
- *fill*         0x0000000000497ddc        0x4 
-                0x0000000000497de0                __text_cache_end2_ = .
+ .got           0x0000000000497e14      0x118 build\libs\hi3861\release\no_mesh\libwifi_base.o
+                0x0000000000497e14                _GLOBAL_OFFSET_TABLE_
+ .got.plt       0x0000000000497f2c        0x8 build\libs\hi3861\release\no_mesh\libwifi_base.o
+                0x0000000000497f40                . = ALIGN (0x20)
+ *fill*         0x0000000000497f34        0xc 
+                0x0000000000497f40                __text_cache_end2_ = .
  SORT_BY_NAME(*)(.rodata*)
  .rodata.app_demo_upg_check_chip_product.str1.4
-                0x0000000000497de0       0x7b build\build_tmp\libs\app\wifiiot_app\libwifiiot_app.a(app_demo_upg_verify.o)
+                0x0000000000497f40       0x7b build\build_tmp\libs\app\wifiiot_app\libwifiiot_app.a(app_demo_upg_verify.o)
                                          0x7f (size before relaxing)
- *fill*         0x0000000000497e5b        0x1 
+ *fill*         0x0000000000497fbb        0x1 
  .rodata.app_demo_task_body.str1.4
-                0x0000000000497e5c       0x3c build\build_tmp\libs\app\wifiiot_app\libwifiiot_app.a(app_main.o)
+                0x0000000000497fbc       0x3c build\build_tmp\libs\app\wifiiot_app\libwifiiot_app.a(app_main.o)
  .rodata.app_demo_task_release_mem.str1.4
-                0x0000000000497e98       0x31 build\build_tmp\libs\app\wifiiot_app\libwifiiot_app.a(app_main.o)
- *fill*         0x0000000000497ec9        0x3 
+                0x0000000000497ff8       0x31 build\build_tmp\libs\app\wifiiot_app\libwifiiot_app.a(app_main.o)
+ *fill*         0x0000000000498029        0x3 
  .rodata.app_main.str1.4
-                0x0000000000497ecc       0x78 build\build_tmp\libs\app\wifiiot_app\libwifiiot_app.a(app_main.o)
+                0x000000000049802c       0x78 build\build_tmp\libs\app\wifiiot_app\libwifiiot_app.a(app_main.o)
                                          0x88 (size before relaxing)
  .rodata.G_OHOS_AT_FUNC_TBL
-                0x0000000000497f44       0x18 build\build_tmp\libs\app\wifiiot_app\libwifiiot_app.a(ohos_main.o)
+                0x00000000004980a4       0x18 build\build_tmp\libs\app\wifiiot_app\libwifiiot_app.a(ohos_main.o)
  .rodata.OHOS_Main.str1.4
-                0x0000000000497f5c       0x17 build\build_tmp\libs\app\wifiiot_app\libwifiiot_app.a(ohos_main.o)
- *fill*         0x0000000000497f73        0x1 
+                0x00000000004980bc       0x17 build\build_tmp\libs\app\wifiiot_app\libwifiiot_app.a(ohos_main.o)
+ *fill*         0x00000000004980d3        0x1 
  .rodata.str1.4
-                0x0000000000497f74        0x9 build\build_tmp\libs\app\wifiiot_app\libwifiiot_app.a(ohos_main.o)
+                0x00000000004980d4        0x9 build\build_tmp\libs\app\wifiiot_app\libwifiiot_app.a(ohos_main.o)
  .rodata.at_cmd_process.str1.4
-                0x0000000000497f7d        0xc build\build_tmp\libs\components\at\libat.a(at.o)
- *fill*         0x0000000000497f7d        0x3 
+                0x00000000004980dd        0xc build\build_tmp\libs\components\at\libat.a(at.o)
+ *fill*         0x00000000004980dd        0x3 
  .rodata.at_printf_encode.str1.4
-                0x0000000000497f80        0x7 build\build_tmp\libs\components\at\libat.a(at.o)
+                0x00000000004980e0        0x7 build\build_tmp\libs\components\at\libat.a(at.o)
  .rodata.cmd_strtoaddr.str1.4
-                0x0000000000497f87        0x7 build\build_tmp\libs\components\at\libat.a(at.o)
+                0x00000000004980e7        0x7 build\build_tmp\libs\components\at\libat.a(at.o)
                                           0x2 (size before relaxing)
  .rodata.at_exe_at_cmd.str1.4
-                0x0000000000497f87        0x5 build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x0000000000497f87        0x1 
+                0x00000000004980e7        0x5 build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x00000000004980e7        0x1 
  .rodata.at_exe_help_cmd.str1.4
-                0x0000000000497f88       0x15 build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x00000000004980e8       0x15 build\build_tmp\libs\components\at\libat.a(at_general.o)
                                          0x1b (size before relaxing)
- *fill*         0x0000000000497f9d        0x3 
+ *fill*         0x00000000004980fd        0x3 
  .rodata.at_factory_erase.str1.4
-                0x0000000000497fa0       0x1e build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x0000000000497fbe        0x2 
+                0x0000000000498100       0x1e build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x000000000049811e        0x2 
  .rodata.at_factory_mode_query.str1.4
-                0x0000000000497fc0       0x13 build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x0000000000497fd3        0x1 
+                0x0000000000498120       0x13 build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x0000000000498133        0x1 
  .rodata.at_factory_mode_switch.str1.4
-                0x0000000000497fd4       0x32 build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x0000000000498006        0x2 
+                0x0000000000498134       0x32 build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x0000000000498166        0x2 
  .rodata.at_get_dump.str1.4
-                0x0000000000498008       0x5b build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x0000000000498063        0x1 
+                0x0000000000498168       0x5b build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x00000000004981c3        0x1 
  .rodata.at_ip_send.str1.4
-                0x0000000000498064        0x2 build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x0000000000498066        0x2 
+                0x00000000004981c4        0x2 build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x00000000004981c6        0x2 
  .rodata.at_lwip_ifconfig.str1.4
-                0x0000000000498068        0x3 build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x00000000004981c8        0x3 build\build_tmp\libs\components\at\libat.a(at_general.o)
                                           0xf (size before relaxing)
- *fill*         0x000000000049806b        0x1 
+ *fill*         0x00000000004981cb        0x1 
  .rodata.at_query_sysinfo_cmd.str1.4
-                0x000000000049806c       0xc4 build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x00000000004981cc       0xc4 build\build_tmp\libs\components\at\libat.a(at_general.o)
  .rodata.at_query_tsensor_temp.str1.4
-                0x0000000000498130        0xd build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x000000000049813d        0x3 
+                0x0000000000498290        0xd build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x000000000049829d        0x3 
  .rodata.at_query_ver_cmd.str1.4
-                0x0000000000498140        0xa build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x00000000004982a0        0xa build\build_tmp\libs\components\at\libat.a(at_general.o)
                                           0xf (size before relaxing)
- *fill*         0x000000000049814a        0x2 
+ *fill*         0x00000000004982aa        0x2 
  .rodata.at_query_xtal_compesation.str1.4
-                0x000000000049814c       0x14 build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x00000000004982ac       0x14 build\build_tmp\libs\components\at\libat.a(at_general.o)
  .rodata.at_set_uart_func_nv.str1.4
-                0x0000000000498160       0x40 build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x00000000004982c0       0x40 build\build_tmp\libs\components\at\libat.a(at_general.o)
  .rodata.at_setup_dhcp.str1.4
-                0x00000000004981a0        0xa build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x0000000000498300        0xa build\build_tmp\libs\components\at\libat.a(at_general.o)
  .rodata.at_setup_dhcps.str1.4
-                0x00000000004981a0       0x28 build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x0000000000498300       0x28 build\build_tmp\libs\components\at\libat.a(at_general.o)
  .rodata.at_setup_reset_cmd.str1.4
-                0x00000000004981c8        0xa build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x00000000004981d2        0x2 
+                0x0000000000498328        0xa build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x0000000000498332        0x2 
  .rodata.at_start_ip.str1.4
-                0x00000000004981d4        0x8 build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x0000000000498334        0x8 build\build_tmp\libs\components\at\libat.a(at_general.o)
  .rodata.at_task_show.str1.4
-                0x00000000004981dc       0x55 build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x0000000000498231        0x3 
+                0x000000000049833c       0x55 build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x0000000000498391        0x3 
  .rodata.cmd_get_macaddr.str1.4
-                0x0000000000498234       0x25 build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x0000000000498259        0x3 
+                0x0000000000498394       0x25 build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x00000000004983b9        0x3 
  .rodata.g_at_general_factory_test_func_tbl
-                0x000000000049825c       0x78 build\build_tmp\libs\components\at\libat.a(at_general.o)
-                0x000000000049825c                g_at_general_factory_test_func_tbl
+                0x00000000004983bc       0x78 build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x00000000004983bc                g_at_general_factory_test_func_tbl
  .rodata.g_at_general_func_tbl
-                0x00000000004982d4      0x1b0 build\build_tmp\libs\components\at\libat.a(at_general.o)
-                0x00000000004982d4                g_at_general_func_tbl
+                0x0000000000498434      0x1b0 build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x0000000000498434                g_at_general_func_tbl
  .rodata.ip_close_link.str1.4
-                0x0000000000498484        0xf build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x0000000000498493        0x1 
+                0x00000000004985e4        0xf build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x00000000004985f3        0x1 
  .rodata.ip_creat_ip_task.str1.4
-                0x0000000000498494       0x44 build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x00000000004985f4       0x44 build\build_tmp\libs\components\at\libat.a(at_general.o)
  .rodata.ip_ip_resv_show_msg.str1.4
-                0x00000000004984d8       0xa9 build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x0000000000498581        0x3 
+                0x0000000000498638       0xa9 build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x00000000004986e1        0x3 
  .rodata.ip_monitor.str1.4
-                0x0000000000498584       0x49 build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x00000000004985cd        0x3 
+                0x00000000004986e4       0x49 build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x000000000049872d        0x3 
  .rodata.ip_monitor_link_close.str1.4
-                0x00000000004985d0       0x11 build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x00000000004985e1        0x3 
+                0x0000000000498730       0x11 build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x0000000000498741        0x3 
  .rodata.ip_start_tcp_client.str1.4
-                0x00000000004985e4       0x98 build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x0000000000498744       0x98 build\build_tmp\libs\components\at\libat.a(at_general.o)
  .rodata.ip_start_udp.str1.4
-                0x000000000049867c       0xb0 build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x00000000004987dc       0xb0 build\build_tmp\libs\components\at\libat.a(at_general.o)
  .rodata.ip_tcp_accept.str1.4
-                0x000000000049872c       0x45 build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x0000000000498771        0x3 
+                0x000000000049888c       0x45 build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x00000000004988d1        0x3 
  .rodata.ip_tcp_send.str1.4
-                0x0000000000498774       0x14 build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x00000000004988d4       0x14 build\build_tmp\libs\components\at\libat.a(at_general.o)
                                          0x1c (size before relaxing)
  .rodata.ip_tcp_server_close.str1.4
-                0x0000000000498788        0xc build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x00000000004988e8        0xc build\build_tmp\libs\components\at\libat.a(at_general.o)
  .rodata.ip_tcp_server_start.str1.4
-                0x0000000000498794       0xda build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x000000000049886e        0x2 
+                0x00000000004988f4       0xda build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x00000000004989ce        0x2 
  .rodata.lwip_ifconfig_check.str1.4
-                0x0000000000498870       0x2a build\build_tmp\libs\components\at\libat.a(at_general.o)
- *fill*         0x000000000049889a        0x2 
+                0x00000000004989d0       0x2a build\build_tmp\libs\components\at\libat.a(at_general.o)
+ *fill*         0x00000000004989fa        0x2 
  .rodata.str1.4
-                0x000000000049889c       0xd0 build\build_tmp\libs\components\at\libat.a(at_general.o)
+                0x00000000004989fc       0xd0 build\build_tmp\libs\components\at\libat.a(at_general.o)
                                          0xd4 (size before relaxing)
  .rodata.at_hi_wifi_set_cal_freq.str1.4
-                0x000000000049896c        0x5 build\build_tmp\libs\components\at\libat.a(at_hipriv.o)
+                0x0000000000498acc        0x5 build\build_tmp\libs\components\at\libat.a(at_hipriv.o)
  .rodata.g_at_hipriv_factory_test_func_tbl
-                0x000000000049896c       0x78 build\build_tmp\libs\components\at\libat.a(at_hipriv.o)
-                0x000000000049896c                g_at_hipriv_factory_test_func_tbl
+                0x0000000000498acc       0x78 build\build_tmp\libs\components\at\libat.a(at_hipriv.o)
+                0x0000000000498acc                g_at_hipriv_factory_test_func_tbl
  .rodata.g_at_hipriv_func_tbl
-                0x00000000004989e4       0xc0 build\build_tmp\libs\components\at\libat.a(at_hipriv.o)
-                0x00000000004989e4                g_at_hipriv_func_tbl
+                0x0000000000498b44       0xc0 build\build_tmp\libs\components\at\libat.a(at_hipriv.o)
+                0x0000000000498b44                g_at_hipriv_func_tbl
  .rodata.str1.4
-                0x0000000000498aa4       0x79 build\build_tmp\libs\components\at\libat.a(at_hipriv.o)
- *fill*         0x0000000000498b1d        0x3 
+                0x0000000000498c04       0x79 build\build_tmp\libs\components\at\libat.a(at_hipriv.o)
+ *fill*         0x0000000000498c7d        0x3 
  .rodata.at_setup_gpiord_cmd.str1.4
-                0x0000000000498b20       0x13 build\build_tmp\libs\components\at\libat.a(at_io.o)
- *fill*         0x0000000000498b33        0x1 
+                0x0000000000498c80       0x13 build\build_tmp\libs\components\at\libat.a(at_io.o)
+ *fill*         0x0000000000498c93        0x1 
  .rodata.at_setup_iogetmode_cmd.str1.4
-                0x0000000000498b34       0x19 build\build_tmp\libs\components\at\libat.a(at_io.o)
+                0x0000000000498c94       0x19 build\build_tmp\libs\components\at\libat.a(at_io.o)
  .rodata.at_setup_iosetmode_cmd.str1.4
-                0x0000000000498b4d        0x5 build\build_tmp\libs\components\at\libat.a(at_io.o)
- *fill*         0x0000000000498b4d        0x3 
+                0x0000000000498cad        0x5 build\build_tmp\libs\components\at\libat.a(at_io.o)
+ *fill*         0x0000000000498cad        0x3 
  .rodata.g_at_io_func_tbl
-                0x0000000000498b50       0x78 build\build_tmp\libs\components\at\libat.a(at_io.o)
-                0x0000000000498b50                g_at_io_func_tbl
+                0x0000000000498cb0       0x78 build\build_tmp\libs\components\at\libat.a(at_io.o)
+                0x0000000000498cb0                g_at_io_func_tbl
  .rodata.str1.4
-                0x0000000000498bc8       0x34 build\build_tmp\libs\components\at\libat.a(at_io.o)
+                0x0000000000498d28       0x34 build\build_tmp\libs\components\at\libat.a(at_io.o)
  .rodata.at_setup_ultra_dsleep
-                0x0000000000498bfc       0x3c build\build_tmp\libs\components\at\libat.a(at_lowpower.o)
+                0x0000000000498d5c       0x3c build\build_tmp\libs\components\at\libat.a(at_lowpower.o)
  .rodata.at_set_ndoffload.str1.4
-                0x0000000000498c38        0x6 build\build_tmp\libs\components\at\libat.a(at_lowpower.o)
+                0x0000000000498d98        0x6 build\build_tmp\libs\components\at\libat.a(at_lowpower.o)
  .rodata.at_setup_sleep.str1.4
-                0x0000000000498c38        0x5 build\build_tmp\libs\components\at\libat.a(at_lowpower.o)
+                0x0000000000498d98        0x5 build\build_tmp\libs\components\at\libat.a(at_lowpower.o)
  .rodata.g_at_lowpower_func_tbl
-                0x0000000000498c38       0x90 build\build_tmp\libs\components\at\libat.a(at_lowpower.o)
-                0x0000000000498c38                g_at_lowpower_func_tbl
+                0x0000000000498d98       0x90 build\build_tmp\libs\components\at\libat.a(at_lowpower.o)
+                0x0000000000498d98                g_at_lowpower_func_tbl
  .rodata.str1.4
-                0x0000000000498cc8       0x28 build\build_tmp\libs\components\at\libat.a(at_lowpower.o)
+                0x0000000000498e28       0x28 build\build_tmp\libs\components\at\libat.a(at_lowpower.o)
  .rodata.wake_gpio_callback.str1.4
-                0x0000000000498cf0       0x1d build\build_tmp\libs\components\at\libat.a(at_lowpower.o)
- *fill*         0x0000000000498d0d        0x3 
+                0x0000000000498e50       0x1d build\build_tmp\libs\components\at\libat.a(at_lowpower.o)
+ *fill*         0x0000000000498e6d        0x3 
  .rodata.at_ap_scan.str1.4
-                0x0000000000498d10        0xc build\build_tmp\libs\components\at\libat.a(at_wifi.o)
+                0x0000000000498e70        0xc build\build_tmp\libs\components\at\libat.a(at_wifi.o)
  .rodata.cmd_set_softap_advance.str1.4
-                0x0000000000498d1c        0xa build\build_tmp\libs\components\at\libat.a(at_wifi.o)
+                0x0000000000498e7c        0xa build\build_tmp\libs\components\at\libat.a(at_wifi.o)
  .rodata.cmd_softap_show_sta.str1.4
-                0x0000000000498d1c       0x27 build\build_tmp\libs\components\at\libat.a(at_wifi.o)
+                0x0000000000498e7c       0x27 build\build_tmp\libs\components\at\libat.a(at_wifi.o)
                                          0x2b (size before relaxing)
  .rodata.cmd_sta_start_adv.str1.4
-                0x0000000000498d43        0x6 build\build_tmp\libs\components\at\libat.a(at_wifi.o)
- *fill*         0x0000000000498d43        0x1 
+                0x0000000000498ea3        0x6 build\build_tmp\libs\components\at\libat.a(at_wifi.o)
+ *fill*         0x0000000000498ea3        0x1 
  .rodata.cmd_sta_status.str1.4
-                0x0000000000498d44       0x7b build\build_tmp\libs\components\at\libat.a(at_wifi.o)
+                0x0000000000498ea4       0x7b build\build_tmp\libs\components\at\libat.a(at_wifi.o)
  .rodata.cmd_start_softap.str1.4
-                0x0000000000498dbf        0x4 build\build_tmp\libs\components\at\libat.a(at_wifi.o)
+                0x0000000000498f1f        0x4 build\build_tmp\libs\components\at\libat.a(at_wifi.o)
  .rodata.cmd_wpa_channel_scan.str1.4
-                0x0000000000498dbf        0x5 build\build_tmp\libs\components\at\libat.a(at_wifi.o)
- *fill*         0x0000000000498dbf        0x1 
+                0x0000000000498f1f        0x5 build\build_tmp\libs\components\at\libat.a(at_wifi.o)
+ *fill*         0x0000000000498f1f        0x1 
  .rodata.cmd_wpa_scan_results.str1.4
-                0x0000000000498dc0       0x7c build\build_tmp\libs\components\at\libat.a(at_wifi.o)
+                0x0000000000498f20       0x7c build\build_tmp\libs\components\at\libat.a(at_wifi.o)
                                          0x80 (size before relaxing)
  .rodata.g_at_ap_func_tbl
-                0x0000000000498e3c       0x90 build\build_tmp\libs\components\at\libat.a(at_wifi.o)
-                0x0000000000498e3c                g_at_ap_func_tbl
+                0x0000000000498f9c       0x90 build\build_tmp\libs\components\at\libat.a(at_wifi.o)
+                0x0000000000498f9c                g_at_ap_func_tbl
  .rodata.g_sta_factory_test_func_tbl
-                0x0000000000498ecc       0x18 build\build_tmp\libs\components\at\libat.a(at_wifi.o)
-                0x0000000000498ecc                g_sta_factory_test_func_tbl
+                0x000000000049902c       0x18 build\build_tmp\libs\components\at\libat.a(at_wifi.o)
+                0x000000000049902c                g_sta_factory_test_func_tbl
  .rodata.g_sta_func_tbl
-                0x0000000000498ee4      0x108 build\build_tmp\libs\components\at\libat.a(at_wifi.o)
-                0x0000000000498ee4                g_sta_func_tbl
+                0x0000000000499044      0x108 build\build_tmp\libs\components\at\libat.a(at_wifi.o)
+                0x0000000000499044                g_sta_func_tbl
  .rodata.str1.4
-                0x0000000000498fec       0xc0 build\build_tmp\libs\components\at\libat.a(at_wifi.o)
+                0x000000000049914c       0xc0 build\build_tmp\libs\components\at\libat.a(at_wifi.o)
  .rodata.at_parse_uart_char
-                0x00000000004990ac       0x14 build\build_tmp\libs\components\at\libat.a(hi_at.o)
+                0x000000000049920c       0x14 build\build_tmp\libs\components\at\libat.a(hi_at.o)
  .rodata.__FUNCTION__.4611
-                0x00000000004990c0        0xb build\build_tmp\libs\components\at\libat.a(hi_at.o)
+                0x0000000000499220        0xb build\build_tmp\libs\components\at\libat.a(hi_at.o)
  .rodata.at_cmd_execute.str1.4
-                0x00000000004990cb       0x1f build\build_tmp\libs\components\at\libat.a(hi_at.o)
+                0x000000000049922b       0x1f build\build_tmp\libs\components\at\libat.a(hi_at.o)
                                          0x10 (size before relaxing)
- *fill*         0x00000000004990cb        0x1 
+ *fill*         0x000000000049922b        0x1 
  .rodata.at_cmd_line_parse.str1.4
-                0x00000000004990cc        0xa build\build_tmp\libs\components\at\libat.a(hi_at.o)
- *fill*         0x00000000004990d6        0x2 
+                0x000000000049922c        0xa build\build_tmp\libs\components\at\libat.a(hi_at.o)
+ *fill*         0x0000000000499236        0x2 
  .rodata.at_data_recving.str1.4
-                0x00000000004990d8        0xf build\build_tmp\libs\components\at\libat.a(hi_at.o)
- *fill*         0x00000000004990e7        0x1 
+                0x0000000000499238        0xf build\build_tmp\libs\components\at\libat.a(hi_at.o)
+ *fill*         0x0000000000499247        0x1 
  .rodata.at_get_buf.str1.4
-                0x00000000004990e8       0x18 build\build_tmp\libs\components\at\libat.a(hi_at.o)
+                0x0000000000499248       0x18 build\build_tmp\libs\components\at\libat.a(hi_at.o)
  .rodata.at_notify.str1.4
-                0x0000000000499100       0x13 build\build_tmp\libs\components\at\libat.a(hi_at.o)
- *fill*         0x0000000000499113        0x1 
+                0x0000000000499260       0x13 build\build_tmp\libs\components\at\libat.a(hi_at.o)
+ *fill*         0x0000000000499273        0x1 
  .rodata.at_parse_uart_char.str1.4
-                0x0000000000499114       0x12 build\build_tmp\libs\components\at\libat.a(hi_at.o)
- *fill*         0x0000000000499126        0x2 
+                0x0000000000499274       0x12 build\build_tmp\libs\components\at\libat.a(hi_at.o)
+ *fill*         0x0000000000499286        0x2 
  .rodata.at_proc_task_body.str1.4
-                0x0000000000499128       0x14 build\build_tmp\libs\components\at\libat.a(hi_at.o)
+                0x0000000000499288       0x14 build\build_tmp\libs\components\at\libat.a(hi_at.o)
  .rodata.at_uart_init.str1.4
-                0x000000000049913c       0x42 build\build_tmp\libs\components\at\libat.a(hi_at.o)
- *fill*         0x000000000049917e        0x2 
+                0x000000000049929c       0x42 build\build_tmp\libs\components\at\libat.a(hi_at.o)
+ *fill*         0x00000000004992de        0x2 
  .rodata.g_at_uart_cfg
-                0x0000000000499180        0x8 build\build_tmp\libs\components\at\libat.a(hi_at.o)
-                0x0000000000499180                g_at_uart_cfg
+                0x00000000004992e0        0x8 build\build_tmp\libs\components\at\libat.a(hi_at.o)
+                0x00000000004992e0                g_at_uart_cfg
  .rodata.hi_at_init.str1.4
-                0x0000000000499188       0x40 build\build_tmp\libs\components\at\libat.a(hi_at.o)
+                0x00000000004992e8       0x40 build\build_tmp\libs\components\at\libat.a(hi_at.o)
  .rodata.hi_pwm_init
-                0x00000000004991c8       0x14 build\build_tmp\libs\platform\drivers\libpwm.a(hi_pwm.o)
- .rodata        0x00000000004991dc        0xc build\build_tmp\libs\platform\drivers\libuart.a(uart.o)
+                0x0000000000499328       0x14 build\build_tmp\libs\platform\drivers\libpwm.a(hi_pwm.o)
+ .rodata        0x000000000049933c        0xc build\build_tmp\libs\platform\drivers\libuart.a(uart.o)
  .rodata.CSWTCH.2
-                0x00000000004991e8        0x5 build\build_tmp\libs\platform\drivers\libuart.a(uart_drv.o)
- *fill*         0x00000000004991ed        0x3 
+                0x0000000000499348        0x5 build\build_tmp\libs\platform\drivers\libuart.a(uart_drv.o)
+ *fill*         0x000000000049934d        0x3 
  .rodata.LOS_FpbAddPatch.str1.4
-                0x00000000004991f0       0x1d build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(los_fpb.o)
- *fill*         0x000000000049920d        0x3 
+                0x0000000000499350       0x1d build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(los_fpb.o)
+ *fill*         0x000000000049936d        0x3 
  .rodata.OsFpbAddPatchInputCheck.str1.4
-                0x0000000000499210       0x84 build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(los_fpb.o)
+                0x0000000000499370       0x84 build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(los_fpb.o)
  .rodata.OsFpbComparatorRegConfig.str1.4
-                0x0000000000499294       0x2a build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(los_fpb.o)
- *fill*         0x00000000004992be        0x2 
+                0x00000000004993f4       0x2a build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(los_fpb.o)
+ *fill*         0x000000000049941e        0x2 
  .rodata.OsGetInstrRegIndex.str1.4
-                0x00000000004992c0       0x2f build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(los_fpb.o)
- *fill*         0x00000000004992ef        0x1 
+                0x0000000000499420       0x2f build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(los_fpb.o)
+ *fill*         0x000000000049944f        0x1 
  .rodata.LOS_VfsInit.str1.4
-                0x00000000004992f0       0x4c build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(los_vfs.o)
+                0x0000000000499450       0x4c build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(los_vfs.o)
                                          0x4a (size before relaxing)
  .rodata.AppInit.str1.4
-                0x000000000049933c        0x8 build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(main.o)
+                0x000000000049949c        0x8 build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(main.o)
  .rodata.CheckChipVer.str1.4
-                0x0000000000499344       0x2f build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(main.o)
- *fill*         0x0000000000499373        0x1 
+                0x00000000004994a4       0x2f build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(main.o)
+ *fill*         0x00000000004994d3        0x1 
  .rodata.main.str1.4
-                0x0000000000499374       0x2d build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(main.o)
- *fill*         0x00000000004993a1        0x3 
+                0x00000000004994d4       0x2d build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(main.o)
+ *fill*         0x0000000000499501        0x3 
  .rodata.__dprintf
-                0x00000000004993a4      0x16c build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(printf_redirect.o)
+                0x0000000000499504      0x16c build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(printf_redirect.o)
  .rodata.NumToString.constprop.0.cst8
-                0x0000000000499510       0x10 build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(printf_redirect.o)
+                0x0000000000499670       0x10 build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(printf_redirect.o)
  .rodata.NumToString.constprop.0.str1.4
-                0x0000000000499520       0x4e build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(printf_redirect.o)
- *fill*         0x000000000049956e        0x2 
+                0x0000000000499680       0x4e build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(printf_redirect.o)
+ *fill*         0x00000000004996ce        0x2 
  .rodata.RoundUp.cst8
-                0x0000000000499570       0x10 build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(printf_redirect.o)
+                0x00000000004996d0       0x10 build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(printf_redirect.o)
  .rodata.__FUNCTION__.2895
-                0x0000000000499580        0xc build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(printf_redirect.o)
+                0x00000000004996e0        0xc build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(printf_redirect.o)
  .rodata.__dprintf.str1.4
-                0x000000000049958c       0x2d build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(printf_redirect.o)
- *fill*         0x00000000004995b9        0x3 
+                0x00000000004996ec       0x2d build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(printf_redirect.o)
+ *fill*         0x0000000000499719        0x3 
  .rodata.g_monLengths
-                0x00000000004995bc       0x60 build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(tzdst.o)
+                0x000000000049971c       0x60 build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(tzdst.o)
  .rodata.g_strMonth
-                0x000000000049961c       0x30 build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(tzdst.o)
+                0x000000000049977c       0x30 build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(tzdst.o)
  .rodata.g_strMonthWeek
-                0x000000000049964c       0x14 build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(tzdst.o)
+                0x00000000004997ac       0x14 build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(tzdst.o)
  .rodata.g_strWeekDay
-                0x0000000000499660       0x1c build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(tzdst.o)
+                0x00000000004997c0       0x1c build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(tzdst.o)
  .rodata.str1.4
-                0x000000000049967c       0x60 build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(tzdst.o)
+                0x00000000004997dc       0x60 build\libs\hi3861\release\no_mesh\liblitekernel_flash.a(tzdst.o)
  .rodata.lp_check_info_init.str1.4
-                0x00000000004996dc       0x1d build\libs\hi3861\release\no_mesh\libsystem.a(hi_lowpower.o)
- *fill*         0x00000000004996f9        0x3 
+                0x000000000049983c       0x1d build\libs\hi3861\release\no_mesh\libsystem.a(hi_lowpower.o)
+ *fill*         0x0000000000499859        0x3 
  .rodata.at_print_stack_trace.str1.4
-                0x00000000004996fc       0x1e build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
- *fill*         0x000000000049971a        0x2 
+                0x000000000049985c       0x1e build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
+ *fill*         0x000000000049987a        0x2 
  .rodata.hi_syserr_get_at_printf.str1.4
-                0x000000000049971c       0x52 build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
- *fill*         0x000000000049976e        0x2 
+                0x000000000049987c       0x52 build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
+ *fill*         0x00000000004998ce        0x2 
  .rodata.hi_syserr_init.str1.4
-                0x0000000000499770       0x2f build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
- *fill*         0x000000000049979f        0x1 
+                0x00000000004998d0       0x2f build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
+ *fill*         0x00000000004998ff        0x1 
  .rodata.hi_syserr_save_cmn_info_step1.str1.4
-                0x00000000004997a0       0x73 build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
- *fill*         0x0000000000499813        0x1 
+                0x0000000000499900       0x73 build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
+ *fill*         0x0000000000499973        0x1 
  .rodata.hi_syserr_store_crash_info.str1.4
-                0x0000000000499814       0x1d build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
- *fill*         0x0000000000499831        0x3 
+                0x0000000000499974       0x1d build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
+ *fill*         0x0000000000499991        0x3 
  .rodata.stackerr_print.str1.4
-                0x0000000000499834       0xa0 build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
+                0x0000000000499994       0xa0 build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
  .rodata.str1.4
-                0x00000000004998d4       0x22 build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
- *fill*         0x00000000004998f6        0x2 
+                0x0000000000499a34       0x22 build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
+ *fill*         0x0000000000499a56        0x2 
  .rodata.syserr_get_eid_str.str1.4
-                0x00000000004998f8       0x37 build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
- *fill*         0x000000000049992f        0x1 
+                0x0000000000499a58       0x37 build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
+ *fill*         0x0000000000499a8f        0x1 
  .rodata.syserr_print_err_info.str1.4
-                0x0000000000499930       0x3e build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
- *fill*         0x000000000049996e        0x2 
+                0x0000000000499a90       0x3e build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
+ *fill*         0x0000000000499ace        0x2 
  .rodata.syserr_print_excep_info.str1.4
-                0x0000000000499970       0xa4 build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
+                0x0000000000499ad0       0xa4 build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
  .rodata.syserr_print_extend_info.str1.4
-                0x0000000000499a14       0xf8 build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
+                0x0000000000499b74       0xf8 build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
  .rodata.syserr_print_os_info.str1.4
-                0x0000000000499b0c      0x1aa build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
- *fill*         0x0000000000499cb6        0x2 
+                0x0000000000499c6c      0x1aa build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
+ *fill*         0x0000000000499e16        0x2 
  .rodata.syserr_print_reg_info.str1.4
-                0x0000000000499cb8      0x37d build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
- *fill*         0x000000000049a035        0x3 
+                0x0000000000499e18      0x37d build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
+ *fill*         0x000000000049a195        0x3 
  .rodata.syserr_print_trace.str1.4
-                0x000000000049a038       0x8c build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
+                0x000000000049a198       0x8c build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
  .rodata.syserr_print_track_info.str1.4
-                0x000000000049a0c4       0x9b build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
- *fill*         0x000000000049a15f        0x1 
+                0x000000000049a224       0x9b build\libs\hi3861\release\no_mesh\libsystem.a(hi_system_error.o)
+ *fill*         0x000000000049a2bf        0x1 
  .rodata.lp_cali_set_ext_tsf_clk_period.str1.4
-                0x000000000049a160       0x1c build\libs\hi3861\release\no_mesh\libsystem.a(lowspeed_32k_clk.o)
- *fill*         0x000000000049a17c        0x4 
+                0x000000000049a2c0       0x1c build\libs\hi3861\release\no_mesh\libsystem.a(lowspeed_32k_clk.o)
+ *fill*         0x000000000049a2dc        0x4 
  .rodata.lp_rtc_32k_get_sample_value.cst8
-                0x000000000049a180       0x10 build\libs\hi3861\release\no_mesh\libsystem.a(lowspeed_32k_clk.o)
+                0x000000000049a2e0       0x10 build\libs\hi3861\release\no_mesh\libsystem.a(lowspeed_32k_clk.o)
  .rodata.sal_show_run_time.str1.4
-                0x000000000049a190       0x22 build\libs\hi3861\release\no_mesh\libsystem.a(sal_dfx.o)
- *fill*         0x000000000049a1b2        0x2 
+                0x000000000049a2f0       0x22 build\libs\hi3861\release\no_mesh\libsystem.a(sal_dfx.o)
+ *fill*         0x000000000049a312        0x2 
  .rodata.flash_protect_task_init.str1.4
-                0x000000000049a1b4        0xb build\libs\hi3861\release\no_mesh\libsystem.a(sal_init.o)
- *fill*         0x000000000049a1bf        0x1 
+                0x000000000049a314        0xb build\libs\hi3861\release\no_mesh\libsystem.a(sal_init.o)
+ *fill*         0x000000000049a31f        0x1 
  .rodata.hi_sal_init.str1.4
-                0x000000000049a1c0       0x95 build\libs\hi3861\release\no_mesh\libsystem.a(sal_init.o)
- *fill*         0x000000000049a255        0x3 
+                0x000000000049a320       0x95 build\libs\hi3861\release\no_mesh\libsystem.a(sal_init.o)
+ *fill*         0x000000000049a3b5        0x3 
  .rodata.hi_get_sdk_version.str1.4
-                0x000000000049a258        0xb build\libs\hi3861\release\no_mesh\libsystem.a(sdk_ver.o)
+                0x000000000049a3b8        0xb build\libs\hi3861\release\no_mesh\libsystem.a(sdk_ver.o)
                                          0x3f (size before relaxing)
- *fill*         0x000000000049a263        0x1 
+ *fill*         0x000000000049a3c3        0x1 
  .rodata.g_ast_dmac_config_syn
-                0x000000000049a264       0x30 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
+                0x000000000049a3c4       0x30 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
  .rodata.g_ast_dmac_high_prio_event_sub_table
-                0x000000000049a294        0x4 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
-                0x000000000049a294                g_ast_dmac_high_prio_event_sub_table
+                0x000000000049a3f4        0x4 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
+                0x000000000049a3f4                g_ast_dmac_high_prio_event_sub_table
  .rodata.g_ast_dmac_host_crx_table
-                0x000000000049a298       0x10 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
-                0x000000000049a298                g_ast_dmac_host_crx_table
+                0x000000000049a3f8       0x10 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
+                0x000000000049a3f8                g_ast_dmac_host_crx_table
  .rodata.g_ast_dmac_misc_event_sub_table
-                0x000000000049a2a8       0x34 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
-                0x000000000049a2a8                g_ast_dmac_misc_event_sub_table
+                0x000000000049a408       0x34 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
+                0x000000000049a408                g_ast_dmac_misc_event_sub_table
  .rodata.g_ast_dmac_tbtt_event_sub_table
-                0x000000000049a2dc        0x4 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
-                0x000000000049a2dc                g_ast_dmac_tbtt_event_sub_table
+                0x000000000049a43c        0x4 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
+                0x000000000049a43c                g_ast_dmac_tbtt_event_sub_table
  .rodata.g_ast_dmac_tx_comp_event_sub_table
-                0x000000000049a2e0        0x4 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
-                0x000000000049a2e0                g_ast_dmac_tx_comp_event_sub_table
+                0x000000000049a440        0x4 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
+                0x000000000049a440                g_ast_dmac_tx_comp_event_sub_table
  .rodata.g_ast_dmac_tx_host_drx
-                0x000000000049a2e4        0x4 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
-                0x000000000049a2e4                g_ast_dmac_tx_host_drx
+                0x000000000049a444        0x4 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
+                0x000000000049a444                g_ast_dmac_tx_host_drx
  .rodata.g_ast_dmac_tx_wlan_dtx
-                0x000000000049a2e8        0x4 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
-                0x000000000049a2e8                g_ast_dmac_tx_wlan_dtx
+                0x000000000049a448        0x4 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
+                0x000000000049a448                g_ast_dmac_tx_wlan_dtx
  .rodata.g_ast_dmac_wlan_crx_event_sub_table
-                0x000000000049a2ec        0x4 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
-                0x000000000049a2ec                g_ast_dmac_wlan_crx_event_sub_table
+                0x000000000049a44c        0x4 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
+                0x000000000049a44c                g_ast_dmac_wlan_crx_event_sub_table
  .rodata.g_ast_dmac_wlan_ctx_event_sub_table
-                0x000000000049a2f0       0x5c build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
-                0x000000000049a2f0                g_ast_dmac_wlan_ctx_event_sub_table
+                0x000000000049a450       0x5c build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
+                0x000000000049a450                g_ast_dmac_wlan_ctx_event_sub_table
  .rodata.g_ast_dmac_wlan_drx_event_sub_table
-                0x000000000049a34c        0x4 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
-                0x000000000049a34c                g_ast_dmac_wlan_drx_event_sub_table
+                0x000000000049a4ac        0x4 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
+                0x000000000049a4ac                g_ast_dmac_wlan_drx_event_sub_table
  .rodata.g_dmac_rom_func_map
-                0x000000000049a350      0x238 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
+                0x000000000049a4b0      0x238 build\libs\hi3861\release\no_mesh\libwifi.a(dmac_event.o)
  .rodata.CSWTCH.46
-                0x000000000049a588        0x5 build\libs\hi3861\release\no_mesh\libwifi.a(mac_ie.o)
- *fill*         0x000000000049a58d        0x3 
+                0x000000000049a6e8        0x5 build\libs\hi3861\release\no_mesh\libwifi.a(mac_ie.o)
+ *fill*         0x000000000049a6ed        0x3 
  .rodata.g_ast_alg_autorate_param_table
-                0x000000000049a590       0x10 build\libs\hi3861\release\no_mesh\libwifi_flash.a(alg_common_config.o)
-                0x000000000049a590                g_ast_alg_autorate_param_table
+                0x000000000049a6f0       0x10 build\libs\hi3861\release\no_mesh\libwifi_flash.a(alg_common_config.o)
+                0x000000000049a6f0                g_ast_alg_autorate_param_table
  .rodata.g_ast_alg_tpc_param_table
-                0x000000000049a5a0       0x58 build\libs\hi3861\release\no_mesh\libwifi_flash.a(alg_common_config.o)
-                0x000000000049a5a0                g_ast_alg_tpc_param_table
+                0x000000000049a700       0x58 build\libs\hi3861\release\no_mesh\libwifi_flash.a(alg_common_config.o)
+                0x000000000049a700                g_ast_alg_tpc_param_table
  .rodata.dmac_ao_process_arp_and_mcast
-                0x000000000049a5f8       0x24 build\libs\hi3861\release\no_mesh\libwifi_flash.a(dmac_arp_offload.o)
+                0x000000000049a758       0x24 build\libs\hi3861\release\no_mesh\libwifi_flash.a(dmac_arp_offload.o)
  .rodata.dmac_config_set_11bg_rate
-                0x000000000049a61c       0x14 build\libs\hi3861\release\no_mesh\libwifi_flash.a(dmac_config.o)
+                0x000000000049a77c       0x14 build\libs\hi3861\release\no_mesh\libwifi_flash.a(dmac_config.o)
  .rodata.dmac_config_rx_fcs_info.str1.4
-                0x000000000049a630       0x15 build\libs\hi3861\release\no_mesh\libwifi_flash.a(dmac_config.o)
- *fill*         0x000000000049a645        0x3 
+                0x000000000049a790       0x15 build\libs\hi3861\release\no_mesh\libwifi_flash.a(dmac_config.o)
+ *fill*         0x000000000049a7a5        0x3 
  .rodata.g_temp_comp_val
-                0x000000000049a648        0xe build\libs\hi3861\release\no_mesh\libwifi_flash.a(dmac_temp_protect.o)
- *fill*         0x000000000049a656        0x2 
- .rodata        0x000000000049a658       0x4c build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a7a8        0xe build\libs\hi3861\release\no_mesh\libwifi_flash.a(dmac_temp_protect.o)
+ *fill*         0x000000000049a7b6        0x2 
+ .rodata        0x000000000049a7b8       0x4c build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
  .rodata.efuse_check_and_write.str1.4
-                0x000000000049a6a4       0x34 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a804       0x34 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
  .rodata.g_ast_2g_cali_band_info
-                0x000000000049a6d8        0x3 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
-                0x000000000049a6d8                g_ast_2g_cali_band_info
- *fill*         0x000000000049a6db        0x1 
+                0x000000000049a838        0x3 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a838                g_ast_2g_cali_band_info
+ *fill*         0x000000000049a83b        0x1 
  .rodata.g_ast_2g_cali_channel
-                0x000000000049a6dc       0x18 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
-                0x000000000049a6dc                g_ast_2g_cali_channel
+                0x000000000049a83c       0x18 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a83c                g_ast_2g_cali_channel
  .rodata.g_ast_2g_other_cali_channel
-                0x000000000049a6f4        0x8 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
-                0x000000000049a6f4                g_ast_2g_other_cali_channel
+                0x000000000049a854        0x8 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a854                g_ast_2g_other_cali_channel
  .rodata.g_ast_cali_bw_path_cfg
-                0x000000000049a6fc       0x28 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
-                0x000000000049a6fc                g_ast_cali_bw_path_cfg
+                0x000000000049a85c       0x28 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a85c                g_ast_cali_bw_path_cfg
  .rodata.g_ast_cali_bw_tone_cfg
-                0x000000000049a724        0x8 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
-                0x000000000049a724                g_ast_cali_bw_tone_cfg
+                0x000000000049a884        0x8 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a884                g_ast_cali_bw_tone_cfg
  .rodata.g_ast_cali_logen_transceiver0_path_cfg
-                0x000000000049a72c       0x28 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
-                0x000000000049a72c                g_ast_cali_logen_transceiver0_path_cfg
+                0x000000000049a88c       0x28 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a88c                g_ast_cali_logen_transceiver0_path_cfg
  .rodata.g_ast_cali_rxdc_transceiver0_path_cfg
-                0x000000000049a754       0x20 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
-                0x000000000049a754                g_ast_cali_rxdc_transceiver0_path_cfg
+                0x000000000049a8b4       0x20 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a8b4                g_ast_cali_rxdc_transceiver0_path_cfg
  .rodata.g_ast_cali_rxiq_transceiver0_path_cfg
-                0x000000000049a774       0x30 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
-                0x000000000049a774                g_ast_cali_rxiq_transceiver0_path_cfg
+                0x000000000049a8d4       0x30 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a8d4                g_ast_cali_rxiq_transceiver0_path_cfg
  .rodata.g_ast_cali_tx_power_transceiver0_path_cfg
-                0x000000000049a7a4       0x28 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
-                0x000000000049a7a4                g_ast_cali_tx_power_transceiver0_path_cfg
+                0x000000000049a904       0x28 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a904                g_ast_cali_tx_power_transceiver0_path_cfg
  .rodata.g_ast_cali_txdc_transceiver0_path_cfg
-                0x000000000049a7cc       0x30 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
-                0x000000000049a7cc                g_ast_cali_txdc_transceiver0_path_cfg
+                0x000000000049a92c       0x30 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a92c                g_ast_cali_txdc_transceiver0_path_cfg
  .rodata.g_ast_cali_txiq_transceiver0_path_cfg
-                0x000000000049a7fc       0x30 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
-                0x000000000049a7fc                g_ast_cali_txiq_transceiver0_path_cfg
+                0x000000000049a95c       0x30 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a95c                g_ast_cali_txiq_transceiver0_path_cfg
  .rodata.g_rx_code_map_table
-                0x000000000049a82c       0x40 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
-                0x000000000049a82c                g_rx_code_map_table
+                0x000000000049a98c       0x40 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a98c                g_rx_code_map_table
  .rodata.g_signal_offset
-                0x000000000049a86c       0x20 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
-                0x000000000049a86c                g_signal_offset
+                0x000000000049a9cc       0x20 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a9cc                g_signal_offset
  .rodata.g_temp_ths
-                0x000000000049a88c        0x8 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
-                0x000000000049a88c                g_temp_ths
+                0x000000000049a9ec        0x8 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a9ec                g_temp_ths
  .rodata.g_tx_power_cal
-                0x000000000049a894       0x68 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
-                0x000000000049a894                g_tx_power_cal
+                0x000000000049a9f4       0x68 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049a9f4                g_tx_power_cal
  .rodata.hi1131_ate_save_paras_to_efuse.str1.4
-                0x000000000049a8fc        0x8 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049aa5c        0x8 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
                                           0xd (size before relaxing)
  .rodata.hi1131_get_mac_from_efuse.str1.4
-                0x000000000049a904       0x5b build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
- *fill*         0x000000000049a95f        0x1 
+                0x000000000049aa64       0x5b build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+ *fill*         0x000000000049aabf        0x1 
  .rodata.hi1131_get_para_from_efuse.str1.4
-                0x000000000049a960       0x1b build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
- *fill*         0x000000000049a97b        0x1 
+                0x000000000049aac0       0x1b build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+ *fill*         0x000000000049aadb        0x1 
  .rodata.hi1131_init_nv_ate_paras.str1.4
-                0x000000000049a97c       0x30 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049aadc       0x30 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
  .rodata.hi1131_print_ate_paras.str1.4
-                0x000000000049a9ac      0x163 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
- *fill*         0x000000000049ab0f        0x1 
+                0x000000000049ab0c      0x163 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+ *fill*         0x000000000049ac6f        0x1 
  .rodata.hi1131_refresh_upc_code_factor.cst4
-                0x000000000049ab10       0x10 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049ac70       0x10 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
  .rodata.hi1131_refresh_upc_code_factor.cst8
-                0x000000000049ab20       0x20 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049ac80       0x20 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
  .rodata.hi1131_rf_cali_cal_trxiq.cst4
-                0x000000000049ab40        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049aca0        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
  .rodata.hi1131_rf_cali_calc_ref_pwr.cst4
-                0x000000000049ab44        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049aca4        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
                                           0x8 (size before relaxing)
  .rodata.hi1131_rf_cali_calc_ref_pwr.cst8
-                0x000000000049ab48       0x40 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049aca8       0x40 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
                                          0x48 (size before relaxing)
  .rodata.hi1131_rf_cali_tx_iq.cst4
-                0x000000000049ab88        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049ace8        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
  .rodata.hi1131_set_cur_temp_code.cst8
-                0x000000000049ab8c       0x10 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049acec       0x10 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
  .rodata.sweep_to_target_power.cst4
-                0x000000000049ab8c        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049acec        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
  .rodata.sweep_to_target_power.cst8
-                0x000000000049ab90       0x10 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
+                0x000000000049acf0       0x10 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_cali_ram.o)
                                          0x18 (size before relaxing)
- .rodata        0x000000000049aba0       0xc0 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_coridc.o)
+ .rodata        0x000000000049ad00       0xc0 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_coridc.o)
  .rodata.hi1131_pm_wlan_set_ext_tsf_clk.cst8
-                0x000000000049ac60       0x10 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_pm.o)
- .rodata        0x000000000049ac60       0xd0 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
+                0x000000000049adc0       0x10 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_pm.o)
+ .rodata        0x000000000049adc0       0xd0 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
  .rodata.amend_upc_code.cst8
-                0x000000000049ad30       0x10 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
+                0x000000000049ae90       0x10 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
                                          0x18 (size before relaxing)
  .rodata.g_hi1131_rf_cfg_table_0_to_37
-                0x000000000049ad40       0x4c build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
-                0x000000000049ad40                g_hi1131_rf_cfg_table_0_to_37
+                0x000000000049aea0       0x4c build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
+                0x000000000049aea0                g_hi1131_rf_cfg_table_0_to_37
  .rodata.g_hi1131_rf_cfg_table_40_to_81
-                0x000000000049ad8c       0x54 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
-                0x000000000049ad8c                g_hi1131_rf_cfg_table_40_to_81
+                0x000000000049aeec       0x54 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
+                0x000000000049aeec                g_hi1131_rf_cfg_table_40_to_81
  .rodata.g_hi1131_rf_cfg_table_90_to_164
-                0x000000000049ade0       0x96 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
-                0x000000000049ade0                g_hi1131_rf_cfg_table_90_to_164
- *fill*         0x000000000049ae76        0x2 
+                0x000000000049af40       0x96 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
+                0x000000000049af40                g_hi1131_rf_cfg_table_90_to_164
+ *fill*         0x000000000049afd6        0x2 
  .rodata.g_hi1131_rf_pll_cfg_table
-                0x000000000049ae78       0x2e build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
-                0x000000000049ae78                g_hi1131_rf_pll_cfg_table
- *fill*         0x000000000049aea6        0x2 
+                0x000000000049afd8       0x2e build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
+                0x000000000049afd8                g_hi1131_rf_pll_cfg_table
+ *fill*         0x000000000049b006        0x2 
  .rodata.hi1131_amend_11g_dbb_by_up_temp.cst4
-                0x000000000049aea8       0x4c build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
+                0x000000000049b008       0x4c build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
  .rodata.hi1131_amend_11n_dbb_by_temp.cst4
-                0x000000000049aef4        0xc build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
+                0x000000000049b054        0xc build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
  .rodata.hi1131_amend_11n_dbb_by_up_temp.cst4
-                0x000000000049af00       0x2c build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
+                0x000000000049b060       0x2c build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
  .rodata.hi1131_cmu_do_pll_cal.cst4
-                0x000000000049af2c        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
+                0x000000000049b08c        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
  .rodata.hi1131_copy_dbb_scaling.str1.4
-                0x000000000049af30       0x2f build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
- *fill*         0x000000000049af5f        0x1 
+                0x000000000049b090       0x2f build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
+ *fill*         0x000000000049b0bf        0x1 
  .rodata.hi1131_print_dbb_scaling.str1.4
-                0x000000000049af60       0x1e build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
- *fill*         0x000000000049af7e        0x2 
+                0x000000000049b0c0       0x1e build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
+ *fill*         0x000000000049b0de        0x2 
  .rodata.hi1131_rf_do_pll_cal.cst4
-                0x000000000049af80       0x14 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
- *fill*         0x000000000049af94        0x4 
+                0x000000000049b0e0       0x14 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
+ *fill*         0x000000000049b0f4        0x4 
  .rodata.init_fcc_ch_dbb_scales.cst8
-                0x000000000049af98        0x8 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
+                0x000000000049b0f8        0x8 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hal_hi1131_rf_ram.o)
  .rodata.hi_wifi_deinit.str1.4
-                0x000000000049afa0        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hi_wifi_driver_api.o)
+                0x000000000049b100        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hi_wifi_driver_api.o)
                                           0xc (size before relaxing)
  .rodata.hi_wifi_set_bandwidth.str1.4
-                0x000000000049afa4        0xe build\libs\hi3861\release\no_mesh\libwifi_flash.a(hi_wifi_driver_api.o)
+                0x000000000049b104        0xe build\libs\hi3861\release\no_mesh\libwifi_flash.a(hi_wifi_driver_api.o)
                                          0x12 (size before relaxing)
  .rodata.hi_wifi_set_country.str1.4
-                0x000000000049afb2        0xb build\libs\hi3861\release\no_mesh\libwifi_flash.a(hi_wifi_driver_api.o)
- *fill*         0x000000000049afb2        0x2 
+                0x000000000049b112        0xb build\libs\hi3861\release\no_mesh\libwifi_flash.a(hi_wifi_driver_api.o)
+ *fill*         0x000000000049b112        0x2 
  .rodata.g_ast_freq_map_2g
-                0x000000000049afb4       0x38 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_chan_mgmt.o)
-                0x000000000049afb4                g_ast_freq_map_2g
+                0x000000000049b114       0x38 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_chan_mgmt.o)
+                0x000000000049b114                g_ast_freq_map_2g
  .rodata.hmac_config_get_cal_data.str1.4
-                0x000000000049afec        0x5 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_config.o)
+                0x000000000049b14c        0x5 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_config.o)
  .rodata.hmac_config_set_pm_switch.str1.4
-                0x000000000049afec        0x6 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_config.o)
- *fill*         0x000000000049aff2        0x2 
+                0x000000000049b14c        0x6 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_config.o)
+ *fill*         0x000000000049b152        0x2 
  .rodata.hmac_cfg_vap_init.str1.4
-                0x000000000049aff4        0xb build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_device.o)
- *fill*         0x000000000049afff        0x1 
+                0x000000000049b154        0xb build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_device.o)
+ *fill*         0x000000000049b15f        0x1 
  .rodata.hmac_auth_rsp_handle_result
-                0x000000000049b000       0x1c build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_encap_frame_ap.o)
+                0x000000000049b160       0x1c build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_encap_frame_ap.o)
  .rodata.g_ast_board_wid_op
-                0x000000000049b01c      0x420 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_event.o)
+                0x000000000049b17c      0x420 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_event.o)
  .rodata.g_ast_hmac_config_syn
-                0x000000000049b43c       0x18 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_event.o)
+                0x000000000049b59c       0x18 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_event.o)
  .rodata.g_ast_hmac_wlan_crx_event_sub_table
-                0x000000000049b454       0x44 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_event.o)
-                0x000000000049b454                g_ast_hmac_wlan_crx_event_sub_table
+                0x000000000049b5b4       0x44 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_event.o)
+                0x000000000049b5b4                g_ast_hmac_wlan_crx_event_sub_table
  .rodata.g_ast_hmac_wlan_ctx_event_sub_table
-                0x000000000049b498       0x18 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_event.o)
-                0x000000000049b498                g_ast_hmac_wlan_ctx_event_sub_table
+                0x000000000049b5f8       0x18 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_event.o)
+                0x000000000049b5f8                g_ast_hmac_wlan_ctx_event_sub_table
  .rodata.g_ast_hmac_wlan_drx_event_sub_table
-                0x000000000049b4b0        0xc build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_event.o)
-                0x000000000049b4b0                g_ast_hmac_wlan_drx_event_sub_table
+                0x000000000049b610        0xc build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_event.o)
+                0x000000000049b610                g_ast_hmac_wlan_drx_event_sub_table
  .rodata.g_ast_hmac_wlan_dtx_event_sub_table
-                0x000000000049b4bc        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_event.o)
-                0x000000000049b4bc                g_ast_hmac_wlan_dtx_event_sub_table
+                0x000000000049b61c        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_event.o)
+                0x000000000049b61c                g_ast_hmac_wlan_dtx_event_sub_table
  .rodata.g_ast_hmac_wlan_misc_event_sub_table
-                0x000000000049b4c0        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_event.o)
-                0x000000000049b4c0                g_ast_hmac_wlan_misc_event_sub_table
+                0x000000000049b620        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_event.o)
+                0x000000000049b620                g_ast_hmac_wlan_misc_event_sub_table
  .rodata.g_ast_wal_host_crx_table
-                0x000000000049b4c4        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_event.o)
-                0x000000000049b4c4                g_ast_wal_host_crx_table
+                0x000000000049b624        0x4 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_event.o)
+                0x000000000049b624                g_ast_wal_host_crx_table
  .rodata.CSWTCH.14
-                0x000000000049b4c8       0x3c build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_rx_filter.o)
+                0x000000000049b628       0x3c build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_rx_filter.o)
  .rodata.CSWTCH.15
-                0x000000000049b504       0x10 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_rx_filter.o)
+                0x000000000049b664       0x10 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_rx_filter.o)
  .rodata.g_handle_rsp_func_sta
-                0x000000000049b514       0x10 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_sme_sta.o)
+                0x000000000049b674       0x10 build\libs\hi3861\release\no_mesh\libwifi_flash.a(hmac_sme_sta.o)
  .rodata.oal_net_check_and_get_devname.str1.4
-                0x000000000049b524       0x11 build\libs\hi3861\release\no_mesh\libwifi_flash.a(oal_net.o)
- *fill*         0x000000000049b535        0x3 
+                0x000000000049b684       0x11 build\libs\hi3861\release\no_mesh\libwifi_flash.a(oal_net.o)
+ *fill*         0x000000000049b695        0x3 
  .rodata.oal_net_register_netdev.str1.4
-                0x000000000049b538        0xa build\libs\hi3861\release\no_mesh\libwifi_flash.a(oal_net.o)
- *fill*         0x000000000049b542        0x2 
+                0x000000000049b698        0xa build\libs\hi3861\release\no_mesh\libwifi_flash.a(oal_net.o)
+ *fill*         0x000000000049b6a2        0x2 
  .rodata.skb_put.str1.4
-                0x000000000049b544       0x16 build\libs\hi3861\release\no_mesh\libwifi_flash.a(oal_skbuff.o)
- *fill*         0x000000000049b55a        0x2 
+                0x000000000049b6a4       0x16 build\libs\hi3861\release\no_mesh\libwifi_flash.a(oal_skbuff.o)
+ *fill*         0x000000000049b6ba        0x2 
  .rodata.g_ast_dfs_domain_table
-                0x000000000049b55c      0x378 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_11d.o)
-                0x000000000049b55c                g_ast_dfs_domain_table
+                0x000000000049b6bc      0x378 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_11d.o)
+                0x000000000049b6bc                g_ast_dfs_domain_table
  .rodata.str1.4
-                0x000000000049b8d4      0x1a7 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_11d.o)
+                0x000000000049ba34      0x1a7 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_11d.o)
                                         0x1bb (size before relaxing)
- *fill*         0x000000000049ba7b        0x1 
+ *fill*         0x000000000049bbdb        0x1 
  .rodata.wal_anchor_scan_done.str1.4
-                0x000000000049ba7c        0x7 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_anchor.o)
+                0x000000000049bbdc        0x7 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_anchor.o)
  .rodata.wal_anchor_set_dev_switch.str1.4
-                0x000000000049ba83        0x6 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_anchor.o)
- *fill*         0x000000000049ba83        0x1 
+                0x000000000049bbe3        0x6 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_anchor.o)
+ *fill*         0x000000000049bbe3        0x1 
  .rodata.g_wifi_rates
-                0x000000000049ba84       0x90 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_cfg80211.o)
- .rodata        0x000000000049bb14      0x1f6 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_customize.o)
+                0x000000000049bbe4       0x90 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_cfg80211.o)
+ .rodata        0x000000000049bc74      0x1f6 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_customize.o)
  .rodata.wal_customize_set_config.str1.4
-                0x000000000049bd0a        0xb build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_customize.o)
- *fill*         0x000000000049bd0a        0x2 
+                0x000000000049be6a        0xb build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_customize.o)
+ *fill*         0x000000000049be6a        0x2 
  .rodata.g_pauc_non_ht_rate_tbl
-                0x000000000049bd0c       0x40 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
+                0x000000000049be6c       0x40 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
  .rodata.str1.4
-                0x000000000049bd4c      0x102 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
+                0x000000000049beac      0x102 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
                                         0x10e (size before relaxing)
  .rodata.wal_at_entry.str1.4
-                0x000000000049be4e        0xb build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
- *fill*         0x000000000049be4e        0x2 
+                0x000000000049bfae        0xb build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
+ *fill*         0x000000000049bfae        0x2 
  .rodata.wal_at_set_tpc.str1.4
-                0x000000000049be50        0x2 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
+                0x000000000049bfb0        0x2 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
                                           0x9 (size before relaxing)
  .rodata.wal_get_protocol_mode.str1.4
-                0x000000000049be52        0xa build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
+                0x000000000049bfb2        0xa build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
  .rodata.wal_hipriv_check_switch.str1.4
-                0x000000000049be52        0x2 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
- *fill*         0x000000000049be52        0x2 
+                0x000000000049bfb2        0x2 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
+ *fill*         0x000000000049bfb2        0x2 
  .rodata.wal_hipriv_getcountry.str1.4
-                0x000000000049be54        0xb build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
- *fill*         0x000000000049be5f        0x1 
+                0x000000000049bfb4        0xb build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
+ *fill*         0x000000000049bfbf        0x1 
  .rodata.wal_hipriv_set_bw.str1.4
-                0x000000000049be60        0x5 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
+                0x000000000049bfc0        0x5 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
                                          0x13 (size before relaxing)
  .rodata.wal_hipriv_set_uapsd_cap.str1.4
-                0x000000000049be65        0x5 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
+                0x000000000049bfc5        0x5 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
                                           0x2 (size before relaxing)
  .rodata.wal_hipriv_sta_ps_mode.str1.4
-                0x000000000049be65        0x6 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
- *fill*         0x000000000049be65        0x3 
+                0x000000000049bfc5        0x6 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
+ *fill*         0x000000000049bfc5        0x3 
  .rodata.wal_set_protocol.str1.4
-                0x000000000049be68       0x14 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
+                0x000000000049bfc8       0x14 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_hipriv.o)
  .rodata.g_ast_mode_map
-                0x000000000049be7c       0x20 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_ioctl.o)
-                0x000000000049be7c                g_ast_mode_map
+                0x000000000049bfdc       0x20 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_ioctl.o)
+                0x000000000049bfdc                g_ast_mode_map
  .rodata.str1.4
-                0x000000000049be9c       0x12 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_ioctl.o)
+                0x000000000049bffc       0x12 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_ioctl.o)
  .rodata.wal_init_wlan_vap.str1.4
-                0x000000000049be9c        0xb build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_ioctl.o)
+                0x000000000049bffc        0xb build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_ioctl.o)
  .rodata.g_ast_wal_host_ctx_table
-                0x000000000049be9c       0x44 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_main.o)
-                0x000000000049be9c                g_ast_wal_host_ctx_table
+                0x000000000049bffc       0x44 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_main.o)
+                0x000000000049bffc                g_ast_wal_host_ctx_table
  .rodata.hi_wifi_device_exit.str1.4
-                0x000000000049bee0       0x20 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_main.o)
+                0x000000000049c040       0x20 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_main.o)
  .rodata.hi_wifi_plat_exit.str1.4
-                0x000000000049bf00       0x22 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_main.o)
- *fill*         0x000000000049bf22        0x2 
+                0x000000000049c060       0x22 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_main.o)
+ *fill*         0x000000000049c082        0x2 
  .rodata.hwal_lwip_register.str1.4
-                0x000000000049bf24        0x6 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_net.o)
+                0x000000000049c084        0x6 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_net.o)
  .rodata.wal_init_drv_wlan_netdev.str1.4
-                0x000000000049bf2a       0x14 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_net.o)
- *fill*         0x000000000049bf2a        0x2 
- .rodata        0x000000000049bf2c       0x30 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_regdb.o)
+                0x000000000049c08a       0x14 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_net.o)
+ *fill*         0x000000000049c08a        0x2 
+ .rodata        0x000000000049c08c       0x30 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_regdb.o)
  .rodata.g_default_regdom
-                0x000000000049bf5c       0x28 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_regdb.o)
-                0x000000000049bf5c                g_default_regdom
+                0x000000000049c0bc       0x28 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_regdb.o)
+                0x000000000049c0bc                g_default_regdom
  .rodata.g_regdom_code
-                0x000000000049bf84      0x12c build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_regdb.o)
-                0x000000000049bf84                g_regdom_code
+                0x000000000049c0e4      0x12c build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_regdb.o)
+                0x000000000049c0e4                g_regdom_code
  .rodata.wal_start_scan_req.str1.4
-                0x000000000049c0b0        0x8 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_scan.o)
+                0x000000000049c210        0x8 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_scan.o)
  .rodata.g_ast_hwal_ioctl_handlers
-                0x000000000049c0b8       0x94 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_wpa_ioctl.o)
-                0x000000000049c0b8                g_ast_hwal_ioctl_handlers
- *fill*         0x000000000049c14c        0x4 
- .rodata        0x000000000049c150       0x48 build\libs\libasm_flash.o
+                0x000000000049c218       0x94 build\libs\hi3861\release\no_mesh\libwifi_flash.a(wal_wpa_ioctl.o)
+                0x000000000049c218                g_ast_hwal_ioctl_handlers
+ *fill*         0x000000000049c2ac        0x4 
+ .rodata        0x000000000049c2b0       0x48 build\libs\libasm_flash.o
  .rodata.secs_through_month.905
-                0x000000000049c198       0x30 build\libs\libc_flash.a(__month_to_secs.o)
+                0x000000000049c2f8       0x30 build\libs\libc_flash.a(__month_to_secs.o)
  .rodata.days_in_month.1507
-                0x000000000049c1c8        0xc build\libs\libc_flash.a(__secs_to_tm.o)
- .rodata.__utc  0x000000000049c1d4        0x4 build\libs\libc_flash.a(__tz.o)
-                0x000000000049c1d4                __utc
- .rodata        0x000000000049c1d8        0x9 build\libs\libc_flash.a(intscan.o)
- *fill*         0x000000000049c1e1        0x3 
- .rodata.table  0x000000000049c1e4      0x101 build\libs\libc_flash.a(intscan.o)
- *fill*         0x000000000049c2e5        0x3 
+                0x000000000049c328        0xc build\libs\libc_flash.a(__secs_to_tm.o)
+ .rodata.__utc  0x000000000049c334        0x4 build\libs\libc_flash.a(__tz.o)
+                0x000000000049c334                __utc
+ .rodata        0x000000000049c338        0x9 build\libs\libc_flash.a(intscan.o)
+ *fill*         0x000000000049c341        0x3 
+ .rodata.table  0x000000000049c344      0x101 build\libs\libc_flash.a(intscan.o)
+ *fill*         0x000000000049c445        0x3 
  .rodata.debruijn32.1514
-                0x000000000049c2e8       0x20 build\libs\libc_flash.a(qsort.o)
+                0x000000000049c448       0x20 build\libs\libc_flash.a(qsort.o)
  .rodata.pop_arg
-                0x000000000049c308       0x48 build\libs\libc_flash.a(vfprintf.o)
+                0x000000000049c468       0x48 build\libs\libc_flash.a(vfprintf.o)
  .rodata.printf_core
-                0x000000000049c350      0x100 build\libs\libc_flash.a(vfprintf.o)
+                0x000000000049c4b0      0x100 build\libs\libc_flash.a(vfprintf.o)
  .rodata.fmt_fp.cst16
-                0x000000000049c450       0x80 build\libs\libc_flash.a(vfprintf.o)
+                0x000000000049c5b0       0x80 build\libs\libc_flash.a(vfprintf.o)
  .rodata.fmt_fp.str1.4
-                0x000000000049c4d0       0x24 build\libs\libc_flash.a(vfprintf.o)
+                0x000000000049c630       0x24 build\libs\libc_flash.a(vfprintf.o)
                                          0x26 (size before relaxing)
  .rodata.printf_core.str1.4
-                0x000000000049c4f4        0xa build\libs\libc_flash.a(vfprintf.o)
+                0x000000000049c654        0xa build\libs\libc_flash.a(vfprintf.o)
                                          0x13 (size before relaxing)
- *fill*         0x000000000049c4fe        0x2 
+ *fill*         0x000000000049c65e        0x2 
  .rodata.states
-                0x000000000049c500      0x1d0 build\libs\libc_flash.a(vfprintf.o)
+                0x000000000049c660      0x1d0 build\libs\libc_flash.a(vfprintf.o)
  .rodata.xdigits
-                0x000000000049c6d0       0x10 build\libs\libc_flash.a(vfprintf.o)
+                0x000000000049c830       0x10 build\libs\libc_flash.a(vfprintf.o)
  .rodata.hi_sal_timer_init.str1.4
-                0x000000000049c6e0       0x1a build\libs\libcpup.a(cpup_core.o)
- *fill*         0x000000000049c6fa        0x2 
+                0x000000000049c840       0x1a build\libs\libcpup.a(cpup_core.o)
+ *fill*         0x000000000049c85a        0x2 
  .rodata.g_crc32_table
-                0x000000000049c6fc      0x400 build\libs\libdrv.a(crc32.o)
-                0x000000000049c6fc                g_crc32_table
+                0x000000000049c85c      0x400 build\libs\libdrv.a(crc32.o)
+                0x000000000049c85c                g_crc32_table
  .rodata.flash_protect_cmu_err_init.str1.4
-                0x000000000049cafc       0x19 build\libs\libflash.a(flash_protect.o)
- *fill*         0x000000000049cb15        0x3 
+                0x000000000049cc5c       0x19 build\libs\libflash.a(flash_protect.o)
+ *fill*         0x000000000049cc75        0x3 
  .rodata.g_flash_protect_size_lower
-                0x000000000049cb18       0x14 build\libs\libflash.a(flash_protect.o)
-                0x000000000049cb18                g_flash_protect_size_lower
+                0x000000000049cc78       0x14 build\libs\libflash.a(flash_protect.o)
+                0x000000000049cc78                g_flash_protect_size_lower
  .rodata.hi_flash_erase.str1.4
-                0x000000000049cb2c       0x10 build\libs\libflash.a(flash_ram.o)
+                0x000000000049cc8c       0x10 build\libs\libflash.a(flash_ram.o)
  .rodata.dhcp_client_info_show.str1.4
-                0x000000000049cb3c       0x30 build\libs\liblwip.a(api_shell.o)
+                0x000000000049cc9c       0x30 build\libs\liblwip.a(api_shell.o)
                                          0x38 (size before relaxing)
  .rodata.dhcp_clients_info_show.str1.4
-                0x000000000049cb6c       0xfc build\libs\liblwip.a(api_shell.o)
+                0x000000000049cccc       0xfc build\libs\liblwip.a(api_shell.o)
  .rodata.igmp_netif_show.str1.4
-                0x000000000049cc68       0x79 build\libs\liblwip.a(api_shell.o)
+                0x000000000049cdc8       0x79 build\libs\liblwip.a(api_shell.o)
                                          0x7d (size before relaxing)
  .rodata.lwip_ifconfig_basic.constprop.1.str1.4
-                0x000000000049cce1        0x9 build\libs\liblwip.a(api_shell.o)
- *fill*         0x000000000049cce1        0x3 
+                0x000000000049ce41        0x9 build\libs\liblwip.a(api_shell.o)
+ *fill*         0x000000000049ce41        0x3 
  .rodata.lwip_ifconfig_prase_additional.str1.4
-                0x000000000049cce4       0x10 build\libs\liblwip.a(api_shell.o)
+                0x000000000049ce44       0x10 build\libs\liblwip.a(api_shell.o)
                                          0x24 (size before relaxing)
  .rodata.lwip_ifconfig_prase_inet.str1.4
-                0x000000000049ccf4       0x14 build\libs\liblwip.a(api_shell.o)
+                0x000000000049ce54       0x14 build\libs\liblwip.a(api_shell.o)
                                          0x24 (size before relaxing)
  .rodata.lwip_ifconfig_show_internal.str1.4
-                0x000000000049cd08        0x8 build\libs\liblwip.a(api_shell.o)
+                0x000000000049ce68        0x8 build\libs\liblwip.a(api_shell.o)
  .rodata.os_shell_display_version.str1.4
-                0x000000000049cd08       0x38 build\libs\liblwip.a(api_shell.o)
+                0x000000000049ce68       0x38 build\libs\liblwip.a(api_shell.o)
                                          0x3d (size before relaxing)
  .rodata.os_shell_dns.str1.4
-                0x000000000049cd40       0x4f build\libs\liblwip.a(api_shell.o)
- *fill*         0x000000000049cd8f        0x1 
+                0x000000000049cea0       0x4f build\libs\liblwip.a(api_shell.o)
+ *fill*         0x000000000049ceef        0x1 
  .rodata.os_shell_show_dns.str1.4
-                0x000000000049cd90        0x8 build\libs\liblwip.a(api_shell.o)
+                0x000000000049cef0        0x8 build\libs\liblwip.a(api_shell.o)
                                           0xd (size before relaxing)
  .rodata.print_netif.str1.4
-                0x000000000049cd98        0xe build\libs\liblwip.a(api_shell.o)
+                0x000000000049cef8        0xe build\libs\liblwip.a(api_shell.o)
                                          0x12 (size before relaxing)
- *fill*         0x000000000049cda6        0x2 
+ *fill*         0x000000000049cf06        0x2 
  .rodata.print_netif_hw.str1.4
-                0x000000000049cda8       0x16 build\libs\liblwip.a(api_shell.o)
+                0x000000000049cf08       0x16 build\libs\liblwip.a(api_shell.o)
                                          0x1a (size before relaxing)
- *fill*         0x000000000049cdbe        0x2 
+ *fill*         0x000000000049cf1e        0x2 
  .rodata.print_netif_ip.str1.4
-                0x000000000049cdc0       0x28 build\libs\liblwip.a(api_shell.o)
+                0x000000000049cf20       0x28 build\libs\liblwip.a(api_shell.o)
  .rodata.print_netif_link.str1.4
-                0x000000000049cde8       0x27 build\libs\liblwip.a(api_shell.o)
- *fill*         0x000000000049ce0f        0x1 
+                0x000000000049cf48       0x27 build\libs\liblwip.a(api_shell.o)
+ *fill*         0x000000000049cf6f        0x1 
  .rodata.print_netstat_tcp.str1.4
-                0x000000000049ce10       0x25 build\libs\liblwip.a(api_shell.o)
- *fill*         0x000000000049ce35        0x3 
+                0x000000000049cf70       0x25 build\libs\liblwip.a(api_shell.o)
+ *fill*         0x000000000049cf95        0x3 
  .rodata.dhcp_option_hostname.str1.4
-                0x000000000049ce38       0x19 build\libs\liblwip.a(dhcp.o)
- *fill*         0x000000000049ce51        0x3 
+                0x000000000049cf98       0x19 build\libs\liblwip.a(dhcp.o)
+ *fill*         0x000000000049cfb1        0x3 
  .rodata.handle_client_messages
-                0x000000000049ce54       0x20 build\libs\liblwip.a(dhcps.o)
+                0x000000000049cfb4       0x20 build\libs\liblwip.a(dhcps.o)
  .rodata.dns_gethostbyname_addrtype.str1.4
-                0x000000000049ce74        0xa build\libs\liblwip.a(dns.o)
- *fill*         0x000000000049ce7e        0x2 
+                0x000000000049cfd4        0xa build\libs\liblwip.a(dns.o)
+ *fill*         0x000000000049cfde        0x2 
  .rodata.driverif_init.str1.4
-                0x000000000049ce80        0xc build\libs\liblwip.a(driverif.o)
+                0x000000000049cfe0        0xc build\libs\liblwip.a(driverif.o)
                                          0x11 (size before relaxing)
  .rodata.ethbroadcast
-                0x000000000049ce8c        0x6 build\libs\liblwip.a(ethernet.o)
-                0x000000000049ce8c                ethbroadcast
- *fill*         0x000000000049ce92        0x2 
+                0x000000000049cfec        0x6 build\libs\liblwip.a(ethernet.o)
+                0x000000000049cfec                ethbroadcast
+ *fill*         0x000000000049cff2        0x2 
  .rodata.ethzero
-                0x000000000049ce94        0x6 build\libs\liblwip.a(ethernet.o)
-                0x000000000049ce94                ethzero
- *fill*         0x000000000049ce9a        0x2 
+                0x000000000049cff4        0x6 build\libs\liblwip.a(ethernet.o)
+                0x000000000049cff4                ethzero
+ *fill*         0x000000000049cffa        0x2 
  .rodata.ip_addr_any_type
-                0x000000000049ce9c       0x14 build\libs\liblwip.a(ip.o)
-                0x000000000049ce9c                ip_addr_any_type
- .rodata        0x000000000049ceb0       0x11 build\libs\liblwip.a(ip4_addr.o)
- *fill*         0x000000000049cec1        0x3 
+                0x000000000049cffc       0x14 build\libs\liblwip.a(ip.o)
+                0x000000000049cffc                ip_addr_any_type
+ .rodata        0x000000000049d010       0x11 build\libs\liblwip.a(ip4_addr.o)
+ *fill*         0x000000000049d021        0x3 
  .rodata.ip_addr_any
-                0x000000000049cec4       0x14 build\libs\liblwip.a(ip4_addr.o)
-                0x000000000049cec4                ip_addr_any
+                0x000000000049d024       0x14 build\libs\liblwip.a(ip4_addr.o)
+                0x000000000049d024                ip_addr_any
  .rodata.ip_addr_broadcast
-                0x000000000049ced8       0x14 build\libs\liblwip.a(ip4_addr.o)
-                0x000000000049ced8                ip_addr_broadcast
+                0x000000000049d038       0x14 build\libs\liblwip.a(ip4_addr.o)
+                0x000000000049d038                ip_addr_broadcast
  .rodata.ip6_addr_allnodes_iflocal
-                0x000000000049ceec       0x10 build\libs\liblwip.a(ip6_addr.o)
-                0x000000000049ceec                ip6_addr_allnodes_iflocal
+                0x000000000049d04c       0x10 build\libs\liblwip.a(ip6_addr.o)
+                0x000000000049d04c                ip6_addr_allnodes_iflocal
  .rodata.ip6_addr_allnodes_linklocal
-                0x000000000049cefc       0x10 build\libs\liblwip.a(ip6_addr.o)
-                0x000000000049cefc                ip6_addr_allnodes_linklocal
+                0x000000000049d05c       0x10 build\libs\liblwip.a(ip6_addr.o)
+                0x000000000049d05c                ip6_addr_allnodes_linklocal
  .rodata.ip6_addr_any
-                0x000000000049cf0c       0x14 build\libs\liblwip.a(ip6_addr.o)
-                0x000000000049cf0c                ip6_addr_any
+                0x000000000049d06c       0x14 build\libs\liblwip.a(ip6_addr.o)
+                0x000000000049d06c                ip6_addr_any
  .rodata.ip6_addr_loopback
-                0x000000000049cf20       0x10 build\libs\liblwip.a(ip6_addr.o)
-                0x000000000049cf20                ip6_addr_loopback
+                0x000000000049d080       0x10 build\libs\liblwip.a(ip6_addr.o)
+                0x000000000049d080                ip6_addr_loopback
  .rodata.ip6_addr_none
-                0x000000000049cf30       0x10 build\libs\liblwip.a(ip6_addr.o)
-                0x000000000049cf30                ip6_addr_none
+                0x000000000049d090       0x10 build\libs\liblwip.a(ip6_addr.o)
+                0x000000000049d090                ip6_addr_none
  .rodata.ip6addr_ntoa_r.str1.4
-                0x000000000049cf40        0xb build\libs\liblwip.a(ip6_addr.o)
- *fill*         0x000000000049cf4b        0x1 
+                0x000000000049d0a0        0xb build\libs\liblwip.a(ip6_addr.o)
+ *fill*         0x000000000049d0ab        0x1 
  .rodata.nd6_tmr
-                0x000000000049cf4c       0x14 build\libs\liblwip.a(nd6.o)
+                0x000000000049d0ac       0x14 build\libs\liblwip.a(nd6.o)
  .rodata.netif_add.str1.4
-                0x000000000049cf60       0x1f build\libs\liblwip.a(netif.o)
- *fill*         0x000000000049cf7f        0x1 
+                0x000000000049d0c0       0x1f build\libs\liblwip.a(netif.o)
+ *fill*         0x000000000049d0df        0x1 
  .rodata.netif_find.str1.4
-                0x000000000049cf80        0x7 build\libs\liblwip.a(netif.o)
+                0x000000000049d0e0        0x7 build\libs\liblwip.a(netif.o)
                                           0xb (size before relaxing)
- *fill*         0x000000000049cf87        0x1 
+ *fill*         0x000000000049d0e7        0x1 
  .rodata.pbuf_alloc
-                0x000000000049cf88       0x14 build\libs\liblwip.a(pbuf.o)
+                0x000000000049d0e8       0x14 build\libs\liblwip.a(pbuf.o)
  .rodata.__FUNCTION__.7712
-                0x000000000049cf9c        0xe build\libs\liblwip.a(ping_shell.o)
- *fill*         0x000000000049cfaa        0x2 
+                0x000000000049d0fc        0xe build\libs\liblwip.a(ping_shell.o)
+ *fill*         0x000000000049d10a        0x2 
  .rodata.__FUNCTION__.7722
-                0x000000000049cfac        0xf build\libs\liblwip.a(ping_shell.o)
- *fill*         0x000000000049cfbb        0x1 
+                0x000000000049d10c        0xf build\libs\liblwip.a(ping_shell.o)
+ *fill*         0x000000000049d11b        0x1 
  .rodata.convert_icmpv6_err_to_string.str1.4
-                0x000000000049cfbc       0x4a build\libs\liblwip.a(ping_shell.o)
- *fill*         0x000000000049d006        0x2 
+                0x000000000049d11c       0x4a build\libs\liblwip.a(ping_shell.o)
+ *fill*         0x000000000049d166        0x2 
  .rodata.os_ping_func.str1.4
-                0x000000000049d008       0x66 build\libs\liblwip.a(ping_shell.o)
- *fill*         0x000000000049d06e        0x2 
+                0x000000000049d168       0x66 build\libs\liblwip.a(ping_shell.o)
+ *fill*         0x000000000049d1ce        0x2 
  .rodata.os_shell_ping.str1.4
-                0x000000000049d070       0x92 build\libs\liblwip.a(ping_shell.o)
+                0x000000000049d1d0       0x92 build\libs\liblwip.a(ping_shell.o)
                                          0x9a (size before relaxing)
- *fill*         0x000000000049d102        0x2 
+ *fill*         0x000000000049d262        0x2 
  .rodata.os_shell_ping6.str1.4
-                0x000000000049d104       0x18 build\libs\liblwip.a(ping_shell.o)
+                0x000000000049d264       0x18 build\libs\liblwip.a(ping_shell.o)
  .rodata.ping_cfg_parse.str1.4
-                0x000000000049d11c       0x85 build\libs\liblwip.a(ping_shell.o)
- *fill*         0x000000000049d1a1        0x3 
+                0x000000000049d27c       0x85 build\libs\liblwip.a(ping_shell.o)
+ *fill*         0x000000000049d301        0x3 
  .rodata.ping_cfg_parse_daddr.str1.4
-                0x000000000049d1a4       0x33 build\libs\liblwip.a(ping_shell.o)
- *fill*         0x000000000049d1d7        0x1 
+                0x000000000049d304       0x33 build\libs\liblwip.a(ping_shell.o)
+ *fill*         0x000000000049d337        0x1 
  .rodata.ping_ctx_init.str1.4
-                0x000000000049d1d8       0x43 build\libs\liblwip.a(ping_shell.o)
- *fill*         0x000000000049d21b        0x1 
+                0x000000000049d338       0x43 build\libs\liblwip.a(ping_shell.o)
+ *fill*         0x000000000049d37b        0x1 
  .rodata.ping_rcv.str1.4
-                0x000000000049d21c       0x5a build\libs\liblwip.a(ping_shell.o)
- *fill*         0x000000000049d276        0x2 
+                0x000000000049d37c       0x5a build\libs\liblwip.a(ping_shell.o)
+ *fill*         0x000000000049d3d6        0x2 
  .rodata.ping_rcv_check.str1.4
-                0x000000000049d278       0xb1 build\libs\liblwip.a(ping_shell.o)
- *fill*         0x000000000049d329        0x3 
+                0x000000000049d3d8       0xb1 build\libs\liblwip.a(ping_shell.o)
+ *fill*         0x000000000049d489        0x3 
  .rodata.ping_resp_code_print.str1.4
-                0x000000000049d32c       0x1f build\libs\liblwip.a(ping_shell.o)
- *fill*         0x000000000049d34b        0x1 
+                0x000000000049d48c       0x1f build\libs\liblwip.a(ping_shell.o)
+ *fill*         0x000000000049d4ab        0x1 
  .rodata.ping_resp_process.str1.4
-                0x000000000049d34c       0x75 build\libs\liblwip.a(ping_shell.o)
- *fill*         0x000000000049d3c1        0x3 
+                0x000000000049d4ac       0x75 build\libs\liblwip.a(ping_shell.o)
+ *fill*         0x000000000049d521        0x3 
  .rodata.ping_result_print.cst4
-                0x000000000049d3c4        0x4 build\libs\liblwip.a(ping_shell.o)
+                0x000000000049d524        0x4 build\libs\liblwip.a(ping_shell.o)
  .rodata.ping_result_print.str1.4
-                0x000000000049d3c8       0x5e build\libs\liblwip.a(ping_shell.o)
+                0x000000000049d528       0x5e build\libs\liblwip.a(ping_shell.o)
                                          0x72 (size before relaxing)
- *fill*         0x000000000049d426        0x2 
+ *fill*         0x000000000049d586        0x2 
  .rodata.ping_setsockopt.str1.4
-                0x000000000049d428       0x55 build\libs\liblwip.a(ping_shell.o)
- *fill*         0x000000000049d47d        0x3 
+                0x000000000049d588       0x55 build\libs\liblwip.a(ping_shell.o)
+ *fill*         0x000000000049d5dd        0x3 
  .rodata.ping_task_create.constprop.1.str1.4
-                0x000000000049d480       0x66 build\libs\liblwip.a(ping_shell.o)
- *fill*         0x000000000049d4e6        0x2 
+                0x000000000049d5e0       0x66 build\libs\liblwip.a(ping_shell.o)
+ *fill*         0x000000000049d646        0x2 
  .rodata.str1.4
-                0x000000000049d4e8       0x79 build\libs\liblwip.a(ping_shell.o)
- *fill*         0x000000000049d561        0x3 
+                0x000000000049d648       0x79 build\libs\liblwip.a(ping_shell.o)
+ *fill*         0x000000000049d6c1        0x3 
  .rodata.lwip_setsockopt_impl
-                0x000000000049d564       0x18 build\libs\liblwip.a(sockets.o)
+                0x000000000049d6c4       0x18 build\libs\liblwip.a(sockets.o)
  .rodata.event_callback
-                0x000000000049d57c       0x14 build\libs\liblwip.a(sockets.o)
+                0x000000000049d6dc       0x14 build\libs\liblwip.a(sockets.o)
  .rodata.err_to_errno_table
-                0x000000000049d590       0x9c build\libs\liblwip.a(sockets.o)
+                0x000000000049d6f0       0x9c build\libs\liblwip.a(sockets.o)
  .rodata.tcp_backoff
-                0x000000000049d62c        0xd build\libs\liblwip.a(tcp.o)
- *fill*         0x000000000049d639        0x3 
+                0x000000000049d78c        0xd build\libs\liblwip.a(tcp.o)
+ *fill*         0x000000000049d799        0x3 
  .rodata.tcp_persist_backoff
-                0x000000000049d63c        0x7 build\libs\liblwip.a(tcp.o)
- *fill*         0x000000000049d643        0x1 
+                0x000000000049d79c        0x7 build\libs\liblwip.a(tcp.o)
+ *fill*         0x000000000049d7a3        0x1 
  .rodata.tcp_parseopt
-                0x000000000049d644       0x18 build\libs\liblwip.a(tcp_in.o)
+                0x000000000049d7a4       0x18 build\libs\liblwip.a(tcp_in.o)
  .rodata.tcp_process
-                0x000000000049d65c       0x20 build\libs\liblwip.a(tcp_in.o)
+                0x000000000049d7bc       0x20 build\libs\liblwip.a(tcp_in.o)
  .rodata.tcpip_init.str1.4
-                0x000000000049d67c        0xd build\libs\liblwip.a(tcpip.o)
- *fill*         0x000000000049d689        0x7 
+                0x000000000049d7dc        0xd build\libs\liblwip.a(tcpip.o)
+ *fill*         0x000000000049d7e9        0x7 
  .rodata.frexp.cst8
-                0x000000000049d690        0x8 build\libs\libm_flash.a(frexp.o)
+                0x000000000049d7f0        0x8 build\libs\libm_flash.a(frexp.o)
  .rodata.log10.cst8
-                0x000000000049d698       0x70 build\libs\libm_flash.a(log10.o)
+                0x000000000049d7f8       0x70 build\libs\libm_flash.a(log10.o)
                                          0x80 (size before relaxing)
- .rodata.bp     0x000000000049d708       0x10 build\libs\libm_flash.a(pow.o)
- .rodata.dp_h   0x000000000049d718       0x10 build\libs\libm_flash.a(pow.o)
- .rodata.dp_l   0x000000000049d728       0x10 build\libs\libm_flash.a(pow.o)
+ .rodata.bp     0x000000000049d868       0x10 build\libs\libm_flash.a(pow.o)
+ .rodata.dp_h   0x000000000049d878       0x10 build\libs\libm_flash.a(pow.o)
+ .rodata.dp_l   0x000000000049d888       0x10 build\libs\libm_flash.a(pow.o)
  .rodata.pow.cst8
-                0x000000000049d738       0xd8 build\libs\libm_flash.a(pow.o)
+                0x000000000049d898       0xd8 build\libs\libm_flash.a(pow.o)
                                          0xf8 (size before relaxing)
  .rodata.scalbn.cst8
-                0x000000000049d810       0x10 build\libs\libm_flash.a(scalbn.o)
+                0x000000000049d970       0x10 build\libs\libm_flash.a(scalbn.o)
  .rodata.CSWTCH.2
-                0x000000000049d820       0x18 build\libs\libmbedtls.a(md.o)
- .rodata        0x000000000049d838      0x100 build\libs\libmbedtls.a(md5_alt.o)
+                0x000000000049d980       0x18 build\libs\libmbedtls.a(md.o)
+ .rodata        0x000000000049d998      0x100 build\libs\libmbedtls.a(md5_alt.o)
  .rodata.mbedtls_md5_info
-                0x000000000049d938       0x30 build\libs\libmbedtls.a(md_wrap.o)
-                0x000000000049d938                mbedtls_md5_info
+                0x000000000049da98       0x30 build\libs\libmbedtls.a(md_wrap.o)
+                0x000000000049da98                mbedtls_md5_info
  .rodata.mbedtls_sha1_info
-                0x000000000049d968       0x30 build\libs\libmbedtls.a(md_wrap.o)
-                0x000000000049d968                mbedtls_sha1_info
+                0x000000000049dac8       0x30 build\libs\libmbedtls.a(md_wrap.o)
+                0x000000000049dac8                mbedtls_sha1_info
  .rodata.mbedtls_sha224_info
-                0x000000000049d998       0x30 build\libs\libmbedtls.a(md_wrap.o)
-                0x000000000049d998                mbedtls_sha224_info
+                0x000000000049daf8       0x30 build\libs\libmbedtls.a(md_wrap.o)
+                0x000000000049daf8                mbedtls_sha224_info
  .rodata.mbedtls_sha256_info
-                0x000000000049d9c8       0x30 build\libs\libmbedtls.a(md_wrap.o)
-                0x000000000049d9c8                mbedtls_sha256_info
+                0x000000000049db28       0x30 build\libs\libmbedtls.a(md_wrap.o)
+                0x000000000049db28                mbedtls_sha256_info
  .rodata.mbedtls_sha384_info
-                0x000000000049d9f8       0x30 build\libs\libmbedtls.a(md_wrap.o)
-                0x000000000049d9f8                mbedtls_sha384_info
+                0x000000000049db58       0x30 build\libs\libmbedtls.a(md_wrap.o)
+                0x000000000049db58                mbedtls_sha384_info
  .rodata.mbedtls_sha512_info
-                0x000000000049da28       0x30 build\libs\libmbedtls.a(md_wrap.o)
-                0x000000000049da28                mbedtls_sha512_info
+                0x000000000049db88       0x30 build\libs\libmbedtls.a(md_wrap.o)
+                0x000000000049db88                mbedtls_sha512_info
  .rodata.str1.4
-                0x000000000049da58       0x24 build\libs\libmbedtls.a(md_wrap.o)
+                0x000000000049dbb8       0x24 build\libs\libmbedtls.a(md_wrap.o)
                                          0x2c (size before relaxing)
- .rodata.K      0x000000000049da7c      0x100 build\libs\libmbedtls.a(sha256.o)
- *fill*         0x000000000049db7c        0x4 
- .rodata.K      0x000000000049db80      0x280 build\libs\libmbedtls.a(sha512_alt.o)
+ .rodata.K      0x000000000049dbdc      0x100 build\libs\libmbedtls.a(sha256.o)
+ *fill*         0x000000000049dcdc        0x4 
+ .rodata.K      0x000000000049dce0      0x280 build\libs\libmbedtls.a(sha512_alt.o)
  .rodata.mbedtls_sha512_starts_ret.cst8
-                0x000000000049de00       0x80 build\libs\libmbedtls.a(sha512_alt.o)
+                0x000000000049df60       0x80 build\libs\libmbedtls.a(sha512_alt.o)
  .rodata.LOS_KernelInit.str1.4
-                0x000000000049de80       0xb1 build\libs\libres_cfg.a(los_init_redirect.o)
- *fill*         0x000000000049df31        0x3 
+                0x000000000049dfe0       0xb1 build\libs\libres_cfg.a(los_init_redirect.o)
+ *fill*         0x000000000049e091        0x3 
  .rodata.LOS_Start.str1.4
-                0x000000000049df34       0x20 build\libs\libres_cfg.a(los_init_redirect.o)
+                0x000000000049e094       0x20 build\libs\libres_cfg.a(los_init_redirect.o)
                                          0x28 (size before relaxing)
  .rodata.OsErrHandle.str1.4
-                0x000000000049df54       0x23 build\libs\libres_cfg.a(los_init_redirect.o)
- *fill*         0x000000000049df77        0x1 
+                0x000000000049e0b4       0x23 build\libs\libres_cfg.a(los_init_redirect.o)
+ *fill*         0x000000000049e0d7        0x1 
  .rodata.SecOutputS
-                0x000000000049df78       0x20 build\libs\libsec_flash.a(secureprintoutput_a.o)
+                0x000000000049e0d8       0x20 build\libs\libsec_flash.a(secureprintoutput_a.o)
  .rodata.SecUpdatePointFlags.str1.4
-                0x000000000049df98       0x12 build\libs\libsec_flash.a(secureprintoutput_a.o)
- *fill*         0x000000000049dfaa        0x2 
+                0x000000000049e0f8       0x12 build\libs\libsec_flash.a(secureprintoutput_a.o)
+ *fill*         0x000000000049e10a        0x2 
  .rodata.SecUpdateXpxFlags.str1.4
-                0x000000000049dfac       0x12 build\libs\libsec_flash.a(secureprintoutput_a.o)
- *fill*         0x000000000049dfbe        0x2 
+                0x000000000049e10c       0x12 build\libs\libsec_flash.a(secureprintoutput_a.o)
+ *fill*         0x000000000049e11e        0x2 
  .rodata.g_stateTable
-                0x000000000049dfc0      0x151 build\libs\libsec_flash.a(secureprintoutput_a.o)
- *fill*         0x000000000049e111        0x3 
+                0x000000000049e120      0x151 build\libs\libsec_flash.a(secureprintoutput_a.o)
+ *fill*         0x000000000049e271        0x3 
  .rodata.__FUNCTION__.11439
-                0x000000000049e114       0x1e build\libs\libwpa.a(bss.o)
- *fill*         0x000000000049e132        0x2 
+                0x000000000049e274       0x1e build\libs\libwpa.a(bss.o)
+ *fill*         0x000000000049e292        0x2 
  .rodata.__FUNCTION__.11447
-                0x000000000049e134       0x16 build\libs\libwpa.a(bss.o)
- *fill*         0x000000000049e14a        0x2 
+                0x000000000049e294       0x16 build\libs\libwpa.a(bss.o)
+ *fill*         0x000000000049e2aa        0x2 
  .rodata.__FUNCTION__.11506
-                0x000000000049e14c       0x15 build\libs\libwpa.a(bss.o)
- *fill*         0x000000000049e161        0x3 
+                0x000000000049e2ac       0x15 build\libs\libwpa.a(bss.o)
+ *fill*         0x000000000049e2c1        0x3 
  .rodata.__FUNCTION__.11518
-                0x000000000049e164        0xe build\libs\libwpa.a(bss.o)
+                0x000000000049e2c4        0xe build\libs\libwpa.a(bss.o)
  .rodata.wpa_bss_update_pending_connect.str1.4
-                0x000000000049e172        0x8 build\libs\libwpa.a(bss.o)
+                0x000000000049e2d2        0x8 build\libs\libwpa.a(bss.o)
  .rodata.wpa_bss_update_scan_res.str1.4
-                0x000000000049e172        0x8 build\libs\libwpa.a(bss.o)
- *fill*         0x000000000049e172        0x2 
+                0x000000000049e2d2        0x8 build\libs\libwpa.a(bss.o)
+ *fill*         0x000000000049e2d2        0x2 
  .rodata.ssid_fields
-                0x000000000049e174      0x1a4 build\libs\libwpa.a(config.o)
+                0x000000000049e2d4      0x1a4 build\libs\libwpa.a(config.o)
  .rodata.str1.4
-                0x000000000049e318       0x52 build\libs\libwpa.a(config.o)
+                0x000000000049e478       0x52 build\libs\libwpa.a(config.o)
                                          0xae (size before relaxing)
- *fill*         0x000000000049e36a        0x2 
+ *fill*         0x000000000049e4ca        0x2 
  .rodata.wpa_config_alloc_empty.str1.4
-                0x000000000049e36c       0x2b build\libs\libwpa.a(config.o)
- *fill*         0x000000000049e397        0x1 
+                0x000000000049e4cc       0x2b build\libs\libwpa.a(config.o)
+ *fill*         0x000000000049e4f7        0x1 
  .rodata.wpa_config_parse_auth_alg.str1.4
-                0x000000000049e398        0x7 build\libs\libwpa.a(config.o)
+                0x000000000049e4f8        0x7 build\libs\libwpa.a(config.o)
                                           0xf (size before relaxing)
- *fill*         0x000000000049e39f        0x1 
+ *fill*         0x000000000049e4ff        0x1 
  .rodata.wpa_config_parse_bssid.str1.4
-                0x000000000049e3a0        0x8 build\libs\libwpa.a(config.o)
+                0x000000000049e500        0x8 build\libs\libwpa.a(config.o)
  .rodata.wpa_config_parse_key_mgmt.str1.4
-                0x000000000049e3a8        0x8 build\libs\libwpa.a(config.o)
+                0x000000000049e508        0x8 build\libs\libwpa.a(config.o)
                                          0x1f (size before relaxing)
  .rodata.wpa_config_parse_str.str1.4
-                0x000000000049e3a8       0x19 build\libs\libwpa.a(config.o)
+                0x000000000049e508       0x19 build\libs\libwpa.a(config.o)
  .rodata.wpa_config_parse_wep_key.isra.0.str1.4
-                0x000000000049e3c1        0xa build\libs\libwpa.a(config.o)
- *fill*         0x000000000049e3c1        0x3 
+                0x000000000049e521        0xa build\libs\libwpa.a(config.o)
+ *fill*         0x000000000049e521        0x3 
  .rodata.wpa_supplicant_ctrl_iface_process.str1.4
-                0x000000000049e3c4       0x91 build\libs\libwpa.a(ctrl_iface.o)
+                0x000000000049e524       0x91 build\libs\libwpa.a(ctrl_iface.o)
                                          0xf1 (size before relaxing)
- *fill*         0x000000000049e455        0x3 
+ *fill*         0x000000000049e5b5        0x3 
  .rodata.wpa_supplicant_ctrl_iface_scan_result.isra.1.str1.4
-                0x000000000049e458       0x5c build\libs\libwpa.a(ctrl_iface.o)
+                0x000000000049e5b8       0x5c build\libs\libwpa.a(ctrl_iface.o)
                                          0x72 (size before relaxing)
  .rodata.wpa_supplicant_ctrl_iface_scan_results.constprop.3.str1.4
-                0x000000000049e4b4       0x31 build\libs\libwpa.a(ctrl_iface.o)
- *fill*         0x000000000049e4e5        0x3 
+                0x000000000049e614       0x31 build\libs\libwpa.a(ctrl_iface.o)
+ *fill*         0x000000000049e645        0x3 
  .rodata.wpa_supplicant_ctrl_iface_select_network.str1.4
-                0x000000000049e4e8        0x7 build\libs\libwpa.a(ctrl_iface.o)
+                0x000000000049e648        0x7 build\libs\libwpa.a(ctrl_iface.o)
                                           0xb (size before relaxing)
- *fill*         0x000000000049e4ef        0x1 
+ *fill*         0x000000000049e64f        0x1 
  .rodata.wpa_supplicant_ctrl_iface_update_network.str1.4
-                0x000000000049e4f0        0x9 build\libs\libwpa.a(ctrl_iface.o)
+                0x000000000049e650        0x9 build\libs\libwpa.a(ctrl_iface.o)
                                          0x28 (size before relaxing)
- *fill*         0x000000000049e4f9        0x3 
+ *fill*         0x000000000049e659        0x3 
  .rodata.wpa_supplicant_ie_txt.str1.4
-                0x000000000049e4fc       0x35 build\libs\libwpa.a(ctrl_iface.o)
+                0x000000000049e65c       0x35 build\libs\libwpa.a(ctrl_iface.o)
                                          0x3e (size before relaxing)
- *fill*         0x000000000049e531        0x3 
+ *fill*         0x000000000049e691        0x3 
  .rodata.wpas_ctrl_scan.isra.0.str1.4
-                0x000000000049e534       0x16 build\libs\libwpa.a(ctrl_iface.o)
+                0x000000000049e694       0x16 build\libs\libwpa.a(ctrl_iface.o)
                                          0x1e (size before relaxing)
  .rodata.wpa_supplicant_ctrl_iface_receive.str1.4
-                0x000000000049e54a        0xd build\libs\libwpa.a(ctrl_iface_rtos.o)
- *fill*         0x000000000049e54a        0x2 
+                0x000000000049e6aa        0xd build\libs\libwpa.a(ctrl_iface_rtos.o)
+ *fill*         0x000000000049e6aa        0x2 
  .rodata.hisi_alg_to_cipher_suite
-                0x000000000049e54c       0x34 build\libs\libwpa.a(driver_hisi.o)
+                0x000000000049e6ac       0x34 build\libs\libwpa.a(driver_hisi.o)
  .rodata.hisi_driver_event_process
-                0x000000000049e580       0x34 build\libs\libwpa.a(driver_hisi.o)
+                0x000000000049e6e0       0x34 build\libs\libwpa.a(driver_hisi.o)
  .rodata.hisi_drv_remove_mem
-                0x000000000049e5b4       0x20 build\libs\libwpa.a(driver_hisi.o)
- .rodata        0x000000000049e5d4       0x10 build\libs\libwpa.a(driver_hisi.o)
+                0x000000000049e714       0x20 build\libs\libwpa.a(driver_hisi.o)
+ .rodata        0x000000000049e734       0x10 build\libs\libwpa.a(driver_hisi.o)
  .rodata.hisi_driver_event_timeout_disc_process.str1.4
-                0x000000000049e5e4       0x17 build\libs\libwpa.a(driver_hisi.o)
- *fill*         0x000000000049e5fb        0x1 
+                0x000000000049e744       0x17 build\libs\libwpa.a(driver_hisi.o)
+ *fill*         0x000000000049e75b        0x1 
  .rodata.str1.4
-                0x000000000049e5fc       0x13 build\libs\libwpa.a(driver_hisi.o)
+                0x000000000049e75c       0x13 build\libs\libwpa.a(driver_hisi.o)
                                          0x1b (size before relaxing)
- *fill*         0x000000000049e60f        0x1 
+ *fill*         0x000000000049e76f        0x1 
  .rodata.wpa_driver_hisi_ops
-                0x000000000049e610       0x68 build\libs\libwpa.a(driver_hisi.o)
-                0x000000000049e610                wpa_driver_hisi_ops
+                0x000000000049e770       0x68 build\libs\libwpa.a(driver_hisi.o)
+                0x000000000049e770                wpa_driver_hisi_ops
  .rodata.wpa_drivers
-                0x000000000049e678        0x8 build\libs\libwpa.a(drivers.o)
-                0x000000000049e678                wpa_drivers
+                0x000000000049e7d8        0x8 build\libs\libwpa.a(drivers.o)
+                0x000000000049e7d8                wpa_drivers
  .rodata.eap_sm_request
-                0x000000000049e680       0x18 build\libs\libwpa.a(eap.o)
+                0x000000000049e7e0       0x18 build\libs\libwpa.a(eap.o)
  .rodata.eap_peer_sm_step_local
-                0x000000000049e698       0x2c build\libs\libwpa.a(eap.o)
+                0x000000000049e7f8       0x2c build\libs\libwpa.a(eap.o)
  .rodata.eap_peer_sm_allow_canned.str1.4
-                0x000000000049e6c4       0x17 build\libs\libwpa.a(eap.o)
- *fill*         0x000000000049e6db        0x1 
+                0x000000000049e824       0x17 build\libs\libwpa.a(eap.o)
+ *fill*         0x000000000049e83b        0x1 
  .rodata.sm_EAP_Step
-                0x000000000049e6dc       0x7c build\libs\libwpa.a(eap_server.o)
+                0x000000000049e83c       0x7c build\libs\libwpa.a(eap_server.o)
  .rodata.sm_EAP_PROPOSE_METHOD_Enter.constprop.26.str1.4
-                0x000000000049e758       0x4b build\libs\libwpa.a(eap_server.o)
- *fill*         0x000000000049e7a3        0x1 
+                0x000000000049e8b8       0x4b build\libs\libwpa.a(eap_server.o)
+ *fill*         0x000000000049e903        0x1 
  .rodata.sm_EAP_Step.str1.4
-                0x000000000049e7a4       0x1d build\libs\libwpa.a(eap_server.o)
- *fill*         0x000000000049e7c1        0x3 
+                0x000000000049e904       0x1d build\libs\libwpa.a(eap_server.o)
+ *fill*         0x000000000049e921        0x3 
  .rodata.sm_AUTH_PAE_Step
-                0x000000000049e7c4       0x28 build\libs\libwpa.a(eapol_auth_sm.o)
+                0x000000000049e924       0x28 build\libs\libwpa.a(eapol_auth_sm.o)
  .rodata.sm_BE_AUTH_Step
-                0x000000000049e7ec       0x20 build\libs\libwpa.a(eapol_auth_sm.o)
+                0x000000000049e94c       0x20 build\libs\libwpa.a(eapol_auth_sm.o)
  .rodata.eapol_sm_get_bool
-                0x000000000049e80c       0x28 build\libs\libwpa.a(eapol_supp_sm.o)
+                0x000000000049e96c       0x28 build\libs\libwpa.a(eapol_supp_sm.o)
  .rodata.eapol_sm_set_bool
-                0x000000000049e834       0x28 build\libs\libwpa.a(eapol_supp_sm.o)
+                0x000000000049e994       0x28 build\libs\libwpa.a(eapol_supp_sm.o)
  .rodata.sm_SUPP_PAE_Step
-                0x000000000049e85c       0x20 build\libs\libwpa.a(eapol_supp_sm.o)
+                0x000000000049e9bc       0x20 build\libs\libwpa.a(eapol_supp_sm.o)
  .rodata.sm_SUPP_BE_Step
-                0x000000000049e87c       0x20 build\libs\libwpa.a(eapol_supp_sm.o)
+                0x000000000049e9dc       0x20 build\libs\libwpa.a(eapol_supp_sm.o)
  .rodata.eapol_cb
-                0x000000000049e89c       0x20 build\libs\libwpa.a(eapol_supp_sm.o)
+                0x000000000049e9fc       0x20 build\libs\libwpa.a(eapol_supp_sm.o)
  .rodata.eapol_sm_txLogoff.isra.3.str1.4
-                0x000000000049e8bc        0x1 build\libs\libwpa.a(eapol_supp_sm.o)
- .rodata        0x000000000049e8bc        0x7 build\libs\libwpa.a(events.o)
- *fill*         0x000000000049e8c3        0x1 
+                0x000000000049ea1c        0x1 build\libs\libwpa.a(eapol_supp_sm.o)
+ .rodata        0x000000000049ea1c        0x7 build\libs\libwpa.a(events.o)
+ *fill*         0x000000000049ea23        0x1 
  .rodata._wpa_supplicant_event_scan_results.isra.11.constprop.14.str1.4
-                0x000000000049e8c4       0x15 build\libs\libwpa.a(events.o)
- *fill*         0x000000000049e8d9        0x3 
+                0x000000000049ea24       0x15 build\libs\libwpa.a(events.o)
+ *fill*         0x000000000049ea39        0x3 
  .rodata.wpa_supplicant_event_associnfo.str1.4
-                0x000000000049e8dc        0x5 build\libs\libwpa.a(events.o)
- *fill*         0x000000000049e8e1        0x3 
+                0x000000000049ea3c        0x5 build\libs\libwpa.a(events.o)
+ *fill*         0x000000000049ea41        0x3 
  .rodata.wpa_supplicant_event_disassoc_finish.str1.4
-                0x000000000049e8e4       0x16 build\libs\libwpa.a(events.o)
+                0x000000000049ea44       0x16 build\libs\libwpa.a(events.o)
                                          0x2e (size before relaxing)
- *fill*         0x000000000049e8fa        0x2 
+ *fill*         0x000000000049ea5a        0x2 
  .rodata.wpas_select_network_from_last_scan.isra.10.constprop.15.str1.4
-                0x000000000049e8fc       0x1b build\libs\libwpa.a(events.o)
- *fill*         0x000000000049e917        0x1 
+                0x000000000049ea5c       0x1b build\libs\libwpa.a(events.o)
+ *fill*         0x000000000049ea77        0x1 
  .rodata.CSWTCH.47
-                0x000000000049e918       0x1c build\libs\libwpa.a(hostapd.o)
+                0x000000000049ea78       0x1c build\libs\libwpa.a(hostapd.o)
  .rodata.hostapd_set_state.str1.4
-                0x000000000049e934        0x4 build\libs\libwpa.a(hostapd.o)
+                0x000000000049ea94        0x4 build\libs\libwpa.a(hostapd.o)
  .rodata.hostapd_state_text.str1.4
-                0x000000000049e938        0x8 build\libs\libwpa.a(hostapd.o)
+                0x000000000049ea98        0x8 build\libs\libwpa.a(hostapd.o)
  .rodata.str1.4
-                0x000000000049e940       0x44 build\libs\libwpa.a(hostapd.o)
- .rodata        0x000000000049e984       0x20 build\libs\libwpa.a(hw_features.o)
+                0x000000000049eaa0       0x44 build\libs\libwpa.a(hostapd.o)
+ .rodata        0x000000000049eae4       0x20 build\libs\libwpa.a(hw_features.o)
  .rodata.hostapd_hw_mode_txt.str1.4
-                0x000000000049e9a4       0x1d build\libs\libwpa.a(hw_features.o)
+                0x000000000049eb04       0x1d build\libs\libwpa.a(hw_features.o)
                                          0x28 (size before relaxing)
- *fill*         0x000000000049e9c1        0x3 
+ *fill*         0x000000000049eb21        0x3 
  .rodata.hostapd_is_usable_chan.isra.1.constprop.2.str1.4
-                0x000000000049e9c4        0xf build\libs\libwpa.a(hw_features.o)
+                0x000000000049eb24        0xf build\libs\libwpa.a(hw_features.o)
                                          0x13 (size before relaxing)
- *fill*         0x000000000049e9d3        0x1 
+ *fill*         0x000000000049eb33        0x1 
  .rodata.ieee802_1x_init.str1.4
-                0x000000000049e9d4        0x8 build\libs\libwpa.a(ieee802_1x.o)
+                0x000000000049eb34        0x8 build\libs\libwpa.a(ieee802_1x.o)
  .rodata.wpa_supplicant_trigger_scan.str1.4
-                0x000000000049e9dc       0x1b build\libs\libwpa.a(scan.o)
+                0x000000000049eb3c       0x1b build\libs\libwpa.a(scan.o)
                                           0x5 (size before relaxing)
  .rodata.ap_handle_timer
-                0x000000000049e9dc       0x14 build\libs\libwpa.a(sta_info.o)
+                0x000000000049eb3c       0x14 build\libs\libwpa.a(sta_info.o)
  .rodata.ap_sta_set_authorized.str1.4
-                0x000000000049e9f0       0x3f build\libs\libwpa.a(sta_info.o)
+                0x000000000049eb50       0x3f build\libs\libwpa.a(sta_info.o)
                                          0x5f (size before relaxing)
- *fill*         0x000000000049ea2f        0x1 
+ *fill*         0x000000000049eb8f        0x1 
  .rodata.wifi_connect_prepare.str1.4
-                0x000000000049ea30       0x41 build\libs\libwpa.a(wifi_api.o)
+                0x000000000049eb90       0x41 build\libs\libwpa.a(wifi_api.o)
                                          0x45 (size before relaxing)
- *fill*         0x000000000049ea71        0x3 
+ *fill*         0x000000000049ebd1        0x3 
  .rodata.wifi_new_task_event_cb.str1.4
-                0x000000000049ea74        0xd build\libs\libwpa.a(wifi_api.o)
- *fill*         0x000000000049ea81        0x3 
+                0x000000000049ebd4        0xd build\libs\libwpa.a(wifi_api.o)
+ *fill*         0x000000000049ebe1        0x3 
  .rodata.wifi_scan_buffer_process.str1.4
-                0x000000000049ea84        0x4 build\libs\libwpa.a(wifi_api.o)
+                0x000000000049ebe4        0x4 build\libs\libwpa.a(wifi_api.o)
  .rodata.wifi_scan_param_handle.constprop.1.str1.4
-                0x000000000049ea88        0x8 build\libs\libwpa.a(wifi_api.o)
+                0x000000000049ebe8        0x8 build\libs\libwpa.a(wifi_api.o)
  .rodata.wifi_scan_result_base_flag_parse.str1.4
-                0x000000000049ea90       0x44 build\libs\libwpa.a(wifi_api.o)
+                0x000000000049ebf0       0x44 build\libs\libwpa.a(wifi_api.o)
  .rodata.wifi_scan_ssid_set.constprop.2.str1.4
-                0x000000000049ead4        0x8 build\libs\libwpa.a(wifi_api.o)
+                0x000000000049ec34        0x8 build\libs\libwpa.a(wifi_api.o)
                                           0xb (size before relaxing)
  .rodata.wifi_sta_psk_init.constprop.3.str1.4
-                0x000000000049eadc        0x5 build\libs\libwpa.a(wifi_api.o)
- *fill*         0x000000000049eae1        0x3 
+                0x000000000049ec3c        0x5 build\libs\libwpa.a(wifi_api.o)
+ *fill*         0x000000000049ec41        0x3 
  .rodata.wifi_sta_psk_separate_set.str1.4
-                0x000000000049eae4        0x8 build\libs\libwpa.a(wifi_api.o)
+                0x000000000049ec44        0x8 build\libs\libwpa.a(wifi_api.o)
                                          0x10 (size before relaxing)
  .rodata.wifi_sta_set_network_psk.str1.4
-                0x000000000049eaec       0x61 build\libs\libwpa.a(wifi_api.o)
- *fill*         0x000000000049eb4d        0x3 
+                0x000000000049ec4c       0x61 build\libs\libwpa.a(wifi_api.o)
+ *fill*         0x000000000049ecad        0x3 
  .rodata.wifi_wpa_scan.str1.4
-                0x000000000049eb50        0x9 build\libs\libwpa.a(wifi_api.o)
- *fill*         0x000000000049eb59        0x3 
+                0x000000000049ecb0        0x9 build\libs\libwpa.a(wifi_api.o)
+ *fill*         0x000000000049ecb9        0x3 
  .rodata.wifi_wpa_task_create.str1.4
-                0x000000000049eb5c        0xf build\libs\libwpa.a(wifi_api.o)
+                0x000000000049ecbc        0xf build\libs\libwpa.a(wifi_api.o)
  .rodata.hi_wifi_softap_deauth_sta.str1.4
-                0x000000000049eb6b       0x1e build\libs\libwpa.a(wifi_softap_api.o)
- *fill*         0x000000000049eb6b        0x1 
+                0x000000000049eccb       0x1e build\libs\libwpa.a(wifi_softap_api.o)
+ *fill*         0x000000000049eccb        0x1 
  .rodata.hi_wifi_softap_start.str1.4
-                0x000000000049eb6c        0x5 build\libs\libwpa.a(wifi_softap_api.o)
+                0x000000000049eccc        0x5 build\libs\libwpa.a(wifi_softap_api.o)
  .rodata.wifi_softap_set_config.str1.4
-                0x000000000049eb71        0x5 build\libs\libwpa.a(wifi_softap_api.o)
- *fill*         0x000000000049eb71        0x3 
+                0x000000000049ecd1        0x5 build\libs\libwpa.a(wifi_softap_api.o)
+ *fill*         0x000000000049ecd1        0x3 
  .rodata.wpa_sm_set_param
-                0x000000000049eb74       0x1c build\libs\libwpa.a(wpa.o)
+                0x000000000049ecd4       0x1c build\libs\libwpa.a(wpa.o)
  .rodata.null_rsc
-                0x000000000049eb90        0x8 build\libs\libwpa.a(wpa.o)
+                0x000000000049ecf0        0x8 build\libs\libwpa.a(wpa.o)
  .rodata.wpa_derive_ptk.isra.16.str1.4
-                0x000000000049eb98       0x17 build\libs\libwpa.a(wpa.o)
+                0x000000000049ecf8       0x17 build\libs\libwpa.a(wpa.o)
  .rodata.wpa_supplicant_install_igtk.isra.13.str1.4
-                0x000000000049eb98        0x7 build\libs\libwpa.a(wpa.o)
+                0x000000000049ecf8        0x7 build\libs\libwpa.a(wpa.o)
  .rodata.sm_WPA_PTK_Step
-                0x000000000049eb98       0x28 build\libs\libwpa.a(wpa_auth.o)
+                0x000000000049ecf8       0x28 build\libs\libwpa.a(wpa_auth.o)
  .rodata.wpa_auth_sm_event
-                0x000000000049ebc0       0x1c build\libs\libwpa.a(wpa_auth.o)
+                0x000000000049ed20       0x1c build\libs\libwpa.a(wpa_auth.o)
  .rodata.wpa_derive_ptk.str1.4
-                0x000000000049ebdc       0x17 build\libs\libwpa.a(wpa_auth.o)
- *fill*         0x000000000049ebf3        0x1 
+                0x000000000049ed3c       0x17 build\libs\libwpa.a(wpa_auth.o)
+ *fill*         0x000000000049ed53        0x1 
  .rodata.wpa_group_config_group_keys.str1.4
-                0x000000000049ebf4        0x7 build\libs\libwpa.a(wpa_auth.o)
- *fill*         0x000000000049ebfb        0x1 
+                0x000000000049ed54        0x7 build\libs\libwpa.a(wpa_auth.o)
+ *fill*         0x000000000049ed5b        0x1 
  .rodata.wpa_group_init_gmk_and_counter.str1.4
-                0x000000000049ebfc        0xd build\libs\libwpa.a(wpa_auth.o)
- *fill*         0x000000000049ec09        0x3 
+                0x000000000049ed5c        0xd build\libs\libwpa.a(wpa_auth.o)
+ *fill*         0x000000000049ed69        0x3 
  .rodata.wpa_gtk_update.str1.4
-                0x000000000049ec0c       0x27 build\libs\libwpa.a(wpa_auth.o)
- *fill*         0x000000000049ec33        0x1 
+                0x000000000049ed6c       0x27 build\libs\libwpa.a(wpa_auth.o)
+ *fill*         0x000000000049ed93        0x1 
  .rodata.hostapd_wpa_auth_set_eapol
-                0x000000000049ec34       0x20 build\libs\libwpa.a(wpa_auth_glue.o)
+                0x000000000049ed94       0x20 build\libs\libwpa.a(wpa_auth_glue.o)
  .rodata.cb.8884
-                0x000000000049ec54       0x38 build\libs\libwpa.a(wpa_auth_glue.o)
+                0x000000000049edb4       0x38 build\libs\libwpa.a(wpa_auth_glue.o)
  .rodata.wpa_validate_wpa_ie.str1.4
-                0x000000000049ec8c        0x8 build\libs\libwpa.a(wpa_auth_ie.o)
+                0x000000000049edec        0x8 build\libs\libwpa.a(wpa_auth_ie.o)
  .rodata.wpa_cli_add_iface.str1.4
-                0x000000000049ec94        0xa build\libs\libwpa.a(wpa_cli_rtos.o)
- *fill*         0x000000000049ec9e        0x2 
+                0x000000000049edf4        0xa build\libs\libwpa.a(wpa_cli_rtos.o)
+ *fill*         0x000000000049edfe        0x2 
  .rodata.wpa_cli_add_network.str1.4
-                0x000000000049eca0        0xc build\libs\libwpa.a(wpa_cli_rtos.o)
+                0x000000000049ee00        0xc build\libs\libwpa.a(wpa_cli_rtos.o)
  .rodata.wpa_cli_ap_deauth.str1.4
-                0x000000000049ecac        0xa build\libs\libwpa.a(wpa_cli_rtos.o)
- *fill*         0x000000000049ecb6        0x2 
+                0x000000000049ee0c        0xa build\libs\libwpa.a(wpa_cli_rtos.o)
+ *fill*         0x000000000049ee16        0x2 
  .rodata.wpa_cli_configure_wep.str1.4
-                0x000000000049ecb8       0x26 build\libs\libwpa.a(wpa_cli_rtos.o)
+                0x000000000049ee18       0x26 build\libs\libwpa.a(wpa_cli_rtos.o)
                                          0x46 (size before relaxing)
- *fill*         0x000000000049ecde        0x2 
+ *fill*         0x000000000049ee3e        0x2 
  .rodata.wpa_cli_disconnect.str1.4
-                0x000000000049ece0        0xb build\libs\libwpa.a(wpa_cli_rtos.o)
- *fill*         0x000000000049eceb        0x1 
+                0x000000000049ee40        0xb build\libs\libwpa.a(wpa_cli_rtos.o)
+ *fill*         0x000000000049ee4b        0x1 
  .rodata.wpa_cli_if_start.str1.4
-                0x000000000049ecec       0x1a build\libs\libwpa.a(wpa_cli_rtos.o)
- *fill*         0x000000000049ed06        0x2 
+                0x000000000049ee4c       0x1a build\libs\libwpa.a(wpa_cli_rtos.o)
+ *fill*         0x000000000049ee66        0x2 
  .rodata.wpa_cli_remove_iface.str1.4
-                0x000000000049ed08        0xd build\libs\libwpa.a(wpa_cli_rtos.o)
- *fill*         0x000000000049ed15        0x3 
+                0x000000000049ee68        0xd build\libs\libwpa.a(wpa_cli_rtos.o)
+ *fill*         0x000000000049ee75        0x3 
  .rodata.wpa_cli_remove_network.str1.4
-                0x000000000049ed18       0x23 build\libs\libwpa.a(wpa_cli_rtos.o)
- *fill*         0x000000000049ed3b        0x1 
+                0x000000000049ee78       0x23 build\libs\libwpa.a(wpa_cli_rtos.o)
+ *fill*         0x000000000049ee9b        0x1 
  .rodata.wpa_cli_scan.str1.4
-                0x000000000049ed3c        0x5 build\libs\libwpa.a(wpa_cli_rtos.o)
- *fill*         0x000000000049ed41        0x3 
+                0x000000000049ee9c        0x5 build\libs\libwpa.a(wpa_cli_rtos.o)
+ *fill*         0x000000000049eea1        0x3 
  .rodata.wpa_cli_scan_results.str1.4
-                0x000000000049ed44        0xd build\libs\libwpa.a(wpa_cli_rtos.o)
- *fill*         0x000000000049ed51        0x3 
+                0x000000000049eea4        0xd build\libs\libwpa.a(wpa_cli_rtos.o)
+ *fill*         0x000000000049eeb1        0x3 
  .rodata.wpa_cli_select_network.str1.4
-                0x000000000049ed54        0xf build\libs\libwpa.a(wpa_cli_rtos.o)
- *fill*         0x000000000049ed63        0x1 
+                0x000000000049eeb4        0xf build\libs\libwpa.a(wpa_cli_rtos.o)
+ *fill*         0x000000000049eec3        0x1 
  .rodata.wpa_cli_set_network.str1.4
-                0x000000000049ed64        0xc build\libs\libwpa.a(wpa_cli_rtos.o)
+                0x000000000049eec4        0xc build\libs\libwpa.a(wpa_cli_rtos.o)
  .rodata.wpa_cli_show_sta.str1.4
-                0x000000000049ed70        0x9 build\libs\libwpa.a(wpa_cli_rtos.o)
- *fill*         0x000000000049ed79        0x3 
+                0x000000000049eed0        0x9 build\libs\libwpa.a(wpa_cli_rtos.o)
+ *fill*         0x000000000049eed9        0x3 
  .rodata.wpa_cli_sta_set_delay_report.str1.4
-                0x000000000049ed7c       0x11 build\libs\libwpa.a(wpa_cli_rtos.o)
+                0x000000000049eedc       0x11 build\libs\libwpa.a(wpa_cli_rtos.o)
                                          0x1a (size before relaxing)
- *fill*         0x000000000049ed8d        0x3 
+ *fill*         0x000000000049eeed        0x3 
  .rodata.wpa_cli_sta_status.str1.4
-                0x000000000049ed90        0xb build\libs\libwpa.a(wpa_cli_rtos.o)
- *fill*         0x000000000049ed9b        0x1 
+                0x000000000049eef0        0xb build\libs\libwpa.a(wpa_cli_rtos.o)
+ *fill*         0x000000000049eefb        0x1 
  .rodata.wpa_cli_terminate.str1.4
-                0x000000000049ed9c       0x10 build\libs\libwpa.a(wpa_cli_rtos.o)
+                0x000000000049eefc       0x10 build\libs\libwpa.a(wpa_cli_rtos.o)
                                          0x14 (size before relaxing)
  .rodata.write_cmd.constprop.0.str1.4
-                0x000000000049edac       0x10 build\libs\libwpa.a(wpa_cli_rtos.o)
+                0x000000000049ef0c       0x10 build\libs\libwpa.a(wpa_cli_rtos.o)
                                           0x8 (size before relaxing)
  .rodata.wpa_parse_cipher.str1.4
-                0x000000000049edac       0x7d build\libs\libwpa.a(wpa_common.o)
+                0x000000000049ef0c       0x7d build\libs\libwpa.a(wpa_common.o)
                                          0x95 (size before relaxing)
- *fill*         0x000000000049ee29        0x3 
+ *fill*         0x000000000049ef89        0x3 
  .rodata.radio_add_work.str1.4
-                0x000000000049ee2c        0x9 build\libs\libwpa.a(wpa_supplicant.o)
+                0x000000000049ef8c        0x9 build\libs\libwpa.a(wpa_supplicant.o)
                                          0x11 (size before relaxing)
- *fill*         0x000000000049ee35        0x3 
+ *fill*         0x000000000049ef95        0x3 
  .rodata.wpa_supplicant_associate.str1.4
-                0x000000000049ee38        0x8 build\libs\libwpa.a(wpa_supplicant.o)
+                0x000000000049ef98        0x8 build\libs\libwpa.a(wpa_supplicant.o)
  .rodata.wpa_supplicant_cleanup.str1.4
-                0x000000000049ee40        0xa build\libs\libwpa.a(wpa_supplicant.o)
- *fill*         0x000000000049ee4a        0x2 
+                0x000000000049efa0        0xa build\libs\libwpa.a(wpa_supplicant.o)
+ *fill*         0x000000000049efaa        0x2 
  .rodata.wpa_supplicant_set_state.str1.4
-                0x000000000049ee4c       0x14 build\libs\libwpa.a(wpa_supplicant.o)
+                0x000000000049efac       0x14 build\libs\libwpa.a(wpa_supplicant.o)
  .rodata.wpa_supplicant_ctrl_req_to_string
-                0x000000000049ee60       0x24 build\libs\libwpa.a(wpas_glue.o)
+                0x000000000049efc0       0x24 build\libs\libwpa.a(wpas_glue.o)
  .rodata.wpa_supplicant_ctrl_req_from_string.str1.4
-                0x000000000049ee84       0x47 build\libs\libwpa.a(wpas_glue.o)
+                0x000000000049efe4       0x47 build\libs\libwpa.a(wpas_glue.o)
                                          0x5f (size before relaxing)
- *fill*         0x000000000049eecb        0x1 
+ *fill*         0x000000000049f02b        0x1 
  .rodata.wpa_supplicant_ctrl_req_to_string.str1.4
-                0x000000000049eecc       0x6f build\libs\libwpa.a(wpas_glue.o)
+                0x000000000049f02c       0x6f build\libs\libwpa.a(wpas_glue.o)
                                          0x7b (size before relaxing)
- *fill*         0x000000000049ef3b        0x1 
+ *fill*         0x000000000049f09b        0x1 
  .rodata.wpas_send_ctrl_req.str1.4
-                0x000000000049ef3c       0x1a build\libs\libwpa.a(wpas_glue.o)
- *fill*         0x000000000049ef56        0x2 
- .rodata        0x000000000049ef58       0x3c F:\DevEco\resources\toolset\DevTools_Hi3861V100\1.0.0\hcc_riscv32_win\bin\..\lib\gcc\riscv32-unknown-elf\7.3.0\libgcc.a(divdf3.o)
- .rodata        0x000000000049ef94       0x3c F:\DevEco\resources\toolset\DevTools_Hi3861V100\1.0.0\hcc_riscv32_win\bin\..\lib\gcc\riscv32-unknown-elf\7.3.0\libgcc.a(divsf3.o)
- .rodata        0x000000000049efd0       0x3c F:\DevEco\resources\toolset\DevTools_Hi3861V100\1.0.0\hcc_riscv32_win\bin\..\lib\gcc\riscv32-unknown-elf\7.3.0\libgcc.a(muldf3.o)
- .rodata        0x000000000049f00c       0x3c F:\DevEco\resources\toolset\DevTools_Hi3861V100\1.0.0\hcc_riscv32_win\bin\..\lib\gcc\riscv32-unknown-elf\7.3.0\libgcc.a(mulsf3.o)
- .rodata        0x000000000049f048       0x3c F:\DevEco\resources\toolset\DevTools_Hi3861V100\1.0.0\hcc_riscv32_win\bin\..\lib\gcc\riscv32-unknown-elf\7.3.0\libgcc.a(multf3.o)
+                0x000000000049f09c       0x1a build\libs\libwpa.a(wpas_glue.o)
+ *fill*         0x000000000049f0b6        0x2 
+ .rodata        0x000000000049f0b8       0x3c F:\DevEco\resources\toolset\DevTools_Hi3861V100\1.0.0\hcc_riscv32_win\bin\..\lib\gcc\riscv32-unknown-elf\7.3.0\libgcc.a(divdf3.o)
+ .rodata        0x000000000049f0f4       0x3c F:\DevEco\resources\toolset\DevTools_Hi3861V100\1.0.0\hcc_riscv32_win\bin\..\lib\gcc\riscv32-unknown-elf\7.3.0\libgcc.a(divsf3.o)
+ .rodata        0x000000000049f130       0x3c F:\DevEco\resources\toolset\DevTools_Hi3861V100\1.0.0\hcc_riscv32_win\bin\..\lib\gcc\riscv32-unknown-elf\7.3.0\libgcc.a(muldf3.o)
+ .rodata        0x000000000049f16c       0x3c F:\DevEco\resources\toolset\DevTools_Hi3861V100\1.0.0\hcc_riscv32_win\bin\..\lib\gcc\riscv32-unknown-elf\7.3.0\libgcc.a(mulsf3.o)
+ .rodata        0x000000000049f1a8       0x3c F:\DevEco\resources\toolset\DevTools_Hi3861V100\1.0.0\hcc_riscv32_win\bin\..\lib\gcc\riscv32-unknown-elf\7.3.0\libgcc.a(multf3.o)
  .rodata.GetName.str1.4
-                0x000000000049f084        0xa ohos\libs\libbootstrap.a(libbootstrap.bootstrap_service.o)
- *fill*         0x000000000049f08e        0x2 
+                0x000000000049f1e4        0xa ohos\libs\libbootstrap.a(libbootstrap.bootstrap_service.o)
+ *fill*         0x000000000049f1ee        0x2 
  .rodata.GetName.str1.4
-                0x000000000049f090        0xa ohos\libs\libbroadcast.a(libbroadcast.broadcast_service.o)
- *fill*         0x000000000049f09a        0x2 
+                0x000000000049f1f0        0xa ohos\libs\libbroadcast.a(libbroadcast.broadcast_service.o)
+ *fill*         0x000000000049f1fa        0x2 
  .rodata.GetName.str1.4
-                0x000000000049f09c       0x18 ohos\libs\libbroadcast.a(libbroadcast.pub_sub_feature.o)
+                0x000000000049f1fc       0x18 ohos\libs\libbroadcast.a(libbroadcast.pub_sub_feature.o)
  .rodata.Init.str1.4
-                0x000000000049f0b4        0xa ohos\libs\libbroadcast.a(libbroadcast.pub_sub_feature.o)
+                0x000000000049f214        0xa ohos\libs\libbroadcast.a(libbroadcast.pub_sub_feature.o)
  .rodata.InitSecurityDevAuth.str1.4
-                0x000000000049f0b4       0x2b ohos\libs\libdeviceauth_hal_liteos.a(libdeviceauth_hal_liteos.hc_init_protection.o)
- *fill*         0x000000000049f0df        0x1 
+                0x000000000049f214       0x2b ohos\libs\libdeviceauth_hal_liteos.a(libdeviceauth_hal_liteos.hc_init_protection.o)
+ *fill*         0x000000000049f23f        0x1 
  .rodata.__FUNCTION__.3487
-                0x000000000049f0e0       0x14 ohos\libs\libdeviceauth_hal_liteos.a(libdeviceauth_hal_liteos.hc_init_protection.o)
+                0x000000000049f240       0x14 ohos\libs\libdeviceauth_hal_liteos.a(libdeviceauth_hal_liteos.hc_init_protection.o)
  .rodata.DevAuthLogPrint.str1.4
-                0x000000000049f0f4        0x5 ohos\libs\libdeviceauth_hal_liteos.a(libdeviceauth_hal_liteos.hc_log.o)
- *fill*         0x000000000049f0f9        0x3 
+                0x000000000049f254        0x5 ohos\libs\libdeviceauth_hal_liteos.a(libdeviceauth_hal_liteos.hc_log.o)
+ *fill*         0x000000000049f259        0x3 
  .rodata.DevAuthOutPrint.str1.4
-                0x000000000049f0fc        0xb ohos\libs\libdeviceauth_hal_liteos.a(libdeviceauth_hal_liteos.hc_log.o)
+                0x000000000049f25c        0xb ohos\libs\libdeviceauth_hal_liteos.a(libdeviceauth_hal_liteos.hc_log.o)
  .rodata.GetFirstApiLevel.str1.4
-                0x000000000049f107        0x3 ohos\libs\libdump_static.a(libdump_static.dump_syspara.o)
- *fill*         0x000000000049f107        0x1 
+                0x000000000049f267        0x3 ohos\libs\libdump_static.a(libdump_static.dump_syspara.o)
+ *fill*         0x000000000049f267        0x1 
  .rodata.QuerySysparaCmd.str1.4
-                0x000000000049f108       0x4f ohos\libs\libdump_static.a(libdump_static.dump_syspara.o)
- *fill*         0x000000000049f157        0x1 
+                0x000000000049f268       0x4f ohos\libs\libdump_static.a(libdump_static.dump_syspara.o)
+ *fill*         0x000000000049f2b7        0x1 
  .rodata.SYSPARA_LIST
-                0x000000000049f158       0xb8 ohos\libs\libdump_static.a(libdump_static.dump_syspara.o)
+                0x000000000049f2b8       0xb8 ohos\libs\libdump_static.a(libdump_static.dump_syspara.o)
  .rodata.str1.4
-                0x000000000049f210      0x13e ohos\libs\libdump_static.a(libdump_static.dump_syspara.o)
- *fill*         0x000000000049f34e        0x2 
+                0x000000000049f370      0x13e ohos\libs\libdump_static.a(libdump_static.dump_syspara.o)
+ *fill*         0x000000000049f4ae        0x2 
  .rodata.HalGetBuildHost.str1.4
-                0x000000000049f350        0x4 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+                0x000000000049f4b0        0x4 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
  .rodata.HalGetBuildTime.str1.4
-                0x000000000049f354        0xe ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
- *fill*         0x000000000049f362        0x2 
+                0x000000000049f4b4        0xe ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+ *fill*         0x000000000049f4c2        0x2 
  .rodata.HalGetBuildType.str1.4
-                0x000000000049f364        0x6 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
- *fill*         0x000000000049f36a        0x2 
+                0x000000000049f4c4        0x6 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+ *fill*         0x000000000049f4ca        0x2 
  .rodata.HalGetBuildUser.str1.4
-                0x000000000049f36c        0x8 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+                0x000000000049f4cc        0x8 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
  .rodata.HalGetIncrementalVersion.str1.4
-                0x000000000049f374       0x15 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
- *fill*         0x000000000049f389        0x3 
+                0x000000000049f4d4       0x15 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+ *fill*         0x000000000049f4e9        0x3 
  .rodata.OHOS_ABI_LIST
-                0x000000000049f38c        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
- *fill*         0x000000000049f391        0x3 
+                0x000000000049f4ec        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+ *fill*         0x000000000049f4f1        0x3 
  .rodata.OHOS_BOOTLOADER_VERSION
-                0x000000000049f394        0xb ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
- *fill*         0x000000000049f39f        0x1 
+                0x000000000049f4f4        0xb ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+ *fill*         0x000000000049f4ff        0x1 
  .rodata.OHOS_BRAND
-                0x000000000049f3a0        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
- *fill*         0x000000000049f3a5        0x3 
+                0x000000000049f500        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+ *fill*         0x000000000049f505        0x3 
  .rodata.OHOS_DEVICE_TYPE
-                0x000000000049f3a8        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
- *fill*         0x000000000049f3ad        0x3 
+                0x000000000049f508        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+ *fill*         0x000000000049f50d        0x3 
  .rodata.OHOS_DISPLAY_VERSION
-                0x000000000049f3b0       0x14 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+                0x000000000049f510       0x14 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
  .rodata.OHOS_HARDWARE_MODEL
-                0x000000000049f3c4        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
- *fill*         0x000000000049f3c9        0x3 
+                0x000000000049f524        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+ *fill*         0x000000000049f529        0x3 
  .rodata.OHOS_MANUFACTURE
-                0x000000000049f3cc        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
- *fill*         0x000000000049f3d1        0x3 
+                0x000000000049f52c        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+ *fill*         0x000000000049f531        0x3 
  .rodata.OHOS_MARKET_NAME
-                0x000000000049f3d4        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
- *fill*         0x000000000049f3d9        0x3 
+                0x000000000049f534        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+ *fill*         0x000000000049f539        0x3 
  .rodata.OHOS_PRODUCT_MODEL
-                0x000000000049f3dc        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
- *fill*         0x000000000049f3e1        0x3 
+                0x000000000049f53c        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+ *fill*         0x000000000049f541        0x3 
  .rodata.OHOS_PRODUCT_SERIES
-                0x000000000049f3e4        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
- *fill*         0x000000000049f3e9        0x3 
+                0x000000000049f544        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+ *fill*         0x000000000049f549        0x3 
  .rodata.OHOS_SERIAL
-                0x000000000049f3ec        0xb ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
- *fill*         0x000000000049f3f7        0x1 
+                0x000000000049f54c        0xb ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+ *fill*         0x000000000049f557        0x1 
  .rodata.OHOS_SOFTWARE_MODEL
-                0x000000000049f3f8        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
- *fill*         0x000000000049f3fd        0x3 
+                0x000000000049f558        0x5 ohos\libs\libhal_sysparam.a(libhal_sysparam.hal_sys_param.o)
+ *fill*         0x000000000049f55d        0x3 
  .rodata.FUN_ARG_S
-                0x000000000049f400        0x4 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_log.o)
-                0x000000000049f400                FUN_ARG_S
+                0x000000000049f560        0x4 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_log.o)
+                0x000000000049f560                FUN_ARG_S
  .rodata.HiLogGetModuleName.str1.4
-                0x000000000049f404        0x1 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_log.o)
+                0x000000000049f564        0x1 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_log.o)
  .rodata.HiLogInit.str1.4
-                0x000000000049f404       0x80 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_log.o)
+                0x000000000049f564       0x80 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_log.o)
                                          0x88 (size before relaxing)
  .rodata.HiLogPrintf.str1.4
-                0x000000000049f484        0x9 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_log.o)
- *fill*         0x000000000049f48d        0x3 
+                0x000000000049f5e4        0x9 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_log.o)
+ *fill*         0x000000000049f5ed        0x3 
  .rodata.InitLogLimit.str1.4
-                0x000000000049f490       0x18 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_log_limit.o)
+                0x000000000049f5f0       0x18 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_log_limit.o)
  .rodata.LogIsLimited.str1.4
-                0x000000000049f4a8       0x19 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_log_limit.o)
- *fill*         0x000000000049f4c1        0x3 
+                0x000000000049f608       0x19 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_log_limit.o)
+ *fill*         0x000000000049f621        0x3 
  .rodata.LogDebugValuesFmt
-                0x000000000049f4c4       0x1c ohos\libs\libhilog_lite.a(libhilog_lite.hiview_output_log.o)
+                0x000000000049f624       0x1c ohos\libs\libhilog_lite.a(libhilog_lite.hiview_output_log.o)
  .rodata.InitLogOutput.str1.4
-                0x000000000049f4e0       0x27 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_output_log.o)
- *fill*         0x000000000049f507        0x1 
+                0x000000000049f640       0x27 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_output_log.o)
+ *fill*         0x000000000049f667        0x1 
  .rodata.LogCommonFmt.str1.4
-                0x000000000049f508       0x2e ohos\libs\libhilog_lite.a(libhilog_lite.hiview_output_log.o)
- *fill*         0x000000000049f536        0x2 
+                0x000000000049f668       0x2e ohos\libs\libhilog_lite.a(libhilog_lite.hiview_output_log.o)
+ *fill*         0x000000000049f696        0x2 
  .rodata.LogValuesFmtHash.str1.4
-                0x000000000049f538       0x14 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_output_log.o)
+                0x000000000049f698       0x14 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_output_log.o)
  .rodata.OutputLog.str1.4
-                0x000000000049f54c       0x3f ohos\libs\libhilog_lite.a(libhilog_lite.hiview_output_log.o)
- *fill*         0x000000000049f58b        0x1 
+                0x000000000049f6ac       0x3f ohos\libs\libhilog_lite.a(libhilog_lite.hiview_output_log.o)
+ *fill*         0x000000000049f6eb        0x1 
  .rodata.OutputLog2BinFile.str1.4
-                0x000000000049f58c       0x3a ohos\libs\libhilog_lite.a(libhilog_lite.hiview_output_log.o)
- *fill*         0x000000000049f5c6        0x2 
+                0x000000000049f6ec       0x3a ohos\libs\libhilog_lite.a(libhilog_lite.hiview_output_log.o)
+ *fill*         0x000000000049f726        0x2 
  .rodata.g_logLevelInfo
-                0x000000000049f5c8        0x6 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_output_log.o)
- *fill*         0x000000000049f5ce        0x2 
+                0x000000000049f728        0x6 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_output_log.o)
+ *fill*         0x000000000049f72e        0x2 
  .rodata.str1.4
-                0x000000000049f5d0       0x1a ohos\libs\libhilog_lite.a(libhilog_lite.hiview_output_log.o)
- *fill*         0x000000000049f5ea        0x2 
+                0x000000000049f730       0x1a ohos\libs\libhilog_lite.a(libhilog_lite.hiview_output_log.o)
+ *fill*         0x000000000049f74a        0x2 
  .rodata.CSWTCH.8
-                0x000000000049f5ec        0xc ohos\libs\libhiview_lite.a(libhiview_lite.hiview_file.o)
+                0x000000000049f74c        0xc ohos\libs\libhiview_lite.a(libhiview_lite.hiview_file.o)
  .rodata.ProcFile.str1.4
-                0x000000000049f5f8       0x9d ohos\libs\libhiview_lite.a(libhiview_lite.hiview_file.o)
+                0x000000000049f758       0x9d ohos\libs\libhiview_lite.a(libhiview_lite.hiview_file.o)
  .rodata.GetName.str1.4
-                0x000000000049f695        0x7 ohos\libs\libhiview_lite.a(libhiview_lite.hiview_service.o)
- *fill*         0x000000000049f695        0x3 
+                0x000000000049f7f5        0x7 ohos\libs\libhiview_lite.a(libhiview_lite.hiview_service.o)
+ *fill*         0x000000000049f7f5        0x3 
  .rodata.Initialize.str1.4
-                0x000000000049f698       0x15 ohos\libs\libhiview_lite.a(libhiview_lite.hiview_service.o)
- *fill*         0x000000000049f6ad        0x3 
+                0x000000000049f7f8       0x15 ohos\libs\libhiview_lite.a(libhiview_lite.hiview_service.o)
+ *fill*         0x000000000049f80d        0x3 
  .rodata.HIVIEW_FileCopy.str1.4
-                0x000000000049f6b0       0xa8 ohos\libs\libhiview_lite.a(libhiview_lite.hiview_util.o)
+                0x000000000049f810       0xa8 ohos\libs\libhiview_lite.a(libhiview_lite.hiview_util.o)
  .rodata.HIVIEW_UartPrint.str1.4
-                0x000000000049f758        0x4 ohos\libs\libhiview_lite.a(libhiview_lite.hiview_util.o)
+                0x000000000049f8b8        0x4 ohos\libs\libhiview_lite.a(libhiview_lite.hiview_util.o)
  .rodata.g_hksRandomSeedCustom
-                0x000000000049f75c        0x3 ohos\libs\libhuks_3.0_sdk.a(libhuks_3.0_sdk.hks_mbedtls_common.o)
-                0x000000000049f75c                g_hksRandomSeedCustom
- *fill*         0x000000000049f75f        0x1 
+                0x000000000049f8bc        0x3 ohos\libs\libhuks_3.0_sdk.a(libhuks_3.0_sdk.hks_mbedtls_common.o)
+                0x000000000049f8bc                g_hksRandomSeedCustom
+ *fill*         0x000000000049f8bf        0x1 
  .rodata.GetCanonicalPath.constprop.0.str1.4
-                0x000000000049f760       0x15 ohos\libs\libposix.a(libposix.file.o)
+                0x000000000049f8c0       0x15 ohos\libs\libposix.a(libposix.file.o)
                                          0x19 (size before relaxing)
- *fill*         0x000000000049f775        0x3 
+ *fill*         0x000000000049f8d5        0x3 
  .rodata.open.str1.4
-                0x000000000049f778       0x15 ohos\libs\libposix.a(libposix.file.o)
- *fill*         0x000000000049f78d        0x3 
+                0x000000000049f8d8       0x15 ohos\libs\libposix.a(libposix.file.o)
+ *fill*         0x000000000049f8ed        0x3 
  .rodata.AddTaskPool.isra.0.str1.4
-                0x000000000049f790       0x80 ohos\libs\libsamgr.a(libsamgr.samgr_lite.o)
+                0x000000000049f8f0       0x80 ohos\libs\libsamgr.a(libsamgr.samgr_lite.o)
  .rodata.HandleInitRequest.str1.4
-                0x000000000049f810       0x7b ohos\libs\libsamgr.a(libsamgr.samgr_lite.o)
- *fill*         0x000000000049f88b        0x1 
+                0x000000000049f970       0x7b ohos\libs\libsamgr.a(libsamgr.samgr_lite.o)
+ *fill*         0x000000000049f9eb        0x1 
  .rodata.InitCompleted.str1.4
-                0x000000000049f88c       0x59 ohos\libs\libsamgr.a(libsamgr.samgr_lite.o)
- *fill*         0x000000000049f8e5        0x3 
+                0x000000000049f9ec       0x59 ohos\libs\libsamgr.a(libsamgr.samgr_lite.o)
+ *fill*         0x000000000049fa45        0x3 
  .rodata.InitializeAllServices.str1.4
-                0x000000000049f8e8       0x1c ohos\libs\libsamgr.a(libsamgr.samgr_lite.o)
+                0x000000000049fa48       0x1c ohos\libs\libsamgr.a(libsamgr.samgr_lite.o)
  .rodata.SAMGR_Bootstrap.str1.4
-                0x000000000049f904       0xd3 ohos\libs\libsamgr.a(libsamgr.samgr_lite.o)
+                0x000000000049fa64       0xd3 ohos\libs\libsamgr.a(libsamgr.samgr_lite.o)
  .rodata.SendBootRequest.str1.4
-                0x000000000049f9d7        0xa ohos\libs\libsamgr.a(libsamgr.samgr_lite.o)
- *fill*         0x000000000049f9d7        0x1 
+                0x000000000049fb37        0xa ohos\libs\libsamgr.a(libsamgr.samgr_lite.o)
+ *fill*         0x000000000049fb37        0x1 
  .rodata.SAMGR_SendSharedRequest.str1.4
-                0x000000000049f9d8       0x1c ohos\libs\libsamgr_source.a(libsamgr_source.message.o)
+                0x000000000049fb38       0x1c ohos\libs\libsamgr_source.a(libsamgr_source.message.o)
  .rodata.EndWork.str1.4
-                0x000000000049f9f4       0x47 ohos\libs\libsamgr_source.a(libsamgr_source.task_manager.o)
- *fill*         0x000000000049fa3b        0x1 
+                0x000000000049fb54       0x47 ohos\libs\libsamgr_source.a(libsamgr_source.task_manager.o)
+ *fill*         0x000000000049fb9b        0x1 
  .rodata.SAMGR_CreateFixedTaskPool.str1.4
-                0x000000000049fa3c       0x49 ohos\libs\libsamgr_source.a(libsamgr_source.task_manager.o)
- *fill*         0x000000000049fa85        0x3 
+                0x000000000049fb9c       0x49 ohos\libs\libsamgr_source.a(libsamgr_source.task_manager.o)
+ *fill*         0x000000000049fbe5        0x3 
  .rodata.SAMGR_StartTaskPool.str1.4
-                0x000000000049fa88       0x22 ohos\libs\libsamgr_source.a(libsamgr_source.task_manager.o)
- *fill*         0x000000000049faaa        0x2 
+                0x000000000049fbe8       0x22 ohos\libs\libsamgr_source.a(libsamgr_source.task_manager.o)
+ *fill*         0x000000000049fc0a        0x2 
  .rodata.Buzzer_Beep.str1.4
-                0x000000000049faac       0x2d ohos\libs\libstartup.a(libstartup.buzzer.o)
- *fill*         0x000000000049fad9        0x3 
+                0x000000000049fc0c       0x2d ohos\libs\libstartup.a(libstartup.buzzer.o)
+ *fill*         0x000000000049fc39        0x3 
  .rodata.Buzzer_BeepPattern.str1.4
-                0x000000000049fadc       0x49 ohos\libs\libstartup.a(libstartup.buzzer.o)
- *fill*         0x000000000049fb25        0x3 
+                0x000000000049fc3c       0x49 ohos\libs\libstartup.a(libstartup.buzzer.o)
+ *fill*         0x000000000049fc85        0x3 
  .rodata.Buzzer_Init.str1.4
-                0x000000000049fb28       0x21 ohos\libs\libstartup.a(libstartup.buzzer.o)
- *fill*         0x000000000049fb49        0x3 
+                0x000000000049fc88       0x21 ohos\libs\libstartup.a(libstartup.buzzer.o)
+ *fill*         0x000000000049fca9        0x3 
  .rodata.DHT11_Init.str1.4
-                0x000000000049fb4c       0x1c ohos\libs\libstartup.a(libstartup.dht11.o)
+                0x000000000049fcac       0x1c ohos\libs\libstartup.a(libstartup.dht11.o)
  .rodata.DHT11_ReadData.str1.4
-                0x000000000049fb68       0x5e ohos\libs\libstartup.a(libstartup.dht11.o)
- *fill*         0x000000000049fbc6        0x2 
- .rodata.MainTask.str1.4
-                0x000000000049fbc8       0x55 ohos\libs\libstartup.a(libstartup.main.o)
- *fill*         0x000000000049fc1d        0x3 
+                0x000000000049fcc8       0x5e ohos\libs\libstartup.a(libstartup.dht11.o)
+ *fill*         0x000000000049fd26        0x2 
+ .rodata        0x000000000049fd28       0x10 ohos\libs\libstartup.a(libstartup.main.o)
  .rodata.Main_Entry.str1.4
-                0x000000000049fc20       0x28 ohos\libs\libstartup.a(libstartup.main.o)
+                0x000000000049fd38       0xa9 ohos\libs\libstartup.a(libstartup.main.o)
+ *fill*         0x000000000049fde1        0x3 
+ .rodata.Main_Task.str1.4
+                0x000000000049fde4        0xf ohos\libs\libstartup.a(libstartup.main.o)
+ *fill*         0x000000000049fdf3        0x1 
+ .rodata.OLED_DisplayTask.str1.4
+                0x000000000049fdf4       0x59 ohos\libs\libstartup.a(libstartup.main.o)
+ *fill*         0x000000000049fe4d        0x3 
  .rodata.str1.4
-                0x000000000049fc48        0xe ohos\libs\libstartup.a(libstartup.main.o)
- *fill*         0x000000000049fc56        0x2 
+                0x000000000049fe50        0xa ohos\libs\libstartup.a(libstartup.main.o)
+ *fill*         0x000000000049fe5a        0x2 
  .rodata.OLED_ShowNum.str1.4
-                0x000000000049fc58        0x5 ohos\libs\libstartup.a(libstartup.oled.o)
- *fill*         0x000000000049fc5d        0x3 
+                0x000000000049fe5c        0x5 ohos\libs\libstartup.a(libstartup.oled.o)
+ *fill*         0x000000000049fe61        0x3 
  .rodata.oled_driver_init.str1.4
-                0x000000000049fc60       0x22 ohos\libs\libstartup.a(libstartup.oled_driver.o)
- *fill*         0x000000000049fc82        0x2 
+                0x000000000049fe64       0x22 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+ *fill*         0x000000000049fe86        0x2 
  .rodata.songti_font_10x13
-                0x000000000049fc84      0x4d3 ohos\libs\libstartup.a(libstartup.songti_font.o)
-                0x000000000049fc84                songti_font_10x13
- *fill*         0x00000000004a0157        0x1 
+                0x000000000049fe88      0x4d3 ohos\libs\libstartup.a(libstartup.songti_font.o)
+                0x000000000049fe88                songti_font_10x13
+ *fill*         0x00000000004a035b        0x1 
  .rodata.BuildOSFullName.str1.4
-                0x00000000004a0158       0x23 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
- *fill*         0x00000000004a017b        0x1 
+                0x00000000004a035c       0x23 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+ *fill*         0x00000000004a037f        0x1 
  .rodata.BuildVersionId.str1.4
-                0x00000000004a017c       0x1e ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
- *fill*         0x00000000004a019a        0x2 
+                0x00000000004a0380       0x1e ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+ *fill*         0x00000000004a039e        0x2 
  .rodata.EMPTY_STR
-                0x00000000004a019c        0x1 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a03a0        0x1 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
  .rodata.GetBuildRootHash.str1.4
-                0x00000000004a019d        0x1 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
- *fill*         0x00000000004a019d        0x3 
+                0x00000000004a03a1        0x1 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+ *fill*         0x00000000004a03a1        0x3 
  .rodata.OHOS_OS_NAME
-                0x00000000004a01a0        0xc ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a03a4        0xc ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
  .rodata.OHOS_RELEASE_TYPE
-                0x00000000004a01ac        0x4 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a03b0        0x4 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
  .rodata.OHOS_SECURITY_PATCH_TAG
-                0x00000000004a01b0        0xb ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
- *fill*         0x00000000004a01bb        0x1 
- .rodata        0x00000000004a01bc       0x20 ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
+                0x00000000004a03b4        0xb ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+ *fill*         0x00000000004a03bf        0x1 
+ .rodata        0x00000000004a03c0       0x20 ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
  .rodata.str1.4
-                0x00000000004a01dc       0x1f ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
-                0x00000000004a0200                . = ALIGN (0x20)
- *fill*         0x00000000004a01fb        0x5 
-                0x00000000004a0200                __text_rodata_end_ = .
-                0x00000000004a0200                . = ALIGN (0x20)
+                0x00000000004a03e0       0x1f ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
+                0x00000000004a0400                . = ALIGN (0x20)
+ *fill*         0x00000000004a03ff        0x1 
+                0x00000000004a0400                __text_rodata_end_ = .
+                0x00000000004a0400                . = ALIGN (0x20)
 
-.zInit          0x00000000004a0200       0x24
-                0x00000000004a0200                __zinitcall_bsp_start = .
+.zInit          0x00000000004a0400       0x24
+                0x00000000004a0400                __zinitcall_bsp_start = .
  *(.zinitcall.bsp0.init)
  *(.zinitcall.bsp1.init)
  *(.zinitcall.bsp2.init)
  *(.zinitcall.bsp3.init)
  *(.zinitcall.bsp4.init)
-                0x00000000004a0200                __zinitcall_bsp_end = .
-                0x00000000004a0200                __zinitcall_device_start = .
+                0x00000000004a0400                __zinitcall_bsp_end = .
+                0x00000000004a0400                __zinitcall_device_start = .
  *(.zinitcall.device0.init)
  *(.zinitcall.device1.init)
  *(.zinitcall.device2.init)
  *(.zinitcall.device3.init)
  *(.zinitcall.device4.init)
-                0x00000000004a0200                __zinitcall_device_end = .
-                0x00000000004a0200                __zinitcall_core_start = .
+                0x00000000004a0400                __zinitcall_device_end = .
+                0x00000000004a0400                __zinitcall_core_start = .
  *(.zinitcall.core0.init)
  .zinitcall.core0.init
-                0x00000000004a0200        0x4 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_log.o)
+                0x00000000004a0400        0x4 ohos\libs\libhilog_lite.a(libhilog_lite.hiview_log.o)
  .zinitcall.core0.init
-                0x00000000004a0204        0x4 ohos\libs\libhiview_lite.a(libhiview_lite.hiview_config.o)
+                0x00000000004a0404        0x4 ohos\libs\libhiview_lite.a(libhiview_lite.hiview_config.o)
  *(.zinitcall.core1.init)
  *(.zinitcall.core2.init)
  .zinitcall.core2.init
-                0x00000000004a0208        0x4 ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
+                0x00000000004a0408        0x4 ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
  *(.zinitcall.core3.init)
  *(.zinitcall.core4.init)
-                0x00000000004a020c                __zinitcall_core_end = .
-                0x00000000004a020c                __zinitcall_sys_service_start = .
+                0x00000000004a040c                __zinitcall_core_end = .
+                0x00000000004a040c                __zinitcall_sys_service_start = .
  *(.zinitcall.sys.service0.init)
  *(.zinitcall.sys.service1.init)
  *(.zinitcall.sys.service2.init)
  .zinitcall.sys.service2.init
-                0x00000000004a020c        0x4 ohos\libs\libbootstrap.a(libbootstrap.bootstrap_service.o)
+                0x00000000004a040c        0x4 ohos\libs\libbootstrap.a(libbootstrap.bootstrap_service.o)
  .zinitcall.sys.service2.init
-                0x00000000004a0210        0x4 ohos\libs\libbroadcast.a(libbroadcast.broadcast_service.o)
+                0x00000000004a0410        0x4 ohos\libs\libbroadcast.a(libbroadcast.broadcast_service.o)
  .zinitcall.sys.service2.init
-                0x00000000004a0214        0x4 ohos\libs\libdeviceauth_hal_liteos.a(libdeviceauth_hal_liteos.hc_init_protection.o)
+                0x00000000004a0414        0x4 ohos\libs\libdeviceauth_hal_liteos.a(libdeviceauth_hal_liteos.hc_init_protection.o)
  .zinitcall.sys.service2.init
-                0x00000000004a0218        0x4 ohos\libs\libhiview_lite.a(libhiview_lite.hiview_service.o)
+                0x00000000004a0418        0x4 ohos\libs\libhiview_lite.a(libhiview_lite.hiview_service.o)
  *(.zinitcall.sys.service3.init)
  *(.zinitcall.sys.service4.init)
-                0x00000000004a021c                __zinitcall_sys_service_end = .
-                0x00000000004a021c                __zinitcall_sys_feature_start = .
+                0x00000000004a041c                __zinitcall_sys_service_end = .
+                0x00000000004a041c                __zinitcall_sys_feature_start = .
  *(.zinitcall.sys.feature0.init)
  *(.zinitcall.sys.feature1.init)
  *(.zinitcall.sys.feature2.init)
  .zinitcall.sys.feature2.init
-                0x00000000004a021c        0x4 ohos\libs\libbroadcast.a(libbroadcast.pub_sub_feature.o)
+                0x00000000004a041c        0x4 ohos\libs\libbroadcast.a(libbroadcast.pub_sub_feature.o)
  *(.zinitcall.sys.feature3.init)
  *(.zinitcall.sys.feature4.init)
-                0x00000000004a0220                __zinitcall_sys_feature_end = .
-                0x00000000004a0220                __zinitcall_run_start = .
+                0x00000000004a0420                __zinitcall_sys_feature_end = .
+                0x00000000004a0420                __zinitcall_run_start = .
  *(.zinitcall.run0.init)
  *(.zinitcall.run1.init)
  *(.zinitcall.run2.init)
  *(.zinitcall.run3.init)
  *(.zinitcall.run4.init)
-                0x00000000004a0220                __zinitcall_run_end = .
-                0x00000000004a0220                __zinitcall_app_service_start = .
+                0x00000000004a0420                __zinitcall_run_end = .
+                0x00000000004a0420                __zinitcall_app_service_start = .
  *(.zinitcall.app.service0.init)
  *(.zinitcall.app.service1.init)
  *(.zinitcall.app.service2.init)
  *(.zinitcall.app.service3.init)
  *(.zinitcall.app.service4.init)
-                0x00000000004a0220                __zinitcall_app_service_end = .
-                0x00000000004a0220                __zinitcall_app_feature_start = .
+                0x00000000004a0420                __zinitcall_app_service_end = .
+                0x00000000004a0420                __zinitcall_app_feature_start = .
  *(.zinitcall.app.feature0.init)
  *(.zinitcall.app.feature1.init)
  *(.zinitcall.app.feature2.init)
  .zinitcall.app.feature2.init
-                0x00000000004a0220        0x4 ohos\libs\libstartup.a(libstartup.main.o)
+                0x00000000004a0420        0x4 ohos\libs\libstartup.a(libstartup.main.o)
  *(.zinitcall.app.feature3.init)
  *(.zinitcall.app.feature4.init)
-                0x00000000004a0224                __zinitcall_app_feature_end = .
-                0x00000000004a0224                __zinitcall_test_start = .
+                0x00000000004a0424                __zinitcall_app_feature_end = .
+                0x00000000004a0424                __zinitcall_test_start = .
  *(.zinitcall.test0.init)
  *(.zinitcall.test1.init)
  *(.zinitcall.test2.init)
  *(.zinitcall.test3.init)
  *(.zinitcall.test4.init)
-                0x00000000004a0224                __zinitcall_test_end = .
-                0x00000000004a0224                __zinitcall_exit_start = .
+                0x00000000004a0424                __zinitcall_test_end = .
+                0x00000000004a0424                __zinitcall_exit_start = .
  *(.zinitcall.exit0.init)
  *(.zinitcall.exit1.init)
  *(.zinitcall.exit2.init)
  *(.zinitcall.exit3.init)
  *(.zinitcall.exit4.init)
-                0x00000000004a0224                __zinitcall_exit_end = .
+                0x00000000004a0424                __zinitcall_exit_end = .
 
-.ram_text       0x00000000000d8400     0x3320 load address 0x00000000004a0240
-                0x00000000004a0240                __ram_text_load = LOADADDR (.ram_text)
+.ram_text       0x00000000000d8400     0x3320 load address 0x00000000004a0440
+                0x00000000004a0440                __ram_text_load = LOADADDR (.ram_text)
                 0x00000000000d8400                __ram_text_start = .
                 0x00000000000d8400                . = ALIGN (0x20)
  SORT_BY_NAME(*)(.trap_vector.text)
@@ -37793,7 +37802,7 @@ Linker script and memory map
                 0x00000000000db720                __ram_text_end = .
                 0x0000000000003320                __ram_text_size = (__ram_text_end - __ram_text_start)
 
-.rela.dyn       0x00000000000db720        0x0 load address 0x00000000004a3560
+.rela.dyn       0x00000000000db720        0x0 load address 0x00000000004a3760
  .rela.text.trap_download_vector
                 0x00000000000db720        0x0 build\libs\hi3861\release\no_mesh\libwifi_base.o
  .rela.text.download_assemble
@@ -37850,8 +37859,8 @@ Linker script and memory map
                 0x00000000000db720        0x0 build\libs\hi3861\release\no_mesh\libwifi_base.o
  .rela.got      0x00000000000db720        0x0 build\libs\hi3861\release\no_mesh\libwifi_base.o
 
-.data           0x00000000000db720      0xbc0 load address 0x00000000004a3560
-                0x00000000004a3560                __data_load = LOADADDR (.data)
+.data           0x00000000000db720      0xbc0 load address 0x00000000004a3760
+                0x00000000004a3760                __data_load = LOADADDR (.data)
                 0x00000000000db720                . = ALIGN (0x20)
                 0x00000000000db720                __data_start = .
  SORT_BY_NAME(*)(EXCLUDE_FILE(*libbsp_base.o *libwifi_base.o *libsec_base.o *libc_base.o *liblitekernel_base.o) .data*)
@@ -38309,8 +38318,8 @@ Linker script and memory map
                 0x00000000000dc2e0                __data_end = .
                 0x0000000000000bc0                __data_size = (__data_end - __data_start)
 
-.data_rom1      0x000000000011d7e0      0x6e8 load address 0x00000000004a4120
-                0x00000000004a4120                __rom_data1_load = LOADADDR (.data_rom1)
+.data_rom1      0x000000000011d7e0      0x6e8 load address 0x00000000004a4320
+                0x00000000004a4320                __rom_data1_load = LOADADDR (.data_rom1)
                 0x000000000011d7e0                . = ALIGN (0x20)
                 0x000000000011d7e0                __rom_data1_begin__ = .
  SORT_BY_NAME(*libgcc.a:save-restore.o)(.data*)
@@ -39445,7 +39454,7 @@ Linker script and memory map
                 0x00000000001199c0                __DOWNLOAD_IRQ_STACK = (ORIGIN (ROM_BSS) - DOWNLOAD_STACK_SIZE)
                 0x000000000011a9c0                __DOWNLOAD_STACK_END = ORIGIN (ROM_BSS)
 
-.bss            0x00000000000dc2e0     0x9380 load address 0x00000000004a4120
+.bss            0x00000000000dc2e0     0x9380 load address 0x00000000004a4320
                 0x00000000000dc2e0                . = ALIGN (0x20)
                 0x00000000000dc2e0                __bss_begin = .
  SORT_BY_NAME(*)(.bss*)
@@ -40578,25 +40587,36 @@ Linker script and memory map
                 0x00000000000e51b8        0x4 ohos\libs\libhiview_lite.a(libhiview_lite.hiview_service.o)
  .bss.g_samgrImpl
                 0x00000000000e51bc       0x70 ohos\libs\libsamgr.a(libsamgr.samgr_lite.o)
+ .bss.g_counter
+                0x00000000000e522c        0x4 ohos\libs\libstartup.a(libstartup.main.o)
+ .bss.g_data_mutex
+                0x00000000000e5230        0x4 ohos\libs\libstartup.a(libstartup.main.o)
+ .bss.g_dht11_connected
+                0x00000000000e5234        0x1 ohos\libs\libstartup.a(libstartup.main.o)
+ .bss.g_humidity
+                0x00000000000e5235        0x1 ohos\libs\libstartup.a(libstartup.main.o)
+ .bss.g_temperature
+                0x00000000000e5236        0x1 ohos\libs\libstartup.a(libstartup.main.o)
+ *fill*         0x00000000000e5237        0x1 
  .bss.g_oled_driver
-                0x00000000000e522c      0x408 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x00000000000e5238      0x408 ohos\libs\libstartup.a(libstartup.oled_driver.o)
  .bss.osFullName.2452
-                0x00000000000e5634        0x4 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000000e5640        0x4 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
  .bss.versionId.2474
-                0x00000000000e5638        0x4 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000000e5644        0x4 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
  .bss.g_wifiEventLock
-                0x00000000000e563c        0x4 ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
+                0x00000000000e5648        0x4 ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
  .bss.g_wifiGlobalLock
-                0x00000000000e5640        0x4 ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
+                0x00000000000e564c        0x4 ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
  SORT_BY_NAME(*)(.rom.bss.patch)
  SORT_BY_NAME(*)(.sbss*)
                 0x00000000000e5660                . = ALIGN (0x20)
- *fill*         0x00000000000e5644       0x1c 
+ *fill*         0x00000000000e5650       0x10 
                 0x00000000000e5660                __bss_end = .
                 0x0000000000009380                __bss_size__ = (__bss_end - __bss_begin)
                 0x00000000000e5660                _end = .
 
-.heap           0x00000000000e5660       0x20 load address 0x00000000004ad4a0
+.heap           0x00000000000e5660       0x20 load address 0x00000000004ad6a0
                 0x00000000000e5680                . = ALIGN (0x40)
  *fill*         0x00000000000e5660       0x20 
                 0x00000000000e5680                __HEAP_BEGIN__ = ABSOLUTE (.)
