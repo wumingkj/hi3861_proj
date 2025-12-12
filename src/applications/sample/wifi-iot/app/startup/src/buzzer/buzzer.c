@@ -13,10 +13,6 @@
 #define BEEP_FREQ        2000    // 蜂鸣器频率 2kHz
 #define BEEP_DUTY        500     // 蜂鸣器占空比 50%
 
-// 蜂鸣器状态变量
-static volatile uint8_t g_beep_active = 0;
-static volatile uint32_t g_beep_end_time = 0;
-
 // 蜂鸣器初始化
 void Buzzer_Init(void)
 {
@@ -34,52 +30,53 @@ void Buzzer_Init(void)
     printf("Buzzer PWM Initialized Success!\n");
 }
 
-// 蜂鸣器鸣叫（非阻塞方式）
+// 蜂鸣器鸣叫（阻塞方式 - 简单直接）
 void Buzzer_Beep(uint16_t duration_ms)
 {
     // 启动PWM输出
     hi_pwm_start(BEEP_PWM_PORT, BEEP_DUTY, BEEP_FREQ);
+    printf("Buzzer Start Beep for %d ms\n", duration_ms);
     
-    // 设置蜂鸣结束时间（非阻塞方式）
-    g_beep_active = 1;
-    g_beep_end_time = osKernelGetTickCount() + duration_ms;
+    // 阻塞延时
+    usleep(duration_ms * 1000);
     
-    printf("Buzzer Beep for %d ms\n", duration_ms);
+    // 停止PWM输出
+    hi_pwm_stop(BEEP_PWM_PORT);
+    printf("Buzzer Stop\n");
 }
 
-// 蜂鸣器模式鸣叫（非阻塞方式）
+// 蜂鸣器模式鸣叫（阻塞方式）
 void Buzzer_BeepPattern(uint16_t on_time, uint16_t off_time, uint8_t count)
 {
-    // 简化实现：使用单次蜂鸣代替模式
-    // 在实际应用中，可以使用状态机实现非阻塞的模式控制
-    Buzzer_Beep(on_time);
     printf("Buzzer Pattern: on=%dms, off=%dms, count=%d\n", on_time, off_time, count);
-}
-
-// 蜂鸣器更新函数（需要在主循环中调用）
-void Buzzer_Update(void)
-{
-    if (g_beep_active) {
-        uint32_t current_time = osKernelGetTickCount();
-        if (current_time >= g_beep_end_time) {
-            // 停止蜂鸣器
-            hi_pwm_stop(BEEP_PWM_PORT);
-            g_beep_active = 0;
-            printf("Buzzer Stopped\n");
-        }
+    
+    for (uint8_t i = 0; i < count; i++) {
+        // 鸣叫
+        hi_pwm_start(BEEP_PWM_PORT, BEEP_DUTY, BEEP_FREQ);
+        usleep(on_time * 1000);
+        
+        // 停止
+        hi_pwm_stop(BEEP_PWM_PORT);
+        usleep(off_time * 1000);
     }
+    printf("Buzzer Pattern Finished\n");
 }
 
 // 停止蜂鸣器（立即停止）
 void Buzzer_Stop(void)
 {
     hi_pwm_stop(BEEP_PWM_PORT);
-    g_beep_active = 0;
     printf("Buzzer Stopped Immediately\n");
 }
 
-// 检查蜂鸣器是否正在鸣叫
+// 检查蜂鸣器是否正在鸣叫（阻塞方式下总是返回0）
 uint8_t Buzzer_IsActive(void)
 {
-    return g_beep_active;
+    return 0;
+}
+
+// 蜂鸣器更新函数（阻塞方式下不需要）
+void Buzzer_Update(void)
+{
+    // 阻塞方式下不需要更新
 }

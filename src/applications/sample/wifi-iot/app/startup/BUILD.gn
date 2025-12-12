@@ -18,6 +18,8 @@ static_library("startup") {
         "src/oled/oled.c",
         "src/fonts/songti_font.c",
         "src/buzzer/buzzer.c",
+        "src/sensors/ds18b20.c",
+        "src/sensors/dht11.c",
     ]
 
     include_dirs = [
@@ -25,6 +27,7 @@ static_library("startup") {
         "src/oled",
         "src/fonts",
         "src/buzzer",
+        "src/sensors",
         "//device/hisilicon/hispark_pegasus/sdk_liteos/include",
     ]
 }
