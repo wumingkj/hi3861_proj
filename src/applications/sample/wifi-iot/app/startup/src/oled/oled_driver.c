@@ -124,31 +124,16 @@ void oled_driver_refresh(void)
 // 快速刷新显示（优化版本）
 void oled_driver_refresh_fast(void)
 {
-    // 一次性传输整个GRAM到OLED
-    uint8_t buffer[OLED_WIDTH * OLED_PAGE_NUM + 1];
-    buffer[0] = OLED_DATA; // 数据命令
-    
-    // 将GRAM数据复制到缓冲区
-    uint16_t index = 1;
+    // 使用原始刷新方法，确保所有页面都被正确刷新
     for (uint8_t page = 0; page < OLED_PAGE_NUM; page++) {
+        oled_write_cmd(0xB0 + page); // 设置页地址
+        oled_write_cmd(0x00);        // 设置列地址低4位
+        oled_write_cmd(0x10);        // 设置列地址高4位
+        
         for (uint16_t col = 0; col < OLED_WIDTH; col++) {
-            buffer[index++] = g_oled_driver.gram[col][page];
+            oled_write_data(g_oled_driver.gram[col][page]);
         }
     }
-    
-    // 设置页地址和列地址
-    oled_write_cmd(0xB0); // 页0
-    oled_write_cmd(0x00); // 列地址低4位
-    oled_write_cmd(0x10); // 列地址高4位
-    
-    // 一次性传输所有数据
-    hi_i2c_data i2c_data = {
-        .send_buf = buffer,
-        .send_len = sizeof(buffer),
-        .receive_buf = NULL,
-        .receive_len = 0
-    };
-    hi_i2c_write(OLED_I2C_IDX, OLED_ADDRESS, &i2c_data);
 }
 
 // 部分刷新（只刷新脏页面）
