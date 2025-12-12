@@ -29,7 +29,7 @@ static void OLED_RefreshTask(void* arg)
     oled_request_t request;
     osStatus_t status;
     uint32_t last_refresh_time = osKernelGetTickCount();
-    const uint32_t REFRESH_INTERVAL = 10; // 10ms刷新间隔
+    const uint32_t REFRESH_INTERVAL = 50; // 50ms刷新间隔
     bool need_refresh = false;
     
     // 初始化后缓冲区

@@ -35999,144 +35999,143 @@ Linker script and memory map
                 0x000000000049712e       0xa8 ohos\libs\libstartup.a(libstartup.dht11.o)
                 0x000000000049712e                DHT11_ReadData
  .text.OLED_DisplayTask
-                0x00000000004971d6      0x190 ohos\libs\libstartup.a(libstartup.main.o)
+                0x00000000004971d6      0x192 ohos\libs\libstartup.a(libstartup.main.o)
                 0x00000000004971d6                OLED_DisplayTask
  .text.Main_Entry
-                0x0000000000497366      0x104 ohos\libs\libstartup.a(libstartup.main.o)
+                0x0000000000497368      0x104 ohos\libs\libstartup.a(libstartup.main.o)
  .text.Sensor_UpdateTask
-                0x000000000049746a       0x84 ohos\libs\libstartup.a(libstartup.main.o)
+                0x000000000049746c       0x84 ohos\libs\libstartup.a(libstartup.main.o)
  .text.Main_Task
-                0x00000000004974ee       0xbe ohos\libs\libstartup.a(libstartup.main.o)
+                0x00000000004974f0       0xcc ohos\libs\libstartup.a(libstartup.main.o)
  .text.OLED_Init
-                0x00000000004975ac       0xd6 ohos\libs\libstartup.a(libstartup.oled.o)
-                0x00000000004975ac                OLED_Init
+                0x00000000004975bc       0xd6 ohos\libs\libstartup.a(libstartup.oled.o)
+                0x00000000004975bc                OLED_Init
  .text.OLED_RequestShowString
-                0x0000000000497682       0x78 ohos\libs\libstartup.a(libstartup.oled.o)
-                0x0000000000497682                OLED_RequestShowString
+                0x0000000000497692       0x78 ohos\libs\libstartup.a(libstartup.oled.o)
+                0x0000000000497692                OLED_RequestShowString
  .text.OLED_RefreshTask
-                0x00000000004976fa      0x184 ohos\libs\libstartup.a(libstartup.oled.o)
+                0x000000000049770a      0x186 ohos\libs\libstartup.a(libstartup.oled.o)
  .text.oled_write_cmd
-                0x000000000049787e       0x44 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x0000000000497890       0x44 ohos\libs\libstartup.a(libstartup.oled_driver.o)
  .text.oled_write_data
-                0x00000000004978c2       0x48 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x00000000004978d4       0x48 ohos\libs\libstartup.a(libstartup.oled_driver.o)
  .text.oled_driver_clear
-                0x000000000049790a       0x58 ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x000000000049790a                oled_driver_clear
+                0x000000000049791c       0x58 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x000000000049791c                oled_driver_clear
  .text.oled_driver_clear_backbuffer
-                0x0000000000497962       0x36 ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x0000000000497962                oled_driver_clear_backbuffer
+                0x0000000000497974       0x36 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x0000000000497974                oled_driver_clear_backbuffer
  .text.oled_driver_refresh
-                0x0000000000497998       0x6e ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x0000000000497998                oled_driver_refresh
+                0x00000000004979aa       0x6e ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x00000000004979aa                oled_driver_refresh
  .text.oled_driver_init
-                0x0000000000497a06      0x13e ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x0000000000497a06                oled_driver_init
+                0x0000000000497a18      0x13e ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x0000000000497a18                oled_driver_init
  .text.oled_driver_refresh_fast
-                0x0000000000497b44       0x28 ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x0000000000497b44                oled_driver_refresh_fast
+                0x0000000000497b56       0x28 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x0000000000497b56                oled_driver_refresh_fast
  .text.oled_driver_draw_pixel_backbuffer
-                0x0000000000497b6c       0x6c ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x0000000000497b6c                oled_driver_draw_pixel_backbuffer
+                0x0000000000497b7e       0x6c ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x0000000000497b7e                oled_driver_draw_pixel_backbuffer
  .text.oled_driver_swap_buffers
-                0x0000000000497bd8       0x66 ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x0000000000497bd8                oled_driver_swap_buffers
+                0x0000000000497bea       0x66 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x0000000000497bea                oled_driver_swap_buffers
  .text.oled_driver_set_display
-                0x0000000000497c3e       0x30 ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x0000000000497c3e                oled_driver_set_display
+                0x0000000000497c50       0x30 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x0000000000497c50                oled_driver_set_display
  .text.songti_font_get_char_width
-                0x0000000000497c6e       0x26 ohos\libs\libstartup.a(libstartup.songti_font.o)
-                0x0000000000497c6e                songti_font_get_char_width
+                0x0000000000497c80       0x26 ohos\libs\libstartup.a(libstartup.songti_font.o)
+                0x0000000000497c80                songti_font_get_char_width
  .text.songti_font_get_char_height
-                0x0000000000497c94       0x26 ohos\libs\libstartup.a(libstartup.songti_font.o)
-                0x0000000000497c94                songti_font_get_char_height
+                0x0000000000497ca6       0x26 ohos\libs\libstartup.a(libstartup.songti_font.o)
+                0x0000000000497ca6                songti_font_get_char_height
  .text.songti_font_get_char_data
-                0x0000000000497cba       0x44 ohos\libs\libstartup.a(libstartup.songti_font.o)
-                0x0000000000497cba                songti_font_get_char_data
+                0x0000000000497ccc       0x44 ohos\libs\libstartup.a(libstartup.songti_font.o)
+                0x0000000000497ccc                songti_font_get_char_data
  .text.GetDeviceType
-                0x0000000000497cfe       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497cfe                GetDeviceType
+                0x0000000000497d10       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497d10                GetDeviceType
  .text.GetManufacture
-                0x0000000000497d26       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497d26                GetManufacture
+                0x0000000000497d38       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497d38                GetManufacture
  .text.GetBrand
-                0x0000000000497d4e       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497d4e                GetBrand
+                0x0000000000497d60       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497d60                GetBrand
  .text.GetMarketName
-                0x0000000000497d76       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497d76                GetMarketName
+                0x0000000000497d88       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497d88                GetMarketName
  .text.GetProductSeries
-                0x0000000000497d9e       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497d9e                GetProductSeries
+                0x0000000000497db0       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497db0                GetProductSeries
  .text.GetProductModel
-                0x0000000000497dc6       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497dc6                GetProductModel
+                0x0000000000497dd8       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497dd8                GetProductModel
  .text.GetSoftwareModel
-                0x0000000000497dee       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497dee                GetSoftwareModel
+                0x0000000000497e00       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497e00                GetSoftwareModel
  .text.GetHardwareModel
-                0x0000000000497e16       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497e16                GetHardwareModel
+                0x0000000000497e28       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497e28                GetHardwareModel
  .text.GetSerial
-                0x0000000000497e3e       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497e3e                GetSerial
+                0x0000000000497e50       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497e50                GetSerial
  .text.GetBootloaderVersion
-                0x0000000000497e66       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497e66                GetBootloaderVersion
+                0x0000000000497e78       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497e78                GetBootloaderVersion
  .text.GetSecurityPatchTag
-                0x0000000000497e8e       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497e8e                GetSecurityPatchTag
+                0x0000000000497ea0       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497ea0                GetSecurityPatchTag
  .text.GetAbiList
-                0x0000000000497eba       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497eba                GetAbiList
+                0x0000000000497ecc       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497ecc                GetAbiList
  .text.GetDisplayVersion
-                0x0000000000497ee2       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497ee2                GetDisplayVersion
+                0x0000000000497ef4       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497ef4                GetDisplayVersion
  .text.GetSdkApiVersion
-                0x0000000000497f0a       0x26 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497f0a                GetSdkApiVersion
+                0x0000000000497f1c       0x26 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497f1c                GetSdkApiVersion
  .text.GetFirstApiVersion
-                0x0000000000497f30       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497f30                GetFirstApiVersion
+                0x0000000000497f42       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497f42                GetFirstApiVersion
  .text.GetIncrementalVersion
-                0x0000000000497f58       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497f58                GetIncrementalVersion
+                0x0000000000497f6a       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497f6a                GetIncrementalVersion
  .text.GetBuildType
-                0x0000000000497f80       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497f80                GetBuildType
+                0x0000000000497f92       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497f92                GetBuildType
  .text.GetBuildUser
-                0x0000000000497fa8       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497fa8                GetBuildUser
+                0x0000000000497fba       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497fba                GetBuildUser
  .text.GetBuildHost
-                0x0000000000497fd0       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497fd0                GetBuildHost
+                0x0000000000497fe2       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000497fe2                GetBuildHost
  .text.GetBuildTime
-                0x0000000000497ff8       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000497ff8                GetBuildTime
+                0x000000000049800a       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x000000000049800a                GetBuildTime
  .text.GetBuildRootHash
-                0x0000000000498020       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000498020                GetBuildRootHash
+                0x0000000000498032       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000498032                GetBuildRootHash
  .text.GetOsReleaseType
-                0x000000000049804c       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x000000000049804c                GetOsReleaseType
+                0x000000000049805e       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x000000000049805e                GetOsReleaseType
  .text.BuildOSFullName
-                0x0000000000498078       0xa0 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x000000000049808a       0xa0 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
  .text.GetOSFullName
-                0x0000000000498118       0x42 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x0000000000498118                GetOSFullName
+                0x000000000049812a       0x42 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x000000000049812a                GetOSFullName
  .text.BuildVersionId
-                0x000000000049815a       0x98 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x000000000049816c       0x98 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
  .text.GetVersionId
-                0x00000000004981f2       0x42 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004981f2                GetVersionId
+                0x0000000000498204       0x42 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x0000000000498204                GetVersionId
  .text.InitWifiGlobalLock
-                0x0000000000498234       0x6e ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
+                0x0000000000498246       0x6e ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
  SORT_BY_NAME(*)(EXCLUDE_FILE(*libasm_flash.o) .got*)
- *fill*         0x00000000004982a2        0x2 
- .got           0x00000000004982a4      0x118 build\libs\hi3861\release\no_mesh\libwifi_base.o
-                0x00000000004982a4                _GLOBAL_OFFSET_TABLE_
- .got.plt       0x00000000004983bc        0x8 build\libs\hi3861\release\no_mesh\libwifi_base.o
+ .got           0x00000000004982b4      0x118 build\libs\hi3861\release\no_mesh\libwifi_base.o
+                0x00000000004982b4                _GLOBAL_OFFSET_TABLE_
+ .got.plt       0x00000000004983cc        0x8 build\libs\hi3861\release\no_mesh\libwifi_base.o
                 0x00000000004983e0                . = ALIGN (0x20)
- *fill*         0x00000000004983c4       0x1c 
+ *fill*         0x00000000004983d4        0xc 
                 0x00000000004983e0                __text_cache_end2_ = .
  SORT_BY_NAME(*)(.rodata*)
  .rodata.app_demo_upg_check_chip_product.str1.4

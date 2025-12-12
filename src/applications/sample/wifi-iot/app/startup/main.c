@@ -21,7 +21,7 @@ static uint32_t g_last_buzzer_check = 0;
 
 // 常量定义
 #define SENSOR_UPDATE_INTERVAL 2000  // 2秒
-#define OLED_UPDATE_INTERVAL   10   // 25ms
+#define OLED_UPDATE_INTERVAL   250   // 250ms
 #define BUZZER_CHECK_INTERVAL  250   // 250ms
 
 // 传感器数据更新任务（非阻塞版本）
