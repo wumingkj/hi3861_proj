@@ -16,8 +16,9 @@
  *
  */
 
-#ifndef BSP_BEEP_H
-#define BSP_BEEP_H
+#ifndef BUZZER_H  // 请在此处添加函数实现
+
+#define BUZZER_H
 
 #include "cmsis_os2.h"
 #include "hi_io.h"

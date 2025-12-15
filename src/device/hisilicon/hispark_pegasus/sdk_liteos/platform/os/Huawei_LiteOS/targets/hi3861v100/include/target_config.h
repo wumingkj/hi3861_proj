@@ -101,7 +101,7 @@ extern UINT32                                               g_osSysClock;
 extern UINT32                                               g_minusOneTickPerSecond;
 #define LOSCFG_BASE_CORE_TICK_PER_SECOND                    (g_minusOneTickPerSecond + 1) /* tick per sencond plus 1 */
 #else
-#define LOSCFG_BASE_CORE_TICK_PER_SECOND                    (100UL)
+#define LOSCFG_BASE_CORE_TICK_PER_SECOND                    (1000UL)
 #endif
 
 /**

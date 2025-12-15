@@ -14,9 +14,9 @@
 static_library("startup") {
     sources = [
         "main.c",
-        "src/oled/oled_driver.c",
-        "src/oled/oled.c",
-        "src/fonts/songti_font.c",
+        #"src/oled/oled_driver.c",
+        #"src/oled/oled.c",
+        #"src/fonts/songti_font.c",
         "src/buzzer/buzzer.c",
         "src/sensors/dht11.c",
     ]

@@ -16,7 +16,7 @@
  *
  */
 
-#include "bsp_beep.h"
+#include "buzzer.h"
 
 
 //蜂鸣器初始化
