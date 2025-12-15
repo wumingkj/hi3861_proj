@@ -1,24 +1,36 @@
-#ifndef __BUZZER_H__
-#define __BUZZER_H__
+/**
+ ****************************************************************************************************
+ * @file        bsp_beep.h
+ * @author      普中科技
+ * @version     V1.0
+ * @date        2024-06-05
+ * @brief       蜂鸣器实验
+ * @license     Copyright (c) 2024-2034, 深圳市普中科技有限公司
+ ****************************************************************************************************
+ * @attention
+ *
+ * 实验平台:普中-Hi3861
+ * 在线视频:https://space.bilibili.com/2146492485
+ * 公司网址:www.prechin.cn
+ * 购买地址:
+ *
+ */
 
-#include <stdint.h>
+#ifndef BSP_BEEP_H
+#define BSP_BEEP_H
 
-// 蜂鸣器初始化
-void Buzzer_Init(void);
+#include "cmsis_os2.h"
+#include "hi_io.h"
+#include "hi_gpio.h"
 
-// 蜂鸣器鸣叫（非阻塞方式）
-void Buzzer_Beep(uint16_t duration_ms);
+//管脚定义
+#define BEEP_PIN         HI_IO_NAME_GPIO_14
+#define BEEP_GPIO_FUN    HI_IO_FUNC_GPIO_14_GPIO
 
-// 蜂鸣器模式鸣叫（非阻塞方式）
-void Buzzer_BeepPattern(uint16_t on_time, uint16_t off_time, uint8_t count);
+#define BEEP(a)          hi_gpio_set_ouput_val(BEEP_PIN,a)
 
-// 蜂鸣器更新函数（需要在主循环中调用）
-void Buzzer_Update(void);
+//函数声明
+void beep_init(void);
+void beep_alarm(uint16_t cnt,uint16_t time);
 
-// 停止蜂鸣器（立即停止）
-void Buzzer_Stop(void);
-
-// 检查蜂鸣器是否正在鸣叫
-uint8_t Buzzer_IsActive(void);
-
-#endif // __BUZZER_H__
+#endif
