@@ -1,37 +1,38 @@
-/**
- ****************************************************************************************************
- * @file        bsp_beep.h
- * @author      普中科技
- * @version     V1.0
- * @date        2024-06-05
- * @brief       蜂鸣器实验
- * @license     Copyright (c) 2024-2034, 深圳市普中科技有限公司
- ****************************************************************************************************
- * @attention
- *
- * 实验平台:普中-Hi3861
- * 在线视频:https://space.bilibili.com/2146492485
- * 公司网址:www.prechin.cn
- * 购买地址:
- *
- */
-
-#ifndef BUZZER_H  // 请在此处添加函数实现
-
+#ifndef BUZZER_H
 #define BUZZER_H
 
-#include "cmsis_os2.h"
+#include <stdint.h>
+#include <stdbool.h>
 #include "hi_io.h"
 #include "hi_gpio.h"
+#include "hi_pwm.h"
 
-//管脚定义
-#define BEEP_PIN         HI_IO_NAME_GPIO_14
-#define BEEP_GPIO_FUN    HI_IO_FUNC_GPIO_14_GPIO
+#define BEEP_PIN              HI_IO_NAME_GPIO_14
+#define BEEP_PIN_PWM_FUNC     HI_IO_FUNC_GPIO_14_PWM5_OUT
+#define BEEP_PWM_PORT         HI_PWM_PORT_PWM5
 
-#define BEEP(a)          hi_gpio_set_ouput_val(BEEP_PIN,a)
+// 可调：频率由 period 决定；示例给个“听得到”的值
+#define BEEP_PWM_PERIOD       40000
+#define BEEP_PWM_DUTY         20000
 
-//函数声明
-void beep_init(void);
-void beep_alarm(uint16_t cnt,uint16_t time);
+// 初始化PWM蜂鸣器硬件
+void Buzzer_Init(void);
+
+// 1) 叫 ms 毫秒（非阻塞，立即返回）
+//    会打断当前播放
+void Buzzer_BeepMs(uint16_t ms);
+
+// 2) 报警模式：响 on_ms、停 off_ms，重复 cnt 次（非阻塞）
+//    会打断当前播放
+void Buzzer_Alarm(uint16_t cnt, uint16_t on_ms, uint16_t off_ms);
+
+// 3) 立刻停止（随时可调用）
+void Buzzer_Stop(void);
+
+// 4) 是否正在播放（响或停间隙都算忙）
+bool Buzzer_IsBusy(void);
+
+// 5) 给 main 的定时器回调调用：每 1ms/5ms 调一次都可以
+void Buzzer_Tick(uint32_t now_ms);
 
 #endif

@@ -14,11 +14,12 @@
 static_library("startup") {
     sources = [
         "main.c",
-        #"src/oled/oled_driver.c",
-        #"src/oled/oled.c",
-        #"src/fonts/songti_font.c",
+        "src/oled/oled_driver.c",
+        "src/oled/oled.c",
+        "src/fonts/songti_font.c",
         "src/buzzer/buzzer.c",
         "src/sensors/dht11.c",
+        "src/time/time.c",
     ]
 
     include_dirs = [
@@ -27,6 +28,7 @@ static_library("startup") {
         "src/fonts",
         "src/buzzer",
         "src/sensors",
+        "src/time",
         "//device/hisilicon/hispark_pegasus/sdk_liteos/include",
     ]
 }
