@@ -49,6 +49,7 @@ hb build -f
 - WiFi模块初始化并准备连接
 
 ## 项目结构
+```
 src/applications/sample/wifi-iot/app/startup/
 ├── src/ # 模块源码目录
 │ ├── buzzer/ # 蜂鸣器模块
@@ -60,3 +61,4 @@ src/applications/sample/wifi-iot/app/startup/
 │ └── fonts/ # 字体库模块
 ├── main.c # 主程序入口
 └── BUILD.gn # 构建配置文件
+```

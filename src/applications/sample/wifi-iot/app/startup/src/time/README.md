@@ -178,4 +178,4 @@ log_i("TIME", "System tick frequency: %lu Hz", Time_GetTickFrequency());
 - `time.h` - 头文件，包含API声明
 - `time.c` - 实现文件，包含时间管理逻辑
 
-[返回主文档](//README.md)
+[返回主文档](../../../../../../../../README.md)

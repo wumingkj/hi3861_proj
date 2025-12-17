@@ -23,4 +23,3 @@ applications/sample/wifi-iot/         # Sample code
 ## Repositories Involved<a name="section1718733212019"></a>
 
 applications\_sample\_wifi-iot
-
