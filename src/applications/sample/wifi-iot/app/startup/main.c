@@ -30,8 +30,6 @@ static bool g_dht11_connected = true;
 
 static uint8_t led_value = 0;
 
-// 蜂鸣器间隔变量（改为变量而不是宏常量）
-static uint32_t g_buzzer_interval_ms = 1000;
 
 // 常量定义（毫秒）
 #define SENSOR_UPDATE_INTERVAL_MS 1000    // 1秒读取一次
@@ -126,18 +124,6 @@ static void Main_Task(void) {
                 LED_OFF();
             }
             led_value = !led_value;
-        }
-
-        // 3. 蜂鸣器控制
-        if (current_time_ms - g_last_buzzer_timer >= g_buzzer_interval_ms) {
-            g_last_buzzer_timer = current_time_ms;
-
-            Buzzer_Alarm(1, 10, 0);
-            if (g_buzzer_interval_ms >= 25) {
-                g_buzzer_interval_ms -= 50;
-            } else {
-                g_buzzer_interval_ms = 1000;
-            }
         }
         
         // 添加延时，让出CPU时间，防止看门狗超时
