@@ -10,8 +10,9 @@
 //#include "oled.h"
 #include "time.h"    // 使用新的时间库
 #include "wifi.h"
+#include "nv.h"  // 新增NV库头文件
 
-//#define DEFAULT_DEBUG_LEVEL
+//#define DEFAULT_DEBUG_LEVEL 0
 #define DEBUG_ENABLE_COLOR
 #include "debug.h"   // 新增调试头文件
 
@@ -99,6 +100,23 @@ static void Main_Entry(void) {
     Buzzer_Init();
 
     log_i("SYSTEM", "System initialization started");
+
+    // 初始化NV库
+    nv_config_t nv_config = {
+        .base_addr = 0xA000,
+        .total_size = 0x2000,
+        .block_size = 0x1000,
+        .auto_save = true,
+        .auto_save_interval = 10000,  // 10秒自动保存
+    };
+    
+    nv_result_t nv_ret = nv_init(&nv_config);
+    if (nv_ret == NV_SUCCESS) {
+        log_i("NV", "NV library initialized successfully");
+        
+    } else {
+        log_w("NV", "NV library initialization failed: %d", nv_ret);
+    }
 
     // 初始化DHT11
     uint8_t retry_count = 0;
