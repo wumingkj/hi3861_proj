@@ -7,7 +7,8 @@
 #include "hi_gpio.h"
 #include "buzzer.h"
 #include "dht11.h"
-//#include "oled.h"
+//#include "oled.h"0
+#include "wifi.h"
 #include "time.h"    // 使用新的时间库
 
 // 函数原型声明
@@ -44,50 +45,6 @@ static void BuzzerTickCb(void *arg) {
     Buzzer_Tick(Time_GetCurrentMs());
 }
 
-
-// OLED显示任务
-/*static void OLED_Display_Task(void* arg)
-{
-    (void)arg;
-    
-    // OLED初始化（带重试机制）
-    int retry_count = 0;
-    const int max_retries = 3;
-    
-    while (retry_count < max_retries) {
-        if (OLED_Init() == 0) {
-            printf("OLED initialized successfully on attempt %d\n", retry_count + 1);
-            break;
-        } else {
-            printf("OLED initialization failed on attempt %d, retrying...\n", retry_count + 1);
-            retry_count++;
-            Time_DelayMs(500); // 等待500ms后重试
-        }
-    }
-    
-    if (retry_count >= max_retries) {
-        printf("OLED initialization failed after %d attempts, skipping OLED functionality\n", max_retries);
-        return;
-    }
-    
-    while (1) {
-        if (g_dht11_connected) {
-            // 读取温湿度数据
-            float temperature;
-            int humidity;
-            if (DHT11_Read(&temperature, &humidity) == 0) {
-                // 显示温湿度数据
-                OLED_ShowTemperatureHumidity(temperature, humidity);
-            } else {
-                OLED_ShowString(0, 0, "DHT11 Error", 8);
-            }
-        } else {
-            OLED_ShowString(0, 0, "DHT11 Disconnected", 8);
-        }
-        
-        Time_DelayMs(250); // 降低刷新频率为250ms
-    }
-}*/
 
 // 主任务 - 优化版本
 static void Main_Task(void) {
@@ -161,7 +118,7 @@ static void Main_Entry(void) {
     }
 
     // 启动提示音（非阻塞）
-    Buzzer_Alarm(2, 100, 100);
+    Buzzer_Alarm(2, 1000, 100);
     
     printf("System Init Success! (Optimized Multi-Task Mode)\n");
     

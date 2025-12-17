@@ -20,6 +20,7 @@ static_library("startup") {
         "src/buzzer/buzzer.c",
         "src/sensors/dht11.c",
         "src/time/time.c",
+        "src/network/wifi.c",
     ]
 
     include_dirs = [
@@ -29,6 +30,7 @@ static_library("startup") {
         "src/buzzer",
         "src/sensors",
         "src/time",
+        "src/network",
         "//device/hisilicon/hispark_pegasus/sdk_liteos/include",
     ]
 }
