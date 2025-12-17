@@ -8,7 +8,7 @@ static uint32_t g_tick_freq = 0;
 void Time_Init(void)
 {
     g_tick_freq = osKernelGetTickFreq();
-    printf("Time Library Init: Tick Frequency = %d Hz\n", g_tick_freq);
+    log_i("TIME", "Time Library Init: Tick Frequency = %d Hz", g_tick_freq);
 }
 
 // 获取当前时间（毫秒）

@@ -25,11 +25,23 @@
 #include "wifi_error_code.h"
 #include "wifi_device.h"
 
-
+#include "../debug.h"   // 添加debug库支持
+// STA信息结构体
+typedef struct {
+    char ssid[32];
+    char password[64];
+    int security_type;
+} sta_info_t;
 
 //函数声明
 WifiErrorCode WiFi_createHotspots(const char *ssid, const char *psk);
 WifiErrorCode WiFi_connectHotspots(const char *ssid, const char *psk);
 char* WiFi_GetLocalIP(void);
+
+// 新增STA信息配置函数
+WifiErrorCode WiFi_setSTAInfo(const char *ssid, const char *password, int security_type);
+WifiErrorCode WiFi_connectToSTA(void);
+WifiErrorCode WiFi_startAPAndConnectSTA(const char *ap_ssid, const char *ap_password, 
+                                       const char *sta_ssid, const char *sta_password);
 
 #endif

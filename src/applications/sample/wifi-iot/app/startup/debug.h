@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdarg.h>
-#include "time.h"
+#include <string.h>
 
 // 调试级别定义
 typedef enum {
@@ -45,15 +45,12 @@ typedef enum {
 #define DEBUG_PREFIX_DEBUG   COLOR_BLUE   "[D] "
 #define DEBUG_PREFIX_VERBOSE COLOR_CYAN   "[V] "
 
-// 调试宏核心函数
+// 调试宏核心函数（简化版本，不依赖时间）
 static inline int debug_print(debug_level_t level, const char* tag, const char* format, ...) {
     // 检查调试级别是否启用
     if (level > DEFAULT_DEBUG_LEVEL) {
         return 0;
     }
-    
-    // 获取当前时间
-    uint32_t current_time = Time_GetCurrentMs();
     
     // 根据级别选择前缀
     const char* prefix = "";
@@ -66,8 +63,8 @@ static inline int debug_print(debug_level_t level, const char* tag, const char* 
         default: return 0;
     }
     
-    // 打印时间戳和前缀
-    printf("[%8lu] %s", current_time, prefix);
+    // 打印前缀（不包含时间戳）
+    printf("%s", prefix);
     
     // 打印标签（如果提供）
     if (tag != NULL && strlen(tag) > 0) {

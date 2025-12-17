@@ -72,14 +72,20 @@ uint8_t dht11_check(void)
 		retry++;
 		hi_udelay(1);
 	};	 
-	if(retry>=100)return 1;
+	if(retry>=100) {
+        log_d("DHT11", "DHT11 check timeout (no response)");
+        return 1;
+    }
 	else retry=0;
     while ((!GPIO_GetInputValue(DHT11_PIN,&DHT11_DQ_IN))&&retry<100)//DHT11拉低后会再次拉高40~50us
 	{
 		retry++;
 		hi_udelay(1);
 	};
-	if(retry>=100)return 1;	    
+	if(retry>=100) {
+        log_d("DHT11", "DHT11 check timeout (no high level)");
+        return 1;
+    }	    
 	return 0;
 }
 

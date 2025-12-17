@@ -36,7 +36,7 @@ static bool g_dht11_connected = true;
 static uint8_t led_value = 0;
 
 // 常量定义（毫秒）
-#define SENSOR_UPDATE_INTERVAL_MS 1000    // 1秒读取一次
+#define SENSOR_UPDATE_INTERVAL_MS 2000    // 2秒读取一次
 #define LED_UPDATE_INTERVAL_MS    100     // 100ms LED闪烁
 
 // DHT11读取重试机制

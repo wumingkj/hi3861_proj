@@ -23,10 +23,12 @@ static buz_ctx_t g_buz;
 static inline void pwm_on(void)
 {
     (void)hi_pwm_start(BEEP_PWM_PORT, BEEP_PWM_DUTY, BEEP_PWM_PERIOD);
+    log_d("BUZZER", "PWM ON");
 }
 static inline void pwm_off(void)
 {
     (void)hi_pwm_stop(BEEP_PWM_PORT);
+    log_d("BUZZER", "PWM OFF");
 }
 
 void Buzzer_Init(void)
@@ -42,6 +44,8 @@ void Buzzer_Init(void)
     g_buz.busy = false;
     g_buz.remaining = 0;
     pwm_off();
+    
+    log_i("BUZZER", "Buzzer initialized successfully");
 }
 
 bool Buzzer_IsBusy(void)
@@ -55,6 +59,7 @@ void Buzzer_Stop(void)
     g_buz.busy = false;
     g_buz.remaining = 0;
     pwm_off();
+    log_i("BUZZER", "Buzzer stopped");
 }
 
 void Buzzer_BeepMs(uint16_t ms)
@@ -70,6 +75,7 @@ void Buzzer_Alarm(uint16_t cnt, uint16_t on_ms, uint16_t off_ms)
 
     if (cnt == 0 || on_ms == 0) {
         Buzzer_Stop();
+        log_w("BUZZER", "Invalid parameters: cnt=%d, on_ms=%d", cnt, on_ms);
         return;
     }
 
@@ -82,8 +88,10 @@ void Buzzer_Alarm(uint16_t cnt, uint16_t on_ms, uint16_t off_ms)
 
     // t_ref 由外部 Tick 首次调用时刷新也行
     // 这里不拿 now_ms，避免依赖 time 库
-    g_buz.t_ref = 0xFFFFFFFFu; // 标记“等待首个 Tick”
+    g_buz.t_ref = 0xFFFFFFFFu; // 标记"等待首个 Tick"
     pwm_on();
+    
+    log_i("BUZZER", "Alarm started: cnt=%d, on_ms=%d, off_ms=%d", cnt, on_ms, off_ms);
 }
 
 void Buzzer_Tick(uint32_t now_ms)
@@ -104,12 +112,13 @@ void Buzzer_Tick(uint32_t now_ms)
             pwm_off();
             g_buz.t_ref = now_ms;
 
-            // 一个“响”结束，消耗一次
+            // 一个"响"结束，消耗一次
             if (g_buz.remaining > 0) g_buz.remaining--;
 
             if (g_buz.remaining == 0) {
                 g_buz.st = BUZ_IDLE;
                 g_buz.busy = false;
+                log_i("BUZZER", "Alarm completed");
                 return;
             }
 
@@ -136,6 +145,7 @@ void Buzzer_Tick(uint32_t now_ms)
     default:
         // 安全兜底
         Buzzer_Stop();
+        log_w("BUZZER", "Unknown state, buzzer stopped");
         break;
     }
 }
