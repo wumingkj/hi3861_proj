@@ -7,9 +7,13 @@
 #include "hi_gpio.h"
 #include "buzzer.h"
 #include "dht11.h"
-//#include "oled.h"0
-#include "wifi.h"
+//#include "oled.h"
 #include "time.h"    // 使用新的时间库
+#include "wifi.h"
+
+//#define DEFAULT_DEBUG_LEVEL
+#define DEBUG_ENABLE_COLOR
+#include "debug.h"   // 新增调试头文件
 
 // 函数原型声明
 void led_init(void);
@@ -31,7 +35,6 @@ static bool g_dht11_connected = true;
 
 static uint8_t led_value = 0;
 
-
 // 常量定义（毫秒）
 #define SENSOR_UPDATE_INTERVAL_MS 1000    // 1秒读取一次
 #define LED_UPDATE_INTERVAL_MS    100     // 100ms LED闪烁
@@ -39,12 +42,10 @@ static uint8_t led_value = 0;
 // DHT11读取重试机制
 #define DHT11_RETRY_COUNT 3            // 每次读取最多重试3次
 
-
 static void BuzzerTickCb(void *arg) {
     (void)arg;
     Buzzer_Tick(Time_GetCurrentMs());
 }
-
 
 // 主任务 - 优化版本
 static void Main_Task(void) {
@@ -55,6 +56,7 @@ static void Main_Task(void) {
     uint32_t g_last_led_update = Time_GetCurrentMs();
     uint32_t g_last_buzzer_timer = Time_GetCurrentMs();
 
+    log_i("MAIN", "Main task started successfully");
     
     while (1) {
         current_time_ms = Time_GetCurrentMs();
@@ -64,9 +66,9 @@ static void Main_Task(void) {
             g_last_sensor_update = current_time_ms;
 
             if (dht11_read_data(&g_temperature, &g_humidity) == 0) {
-                printf("DHT11 Read: Humidity=%d%%, Temperature=%d°C\n", g_humidity, g_temperature);
+                log_i("DHT11", "Humidity=%d%%, Temperature=%d°C", g_humidity, g_temperature);
             } else {
-                printf("DHT11 Read Failed\n");
+                log_e("DHT11", "Read failed");
             }
         }
         
@@ -77,8 +79,10 @@ static void Main_Task(void) {
             // LED闪烁控制
             if (led_value) {
                 LED_ON();
+                log_d("LED", "LED ON");
             } else {
                 LED_OFF();
+                log_d("LED", "LED OFF");
             }
             led_value = !led_value;
         }
@@ -94,33 +98,39 @@ static void Main_Entry(void) {
     led_init();
     Buzzer_Init();
 
+    log_i("SYSTEM", "System initialization started");
+
     // 初始化DHT11
     uint8_t retry_count = 0;
     while (dht11_init()) {
-        printf("DHT11 Init Failed, Retry...\n");
+        log_w("DHT11", "Init failed, retrying... (attempt %d/%d)", retry_count + 1, DHT11_RETRY_COUNT);
         retry_count++;
         Time_DelayMsPrecise(1000); // 等待1秒后重试
         if (retry_count >= DHT11_RETRY_COUNT) {
-            printf("DHT11 Init Failed\n");
+            log_e("DHT11", "Init failed after %d attempts", DHT11_RETRY_COUNT);
             g_dht11_connected = false;
             break;
         }
     }
     
     if (g_dht11_connected) {
-        printf("DHT11 Init Success!\n");
+        log_i("DHT11", "Init success");
     }
 
     // ✅ main 里创建蜂鸣器tick定时器（建议 1~5ms）
     g_buzzer_tick_timer = osTimerNew(BuzzerTickCb, osTimerPeriodic, NULL, NULL);
     if (g_buzzer_tick_timer != NULL) {
         osTimerStart(g_buzzer_tick_timer, 5); // 5ms 一次就很够用了
+        log_i("BUZZER", "Buzzer timer started successfully");
+    } else {
+        log_e("BUZZER", "Failed to create buzzer timer");
     }
 
     // 启动提示音（非阻塞）
     Buzzer_Alarm(2, 1000, 100);
+    log_i("BUZZER", "Startup alarm triggered");
     
-    printf("System Init Success! (Optimized Multi-Task Mode)\n");
+    log_i("SYSTEM", "System initialization completed successfully");
     
     // 创建主任务
     osThreadAttr_t main_attr = {
@@ -134,7 +144,9 @@ static void Main_Entry(void) {
     };
     
     if (osThreadNew((osThreadFunc_t)Main_Task, NULL, &main_attr) == NULL) {
-        printf("Failed to create Main_Task!\n");
+        log_e("SYSTEM", "Failed to create Main_Task!");
+    } else {
+        log_i("SYSTEM", "Main task created successfully");
     }
 }
 
@@ -145,4 +157,5 @@ void led_init(void) {
     hi_io_set_pull(LED_PIN, HI_IO_PULL_DOWN);                  // 设置GPIO下拉
     hi_io_set_func(LED_PIN, LED_GPIO_FUN);                     // 设置IO为GPIO功能
     hi_gpio_set_dir(LED_PIN, HI_GPIO_DIR_OUT);                 // 设置GPIO为输出模式
+    log_i("LED", "LED initialization completed");
 }
