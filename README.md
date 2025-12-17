@@ -6,13 +6,14 @@
 
 ## 主要功能模块
 
-- **[蜂鸣器模块](buzzer/README.md)** - 支持PWM控制的蜂鸣器，提供报警和提示音功能
-- **[WiFi网络模块](network/README.md)** - 支持AP和STA模式的双模WiFi连接
-- **[DHT11传感器模块](sensors/README.md)** - 温湿度传感器数据采集
-- **[时间管理模块](time/README.md)** - 系统时间管理和精确延时控制
-- **[NV存储模块](nv/README.md)** - 键值对存储和Flash数据持久化
-- **[OLED显示模块](oled/README.md)** - 图形化信息显示（待集成）
-- **[字体库模块](fonts/README.md)** - 中文字体支持（待集成）
+- **[蜂鸣器模块](src/applications/sample/wifi-iot/app/startup/src/buzzer/README.md)** - 支持PWM控制的蜂鸣器，提供报警和提示音功能
+- **[WiFi网络模块](src/applications/sample/wifi-iot/app/startup/src/network/README.md)** - 支持AP和STA模式的双模WiFi连接
+- **[DHT11传感器模块](src/applications/sample/wifi-iot/app/startup/src/sensors/README.md)** - 温湿度传感器数据采集
+- **[时间管理模块](src/applications/sample/wifi-iot/app/startup/src/time/README.md)** - 系统时间管理和精确延时控制
+- **[NV存储模块](src/applications/sample/wifi-iot/app/startup/src/nv/README.md)** - 键值对存储和Flash数据持久化
+- **[启动模块](src/applications/sample/wifi-iot/app/startup/README.md)** - 系统初始化和任务调度
+- **[OLED显示模块](src/applications/sample/wifi-iot/app/startup/src/oled/)** - 图形化信息显示（待集成）
+- **[字体库模块](src/applications/sample/wifi-iot/app/startup/src/fonts/)** - 中文字体支持（待集成）
 
 ## 硬件要求
 
@@ -48,4 +49,14 @@ hb build -f
 - WiFi模块初始化并准备连接
 
 ## 项目结构
-src/applications/sample/wifi-iot/app/startup/ ├── src/ # 模块源码目录 │ ├── buzzer/ # 蜂鸣器模块 │ ├── network/ # WiFi网络模块 │ ├── sensors/ # 传感器模块 │ ├── time/ # 时间管理模块 │ ├── nv/ # NV存储模块 │ ├── oled/ # OLED显示模块 │ └── fonts/ # 字体库模块 ├── main.c # 主程序入口 └── BUILD.gn # 构建配置文件
+src/applications/sample/wifi-iot/app/startup/ 
+                                        ├── src/ # 模块源码目录 │ 
+                                            ├── buzzer/ # 蜂鸣器模块 │ 
+                                            ├── network/ # WiFi网络模块 │ 
+                                            ├── sensors/ # 传感器模块 │ 
+                                            ├── time/ # 时间管理模块 │ 
+                                            ├── nv/ # NV存储模块 │ 
+                                            ├── oled/ # OLED显示模块 │ 
+                                            └── fonts/ # 字体库模块 
+                                        ├── main.c # 主程序入口 
+                                        └── BUILD.gn # 构建配置文件
