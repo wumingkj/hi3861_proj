@@ -19,7 +19,6 @@
 #include "dht11.h"
 #include <unistd.h>
 #include "hi_time.h"
-#include "time.h"  // 添加时间库支持
 
 
 //DHT11输出配置
@@ -51,17 +50,19 @@ uint8_t GPIO_GetInputValue(hi_gpio_idx id,hi_gpio_value *val)
     return *val;
 }
 
-//dht11复位（使用新的延时函数）
+//dht11复位
 void dht11_reset(void)	   
 {                 
 	hi_gpio_set_dir(DHT11_PIN, HI_GPIO_DIR_OUT);             // 设置GPIO为输出模式
 	DHT11_DQ_OUT(0); //拉低DQ
-	Time_DelayMsPrecise(20);    // 使用精确延时20ms
+	hi_udelay(20*1000);    //拉低至少18ms
 	DHT11_DQ_OUT(1); //DQ=1 
-	Time_DelayMsPrecise(0.03);     // 使用精确延时30μs
+	hi_udelay(30);     //30US
 }
 
-//等待DHT11的回应（使用新的延时函数）
+//等待DHT11的回应
+//返回1:未检测到DHT11的存在
+//返回0:存在
 uint8_t dht11_check(void) 	   
 {   
 	uint8_t retry=0;
@@ -69,20 +70,21 @@ uint8_t dht11_check(void)
     while (GPIO_GetInputValue(DHT11_PIN,&DHT11_DQ_IN)&&retry<100)//DHT11会拉低40~50us
 	{
 		retry++;
-		Time_DelayMsPrecise(0.001);  // 使用精确延时1μs
+		hi_udelay(1);
 	};	 
 	if(retry>=100)return 1;
 	else retry=0;
     while ((!GPIO_GetInputValue(DHT11_PIN,&DHT11_DQ_IN))&&retry<100)//DHT11拉低后会再次拉高40~50us
 	{
 		retry++;
-		Time_DelayMsPrecise(0.001);  // 使用精确延时1μs
+		hi_udelay(1);
 	};
 	if(retry>=100)return 1;	    
 	return 0;
 }
 
-//从DHT11读取一个位（使用新的延时函数）
+//从DHT11读取一个位
+//返回值：1/0
 uint8_t dht11_read_bit(void) 			 
 {
  	uint8_t retry=0;
@@ -90,15 +92,15 @@ uint8_t dht11_read_bit(void)
 	while(GPIO_GetInputValue(DHT11_PIN,&DHT11_DQ_IN)&&retry<100)//等待变为低电平 12-14us 开始
 	{
 		retry++;
-		Time_DelayMsPrecise(0.001);  // 使用精确延时1μs
+		hi_udelay(1);
 	}
 	retry=0;
 	while((!GPIO_GetInputValue(DHT11_PIN,&DHT11_DQ_IN))&&retry<100)//等待变高电平	 26-28us表示0,116-118us表示1
 	{
 		retry++;
-		Time_DelayMsPrecise(0.001);  // 使用精确延时1μs
+		hi_udelay(1);
 	}
-	Time_DelayMsPrecise(0.04);// 使用精确延时40us
+	hi_udelay(40);//等待40us
 	if(GPIO_GetInputValue(DHT11_PIN,&DHT11_DQ_IN))return 1;
 	else return 0;		   
 }

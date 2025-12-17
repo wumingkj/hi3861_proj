@@ -16,8 +16,8 @@
  *
  */
 
-#ifndef BSP_DHT11_H
-#define BSP_DHT11_H
+#ifndef DHT11_H
+#define DHT11_H
 
 #include "cmsis_os2.h"
 #include "hi_io.h"

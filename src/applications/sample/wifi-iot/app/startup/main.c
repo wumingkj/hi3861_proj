@@ -7,7 +7,7 @@
 #include "hi_gpio.h"
 #include "buzzer.h"
 #include "dht11.h"
-#include "oled.h"
+//#include "oled.h"
 #include "time.h"    // 使用新的时间库
 
 // 函数原型声明
@@ -24,24 +24,18 @@ void led_init(void);
 static osTimerId_t g_buzzer_tick_timer = NULL;
 
 // 全局变量用于存储传感器数据
-static float g_temperature = -999.9f;  // 初始化为-999.9f
-static int g_humidity = -1;            // 初始化为-1
+uint8_t g_temperature = 255;  // 改为uint8_t类型
+uint8_t g_humidity = 255;     // 改为uint8_t类型
 static bool g_dht11_connected = true;
-
-// 时间戳变量用于非阻塞延时
-static uint32_t g_last_sensor_update = 0;
-static uint32_t g_last_led_update = 0;
 
 static uint8_t led_value = 0;
 
-// 新增：连续读取失败计数
-static int g_failed_count = 0;
-#define MAX_FAILED_COUNT 3  // 连续3次失败才显示"not found"
+// 蜂鸣器间隔变量（改为变量而不是宏常量）
+static uint32_t g_buzzer_interval_ms = 1000;
 
 // 常量定义（毫秒）
 #define SENSOR_UPDATE_INTERVAL_MS 1000    // 1秒读取一次
 #define LED_UPDATE_INTERVAL_MS    100     // 100ms LED闪烁
-#define OLED_REFRESH_INTERVAL_MS  250     // 250ms OLED刷新
 
 // DHT11读取重试机制
 #define DHT11_RETRY_COUNT 3            // 每次读取最多重试3次
@@ -54,7 +48,7 @@ static void BuzzerTickCb(void *arg) {
 
 
 // OLED显示任务
-static void OLED_Display_Task(void* arg)
+/*static void OLED_Display_Task(void* arg)
 {
     (void)arg;
     
@@ -95,15 +89,17 @@ static void OLED_Display_Task(void* arg)
         
         Time_DelayMs(250); // 降低刷新频率为250ms
     }
-}
+}*/
 
 // 主任务 - 优化版本
 static void Main_Task(void) {
     uint32_t current_time_ms;
     
     // 初始化时间戳
-    g_last_sensor_update = Time_GetCurrentMs();
-    g_last_led_update = Time_GetCurrentMs();
+    uint32_t g_last_sensor_update = Time_GetCurrentMs();
+    uint32_t g_last_led_update = Time_GetCurrentMs();
+    uint32_t g_last_buzzer_timer = Time_GetCurrentMs();
+
     
     while (1) {
         current_time_ms = Time_GetCurrentMs();
@@ -112,8 +108,11 @@ static void Main_Task(void) {
         if (current_time_ms - g_last_sensor_update >= SENSOR_UPDATE_INTERVAL_MS) {
             g_last_sensor_update = current_time_ms;
 
-            dht11_read_data(&g_temperature, &g_humidity);
-            printf("DHT11 Read: Humidity=%d%%, Temperature=%.1f°C\n", g_humidity, g_temperature);
+            if (dht11_read_data(&g_temperature, &g_humidity) == 0) {
+                printf("DHT11 Read: Humidity=%d%%, Temperature=%d°C\n", g_humidity, g_temperature);
+            } else {
+                printf("DHT11 Read Failed\n");
+            }
         }
         
         // 2. LED显示更新（100ms间隔）- 非阻塞延时方式
@@ -127,9 +126,18 @@ static void Main_Task(void) {
                 LED_OFF();
             }
             led_value = !led_value;
-            
-            // 打印LED状态和时间戳（修复printf语句）
-            //printf("LED %s at %lums\n", led_value ? "ON" : "OFF", current_time_ms);
+        }
+
+        // 3. 蜂鸣器控制
+        if (current_time_ms - g_last_buzzer_timer >= g_buzzer_interval_ms) {
+            g_last_buzzer_timer = current_time_ms;
+
+            Buzzer_Alarm(1, 10, 0);
+            if (g_buzzer_interval_ms >= 25) {
+                g_buzzer_interval_ms -= 50;
+            } else {
+                g_buzzer_interval_ms = 1000;
+            }
         }
         
         // 添加延时，让出CPU时间，防止看门狗超时
@@ -143,29 +151,8 @@ static void Main_Entry(void) {
     led_init();
     Buzzer_Init();
 
-    // 添加OLED初始化（带重试机制）
-    uint8_t oled_retry_count = 0;
-    bool oled_initialized = false;
-    
-    while (!oled_initialized && oled_retry_count < 3) {
-        OLED_Init();
-        if (OLED_IsReady()) {
-            oled_initialized = true;
-            printf("OLED Initialized Successfully!\n");
-            break;
-        } else {
-            printf("OLED Init Failed, Retry %d...\n", oled_retry_count + 1);
-            oled_retry_count++;
-            Time_DelayMsPrecise(500); // 等待500ms后重试
-        }
-    }
-    
-    if (!oled_initialized) {
-        printf("OLED Initialization Failed, Skipping OLED display...\n");
-    }
-
+    // 初始化DHT11
     uint8_t retry_count = 0;
-     // 初始化DHT11
     while (dht11_init()) {
         printf("DHT11 Init Failed, Retry...\n");
         retry_count++;
@@ -203,25 +190,8 @@ static void Main_Entry(void) {
         .priority = osPriorityNormal
     };
     
-    // 创建OLED显示任务
-    osThreadAttr_t oled_attr = {
-        .name = "OLEDTask",
-        .attr_bits = 0U,
-        .cb_mem = NULL,
-        .cb_size = 0U,
-        .stack_mem = NULL,
-        .stack_size = 4096,
-        .priority = osPriorityNormal
-    };
-    
     if (osThreadNew((osThreadFunc_t)Main_Task, NULL, &main_attr) == NULL) {
         printf("Failed to create Main_Task!\n");
-    }
-    
-    if (oled_initialized) {
-        if (osThreadNew((osThreadFunc_t)OLED_Display_Task, NULL, &oled_attr) == NULL) {
-            printf("Failed to create OLED_Display_Task!\n");
-        }
     }
 }
 
