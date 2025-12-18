@@ -396,3 +396,96 @@ void nv_set_auto_save(bool enable, uint32_t interval) {
     
     log_i("[NV]", "Auto save %s, interval: %lu ms", enable ? "enabled" : "disabled", interval);
 }
+
+nv_result_t nv_get_uint32(const char* key, uint32_t* value) {
+    if (!g_nv_ctx.initialized) {
+        log_e("[NV]", "NV library not initialized");
+        return NV_ERROR_NOT_INITIALIZED;
+    }
+    
+    if (key == NULL || value == NULL) {
+        log_e("[NV]", "Invalid parameters");
+        return NV_ERROR_INVALID_PARAM;
+    }
+    
+    uint16_t value_len = sizeof(uint32_t);
+    return nv_get(key, value, &value_len);
+}
+
+nv_result_t nv_set_uint32(const char* key, uint32_t value) {
+    if (!g_nv_ctx.initialized) {
+        log_e("[NV]", "NV library not initialized");
+        return NV_ERROR_NOT_INITIALIZED;
+    }
+    
+    if (key == NULL) {
+        log_e("[NV]", "Invalid key parameter");
+        return NV_ERROR_INVALID_PARAM;
+    }
+    
+    return nv_set(key, &value, sizeof(uint32_t));
+}
+
+nv_result_t nv_get_string(const char* key, char* value, uint16_t max_len) {
+    if (!g_nv_ctx.initialized) {
+        return NV_ERROR_NOT_INITIALIZED;
+    }
+    
+    if (key == NULL || value == NULL) {
+        return NV_ERROR_INVALID_PARAM;
+    }
+    
+    // 查找键值对
+    int16_t index = nv_find_key_index(key);
+    if (index < 0) {
+        log_d("[NV]", "Key not found: %s", key);
+        return NV_ERROR_KEY_NOT_FOUND;
+    }
+    
+    nv_kv_pair_t* kv = &g_nv_ctx.kv_pairs[index];
+    
+    // 检查值长度
+    if (kv->value_len == 0 || kv->value_len > NV_MAX_VALUE_LEN) {
+        log_e("[NV]", "Value length invalid: %d for key: %s", kv->value_len, key);
+        return NV_ERROR_VALUE_TOO_LONG;
+    }
+    
+    // 检查缓冲区大小
+    if (max_len < kv->value_len + 1) { // +1 for null terminator
+        log_e("[NV]", "Buffer too small for key: %s, required: %d, provided: %d", 
+              key, kv->value_len + 1, max_len);
+        return NV_ERROR_VALUE_TOO_LONG;
+    }
+    
+    // CRC校验
+    uint16_t calc_crc = nv_crc16(kv->value, kv->value_len);
+    if (calc_crc != kv->crc) {
+        log_e("[NV]", "CRC check failed for key: %s", key);
+        return NV_ERROR_CRC_CHECK_FAILED;
+    }
+    
+    // 复制数据并确保null结尾
+    memcpy(value, kv->value, kv->value_len);
+    value[kv->value_len] = '\0';
+    
+    log_d("[NV]", "Get string key: %s, value: %s, length: %d", key, value, kv->value_len);
+    return NV_SUCCESS;
+}
+
+nv_result_t nv_set_string(const char* key, const char* value) {
+    if (!g_nv_ctx.initialized) {
+        return NV_ERROR_NOT_INITIALIZED;
+    }
+    
+    if (key == NULL || value == NULL) {
+        return NV_ERROR_INVALID_PARAM;
+    }
+    
+    uint16_t value_len = strlen(value);
+    if (value_len == 0 || value_len >= NV_MAX_VALUE_LEN) {
+        log_e("[NV]", "String value too long or empty: length=%d", value_len);
+        return NV_ERROR_VALUE_TOO_LONG;
+    }
+    
+    return nv_set(key, value, value_len);
+}

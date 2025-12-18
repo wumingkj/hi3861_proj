@@ -6,6 +6,20 @@
 #include <stdarg.h>
 #include <string.h>
 
+// 字符编码设置 - 解决中文乱码问题（避免与charset_utils.h冲突）
+#ifndef DEBUG_CHARSET_UTF8
+#define DEBUG_CHARSET_UTF8    1
+#endif
+
+#ifndef DEBUG_CHARSET_GBK  
+#define DEBUG_CHARSET_GBK     2
+#endif
+
+// 默认使用UTF-8编码（推荐）
+#ifndef DEFAULT_CHARSET
+#define DEFAULT_CHARSET DEBUG_CHARSET_UTF8
+#endif
+
 // 调试级别定义
 typedef enum {
     DEBUG_LEVEL_NONE = 0,    // 无调试信息
@@ -19,6 +33,7 @@ typedef enum {
 // 全局调试级别设置（默认显示错误、警告和信息级别）
 #ifndef DEFAULT_DEBUG_LEVEL
 #define DEFAULT_DEBUG_LEVEL DEBUG_LEVEL_INFO
+#define DEBUG_ENABLE_COLOR
 #endif
 
 // 调试颜色定义（如果终端支持颜色）

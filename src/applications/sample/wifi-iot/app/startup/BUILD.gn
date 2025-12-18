@@ -22,9 +22,11 @@ static_library("startup") {
         "src/time/time.c",
         "src/network/wifi.c",
         "src/nv/nv.c",           # 新增NV库
+        "src/php_api/php_api.c", # 新增PHP API库
     ]
 
     include_dirs = [
+        ".",
         "src/",
         "src/oled",             # 新增OLED库头文件路径
         "src/fonts",            # 新增字体库头文件路径
@@ -33,6 +35,7 @@ static_library("startup") {
         "src/time",             # 新增时间库头文件路径
         "src/network",          # 新增网络库头文件路径
         "src/nv",               # 新增NV库头文件路径
+        "src/php_api",          # 新增PHP API库头文件路径
 
         "//utils/native/lite/include",
         "//kernel/liteos_m/kal/cmsis",

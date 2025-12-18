@@ -24,21 +24,32 @@
 #include "hi_gpio.h"
 #include "wifi_error_code.h"
 #include "wifi_device.h"
+#include "wifi_hotspot.h"
+#include "lwip/netifapi.h"
+#include "lwip/netif.h"
+#include "lwip/ip4_addr.h"
+#include "lwip/api_shell.h"
 
-#include "../debug.h"   // 添加debug库支持
-// STA信息结构体
-typedef struct {
-    char ssid[32];
-    char password[64];
-    int security_type;
-} sta_info_t;
+
+#include "../debug.h"
+// 使用系统定义的常量，避免重复定义
+#ifndef WIFI_MAX_SSID_LEN
+#define WIFI_MAX_SSID_LEN 33  // 使用系统定义的值
+#endif
+
+#ifndef WIFI_MAX_KEY_LEN  
+#define WIFI_MAX_KEY_LEN 65   // 使用系统定义的值
+#endif
 
 //函数声明
 WifiErrorCode WiFi_createHotspots(const char *ssid, const char *psk);
 WifiErrorCode WiFi_connectHotspots(const char *ssid, const char *psk);
 char* WiFi_GetLocalIP(void);
 
-// 新增STA信息配置函数
+// 新增：设置AP的IP配置
+WifiErrorCode WiFi_SetAPConfig(const char *ip_addr, const char *netmask, const char *gateway);
+
+// 新增：STA相关函数
 WifiErrorCode WiFi_setSTAInfo(const char *ssid, const char *password, int security_type);
 WifiErrorCode WiFi_connectToSTA(void);
 WifiErrorCode WiFi_startAPAndConnectSTA(const char *ap_ssid, const char *ap_password, 

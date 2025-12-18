@@ -171,6 +171,39 @@ const char* nv_get_version(void);
  */
 void nv_set_auto_save(bool enable, uint32_t interval);
 
+/**
+ * @brief 获取uint32类型的值
+ * @param key 键
+ * @param value 值指针
+ * @return 操作结果
+ */
+nv_result_t nv_get_uint32(const char* key, uint32_t* value);
+
+/**
+ * @brief 设置uint32类型的值
+ * @param key 键
+ * @param value 值
+ * @return 操作结果
+ */
+nv_result_t nv_set_uint32(const char* key, uint32_t value);
+
+/**
+ * @brief 获取字符串类型的值
+ * @param key 键
+ * @param value 字符串缓冲区
+ * @param max_len 最大长度
+ * @return 操作结果
+ */
+nv_result_t nv_get_string(const char* key, char* value, uint16_t max_len);
+
+/**
+ * @brief 设置字符串类型的值
+ * @param key 键
+ * @param value 字符串值
+ * @return 操作结果
+ */
+nv_result_t nv_set_string(const char* key, const char* value);
+
 #ifdef __cplusplus
 #if __cplusplus
 }

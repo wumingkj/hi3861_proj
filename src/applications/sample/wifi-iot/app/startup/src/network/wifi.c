@@ -15,25 +15,36 @@
  * 购买地址:
  *
  */
-
 #include "wifi.h"
 #include <unistd.h>
 #include <string.h>
-
-#include "wifi_device.h"
-#include "wifi_hotspot.h"
-#include "lwip/netifapi.h"
-#include "lwip/netif.h"
-#include "lwip/ip4_addr.h"
-#include "lwip/api_shell.h"
 
 #define DEF_TIMEOUT 15
 static int g_ConnectSuccess = 0;
 #define SELECT_WLAN_PORT "wlan0"
 static struct netif *g_lwip_netif = NULL;
-static char g_IP_Addr[20] = {"EC800M_4G"}; // 连接wifi热点之后，获取到的IP地址
+static char g_IP_Addr[20] = {"192.168.0.1"}; // 默认AP IP地址改为192.168.0.1
 
-// STA信息全局变量
+// AP配置结构体
+typedef struct {
+    char ip_addr[20];
+    char netmask[20];
+    char gateway[20];
+} ap_config_t;
+
+static ap_config_t g_ap_config = {
+    .ip_addr = "192.168.0.1",
+    .netmask = "255.255.255.0", 
+    .gateway = "192.168.0.1"
+};
+
+// STA信息结构体
+typedef struct {
+    char ssid[WIFI_MAX_SSID_LEN+1];
+    char password[WIFI_MAX_KEY_LEN+1];
+    int security_type;
+} sta_info_t;
+
 static sta_info_t g_sta_info = {0};
 static int g_sta_info_set = 0;
 
@@ -48,9 +59,30 @@ char *WiFi_GetLocalIP(void)
 }
 
 /**
+ * 设置AP的IP配置
+ **/
+WifiErrorCode WiFi_SetAPConfig(const char *ip_addr, const char *netmask, const char *gateway)
+{
+    if (ip_addr) {
+        strcpy_s(g_ap_config.ip_addr, sizeof(g_ap_config.ip_addr), ip_addr);
+        strcpy_s(g_IP_Addr, sizeof(g_IP_Addr), ip_addr);
+    }
+    if (netmask) {
+        strcpy_s(g_ap_config.netmask, sizeof(g_ap_config.netmask), netmask);
+    }
+    if (gateway) {
+        strcpy_s(g_ap_config.gateway, sizeof(g_ap_config.gateway), gateway);
+    }
+    
+    log_i("WIFI", "AP配置已设置: IP=%s, 掩码=%s, 网关=%s", 
+          g_ap_config.ip_addr, g_ap_config.netmask, g_ap_config.gateway);
+    return WIFI_SUCCESS;
+}
+
+/**
  * 获取WiFi的IP地址
  **/
-void Sta_GetWiFiIP(struct netif *netif, char *ip)
+static void Sta_GetWiFiIP(struct netif *netif, char *ip)
 {
     int ret;
     if (netif == NULL) {
@@ -72,18 +104,18 @@ void Sta_GetWiFiIP(struct netif *netif, char *ip)
 WifiErrorCode WiFi_createHotspots(const char *ssid, const char *psk)
 {
     WifiErrorCode result;
-    log_i("WIFI", "Start initialization of WiFi hotspots");
+    log_i("WIFI", "开始初始化WiFi热点");
 
     // 使能WiFi
     result = EnableWifi();
     if (result != WIFI_SUCCESS) {
-        log_e("WIFI", "Enable WiFi failed. result: %d", result);
+        log_e("WIFI", "WiFi使能失败. 错误码: %d", result);
         return result;
     }
     // 判断WiFi是否激活
     result = IsWifiActive();
     if (result != WIFI_STA_ACTIVE) {
-        log_e("WIFI", "WiFi activation failed. result: %d", result);
+        log_e("WIFI", "WiFi激活失败. 错误码: %d", result);
         return result;
     }
 
@@ -96,25 +128,41 @@ WifiErrorCode WiFi_createHotspots(const char *ssid, const char *psk)
     hotspotConfig.channelNum = WIFI_CHANNE;
     result = SetHotspotConfig(&hotspotConfig);
     if (result != WIFI_SUCCESS) {
-        log_e("WIFI", "Failed to set WiFi hotspot information. result: %d", result);
+        log_e("WIFI", "设置WiFi热点信息失败. 错误码: %d", result);
         return result;
     }
 
     // 开启WiFi热点模式
     result = EnableHotspot();
     if (result != WIFI_SUCCESS) {
-        log_e("WIFI", "Failed to enable wifi hotspot mode. result: %d", result);
+        log_e("WIFI", "开启WiFi热点模式失败. 错误码: %d", result);
         return result;
     }
 
     // 检查WiFi热点是否激活
     result = IsHotspotActive();
     if (result != WIFI_HOTSPOT_ACTIVE) {
-        log_e("WIFI", "WiFi hotspot activation failed. result: %d", result);
+        log_e("WIFI", "WiFi热点激活失败. 错误码: %d", result);
         return result;
     }
 
-    log_i("WIFI", "WiFi hotspot initialized successfully");
+    // 设置AP的静态IP地址
+    g_lwip_netif = netifapi_netif_find(SELECT_WLAN_PORT);
+    if (g_lwip_netif) {
+        ip4_addr_t ip_addr, netmask, gateway;
+        
+        // 转换IP地址字符串为ip4_addr_t
+        inet_pton(AF_INET, g_ap_config.ip_addr, &ip_addr);
+        inet_pton(AF_INET, g_ap_config.netmask, &netmask);
+        inet_pton(AF_INET, g_ap_config.gateway, &gateway);
+        
+        // 设置静态IP
+        netifapi_netif_set_addr(g_lwip_netif, &ip_addr, &netmask, &gateway);
+        log_i("WIFI", "AP静态IP设置成功: %s", g_ap_config.ip_addr);
+    }
+
+    log_i("WIFI", "WiFi热点初始化成功");
+    log_i("WIFI", "热点信息: SSID=%s, IP=%s", ssid, g_ap_config.ip_addr);
 
     return WIFI_SUCCESS;
 }
@@ -123,14 +171,14 @@ WifiErrorCode WiFi_createHotspots(const char *ssid, const char *psk)
 static void ConnectionWifiChangedHandler(int state, WifiLinkedInfo *info)
 {
     if (info == NULL) {
-        log_w("WIFI", "WifiConnectionChanged:info is null");
+        log_w("WIFI", "WifiConnectionChanged: 信息为空");
     } else {
         if (state == WIFI_STATE_AVALIABLE) {
             g_ConnectSuccess = 1;
-            log_i("WIFI", "WiFi connection available");
+            log_i("WIFI", "WiFi连接可用");
         } else {
             g_ConnectSuccess = 0;
-            log_w("WIFI", "WiFi connection lost");
+            log_w("WIFI", "WiFi连接丢失");
         }
     }
 }
@@ -142,14 +190,14 @@ static int WaitConnectResult(void)
     while (ConnectTimeout > 0) {
         sleep(1);
         ConnectTimeout--;
-        log_d("WIFI", "Waiting for connection...");
+        log_d("WIFI", "等待连接中...");
         if (g_ConnectSuccess == 1) {
-            log_i("WIFI", "WaitConnectResult:wait success[%d]s", (DEF_TIMEOUT - ConnectTimeout));
+            log_i("WIFI", "等待连接成功[%d]秒", (DEF_TIMEOUT - ConnectTimeout));
             break;
         }
     }
     if (ConnectTimeout <= 0) {
-        log_e("WIFI", "WaitConnectResult:timeout!");
+        log_e("WIFI", "等待连接超时!");
         return 0;
     }
 
@@ -161,18 +209,18 @@ WifiErrorCode WiFi_connectHotspots(const char *ssid, const char *psk)
     WifiErrorCode result;
     int Timeout = 10; // 超时时间 10s
 
-    log_i("WIFI", "Start Connect of WiFi hotspots");
+    log_i("WIFI", "开始连接WiFi热点");
 
     // 使能WiFi
     result = EnableWifi();
     if (result != WIFI_SUCCESS) {
-        log_e("WIFI", "Enable WiFi failed");
+        log_e("WIFI", "WiFi使能失败");
         return result;
     }
     // 判断WiFi是否激活
     result = IsWifiActive();
     if (result != WIFI_STA_ACTIVE) {
-        log_e("WIFI", "WiFi activation failed");
+        log_e("WIFI", "WiFi激活失败");
         return result;
     }
     // 注册wifi的回调函数
@@ -180,7 +228,7 @@ WifiErrorCode WiFi_connectHotspots(const char *ssid, const char *psk)
     eventConfig.OnWifiConnectionChanged = ConnectionWifiChangedHandler; // WiFi连接的状态改变
     result = RegisterWifiEvent(&eventConfig);
     if (result != WIFI_SUCCESS) {
-        log_e("WIFI", "Failed to register WiFi callback function");
+        log_e("WIFI", "注册WiFi回调函数失败");
         return result;
     }
 
@@ -192,7 +240,7 @@ WifiErrorCode WiFi_connectHotspots(const char *ssid, const char *psk)
     wifiDeviceConfig.securityType = WIFI_SEC_TYPE_PSK; // WiFi的安全性
     result = AddDeviceConfig(&wifiDeviceConfig, &wifiResult);
      if ((result == WIFI_SUCCESS) && (ConnectTo(wifiResult) == WIFI_SUCCESS)&& (WaitConnectResult() == 1)) {
-        log_i("WIFI", "wifi connect succeed!");
+        log_i("WIFI", "WiFi连接成功!");
         g_lwip_netif = netifapi_netif_find(SELECT_WLAN_PORT);
         //启动DHCP
         if (g_lwip_netif) {
@@ -203,20 +251,20 @@ WifiErrorCode WiFi_connectHotspots(const char *ssid, const char *psk)
         for (;;) {
             if (dhcp_is_bound(g_lwip_netif) == ERR_OK) {
                 Sta_GetWiFiIP(g_lwip_netif, g_IP_Addr);
-                log_i("WIFI", "connect wifi IP addr: %s", g_IP_Addr);
+                log_i("WIFI", "连接WiFi获取到IP地址: %s", g_IP_Addr);
                 break;
             }
-            log_d("WIFI", "Waiting for DHCP...");
+            log_d("WIFI", "等待DHCP分配...");
             Timeout--;
             if (Timeout == 0) {
                 // 超时
-                log_e("WIFI", "DHCP timeout");
+                log_e("WIFI", "DHCP超时");
                 return ERROR_WIFI_BUSY;
             }
             sleep(1);
         }
     } else {
-        log_e("WIFI", "WiFi connection failed");
+        log_e("WIFI", "WiFi连接失败");
         return ERROR_WIFI_BUSY;
      }
     return WIFI_SUCCESS;
