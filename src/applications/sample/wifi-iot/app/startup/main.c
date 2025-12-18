@@ -9,9 +9,8 @@
 #include "dht11.h"
 #include "time.h"    // 使用新的时间库
 #include "wifi.h"  // 修改为相对路径
-#include "nv.h"  // 新增NV库头文件
+#include "kv.h"     // 新增KV存储模块头文件
 #include "php_api.h" // 恢复PHP API模块头文件
-
 
 //#define DEFAULT_DEBUG_LEVEL 0
 #include "debug.h"   // 新增调试头文件
@@ -56,29 +55,27 @@ static void BuzzerTickCb(void *arg) {
     Buzzer_Tick(Time_GetCurrentMs());
 }
 
-// 网络任务函数 - 官方demo风格简化版本
+// 网络任务函数 - 使用KV存储系统
 void network_task(void *arg) {
     (void)arg;
     
     log_i("NETWORK", "网络任务开始启动");
     
-    // 等待系统初始化完成（官方demo通常等待1-3秒）
-    sleep(2);  // 使用sleep而不是Time_DelayMs，更接近官方demo
+    // 等待系统初始化完成
+    sleep(2);
     log_i("NETWORK", "系统初始化完成，开始WiFi配置");
     
-    // 从NV读取WiFi配置
+    // 从KV存储读取WiFi配置
     char wifi_ssid[32] = "";
     char wifi_password[64] = "";
-    uint16_t ssid_len = sizeof(wifi_ssid);  // 修复：改为uint16_t类型
-    uint16_t password_len = sizeof(wifi_password);  // 修复：改为uint16_t类型
     
-    // 尝试从NV读取WiFi配置
-    if (nv_get_string("wifi_ssid", wifi_ssid, ssid_len) == NV_SUCCESS && 
-        nv_get_string("wifi_password", wifi_password, password_len) == NV_SUCCESS) {
+    // 尝试从KV存储读取WiFi配置
+    if (kv_get_string("wifi_ssid", wifi_ssid, sizeof(wifi_ssid)) == KV_SUCCESS && 
+        kv_get_string("wifi_password", wifi_password, sizeof(wifi_password)) == KV_SUCCESS) {
         
-        log_i("NETWORK", "从NV存储读取到WiFi配置: %s", wifi_ssid);
+        log_i("NETWORK", "从KV存储读取到WiFi配置: %s", wifi_ssid);
         
-        // 尝试连接STA网络（简化实现，参考官方demo）
+        // 尝试连接STA网络
         log_i("NETWORK", "正在连接到WiFi网络: %s", wifi_ssid);
         WifiErrorCode wifi_ret = WiFi_connectHotspots(wifi_ssid, wifi_password);
         
@@ -97,16 +94,15 @@ void network_task(void *arg) {
             log_w("NETWORK", "WiFi连接失败，错误码: %d", wifi_ret);
         }
     } else {
-        log_i("NETWORK", "NV存储中没有找到WiFi配置");
+        log_i("NETWORK", "KV存储中没有找到WiFi配置");
     }
     
-    // 如果STA连接失败或没有配置，创建AP模式（简化实现）
+    // 如果STA连接失败或没有配置，创建AP模式
     if (!g_wifi_connected) {
         log_i("NETWORK", "启动AP模式作为备用方案");
         const char *ap_ssid = "Hi3861_Config_AP";
-        const char *ap_password = "12345678";  // 添加密码，更安全
+        const char *ap_password = "12345678";
         
-        // 简化AP创建，参考官方AP demo
         WifiErrorCode ap_ret = WiFi_createHotspots(ap_ssid, ap_password);
         if (ap_ret == WIFI_SUCCESS) {
             log_i("NETWORK", "AP热点创建成功: %s", ap_ssid);
@@ -122,7 +118,7 @@ void network_task(void *arg) {
         }
     }
     
-    // 启动HTTP服务器（由网络任务统一管理）
+    // 启动HTTP服务器
     log_i("NETWORK", "正在启动HTTP服务器...");
     php_api_result_t php_ret = php_api_start_server();
     if (php_ret == PHP_API_SUCCESS) {
@@ -133,10 +129,9 @@ void network_task(void *arg) {
     
     log_i("NETWORK", "网络任务初始化完成，进入主循环");
     
-    // 网络任务主循环 - 定期检查网络状态
+    // 网络任务主循环
     while (1) {
-        // 定期检查网络连接状态
-        sleep(10);  // 使用sleep而不是Time_DelayMs
+        sleep(10);
         
         if (g_wifi_connected) {
             log_i("NETWORK", "WiFi状态: 已连接 %s, IP: %s", g_wifi_ssid, g_wifi_ip);
@@ -146,16 +141,16 @@ void network_task(void *arg) {
     }
 }
 
-// PHP API任务函数 - 专注于API服务（不涉及WiFi操作）
+// PHP API任务函数
 void php_api_task(void *arg) {
     (void)arg;
     
     log_i("PHP_API", "PHP API任务开始启动");
     
     // 等待网络初始化完成
-    sleep(5);  // 使用sleep，减少等待时间
+    sleep(5);
     
-    // 初始化PHP API模块（不涉及WiFi操作）
+    // 初始化PHP API模块
     log_i("PHP_API", "正在初始化PHP API模块...");
     php_api_result_t php_ret = php_api_init();
     if (php_ret != PHP_API_SUCCESS) {
@@ -165,17 +160,14 @@ void php_api_task(void *arg) {
     
     log_i("PHP_API", "PHP API初始化成功");
     
-    // API任务主循环 - 专注于API服务
+    // API任务主循环
     log_i("PHP_API", "PHP API任务进入主循环");
     while (1) {
-        // 这里可以添加API相关的处理逻辑
-        // 例如：处理HTTP请求、数据上报等
-        
         sleep(1);
     }
 }
 
-// 主任务 - 官方demo风格优化版本
+// 主任务
 static void Main_Task(void) {
     uint32_t current_time_ms;
     
@@ -184,8 +176,8 @@ static void Main_Task(void) {
     uint32_t g_last_led_update = Time_GetCurrentMs();
     uint32_t g_last_network_status = Time_GetCurrentMs();
 
-    // 设置终端字符编码（使用简单的printf设置）
-    printf("\033%%G");  // 设置UTF-8编码
+    // 设置终端字符编码
+    printf("\033%%G");
     
     log_i("MAIN", "主任务开始运行");
     
@@ -247,32 +239,117 @@ static void Main_Entry(void) {
 
     log_i("SYSTEM", "系统初始化开始");
 
-    // 初始化NV库（在任务创建之前完成）
-    nv_config_t nv_config = {
-        .base_addr = 0xA000,
-        .total_size = 0x2000,
-        .block_size = 0x1000,
-        .auto_save = true,
-        .auto_save_interval = 10000,  // 10秒自动保存
-    };
-    
-    nv_result_t nv_ret = nv_init(&nv_config);
-    if (nv_ret == NV_SUCCESS) {
-        log_i("NV", "NV库初始化成功");
+    // 初始化KV存储模块
+    kv_result_t kv_ret = kv_init();
+    if (kv_ret == KV_SUCCESS) {
+        log_i("KV", "KV存储模块初始化成功");
+        
+        // KV断电保存验证测试
+        log_i("KV_TEST", "开始KV断电保存验证测试...");
+        
+        // 检查是否是第一次运行
+        char boot_count_str[16] = {0};
+        kv_result_t boot_count_result = kv_get_string("boot_count", boot_count_str, sizeof(boot_count_str));
+        
+        if (boot_count_result == KV_ERROR_KEY_NOT_FOUND) {
+            // 第一次运行：设置初始数据
+            log_i("KV_TEST", "检测到第一次运行，设置初始KV数据...");
+            
+            // 设置启动计数为1
+            kv_set_string("boot_count", "1");
+            
+            // 设置测试字符串
+            const char *test_string = "Hi3861_KV_Test_FirstBoot";
+            kv_set_string("test_key", test_string);
+            
+            // 设置时间戳
+            uint32_t current_time = Time_GetCurrentMs();
+            kv_set_uint32("first_boot_time", current_time);
+            
+            // 设置设备信息
+            const char *device_info = "Hi3861_WiFi_IoT_Device_v1.0_FirstBoot";
+            kv_set_string("device_info", device_info);
+            
+            log_i("KV_TEST", "✅ 第一次运行：KV数据初始化完成");
+            log_i("KV_TEST", "   测试字符串: %s", test_string);
+            log_i("KV_TEST", "   启动时间: %u ms", current_time);
+            log_i("KV_TEST", "   设备信息: %s", device_info);
+            log_i("KV_TEST", "💡 请断电重启设备，验证KV数据是否保存");
+            
+        } else if (boot_count_result == KV_SUCCESS) {
+            // 后续运行：验证数据是否保存
+            log_i("KV_TEST", "检测到后续运行，验证KV数据保存...");
+            
+            // 读取并更新启动计数
+            int boot_count = atoi(boot_count_str);
+            boot_count++;
+            char new_boot_count[16];
+            snprintf(new_boot_count, sizeof(new_boot_count), "%d", boot_count);
+            kv_set_string("boot_count", new_boot_count);
+            
+            // 验证测试字符串
+            char test_buffer[64] = {0};
+            kv_result_t test_result = kv_get_string("test_key", test_buffer, sizeof(test_buffer));
+            if (test_result == KV_SUCCESS) {
+                log_i("KV_TEST", "✅ 测试字符串验证成功: %s", test_buffer);
+            } else {
+                log_e("KV_TEST", "❌ 测试字符串验证失败，错误码: %d", test_result);
+            }
+            
+            // 验证启动时间
+            uint32_t first_boot_time = 0;
+            kv_result_t time_result = kv_get_uint32("first_boot_time", &first_boot_time);
+            if (time_result == KV_SUCCESS) {
+                log_i("KV_TEST", "✅ 首次启动时间验证成功: %u ms", first_boot_time);
+            } else {
+                log_e("KV_TEST", "❌ 首次启动时间验证失败，错误码: %d", time_result);
+            }
+            
+            // 验证设备信息
+            char device_buffer[64] = {0};
+            kv_result_t device_result = kv_get_string("device_info", device_buffer, sizeof(device_buffer));
+            if (device_result == KV_SUCCESS) {
+                log_i("KV_TEST", "✅ 设备信息验证成功: %s", device_buffer);
+            } else {
+                log_e("KV_TEST", "❌ 设备信息验证失败，错误码: %d", device_result);
+            }
+            
+            // 显示启动次数
+            log_i("KV_TEST", "📊 当前启动次数: %d", boot_count);
+            
+            // 验证中文支持
+            char chinese_buffer[64] = {0};
+            kv_result_t chinese_result = kv_get_string("chinese_test", chinese_buffer, sizeof(chinese_buffer));
+            if (chinese_result == KV_SUCCESS) {
+                log_i("KV_TEST", "✅ 中文字符串验证成功: %s", chinese_buffer);
+            } else if (chinese_result == KV_ERROR_KEY_NOT_FOUND) {
+                // 如果是第一次看到中文测试失败，可能是之前没有设置，现在设置一下
+                const char *chinese_test = "KV存储测试-中文验证";
+                kv_set_string("chinese_test", chinese_test);
+                log_i("KV_TEST", "💡 设置中文字符串: %s", chinese_test);
+            } else {
+                log_e("KV_TEST", "❌ 中文字符串验证失败，错误码: %d", chinese_result);
+            }
+            
+            log_i("KV_TEST", "🎉 KV断电保存验证完成！");
+            
+        } else {
+            log_e("KV_TEST", "❌ 启动计数读取失败，错误码: %d", boot_count_result);
+        }
         
         // 初始化默认配置（如果不存在）
         uint32_t scan_timeout, connect_timeout;
-        if (nv_get_uint32("scan_timeout", &scan_timeout) != NV_SUCCESS) {
-            nv_set_uint32("scan_timeout", 30000);
-            log_i("NV", "设置默认扫描超时: 30秒");
+        if (kv_get_uint32("scan_timeout", &scan_timeout) != KV_SUCCESS) {
+            kv_set_uint32("scan_timeout", 30000);
+            log_i("KV", "设置默认扫描超时: 30秒");
         }
-        if (nv_get_uint32("connect_timeout", &connect_timeout) != NV_SUCCESS) {
-            nv_set_uint32("connect_timeout", 60000);
-            log_i("NV", "设置默认连接超时: 60秒");
+        if (kv_get_uint32("connect_timeout", &connect_timeout) != KV_SUCCESS) {
+            kv_set_uint32("connect_timeout", 60000);
+            log_i("KV", "设置默认连接超时: 60秒");
         }
         
     } else {
-        log_w("NV", "NV库初始化失败，错误码: %d", nv_ret);
+        log_w("KV", "KV存储模块初始化失败，错误码: %d", kv_ret);
     }
 
     // 初始化DHT11
@@ -304,10 +381,10 @@ static void Main_Entry(void) {
     }
 
     // 启动提示音
-    Buzzer_Alarm(2, 500, 100);
+    Buzzer_Alarm(2, 50, 100);
     log_i("BUZZER", "启动提示音已触发");
     
-    // 创建网络任务（优先级较高，先处理网络连接）
+    // 创建网络任务
     log_i("SYSTEM", "正在创建网络任务...");
     osThreadAttr_t network_attr = {
         .name = "NetworkTask",
@@ -316,7 +393,7 @@ static void Main_Entry(void) {
         .cb_size = 0U,
         .stack_mem = NULL,
         .stack_size = 8192,
-        .priority = osPriorityAboveNormal  // 网络任务优先级较高
+        .priority = osPriorityAboveNormal
     };
     
     if (osThreadNew(network_task, NULL, &network_attr) == NULL) {
@@ -325,7 +402,7 @@ static void Main_Entry(void) {
         log_i("NETWORK", "网络任务创建成功");
     }
     
-    // 创建PHP API任务（优先级正常，专注于API服务）
+    // 创建PHP API任务
     log_i("SYSTEM", "正在创建PHP API任务...");
     osThreadAttr_t php_api_attr = {
         .name = "PHP_API_Task",
@@ -334,7 +411,7 @@ static void Main_Entry(void) {
         .cb_size = 0U,
         .stack_mem = NULL,
         .stack_size = 8192,
-        .priority = osPriorityNormal  // API任务优先级正常
+        .priority = osPriorityNormal
     };
     
     if (osThreadNew(php_api_task, NULL, &php_api_attr) == NULL) {
@@ -345,26 +422,27 @@ static void Main_Entry(void) {
     
     log_i("SYSTEM", "系统初始化完成");
     
-    // 创建主任务（优先级较低，处理传感器和显示）
+    // 创建主任务
     log_i("SYSTEM", "正在创建主任务...");
-    osThreadAttr_t main_attr = {
+    osThreadAttr_t main_task_attr = {
         .name = "MainTask",
         .attr_bits = 0U,
         .cb_mem = NULL,
         .cb_size = 0U,
         .stack_mem = NULL,
-        .stack_size = 8192,
-        .priority = osPriorityBelowNormal  // 主任务优先级较低
+        .stack_size = 4096,
+        .priority = osPriorityNormal
     };
     
-    if (osThreadNew((osThreadFunc_t)Main_Task, NULL, &main_attr) == NULL) {
+    if (osThreadNew(Main_Task, NULL, &main_task_attr) == NULL) {
         log_e("SYSTEM", "主任务创建失败!");
     } else {
         log_i("SYSTEM", "主任务创建成功");
     }
 }
 
-APP_FEATURE_INIT(Main_Entry);
+// 应用入口函数
+SYS_RUN(Main_Entry);
 
 void led_init(void) {
     hi_gpio_init();                                            // GPIO初始化

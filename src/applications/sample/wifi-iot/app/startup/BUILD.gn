@@ -21,7 +21,7 @@ static_library("startup") {
         "src/sensors/dht11.c",
         "src/time/time.c",
         "src/network/wifi.c",
-        "src/nv/nv.c",           # 新增NV库
+        "src/kv/kv.c",           # 新增NV库
         "src/php_api/php_api.c", # 新增PHP API库
     ]
 
@@ -34,7 +34,7 @@ static_library("startup") {
         "src/sensors",          # 新增传感器库头文件路径
         "src/time",             # 新增时间库头文件路径
         "src/network",          # 新增网络库头文件路径
-        "src/nv",               # 新增NV库头文件路径
+        "src/kv",               # 新增KV库头文件路径
         "src/php_api",          # 新增PHP API库头文件路径
 
         "//utils/native/lite/include",
