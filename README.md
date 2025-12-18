@@ -11,9 +11,24 @@
 - **[DHT11传感器模块](src/applications/sample/wifi-iot/app/startup/src/sensors/README.md)** - 温湿度传感器数据采集
 - **[时间管理模块](src/applications/sample/wifi-iot/app/startup/src/time/README.md)** - 系统时间管理和精确延时控制
 - **[NV存储模块](src/applications/sample/wifi-iot/app/startup/src/nv/README.md)** - 键值对存储和Flash数据持久化
+- **[PHP API模块](src/applications/sample/wifi-iot/app/startup/src/php_api/README.md)** - HTTP服务器和Web接口，支持智能WiFi连接
 - **[启动模块](src/applications/sample/wifi-iot/app/startup/README.md)** - 系统初始化和任务调度
 - **[OLED显示模块](src/applications/sample/wifi-iot/app/startup/src/oled/)** - 图形化信息显示（待集成）
 - **[字体库模块](src/applications/sample/wifi-iot/app/startup/src/fonts/)** - 中文字体支持（待集成）
+
+## 新增功能特性
+
+### 字符编码修复
+- ✅ 修复网页中文乱码问题
+- ✅ HTTP响应头添加UTF-8字符集声明
+- ✅ HTML页面添加meta charset标签
+- ✅ 支持中文Web界面正常显示
+
+### 智能WiFi连接
+- ✅ 开机自动读取NV配置连接WiFi
+- ✅ AP模式回退机制
+- ✅ 可配置超时时间
+- ✅ Web界面远程配置
 
 ## 硬件要求
 
@@ -47,6 +62,12 @@ hb build -f
 - 蜂鸣器发出启动提示音
 - DHT11传感器开始采集温湿度数据
 - WiFi模块初始化并准备连接
+- HTTP服务器启动，可通过浏览器访问设备配置界面
+
+### 5. Web访问
+- 打开浏览器访问 `http://192.168.0.1/`
+- 查看设备状态和配置WiFi网络
+- 中文界面正常显示，无乱码问题
 
 ## 项目结构
 ```
@@ -62,3 +83,4 @@ src/applications/sample/wifi-iot/app/startup/
 ├── main.c # 主程序入口
 └── BUILD.gn # 构建配置文件
 ```
+
