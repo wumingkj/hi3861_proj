@@ -72,15 +72,15 @@ hb build -f
 ## 项目结构
 ```
 src/applications/sample/wifi-iot/app/startup/
-├── src/ # 模块源码目录
-│ ├── buzzer/ # 蜂鸣器模块
-│ ├── network/ # WiFi网络模块
-│ ├── sensors/ # 传感器模块
-│ ├── time/ # 时间管理模块
-│ ├── nv/ # NV存储模块
-│ ├── oled/ # OLED显示模块
-│ └── fonts/ # 字体库模块
-├── main.c # 主程序入口
-└── BUILD.gn # 构建配置文件
+                                        ├── src/ # 模块源码目录
+                                        │ ├── buzzer/ # 蜂鸣器模块
+                                        │ ├── network/ # WiFi网络模块
+                                        │ ├── sensors/ # 传感器模块
+                                        │ ├── time/ # 时间管理模块
+                                        │ ├── nv/ # NV存储模块
+                                        │ ├── oled/ # OLED显示模块
+                                        │ └── fonts/ # 字体库模块
+                                        ├── main.c # 主程序入口
+                                        └── BUILD.gn # 构建配置文件
 ```
 
