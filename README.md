@@ -4,6 +4,9 @@
 
 本项目是基于华为Hi3861 WiFi芯片的OpenHarmony物联网应用，实现了一个完整的智能设备系统。项目集成了多种传感器、执行器和通信模块，展示了物联网设备的完整功能。
 
+## 主要项目目录
+- **[主程序入口](src/applications/sample/wifi-iot/app/startup/README.md)** 
+
 ## 主要功能模块
 
 - **[蜂鸣器模块](src/applications/sample/wifi-iot/app/startup/src/buzzer/README.md)** - 支持PWM控制的蜂鸣器，提供报警和提示音功能
