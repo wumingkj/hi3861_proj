@@ -44,7 +44,7 @@ static uint8_t led_value = 0;
 
 // 常量定义（毫秒）
 #define SENSOR_UPDATE_INTERVAL_MS 2000    // 2秒读取一次
-#define LED_UPDATE_INTERVAL_MS    100     // 100ms LED闪烁
+#define PHP_UPDATE_INTERVAL_MS    25     // 25ms-php-api更新
 #define NETWORK_CHECK_INTERVAL_MS 10000   // 10秒检查一次网络状态
 
 // DHT11读取重试机制
@@ -144,6 +144,9 @@ void network_task(void *arg) {
 // PHP API任务函数
 void php_api_task(void *arg) {
     (void)arg;
+    uint32_t current_time_ms;
+
+    uint32_t g_last_php_update = Time_GetCurrentMs();
     
     log_i("PHP_API", "PHP API任务开始启动");
     
@@ -151,7 +154,7 @@ void php_api_task(void *arg) {
     sleep(5);
     
     // 初始化PHP API模块
-    log_i("PHP_API", "正在初始化PHP API模块...");
+    log_i("PHP_API", "正在初始化PHP API模块（纯网络API v2.0）...");
     php_api_result_t php_ret = php_api_init();
     if (php_ret != PHP_API_SUCCESS) {
         log_e("PHP_API", "PHP API初始化失败，错误码: %d", php_ret);
@@ -163,7 +166,14 @@ void php_api_task(void *arg) {
     // API任务主循环
     log_i("PHP_API", "PHP API任务进入主循环");
     while (1) {
-        sleep(1);
+        current_time_ms = Time_GetCurrentMs();
+        
+        if (current_time_ms - g_last_php_update >= PHP_UPDATE_INTERVAL_MS) {
+            g_last_php_update = current_time_ms;
+            php_api_led_update();
+        }
+
+        Time_DelayMs(10);
     }
 }
 
@@ -173,11 +183,7 @@ static void Main_Task(void) {
     
     // 初始化时间戳
     uint32_t g_last_sensor_update = Time_GetCurrentMs();
-    uint32_t g_last_led_update = Time_GetCurrentMs();
     uint32_t g_last_network_status = Time_GetCurrentMs();
-
-    // 设置终端字符编码
-    printf("\033%%G");
     
     log_i("MAIN", "主任务开始运行");
     
@@ -195,18 +201,6 @@ static void Main_Task(void) {
             }
         }
         
-        // 2. LED显示更新（100ms间隔）
-        if (current_time_ms - g_last_led_update >= LED_UPDATE_INTERVAL_MS) {
-            g_last_led_update = current_time_ms;
-            
-            // LED闪烁控制
-            if (led_value) {
-                LED_ON();
-            } else {
-                LED_OFF();
-            }
-            led_value = !led_value;
-        }
         
         // 3. 定期显示网络状态（30秒间隔）
         if (current_time_ms - g_last_network_status >= 30000) {

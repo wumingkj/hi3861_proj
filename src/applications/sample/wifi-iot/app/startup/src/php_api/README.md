@@ -1,4 +1,90 @@
-# PHP API模块
+# PHP API模块 - 纯网络交互API
+
+## 概述
+PHP API模块提供HTTP服务器功能，支持纯网络交互的RESTful API接口，用于设备控制和状态监控。移除网页内嵌功能，专注网络API服务。
+
+## 技术更新
+- **版本**: v2.0（纯网络API）
+- **变更**: 移除网页内嵌，专注设备控制API
+- **特性**: 支持蜂鸣器控制、LED控制、实时温湿度数据获取
+
+## API接口列表
+
+### 1. 系统状态查询
+- **路径**: `GET /api/status`
+- **功能**: 获取系统整体状态信息
+- **响应**: JSON格式的系统状态数据
+
+### 2. 实时传感器数据
+- **路径**: `GET /api/sensor/data`
+- **功能**: 获取实时温湿度数据
+- **响应**: JSON格式的传感器数据
+
+### 3. 蜂鸣器控制
+- **路径**: `POST /api/buzzer/control`
+- **功能**: 控制蜂鸣器发声
+- **参数**: 
+  - `mode`: 控制模式（0:单次响, 1:报警模式）
+  - `duration`: 持续时间（毫秒）
+  - `on_time`: 开启时间（报警模式）
+  - `off_time`: 关闭时间（报警模式）
+  - `repeat`: 重复次数
+
+### 4. LED控制
+- **路径**: `POST /api/led/control`
+- **功能**: 控制LED指示灯
+- **参数**:
+  - `state`: 状态（0:关闭, 1:开启, 2:闪烁）
+  - `interval`: 闪烁间隔（毫秒）
+
+### 5. 设备信息
+- **路径**: `GET /api/device/info`
+- **功能**: 获取设备基本信息
+- **响应**: JSON格式的设备信息
+
+## 使用示例
+
+### PHP客户端示例
+```php
+<?php
+// 获取系统状态
+$status = file_get_contents('http://192.168.1.1/api/status');
+$data = json_decode($status, true);
+echo "温度: " . $data['data']['temperature'] . "°C\n";
+
+// 控制蜂鸣器
+$post_data = json_encode([
+    'mode' => 0,
+    'duration' => 1000
+]);
+$context = stream_context_create([
+    'http' => [
+        'method' => 'POST',
+        'header' => 'Content-Type: application/json',
+        'content' => $post_data
+    ]
+]);
+$result = file_get_contents('http://192.168.1.1/api/buzzer/control', false, $context);
+```
+
+### 命令行测试
+```bash
+# 获取系统状态
+curl http://192.168.1.1/api/status
+
+# 控制LED闪烁
+curl -X POST http://192.168.1.1/api/led/control \
+  -H "Content-Type: application/json" \
+  -d '{"state":2,"interval":500}'
+```
+
+## 集成说明
+模块已集成到系统主任务中，自动处理LED状态更新和API请求响应。
+
+## 故障排除
+- 确保HTTP服务器端口80可用
+- 检查网络连接状态
+- 验证API参数格式正确
 
 PHP API模块提供HTTP服务器功能和Web接口，支持智能WiFi连接逻辑和远程配置。
 

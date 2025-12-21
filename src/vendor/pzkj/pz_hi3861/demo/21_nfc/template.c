@@ -67,8 +67,7 @@ void led_task_create(void)
 //控制任务
 osThreadId_t NFC_Task_ID; //任务ID
 
-void NFC_Task(void)
-{
+void NFC_Task(void) {
     uint8_t ret, num = 0;
     uint8_t ndefLen = 0;      // ndef包的长度
     uint8_t ndef_Header = 0;  // ndef消息开始标志位-用不到
