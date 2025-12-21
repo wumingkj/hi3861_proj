@@ -15,13 +15,22 @@
 - **[时间管理模块](src/applications/sample/wifi-iot/app/startup/src/time/README.md)** - 系统时间管理和精确延时控制
 - **[KV存储模块](src/applications/sample/wifi-iot/app/startup/src/kv/README.md)** - 基于LiteOS KV存储系统的键值对存储和Flash数据持久化
 - **[PHP API模块](src/applications/sample/wifi-iot/app/startup/src/php_api/README.md)** - HTTP服务器和Web接口，支持智能WiFi连接
+- **[按键管理器模块](src/applications/sample/wifi-iot/app/startup/src/key_manager/README.md)** - 高级按键事件检测，支持短按、长按、双击等事件
 - **[启动模块](src/applications/sample/wifi-iot/app/startup/README.md)** - 系统初始化和任务调度
 - **[OLED显示模块](src/applications/sample/wifi-iot/app/startup/src/oled/)** - 图形化信息显示（待集成）
 - **[字体库模块](src/applications/sample/wifi-iot/app/startup/src/fonts/)** - 中文字体支持（待集成）
 
 ## 技术更新日志
 
-### 🔄 存储系统升级 (最新)
+### 🔄 按键管理器集成 (最新)
+- ✅ **新增高级按键管理器模块**
+- ✅ 支持多按键动态管理，可配置消抖时间、长按时间、双击间隔
+- ✅ 支持多种按键事件：按下、释放、短按、长按、双击、保持按下
+- ✅ 集成到主程序定时器，5ms周期检测按键状态
+- ✅ 按键1：短按切换LED，长按显示系统状态，双击LED闪烁
+- ✅ 按键2：短按蜂鸣器提示音，长触发报警，双击显示按键状态
+
+### 🔄 存储系统升级
 - ✅ **从自定义NV模块升级到标准KV存储系统**
 - ✅ 使用Hi3861标准LiteOS KV存储系统，解决兼容性问题
 - ✅ 封装了UtilsSetValue/UtilsGetValue等底层API为高层接口
@@ -46,6 +55,7 @@
 - DHT11温湿度传感器
 - 蜂鸣器模块
 - LED指示灯
+- 按键开关（GPIO11、GPIO12）
 - WiFi天线
 
 ## 快速开始
@@ -73,12 +83,47 @@ hb build -f
 - KV存储系统初始化并进行断电保存验证
 - DHT11传感器开始采集温湿度数据
 - WiFi模块初始化并准备连接
+- 按键管理器初始化，支持GPIO11和GPIO12按键检测
 - HTTP服务器启动，可通过浏览器访问设备配置界面
 
-### 5. Web访问
+### 5. 按键功能
+- **按键1短按**：切换LED状态
+- **按键1长按**：显示系统状态（WiFi、温度、湿度等）
+- **按键1双击**：LED闪烁3次
+- **按键2短按**：蜂鸣器提示音
+- **按键2长按**：蜂鸣器报警
+- **按键2双击**：显示按键状态信息
+
+### 6. Web访问
 - 打开浏览器访问 `http://192.168.0.1/`
 - 查看设备状态和配置WiFi网络
 - 中文界面正常显示，无乱码问题
+
+## 按键管理器特性
+
+### 核心功能
+- **动态管理**：支持运行时添加/移除按键
+- **多种事件**：支持短按、长按、双击等复杂事件检测
+- **可配置参数**：消抖时间、长按时间、双击间隔均可配置
+- **状态查询**：实时查询按键状态和按下持续时间
+
+### API接口
+```c
+// 创建按键管理器
+key_manager_t *key_mgr = key_manager_create(2);
+
+// 添加按键配置
+key_manager_add_key(key_mgr, HI_IO_NAME_GPIO_11, 0, 20, 1000, 300);
+
+// 定期更新状态
+key_manager_update(key_mgr);
+
+// 获取按键事件
+key_event_t event = key_manager_get_event(key_mgr, 0);
+```
+
+### 定时器集成
+按键管理器已集成到主程序的5ms定时器中，无需手动调用更新函数，自动检测按键事件。
 
 ## KV存储系统特性
 
@@ -126,4 +171,3 @@ src/applications/sample/wifi-iot/app/startup/
 ├── main.c # 主程序入口
 ├── debug.h # 输出调试日志
 └── BUILD.gn # 构建配置文件
-```

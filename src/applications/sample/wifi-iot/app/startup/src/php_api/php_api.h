@@ -28,6 +28,10 @@
 #include "time.h"
 #include "buzzer.h"
 #include "dht11.h"
+#include "hi_gpio.h"
+#include "hi_io.h"
+#include "kv.h"
+
 #include "../debug.h"
 
 // HTTP服务器配置
@@ -39,11 +43,19 @@
 // API路径定义 - 纯网络交互API
 #define API_PATH_STATUS             "/api/status"
 #define API_PATH_SENSOR_DATA        "/api/sensor/data"
+#define API_PATH_SENSOR_TEMPERATURE "/api/sensor/temperature"
+#define API_PATH_SENSOR_HUMIDITY    "/api/sensor/humidity"
 #define API_PATH_BUZZER_CONTROL     "/api/buzzer/control"
 #define API_PATH_LED_CONTROL        "/api/led/control"
 #define API_PATH_WIFI_SCAN          "/api/wifi/scan"
-#define API_PATH_WIFI_CONNECT       "/api/wifi/connect"
+#define API_PATH_WIFI_CONFIG        "/api/wifi/config"
 #define API_PATH_DEVICE_INFO        "/api/device/info"
+
+// LED控制宏定义（与main.c保持一致）
+#define LED_PIN                    HI_IO_NAME_GPIO_2
+#define LED_GPIO_FUN               HI_IO_FUNC_GPIO_2_GPIO
+#define LED_ON()                   hi_gpio_set_ouput_val(LED_PIN, HI_GPIO_VALUE0)
+#define LED_OFF()                  hi_gpio_set_ouput_val(LED_PIN, HI_GPIO_VALUE1)
 
 // PHP API返回码
 typedef enum {
@@ -153,5 +165,15 @@ void php_api_send_response(int client_socket, int status_code, const char *conte
  * @return int 解析结果（0成功，-1失败）
  */
 int php_api_parse_json_param(const char *request, const char *key, char *value, size_t max_len);
+
+/**
+ * @brief 更新LED状态（用于闪烁控制）
+ */
+void php_api_led_update(void);
+
+/**
+ * @brief LED初始化函数
+ */
+void php_api_led_init(void);
 
 #endif

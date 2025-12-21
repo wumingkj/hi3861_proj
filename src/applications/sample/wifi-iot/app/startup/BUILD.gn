@@ -23,6 +23,8 @@ static_library("startup") {
         "src/network/wifi.c",
         "src/kv/kv.c",           # 新增NV库
         "src/php_api/php_api.c", # 新增PHP API库
+        "src/key_manager/key_manager.c", # 新增按键管理库
+        "src/debug_uart/debug_uart.c", # 新增调试串口库
     ]
 
     include_dirs = [
@@ -36,6 +38,10 @@ static_library("startup") {
         "src/network",          # 新增网络库头文件路径
         "src/kv",               # 新增KV库头文件路径
         "src/php_api",          # 新增PHP API库头文件路径
+        "src/debug_uart",       # 新增调试串口库头文件路径
+        "src/key_manager",      # 新增按键管理库头文件路径
+
+
 
         "//utils/native/lite/include",
         "//kernel/liteos_m/kal/cmsis",

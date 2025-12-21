@@ -11,49 +11,199 @@
 #include "wifi.h"  // 修改为相对路径
 #include "kv.h"     // 新增KV存储模块头文件
 #include "php_api.h" // 恢复PHP API模块头文件
+#include "debug_uart.h" // 新增串口调试模块头文件
+#include "key_manager.h" // 新增按键管理器头文件
 
 //#define DEFAULT_DEBUG_LEVEL 0
 #include "debug.h"   // 新增调试头文件
+
+
+
+/*
+#        ┏┓　　　┏┓+ +
+#　　　┏┛┻━━━┛┻┓ + +
+#　　　┃　　　　　　　┃ 　
+#　　　┃　　　━　　　┃ ++ + + +
+#　　 ████━████ ┃+
+#　　　┃　　　　　　　┃ +
+#　　　┃　　　┻　　　┃
+#　　　┃　　　　　　　┃ + +
+#　　　┗━┓　　　┏━┛
+#　　　　　┃　　　┃　　　　　　　　　　　
+#　　　　　┃　　　┃ + + + +
+#　　　　　┃　　　┃　　　　Codes are far away from bugs with the animal protecting　　　
+#　　　　　┃　　　┃ + 　　　　神兽保佑,代码无bug　　
+#　　　　　┃　　　┃
+#　　　　　┃　　　┃　　+　　　　　　　　　
+#　　　　　┃　 　　┗━━━┓ + +
+#　　　　　┃ 　　　　　　　┣┓
+#　　　　　┃ 　　　　　　　┏┛
+#　　　　　┗┓┓┏━┳┓┏┛ + + + +
+#　　　　　　┃┫┫　┃┫┫
+#　　　　　　┗┻┛　┗┻┛+ + + +
+*/
+
+
+
 
 // 函数原型声明
 void led_init(void);
 void network_task(void *arg); // 新增网络任务声明
 void php_api_task(void *arg); // 恢复PHP API任务声明
+void debug_uart_task(void *arg); // 新增串口调试任务声明
 
 // 管脚定义
 #define LED_PIN         HI_IO_NAME_GPIO_2
 #define LED_GPIO_FUN    HI_IO_FUNC_GPIO_2_GPIO
 
+// 按键引脚定义
+#define KEY1_PIN        HI_IO_NAME_GPIO_11
+#define KEY2_PIN        HI_IO_NAME_GPIO_12
+
 // LED控制宏定义（修复函数名错误）
 #define LED_ON()        hi_gpio_set_ouput_val(LED_PIN, HI_GPIO_VALUE0)
 #define LED_OFF()       hi_gpio_set_ouput_val(LED_PIN, HI_GPIO_VALUE1)
 
-static osTimerId_t g_buzzer_tick_timer = NULL;
+osTimerId_t g_buzzer_tick_timer = NULL;
+osTimerId_t g_key_timer = NULL; // 新增按键定时器
+
+// 全局按键管理器
+key_manager_t *g_key_manager = NULL;
 
 // 全局变量用于存储传感器数据
 uint8_t g_temperature = 255;  // 改为uint8_t类型
 uint8_t g_humidity = 255;     // 改为uint8_t类型
-static bool g_dht11_connected = true;
+bool g_dht11_connected = true;
 
 // 网络状态全局变量
-static bool g_wifi_connected = false;
-static char g_wifi_ssid[32] = "";
-static char g_wifi_ip[16] = "";
+bool g_wifi_connected = false;
+char g_wifi_ssid[32] = "";
+char g_wifi_ip[16] = "";
 
-static uint8_t led_value = 0;
+uint8_t led_value = 0;
 
 // 常量定义（毫秒）
 #define SENSOR_UPDATE_INTERVAL_MS 2000    // 2秒读取一次
-#define PHP_UPDATE_INTERVAL_MS    25     // 25ms-php-api更新
+#define PHP_UPDATE_INTERVAL_MS    50     // 25ms-php-api更新
 #define NETWORK_CHECK_INTERVAL_MS 10000   // 10秒检查一次网络状态
 
 // DHT11读取重试机制
 #define DHT11_RETRY_COUNT 3            // 每次读取最多重试3次
 
-static void BuzzerTickCb(void *arg) {
+void BuzzerTickCb(void *arg) {
     (void)arg;
     Buzzer_Tick(Time_GetCurrentMs());
 }
+
+// 按键事件处理函数
+static void handle_key_event(uint8_t key_index, key_event_t event) {
+    switch (event) {
+        case KEY_EVENT_PRESS:
+            log_i("KEY", "按键%d按下", key_index + 1);
+            break;
+            
+        case KEY_EVENT_RELEASE:
+            log_i("KEY", "按键%d释放", key_index + 1);
+            break;
+            
+        case KEY_EVENT_SHORT_PRESS:
+            log_i("KEY", "按键%d短按", key_index + 1);
+            // 按键1短按：切换LED状态
+            if (key_index == 0) {
+                led_value = !led_value;
+                if (led_value) {
+                    LED_ON();
+                    log_i("KEY", "LED打开");
+                } else {
+                    LED_OFF();
+                    log_i("KEY", "LED关闭");
+                }
+            }
+            // 按键2短按：触发蜂鸣器提示音
+            if (key_index == 1) {
+                Buzzer_Alarm(1, 100, 0);
+                log_i("KEY", "蜂鸣器提示音触发");
+            }
+            break;
+            
+        case KEY_EVENT_LONG_PRESS:
+            log_i("KEY", "按键%d长按", key_index + 1);
+            // 按键1长按：显示系统状态
+            if (key_index == 0) {
+                log_i("STATUS", "=== 系统状态 ===");
+                if (g_wifi_connected) {
+                    log_i("STATUS", "WiFi: 已连接 %s", g_wifi_ssid);
+                    log_i("STATUS", "IP地址: %s", g_wifi_ip);
+                } else {
+                    log_i("STATUS", "WiFi: AP模式运行中");
+                    log_i("STATUS", "IP地址: %s", g_wifi_ip);
+                }
+                if (g_dht11_connected) {
+                    log_i("STATUS", "温度: %d°C, 湿度: %d%%", g_temperature, g_humidity);
+                } else {
+                    log_i("STATUS", "DHT11: 未连接");
+                }
+                log_i("STATUS", "=================");
+            }
+            // 按键2长按：触发蜂鸣器报警
+            if (key_index == 1) {
+                Buzzer_Alarm(3, 200, 100);
+                log_i("KEY", "蜂鸣器报警触发");
+            }
+            break;
+            
+        case KEY_EVENT_DOUBLE_CLICK:
+            log_i("KEY", "按键%d双击", key_index + 1);
+            // 按键1双击：LED闪烁
+            if (key_index == 0) {
+                for (int i = 0; i < 3; i++) {
+                    LED_ON();
+                    Time_DelayMs(200);
+                    LED_OFF();
+                    Time_DelayMs(200);
+                }
+                log_i("KEY", "LED闪烁完成");
+            }
+            // 按键2双击：显示按键状态
+            if (key_index == 1) {
+                log_i("KEY", "=== 按键状态 ===");
+                for (uint8_t i = 0; i < g_key_manager->key_count; i++) {
+                    bool pressed = key_manager_is_pressed(g_key_manager, i);
+                    uint32_t duration = key_manager_get_press_duration(g_key_manager, i);
+                    log_i("KEY", "按键%d: %s, 持续时间: %dms", 
+                          i + 1, pressed ? "按下" : "释放", duration);
+                }
+                log_i("KEY", "================");
+            }
+            break;
+            
+        case KEY_EVENT_HOLD:
+            // 保持按下状态，可以用于实现持续功能
+            break;
+            
+        default:
+            break;
+    }
+}
+
+// 按键定时器回调函数
+void KeyTimerCb(void *arg) {
+    (void)arg;
+    
+    if (g_key_manager != NULL) {
+        // 更新按键状态
+        key_manager_update(g_key_manager);
+        
+        // 检查所有按键的事件
+        for (uint8_t i = 0; i < g_key_manager->key_count; i++) {
+            key_event_t event = key_manager_get_event(g_key_manager, i);
+            if (event != KEY_EVENT_NONE) {
+                handle_key_event(i, event);
+            }
+        }
+    }
+}
+
 
 // 网络任务函数 - 使用KV存储系统
 void network_task(void *arg) {
@@ -232,6 +382,38 @@ static void Main_Entry(void) {
     Buzzer_Init();
 
     log_i("SYSTEM", "系统初始化开始");
+
+    // 初始化按键管理器
+    log_i("KEY", "正在初始化按键管理器...");
+    g_key_manager = key_manager_create(2); // 最多支持2个按键
+    if (g_key_manager != NULL) {
+        // 添加按键1 (GPIO11)
+        int8_t key1_index = key_manager_add_key(g_key_manager, KEY1_PIN, 0, 20, 1000, 300);
+        if (key1_index >= 0) {
+            log_i("KEY", "按键1 (GPIO11) 添加成功，索引: %d", key1_index);
+        } else {
+            log_e("KEY", "按键1添加失败");
+        }
+        
+        // 添加按键2 (GPIO12)
+        int8_t key2_index = key_manager_add_key(g_key_manager, KEY2_PIN, 0, 20, 1000, 300);
+        if (key2_index >= 0) {
+            log_i("KEY", "按键2 (GPIO12) 添加成功，索引: %d", key2_index);
+        } else {
+            log_e("KEY", "按键2添加失败");
+        }
+        
+        // 创建按键定时器（5ms周期）
+        g_key_timer = osTimerNew(KeyTimerCb, osTimerPeriodic, NULL, NULL);
+        if (g_key_timer != NULL) {
+            osTimerStart(g_key_timer, 5);
+            log_i("KEY", "按键定时器启动成功 (5ms周期)");
+        } else {
+            log_e("KEY", "按键定时器创建失败");
+        }
+    } else {
+        log_e("KEY", "按键管理器创建失败");
+    }
 
     // 初始化KV存储模块
     kv_result_t kv_ret = kv_init();

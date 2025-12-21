@@ -15,7 +15,7 @@ make app_subver_temp_dir
 mdmxml:F:\DevEcoProjects\hi3861_proj\src\device\hisilicon\hispark_pegasus\sdk_liteos\tools\nvtool\xml_file\mss_nvi_db.xml
 src_xml_list: ['F:\\DevEcoProjects\\hi3861_proj\\src\\device\\hisilicon\\hispark_pegasus\\sdk_liteos\\tools\\nvtool\\xml_file\\mss_nvi_db.xml']
 combin_xml:F:\DevEcoProjects\hi3861_proj\src\device\hisilicon\hispark_pegasus\sdk_liteos\tools\nvtool\out_nv_bin\sta\nv\Hi3861_wifiiot_app\mss_nvi_db.xml
-root_list [<Element 'HISTUDIO' at 0x000001FBAB30EB30>]
+root_list [<Element 'HISTUDIO' at 0x00000297E09EEA40>]
 hi_nv_modify_by_cfg
 cfg_file: nv
 
@@ -55,13 +55,13 @@ upg file          out: build\build_tmp\cache\Hi3861_wifiiot_app_ota_temp.bin
 [common_head_sign_offset=384][common_head_sign_size=256]
 [section_head_offset=640][section_head_size=64]
 [upg_file_sign_offset=704][upg_file_sign_size=256]
-[padding_offset=657768][padding_size=8]
+[padding_offset=664616][padding_size=8]
 [upg fill user info]chip:b'Hi3861'
 -------------build\build_tmp\cache\Hi3861_wifiiot_app_ota_temp.bin image info print start-------------
 [image_id=0x3c78961e][struct_version=0x0]]
-[section_offset=0x280][section_len=0xa06f0]
+[section_offset=0x280][section_len=0xa21b0]
 [file_type=0xf0][file_version=0x0][encrypt_flag=0x42]
-[file_len=0xa0970][key_len=0x120]
+[file_len=0xa2430][key_len=0x120]
 [file_attr=0x44]
 [hash_alg=0x0][sign_alg=0x3f][sign_param=0x0]
 [aes_key[0-1-14-15]=[0x0][0x0][0x0][0x0]]
@@ -70,19 +70,19 @@ upg file          out: build\build_tmp\cache\Hi3861_wifiiot_app_ota_temp.bin
 [common key][01]=[0x0]
 [common key][30]=[0x0]
 [common key][31]=[0x0]
-[common sign][00]=[0x80]
-[common sign][01]=[0x3]
-[common sign][30]=[0x78]
-[common sign][31]=[0xa]
-[section sign][00]=[0x6d]
-[section sign][01]=[0xab]
-[section sign][30]=[0x86]
-[section sign][31]=[0x1]
+[common sign][00]=[0x78]
+[common sign][01]=[0x1f]
+[common sign][30]=[0xa]
+[common sign][31]=[0x2d]
+[section sign][00]=[0xf8]
+[section sign][01]=[0xe0]
+[section sign][30]=[0x65]
+[section sign][31]=[0x2d]
 [image_id=0x3c78961e][struct_version=0x0]]
 [hash_alg=0x0][sign_alg=0x3f][sign_param=0x0]
 [section_count=0x2]
-[section0_compress=0x0][section0_offset=0x3c0][section0_len=0x9f5a8]
-[section1_compress=0x0][section1_offset=0x9f968][section1_len=0x1000]
+[section0_compress=0x0][section0_offset=0x3c0][section0_len=0xa1068]
+[section1_compress=0x0][section1_offset=0xa1428][section1_len=0x1000]
 -------------build\build_tmp\cache\Hi3861_wifiiot_app_ota_temp.bin image info print end--------------
 riscv32-unknown-elf-objdump -d output\bin\Hi3861_wifiiot_app.out > output\bin\Hi3861_wifiiot_app.asm
 burn_bin_builder(["output\bin\Hi3861_wifiiot_app_burn.bin", "output\bin\Hi3861_wifiiot_app_allinone.bin"], ["build\build_tmp\cache\Hi3861_wifiiot_app_ota_temp.bin", "output\bin\Hi3861_loader_signed.bin"])
@@ -93,11 +93,11 @@ hbin normal nv file  in : build\build_tmp\cache\Hi3861_wifiiot_app_ota_temp.bin
 hbin upg file        in : build\build_tmp\nv\Hi3861_wifiiot_app_factory.hnv
 hbin file           out : output\bin\Hi3861_wifiiot_app_burn.bin
 -------------output\bin\Hi3861_wifiiot_app_burn.bin image info print start-------------
-[bin_size]=[0xad970]
+[bin_size]=[0xaf430]
 [image_id=0x3c78961e][struct_version=0x0]]
-[section_offset=0x280][section_len=0xa06f0]
+[section_offset=0x280][section_len=0xa21b0]
 [file_type=0xf0][file_version=0x0][encrypt_flag=0x42]
-[file_len=0xa0970][key_len=0x120]
+[file_len=0xa2430][key_len=0x120]
 [hash_alg=0x0][sign_alg=0x3f][sign_param=0x0]
 [aes_key[0,1,14,15]=[0x0][0x0][0x0][0x0]]
 [aes_iv[0,1,14,15]=[0x0][0x0][0x0][0x0]]
@@ -105,7 +105,7 @@ hbin file           out : output\bin\Hi3861_wifiiot_app_burn.bin
 ['output\\bin\\Hi3861_loader_signed.bin', 'output\\bin\\Hi3861_wifiiot_app_burn.bin']
 [0, 0]
 [0, 2097152]
-[15104, 711024]
+[15104, 717872]
 [0, 1]
 4022250975
 boot_ota_builder(["output\bin\Hi3861_wifiiot_app_flash_boot_ota.bin"], ["output\bin\Hi3861_boot_signed.bin"])
@@ -156,21 +156,21 @@ lzma    out   file : build\build_tmp\cache\Hi3861_wifiiot_app_ota_temp.lzma
 
 LZMA 19.00 (x86) : Igor Pavlov : Public domain : 2019-02-21
 
-Input size:  657776 (0 MiB)
-                                                                Output size: 410105 (0 MiB)
-[upgbin-compressbin]0xa0970-0x135000
+Input size:  664624 (0 MiB)
+                                                                Output size: 413137 (0 MiB)
+[upgbin-compressbin]0xa2430-0x133000
 [common_head_offset=0][common_head_size=96]
 [common_key_offset=96][common_key_size=288]
 [common_head_sign_offset=384][common_head_sign_size=256]
 [section_head_offset=640][section_head_size=64]
 [upg_file_sign_offset=704][upg_file_sign_size=256]
-[padding_offset=411065][padding_size=7]
+[padding_offset=414097][padding_size=15]
 [upg fill user info]chip:b'Hi3861'
 -------------output\bin\Hi3861_wifiiot_app_ota.bin image info print start-------------
 [image_id=0x3c78961e][struct_version=0x0]]
-[section_offset=0x280][section_len=0x64340]
+[section_offset=0x280][section_len=0x64f20]
 [file_type=0xf0][file_version=0x0][encrypt_flag=0x42]
-[file_len=0x645c0][key_len=0x120]
+[file_len=0x651a0][key_len=0x120]
 [file_attr=0x44]
 [hash_alg=0x0][sign_alg=0x3f][sign_param=0x0]
 [aes_key[0-1-14-15]=[0x0][0x0][0x0][0x0]]
@@ -179,18 +179,18 @@ Input size:  657776 (0 MiB)
 [common key][01]=[0x0]
 [common key][30]=[0x0]
 [common key][31]=[0x0]
-[common sign][00]=[0x33]
-[common sign][01]=[0x68]
-[common sign][30]=[0x61]
-[common sign][31]=[0x29]
-[section sign][00]=[0x39]
-[section sign][01]=[0xeb]
-[section sign][30]=[0xe9]
-[section sign][31]=[0xde]
+[common sign][00]=[0xd2]
+[common sign][01]=[0x21]
+[common sign][30]=[0x7c]
+[common sign][31]=[0xca]
+[section sign][00]=[0x24]
+[section sign][01]=[0xaf]
+[section sign][30]=[0xcd]
+[section sign][31]=[0xaf]
 [image_id=0x3c78961e][struct_version=0x0]]
 [hash_alg=0x0][sign_alg=0x3f][sign_param=0x0]
 [section_count=0x1]
-[section0_compress=0x1][section0_offset=0x3c0][section0_len=0x641f9]
+[section0_compress=0x1][section0_offset=0x3c0][section0_len=0x64dd1]
 [section1_compress=0x0][section1_offset=0x0][section1_len=0x0]
 -------------output\bin\Hi3861_wifiiot_app_ota.bin image info print end--------------
 [95m
