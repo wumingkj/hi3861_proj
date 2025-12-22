@@ -10,6 +10,7 @@
 #include "time.h"    // 使用新的时间库
 #include "wifi.h"  // 修改为相对路径
 #include "kv.h"     // 新增KV存储模块头文件
+#include "nfc.h"
 #include "php_api.h" // 恢复PHP API模块头文件
 #include "debug_uart.h" // 新增串口调试模块头文件
 #include "key_manager.h" // 新增按键管理器头文件
@@ -132,13 +133,13 @@ static void handle_key_event(uint8_t key_index, key_event_t event) {
                 if (g_wifi_connected) {
                     log_i("STATUS", "WiFi: 已连接 %s", g_wifi_ssid);
                     log_i("STATUS", "IP地址: %s", g_wifi_ip);
-                } else {
+} else {
                     log_i("STATUS", "WiFi: AP模式运行中");
                     log_i("STATUS", "IP地址: %s", g_wifi_ip);
                 }
                 if (g_dht11_connected) {
                     log_i("STATUS", "温度: %d°C, 湿度: %d%%", g_temperature, g_humidity);
-                } else {
+} else {
                     log_i("STATUS", "DHT11: 未连接");
                 }
                 log_i("STATUS", "=================");
@@ -321,8 +322,7 @@ void php_api_task(void *arg) {
             g_last_php_update = current_time_ms;
             php_api_led_update();
         }
-
-        Time_DelayMs(10);
+Time_DelayMs(10);
     }
 }
 
@@ -335,15 +335,32 @@ void led_init(void) {
 }
 
 // 主任务
-static void Main_Task(void) {
+// 删除LED_ON/LED_OFF宏定义（第63-64行）
+// #define LED_ON()        hi_gpio_set_ouput_val(LED_PIN, HI_GPIO_VALUE0)
+// #define LED_OFF()       hi_gpio_set_ouput_val(LED_PIN, HI_GPIO_VALUE1)
+static void Main_Task(void *argument) {
     uint32_t current_time_ms;
     
     // 初始化时间戳
     uint32_t g_last_sensor_update = Time_GetCurrentMs();
     uint32_t g_last_network_status = Time_GetCurrentMs();
     uint32_t g_last_uart_debug = Time_GetCurrentMs();  // 新增UART调试时间戳
+    uint32_t g_last_nfc_status = Time_GetCurrentMs();  // 新增NFC状态监控时间戳
+    
+    // NFC状态相关变量
+    nfc_state_t last_nfc_state = NFC_STATE_DISCONNECTED;
+    bool nfc_initialized = false;
     
     log_i("MAIN", "主任务开始运行");
+    
+    // 初始化NFC模块 - 修改为直接调用nfc_init
+    log_i("NFC", "正在初始化NFC模块...");
+    if (nfc_init() == true) {
+        nfc_initialized = true;
+        log_i("NFC", "NFC模块初始化成功");
+    } else {
+        log_w("NFC", "NFC模块初始化失败，将定期重试");
+    }
     
     while (1) {
         current_time_ms = Time_GetCurrentMs();
@@ -365,7 +382,117 @@ static void Main_Task(void) {
             debug_uart_task_handler();  // 调用debug_uart模块的任务处理函数
         }
         
-        // 3. 定期显示网络状态（30秒间隔）
+        // 3. NFC状态实时监控（500ms间隔）
+        if (current_time_ms - g_last_nfc_status >= 500) {
+            g_last_nfc_status = current_time_ms;
+            
+            // 如果NFC未初始化，尝试重新初始化
+            if (!nfc_initialized) {
+                if (nfc_init() == true) {
+                    nfc_initialized = true;
+                    log_i("NFC", "NFC模块初始化成功");
+                } else {
+                    log_w("NFC", "NFC模块初始化失败，继续重试...");
+                }
+            }
+            
+            // 如果NFC已初始化，获取并记录状态
+            if (nfc_initialized) {
+                nfc_state_t current_state = nfc_get_state();
+                
+                // 状态变化时记录详细信息
+                if (current_state != last_nfc_state) {
+                    last_nfc_state = current_state;
+                    
+                    switch (current_state) {
+                        case NFC_STATE_DISCONNECTED:
+                            log_i("NFC", "状态变化: 未连接 -> 等待NFC标签靠近");
+                            break;
+                        case NFC_STATE_CONNECTED:
+                            log_i("NFC", "状态变化: 已连接 -> NFC标签已检测到");
+                            
+                            // 获取并记录NFC标签信息
+                            nfc_info_t nfc_info;
+                            if (nfc_get_info(&nfc_info)) {
+                                log_i("NFC", "标签信息: 类型=0x%02X, 内存=%dKB, 用户内存=%d字节", 
+                                      nfc_info.tag_type, nfc_info.memory_size, nfc_info.user_memory_size);
+                                
+                                // 记录序列号
+                                char serial_str[16] = {0};
+                                for (int i = 0; i < 7; i++) {
+                                    char temp[4];
+                                    snprintf(temp, sizeof(temp), "%02X", nfc_info.serial_number[i]);
+                                    strcat(serial_str, temp);
+                                }
+                                log_i("NFC", "序列号: %s", serial_str);
+                            }
+                            break;
+                        case NFC_STATE_READING:
+                            log_i("NFC", "状态变化: 正在读取 -> 从NFC标签读取数据中...");
+                            break;
+                        case NFC_STATE_WRITING:
+                            log_i("NFC", "状态变化: 正在写入 -> 向NFC标签写入数据中...");
+                            break;
+                        case NFC_STATE_ERROR:
+                            log_e("NFC", "状态变化: 错误 -> 错误代码: 0x%08X", nfc_get_last_error());
+                            log_e("NFC", "错误描述: %s", nfc_get_error_string(nfc_get_last_error()));
+                            break;
+                        default:
+                            log_w("NFC", "状态变化: 未知状态 %d", current_state);
+                            break;
+                    }
+                }
+                
+                // 定期记录NFC当前状态（每2秒记录一次，便于调试）
+                static uint32_t nfc_status_counter = 0;
+                nfc_status_counter++;
+                if (nfc_status_counter % 4 == 0) { // 每2秒记录一次状态
+                    const char* state_str = "未知";
+                    switch (current_state) {
+                        case NFC_STATE_DISCONNECTED: state_str = "未连接"; break;
+                        case NFC_STATE_CONNECTED: state_str = "已连接"; break;
+                        case NFC_STATE_READING: state_str = "读取中"; break;
+                        case NFC_STATE_WRITING: state_str = "写入中"; break;
+                        case NFC_STATE_ERROR: state_str = "错误"; break;
+                    }
+                    log_i("NFC", "当前状态: %s", state_str);
+                }
+                
+                // 定期记录NFC就绪状态和详细信息
+                static uint32_t nfc_detail_counter = 0;
+                nfc_detail_counter++;
+                if (nfc_detail_counter % 20 == 0) { // 每10秒记录一次详细信息
+                    nfc_detail_counter = 0;
+                    
+                    if (current_state == NFC_STATE_CONNECTED) {
+                        // 检查NFC就绪状态
+                        if (nfc_is_ready()) {
+                            log_i("NFC", "NFC标签就绪，可以进行读写操作");
+                            
+                            // 尝试读取文本数据
+                            char text_buffer[256];
+                            int text_len = nfc_read_all_text(text_buffer, sizeof(text_buffer) - 1);
+                            if (text_len > 0) {
+                                text_buffer[text_len] = '\0';
+                                log_i("NFC", "文本数据: %s", text_buffer);
+                            }
+                            
+                            // 尝试读取URI数据
+                            char uri_buffer[256];
+                            int uri_len = nfc_read_all_uri(uri_buffer, sizeof(uri_buffer) - 1);
+                            if (uri_len > 0) {
+                                uri_buffer[uri_len] = '\0';
+                                log_i("NFC", "URI数据: %s", uri_buffer);
+                            }
+                        } else {
+                            log_w("NFC", "NFC标签未就绪，可能正在处理中");
+                        }
+                    }
+                }
+            }
+        }
+        
+        // 4. 定期显示网络状态（30秒间隔）
         if (current_time_ms - g_last_network_status >= 30000) {
             g_last_network_status = current_time_ms;
             
@@ -380,6 +507,22 @@ static void Main_Task(void) {
                 log_i("STATUS", "传感器状态: 温度=%d°C, 湿度=%d%%", g_temperature, g_humidity);
             } else {
                 log_w("STATUS", "传感器状态: DHT11未连接");
+            }
+            
+            // 显示NFC状态
+            if (nfc_initialized) {
+                nfc_state_t current_state = nfc_get_state();
+                const char* state_str = "未知";
+                switch (current_state) {
+                    case NFC_STATE_DISCONNECTED: state_str = "未连接"; break;
+                    case NFC_STATE_CONNECTED: state_str = "已连接"; break;
+                    case NFC_STATE_READING: state_str = "读取中"; break;
+                    case NFC_STATE_WRITING: state_str = "写入中"; break;
+                    case NFC_STATE_ERROR: state_str = "错误"; break;
+                }
+                log_i("STATUS", "NFC状态: %s", state_str);
+            } else {
+                log_w("STATUS", "NFC状态: 未初始化");
             }
         }
         
@@ -484,8 +627,7 @@ static void Main_Entry(void) {
                 log_i("KV_TEST", "✅ 测试字符串验证成功: %s", test_buffer);
             } else {
                 log_e("KV_TEST", "❌ 测试字符串验证失败，错误码: %d", test_result);
-            }
-            
+            }  // 添加缺失的右大括号
             // 验证启动时间
             uint32_t first_boot_time = 0;
             kv_result_t time_result = kv_get_uint32("first_boot_time", &first_boot_time);
@@ -611,7 +753,6 @@ static void Main_Entry(void) {
     }
     
     log_i("SYSTEM", "系统初始化完成");
-    
     // 创建主任务
     log_i("SYSTEM", "正在创建主任务...");
     osThreadAttr_t main_task_attr = {

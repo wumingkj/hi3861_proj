@@ -25,6 +25,12 @@ static_library("startup") {
         "src/php_api/php_api.c", # 新增PHP API库
         "src/key_manager/key_manager.c", # 新增按键管理库
         "src/debug_uart/debug_uart.c", # 新增调试串口库
+        "src/nfc/nfc.c",         # 新增NFC库
+        "src/nfc/NT3H.c",        # 新增NT3H驱动
+        "src/nfc/ndef/ndef.c",   # 新增NDEF协议库
+        "src/nfc/ndef/rtd/nfcForum.c", # 新增NFC论坛标准
+        "src/nfc/ndef/rtd/rtdText.c",  # 新增文本记录处理
+        "src/nfc/ndef/rtd/rtdUri.c",   # 新增URI记录处理
     ]
 
     include_dirs = [
@@ -40,8 +46,9 @@ static_library("startup") {
         "src/php_api",          # 新增PHP API库头文件路径
         "src/debug_uart",       # 新增调试串口库头文件路径
         "src/key_manager",      # 新增按键管理库头文件路径
-
-
+        "src/nfc",              # 新增NFC库头文件路径
+        "src/nfc/ndef",         # 新增NDEF协议头文件路径
+        "src/nfc/ndef/rtd",     # 新增RTD记录类型头文件路径
 
         "//utils/native/lite/include",
         "//kernel/liteos_m/kal/cmsis",
