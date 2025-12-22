@@ -50,7 +50,6 @@
 void led_init(void);
 void network_task(void *arg); // 新增网络任务声明
 void php_api_task(void *arg); // 恢复PHP API任务声明
-void debug_uart_task(void *arg); // 新增串口调试任务声明
 
 // 管脚定义
 #define LED_PIN         HI_IO_NAME_GPIO_2
@@ -59,7 +58,6 @@ void debug_uart_task(void *arg); // 新增串口调试任务声明
 // 按键引脚定义
 #define KEY1_PIN        HI_IO_NAME_GPIO_11
 #define KEY2_PIN        HI_IO_NAME_GPIO_12
-
 // LED控制宏定义（修复函数名错误）
 #define LED_ON()        hi_gpio_set_ouput_val(LED_PIN, HI_GPIO_VALUE0)
 #define LED_OFF()       hi_gpio_set_ouput_val(LED_PIN, HI_GPIO_VALUE1)
@@ -178,7 +176,8 @@ static void handle_key_event(uint8_t key_index, key_event_t event) {
             break;
             
         case KEY_EVENT_HOLD:
-            // 保持按下状态，可以用于实现持续功能
+            // 保持按下状态，可以用于实现持续功能（如音量调节等）
+            // 这里不记录日志，避免频繁输出
             break;
             
         default:
@@ -327,6 +326,14 @@ void php_api_task(void *arg) {
     }
 }
 
+// LED初始化函数 - 设置初始状态为关闭
+void led_init(void) {
+    hi_io_set_func(LED_PIN, LED_GPIO_FUN);
+    hi_gpio_set_dir(LED_PIN, HI_GPIO_DIR_OUT);
+    LED_OFF();  // 初始状态设置为关闭
+    log_i("LED", "LED初始化完成，初始状态：关闭");
+}
+
 // 主任务
 static void Main_Task(void) {
     uint32_t current_time_ms;
@@ -334,6 +341,7 @@ static void Main_Task(void) {
     // 初始化时间戳
     uint32_t g_last_sensor_update = Time_GetCurrentMs();
     uint32_t g_last_network_status = Time_GetCurrentMs();
+    uint32_t g_last_uart_debug = Time_GetCurrentMs();  // 新增UART调试时间戳
     
     log_i("MAIN", "主任务开始运行");
     
@@ -351,6 +359,11 @@ static void Main_Task(void) {
             }
         }
         
+        // 2. 非阻塞UART调试处理（50ms间隔，与debug_uart模块保持一致）
+        if (current_time_ms - g_last_uart_debug >= 50) {
+            g_last_uart_debug = current_time_ms;
+            debug_uart_task_handler();  // 调用debug_uart模块的任务处理函数
+        }
         
         // 3. 定期显示网络状态（30秒间隔）
         if (current_time_ms - g_last_network_status >= 30000) {
@@ -378,8 +391,9 @@ static void Main_Task(void) {
 static void Main_Entry(void) {
     // 初始化库
     Time_Init();
-    led_init();
+    led_init();  // LED初始化（初始状态为关闭）
     Buzzer_Init();
+    debug_uart_init();  // 初始化串口调试模块
 
     log_i("SYSTEM", "系统初始化开始");
 
@@ -388,7 +402,7 @@ static void Main_Entry(void) {
     g_key_manager = key_manager_create(2); // 最多支持2个按键
     if (g_key_manager != NULL) {
         // 添加按键1 (GPIO11)
-        int8_t key1_index = key_manager_add_key(g_key_manager, KEY1_PIN, 0, 20, 1000, 300);
+        int8_t key1_index = key_manager_add_key(g_key_manager, KEY1_PIN, 0, 10, 1000, 300);
         if (key1_index >= 0) {
             log_i("KEY", "按键1 (GPIO11) 添加成功，索引: %d", key1_index);
         } else {
@@ -396,7 +410,7 @@ static void Main_Entry(void) {
         }
         
         // 添加按键2 (GPIO12)
-        int8_t key2_index = key_manager_add_key(g_key_manager, KEY2_PIN, 0, 20, 1000, 300);
+        int8_t key2_index = key_manager_add_key(g_key_manager, KEY2_PIN, 0, 10, 1000, 300);
         if (key2_index >= 0) {
             log_i("KEY", "按键2 (GPIO12) 添加成功，索引: %d", key2_index);
         } else {
@@ -619,11 +633,3 @@ static void Main_Entry(void) {
 
 // 应用入口函数
 SYS_RUN(Main_Entry);
-
-void led_init(void) {
-    hi_gpio_init();                                            // GPIO初始化
-    hi_io_set_pull(LED_PIN, HI_IO_PULL_DOWN);                  // 设置GPIO下拉
-    hi_io_set_func(LED_PIN, LED_GPIO_FUN);                     // 设置IO为GPIO功能
-    hi_gpio_set_dir(LED_PIN, HI_GPIO_DIR_OUT);                 // 设置GPIO为输出模式
-    log_i("LED", "LED初始化完成");
-}

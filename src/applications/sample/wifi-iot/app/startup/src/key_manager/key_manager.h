@@ -62,6 +62,7 @@ typedef struct {
     uint32_t last_release_time;// 上次释放时间
     uint8_t click_count;       // 点击计数
     bool is_double_click;      // 是否为双击
+    bool long_press_triggered; // 长按是否已触发（新增）
 } key_info_t;
 
 // 按键管理器类

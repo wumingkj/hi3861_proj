@@ -74,6 +74,7 @@ static void init_single_key(key_info_t *key, hi_io_name pin, uint8_t func,
     key->last_release_time = 0;
     key->click_count = 0;
     key->is_double_click = false;
+    key->long_press_triggered = false;  // 新增：初始化长按触发标志
     
     // 配置GPIO
     hi_io_set_pull(pin, HI_IO_PULL_UP);
@@ -172,6 +173,7 @@ void key_manager_update(key_manager_t *manager) {
                     // 检测到按下，进入消抖状态
                     key->state = KEY_STATE_DEBOUNCING;
                     key->press_start_time = current_time;
+                    key->long_press_triggered = false;  // 重置长按触发标志
                 }
                 break;
                 
@@ -231,6 +233,12 @@ key_event_t key_manager_get_event(key_manager_t *manager, uint8_t key_index) {
                 return KEY_EVENT_DOUBLE_CLICK;
             }
             
+            // 检查是否为长按（在释放时判断）
+            if (press_duration >= key->config.long_press_time) {
+                key->long_press_triggered = false;  // 重置长按触发标志
+                return KEY_EVENT_LONG_PRESS;
+            }
+            
             // 检查是否为短按
             if (press_duration < key->config.long_press_time) {
                 return KEY_EVENT_SHORT_PRESS;
@@ -240,9 +248,10 @@ key_event_t key_manager_get_event(key_manager_t *manager, uint8_t key_index) {
         }
     }
     
-    // 长按检测（保持按下状态）
+    // 保持按下状态检测（用于实时反馈，但不触发长按事件）
     if (key->state == KEY_STATE_PRESSED && press_duration >= key->config.long_press_time) {
-        return KEY_EVENT_LONG_PRESS;
+        // 这里只返回HOLD事件，不触发长按事件
+        return KEY_EVENT_HOLD;
     }
     
     // 保持按下状态
@@ -299,6 +308,7 @@ void key_manager_reset(key_manager_t *manager, uint8_t key_index) {
     key->last_release_time = 0;
     key->click_count = 0;
     key->is_double_click = false;
+    key->long_press_triggered = false;  // 新增：重置长按触发标志
 }
 
 const key_config_t* key_manager_get_config(key_manager_t *manager, uint8_t key_index) {

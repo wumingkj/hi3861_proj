@@ -488,7 +488,7 @@ php_api_result_t php_api_init(void) {
     php_api_led_init();
     
     // 初始化LED控制状态
-    g_led_state = 2; // 默认闪烁模式
+    g_led_state = 0; // 默认闪烁模式
     g_led_blink_interval = 100;
     g_last_led_update = Time_GetCurrentMs();
     
@@ -623,13 +623,13 @@ php_api_result_t php_api_control_led(const led_control_t *control) {
     
     g_led_state = control->state;
     
-    // 立即更新LED状态
+    // 立即更新LED状态（仅对非闪烁模式）
     if (g_led_state == 0) {
         LED_OFF();
     } else if (g_led_state == 1) {
         LED_ON();
     }
-    // state=2 保持闪烁模式
+    // state=2 闪烁模式，由php_api_led_update函数处理
     
     return PHP_API_SUCCESS;
 }
@@ -655,27 +655,20 @@ php_api_result_t php_api_get_sensor_data(uint8_t *temperature, uint8_t *humidity
 void php_api_led_update(void) {
     uint32_t current_time = Time_GetCurrentMs();
     
-    if (current_time - g_last_led_update >= g_led_blink_interval) {
-        g_last_led_update = current_time;
-        
-        // 将变量声明移到switch语句之前
-        static uint8_t led_toggle = 0;
-        
-        switch (g_led_state) {
-            case 0: // 关闭
-                LED_OFF();
-                break;
-            case 1: // 开启
+    // 仅在闪烁模式下进行周期性更新
+    if (g_led_state == 2) {
+        if (current_time - g_last_led_update >= g_led_blink_interval) {
+            g_last_led_update = current_time;
+            
+            static uint8_t led_toggle = 0;
+            
+            if (led_toggle) {
                 LED_ON();
-                break;
-            case 2: // 闪烁
-                if (led_toggle) {
-                    LED_ON();
-                } else {
-                    LED_OFF();
-                }
-                led_toggle = !led_toggle;
-                break;
+            } else {
+                LED_OFF();
+            }
+            led_toggle = !led_toggle;
         }
     }
+    // 对于非闪烁模式（关闭/开启），仅在状态改变时更新，不进行周期性更新
 }

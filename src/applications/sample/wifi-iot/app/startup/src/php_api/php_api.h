@@ -54,8 +54,8 @@
 // LED控制宏定义（与main.c保持一致）
 #define LED_PIN                    HI_IO_NAME_GPIO_2
 #define LED_GPIO_FUN               HI_IO_FUNC_GPIO_2_GPIO
-#define LED_ON()                   hi_gpio_set_ouput_val(LED_PIN, HI_GPIO_VALUE0)
-#define LED_OFF()                  hi_gpio_set_ouput_val(LED_PIN, HI_GPIO_VALUE1)
+#define LED_ON()                   hi_gpio_set_ouput_val(LED_PIN, HI_GPIO_VALUE1)
+#define LED_OFF()                  hi_gpio_set_ouput_val(LED_PIN, HI_GPIO_VALUE0)
 
 // PHP API返回码
 typedef enum {
