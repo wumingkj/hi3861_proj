@@ -499,7 +499,6 @@ static void Main_Entry(void)
     Time_Init();
     led_init(); // LED初始化（初始状态为关闭）
     Buzzer_Init();
-    debug_uart_init(); // 初始化串口调试模块
 
     log_i("SYSTEM", "系统初始化开始");
 
