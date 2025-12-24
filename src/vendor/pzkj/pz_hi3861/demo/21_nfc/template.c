@@ -76,6 +76,9 @@ void NFC_Task(void) {
     
     nfc_init();
 
+    while (1) 
+    {
+
     // 读整个数据的包头部分，读出整个数据的长度
     if (result_code = NT3HReadHeaderNfc(&ndefLen, &ndef_Header) != true) 
     {
@@ -108,9 +111,7 @@ void NFC_Task(void) {
         printf("0x%x ", ndefBuff[i]);
     }
     
-    while (1) 
-    {
-        usleep(10*1000); //10ms
+        usleep(1000*1000); //1ms
     }
 }
 //任务创建

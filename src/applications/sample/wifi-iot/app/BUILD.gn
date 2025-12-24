@@ -15,8 +15,10 @@ import("//build/lite/config/component/lite_component.gni")
 
 lite_component("app") {
     features = [
-        "startup",
+         "startup",
+        # "nfc_test:template"
         # "//vendor/pzkj/pz_hi3861/demo/28_dht11:template",
         # "//vendor/pzkj/pz_hi3861/demo/09_beep:template",
+        # "//vendor/pzkj/pz_hi3861/demo/21_nfc:template",
     ]
 }

@@ -146,7 +146,7 @@ uint8_t dht11_read_data(uint8_t *temp,uint8_t *humi)
 			*temp=buf[2];
 		}
 		
-	}else return 1;
+	} else return 1;
 	return 0;	    
 }
 

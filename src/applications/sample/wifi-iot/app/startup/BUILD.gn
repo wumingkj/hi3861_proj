@@ -24,7 +24,10 @@ static_library("startup") {
         "src/kv/kv.c",           # 新增NV库
         "src/php_api/php_api.c", # 新增PHP API库
         "src/key_manager/key_manager.c", # 新增按键管理库
-        "src/debug_uart/debug_uart.c", # 新增调试串口库
+        "src/sensors/adc.c",    # 新增ADC库
+        "src/sensors/smoke.c",  # 新增烟雾传感器库
+
+
         "src/nfc/nfc.c",         # 新增NFC库
         "src/nfc/NT3H.c",        # 新增NT3H驱动
         "src/nfc/ndef/ndef.c",   # 新增NDEF协议库
@@ -44,8 +47,8 @@ static_library("startup") {
         "src/network",          # 新增网络库头文件路径
         "src/kv",               # 新增KV库头文件路径
         "src/php_api",          # 新增PHP API库头文件路径
-        "src/debug_uart",       # 新增调试串口库头文件路径
         "src/key_manager",      # 新增按键管理库头文件路径
+
         "src/nfc",              # 新增NFC库头文件路径
         "src/nfc/ndef",         # 新增NDEF协议头文件路径
         "src/nfc/ndef/rtd",     # 新增RTD记录类型头文件路径
