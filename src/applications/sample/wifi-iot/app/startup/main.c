@@ -13,7 +13,7 @@
 #include "php_api.h"     // 恢复PHP API模块头文件
 #include "key_manager.h" // 新增按键管理器头文件
 #include "smoke.h"
-
+#include "nfc.h"
 // #define DEFAULT_DEBUG_LEVEL 0
 #include "debug.h" // 新增调试头文件
 
@@ -392,16 +392,197 @@ void led_init(void)
     log_i("LED", "LED初始化完成，初始状态：关闭");
 }
 
-void Main_Task(void *argument)
-{
-    (void)argument; // 修复：使用未使用参数
+// NFC检测相关变量
+bool g_nfc_initialized = false;
+uint32_t g_last_nfc_check = 0;
+#define NFC_CHECK_INTERVAL_MS 5000  // 5秒检测一次NFC标签 
 
-    uint32_t current_time_ms;
+// 函数原型声明
+static void parse_wifi_config(const char* wifi_uri)
+{
+    char ssid[64] = {0};
+    char password[64] = {0};
+    char auth_type[32] = {0};
+    
+    // 跳过"WIFI:"前缀
+    const char* ptr = wifi_uri + 5;
+    
+    while (*ptr != '\0') {
+        // 查找分隔符
+        if (*ptr == ';') {
+            ptr++;
+            continue;
+        }
+        
+        // 解析字段
+        if (*ptr == 'S' && *(ptr + 1) == ':') {
+            // 解析SSID
+            const char* start = ptr + 2;
+            int i = 0;
+            while (*start != ';' && *start != '\0') {
+                ssid[i++] = *start++;
+            }
+            ssid[i] = '\0';
+            log_i("NFC", "检测到SSID: %s", ssid);
+            ptr = start;
+        }
+        else if (*ptr == 'T' && *(ptr + 1) == ':') {
+            // 解析认证类型
+            const char* start = ptr + 2;
+            int i = 0;
+            while (*start != ';' && *start != '\0') {
+                auth_type[i++] = *start++;
+            }
+            auth_type[i] = '\0';
+            log_i("NFC", "认证类型: %s", auth_type);
+            ptr = start;
+        }
+        else if (*ptr == 'P' && *(ptr + 1) == ':') {
+            // 解析密码
+            const char* start = ptr + 2;
+            int i = 0;
+            while (*start != ';' && *start != '\0') {
+                password[i++] = *start++;
+            }
+            password[i] = '\0';
+            
+            // 显示密码长度（不显示明文）
+            log_i("NFC", "密码长度: %d 字符", i);
+            
+            ptr = start;
+        }
+        else {
+            ptr++;
+        }
+    }
+    
+    log_i("NFC", "WIFI配置解析完成:");
+    log_i("NFC", "   WIFI名称: %s", ssid);
+    log_i("NFC", "   加密方式: %s", auth_type);
+    
+    // 将配置写入KV存储
+    if (strlen(ssid) > 0) {
+        kv_set_string("wifi_ssid", ssid);
+        log_i("NFC", "✅ SSID已保存到KV存储");
+        
+        if (strlen(password) > 0) {
+            kv_set_string("wifi_password", password);
+            log_i("NFC", "✅ 密码已保存到KV存储");
+        } else {
+            kv_set_string("wifi_password", "");
+            log_i("NFC", "⚠ 开放网络，无需密码");
+        }
+        
+        // LED快速闪烁5次表示检测到WIFI配置
+        for (int j = 0; j < 5; j++) {
+            LED_ON();
+            Time_DelayMs(50);
+            LED_OFF();
+            Time_DelayMs(50);
+        }
+        
+        log_i("NFC", "🎉 WIFI配置已保存，可重新启动网络连接");
+    } else {
+        log_e("NFC", "❌ SSID为空，无法保存配置");
+    }
+}
+
+// 非阻塞NFC检测函数
+static bool check_nfc_tag(void)
+{
+    uint8_t ndefLen = 0;
+    uint8_t ndef_Header = 0;
+    uint32_t result_code = 0;
+    
+    // 尝试读取NDEF头信息
+    result_code = NT3HReadHeaderNfc(&ndefLen, &ndef_Header);
+    
+    if (result_code == true) {
+        log_i("NFC", "✅ NFC标签检测成功，数据长度: %d 字节", ndefLen);
+        
+        // 尝试读取NDEF数据
+        if (ndefLen > 0) {
+            ndefLen += NDEF_HEADER_SIZE;  // 加上头大小
+            log_i("NFC", "读取NDEF数据，长度: %d 字节", ndefLen);
+            
+            uint8_t *ndefBuff = (uint8_t *)malloc(ndefLen + 1);
+            if (ndefBuff != NULL) {
+                result_code = get_NDEFDataPackage(ndefBuff, ndefLen);
+                if (result_code == HI_ERR_SUCCESS) {
+                    log_i("NFC", "✅ NDEF数据读取成功");
+                    
+                    // 查找WIFI:前缀
+                    int wifi_found = 0;
+                    for (uint32_t i = 0; i < ndefLen - 5 && !wifi_found; i++) {
+                        if (memcmp(&ndefBuff[i], "WIFI:", 5) == 0) {
+                            wifi_found = 1;
+                            
+                            // 提取整个WIFI配置字符串
+                            char wifi_config[256] = {0};
+                            int j = 0;
+                            
+                            // 从WIFI:开始复制
+                            for (uint32_t k = i; k < ndefLen && j < 255; k++) {
+                                wifi_config[j++] = ndefBuff[k];
+                                
+                                // 检查是否到达配置结束（两个分号）
+                                if (k > i + 10 && ndefBuff[k] == ';' && k + 1 < ndefLen && ndefBuff[k + 1] == ';') {
+                                    wifi_config[j++] = ';';  // 添加第二个分号
+                                    wifi_config[j] = '\0';   // 结束字符串
+                                    break;
+                                }
+                            }
+                            
+                            if (j > 0) {
+                                wifi_config[j] = '\0';
+                                log_i("NFC", "🎉 检测到WIFI配置: %s", wifi_config);
+                                
+                                // 解析并保存WIFI配置
+                                parse_wifi_config(wifi_config);
+                            } else {
+                                log_e("NFC", "❌ 无法提取WIFI配置字符串");
+                            }
+                            
+                            break;
+                        }
+                    }
+                    
+                    if (!wifi_found) {
+                        log_w("NFC", "⚠ 未检测到WIFI配置");
+                    }
+                } else {
+                    log_e("NFC", "❌ NDEF数据读取失败，错误码: %d", result_code);
+                }
+                
+                free(ndefBuff);
+            } else {
+                log_e("NFC", "❌ 内存分配失败");
+            }
+        } else {
+            log_w("NFC", "⚠ 标签中没有NDEF数据");
+        }
+        
+        // LED长亮1秒表示成功
+        LED_ON();
+        Time_DelayMs(1000);
+        LED_OFF();
+        
+        return true;  // 检测成功
+    }
+    
+    return false;  // 检测失败
+}
+
+void Main_Task(void *arg)
+{
+    (void)arg;
+    uint32_t current_time_ms = 0;
 
     // 初始化时间戳
     uint32_t g_last_sensor_update = Time_GetCurrentMs();
     uint32_t g_last_smoke_update = Time_GetCurrentMs();
     uint32_t g_last_network_status = Time_GetCurrentMs();
+    uint32_t g_last_nfc_check = Time_GetCurrentMs();
 
     log_i("MAIN", "主任务开始运行");
 
@@ -473,7 +654,22 @@ void Main_Task(void *argument)
             }
         }
 
-        // 3. 网络状态显示（30秒间隔）
+        // 3. NFC标签检测（5秒间隔）
+        if (current_time_ms - g_last_nfc_check >= NFC_CHECK_INTERVAL_MS)
+        {
+            g_last_nfc_check = current_time_ms;
+            
+            if (g_nfc_initialized) {
+                log_i("NFC", "开始检测NFC标签...");
+                if (check_nfc_tag()) {
+                    log_i("NFC", "NFC标签检测完成");
+                } else {
+                    log_i("NFC", "未检测到NFC标签");
+                }
+            }
+        }
+
+        // 4. 网络状态显示（30秒间隔）
         if (current_time_ms - g_last_network_status >= 30000)
         {
             g_last_network_status = current_time_ms;
@@ -508,16 +704,19 @@ static void Main_Entry(void)
     log_i("SMOKE", "烟雾传感器初始化完成");
 
     // NFC初始化
-    // log_i("NFC", "正在初始化NFC模块...");
-    // uint32_t nfc_ret = nfc_init();
-    // if (nfc_ret == HI_ERR_SUCCESS)
-    //{
-    //    log_i("NFC", "NFC模块初始化成功");
-    //}
-    // else
-    //{
-    //    log_e("NFC", "NFC模块初始化失败，错误码: 0x%08X", nfc_ret);
-    //}
+    log_i("NFC", "正在初始化NFC模块...");
+    uint32_t nfc_ret = nfc_init();
+    if (nfc_ret == HI_ERR_SUCCESS)
+    {
+        g_nfc_initialized = true;
+        log_i("NFC", "NFC模块初始化成功");
+        log_i("NFC", "请将包含WIFI配置的NFC标签靠近开发板");
+        log_i("NFC", "格式: WIFI:S:SSID;T:TYPE;P:PASSWORD;;");
+    }
+    else
+    {
+        log_e("NFC", "NFC模块初始化失败，错误码: 0x%08X", nfc_ret);
+    }
 
     // 初始化按键管理器
     log_i("KEY", "正在初始化按键管理器...");
@@ -650,7 +849,6 @@ static void Main_Entry(void)
 
             // 显示启动次数
             log_i("KV_TEST", "📊 当前启动次数: %d", boot_count);
-
             // 验证中文支持
             char chinese_buffer[64] = {0};
             kv_result_t chinese_result = kv_get_string("chinese_test", chinese_buffer, sizeof(chinese_buffer));
