@@ -80,12 +80,11 @@ uint32_t get_NDEFDataPackage(uint8_t *dataBuff, const uint16_t dataBuff_MaxSize)
     {
         if (NT3HReadUserData(i) == true) 
         {
-            memcpy_s(p_buff + i * NFC_PAGE_SIZE, userMemoryPageNum * NFC_PAGE_SIZE,
-                     nfcPageBuffer, NFC_PAGE_SIZE);
+            memcpy(p_buff + i * NFC_PAGE_SIZE, nfcPageBuffer, NFC_PAGE_SIZE);
         }
     }
 
-    memcpy_s(dataBuff, dataBuff_MaxSize, p_buff, dataBuff_MaxSize);
+    memcpy(dataBuff, p_buff, dataBuff_MaxSize);
 
     free(p_buff);
     p_buff = NULL;
@@ -93,7 +92,7 @@ uint32_t get_NDEFDataPackage(uint8_t *dataBuff, const uint16_t dataBuff_MaxSize)
     return HI_ERR_SUCCESS;
 }
 
-//NFC初始化
+// NFC初始化
 uint32_t nfc_init(void)
 {
     uint32_t result;
@@ -113,5 +112,5 @@ uint32_t nfc_init(void)
     }
     printf("I2C nfc Init is succeeded!!!\r\n");
 
-    return HI_ERR_SUCCESS;  // 修复：返回正确的成功代码
+    return HI_ERR_SUCCESS;
 }

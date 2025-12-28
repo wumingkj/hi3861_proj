@@ -14,6 +14,7 @@
 #include "key_manager.h" // 新增按键管理器头文件
 #include "smoke.h"
 #include "nfc.h"
+#include "NT3H.h"
 // #define DEFAULT_DEBUG_LEVEL 0
 #include "debug.h" // 新增调试头文件
 
@@ -181,7 +182,7 @@ static void handle_key_event(uint8_t key_index, key_event_t event)
             log_i("KEY", "LED闪烁完成");
         }
         // 按键2双击：烟雾传感器测试
-        if (key_index == 1)
+if (key_index == 1)
         {
             log_i("SMOKE_TEST", "=== 烟雾传感器测试 ===");
             smoke_sensor_test();
@@ -395,9 +396,9 @@ void led_init(void)
 // NFC检测相关变量
 bool g_nfc_initialized = false;
 uint32_t g_last_nfc_check = 0;
-#define NFC_CHECK_INTERVAL_MS 5000  // 5秒检测一次NFC标签 
+#define NFC_CHECK_INTERVAL_MS 30000  // 30秒检测一次NFC标签 
 
-// 函数原型声明
+// WIFI配置解析函数 - 保持原有实现
 static void parse_wifi_config(const char* wifi_uri)
 {
     char ssid[64] = {0};
@@ -487,88 +488,139 @@ static void parse_wifi_config(const char* wifi_uri)
     }
 }
 
-// 非阻塞NFC检测函数
+// 改进的NFC检测函数 - 基于template.c的实现
 static bool check_nfc_tag(void)
 {
-    uint8_t ndefLen = 0;
-    uint8_t ndef_Header = 0;
-    uint32_t result_code = 0;
-    
-    // 尝试读取NDEF头信息
-    result_code = NT3HReadHeaderNfc(&ndefLen, &ndef_Header);
-    
-    if (result_code == true) {
-        log_i("NFC", "✅ NFC标签检测成功，数据长度: %d 字节", ndefLen);
-        
-        // 尝试读取NDEF数据
-        if (ndefLen > 0) {
-            ndefLen += NDEF_HEADER_SIZE;  // 加上头大小
-            log_i("NFC", "读取NDEF数据，长度: %d 字节", ndefLen);
-            
-            uint8_t *ndefBuff = (uint8_t *)malloc(ndefLen + 1);
-            if (ndefBuff != NULL) {
-                result_code = get_NDEFDataPackage(ndefBuff, ndefLen);
-                if (result_code == HI_ERR_SUCCESS) {
-                    log_i("NFC", "✅ NDEF数据读取成功");
-                    
-                    // 查找WIFI:前缀
-                    int wifi_found = 0;
-                    for (uint32_t i = 0; i < ndefLen - 5 && !wifi_found; i++) {
-                        if (memcmp(&ndefBuff[i], "WIFI:", 5) == 0) {
-                            wifi_found = 1;
-                            
-                            // 提取整个WIFI配置字符串
-                            char wifi_config[256] = {0};
-                            int j = 0;
-                            
-                            // 从WIFI:开始复制
-                            for (uint32_t k = i; k < ndefLen && j < 255; k++) {
-                                wifi_config[j++] = ndefBuff[k];
-                                
-                                // 检查是否到达配置结束（两个分号）
-                                if (k > i + 10 && ndefBuff[k] == ';' && k + 1 < ndefLen && ndefBuff[k + 1] == ';') {
-                                    wifi_config[j++] = ';';  // 添加第二个分号
-                                    wifi_config[j] = '\0';   // 结束字符串
-                                    break;
-                                }
-                            }
-                            
-                            if (j > 0) {
-                                wifi_config[j] = '\0';
-                                log_i("NFC", "🎉 检测到WIFI配置: %s", wifi_config);
-                                
-                                // 解析并保存WIFI配置
-                                parse_wifi_config(wifi_config);
-                            } else {
-                                log_e("NFC", "❌ 无法提取WIFI配置字符串");
-                            }
-                            
-                            break;
-                        }
-                    }
-                    
-                    if (!wifi_found) {
-                        log_w("NFC", "⚠ 未检测到WIFI配置");
-                    }
-                } else {
-                    log_e("NFC", "❌ NDEF数据读取失败，错误码: %d", result_code);
-                }
-                
-                free(ndefBuff);
-            } else {
-                log_e("NFC", "❌ 内存分配失败");
-            }
-        } else {
-            log_w("NFC", "⚠ 标签中没有NDEF数据");
-        }
-        
-        // LED长亮1秒表示成功
-        LED_ON();
-        Time_DelayMs(1000);
-        LED_OFF();
-        
-        return true;  // 检测成功
+    if (!g_nfc_initialized) {
+        log_e("NFC", "❌ NFC模块未初始化，无法检测标签");
+        return false;
     }
+    
+    log_i("NFC", "开始检测NFC标签...");
+    
+    int max_attempts = 3;
+    for (int attempt = 1; attempt <= max_attempts; attempt++) {
+        log_i("NFC", "尝试 %d/%d，请将NFC标签靠近开发板...", attempt, max_attempts);
+        
+        uint8_t ndefLen = 0;
+        uint8_t ndef_Header = 0;
+        uint32_t result_code = 0;
+        
+        // 尝试读取NDEF头信息
+        result_code = NT3HReadHeaderNfc(&ndefLen, &ndef_Header);
+        
+        if (result_code == true) {
+            log_i("NFC", "✅ NFC标签检测成功！");
+            log_i("NFC", "   NDEF数据长度: %d 字节", ndefLen);
+            
+            // 尝试读取NDEF数据
+            if (ndefLen > 0) {
+                uint32_t total_len = ndefLen + NDEF_HEADER_SIZE;  // 加上头大小
+                log_i("NFC", "读取NDEF数据，总长度: %d 字节", total_len);
+                
+                uint8_t *ndefBuff = (uint8_t *)malloc(total_len + 1);
+                if (ndefBuff != NULL) {
+                    result_code = get_NDEFDataPackage(ndefBuff, total_len);
+                    if (result_code == HI_ERR_SUCCESS) {
+                        log_i("NFC", "✅ NDEF数据读取成功");
+                        
+                        // 显示原始数据用于调试
+                        log_i("NFC", "原始NDEF数据预览:");
+                        char debug_str[51] = {0};
+                        int debug_idx = 0;
+                        for (uint32_t i = 0; i < total_len && i < 50; i++) {
+                            if (ndefBuff[i] >= 32 && ndefBuff[i] <= 126) {
+                                debug_str[debug_idx++] = ndefBuff[i];
+                            } else {
+                                debug_str[debug_idx++] = '.';
+                            }
+                        }
+                        debug_str[debug_idx] = '\0';
+                        log_i("NFC", "   内容: %s", debug_str);
+                        
+                        // 查找WIFI:前缀
+                        int wifi_found = 0;
+                        for (uint32_t i = 0; i < total_len - 5 && !wifi_found; i++) {
+                            if (memcmp(&ndefBuff[i], "WIFI:", 5) == 0) {
+                                wifi_found = 1;
+                                
+                                // 提取整个WIFI配置字符串
+                                char wifi_config[256] = {0};
+                                int j = 0;
+                                
+                                // 从WIFI:开始复制
+                                for (uint32_t k = i; k < total_len && j < 255; k++) {
+                                    wifi_config[j++] = ndefBuff[k];
+                                    
+                                    // 检查是否到达配置结束（两个分号）
+                                    if (k > i + 10 && ndefBuff[k] == ';' && k + 1 < total_len && ndefBuff[k + 1] == ';') {
+                                        wifi_config[j++] = ';';  // 添加第二个分号
+                                        wifi_config[j] = '\0';   // 结束字符串
+                                        break;
+                                    }
+                                }
+                                
+                                if (j > 0) {
+                                    wifi_config[j] = '\0';
+                                    log_i("NFC", "🎉 检测到WIFI配置: %s", wifi_config);
+                                    
+                                    // 解析并保存WIFI配置
+                                    parse_wifi_config(wifi_config);
+                                } else {
+                                    log_e("NFC", "❌ 无法提取WIFI配置字符串");
+                                }
+                                
+                                break;
+                            }
+                        }
+                        
+                        if (!wifi_found) {
+                            log_w("NFC", "⚠ 未检测到WIFI配置");
+                            
+                            // 显示更多调试信息
+                            log_i("NFC", "原始数据十六进制:");
+                            for (uint32_t i = 0; i < (total_len < 32 ? total_len : 32); i++) {
+                                if (i % 16 == 0) log_i("NFC", "  ");
+                                log_i("NFC", "%02X ", ndefBuff[i]);
+                            }
+                            log_i("NFC", "");
+                        }
+                    } else {
+                        log_e("NFC", "❌ NDEF数据读取失败，错误码: 0x%08X", result_code);
+                    }
+                    
+                    free(ndefBuff);
+                } else {
+                    log_e("NFC", "❌ 内存分配失败");
+                }
+            } else {
+                log_w("NFC", "⚠ 标签中没有NDEF数据或数据长度为0");
+            }
+            
+            log_i("NFC", "✅ 读取成功，等待下一个标签...");
+            
+            // LED长亮1秒表示成功
+            LED_ON();
+            Time_DelayMs(1000);
+            LED_OFF();
+            
+            return true;  // 检测成功，退出
+        } else {
+            log_i("NFC", "❌ 第 %d 次尝试失败", attempt);
+            
+            // 等待后重试
+            if (attempt < max_attempts) {
+                log_i("NFC", "等待2秒后重试...");
+                Time_DelayMs(2000);
+            }
+        }
+    }
+    
+    log_e("NFC", "❌ NFC标签检测失败");
+    log_e("NFC", "可能原因:");
+    log_e("NFC", "1. 没有放置NFC标签");
+    log_e("NFC", "2. 标签距离过远");
+    log_e("NFC", "3. 标签是空的");
     
     return false;  // 检测失败
 }
@@ -660,12 +712,9 @@ void Main_Task(void *arg)
             g_last_nfc_check = current_time_ms;
             
             if (g_nfc_initialized) {
-                log_i("NFC", "开始检测NFC标签...");
-                if (check_nfc_tag()) {
-                    log_i("NFC", "NFC标签检测完成");
-                } else {
-                    log_i("NFC", "未检测到NFC标签");
-                }
+                check_nfc_tag();
+            } else {
+                log_w("NFC", "NFC模块未初始化，跳过检测");
             }
         }
 
@@ -703,19 +752,32 @@ static void Main_Entry(void)
     smoke_sensor_init();
     log_i("SMOKE", "烟雾传感器初始化完成");
 
-    // NFC初始化
+    // NFC初始化 - 改进初始化逻辑，基于template.c
     log_i("NFC", "正在初始化NFC模块...");
+    
     uint32_t nfc_ret = nfc_init();
+    Time_DelayMs(500);
     if (nfc_ret == HI_ERR_SUCCESS)
     {
         g_nfc_initialized = true;
-        log_i("NFC", "NFC模块初始化成功");
+        log_i("NFC", "✅ NFC模块初始化成功");
         log_i("NFC", "请将包含WIFI配置的NFC标签靠近开发板");
-        log_i("NFC", "格式: WIFI:S:SSID;T:TYPE;P:PASSWORD;;");
+        log_i("NFC", "支持的格式: WIFI:S:SSID;T:TYPE;P:PASSWORD;;");
+        log_i("NFC", "NFC检测将每5秒执行一次");
+        
+        // 立即进行一次NFC检测
+        log_i("NFC", "执行首次NFC检测...");
+        if (check_nfc_tag()) {
+            log_i("NFC", "首次NFC检测完成");
+        } else {
+            log_i("NFC", "首次NFC检测未发现标签");
+        }
     }
     else
     {
-        log_e("NFC", "NFC模块初始化失败，错误码: 0x%08X", nfc_ret);
+        log_e("NFC", "❌ NFC模块初始化失败，错误码: 0x%08X", nfc_ret);
+        log_e("NFC", "请检查NFC模块连接和配置");
+        g_nfc_initialized = false;
     }
 
     // 初始化按键管理器

@@ -8,9 +8,7 @@
 #include "nfcForum.h"
 #include "NT3H.h"
 
-#include "time.h"
-
-#define DELAY_WRITE 30 //30ms
+#define DELAY_WRITE 300000
 #define INDEX_NDEF_START 0
 #define INDEX_END_RECORD 1
 #define INDEX_NDEF_HEADER 2
@@ -34,12 +32,12 @@ static bool writeTimeout(uint8_t *data, uint8_t dataSend)
     nt3h1101_i2c_data1.send_buf = data;
     nt3h1101_i2c_data1.send_len = dataSend;
 
-    status = hi_i2c_write(HI_I2C_IDX_1, (NT3H1X_SLAVE_ADDRESS << 1) | 0x00, &nt3h1101_i2c_data1);
+    status = hi_i2c_write(HI_I2C_IDX_0, (NT3H1X_SLAVE_ADDRESS << 1) | 0x00, &nt3h1101_i2c_data1);
     if (status != 0) {
         printf("===== Error: I2C write status1 = 0x%x! =====\r\n", status);
         return 0;
     }
-    Time_DelayMs(DELAY_WRITE);
+    usleep(DELAY_WRITE);
     return 1;
 }
 
@@ -53,7 +51,7 @@ static bool readTimeout(uint8_t address, uint8_t *block_data)
     nt3h1101_i2c_data.receive_buf = block_data;
     nt3h1101_i2c_data.receive_len = NFC_PAGE_SIZE;
 
-    status = hi_i2c_writeread(HI_I2C_IDX_1, (NT3H1X_SLAVE_ADDRESS << 1) | 0x00, &nt3h1101_i2c_data);
+    status = hi_i2c_writeread(HI_I2C_IDX_0, (NT3H1X_SLAVE_ADDRESS << 1) | 0x00, &nt3h1101_i2c_data);
     if (status != 0) {
         printf("===== Error: I2C write status = 0x%x! =====\r\n", status);
         return 0;
