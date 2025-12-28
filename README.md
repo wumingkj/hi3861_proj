@@ -1,8 +1,47 @@
+<div align="center">
+
 # Hi3861 WiFi-IoT 智能设备项目
 
-## 项目简介
+<!-- 语言切换按钮 -->
+<div>
+  <a href="README.md" style="background-color: #007bff; color: white; border: none; padding: 8px 16px; margin: 5px; border-radius: 4px; cursor: pointer; text-decoration: none;">中文</a>
+  <a href="README_en.md" style="background-color: #6c757d; color: white; border: none; padding: 8px 16px; margin: 5px; border-radius: 4px; cursor: pointer; text-decoration: none;">English</a>
+</div>
+
+</div>
+
+## 📖 项目简介
 
 本项目是基于华为Hi3861 WiFi芯片的OpenHarmony物联网应用，实现了一个完整的智能设备系统。项目集成了多种传感器、执行器和通信模块，展示了物联网设备的完整功能。
+
+## 🚀 主要功能特性
+
+### 🔄 最新更新
+- ✅ **高级按键管理器模块** - 支持多按键动态管理，多种事件检测
+- ✅ **标准KV存储系统** - 从自定义NV模块升级，解决兼容性问题
+- ✅ **智能WiFi连接** - 支持AP/STA双模式，Web界面配置
+- ✅ **中文Web界面** - 修复字符编码问题，支持中文正常显示
+
+### 🎯 核心模块
+- **蜂鸣器模块** - PWM控制，报警和提示音功能
+- **WiFi网络模块** - 双模WiFi连接，智能配置
+- **DHT11传感器模块** - 温湿度数据采集
+- **时间管理模块** - 精确延时控制
+- **KV存储模块** - Flash数据持久化
+- **PHP API模块** - HTTP服务器和Web接口
+- **按键管理器模块** - 高级按键事件检测
+
+## 🛠️ 技术架构
+
+### 硬件要求
+- 普中Hi3861开发板
+- DHT11温湿度传感器
+- 蜂鸣器模块
+- LED指示灯
+- 按键开关（GPIO11、GPIO12）
+- WiFi天线
+
+### 软件架构
 
 ## 主要项目目录
 - **[主程序入口](src/applications/sample/wifi-iot/app/startup/README.md)** - 项目的启动模块，负责系统初始化和任务调度
@@ -158,16 +197,21 @@ kv_result_t kv_delete(const char *key);
 
 ## 项目结构
 ```
-src/applications/sample/wifi-iot/app/startup/
-├── src/ # 模块源码目录
-│ ├── buzzer/ # 蜂鸣器模块
-│ ├── network/ # WiFi网络模块
-│ ├── sensors/ # 传感器模块
-│ ├── time/ # 时间管理模块
-│ ├── kv/ # KV存储模块
-│ ├── php_api/ # PHP API模块
-│ ├── oled/ # OLED显示模块
-│ └── fonts/ # 字体库模块
-├── main.c # 主程序入口
-├── debug.h # 输出调试日志
+
+src/applications/sample/wifi-iot/app/startup/ 
+├── src/ # 模块源码目录 
+│ ├── buzzer/ # 蜂鸣器模块 
+│ ├── network/ # WiFi网络模块 
+│ ├── sensors/ # 传感器模块 
+│ ├── time/ # 时间管理模块 
+│ ├── kv/ # KV存储模块 
+│ ├── nfc/ # NFC模块 
+│ ├── php_api/ # PHP API模块 
+│ ├── key_manager/# 按键管理器模块 
+│ ├── oled/ # OLED显示模块（待集成） 
+│ └── fonts/ # 字体库模块（待集成） 
+├── main.c # 主程序入口 
+├── debug.h # 调试头文件
 └── BUILD.gn # 构建配置文件
+
+```

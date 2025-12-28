@@ -801,15 +801,11 @@ void Main_Task(void *arg)
 
 static void Main_Entry(void)
 {
+    log_i("SYSTEM", "系统初始化开始");
     // 初始化库
     Time_Init();
     led_init(); // LED初始化（初始状态为关闭）
     Buzzer_Init();
-
-    log_i("SYSTEM", "系统初始化开始");
-
-    // 烟雾传感器初始化
-    log_i("SMOKE", "正在初始化烟雾传感器...");
     smoke_sensor_init();
     log_i("SMOKE", "烟雾传感器初始化完成");
 
