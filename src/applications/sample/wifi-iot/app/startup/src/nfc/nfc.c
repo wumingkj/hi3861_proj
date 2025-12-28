@@ -112,6 +112,8 @@ uint32_t nfc_init(void)
     }
     printf("I2C nfc Init is succeeded!!!\r\n");
 
+    NT3HResetUserData();
+
     return HI_ERR_SUCCESS;
 }
 
