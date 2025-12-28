@@ -114,3 +114,35 @@ uint32_t nfc_init(void)
 
     return HI_ERR_SUCCESS;
 }
+
+/**
+ * @brief  清除NFC标签中的所有NDEF数据
+ * @note   使用NT3H芯片的擦除功能清除所有用户数据
+ * @retval 成功返回true，失败返回false
+ */
+bool nfc_clear_ndef_data(void)
+{
+    bool result = NT3HEraseAllTag();
+    if (result) {
+        printf("NFC NDEF data cleared successfully.\r\n");
+    } else {
+        printf("Failed to clear NFC NDEF data.\r\n");
+    }
+    return result;
+}
+
+/**
+ * @brief  重置NFC用户数据区
+ * @note   重置用户数据区到初始状态
+ * @retval 成功返回true，失败返回false
+ */
+bool nfc_reset_user_data(void)
+{
+    bool result = NT3HResetUserData();
+    if (result) {
+        printf("NFC user data reset successfully.\r\n");
+    } else {
+        printf("Failed to reset NFC user data.\r\n");
+    }
+    return result;
+}

@@ -54,4 +54,18 @@ uint32_t get_NDEFDataPackage(uint8_t *dataBuff, const uint16_t dataBuff_MaxSize)
  */
 uint32_t nfc_init(void);
 
+/*
+ * 清除NFC标签中的所有NDEF数据
+ * 
+ * @return 成功返回true，失败返回false
+ */
+bool nfc_clear_ndef_data(void);
+
+/*
+ * 重置NFC用户数据区
+ * 
+ * @return 成功返回true，失败返回false
+ */
+bool nfc_reset_user_data(void);
+
 #endif /* NFC_H_ */
