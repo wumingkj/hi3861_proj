@@ -22,6 +22,12 @@ static int g_server_socket = -1;
 static bool g_server_running = false;
 static osThreadId_t g_server_thread = NULL;
 
+// 全局变量 - 新增UDP广播相关
+static int g_udp_socket = -1;
+static bool g_udp_running = false;
+static osThreadId_t g_udp_thread = NULL;
+
+
 // 外部全局变量声明（在main.c中定义）
 extern uint8_t g_temperature;
 extern uint8_t g_humidity;
@@ -256,7 +262,7 @@ void php_api_handle_client(int client_socket) {
             buzzer_control_t control = {0};
             char param_value[16];
             
-            // 解析PHP前端格式的控制参数
+// 解析PHP前端格式的控制参数
             if (php_api_parse_json_param(buffer, "action", param_value, sizeof(param_value)) == 0) {
                 // 根据action参数设置模式
                 if (strcmp(param_value, "beep") == 0) {
@@ -671,4 +677,183 @@ void php_api_led_update(void) {
         }
     }
     // 对于非闪烁模式（关闭/开启），仅在状态改变时更新，不进行周期性更新
+}
+
+/**
+ * @brief UDP广播监听线程函数
+ */
+static void php_api_udp_broadcast_thread(void *arg) {
+    (void)arg;
+    
+    struct sockaddr_in server_addr, client_addr;
+    socklen_t client_len = sizeof(client_addr);
+    
+    // 创建UDP socket
+    g_udp_socket = socket(AF_INET, SOCK_DGRAM, 0);
+    if (g_udp_socket < 0) {
+        log_e("PHP_API", "Failed to create UDP socket");
+        return;
+    }
+    
+    // 设置socket选项 - 允许广播
+    int opt = 1;
+    setsockopt(g_udp_socket, SOL_SOCKET, SO_BROADCAST, &opt, sizeof(opt));
+    setsockopt(g_udp_socket, SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
+    
+    // 绑定地址
+    memset(&server_addr, 0, sizeof(server_addr));
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_addr.s_addr = INADDR_ANY;
+    server_addr.sin_port = htons(PHP_API_UDP_RECEIVE_PORT);
+    
+    if (bind(g_udp_socket, (struct sockaddr*)&server_addr, sizeof(server_addr)) < 0) {
+        log_e("PHP_API", "Failed to bind UDP socket on port %d", PHP_API_UDP_RECEIVE_PORT);
+        close(g_udp_socket);
+        g_udp_socket = -1;
+        return;
+    }
+    
+    // 设置接收超时
+    struct timeval timeout;
+    timeout.tv_sec = PHP_API_UDP_TIMEOUT_MS / 1000;
+    timeout.tv_usec = (PHP_API_UDP_TIMEOUT_MS % 1000) * 1000;
+    setsockopt(g_udp_socket, SOL_SOCKET, SO_RCVTIMEO, &timeout, sizeof(timeout));
+    
+    log_i("PHP_API", "UDP broadcast listener started on port %d", PHP_API_UDP_RECEIVE_PORT);
+    g_udp_running = true;
+    
+    // 监听UDP广播
+    while (g_udp_running) {
+        char buffer[PHP_API_UDP_BUFFER_SIZE];
+        ssize_t bytes_received;
+        
+        bytes_received = recvfrom(g_udp_socket, buffer, sizeof(buffer) - 1, 0, 
+                                 (struct sockaddr*)&client_addr, &client_len);
+        
+        if (bytes_received > 0) {
+            buffer[bytes_received] = '\0';
+            log_i("PHP_API", "Received UDP message from %s:%d (%d bytes)", 
+                  inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port), bytes_received);
+            
+            // 处理UDP消息
+            php_api_handle_udp_discovery(&client_addr, buffer, bytes_received);
+        } else if (bytes_received < 0) {
+            if (g_udp_running) {
+                // 超时是正常的，继续监听
+                if (errno != EAGAIN && errno != EWOULDBLOCK) {
+                    log_e("PHP_API", "UDP recvfrom error: %d", errno);
+                }
+            }
+        }
+    }
+    
+    close(g_udp_socket);
+    g_udp_socket = -1;
+    log_i("PHP_API", "UDP broadcast listener stopped");
+}
+
+/**
+ * @brief 处理UDP广播发现请求
+ */
+void php_api_handle_udp_discovery(struct sockaddr_in *client_addr, const char *message, int message_len) {
+    // 解析JSON消息
+    char message_type[32] = "";
+    char request_id[32] = "";
+    
+    // 尝试解析JSON消息
+    if (php_api_parse_json_param(message, "type", message_type, sizeof(message_type)) == 0) {
+        if (strcmp(message_type, "discovery") == 0) {
+            // 发现请求
+            php_api_parse_json_param(message, "request_id", request_id, sizeof(request_id));
+            log_i("PHP_API", "Handling discovery request from %s, request_id: %s", 
+                  inet_ntoa(client_addr->sin_addr), request_id);
+            
+            // 发送响应
+            php_api_send_udp_response(client_addr, request_id);
+        }
+    } else {
+        // 如果不是JSON格式，检查是否是简单的发现消息
+        if (strstr(message, "discovery") != NULL || strstr(message, "DISCOVERY") != NULL) {
+            log_i("PHP_API", "Handling simple discovery request from %s", 
+                  inet_ntoa(client_addr->sin_addr));
+            php_api_send_udp_response(client_addr, "simple_request");
+        }
+    }
+}
+
+/**
+ * @brief 发送UDP发现响应
+ */
+void php_api_send_udp_response(struct sockaddr_in *client_addr, const char *request_id) {
+    char response[512];
+    char* ip = WiFi_GetLocalIP();
+    
+    // 构建响应消息
+    snprintf(response, sizeof(response),
+        "{\"type\":\"discovery_response\",\"request_id\":\"%s\",\"timestamp\":%u,"
+        "\"device_name\":\"Hi3861_WiFi_IoT\",\"ip_address\":\"%s\",\"http_port\":%d,"
+        "\"firmware_version\":\"2.0.0\",\"api_version\":\"pure_network\"}",
+        request_id, (unsigned int)time(NULL), ip ? ip : "0.0.0.0", PHP_API_SERVER_PORT);
+    
+    // 发送响应到客户端
+    ssize_t sent = sendto(g_udp_socket, response, strlen(response), 0,
+                         (struct sockaddr*)client_addr, sizeof(*client_addr));
+    
+    if (sent > 0) {
+        log_i("PHP_API", "Sent discovery response to %s:%d (%d bytes)", 
+              inet_ntoa(client_addr->sin_addr), ntohs(client_addr->sin_port), sent);
+    } else {
+        log_e("PHP_API", "Failed to send discovery response");
+    }
+}
+
+/**
+ * @brief 启动UDP广播监听服务
+ */
+php_api_result_t php_api_start_udp_broadcast(void) {
+    if (g_udp_running) {
+        log_w("PHP_API", "UDP broadcast listener is already running");
+        return PHP_API_SUCCESS;
+    }
+    
+    // 创建UDP广播线程
+    osThreadAttr_t attr = {
+        .name = "PHP_API_UDP",
+        .attr_bits = 0U,
+        .cb_mem = NULL,
+        .cb_size = 0U,
+        .stack_mem = NULL,
+        .stack_size = 4096,
+        .priority = osPriorityNormal
+    };
+    
+    g_udp_thread = osThreadNew(php_api_udp_broadcast_thread, NULL, &attr);
+    if (g_udp_thread == NULL) {
+        log_e("PHP_API", "Failed to create UDP broadcast thread");
+        return PHP_API_ERROR_SERVER_START_FAILED;
+    }
+    
+    log_i("PHP_API", "UDP broadcast thread created successfully");
+    return PHP_API_SUCCESS;
+}
+
+/**
+ * @brief 停止UDP广播监听服务
+ */
+php_api_result_t php_api_stop_udp_broadcast(void) {
+    if (!g_udp_running) {
+        return PHP_API_SUCCESS;
+    }
+    
+    g_udp_running = false;
+    
+    // 关闭UDP socket以唤醒recvfrom阻塞
+    if (g_udp_socket >= 0) {
+        shutdown(g_udp_socket, SHUT_RDWR);
+        close(g_udp_socket);
+        g_udp_socket = -1;
+    }
+    
+    log_i("PHP_API", "UDP broadcast listener stopped");
+    return PHP_API_SUCCESS;
 }

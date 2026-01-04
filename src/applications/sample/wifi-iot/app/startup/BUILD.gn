@@ -27,6 +27,8 @@ static_library("startup") {
         "src/key_manager/key_manager.c", # 新增按键管理库
         "src/sensors/adc.c",    # 新增ADC库
         "src/sensors/smoke.c",  # 新增烟雾传感器库
+        "src/sensors/lightsense.c", # 新增光敏传感器库
+        "src/sensors/relay.c",  # 新增继电器库
 
 
         "src/nfc/nfc.c",         # 新增NFC库

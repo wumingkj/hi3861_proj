@@ -114,6 +114,12 @@ bool NT3HReadSram(void);
 bool NT3HReadSession(void);
 bool NT3HReadConfiguration(uint8_t *configuration);
 
+// 添加配置寄存器写入函数
+bool NT3HWriteConfiguration(const uint8_t *configuration);
+
+// 添加解锁tag函数声明
+bool NT3HUnlockTag(void);
+
 bool NT3HEraseAllTag(void);
 
 bool NT3HReaddManufactoringData(uint8_t *manuf);

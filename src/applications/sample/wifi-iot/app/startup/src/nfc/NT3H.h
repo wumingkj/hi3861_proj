@@ -38,6 +38,9 @@
 #endif
 
 // 函数返回值的状态标志位
+// 添加NTAG擦除状态定义
+#define NTAG_ERASED 0xFF
+
 typedef enum {
     NT3HERROR_NO_ERROR,
     NT3HERROR_READ_HEADER,
@@ -122,6 +125,24 @@ bool getNxpUserData(char *buffer);
 bool NT3HReadSram(void);
 bool NT3HReadSession(void);
 bool NT3HReadConfiguration(uint8_t *configuration);
+
+// 添加更多寄存器定义
+#define FIELD_LOCK_REG 0x83  // 字段锁定寄存器
+#define DYNAMIC_LOCK_REG 0x84 // 动态锁定寄存器
+#define PASSWORD_REG 0x1B     // 密码寄存器
+
+#define SERIAL_NUM_LEN 16
+
+// 添加更多锁定相关函数
+bool NT3HWriteConfiguration(const uint8_t *configuration);
+bool NT3HReadFieldLock(uint8_t *fieldLock);
+bool NT3HWriteFieldLock(const uint8_t *fieldLock);
+bool NT3HReadDynamicLock(uint8_t *dynamicLock);
+bool NT3HWriteDynamicLock(const uint8_t *dynamicLock);
+bool NT3HIsTagLocked(void);
+bool NT3HUnlockTag(void);
+bool NT3HUnlockTagComprehensive(void); // 全面解锁函数
+
 bool NT3HEraseAllTag(void);
 bool NT3HReaddManufactoringData(uint8_t *manuf);
 bool NT3HResetUserData(void);

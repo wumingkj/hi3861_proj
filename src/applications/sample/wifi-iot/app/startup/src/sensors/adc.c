@@ -41,3 +41,23 @@ float get_adc5_voltage(void)
     return hi_adc_convert_to_voltage(get_adc5_value());
 }
 
+// 新增光敏传感器ADC初始化
+void adc4_init(void)
+{
+    hi_gpio_init();                                            // GPIO初始化
+    hi_io_set_pull(ADC4_PIN, HI_IO_PULL_UP);                   // 设置GPIO上拉
+}
+
+// 读取光敏传感器AD值
+uint16_t get_adc4_value(void)
+{
+    uint16_t data;
+    hi_adc_read(HI_ADC_CHANNEL_4,&data,HI_ADC_EQU_MODEL_8,HI_ADC_CUR_BAIS_DEFAULT,0xff);
+    return data;
+}
+
+// 读取光敏传感器电压
+float get_adc4_voltage(void)
+{
+    return hi_adc_convert_to_voltage(get_adc4_value());
+}

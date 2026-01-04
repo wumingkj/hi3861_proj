@@ -124,6 +124,73 @@ bool NT3HReadConfiguration(uint8_t *configuration)
     return readTimeout(CONFIG_REG, configuration);
 }
 
+// 添加配置寄存器写入函数
+bool NT3HWriteConfiguration(const uint8_t *configuration)
+{
+    bool ret = true;
+    uint8_t dataSend[NFC_PAGE_SIZE + 1]; // data plus register
+    
+    dataSend[0] = CONFIG_REG; // 配置寄存器地址
+    memcpy_s(&dataSend[1], NFC_PAGE_SIZE, configuration, NFC_PAGE_SIZE);
+    
+    ret = writeTimeout(dataSend, sizeof(dataSend));
+    if (ret == false) {
+        printf("===== Error: Failed to write configuration register! =====\r\n");
+        return false;
+    }
+    return ret;
+}
+
+// 添加解锁tag的专用函数
+bool NT3HUnlockTag(void)
+{
+    uint8_t config[16];
+    
+    // 1. 读取当前配置
+    if (!NT3HReadConfiguration(config)) {
+        printf("Failed to read configuration register\n");
+        return false;
+    }
+    
+    printf("Current configuration: ");
+    for (int i = 0; i < 16; i++) {
+        printf("%02X ", config[i]);
+    }
+    printf("\n");
+    
+    // 2. 检查第0位（写保护位）
+    if (config[0] & 0x01) {
+        printf("Tag is locked (bit 0 = 1), unlocking...\n");
+        
+        // 3. 清除第0位来解锁
+        config[0] &= ~0x01; // 将第0位设置为0
+        
+        // 4. 写入新的配置
+        if (NT3HWriteConfiguration(config)) {
+            printf("Tag unlocked successfully!\n");
+            
+            // 5. 验证解锁结果
+            uint8_t newConfig[16];
+            if (NT3HReadConfiguration(newConfig)) {
+                if ((newConfig[0] & 0x01) == 0) {
+                    printf("Verification: Tag is now unlocked (bit 0 = 0)\n");
+                    return true;
+                } else {
+                    printf("Warning: Configuration write succeeded but tag is still locked\n");
+                    return false;
+                }
+            }
+            return true;
+        } else {
+            printf("Failed to write configuration register\n");
+            return false;
+        }
+    } else {
+        printf("Tag is already unlocked (bit 0 = 0)\n");
+        return true;
+    }
+}
+
 bool getSessionReg(void)
 {
     return readTimeout(SESSION_REG, nfcPageBuffer);

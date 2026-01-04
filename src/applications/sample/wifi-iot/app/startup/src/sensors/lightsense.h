@@ -1,10 +1,10 @@
 /**
  ****************************************************************************************************
- * @file        bsp_adc.h
+ * @file        lightsense.h
  * @author      普中科技
  * @version     V1.0
  * @date        2024-06-05
- * @brief       ADC实验
+ * @brief       光敏传感器模块
  * @license     Copyright (c) 2024-2034, 深圳市普中科技有限公司
  ****************************************************************************************************
  * @attention
@@ -16,25 +16,24 @@
  *
  */
 
-#ifndef ADC_H
-#define ADC_H
+#ifndef LIGHTSENSE_H
+#define LIGHTSENSE_H
 
 #include "cmsis_os2.h"
 #include "hi_io.h"
 #include "hi_gpio.h"
 
-//管脚定义
-#define ADC5_PIN         HI_IO_NAME_GPIO_11  // 烟雾传感器使用
-#define ADC4_PIN         HI_IO_NAME_GPIO_6   // 光敏传感器使用
+// 光敏传感器状态枚举
+typedef enum {
+    LIGHTSENSE_DARK = 0,    // 黑暗环境
+    LIGHTSENSE_LIGHT = 1    // 明亮环境
+} lightsense_state_t;
 
-//函数声明
-void adc5_init(void);
-uint16_t get_adc5_value(void);
-float get_adc5_voltage(void);
-
-// 新增光敏传感器ADC函数
-void adc4_init(void);
-uint16_t get_adc4_value(void);
-float get_adc4_voltage(void);
+// 函数声明
+void lightsense_init(void);
+uint16_t lightsense_get_value(void);
+float lightsense_get_voltage(void);
+lightsense_state_t lightsense_get_state(void);
+void lightsense_task(void);
 
 #endif

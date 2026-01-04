@@ -112,11 +112,9 @@ uint32_t nfc_init(void)
     }
     printf("I2C nfc Init is succeeded!!!\r\n");
 
-    NT3HResetUserData();
 
     return HI_ERR_SUCCESS;
 }
-
 /**
  * @brief  清除NFC标签中的所有NDEF数据
  * @note   使用NT3H芯片的擦除功能清除所有用户数据

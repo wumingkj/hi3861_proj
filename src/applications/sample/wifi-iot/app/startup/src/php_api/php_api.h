@@ -51,11 +51,33 @@
 #define API_PATH_WIFI_CONFIG        "/api/wifi/config"
 #define API_PATH_DEVICE_INFO        "/api/device/info"
 
+// UDP广播配置
+#define PHP_API_UDP_BROADCAST_PORT      8888
+#define PHP_API_UDP_RECEIVE_PORT        8889
+#define PHP_API_UDP_BUFFER_SIZE         1024
+#define PHP_API_UDP_TIMEOUT_MS          5000
+
 // LED控制宏定义（与main.c保持一致）
 #define LED_PIN                    HI_IO_NAME_GPIO_2
 #define LED_GPIO_FUN               HI_IO_FUNC_GPIO_2_GPIO
 #define LED_ON()                   hi_gpio_set_ouput_val(LED_PIN, HI_GPIO_VALUE1)
 #define LED_OFF()                  hi_gpio_set_ouput_val(LED_PIN, HI_GPIO_VALUE0)
+
+// UDP广播消息类型
+typedef enum {
+    UDP_DISCOVERY_REQUEST = 0,
+    UDP_DISCOVERY_RESPONSE = 1
+} udp_message_type_t;
+
+// UDP广播消息结构体
+typedef struct {
+    udp_message_type_t type;
+    uint32_t timestamp;
+    char request_id[32];
+    char device_name[32];
+    char ip_address[16];
+    uint16_t http_port;
+} udp_discovery_message_t;
 
 // PHP API返回码
 typedef enum {
@@ -175,5 +197,39 @@ void php_api_led_update(void);
  * @brief LED初始化函数
  */
 void php_api_led_init(void);
+
+// 函数声明 - 新增UDP广播功能
+
+/**
+ * @brief 启动UDP广播监听服务
+ * @return php_api_result_t 启动结果
+ */
+php_api_result_t php_api_start_udp_broadcast(void);
+
+/**
+ * @brief 停止UDP广播监听服务
+ * @return php_api_result_t 停止结果
+ */
+php_api_result_t php_api_stop_udp_broadcast(void);
+
+/**
+ * @brief UDP广播监听线程函数
+ */
+static void php_api_udp_broadcast_thread(void *arg);
+
+/**
+ * @brief 处理UDP广播发现请求
+ * @param client_addr 客户端地址
+ * @param message 接收到的消息
+ * @param message_len 消息长度
+ */
+void php_api_handle_udp_discovery(struct sockaddr_in *client_addr, const char *message, int message_len);
+
+/**
+ * @brief 发送UDP发现响应
+ * @param client_addr 客户端地址
+ * @param request_id 请求ID
+ */
+void php_api_send_udp_response(struct sockaddr_in *client_addr, const char *request_id);
 
 #endif

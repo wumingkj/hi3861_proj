@@ -15,6 +15,8 @@
 #include "smoke.h"
 #include "nfc.h"
 #include "NT3H.h"
+#include "lightsense.h"
+#include "relay.h"  // 新增继电器头文件
 // #define DEFAULT_DEBUG_LEVEL 0
 #include "debug.h" // 新增调试头文件
 
@@ -79,14 +81,19 @@ bool g_smoke_alarm_triggered = false;
 smoke_sensor_data_t g_smoke_data = {0};
 
 // 烟雾传感器更新间隔常量
-#define SMOKE_UPDATE_INTERVAL_MS 5000 // 5秒读取一次
+#define SMOKE_UPDATE_INTERVAL_MS 5 * 1000 // 5秒读取一次
 
 uint8_t led_value = 0;
 
 // 常量定义（毫秒）
-#define SENSOR_UPDATE_INTERVAL_MS 2000  // 2秒读取一次
-#define PHP_UPDATE_INTERVAL_MS 50       // 25ms-php-api更新
-#define NETWORK_CHECK_INTERVAL_MS 10000 // 10秒检查一次网络状态
+#define SENSOR_UPDATE_INTERVAL_MS 2 * 1000  // 2秒读取一次
+#define PHP_UPDATE_INTERVAL_MS 50           // 25ms-php-api更新
+#define NETWORK_CHECK_INTERVAL_MS 10 * 1000 // 10秒检查一次网络状态
+
+// NFC检测相关变量
+bool g_nfc_initialized = false;
+uint32_t g_last_nfc_check = 0;
+#define NFC_CHECK_INTERVAL_MS 5 * 1000 // 15秒检测一次NFC标签
 
 // DHT11读取重试机制
 #define DHT11_RETRY_COUNT 3 // 每次读取最多重试3次
@@ -97,10 +104,8 @@ void BuzzerTickCb(void *arg)
 }
 
 // 按键事件处理函数
-static void handle_key_event(uint8_t key_index, key_event_t event)
-{
-    switch (event)
-    {
+static void handle_key_event(uint8_t key_index, key_event_t event) {
+    switch (event) {
     case KEY_EVENT_PRESS:
         log_i("KEY", "按键%d按下", key_index + 1);
         break;
@@ -111,69 +116,62 @@ static void handle_key_event(uint8_t key_index, key_event_t event)
     case KEY_EVENT_SHORT_PRESS:
         log_i("KEY", "按键%d短按", key_index + 1);
         // 按键1短按：切换LED状态
-        if (key_index == 0)
-        {
+        if (key_index == 0) {
             led_value = !led_value;
-            if (led_value)
-            {
+            if (led_value) {
                 LED_ON();
                 log_i("KEY", "LED打开");
-            }
-            else
-            {
+            } else {
                 LED_OFF();
                 log_i("KEY", "LED关闭");
             }
         }
-        // 按键2短按：触发蜂鸣器提示音
-        if (key_index == 1)
-        {
-            Buzzer_Alarm(1, 100, 0);
-            log_i("KEY", "蜂鸣器提示音触发");
+        // 按键2短按：切换电机启停
+        if (key_index == 1) {
+
         }
         break;
 
     case KEY_EVENT_LONG_PRESS:
         log_i("KEY", "按键%d长按", key_index + 1);
         // 按键1长按：显示系统状态
-        if (key_index == 0)
-        {
+        if (key_index == 0) {
             log_i("STATUS", "=== 系统状态 ===");
-            if (g_wifi_connected)
-            {
+            if (g_wifi_connected) {
                 log_i("STATUS", "WiFi: 已连接 %s", g_wifi_ssid);
                 log_i("STATUS", "IP地址: %s", g_wifi_ip);
-            }
-            else
-            {
+            } else {
                 log_i("STATUS", "WiFi: AP模式运行中");
                 log_i("STATUS", "IP地址: %s", g_wifi_ip);
             }
-            if (g_dht11_connected)
-            {
+            if (g_dht11_connected) {
                 log_i("STATUS", "温度: %d°C, 湿度: %d%%", g_temperature, g_humidity);
-            }
-            else
-            {
+            } else {
                 log_i("STATUS", "DHT11: 未连接");
             }
+            
+            // 新增光敏传感器状态显示
+            uint16_t light_value = lightsense_get_value();
+            float light_voltage = lightsense_get_voltage();
+            lightsense_state_t light_state = lightsense_get_state();
+            log_i("STATUS", "光敏: 值=%d, 电压=%.2fV, 状态=%s", 
+                  light_value, light_voltage, 
+                  light_state == LIGHTSENSE_LIGHT ? "明亮" : "黑暗");
+            
+            // 新增继电器状态显示
+            log_i("STATUS", "继电器: %s（每5秒切换）", 
+                  relay_get_state() == RELAY_ON ? "闭合（ON）" : "断开（OFF）");
+            
             log_i("STATUS", "=================");
         }
-        // 按键2长按：触发蜂鸣器报警
-        if (key_index == 1)
-        {
-            Buzzer_Alarm(3, 200, 100);
-            log_i("KEY", "蜂鸣器报警触发");
-        }
+        // 按键2长按：无特殊功能（简化）
         break;
 
     case KEY_EVENT_DOUBLE_CLICK:
         log_i("KEY", "按键%d双击", key_index + 1);
         // 按键1双击：LED闪烁
-        if (key_index == 0)
-        {
-            for (int i = 0; i < 3; i++)
-            {
+        if (key_index == 0) {
+            for (int i = 0; i < 3; i++) {
                 LED_ON();
                 Time_DelayMs(200);
                 LED_OFF();
@@ -181,33 +179,14 @@ static void handle_key_event(uint8_t key_index, key_event_t event)
             }
             log_i("KEY", "LED闪烁完成");
         }
-        // 按键2双击：烟雾传感器测试
-        if (key_index == 1)
-        {
-            log_i("SMOKE_TEST", "=== 烟雾传感器测试 ===");
-            smoke_sensor_test();
-            log_i("SMOKE_TEST", "====================");
-        }
-        break;
-
-        // 按键2双击：显示按键状态
-        if (key_index == 1)
-        {
-            log_i("KEY", "=== 按键状态 ===");
-            for (uint8_t i = 0; i < g_key_manager->key_count; i++)
-            {
-                bool pressed = key_manager_is_pressed(g_key_manager, i);
-                uint32_t duration = key_manager_get_press_duration(g_key_manager, i);
-                log_i("KEY", "按键%d: %s, 持续时间: %dms",
-                      i + 1, pressed ? "按下" : "释放", duration);
-            }
-            log_i("KEY", "================");
+        // 按键2双击：显示系统信息
+        if (key_index == 1) {
+            
         }
         break;
 
     case KEY_EVENT_HOLD:
-        // 保持按下状态，可以用于实现持续功能（如音量调节等）
-        // 这里不记录日志，避免频繁输出
+        // 保持按下状态，这里不记录日志
         break;
 
     default:
@@ -395,11 +374,6 @@ void led_init(void)
     log_i("LED", "LED初始化完成，初始状态：关闭");
 }
 
-// NFC检测相关变量
-bool g_nfc_initialized = false;
-uint32_t g_last_nfc_check = 0;
-#define NFC_CHECK_INTERVAL_MS 30000 // 30秒检测一次NFC标签
-
 // WIFI配置解析函数 - 添加清除NDEF数据功能
 // WIFI配置解析函数 - 修改为在成功写入KV存储后清除NDEF数据
 static void parse_wifi_config(const char *wifi_uri)
@@ -432,7 +406,7 @@ static void parse_wifi_config(const char *wifi_uri)
             }
             ssid[i] = '\0';
             log_i("NFC", "检测到SSID: %s", ssid);
-            ptr = start;
+ptr = start;
         }
         else if (*ptr == 'T' && *(ptr + 1) == ':')
         {
@@ -463,7 +437,7 @@ static void parse_wifi_config(const char *wifi_uri)
 
             ptr = start;
         }
-        else
+else
         {
             ptr++;
         }
@@ -472,12 +446,11 @@ static void parse_wifi_config(const char *wifi_uri)
     log_i("NFC", "WIFI配置解析完成:");
     log_i("NFC", "   WIFI名称: %s", ssid);
     log_i("NFC", "   加密方式: %s", auth_type);
-
-    // 将配置写入KV存储
+// 将配置写入KV存储
     if (strlen(ssid) > 0)
     {
         kv_set_string("wifi_ssid", ssid);
-        log_i("NFC", "✅ SSID已保存到KV存储");
+log_i("NFC", "✅ SSID已保存到KV存储");
 
         if (strlen(password) > 0)
         {
@@ -501,9 +474,26 @@ static void parse_wifi_config(const char *wifi_uri)
             log_e("NFC", "❌ NDEF数据清除失败");
         }
 
+        // 添加一条空tag（初始化第一页为NDEF格式）
+        uint8_t empty_tag_data[NFC_PAGE_SIZE] = {0};
+        empty_tag_data[0] = 0x03; // NDEF起始标志
+        empty_tag_data[1] = 0x00; // 记录结束位置（空记录）
+        empty_tag_data[2] = 0xFE; // NDEF结束标志
+
+        log_i("NFC", "添加空NFC标签...");
+        if (NT3HWriteUserData(0, empty_tag_data))
+        {
+            log_i("NFC", "✅ 空NFC标签添加成功，确保下次读取为空");
+        }
+        else
+        {
+            log_e("NFC", "❌ 空NFC标签添加失败");
+            return HI_ERR_FAILURE;
+        }
+
         // LED快速闪烁5次表示检测到WIFI配置
         for (int j = 0; j < 5; j++)
-        {
+{
             LED_ON();
             Time_DelayMs(50);
             LED_OFF();
@@ -694,33 +684,54 @@ void Main_Task(void *arg)
     uint32_t g_last_smoke_update = Time_GetCurrentMs();
     uint32_t g_last_network_status = Time_GetCurrentMs();
     uint32_t g_last_nfc_check = Time_GetCurrentMs();
+    uint32_t g_last_lightsense_update = Time_GetCurrentMs();  // 新增光敏传感器时间戳
+    uint32_t g_last_relay_toggle = Time_GetCurrentMs();       // 新增继电器切换时间戳
 
     log_i("MAIN", "主任务开始运行");
 
     // 主循环
-    while (1)
-    {
+    while (1) {
         current_time_ms = Time_GetCurrentMs();
 
-        // 1. 传感器读取（2秒间隔）
-        if (current_time_ms - g_last_sensor_update >= SENSOR_UPDATE_INTERVAL_MS)
-        {
+        // 2. 传感器读取（2秒间隔）
+        if (current_time_ms - g_last_sensor_update >= SENSOR_UPDATE_INTERVAL_MS) {
             g_last_sensor_update = current_time_ms;
 
             // DHT11温湿度传感器读取
-            if (dht11_read_data(&g_temperature, &g_humidity) == 0)
-            {
+            if (dht11_read_data(&g_temperature, &g_humidity) == 0) {
                 log_i("DHT11", "温湿度传感器: 湿度=%d%%, 温度=%d°C", g_humidity, g_temperature);
-            }
-            else
-            {
+            } else {
                 log_e("DHT11", "传感器读取失败");
             }
         }
 
-        // 2. 烟雾传感器读取和报警（5秒间隔）
-        if (current_time_ms - g_last_smoke_update >= SMOKE_UPDATE_INTERVAL_MS)
-        {
+        // 3. 光敏传感器读取（2秒间隔）- 新增光敏传感器功能
+        if (current_time_ms - g_last_lightsense_update >= 2000) {
+            g_last_lightsense_update = current_time_ms;
+            
+            
+            // 获取并记录光敏传感器状态
+            uint16_t light_value = lightsense_get_value();
+            float light_voltage = lightsense_get_voltage();
+            lightsense_state_t light_state = lightsense_get_state();
+            
+            log_i("LIGHTSENSE", "光敏传感器: 值=%d, 电压=%.2fV, 状态=%s", 
+                  light_value, light_voltage, 
+                  light_state == LIGHTSENSE_LIGHT ? "明亮" : "黑暗");
+        }
+
+        // 4. 继电器状态切换（5秒间隔）- 新增继电器功能
+        if (current_time_ms - g_last_relay_toggle >= 5000) {
+            g_last_relay_toggle = current_time_ms;
+            
+            // 切换继电器状态
+            relay_toggle();
+            log_i("RELAY", "继电器状态切换完成，当前状态: %s", 
+                  relay_get_state() == RELAY_ON ? "闭合（ON）" : "断开（OFF）");
+        }
+
+        // 5. 烟雾传感器读取和报警（5秒间隔）
+        if (current_time_ms - g_last_smoke_update >= SMOKE_UPDATE_INTERVAL_MS) {
             g_last_smoke_update = current_time_ms;
 
             // 读取烟雾传感器数据
@@ -732,8 +743,7 @@ void Main_Task(void *arg)
                   smoke_sensor_get_level_string(g_smoke_data.level));
 
             // 检查烟雾报警
-            if (g_smoke_data.alarm_triggered && !g_smoke_alarm_triggered)
-            {
+            if (g_smoke_data.alarm_triggered && !g_smoke_alarm_triggered) {
                 // 首次触发报警
                 g_smoke_alarm_triggered = true;
                 log_e("SMOKE_ALARM", "⚠️ 烟雾报警触发！等级：%s",
@@ -743,53 +753,40 @@ void Main_Task(void *arg)
                 Buzzer_Alarm(5, 200, 100);
 
                 // 闪烁LED报警
-                for (int i = 0; i < 3; i++)
-                {
+                for (int i = 0; i < 3; i++) {
                     LED_ON();
                     Time_DelayMs(200);
                     LED_OFF();
                     Time_DelayMs(200);
                 }
-            }
-            else if (!g_smoke_data.alarm_triggered && g_smoke_alarm_triggered)
-            {
+            } else if (!g_smoke_data.alarm_triggered && g_smoke_alarm_triggered) {
                 // 报警解除
                 g_smoke_alarm_triggered = false;
                 log_i("SMOKE_ALARM", "✅ 烟雾报警解除");
-            }
-            else if (g_smoke_data.alarm_triggered)
-            {
+            } else if (g_smoke_data.alarm_triggered) {
                 // 持续报警状态
                 log_w("SMOKE_ALARM", "🚨 烟雾报警持续中，等级：%s",
                       smoke_sensor_get_level_string(g_smoke_data.level));
             }
         }
 
-        // 3. NFC标签检测（5秒间隔）
-        if (current_time_ms - g_last_nfc_check >= NFC_CHECK_INTERVAL_MS)
-        {
+        // 6. NFC标签检测（5秒间隔）
+        if (current_time_ms - g_last_nfc_check >= NFC_CHECK_INTERVAL_MS) {
             g_last_nfc_check = current_time_ms;
 
-            if (g_nfc_initialized)
-            {
+            if (g_nfc_initialized) {
                 check_nfc_tag();
-            }
-            else
-            {
+            } else {
                 log_w("NFC", "NFC模块未初始化，跳过检测");
             }
         }
 
-        // 4. 网络状态显示（30秒间隔）
-        if (current_time_ms - g_last_network_status >= 30000)
-        {
+        // 7. 网络状态显示（30秒间隔）
+        if (current_time_ms - g_last_network_status >= 30000) {
             g_last_network_status = current_time_ms;
-            if (g_wifi_connected)
-            {
+            if (g_wifi_connected) {
                 log_i("NETWORK", "WiFi状态: 已连接 %s, IP: %s", g_wifi_ssid, g_wifi_ip);
-            }
-            else
-            {
+            } else {
                 log_i("NETWORK", "网络状态: AP模式运行中, IP: %s", g_wifi_ip);
             }
         }
@@ -804,10 +801,11 @@ static void Main_Entry(void)
     log_i("SYSTEM", "系统初始化开始");
     // 初始化库
     Time_Init();
-    led_init(); // LED初始化（初始状态为关闭）
+    led_init();
     Buzzer_Init();
     smoke_sensor_init();
-    log_i("SMOKE", "烟雾传感器初始化完成");
+    lightsense_init();
+    relay_init();  // 新增继电器初始化
 
     // NFC初始化 - 改进初始化逻辑，基于template.c
     log_i("NFC", "正在初始化NFC模块...");
