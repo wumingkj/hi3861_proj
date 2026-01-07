@@ -16,9 +16,11 @@
 #include "nfc.h"
 #include "NT3H.h"
 #include "lightsense.h"
-#include "relay.h"  // 新增继电器头文件
+#include "relay.h" // 新增继电器头文件
 // #define DEFAULT_DEBUG_LEVEL 0
 #include "debug.h" // 新增调试头文件
+
+// http://192.168.0.1
 
 /*
 #        ┏┓　　　┏┓+ +
@@ -87,8 +89,8 @@ uint8_t led_value = 0;
 
 // 常量定义（毫秒）
 #define SENSOR_UPDATE_INTERVAL_MS 2 * 1000  // 2秒读取一次
-#define PHP_UPDATE_INTERVAL_MS 50           // 25ms-php-api更新
 #define NETWORK_CHECK_INTERVAL_MS 10 * 1000 // 10秒检查一次网络状态
+#define PHP_UPDATE_INTERVAL_MS 100
 
 // NFC检测相关变量
 bool g_nfc_initialized = false;
@@ -104,84 +106,49 @@ void BuzzerTickCb(void *arg)
 }
 
 // 按键事件处理函数
-static void handle_key_event(uint8_t key_index, key_event_t event) {
-    switch (event) {
+static void handle_key_event(uint8_t key_index, key_event_t event)
+{
+    switch (event)
+    {
     case KEY_EVENT_PRESS:
-        log_i("KEY", "按键%d按下", key_index + 1);
+        // log_i("KEY", "按键%d按下", key_index + 1);
         break;
     case KEY_EVENT_RELEASE:
-        log_i("KEY", "按键%d释放", key_index + 1);
+        // log_i("KEY", "按键%d释放", key_index + 1);
         break;
 
     case KEY_EVENT_SHORT_PRESS:
-        log_i("KEY", "按键%d短按", key_index + 1);
-        // 按键1短按：切换LED状态
-        if (key_index == 0) {
-            led_value = !led_value;
-            if (led_value) {
-                LED_ON();
-                log_i("KEY", "LED打开");
-            } else {
-                LED_OFF();
-                log_i("KEY", "LED关闭");
-            }
+        // log_i("KEY", "按键%d短按", key_index + 1);
+        //  按键1短按：切换LED状态
+        if (key_index == 0)
+        {
         }
         // 按键2短按：切换电机启停
-        if (key_index == 1) {
-
+        if (key_index == 1)
+        {
         }
         break;
 
     case KEY_EVENT_LONG_PRESS:
-        log_i("KEY", "按键%d长按", key_index + 1);
-        // 按键1长按：显示系统状态
-        if (key_index == 0) {
-            log_i("STATUS", "=== 系统状态 ===");
-            if (g_wifi_connected) {
-                log_i("STATUS", "WiFi: 已连接 %s", g_wifi_ssid);
-                log_i("STATUS", "IP地址: %s", g_wifi_ip);
-            } else {
-                log_i("STATUS", "WiFi: AP模式运行中");
-                log_i("STATUS", "IP地址: %s", g_wifi_ip);
-            }
-            if (g_dht11_connected) {
-                log_i("STATUS", "温度: %d°C, 湿度: %d%%", g_temperature, g_humidity);
-            } else {
-                log_i("STATUS", "DHT11: 未连接");
-            }
-            
-            // 新增光敏传感器状态显示
-            uint16_t light_value = lightsense_get_value();
-            float light_voltage = lightsense_get_voltage();
-            lightsense_state_t light_state = lightsense_get_state();
-            log_i("STATUS", "光敏: 值=%d, 电压=%.2fV, 状态=%s", 
-                  light_value, light_voltage, 
-                  light_state == LIGHTSENSE_LIGHT ? "明亮" : "黑暗");
-            
-            // 新增继电器状态显示
-            log_i("STATUS", "继电器: %s（每5秒切换）", 
-                  relay_get_state() == RELAY_ON ? "闭合（ON）" : "断开（OFF）");
-            
-            log_i("STATUS", "=================");
+        // log_i("KEY", "按键%d长按", key_index + 1);
+        //  按键1长按：显示系统状态
+        if (key_index == 0)
+        {
         }
-        // 按键2长按：无特殊功能（简化）
+        if (key_index == 1)
+        {
+        }
         break;
 
     case KEY_EVENT_DOUBLE_CLICK:
-        log_i("KEY", "按键%d双击", key_index + 1);
-        // 按键1双击：LED闪烁
-        if (key_index == 0) {
-            for (int i = 0; i < 3; i++) {
-                LED_ON();
-                Time_DelayMs(200);
-                LED_OFF();
-                Time_DelayMs(200);
-            }
-            log_i("KEY", "LED闪烁完成");
+        // log_i("KEY", "按键%d双击", key_index + 1);
+        //  按键1双击：LED闪烁
+        if (key_index == 0)
+        {
         }
         // 按键2双击：显示系统信息
-        if (key_index == 1) {
-            
+        if (key_index == 1)
+        {
         }
         break;
 
@@ -297,7 +264,7 @@ void network_task(void *arg)
 
     // 初始化PHP API模块
     log_i("NETWORK", "正在初始化PHP API模块（纯网络API v2.0）...");
-    php_api_result_t php_ret = php_api_init();
+    php_api_result_t php_ret = php_api_init(0);  // 添加参数，使用默认缓冲区大小
     if (php_ret != PHP_API_SUCCESS)
     {
         log_e("NETWORK", "PHP API初始化失败，错误码: %d", php_ret);
@@ -309,13 +276,10 @@ void network_task(void *arg)
 
     // 启动HTTP服务器
     log_i("NETWORK", "正在启动HTTP服务器...");
-    php_ret = php_api_start_server();
-    if (php_ret == PHP_API_SUCCESS)
-    {
+    php_ret = php_api_start_web_server();
+    if (php_ret == PHP_API_SUCCESS) {
         log_i("NETWORK", "HTTP服务器启动成功");
-    }
-    else
-    {
+    } else {
         log_w("NETWORK", "HTTP服务器启动失败，错误码: %d", php_ret);
     }
 
@@ -323,20 +287,10 @@ void network_task(void *arg)
 
     // 合并后的网络任务主循环
     static uint32_t g_last_network_check = 0; // 修复：使用0初始化
-    static uint32_t g_last_php_update = 0;    // 修复：使用0初始化
+    static uint32_t g_last_php_update = 0; // 修复：使用0初始化
     while (1)
     {
         uint32_t current_time_ms = Time_GetCurrentMs();
-
-        // 如果是第一次运行，初始化时间戳
-        if (g_last_network_check == 0)
-        {
-            g_last_network_check = current_time_ms;
-        }
-        if (g_last_php_update == 0)
-        {
-            g_last_php_update = current_time_ms;
-        }
 
         // 网络状态检查（10秒间隔）
         if (current_time_ms - g_last_network_check >= NETWORK_CHECK_INTERVAL_MS)
@@ -353,11 +307,10 @@ void network_task(void *arg)
             }
         }
 
-        // PHP API更新（50ms间隔）
-        if (current_time_ms - g_last_php_update >= PHP_UPDATE_INTERVAL_MS)
-        {
-            g_last_php_update = current_time_ms;
-            php_api_led_update();
+        if(current_time_ms - g_last_php_update >= PHP_UPDATE_INTERVAL_MS){
+            g_last_php_update= current_time_ms;
+
+            php_api_update_web_server();
         }
 
         // 添加短延时，让出CPU时间
@@ -366,8 +319,7 @@ void network_task(void *arg)
 }
 
 // LED初始化函数 - 设置初始状态为关闭
-void led_init(void)
-{
+void led_init(void) {
     hi_io_set_func(LED_PIN, LED_GPIO_FUN);
     hi_gpio_set_dir(LED_PIN, HI_GPIO_DIR_OUT);
     LED_OFF(); // 初始状态设置为关闭
@@ -406,7 +358,7 @@ static void parse_wifi_config(const char *wifi_uri)
             }
             ssid[i] = '\0';
             log_i("NFC", "检测到SSID: %s", ssid);
-ptr = start;
+            ptr = start;
         }
         else if (*ptr == 'T' && *(ptr + 1) == ':')
         {
@@ -434,10 +386,9 @@ ptr = start;
 
             // 显示密码长度（不显示明文）
             log_i("NFC", "密码长度: %d 字符", i);
-
             ptr = start;
         }
-else
+        else
         {
             ptr++;
         }
@@ -446,11 +397,11 @@ else
     log_i("NFC", "WIFI配置解析完成:");
     log_i("NFC", "   WIFI名称: %s", ssid);
     log_i("NFC", "   加密方式: %s", auth_type);
-// 将配置写入KV存储
+    // 将配置写入KV存储
     if (strlen(ssid) > 0)
     {
         kv_set_string("wifi_ssid", ssid);
-log_i("NFC", "✅ SSID已保存到KV存储");
+        log_i("NFC", "✅ SSID已保存到KV存储"); // 从NFC读取配置数据
 
         if (strlen(password) > 0)
         {
@@ -493,7 +444,7 @@ log_i("NFC", "✅ SSID已保存到KV存储");
 
         // LED快速闪烁5次表示检测到WIFI配置
         for (int j = 0; j < 5; j++)
-{
+        {
             LED_ON();
             Time_DelayMs(50);
             LED_OFF();
@@ -678,72 +629,114 @@ void Main_Task(void *arg)
 {
     (void)arg;
     uint32_t current_time_ms = 0;
-
-    // 初始化时间戳
-    uint32_t g_last_sensor_update = Time_GetCurrentMs();
-    uint32_t g_last_smoke_update = Time_GetCurrentMs();
-    uint32_t g_last_network_status = Time_GetCurrentMs();
-    uint32_t g_last_nfc_check = Time_GetCurrentMs();
-    uint32_t g_last_lightsense_update = Time_GetCurrentMs();  // 新增光敏传感器时间戳
-    uint32_t g_last_relay_toggle = Time_GetCurrentMs();       // 新增继电器切换时间戳
+    // 数据获取类时间戳（2秒间隔）
+    uint32_t g_last_data_acquisition = Time_GetCurrentMs();
+    // 设备控制类时间戳（5秒间隔）
+    uint32_t g_last_device_control = Time_GetCurrentMs();
+    // 系统状态类时间戳（30秒间隔）
+    uint32_t g_last_system_status = Time_GetCurrentMs();
+    // 传感器数据发送时间戳（1秒间隔）- 新增
+    uint32_t g_last_sensor_send = Time_GetCurrentMs();
 
     log_i("MAIN", "主任务开始运行");
 
     // 主循环
-    while (1) {
+    while (1)
+    {
         current_time_ms = Time_GetCurrentMs();
 
-        // 2. 传感器读取（2秒间隔）
-        if (current_time_ms - g_last_sensor_update >= SENSOR_UPDATE_INTERVAL_MS) {
-            g_last_sensor_update = current_time_ms;
+        // ==================== 数据获取类操作（2秒间隔） ====================
+        if (current_time_ms - g_last_data_acquisition >= 2000)
+        {
+            g_last_data_acquisition = current_time_ms;
+            log_i("DATA_ACQUISITION", "开始数据采集周期");
 
-            // DHT11温湿度传感器读取
-            if (dht11_read_data(&g_temperature, &g_humidity) == 0) {
+            // 1. DHT11温湿度传感器读取
+            if (dht11_read_data(&g_temperature, &g_humidity) == 0)
+            {
                 log_i("DHT11", "温湿度传感器: 湿度=%d%%, 温度=%d°C", g_humidity, g_temperature);
-            } else {
+            }
+            else
+            {
                 log_e("DHT11", "传感器读取失败");
             }
+
+            // 2. 光敏传感器读取
+            //uint16_t light_value = lightsense_get_value();
+            //float light_voltage = lightsense_get_voltage();
+            //lightsense_state_t light_state = lightsense_get_state();
+            //log_i("LIGHTSENSE", "光敏传感器: 值=%d, 电压=%.2fV, 状态=%s",
+            //      light_value, light_voltage,
+            //      light_state == LIGHTSENSE_LIGHT ? "明亮" : "黑暗");
+
+            //log_i("DATA_ACQUISITION", "数据采集周期完成");
         }
 
-        // 3. 光敏传感器读取（2秒间隔）- 新增光敏传感器功能
-        if (current_time_ms - g_last_lightsense_update >= 2000) {
-            g_last_lightsense_update = current_time_ms;
-            
-            
-            // 获取并记录光敏传感器状态
-            uint16_t light_value = lightsense_get_value();
-            float light_voltage = lightsense_get_voltage();
-            lightsense_state_t light_state = lightsense_get_state();
-            
-            log_i("LIGHTSENSE", "光敏传感器: 值=%d, 电压=%.2fV, 状态=%s", 
-                  light_value, light_voltage, 
-                  light_state == LIGHTSENSE_LIGHT ? "明亮" : "黑暗");
+        // ==================== 传感器数据发送（1秒间隔）- 新增 ====================
+        if (current_time_ms - g_last_sensor_send >= 1000)
+        {
+            g_last_sensor_send = current_time_ms;
+            log_i("SENSOR_SEND", "开始传感器数据发送周期");
+
+            // 创建传感器数据结构体并填充数据
+            sensor_data_t sensor_data = {0};
+            // 填充温度数据（转换为float类型）
+            sensor_data.temperature = (float)g_temperature;
+            // 填充湿度数据（转换为float类型）
+            sensor_data.humidity = (float)g_humidity;
+            // 填充烟雾数据（从烟雾传感器读取）
+            sensor_data.smoke = g_smoke_data.voltage; // 使用电压值作为烟雾浓度
+            // 填充继电器状态
+            sensor_data.relay_status = (relay_get_state() == RELAY_ON);
+            // 填充蜂鸣器状态（检查蜂鸣器是否正在报警）
+            sensor_data.buzzer_status = g_smoke_alarm_triggered;
+
+            log_i("SENSOR_SEND", "传感器数据: 温度=%.1f°C, 湿度=%.1f%%, 烟雾=%.2fV, 继电器=%s, 蜂鸣器=%s",
+                  sensor_data.temperature, sensor_data.humidity, sensor_data.smoke,
+                  sensor_data.relay_status ? "ON" : "OFF",
+                  sensor_data.buzzer_status ? "ALARM" : "OFF");
+
+            // 发送传感器数据到服务器
+            php_api_result_t send_result = php_api_send_sensor_data(&sensor_data);
+            if (send_result == PHP_API_SUCCESS)
+            {
+                log_i("SENSOR_SEND", "✅ 传感器数据发送成功");
+            }
+            else
+            {
+                log_w("SENSOR_SEND", "⚠ 传感器数据发送失败，错误码: %d", send_result);
+                
+                // 如果是WiFi未连接错误，尝试重新连接
+                if (send_result == PHP_API_ERROR_WIFI_NOT_CONNECTED)
+                {
+                    log_i("SENSOR_SEND", "尝试重新连接WiFi...");
+                    // 这里可以添加WiFi重连逻辑
+                }
+            }
+
+            log_i("SENSOR_SEND", "传感器数据发送周期完成");
         }
 
-        // 4. 继电器状态切换（5秒间隔）- 新增继电器功能
-        if (current_time_ms - g_last_relay_toggle >= 5000) {
-            g_last_relay_toggle = current_time_ms;
-            
-            // 切换继电器状态
+        // ==================== 设备控制类操作（5秒间隔） ====================
+        if (current_time_ms - g_last_device_control >= 5000)
+        {
+            g_last_device_control = current_time_ms;
+            log_i("DEVICE_CONTROL", "开始设备控制周期");
+
+            // 1. 继电器状态切换
             relay_toggle();
-            log_i("RELAY", "继电器状态切换完成，当前状态: %s", 
+            log_i("RELAY", "继电器状态切换完成，当前状态: %s",
                   relay_get_state() == RELAY_ON ? "闭合（ON）" : "断开（OFF）");
-        }
 
-        // 5. 烟雾传感器读取和报警（5秒间隔）
-        if (current_time_ms - g_last_smoke_update >= SMOKE_UPDATE_INTERVAL_MS) {
-            g_last_smoke_update = current_time_ms;
-
-            // 读取烟雾传感器数据
+            // 2. 烟雾传感器读取和报警
             smoke_sensor_read_data(&g_smoke_data);
-
-            // 记录烟雾传感器状态日志
             log_i("SMOKE", "烟雾传感器: ADC值=%d, 电压=%.2fV, 等级=%s",
                   g_smoke_data.raw_value, g_smoke_data.voltage,
                   smoke_sensor_get_level_string(g_smoke_data.level));
 
-            // 检查烟雾报警
-            if (g_smoke_data.alarm_triggered && !g_smoke_alarm_triggered) {
+            // 烟雾报警处理
+            if (g_smoke_data.alarm_triggered && !g_smoke_alarm_triggered)
+            {
                 // 首次触发报警
                 g_smoke_alarm_triggered = true;
                 log_e("SMOKE_ALARM", "⚠️ 烟雾报警触发！等级：%s",
@@ -753,42 +746,57 @@ void Main_Task(void *arg)
                 Buzzer_Alarm(5, 200, 100);
 
                 // 闪烁LED报警
-                for (int i = 0; i < 3; i++) {
+                for (int i = 0; i < 3; i++)
+                {
                     LED_ON();
                     Time_DelayMs(200);
                     LED_OFF();
                     Time_DelayMs(200);
                 }
-            } else if (!g_smoke_data.alarm_triggered && g_smoke_alarm_triggered) {
+            }
+            else if (!g_smoke_data.alarm_triggered && g_smoke_alarm_triggered)
+            {
                 // 报警解除
                 g_smoke_alarm_triggered = false;
                 log_i("SMOKE_ALARM", "✅ 烟雾报警解除");
-            } else if (g_smoke_data.alarm_triggered) {
+            }
+            else if (g_smoke_data.alarm_triggered)
+            {
                 // 持续报警状态
                 log_w("SMOKE_ALARM", "🚨 烟雾报警持续中，等级：%s",
                       smoke_sensor_get_level_string(g_smoke_data.level));
             }
-        }
 
-        // 6. NFC标签检测（5秒间隔）
-        if (current_time_ms - g_last_nfc_check >= NFC_CHECK_INTERVAL_MS) {
-            g_last_nfc_check = current_time_ms;
-
-            if (g_nfc_initialized) {
+            // 3. NFC标签检测
+            if (g_nfc_initialized)
+            {
                 check_nfc_tag();
-            } else {
+            }
+            else
+            {
                 log_w("NFC", "NFC模块未初始化，跳过检测");
             }
+
+            log_i("DEVICE_CONTROL", "设备控制周期完成");
         }
 
-        // 7. 网络状态显示（30秒间隔）
-        if (current_time_ms - g_last_network_status >= 30000) {
-            g_last_network_status = current_time_ms;
-            if (g_wifi_connected) {
+        // ==================== 系统状态类操作（30秒间隔） ====================
+        if (current_time_ms - g_last_system_status >= 30000)
+        {
+            g_last_system_status = current_time_ms;
+            log_i("SYSTEM_STATUS", "开始系统状态更新周期");
+
+            // 1. 网络状态显示
+            if (g_wifi_connected)
+            {
                 log_i("NETWORK", "WiFi状态: 已连接 %s, IP: %s", g_wifi_ssid, g_wifi_ip);
-            } else {
+            }
+            else
+            {
                 log_i("NETWORK", "网络状态: AP模式运行中, IP: %s", g_wifi_ip);
             }
+
+            log_i("SYSTEM_STATUS", "系统状态更新周期完成");
         }
 
         // 添加短延时，让出CPU时间
@@ -805,7 +813,7 @@ static void Main_Entry(void)
     Buzzer_Init();
     smoke_sensor_init();
     lightsense_init();
-    relay_init();  // 新增继电器初始化
+    relay_init(); // 新增继电器初始化
 
     // NFC初始化 - 改进初始化逻辑，基于template.c
     log_i("NFC", "正在初始化NFC模块...");
@@ -1081,7 +1089,7 @@ static void Main_Entry(void)
         .cb_size = 0U,
         .stack_mem = NULL,
         .stack_size = 8192, // 增加栈大小以容纳合并后的功能
-        .priority = osPriorityAboveNormal};
+        .priority = osPriorityNormal};
 
     if (osThreadNew(network_task, NULL, &network_attr) == NULL)
     {

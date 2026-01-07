@@ -5,7 +5,7 @@
 #include <stdbool.h>
 #include "cmsis_os2.h"
 
-#include "../debug.h"   // 添加debug库支持
+#include "debug.h"   // 添加debug库支持
 // 系统时间初始化
 void Time_Init(void);
 

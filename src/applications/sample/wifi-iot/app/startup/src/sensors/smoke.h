@@ -28,8 +28,8 @@
 #include "hi_gpio.h"
 #include "hi_adc.h"
 
-// 烟雾传感器管脚定义
-#define SMOKE_SENSOR_PIN         HI_IO_NAME_GPIO_11  // 使用ADC5通道
+#include "pin_definitions.h"
+
 
 // 烟雾浓度阈值定义（可根据实际传感器调整）
 #define SMOKE_THRESHOLD_LOW      500     // 低浓度阈值

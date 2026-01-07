@@ -17,7 +17,7 @@ lite_component("app") {
     features = [
         "startup",
         # "nfc_test:template"
-        # "//vendor/pzkj/pz_hi3861/demo/28_dht11:template",
+        # "//vendor/pzkj/pz_hi3861/demo/17_uart:template",
         # "//vendor/pzkj/pz_hi3861/demo/30_sg90:template",
         # "//vendor/pzkj/pz_hi3861/demo/21_nfc:template",
     ]

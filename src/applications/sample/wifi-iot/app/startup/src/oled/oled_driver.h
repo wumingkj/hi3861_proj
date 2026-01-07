@@ -6,16 +6,14 @@
 #include "hi_io.h"
 #include "hi_gpio.h"
 
+#include "pin_definitions.h"
+
 // OLED参数定义
 #define OLED_WIDTH 128
 #define OLED_HEIGHT 64
 #define OLED_PAGE_NUM 8
 #define OLED_CMD 0x00
 #define OLED_DATA 0x40
-
-// 软件I2C引脚定义
-#define OLED_SW_I2C_SCL_PIN HI_IO_NAME_GPIO_9
-#define OLED_SW_I2C_SDA_PIN HI_IO_NAME_GPIO_10
 
 // 显示模式枚举
 typedef enum {

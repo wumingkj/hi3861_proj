@@ -23,10 +23,8 @@
 #include "hi_io.h"
 #include "hi_gpio.h"
 
-#include "../debug.h"   // 添加debug库支持
-//管脚定义
-#define DHT11_PIN         HI_IO_NAME_GPIO_7
-#define DHT11_GPIO_FUN    HI_IO_FUNC_GPIO_7_GPIO
+#include "debug.h"   // 添加debug库支持
+#include "pin_definitions.h"
 
 #define DHT11_DQ_OUT(a)   hi_gpio_set_ouput_val(DHT11_PIN,a)
 

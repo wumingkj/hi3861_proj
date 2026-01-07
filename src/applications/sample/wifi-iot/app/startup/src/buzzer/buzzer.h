@@ -7,11 +7,8 @@
 #include "hi_gpio.h"
 #include "hi_pwm.h"
 
-#include "../debug.h"   // 添加debug库支持
-
-#define BEEP_PIN              HI_IO_NAME_GPIO_14
-#define BEEP_PIN_PWM_FUNC     HI_IO_FUNC_GPIO_14_PWM5_OUT
-#define BEEP_PWM_PORT         HI_PWM_PORT_PWM5
+#include "debug.h"   // 添加debug库支持
+#include "pin_definitions.h"
 
 // 可调：频率由 period 决定；示例给个“听得到”的值
 #define BEEP_PWM_PERIOD       40000

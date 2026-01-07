@@ -31,7 +31,7 @@
 #include "lwip/api_shell.h"
 
 
-#include "../debug.h"
+#include "debug.h"
 // 使用系统定义的常量，避免重复定义
 #ifndef WIFI_MAX_SSID_LEN
 #define WIFI_MAX_SSID_LEN 33  // 使用系统定义的值

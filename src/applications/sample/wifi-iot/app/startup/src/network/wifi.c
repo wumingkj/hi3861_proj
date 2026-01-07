@@ -34,7 +34,7 @@ typedef struct {
 
 static ap_config_t g_ap_config = {
     .ip_addr = "192.168.0.1",
-    .netmask = "255.255.255.0", 
+    .netmask = "255.255.255.0",
     .gateway = "192.168.0.1"
 };
 
