@@ -3,6 +3,8 @@
 
 #include "hi_io.h"
 #include "hi_gpio.h"
+#include "hi_pwm.h"
+
 
 // =============================================
 // 蜂鸣器引脚定义 (buzzer.h)

@@ -15,8 +15,8 @@ static_library("startup") {
     sources = [
         "main.c",
         # "template.c",
-        #"src/oled/oled_driver.c",
-        #"src/oled/oled.c",
+        "src/oled/oled_driver.c",
+        "src/oled/oled.c",
         "src/fonts/songti_font.c",
         "src/buzzer/buzzer.c",
         "src/sensors/dht11.c",
@@ -29,6 +29,7 @@ static_library("startup") {
         "src/sensors/smoke.c",  # 新增烟雾传感器库
         "src/sensors/lightsense.c", # 新增光敏传感器库
         "src/sensors/relay.c",  # 新增继电器库
+        "src/alarm_system/alarm_system.c", # 新增闹钟系统库
 
 
         "src/nfc/nfc.c",         # 新增NFC库
@@ -51,6 +52,7 @@ static_library("startup") {
         "src/kv",               # 新增KV库头文件路径
         "src/php_api",          # 新增PHP API库头文件路径
         "src/key_manager",      # 新增按键管理库头文件路径
+        "src/alarm_system",     # 新增闹钟系统库头文件路径
 
         "src/nfc",              # 新增NFC库头文件路径
         "src/nfc/ndef",         # 新增NDEF协议头文件路径

@@ -3,3 +3,4 @@
 src/out/**
 src\ohos_config.json
 analyzerJson/**
+.clang-format

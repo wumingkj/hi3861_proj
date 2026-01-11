@@ -34,8 +34,10 @@ typedef struct {
     char wifi_ssid[32];            // WiFi名称
     char user_id[32];              // 用户ID
     char bind_line[32];            // 生产线
-    int running_status;            // 运行状态
 } php_api_system_status_t;
+
+// 全局运行状态变量声明
+extern uint8_t g_running_status;
 
 // 传感器数据结构体
 typedef struct {
@@ -45,12 +47,6 @@ typedef struct {
     bool relay_status;             // 继电器状态
     bool buzzer_status;            // 蜂鸣器状态
 } sensor_data_t;
-
-/**
- * @brief 获取本地IP地址
- * @return IP地址字符串，失败返回"0.0.0.0"
- */
-char* php_api_get_local_ip(void);
 
 /**
  * @brief 获取WiFi连接状态
@@ -127,6 +123,25 @@ void php_api_stop_web_server(void);
  * @return PHP_API_SUCCESS 成功，其他为错误码
  */
 php_api_result_t php_api_update_web_server(void);
+
+/**
+ * @brief 设置日志输出间隔
+ * @param interval 日志输出间隔（每多少次发送记录一次日志）
+ */
+void php_api_set_log_interval(uint32_t interval);
+
+/**
+ * @brief 获取发送统计信息
+ * @param success_count 成功发送次数指针
+ * @param failure_count 失败发送次数指针
+ * @param total_count 总发送次数指针
+ */
+void php_api_get_send_statistics(uint32_t *success_count, uint32_t *failure_count, uint32_t *total_count);
+
+/**
+ * @brief 重置发送统计信息
+ */
+void php_api_reset_statistics(void);
 
 /**
  * @brief URL解码函数（改为静态声明）

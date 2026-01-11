@@ -27,10 +27,8 @@ kv_result_t kv_init(void) {
     if (g_kv_initialized) {
         return KV_SUCCESS;
     }
-    
     // LiteOS KV存储系统不需要显式初始化
     // 直接使用UtilsSetValue/UtilsGetValue即可
-    
     g_kv_initialized = true;
     return KV_SUCCESS;
 }
@@ -195,11 +193,9 @@ kv_result_t kv_clear_all(void) {
     if (!g_kv_initialized) {
         return KV_ERROR_NOT_INITIALIZED;
     }
-    
     // LiteOS KV存储系统没有提供清空所有键值对的API
     // 这里需要手动删除所有已知的键
     // 在实际应用中，应该维护一个键列表
-    
     return KV_SUCCESS;
 }
 
