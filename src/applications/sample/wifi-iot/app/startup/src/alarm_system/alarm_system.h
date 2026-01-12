@@ -41,8 +41,8 @@ typedef struct {
     float hum_red_threshold;      // 红色报警湿度阈值
     
     // 烟雾阈值配置
-    float smoke_yellow_threshold; // 黄色报警烟雾阈值
-    float smoke_red_threshold;    // 红色报警烟雾阈值
+    uint32_t smoke_yellow_threshold; // 黄色报警烟雾阈值
+    uint32_t smoke_red_threshold;    // 红色报警烟雾阈值
 } alarm_config_t;
 
 // 报警系统状态结构体
@@ -114,5 +114,19 @@ const char* alarm_system_get_level_string(alarm_level_t level);
  * @return 字符串描述
  */
 const char* alarm_system_get_type_string(alarm_type_t type);
+
+/**
+ * @brief 获取当前报警配置
+ * @param config 配置结构体指针
+ */
+void alarm_system_get_config(alarm_config_t* config);
+
+/**
+ * @brief 从KV存储加载报警配置
+ * @param config 配置结构体指针
+ * @return true 成功加载，false 加载失败（使用默认值）
+ */
+static bool alarm_system_load_config_from_kv(alarm_config_t* config);
+
 
 #endif // ALARM_SYSTEM_H

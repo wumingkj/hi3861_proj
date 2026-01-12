@@ -243,17 +243,17 @@ void OLED_ShowSensorData(const oled_sensor_data_t* sensor_data)
     
     // 显示当前状态
     if (!sensor_data->alarm_active) {
-        snprintf(status_str, sizeof(status_str), "Status: Normal");
+        snprintf(status_str, sizeof(status_str), "Running");
     } else {
         if (sensor_data->alarm_level == 1) {
-            snprintf(status_str, sizeof(status_str), "IsAlarm:YellowAlarm");
+            snprintf(status_str, sizeof(status_str), "YellowAlarm");
         } else if (sensor_data->alarm_level == 2) {
-            snprintf(status_str, sizeof(status_str), "IsAlarm:RedAlarm");
+            snprintf(status_str, sizeof(status_str), "RedAlarm");
         } else {
-            snprintf(status_str, sizeof(status_str), "IsAlarm:Unknown");
+            snprintf(status_str, sizeof(status_str), "Unknown");
         }
     }
-    OLED_ShowString(0, 30, status_str, 8);
+    OLED_ShowString(20, 30, status_str, 8);
     
     // 刷新显示
     OLED_Refresh();

@@ -33,15 +33,16 @@ static int g_web_server_socket = -1;       // 网页服务器socket
 static bool g_web_server_running = false;  // 网页服务器运行状态
 
 // 默认系统状态
-static php_api_system_status_t g_system_status = {.device_name = "",
-                                                  .server_ip = "",
-                                                  .local_ip = "",
-                                                  .wifi_connected = false,
-                                                  .wifi_ssid = "",
-                                                  .user_id = "ap",
-                                                  .bind_line = "",};
+static php_api_system_status_t g_system_status = {
+    .device_name = "",
+    .server_ip = "",
+    .local_ip = "",
+    .wifi_connected = false,
+    .wifi_ssid = "",
+    .user_id = "ap",
+    .bind_line = "",
+};
 
-// HTML网页内容（包含系统配置和WiFi配置）
 static const char* g_webpage_html =
     "<!DOCTYPE html>"
     "<html lang=\"zh-CN\">"
@@ -50,14 +51,15 @@ static const char* g_webpage_html =
     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
     "    <title>设备配置页面</title>"
     "    <style>"
-    "        body { font-family: Arial, sans-serif; margin: 20px; background-color: #ffffff84; }"
+    "        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }"
     "        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; "
     "box-shadow: 0 2px 4px rgba(0,0,0,0.1); }"
     "        h1 { color: #333; text-align: center; }"
     "        h2 { color: #555; border-bottom: 1px solid #ddd; padding-bottom: 10px; }"
     "        .form-group { margin-bottom: 15px; }"
     "        label { display: block; margin-bottom: 5px; font-weight: bold; }"
-    "        input[type=\"text\"], input[type=\"password\"] { width: 100%; padding: 8px; border: 1px solid #ddd; "
+    "        input[type=\"text\"], input[type=\"password\"], input[type=\"number\"] { width: 100%; padding: 8px; "
+    "border: 1px solid #ddd; "
     "border-radius: 4px; box-sizing: border-box; }"
     "        button { background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 4px; "
     "cursor: pointer; font-size: 16px; margin-right: 10px; }"
@@ -66,8 +68,13 @@ static const char* g_webpage_html =
     "        .success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }"
     "        .error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }"
     "        .section { margin-bottom: 30px; }"
+    "        .threshold-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 10px; }"
+    "        .threshold-item { background-color: #f8f9fa; padding: 12px; border-radius: 6px; border: 1px solid "
+    "#e9ecef; }"
+    "        .threshold-label { font-size: 14px; color: #495057; margin-bottom: 5px; font-weight: bold; }"
+    "        .threshold-input { width: 100%; padding: 6px; border: 1px solid #ced4da; border-radius: 4px; }"
     "    </style>"
-    "</head>"
+"</head>"
     "<body>"
     "    <div class=\"container\">"
     "        <h1>设备配置页面</h1>"
@@ -80,7 +87,8 @@ static const char* g_webpage_html =
     "                </div>"
     "                <div class=\"form-group\">"
     "                    <label for=\"server_ip\">服务器IP:</label>"
-    "                    <input type=\"text\" id=\"server_ip\" name=\"server_ip\" value=\"192.168.15.99\" placeholder=\"192.168.0.1\" "
+    "                    <input type=\"text\" id=\"server_ip\" name=\"server_ip\" value=\"192.168.15.99\" "
+    "placeholder=\"192.168.0.1\" "
     "required>"
     "                </div>"
     "                <div class=\"form-group\">"
@@ -96,7 +104,8 @@ static const char* g_webpage_html =
     "                <h2>WiFi配置</h2>"
     "                <div class=\"form-group\">"
     "                    <label for=\"wifi_ssid\">WiFi名称 (SSID):</label>"
-    "                    <input type=\"text\" id=\"wifi_ssid\" name=\"wifi_ssid\" value=\"喵\" placeholder=\"输入WiFi名称\" "
+    "                    <input type=\"text\" id=\"wifi_ssid\" name=\"wifi_ssid\" value=\"喵\" "
+    "placeholder=\"输入WiFi名称\" "
     "required>"
     "                </div>"
     "                <div class=\"form-group\">"
@@ -108,6 +117,51 @@ static const char* g_webpage_html =
     "                    <label for=\"wifi_auth_type\">加密方式:</label>"
     "                    <input type=\"text\" id=\"wifi_auth_type\" name=\"wifi_auth_type\" value=\"WPA2\" "
     "placeholder=\"WPA2/WPA/WEP/开放网络\">"
+    "                </div>"
+    "            </div>"
+    "            <!-- 新增的报警阈值配置部分 -->"
+    "            <div class=\"section\">"
+    "                <h2>报警阈值配置</h2>"
+    "                <div class=\"threshold-grid\">"
+    "                    <div class=\"threshold-item\">"
+    "                        <div class=\"threshold-label\">温度黄色报警阈值 (°C):</div>"
+    "                        <input type=\"number\" id=\"alarm_temp_yellow\" name=\"alarm_temp_yellow\" "
+    "class=\"threshold-input\" "
+    "value=\"25\" min=\"-20\" max=\"100\" step=\"0.1\" required>"
+    "                    </div>"
+    "                    <div class=\"threshold-item\">"
+    "                        <div class=\"threshold-label\">温度红色报警阈值 (°C):</div>"
+    "                        <input type=\"number\" id=\"alarm_temp_red\" name=\"alarm_temp_red\" "
+    "class=\"threshold-input\" "
+    "value=\"28\" min=\"-20\" max=\"100\" step=\"0.1\" required>"
+    "                    </div>"
+    "                    <div class=\"threshold-item\">"
+    "                        <div class=\"threshold-label\">湿度黄色报警阈值 (%):</div>"
+    "                        <input type=\"number\" id=\"alarm_hum_yellow\" name=\"alarm_hum_yellow\" "
+    "class=\"threshold-input\" "
+    "value=\"55\" min=\"0\" max=\"100\" step=\"1\" required>"
+    "                    </div>"
+    "                    <div class=\"threshold-item\">"
+    "                        <div class=\"threshold-label\">湿度红色报警阈值 (%):</div>"
+    "                        <input type=\"number\" id=\"alarm_hum_red\" name=\"alarm_hum_red\" "
+    "class=\"threshold-input\" "
+    "value=\"60\" min=\"0\" max=\"100\" step=\"1\" required>"
+    "                    </div>"
+    "                    <div class=\"threshold-item\">"
+    "                        <div class=\"threshold-label\">烟雾黄色报警阈值:</div>"
+    "                        <input type=\"number\" id=\"alarm_smoke_yellow\" name=\"alarm_smoke_yellow\" "
+    "class=\"threshold-input\" "
+    "value=\"1000\" min=\"0\" max=\"2150\" step=\"1\" required>"
+    "                    </div>"
+    "                    <div class=\"threshold-item\">"
+    "                        <div class=\"threshold-label\">烟雾红色报警阈值:</div>"
+    "                        <input type=\"number\" id=\"alarm_smoke_red\" name=\"alarm_smoke_red\" "
+    "class=\"threshold-input\" "
+    "value=\"1500\" min=\"0\" max=\"2150\" step=\"1\" required>"
+    "                    </div>"
+    "                </div>"
+    "                <div style=\"margin-top: 10px; font-size: 12px; color: #6c757d;\">"
+    "                    注意：红色报警阈值应大于黄色报警阈值"
     "                </div>"
     "            </div>"
     "            <button type=\"submit\">保存所有配置</button>"
@@ -224,6 +278,9 @@ php_api_result_t php_api_get_system_status(php_api_system_status_t* status) {
         // 读取成功
     }
 
+    // 删除报警阈值读取逻辑，只保留设备基本信息读取
+    // 报警阈值由报警系统模块负责读取
+
     if (g_wifi_ip[0] != '\0') {
         strncpy(status->local_ip, g_wifi_ip, sizeof(status->local_ip) - 1);
     }
@@ -231,6 +288,7 @@ php_api_result_t php_api_get_system_status(php_api_system_status_t* status) {
     status->wifi_connected = php_api_is_wifi_connected();
 
     log_i("PHP_API", "系统状态读取成功: 设备=%s, 服务器IP=%s", status->device_name, status->server_ip);
+    // 删除报警阈值日志输出，避免显示0值
 
     return PHP_API_SUCCESS;
 }
@@ -267,7 +325,36 @@ php_api_result_t php_api_save_system_status(const php_api_system_status_t* statu
         return PHP_API_ERROR_MEMORY_ALLOC;
     }
 
+    // 保存报警阈值配置（修改为使用kv_set_float，与报警库保持一致）
+    if (kv_set_float("alarm_temp_yellow", status->alarm_temp_yellow) != KV_SUCCESS) {
+        log_e("PHP_API", "保存温度黄色报警阈值失败");
+    }
+
+    if (kv_set_float("alarm_temp_red", status->alarm_temp_red) != KV_SUCCESS) {
+        log_e("PHP_API", "保存温度红色报警阈值失败");
+    }
+
+    if (kv_set_float("alarm_hum_yellow", status->alarm_hum_yellow) != KV_SUCCESS) {
+        log_e("PHP_API", "保存湿度黄色报警阈值失败");
+    }
+
+    if (kv_set_float("alarm_hum_red", status->alarm_hum_red) != KV_SUCCESS) {
+        log_e("PHP_API", "保存湿度红色报警阈值失败");
+    }
+
+    if (kv_set_uint32("alarm_smoke_yellow", status->alarm_smoke_yellow) != KV_SUCCESS) {
+        log_e("PHP_API", "保存烟雾黄色报警阈值失败");
+    }
+
+    if (kv_set_uint32("alarm_smoke_red", status->alarm_smoke_red) != KV_SUCCESS) {
+        log_e("PHP_API", "保存烟雾红色报警阈值失败");
+    }
+
     log_i("PHP_API", "系统状态保存成功: 设备=%s, 服务器IP=%s", status->device_name, status->server_ip);
+    log_i("PHP_API", "报警阈值保存: 温度黄/红=%.1f/%.1f°C, 湿度黄/红=%d/%d%%, 烟雾黄/红=%d/%d", 
+          status->alarm_temp_yellow, status->alarm_temp_red,
+          status->alarm_hum_yellow, status->alarm_hum_red,
+          status->alarm_smoke_yellow, status->alarm_smoke_red);
 
     return PHP_API_SUCCESS;
 }
@@ -400,10 +487,10 @@ php_api_result_t php_api_send_sensor_data(const sensor_data_t* sensor_data) {
  * @brief 发送JSON数据到服务器（核心发送函数）
  */
 php_api_result_t php_api_send_json_data(const char* json_data) {
-    if (json_data == NULL) { 
+    if (json_data == NULL) {
         log_e("PHP_API", "JSON数据为空");
         return PHP_API_ERROR_INVALID_PARAM;
-    }
+}
 
     // 获取系统状态
     php_api_system_status_t system_status;
@@ -660,7 +747,7 @@ static php_api_result_t php_api_handle_post_request(int client_socket, const cha
     // 解析参数
     php_api_system_status_t new_status;
     memset(&new_status, 0, sizeof(new_status));
-
+    
     char wifi_ssid[64] = {0};
     char wifi_password[64] = {0};
     char wifi_auth_type[32] = {0};
@@ -692,6 +779,20 @@ static php_api_result_t php_api_handle_post_request(int client_socket, const cha
                     strncpy(wifi_password, decoded_value, sizeof(wifi_password) - 1);
                 } else if (strcmp(key, "wifi_auth_type") == 0) {
                     strncpy(wifi_auth_type, decoded_value, sizeof(wifi_auth_type) - 1);
+                } 
+                // 解析报警阈值参数
+                else if (strcmp(key, "alarm_temp_yellow") == 0) {
+                    new_status.alarm_temp_yellow = atof(decoded_value);
+                } else if (strcmp(key, "alarm_temp_red") == 0) {
+                    new_status.alarm_temp_red = atof(decoded_value);
+                } else if (strcmp(key, "alarm_hum_yellow") == 0) {
+                    new_status.alarm_hum_yellow = atoi(decoded_value);
+                } else if (strcmp(key, "alarm_hum_red") == 0) {
+                    new_status.alarm_hum_red = atoi(decoded_value);
+                } else if (strcmp(key, "alarm_smoke_yellow") == 0) {
+                    new_status.alarm_smoke_yellow = atoi(decoded_value);
+                } else if (strcmp(key, "alarm_smoke_red") == 0) {
+                    new_status.alarm_smoke_red = atoi(decoded_value);
                 }
 
                 free(decoded_value);
@@ -707,7 +808,18 @@ static php_api_result_t php_api_handle_post_request(int client_socket, const cha
         return php_api_send_error_response(client_socket, "服务器IP不能为空");
     }
 
-    // 保存系统配置到KV存储
+    // 验证报警阈值合理性
+    if (new_status.alarm_temp_red <= new_status.alarm_temp_yellow) {
+        return php_api_send_error_response(client_socket, "温度红色报警阈值必须大于黄色报警阈值");
+    }
+    if (new_status.alarm_hum_red <= new_status.alarm_hum_yellow) {
+        return php_api_send_error_response(client_socket, "湿度红色报警阈值必须大于黄色报警阈值");
+    }
+    if (new_status.alarm_smoke_red <= new_status.alarm_smoke_yellow) {
+        return php_api_send_error_response(client_socket, "烟雾红色报警阈值必须大于黄色报警阈值");
+    }
+
+    // 保存系统配置到KV存储（包含报警阈值）
     php_api_result_t result = php_api_save_system_status(&new_status);
     if (result != PHP_API_SUCCESS) {
         return php_api_send_error_response(client_socket, "保存系统配置失败");

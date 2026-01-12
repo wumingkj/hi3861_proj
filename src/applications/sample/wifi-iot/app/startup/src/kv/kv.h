@@ -88,6 +88,22 @@ kv_result_t kv_set_uint32(const char* key, uint32_t value);
 kv_result_t kv_get_uint32(const char* key, uint32_t* value);
 
 /**
+ * @brief 设置float类型的值
+ * @param key 键
+ * @param value 值
+ * @return 操作结果
+ */
+kv_result_t kv_set_float(const char* key, float value);
+
+/**
+ * @brief 获取float类型的值
+ * @param key 键
+ * @param value 值指针
+ * @return 操作结果
+ */
+kv_result_t kv_get_float(const char* key, float* value);
+
+/**
  * @brief 删除键值对
  * @param key 键
  * @return 操作结果

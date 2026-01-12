@@ -16,6 +16,7 @@
 #include "kv.h"
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>  // 添加stdlib.h以使用atof函数
 
 // 模块状态
 static bool g_kv_initialized = false;
@@ -112,10 +113,9 @@ kv_result_t kv_set_uint32(const char* key, uint32_t value) {
         return KV_ERROR_INVALID_PARAM;
     }
     
-    // 将uint32转换为字符串存储
+    // 将uint32转换为字符串存储 - 使用sprintf
     char value_str[16];
-    int len = snprintf(value_str, sizeof(value_str), "%u", value);
-    if (len <= 0 || len >= (int)sizeof(value_str)) {
+    if (sprintf(value_str, "%u", value) < 0) {
         return KV_ERROR_WRITE_FAILED;
     }
     
@@ -138,10 +138,60 @@ kv_result_t kv_get_uint32(const char* key, uint32_t* value) {
         return ret;
     }
     
-    // 转换为uint32
-    if (sscanf(value_str, "%u", value) != 1) {
+    // 转换为uint32 - 使用strtoul代替sscanf
+    char* endptr;
+    unsigned long tmp = strtoul(value_str, &endptr, 10);
+    
+    // 检查转换是否成功
+    if (endptr == value_str || *endptr != '\0') {
         return KV_ERROR_READ_FAILED;
     }
+    
+    // 检查是否溢出
+    if (tmp > UINT32_MAX) {
+        return KV_ERROR_READ_FAILED;
+    }
+    
+    *value = (uint32_t)tmp;
+    return KV_SUCCESS;
+}
+
+kv_result_t kv_set_float(const char* key, float value) {
+    if (!g_kv_initialized) {
+        return KV_ERROR_NOT_INITIALIZED;
+    }
+    
+    if (key == NULL) {
+        return KV_ERROR_INVALID_PARAM;
+    }
+    
+    // 将float转换为字符串存储 - 使用sprintf
+    char value_str[32];
+    if (sprintf(value_str, "%.2f", value) < 0) {
+        return KV_ERROR_WRITE_FAILED;
+    }
+    
+    return kv_set_string(key, value_str);
+}
+
+kv_result_t kv_get_float(const char* key, float* value) {
+    if (!g_kv_initialized) {
+        return KV_ERROR_NOT_INITIALIZED;
+    }
+    
+    if (key == NULL || value == NULL) {
+        return KV_ERROR_INVALID_PARAM;
+    }
+    
+    // 读取字符串值
+    char value_str[32];
+    kv_result_t ret = kv_get_string(key, value_str, sizeof(value_str));
+    if (ret != KV_SUCCESS) {
+        return ret;
+    }
+    
+    // 转换为float - 使用atof代替sscanf
+    *value = (float)atof(value_str);
     
     return KV_SUCCESS;
 }

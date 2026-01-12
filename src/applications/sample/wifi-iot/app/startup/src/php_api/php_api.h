@@ -34,6 +34,14 @@ typedef struct {
     char wifi_ssid[32];            // WiFi名称
     char user_id[32];              // 用户ID
     char bind_line[32];            // 生产线
+    
+    // 新增报警阈值配置
+    float alarm_temp_yellow;       // 温度黄色报警阈值 (°C)
+    float alarm_temp_red;          // 温度红色报警阈值 (°C)
+    int alarm_hum_yellow;          // 湿度黄色报警阈值 (%)
+    int alarm_hum_red;             // 湿度红色报警阈值 (%)
+    int alarm_smoke_yellow;        // 烟雾黄色报警阈值
+    int alarm_smoke_red;           // 烟雾红色报警阈值
 } php_api_system_status_t;
 
 // 全局运行状态变量声明
