@@ -50,7 +50,7 @@ static const char* g_webpage_html =
     "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
     "    <title>设备配置页面</title>"
     "    <style>"
-    "        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }"
+    "        body { font-family: Arial, sans-serif; margin: 20px; background-color: #ffffff84; }"
     "        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; "
     "box-shadow: 0 2px 4px rgba(0,0,0,0.1); }"
     "        h1 { color: #333; text-align: center; }"
@@ -400,7 +400,7 @@ php_api_result_t php_api_send_sensor_data(const sensor_data_t* sensor_data) {
  * @brief 发送JSON数据到服务器（核心发送函数）
  */
 php_api_result_t php_api_send_json_data(const char* json_data) {
-    if (json_data == NULL) {
+    if (json_data == NULL) { 
         log_e("PHP_API", "JSON数据为空");
         return PHP_API_ERROR_INVALID_PARAM;
     }

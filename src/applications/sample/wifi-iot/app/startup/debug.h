@@ -159,7 +159,7 @@ static inline int debug_print_long(debug_level_t level, const char* tag, const c
     }
 
     // 如果文本长度小于等于200字符，直接输出
-    if (written <= 200) {
+    if (written <= 210) {
         printf("%s", prefix);
         if (tag != NULL && strlen(tag) > 0) {
             printf("[%s] ", tag);
@@ -168,8 +168,8 @@ static inline int debug_print_long(debug_level_t level, const char* tag, const c
         return written;
     }
 
-    // 分段输出长文本（每次200字符）
-    const size_t CHUNK_SIZE = 200;
+    // 分段输出长文本（每次210字符）
+    const size_t CHUNK_SIZE = 210;
     size_t total_chars = written;
     size_t chunk_count = (total_chars + CHUNK_SIZE - 1) / CHUNK_SIZE; // 向上取整
     

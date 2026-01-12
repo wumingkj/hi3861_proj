@@ -83,4 +83,11 @@ static inline const char* pin_get_usage_description(hi_io_name pin) {
     }
 }
 
+
+
+int get_pin(int pin){
+
+    return pin;
+}
+
 #endif // __PIN_DEFINITIONS_H__

@@ -246,11 +246,11 @@ void OLED_ShowSensorData(const oled_sensor_data_t* sensor_data)
         snprintf(status_str, sizeof(status_str), "Status: Normal");
     } else {
         if (sensor_data->alarm_level == 1) {
-            snprintf(status_str, sizeof(status_str), "Status: Yellow Alarm");
+            snprintf(status_str, sizeof(status_str), "IsAlarm:YellowAlarm");
         } else if (sensor_data->alarm_level == 2) {
-            snprintf(status_str, sizeof(status_str), "Status: Red Alarm");
+            snprintf(status_str, sizeof(status_str), "IsAlarm:RedAlarm");
         } else {
-            snprintf(status_str, sizeof(status_str), "Status: Unknown");
+            snprintf(status_str, sizeof(status_str), "IsAlarm:Unknown");
         }
     }
     OLED_ShowString(0, 30, status_str, 8);

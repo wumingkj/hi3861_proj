@@ -195865,7 +195865,7 @@ Disassembly of section .text_non_rom:
 0044e8f8 <netconn_close_shutdown>:
   44e8f8:	f4dab2ef          	jal	t0,3fa844 <__riscv_save_0>
   44e8fc:	00053797          	auipc	a5,0x53
-  44e900:	3c07a783          	lw	a5,960(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44e900:	3cc7a783          	lw	a5,972(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44e904:	4394                	lw	a3,0(a5)
   44e906:	1101                	addi	sp,sp,-32
   44e908:	872a                	mv	a4,a0
@@ -195879,7 +195879,7 @@ Disassembly of section .text_non_rom:
   44e91e:	c82a                	sw	a0,16(sp)
   44e920:	004c                	addi	a1,sp,4
   44e922:	00053517          	auipc	a0,0x53
-  44e926:	36a52503          	lw	a0,874(a0) # 4a1c8c <_GLOBAL_OFFSET_TABLE_+0x5c>
+  44e926:	37652503          	lw	a0,886(a0) # 4a1c98 <_GLOBAL_OFFSET_TABLE_+0x5c>
   44e92a:	fb9ff0ef          	jal	ra,44e8e2 <netconn_apimsg>
   44e92e:	4772                	lw	a4,28(sp)
   44e930:	401c                	lw	a5,0(s0)
@@ -195900,7 +195900,7 @@ Disassembly of section .text_non_rom:
 0044e950 <netconn_recv_data>:
   44e950:	edbab2ef          	jal	t0,3fa82a <__riscv_save_4>
   44e954:	00053a17          	auipc	s4,0x53
-  44e958:	368a2a03          	lw	s4,872(s4) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44e958:	374a2a03          	lw	s4,884(s4) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44e95c:	000a2783          	lw	a5,0(s4)
   44e960:	1101                	addi	sp,sp,-32
   44e962:	c002                	sw	zero,0(sp)
@@ -195953,7 +195953,7 @@ Disassembly of section .text_non_rom:
   44e9e8:	02f50563          	beq	a0,a5,44ea12 <netconn_recv_data+0xc2>
   44e9ec:	4782                	lw	a5,0(sp)
   44e9ee:	00053717          	auipc	a4,0x53
-  44e9f2:	2ea72703          	lw	a4,746(a4) # 4a1cd8 <_GLOBAL_OFFSET_TABLE_+0xa8>
+  44e9f2:	2f672703          	lw	a4,758(a4) # 4a1ce4 <_GLOBAL_OFFSET_TABLE_+0xa8>
   44e9f6:	04e79063          	bne	a5,a4,44ea36 <netconn_recv_data+0xe6>
   44e9fa:	4791                	li	a5,4
   44e9fc:	04f91d63          	bne	s2,a5,44ea56 <netconn_recv_data+0x106>
@@ -196007,22 +196007,22 @@ Disassembly of section .text_non_rom:
   44ea7e:	08d71263          	bne	a4,a3,44eb02 <netconn_recv_data+0x1b2>
   44ea82:	c222                	sw	s0,4(sp)
   44ea84:	00053917          	auipc	s2,0x53
-  44ea88:	2b892903          	lw	s2,696(s2) # 4a1d3c <_GLOBAL_OFFSET_TABLE_+0x10c>
+  44ea88:	2c492903          	lw	s2,708(s2) # 4a1d48 <_GLOBAL_OFFSET_TABLE_+0x10c>
   44ea8c:	c7a5                	beqz	a5,44eaf4 <netconn_recv_data+0x1a4>
   44ea8e:	03278263          	beq	a5,s2,44eab2 <netconn_recv_data+0x162>
   44ea92:	00053717          	auipc	a4,0x53
-  44ea96:	24672703          	lw	a4,582(a4) # 4a1cd8 <_GLOBAL_OFFSET_TABLE_+0xa8>
+  44ea96:	25272703          	lw	a4,594(a4) # 4a1ce4 <_GLOBAL_OFFSET_TABLE_+0xa8>
   44ea9a:	00e78c63          	beq	a5,a4,44eab2 <netconn_recv_data+0x162>
   44ea9e:	0087d783          	lhu	a5,8(a5) # 80000008 <__rom_data1_load+0x7fb4d3a8>
   44eaa2:	004c                	addi	a1,sp,4
   44eaa4:	00053517          	auipc	a0,0x53
-  44eaa8:	26c52503          	lw	a0,620(a0) # 4a1d10 <_GLOBAL_OFFSET_TABLE_+0xe0>
+  44eaa8:	27852503          	lw	a0,632(a0) # 4a1d1c <_GLOBAL_OFFSET_TABLE_+0xe0>
   44eaac:	c63e                	sw	a5,12(sp)
   44eaae:	e35ff0ef          	jal	ra,44e8e2 <netconn_apimsg>
   44eab2:	4782                	lw	a5,0(sp)
   44eab4:	01278963          	beq	a5,s2,44eac6 <netconn_recv_data+0x176>
   44eab8:	00053717          	auipc	a4,0x53
-  44eabc:	22072703          	lw	a4,544(a4) # 4a1cd8 <_GLOBAL_OFFSET_TABLE_+0xa8>
+  44eabc:	22c72703          	lw	a4,556(a4) # 4a1ce4 <_GLOBAL_OFFSET_TABLE_+0xa8>
   44eac0:	00e78363          	beq	a5,a4,44eac6 <netconn_recv_data+0x176>
   44eac4:	e3bd                	bnez	a5,44eb2a <netconn_recv_data+0x1da>
   44eac6:	5c5c                	lw	a5,60(s0)
@@ -196037,7 +196037,7 @@ Disassembly of section .text_non_rom:
   44ead8:	fde00493          	li	s1,-34
   44eadc:	e92788e3          	beq	a5,s2,44e96c <netconn_recv_data+0x1c>
   44eae0:	00053717          	auipc	a4,0x53
-  44eae4:	1f872703          	lw	a4,504(a4) # 4a1cd8 <_GLOBAL_OFFSET_TABLE_+0xa8>
+  44eae4:	20472703          	lw	a4,516(a4) # 4a1ce4 <_GLOBAL_OFFSET_TABLE_+0xa8>
   44eae8:	e8e782e3          	beq	a5,a4,44e96c <netconn_recv_data+0x1c>
   44eaec:	4444                	lw	s1,12(s0)
   44eaee:	e6049fe3          	bnez	s1,44e96c <netconn_recv_data+0x1c>
@@ -196079,7 +196079,7 @@ Disassembly of section .text_non_rom:
 0044eb46 <netconn_new_with_proto_and_callback>:
   44eb46:	cffab2ef          	jal	t0,3fa844 <__riscv_save_0>
   44eb4a:	00053497          	auipc	s1,0x53
-  44eb4e:	1724a483          	lw	s1,370(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44eb4e:	17e4a483          	lw	s1,382(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44eb52:	409c                	lw	a5,0(s1)
   44eb54:	1101                	addi	sp,sp,-32
   44eb56:	892e                	mv	s2,a1
@@ -196091,7 +196091,7 @@ Disassembly of section .text_non_rom:
   44eb64:	c22a                	sw	a0,4(sp)
   44eb66:	004c                	addi	a1,sp,4
   44eb68:	00053517          	auipc	a0,0x53
-  44eb6c:	1b452503          	lw	a0,436(a0) # 4a1d1c <_GLOBAL_OFFSET_TABLE_+0xec>
+  44eb6c:	1c052503          	lw	a0,448(a0) # 4a1d28 <_GLOBAL_OFFSET_TABLE_+0xec>
   44eb70:	01210623          	sb	s2,12(sp)
   44eb74:	d6fff0ef          	jal	ra,44e8e2 <netconn_apimsg>
   44eb78:	cd11                	beqz	a0,44eb94 <netconn_new_with_proto_and_callback+0x4e>
@@ -196114,7 +196114,7 @@ Disassembly of section .text_non_rom:
 0044eba8 <netconn_initiate_delete>:
   44eba8:	c9dab2ef          	jal	t0,3fa844 <__riscv_save_0>
   44ebac:	00053797          	auipc	a5,0x53
-  44ebb0:	1107a783          	lw	a5,272(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44ebb0:	11c7a783          	lw	a5,284(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44ebb4:	4394                	lw	a3,0(a5)
   44ebb6:	1101                	addi	sp,sp,-32
   44ebb8:	872a                	mv	a4,a0
@@ -196127,7 +196127,7 @@ Disassembly of section .text_non_rom:
   44ebca:	c82a                	sw	a0,16(sp)
   44ebcc:	004c                	addi	a1,sp,4
   44ebce:	00053517          	auipc	a0,0x53
-  44ebd2:	11652503          	lw	a0,278(a0) # 4a1ce4 <_GLOBAL_OFFSET_TABLE_+0xb4>
+  44ebd2:	12252503          	lw	a0,290(a0) # 4a1cf0 <_GLOBAL_OFFSET_TABLE_+0xb4>
   44ebd6:	d0dff0ef          	jal	ra,44e8e2 <netconn_apimsg>
   44ebda:	4772                	lw	a4,28(sp)
   44ebdc:	401c                	lw	a5,0(s0)
@@ -196155,7 +196155,7 @@ Disassembly of section .text_non_rom:
 0044ec12 <netconn_getaddr>:
   44ec12:	c33ab2ef          	jal	t0,3fa844 <__riscv_save_0>
   44ec16:	00053797          	auipc	a5,0x53
-  44ec1a:	0a67a783          	lw	a5,166(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44ec1a:	0b27a783          	lw	a5,178(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44ec1e:	872a                	mv	a4,a0
   44ec20:	4388                	lw	a0,0(a5)
   44ec22:	1101                	addi	sp,sp,-32
@@ -196167,7 +196167,7 @@ Disassembly of section .text_non_rom:
   44ec30:	ce09                	beqz	a2,44ec4a <netconn_getaddr+0x38>
   44ec32:	c62e                	sw	a1,12(sp)
   44ec34:	00053517          	auipc	a0,0x53
-  44ec38:	08452503          	lw	a0,132(a0) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x88>
+  44ec38:	09052503          	lw	a0,144(a0) # 4a1cc4 <_GLOBAL_OFFSET_TABLE_+0x88>
   44ec3c:	004c                	addi	a1,sp,4
   44ec3e:	c23a                	sw	a4,4(sp)
   44ec40:	00d10a23          	sb	a3,20(sp)
@@ -196183,7 +196183,7 @@ Disassembly of section .text_non_rom:
 0044ec5c <netconn_trygetaddr>:
   44ec5c:	bcfab2ef          	jal	t0,3fa82a <__riscv_save_4>
   44ec60:	00053797          	auipc	a5,0x53
-  44ec64:	05c7a783          	lw	a5,92(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44ec64:	0687a783          	lw	a5,104(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44ec68:	4398                	lw	a4,0(a5)
   44ec6a:	1101                	addi	sp,sp,-32
   44ec6c:	893e                	mv	s2,a5
@@ -196208,7 +196208,7 @@ Disassembly of section .text_non_rom:
   44ec9c:	02f71c63          	bne	a4,a5,44ecd4 <netconn_trygetaddr+0x78>
   44eca0:	4641                	li	a2,16
   44eca2:	00053597          	auipc	a1,0x53
-  44eca6:	09e5a583          	lw	a1,158(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  44eca6:	0aa5a583          	lw	a1,170(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   44ecaa:	8526                	mv	a0,s1
   44ecac:	aa1ac0ef          	jal	ra,3fb74c <memcmp>
   44ecb0:	00a03533          	snez	a0,a0
@@ -196231,7 +196231,7 @@ Disassembly of section .text_non_rom:
 0044ecde <netconn_bind>:
   44ecde:	b67ab2ef          	jal	t0,3fa844 <__riscv_save_0>
   44ece2:	00053797          	auipc	a5,0x53
-  44ece6:	fda7a783          	lw	a5,-38(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44ece6:	fe67a783          	lw	a5,-26(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44ecea:	4398                	lw	a4,0(a5)
   44ecec:	7179                	addi	sp,sp,-48
   44ecee:	892a                	mv	s2,a0
@@ -196242,22 +196242,22 @@ Disassembly of section .text_non_rom:
   44ecfc:	842e                	mv	s0,a1
   44ecfe:	e589                	bnez	a1,44ed08 <netconn_bind+0x2a>
   44ed00:	00053417          	auipc	s0,0x53
-  44ed04:	01842403          	lw	s0,24(s0) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  44ed04:	02442403          	lw	s0,36(s0) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   44ed08:	03092783          	lw	a5,48(s2)
   44ed0c:	0207f793          	andi	a5,a5,32
   44ed10:	ef99                	bnez	a5,44ed2e <netconn_bind+0x50>
   44ed12:	00053597          	auipc	a1,0x53
-  44ed16:	02e5a583          	lw	a1,46(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  44ed16:	03a5a583          	lw	a1,58(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   44ed1a:	8522                	mv	a0,s0
   44ed1c:	c632                	sw	a2,12(sp)
   44ed1e:	1120c0ef          	jal	ra,45ae30 <ip_addr_cmp>
   44ed22:	4632                	lw	a2,12(sp)
   44ed24:	c509                	beqz	a0,44ed2e <netconn_bind+0x50>
   44ed26:	00053417          	auipc	s0,0x53
-  44ed2a:	f3242403          	lw	s0,-206(s0) # 4a1c58 <_GLOBAL_OFFSET_TABLE_+0x28>
+  44ed2a:	f3e42403          	lw	s0,-194(s0) # 4a1c64 <_GLOBAL_OFFSET_TABLE_+0x28>
   44ed2e:	084c                	addi	a1,sp,20
   44ed30:	00053517          	auipc	a0,0x53
-  44ed34:	f3052503          	lw	a0,-208(a0) # 4a1c60 <_GLOBAL_OFFSET_TABLE_+0x30>
+  44ed34:	f3c52503          	lw	a0,-196(a0) # 4a1c6c <_GLOBAL_OFFSET_TABLE_+0x30>
   44ed38:	ca4a                	sw	s2,20(sp)
   44ed3a:	ce22                	sw	s0,28(sp)
   44ed3c:	02c11023          	sh	a2,32(sp)
@@ -196272,7 +196272,7 @@ Disassembly of section .text_non_rom:
 0044ed56 <netconn_connect>:
   44ed56:	aefab2ef          	jal	t0,3fa844 <__riscv_save_0>
   44ed5a:	00053797          	auipc	a5,0x53
-  44ed5e:	f627a783          	lw	a5,-158(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44ed5e:	f6e7a783          	lw	a5,-146(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44ed62:	4394                	lw	a3,0(a5)
   44ed64:	1101                	addi	sp,sp,-32
   44ed66:	872a                	mv	a4,a0
@@ -196282,10 +196282,10 @@ Disassembly of section .text_non_rom:
   44ed70:	c30d                	beqz	a4,44ed92 <netconn_connect+0x3c>
   44ed72:	e589                	bnez	a1,44ed7c <netconn_connect+0x26>
   44ed74:	00053597          	auipc	a1,0x53
-  44ed78:	fa45a583          	lw	a1,-92(a1) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  44ed78:	fb05a583          	lw	a1,-80(a1) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   44ed7c:	c62e                	sw	a1,12(sp)
   44ed7e:	00053517          	auipc	a0,0x53
-  44ed82:	ef252503          	lw	a0,-270(a0) # 4a1c70 <_GLOBAL_OFFSET_TABLE_+0x40>
+  44ed82:	efe52503          	lw	a0,-258(a0) # 4a1c7c <_GLOBAL_OFFSET_TABLE_+0x40>
   44ed86:	004c                	addi	a1,sp,4
   44ed88:	c23a                	sw	a4,4(sp)
   44ed8a:	00c11823          	sh	a2,16(sp)
@@ -196300,7 +196300,7 @@ Disassembly of section .text_non_rom:
 0044eda4 <netconn_disconnect>:
   44eda4:	aa1ab2ef          	jal	t0,3fa844 <__riscv_save_0>
   44eda8:	00053797          	auipc	a5,0x53
-  44edac:	f147a783          	lw	a5,-236(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44edac:	f207a783          	lw	a5,-224(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44edb0:	4394                	lw	a3,0(a5)
   44edb2:	1101                	addi	sp,sp,-32
   44edb4:	872a                	mv	a4,a0
@@ -196310,7 +196310,7 @@ Disassembly of section .text_non_rom:
   44edbe:	cb09                	beqz	a4,44edd0 <netconn_disconnect+0x2c>
   44edc0:	004c                	addi	a1,sp,4
   44edc2:	00053517          	auipc	a0,0x53
-  44edc6:	ef252503          	lw	a0,-270(a0) # 4a1cb4 <_GLOBAL_OFFSET_TABLE_+0x84>
+  44edc6:	efe52503          	lw	a0,-258(a0) # 4a1cc0 <_GLOBAL_OFFSET_TABLE_+0x84>
   44edca:	c23a                	sw	a4,4(sp)
   44edcc:	b17ff0ef          	jal	ra,44e8e2 <netconn_apimsg>
   44edd0:	4772                	lw	a4,28(sp)
@@ -196323,7 +196323,7 @@ Disassembly of section .text_non_rom:
 0044ede2 <netconn_listen_with_backlog>:
   44ede2:	a63ab2ef          	jal	t0,3fa844 <__riscv_save_0>
   44ede6:	00053797          	auipc	a5,0x53
-  44edea:	ed67a783          	lw	a5,-298(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44edea:	ee27a783          	lw	a5,-286(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44edee:	4394                	lw	a3,0(a5)
   44edf0:	1101                	addi	sp,sp,-32
   44edf2:	872a                	mv	a4,a0
@@ -196333,7 +196333,7 @@ Disassembly of section .text_non_rom:
   44edfc:	cb19                	beqz	a4,44ee12 <netconn_listen_with_backlog+0x30>
   44edfe:	00b10623          	sb	a1,12(sp)
   44ee02:	00053517          	auipc	a0,0x53
-  44ee06:	e5252503          	lw	a0,-430(a0) # 4a1c54 <_GLOBAL_OFFSET_TABLE_+0x24>
+  44ee06:	e5e52503          	lw	a0,-418(a0) # 4a1c60 <_GLOBAL_OFFSET_TABLE_+0x24>
   44ee0a:	004c                	addi	a1,sp,4
   44ee0c:	c23a                	sw	a4,4(sp)
   44ee0e:	ad5ff0ef          	jal	ra,44e8e2 <netconn_apimsg>
@@ -196347,7 +196347,7 @@ Disassembly of section .text_non_rom:
 0044ee24 <netconn_accept>:
   44ee24:	a07ab2ef          	jal	t0,3fa82a <__riscv_save_4>
   44ee28:	00053797          	auipc	a5,0x53
-  44ee2c:	e947a783          	lw	a5,-364(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44ee2c:	ea07a783          	lw	a5,-352(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44ee30:	4398                	lw	a4,0(a5)
   44ee32:	1101                	addi	sp,sp,-32
   44ee34:	c002                	sw	zero,0(sp)
@@ -196391,11 +196391,11 @@ Disassembly of section .text_non_rom:
   44ee9a:	9782                	jalr	a5
   44ee9c:	4702                	lw	a4,0(sp)
   44ee9e:	00053697          	auipc	a3,0x53
-  44eea2:	e5e6a683          	lw	a3,-418(a3) # 4a1cfc <_GLOBAL_OFFSET_TABLE_+0xcc>
+  44eea2:	e6a6a683          	lw	a3,-406(a3) # 4a1d08 <_GLOBAL_OFFSET_TABLE_+0xcc>
   44eea6:	5795                	li	a5,-27
   44eea8:	f8d70be3          	beq	a4,a3,44ee3e <netconn_accept+0x1a>
   44eeac:	00053697          	auipc	a3,0x53
-  44eeb0:	e906a683          	lw	a3,-368(a3) # 4a1d3c <_GLOBAL_OFFSET_TABLE_+0x10c>
+  44eeb0:	e9c6a683          	lw	a3,-356(a3) # 4a1d48 <_GLOBAL_OFFSET_TABLE_+0x10c>
   44eeb4:	fdf00793          	li	a5,-33
   44eeb8:	f8d703e3          	beq	a4,a3,44ee3e <netconn_accept+0x1a>
   44eebc:	02091063          	bnez	s2,44eedc <netconn_accept+0xb8>
@@ -196410,7 +196410,7 @@ Disassembly of section .text_non_rom:
   44eeda:	b795                	j	44ee3e <netconn_accept+0x1a>
   44eedc:	004c                	addi	a1,sp,4
   44eede:	00053517          	auipc	a0,0x53
-  44eee2:	df252503          	lw	a0,-526(a0) # 4a1cd0 <_GLOBAL_OFFSET_TABLE_+0xa0>
+  44eee2:	dfe52503          	lw	a0,-514(a0) # 4a1cdc <_GLOBAL_OFFSET_TABLE_+0xa0>
   44eee6:	c24a                	sw	s2,4(sp)
   44eee8:	9fbff0ef          	jal	ra,44e8e2 <netconn_apimsg>
   44eeec:	4781                	li	a5,0
@@ -196436,7 +196436,7 @@ Disassembly of section .text_non_rom:
 0044ef20 <netconn_recv>:
   44ef20:	90bab2ef          	jal	t0,3fa82a <__riscv_save_4>
   44ef24:	00053797          	auipc	a5,0x53
-  44ef28:	d987a783          	lw	a5,-616(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44ef28:	da47a783          	lw	a5,-604(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44ef2c:	4398                	lw	a4,0(a5)
   44ef2e:	1141                	addi	sp,sp,-16
   44ef30:	89be                	mv	s3,a5
@@ -196499,7 +196499,7 @@ Disassembly of section .text_non_rom:
 0044efca <netconn_send>:
   44efca:	87bab2ef          	jal	t0,3fa844 <__riscv_save_0>
   44efce:	00053797          	auipc	a5,0x53
-  44efd2:	cee7a783          	lw	a5,-786(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44efd2:	cfa7a783          	lw	a5,-774(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44efd6:	4394                	lw	a3,0(a5)
   44efd8:	1101                	addi	sp,sp,-32
   44efda:	872a                	mv	a4,a0
@@ -196509,7 +196509,7 @@ Disassembly of section .text_non_rom:
   44efe4:	cb11                	beqz	a4,44eff8 <netconn_send+0x2e>
   44efe6:	c62e                	sw	a1,12(sp)
   44efe8:	00053517          	auipc	a0,0x53
-  44efec:	d1052503          	lw	a0,-752(a0) # 4a1cf8 <_GLOBAL_OFFSET_TABLE_+0xc8>
+  44efec:	d1c52503          	lw	a0,-740(a0) # 4a1d04 <_GLOBAL_OFFSET_TABLE_+0xc8>
   44eff0:	004c                	addi	a1,sp,4
   44eff2:	c23a                	sw	a4,4(sp)
   44eff4:	8efff0ef          	jal	ra,44e8e2 <netconn_apimsg>
@@ -196523,7 +196523,7 @@ Disassembly of section .text_non_rom:
 0044f00a <netconn_write_partly>:
   44f00a:	821ab2ef          	jal	t0,3fa82a <__riscv_save_4>
   44f00e:	00053917          	auipc	s2,0x53
-  44f012:	cae92903          	lw	s2,-850(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44f012:	cba92903          	lw	s2,-838(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44f016:	00092783          	lw	a5,0(s2)
   44f01a:	1101                	addi	sp,sp,-32
   44f01c:	842a                	mv	s0,a0
@@ -196565,7 +196565,7 @@ Disassembly of section .text_non_rom:
   44f07c:	cc2a                	sw	a0,24(sp)
   44f07e:	004c                	addi	a1,sp,4
   44f080:	00053517          	auipc	a0,0x53
-  44f084:	c7452503          	lw	a0,-908(a0) # 4a1cf4 <_GLOBAL_OFFSET_TABLE_+0xc4>
+  44f084:	c8052503          	lw	a0,-896(a0) # 4a1d00 <_GLOBAL_OFFSET_TABLE_+0xc4>
   44f088:	85bff0ef          	jal	ra,44e8e2 <netconn_apimsg>
   44f08c:	ed19                	bnez	a0,44f0aa <netconn_write_partly+0xa0>
   44f08e:	fa0984e3          	beqz	s3,44f036 <netconn_write_partly+0x2c>
@@ -196589,7 +196589,7 @@ Disassembly of section .text_non_rom:
 0044f0bc <netconn_leave_group>:
   44f0bc:	f88ab2ef          	jal	t0,3fa844 <__riscv_save_0>
   44f0c0:	00053797          	auipc	a5,0x53
-  44f0c4:	bfc7a783          	lw	a5,-1028(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44f0c4:	c087a783          	lw	a5,-1016(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44f0c8:	872a                	mv	a4,a0
   44f0ca:	4388                	lw	a0,0(a5)
   44f0cc:	1101                	addi	sp,sp,-32
@@ -196599,13 +196599,13 @@ Disassembly of section .text_non_rom:
   44f0d6:	c715                	beqz	a4,44f102 <netconn_leave_group+0x46>
   44f0d8:	e589                	bnez	a1,44f0e2 <netconn_leave_group+0x26>
   44f0da:	00053597          	auipc	a1,0x53
-  44f0de:	c3e5a583          	lw	a1,-962(a1) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  44f0de:	c4a5a583          	lw	a1,-950(a1) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   44f0e2:	e609                	bnez	a2,44f0ec <netconn_leave_group+0x30>
   44f0e4:	00053617          	auipc	a2,0x53
-  44f0e8:	c3462603          	lw	a2,-972(a2) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  44f0e8:	c4062603          	lw	a2,-960(a2) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   44f0ec:	c62e                	sw	a1,12(sp)
   44f0ee:	00053517          	auipc	a0,0x53
-  44f0f2:	bba52503          	lw	a0,-1094(a0) # 4a1ca8 <_GLOBAL_OFFSET_TABLE_+0x78>
+  44f0f2:	bc652503          	lw	a0,-1082(a0) # 4a1cb4 <_GLOBAL_OFFSET_TABLE_+0x78>
   44f0f6:	004c                	addi	a1,sp,4
   44f0f8:	c23a                	sw	a4,4(sp)
   44f0fa:	c832                	sw	a2,16(sp)
@@ -196621,7 +196621,7 @@ Disassembly of section .text_non_rom:
 0044f114 <netconn_gethostbyname_addrtype>:
   44f114:	f30ab2ef          	jal	t0,3fa844 <__riscv_save_0>
   44f118:	00053797          	auipc	a5,0x53
-  44f11c:	ba47a783          	lw	a5,-1116(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44f11c:	bb07a783          	lw	a5,-1104(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44f120:	4398                	lw	a4,0(a5)
   44f122:	7179                	addi	sp,sp,-48
   44f124:	84be                	mv	s1,a5
@@ -196649,7 +196649,7 @@ Disassembly of section .text_non_rom:
   44f156:	5602                	lw	a2,32(sp)
   44f158:	084c                	addi	a1,sp,20
   44f15a:	00053517          	auipc	a0,0x53
-  44f15e:	b2652503          	lw	a0,-1242(a0) # 4a1c80 <_GLOBAL_OFFSET_TABLE_+0x50>
+  44f15e:	b3252503          	lw	a0,-1230(a0) # 4a1c8c <_GLOBAL_OFFSET_TABLE_+0x50>
   44f162:	67d180ef          	jal	ra,467fde <tcpip_send_msg_wait_sem>
   44f166:	842a                	mv	s0,a0
   44f168:	5502                	lw	a0,32(sp)
@@ -196748,7 +196748,7 @@ Disassembly of section .text_non_rom:
   44f24e:	842a                	mv	s0,a0
   44f250:	dd69                	beqz	a0,44f22a <recv_raw+0x36>
   44f252:	00053597          	auipc	a1,0x53
-  44f256:	a5a5a583          	lw	a1,-1446(a1) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  44f256:	a665a583          	lw	a1,-1434(a1) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   44f25a:	4651                	li	a2,20
   44f25c:	05d1                	addi	a1,a1,20
   44f25e:	01242023          	sw	s2,0(s0)
@@ -197613,7 +197613,7 @@ Disassembly of section .text_non_rom:
 0044fb94 <netconn_drain>:
   44fb94:	c89aa2ef          	jal	t0,3fa81c <__riscv_save_10>
   44fb98:	00052917          	auipc	s2,0x52
-  44fb9c:	12492903          	lw	s2,292(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  44fb9c:	13092903          	lw	s2,304(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   44fba0:	00092783          	lw	a5,0(s2)
   44fba4:	1141                	addi	sp,sp,-16
   44fba6:	c402                	sw	zero,8(sp)
@@ -197861,14 +197861,14 @@ Disassembly of section .text_non_rom:
   44fe50:	871ff0ef          	jal	ra,44f6c0 <lwip_netconn_do_close_internal>
   44fe54:	c115                	beqz	a0,44fe78 <lwip_netconn_do_delconn+0xc4>
   44fe56:	00052517          	auipc	a0,0x52
-  44fe5a:	eb252503          	lw	a0,-334(a0) # 4a1d08 <_GLOBAL_OFFSET_TABLE_+0xd8>
+  44fe5a:	ebe52503          	lw	a0,-322(a0) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xd8>
   44fe5e:	10a130ef          	jal	ra,462f68 <sys_mutex_unlock>
   44fe62:	4008                	lw	a0,0(s0)
   44fe64:	4581                	li	a1,0
   44fe66:	0541                	addi	a0,a0,16
   44fe68:	022130ef          	jal	ra,462e8a <sys_arch_sem_wait>
   44fe6c:	00052517          	auipc	a0,0x52
-  44fe70:	e9c52503          	lw	a0,-356(a0) # 4a1d08 <_GLOBAL_OFFSET_TABLE_+0xd8>
+  44fe70:	ea852503          	lw	a0,-344(a0) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xd8>
   44fe74:	0e4130ef          	jal	ra,462f58 <sys_mutex_lock>
   44fe78:	9f1aa06f          	j	3fa868 <__riscv_restore_0>
   44fe7c:	153100ef          	jal	ra,4607ce <raw_remove>
@@ -198062,7 +198062,7 @@ Disassembly of section .text_non_rom:
   450068:	b78d                	j	44ffca <lwip_netconn_do_connect+0x2c>
   45006a:	5b98                	lw	a4,48(a5)
   45006c:	00052517          	auipc	a0,0x52
-  450070:	c9c52503          	lw	a0,-868(a0) # 4a1d08 <_GLOBAL_OFFSET_TABLE_+0xd8>
+  450070:	ca852503          	lw	a0,-856(a0) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xd8>
   450074:	0fb77713          	andi	a4,a4,251
   450078:	db98                	sw	a4,48(a5)
   45007a:	401c                	lw	a5,0(s0)
@@ -198073,7 +198073,7 @@ Disassembly of section .text_non_rom:
   450086:	0541                	addi	a0,a0,16
   450088:	603120ef          	jal	ra,462e8a <sys_arch_sem_wait>
   45008c:	00052517          	auipc	a0,0x52
-  450090:	c7c52503          	lw	a0,-900(a0) # 4a1d08 <_GLOBAL_OFFSET_TABLE_+0xd8>
+  450090:	c8852503          	lw	a0,-888(a0) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xd8>
   450094:	6c5120ef          	jal	ra,462f58 <sys_mutex_lock>
   450098:	fd0aa06f          	j	3fa868 <__riscv_restore_0>
 
@@ -198106,7 +198106,7 @@ Disassembly of section .text_non_rom:
 004500e0 <lwip_netconn_do_listen>:
   4500e0:	f4aaa2ef          	jal	t0,3fa82a <__riscv_save_4>
   4500e4:	00052497          	auipc	s1,0x52
-  4500e8:	bd84a483          	lw	s1,-1064(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4500e8:	be44a483          	lw	s1,-1052(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4500ec:	409c                	lw	a5,0(s1)
   4500ee:	842a                	mv	s0,a0
   4500f0:	4108                	lw	a0,0(a0)
@@ -198164,7 +198164,7 @@ Disassembly of section .text_non_rom:
   450176:	0007ac23          	sw	zero,24(a5)
   45017a:	401c                	lw	a5,0(s0)
   45017c:	00052597          	auipc	a1,0x52
-  450180:	bc45a583          	lw	a1,-1084(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  450180:	bd05a583          	lw	a1,-1072(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   450184:	4788                	lw	a0,8(a5)
   450186:	4ab0a0ef          	jal	ra,45ae30 <ip_addr_cmp>
   45018a:	cd19                	beqz	a0,4501a8 <lwip_netconn_do_listen+0xc8>
@@ -198234,7 +198234,7 @@ Disassembly of section .text_non_rom:
 00450236 <lwip_netconn_do_send>:
   450236:	e0eaa2ef          	jal	t0,3fa844 <__riscv_save_0>
   45023a:	00052497          	auipc	s1,0x52
-  45023e:	a824a483          	lw	s1,-1406(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45023e:	a8e4a483          	lw	s1,-1394(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   450242:	409c                	lw	a5,0(s1)
   450244:	1101                	addi	sp,sp,-32
   450246:	5681                	li	a3,-32
@@ -198464,14 +198464,14 @@ Disassembly of section .text_non_rom:
   450492:	882ff0ef          	jal	ra,44f514 <lwip_netconn_do_writemore>
   450496:	c115                	beqz	a0,4504ba <lwip_netconn_do_write+0x9a>
   450498:	00052517          	auipc	a0,0x52
-  45049c:	87052503          	lw	a0,-1936(a0) # 4a1d08 <_GLOBAL_OFFSET_TABLE_+0xd8>
+  45049c:	87c52503          	lw	a0,-1924(a0) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xd8>
   4504a0:	2c9120ef          	jal	ra,462f68 <sys_mutex_unlock>
   4504a4:	4008                	lw	a0,0(s0)
   4504a6:	4581                	li	a1,0
   4504a8:	0541                	addi	a0,a0,16
   4504aa:	1e1120ef          	jal	ra,462e8a <sys_arch_sem_wait>
   4504ae:	00052517          	auipc	a0,0x52
-  4504b2:	85a52503          	lw	a0,-1958(a0) # 4a1d08 <_GLOBAL_OFFSET_TABLE_+0xd8>
+  4504b2:	86652503          	lw	a0,-1946(a0) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xd8>
   4504b6:	2a3120ef          	jal	ra,462f58 <sys_mutex_lock>
   4504ba:	baeaa06f          	j	3fa868 <__riscv_restore_0>
   4504be:	57a5                	li	a5,-23
@@ -198658,14 +198658,14 @@ Disassembly of section .text_non_rom:
   450688:	838ff0ef          	jal	ra,44f6c0 <lwip_netconn_do_close_internal>
   45068c:	c115                	beqz	a0,4506b0 <lwip_netconn_do_close+0xf0>
   45068e:	00051517          	auipc	a0,0x51
-  450692:	67a52503          	lw	a0,1658(a0) # 4a1d08 <_GLOBAL_OFFSET_TABLE_+0xd8>
+  450692:	68652503          	lw	a0,1670(a0) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xd8>
   450696:	0d3120ef          	jal	ra,462f68 <sys_mutex_unlock>
   45069a:	4008                	lw	a0,0(s0)
   45069c:	4581                	li	a1,0
   45069e:	0541                	addi	a0,a0,16
   4506a0:	7ea120ef          	jal	ra,462e8a <sys_arch_sem_wait>
   4506a4:	00051517          	auipc	a0,0x51
-  4506a8:	66452503          	lw	a0,1636(a0) # 4a1d08 <_GLOBAL_OFFSET_TABLE_+0xd8>
+  4506a8:	67052503          	lw	a0,1648(a0) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xd8>
   4506ac:	0ad120ef          	jal	ra,462f58 <sys_mutex_lock>
   4506b0:	9b8aa06f          	j	3fa868 <__riscv_restore_0>
   4506b4:	4601                	li	a2,0
@@ -198743,13 +198743,13 @@ Disassembly of section .text_non_rom:
   450766:	57ed                	li	a5,-5
   450768:	02f71263          	bne	a4,a5,45078c <lwip_netconn_do_gethostbyname+0x4c>
   45076c:	00051517          	auipc	a0,0x51
-  450770:	59c52503          	lw	a0,1436(a0) # 4a1d08 <_GLOBAL_OFFSET_TABLE_+0xd8>
+  450770:	5a852503          	lw	a0,1448(a0) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xd8>
   450774:	7f4120ef          	jal	ra,462f68 <sys_mutex_unlock>
   450778:	4448                	lw	a0,12(s0)
   45077a:	4581                	li	a1,0
   45077c:	70e120ef          	jal	ra,462e8a <sys_arch_sem_wait>
   450780:	00051517          	auipc	a0,0x51
-  450784:	58852503          	lw	a0,1416(a0) # 4a1d08 <_GLOBAL_OFFSET_TABLE_+0xd8>
+  450784:	59452503          	lw	a0,1428(a0) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xd8>
   450788:	7d0120ef          	jal	ra,462f58 <sys_mutex_lock>
   45078c:	8dcaa06f          	j	3fa868 <__riscv_restore_0>
 
@@ -198879,9 +198879,9 @@ Disassembly of section .text_non_rom:
   4508ec:	02454783          	lbu	a5,36(a0)
   4508f0:	ef89                	bnez	a5,45090a <lwip_ifconfig_conflict_res_free+0x2a>
   4508f2:	00051797          	auipc	a5,0x51
-  4508f6:	3467a783          	lw	a5,838(a5) # 4a1c38 <_GLOBAL_OFFSET_TABLE_+0x8>
+  4508f6:	3527a783          	lw	a5,850(a5) # 4a1c44 <_GLOBAL_OFFSET_TABLE_+0x8>
   4508fa:	00051517          	auipc	a0,0x51
-  4508fe:	3c652503          	lw	a0,966(a0) # 4a1cc0 <_GLOBAL_OFFSET_TABLE_+0x90>
+  4508fe:	3d252503          	lw	a0,978(a0) # 4a1ccc <_GLOBAL_OFFSET_TABLE_+0x90>
   450902:	0007a023          	sw	zero,0(a5)
   450906:	628120ef          	jal	ra,462f2e <sys_sem_free>
   45090a:	481c                	lw	a5,16(s0)
@@ -198891,9 +198891,9 @@ Disassembly of section .text_non_rom:
   450914:	4799                	li	a5,6
   450916:	00f71e63          	bne	a4,a5,450932 <lwip_ifconfig_conflict_res_free+0x52>
   45091a:	00051797          	auipc	a5,0x51
-  45091e:	3ce7a783          	lw	a5,974(a5) # 4a1ce8 <_GLOBAL_OFFSET_TABLE_+0xb8>
+  45091e:	3da7a783          	lw	a5,986(a5) # 4a1cf4 <_GLOBAL_OFFSET_TABLE_+0xb8>
   450922:	00051517          	auipc	a0,0x51
-  450926:	34652503          	lw	a0,838(a0) # 4a1c68 <_GLOBAL_OFFSET_TABLE_+0x38>
+  450926:	35252503          	lw	a0,850(a0) # 4a1c74 <_GLOBAL_OFFSET_TABLE_+0x38>
   45092a:	0007a023          	sw	zero,0(a5)
   45092e:	600120ef          	jal	ra,462f2e <sys_sem_free>
   450932:	f37a906f          	j	3fa868 <__riscv_restore_0>
@@ -198901,7 +198901,7 @@ Disassembly of section .text_non_rom:
 00450936 <lwip_ifconfig_ip>:
   450936:	ef5a92ef          	jal	t0,3fa82a <__riscv_save_4>
   45093a:	00051a17          	auipc	s4,0x51
-  45093e:	382a2a03          	lw	s4,898(s4) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45093e:	38ea2a03          	lw	s4,910(s4) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   450942:	1101                	addi	sp,sp,-32
   450944:	000a2783          	lw	a5,0(s4)
   450948:	00810993          	addi	s3,sp,8
@@ -198935,7 +198935,7 @@ Disassembly of section .text_non_rom:
   45099a:	84aa                	mv	s1,a0
   45099c:	f979                	bnez	a0,450972 <lwip_ifconfig_ip+0x3c>
   45099e:	00051797          	auipc	a5,0x51
-  4509a2:	2b27a783          	lw	a5,690(a5) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  4509a2:	2be7a783          	lw	a5,702(a5) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   4509a6:	0007a903          	lw	s2,0(a5)
   4509aa:	01c40b13          	addi	s6,s0,28
   4509ae:	4a99                	li	s5,6
@@ -198952,7 +198952,7 @@ Disassembly of section .text_non_rom:
   4509ce:	8ff9                	and	a5,a5,a4
   4509d0:	c78d                	beqz	a5,4509fa <lwip_ifconfig_ip+0xc4>
   4509d2:	00051797          	auipc	a5,0x51
-  4509d6:	2b67a783          	lw	a5,694(a5) # 4a1c88 <_GLOBAL_OFFSET_TABLE_+0x58>
+  4509d6:	2c27a783          	lw	a5,706(a5) # 4a1c94 <_GLOBAL_OFFSET_TABLE_+0x58>
   4509da:	439c                	lw	a5,0(a5)
   4509dc:	02042823          	sw	zero,48(s0)
   4509e0:	02042a23          	sw	zero,52(s0)
@@ -199014,7 +199014,7 @@ Disassembly of section .text_non_rom:
 00450a88 <lwip_ifconfig_netmask>:
   450a88:	da3a92ef          	jal	t0,3fa82a <__riscv_save_4>
   450a8c:	00051917          	auipc	s2,0x51
-  450a90:	23092903          	lw	s2,560(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  450a90:	23c92903          	lw	s2,572(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   450a94:	1101                	addi	sp,sp,-32
   450a96:	00092783          	lw	a5,0(s2)
   450a9a:	00810993          	addi	s3,sp,8
@@ -199045,7 +199045,7 @@ Disassembly of section .text_non_rom:
   450ae2:	4501                	li	a0,0
   450ae4:	bfd1                	j	450ab8 <lwip_ifconfig_netmask+0x30>
   450ae6:	00051797          	auipc	a5,0x51
-  450aea:	16a7a783          	lw	a5,362(a5) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  450aea:	1767a783          	lw	a5,374(a5) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   450aee:	4384                	lw	s1,0(a5)
   450af0:	4a19                	li	s4,6
   450af2:	00840a93          	addi	s5,s0,8
@@ -199065,7 +199065,7 @@ Disassembly of section .text_non_rom:
   450b1a:	8ff9                	and	a5,a5,a4
   450b1c:	d3f9                	beqz	a5,450ae2 <lwip_ifconfig_netmask+0x5a>
   450b1e:	00051797          	auipc	a5,0x51
-  450b22:	16a7a783          	lw	a5,362(a5) # 4a1c88 <_GLOBAL_OFFSET_TABLE_+0x58>
+  450b22:	1767a783          	lw	a5,374(a5) # 4a1c94 <_GLOBAL_OFFSET_TABLE_+0x58>
   450b26:	439c                	lw	a5,0(a5)
   450b28:	02042823          	sw	zero,48(s0)
   450b2c:	02042a23          	sw	zero,52(s0)
@@ -199103,7 +199103,7 @@ Disassembly of section .text_non_rom:
 00450b8a <lwip_ifconfig_gw>:
   450b8a:	ca1a92ef          	jal	t0,3fa82a <__riscv_save_4>
   450b8e:	00051997          	auipc	s3,0x51
-  450b92:	12e9a983          	lw	s3,302(s3) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  450b92:	13a9a983          	lw	s3,314(s3) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   450b96:	1101                	addi	sp,sp,-32
   450b98:	0009a783          	lw	a5,0(s3)
   450b9c:	00810913          	addi	s2,sp,8
@@ -199152,7 +199152,7 @@ Disassembly of section .text_non_rom:
   450c1c:	8ff9                	and	a5,a5,a4
   450c1e:	fbc5                	bnez	a5,450bce <lwip_ifconfig_gw+0x44>
   450c20:	00051797          	auipc	a5,0x51
-  450c24:	0687a783          	lw	a5,104(a5) # 4a1c88 <_GLOBAL_OFFSET_TABLE_+0x58>
+  450c24:	0747a783          	lw	a5,116(a5) # 4a1c94 <_GLOBAL_OFFSET_TABLE_+0x58>
   450c28:	439c                	lw	a5,0(a5)
   450c2a:	00878f63          	beq	a5,s0,450c48 <lwip_ifconfig_gw+0xbe>
   450c2e:	02042823          	sw	zero,48(s0)
@@ -199399,7 +199399,7 @@ Disassembly of section .text_non_rom:
 00450ee0 <lwip_ifconfig_show_internal>:
   450ee0:	94ba92ef          	jal	t0,3fa82a <__riscv_save_4>
   450ee4:	00051797          	auipc	a5,0x51
-  450ee8:	d6c7a783          	lw	a5,-660(a5) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  450ee8:	d787a783          	lw	a5,-648(a5) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   450eec:	0007a903          	lw	s2,0(a5)
   450ef0:	05c50493          	addi	s1,a0,92
   450ef4:	00091c63          	bnez	s2,450f0c <lwip_ifconfig_show_internal+0x2c>
@@ -199601,7 +199601,7 @@ Disassembly of section .text_non_rom:
 00451120 <lwip_ifconfig_prase_additional>:
   451120:	ef4a92ef          	jal	t0,3fa814 <__riscv_save_12>
   451124:	00051a17          	auipc	s4,0x51
-  451128:	b98a2a03          	lw	s4,-1128(s4) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  451128:	ba4a2a03          	lw	s4,-1116(s4) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45112c:	000a2783          	lw	a5,0(s4)
   451130:	7179                	addi	sp,sp,-48
   451132:	89aa                	mv	s3,a0
@@ -199850,7 +199850,7 @@ Disassembly of section .text_non_rom:
   4513ca:	eb9d                	bnez	a5,451400 <lwip_ifconfig_prase_args+0x64>
   4513cc:	4581                	li	a1,0
   4513ce:	00051517          	auipc	a0,0x51
-  4513d2:	8f252503          	lw	a0,-1806(a0) # 4a1cc0 <_GLOBAL_OFFSET_TABLE_+0x90>
+  4513d2:	8fe52503          	lw	a0,-1794(a0) # 4a1ccc <_GLOBAL_OFFSET_TABLE_+0x90>
   4513d6:	269110ef          	jal	ra,462e3e <sys_sem_new>
   4513da:	cd09                	beqz	a0,4513f4 <lwip_ifconfig_prase_args+0x58>
   4513dc:	0cf00593          	li	a1,207
@@ -199861,7 +199861,7 @@ Disassembly of section .text_non_rom:
   4513ee:	8522                	mv	a0,s0
   4513f0:	c6ea906f          	j	3fa85e <__riscv_restore_4>
   4513f4:	00051797          	auipc	a5,0x51
-  4513f8:	8447a783          	lw	a5,-1980(a5) # 4a1c38 <_GLOBAL_OFFSET_TABLE_+0x8>
+  4513f8:	8507a783          	lw	a5,-1968(a5) # 4a1c44 <_GLOBAL_OFFSET_TABLE_+0x8>
   4513fc:	4705                	li	a4,1
   4513fe:	c398                	sw	a4,0(a5)
   451400:	489c                	lw	a5,16(s1)
@@ -199872,11 +199872,11 @@ Disassembly of section .text_non_rom:
   45140c:	fef711e3          	bne	a4,a5,4513ee <lwip_ifconfig_prase_args+0x52>
   451410:	4581                	li	a1,0
   451412:	00051517          	auipc	a0,0x51
-  451416:	85652503          	lw	a0,-1962(a0) # 4a1c68 <_GLOBAL_OFFSET_TABLE_+0x38>
+  451416:	86252503          	lw	a0,-1950(a0) # 4a1c74 <_GLOBAL_OFFSET_TABLE_+0x38>
   45141a:	225110ef          	jal	ra,462e3e <sys_sem_new>
   45141e:	fd5d                	bnez	a0,4513dc <lwip_ifconfig_prase_args+0x40>
   451420:	00051797          	auipc	a5,0x51
-  451424:	8c87a783          	lw	a5,-1848(a5) # 4a1ce8 <_GLOBAL_OFFSET_TABLE_+0xb8>
+  451424:	8d47a783          	lw	a5,-1836(a5) # 4a1cf4 <_GLOBAL_OFFSET_TABLE_+0xb8>
   451428:	4705                	li	a4,1
   45142a:	c398                	sw	a4,0(a5)
   45142c:	b7c9                	j	4513ee <lwip_ifconfig_prase_args+0x52>
@@ -199934,13 +199934,13 @@ Disassembly of section .text_non_rom:
   4514b8:	e3cd                	bnez	a5,45155a <lwip_ifconfig_conflict_process+0xb2>
   4514ba:	7d000593          	li	a1,2000
   4514be:	00051517          	auipc	a0,0x51
-  4514c2:	80252503          	lw	a0,-2046(a0) # 4a1cc0 <_GLOBAL_OFFSET_TABLE_+0x90>
+  4514c2:	80e52503          	lw	a0,-2034(a0) # 4a1ccc <_GLOBAL_OFFSET_TABLE_+0x90>
   4514c6:	1c5110ef          	jal	ra,462e8a <sys_arch_sem_wait>
   4514ca:	00050797          	auipc	a5,0x50
-  4514ce:	76e7a783          	lw	a5,1902(a5) # 4a1c38 <_GLOBAL_OFFSET_TABLE_+0x8>
+  4514ce:	77a7a783          	lw	a5,1914(a5) # 4a1c44 <_GLOBAL_OFFSET_TABLE_+0x8>
   4514d2:	84aa                	mv	s1,a0
   4514d4:	00050517          	auipc	a0,0x50
-  4514d8:	7ec52503          	lw	a0,2028(a0) # 4a1cc0 <_GLOBAL_OFFSET_TABLE_+0x90>
+  4514d8:	7f852503          	lw	a0,2040(a0) # 4a1ccc <_GLOBAL_OFFSET_TABLE_+0x90>
   4514dc:	0007a023          	sw	zero,0(a5)
   4514e0:	24f110ef          	jal	ra,462f2e <sys_sem_free>
   4514e4:	0cf00593          	li	a1,207
@@ -199989,13 +199989,13 @@ Disassembly of section .text_non_rom:
   45156c:	fef71ae3          	bne	a4,a5,451560 <lwip_ifconfig_conflict_process+0xb8>
   451570:	7d000593          	li	a1,2000
   451574:	00050517          	auipc	a0,0x50
-  451578:	6f452503          	lw	a0,1780(a0) # 4a1c68 <_GLOBAL_OFFSET_TABLE_+0x38>
+  451578:	70052503          	lw	a0,1792(a0) # 4a1c74 <_GLOBAL_OFFSET_TABLE_+0x38>
   45157c:	10f110ef          	jal	ra,462e8a <sys_arch_sem_wait>
   451580:	00050797          	auipc	a5,0x50
-  451584:	7687a783          	lw	a5,1896(a5) # 4a1ce8 <_GLOBAL_OFFSET_TABLE_+0xb8>
+  451584:	7747a783          	lw	a5,1908(a5) # 4a1cf4 <_GLOBAL_OFFSET_TABLE_+0xb8>
   451588:	84aa                	mv	s1,a0
   45158a:	00050517          	auipc	a0,0x50
-  45158e:	6de52503          	lw	a0,1758(a0) # 4a1c68 <_GLOBAL_OFFSET_TABLE_+0x38>
+  45158e:	6ea52503          	lw	a0,1770(a0) # 4a1c74 <_GLOBAL_OFFSET_TABLE_+0x38>
   451592:	0007a023          	sw	zero,0(a5)
   451596:	199110ef          	jal	ra,462f2e <sys_sem_free>
   45159a:	57fd                	li	a5,-1
@@ -200019,13 +200019,13 @@ Disassembly of section .text_non_rom:
 004515d4 <os_shell_dns>:
   4515d4:	a56a92ef          	jal	t0,3fa82a <__riscv_save_4>
   4515d8:	00050797          	auipc	a5,0x50
-  4515dc:	6e47a783          	lw	a5,1764(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4515dc:	6f07a783          	lw	a5,1776(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4515e0:	4398                	lw	a4,0(a5)
   4515e2:	1101                	addi	sp,sp,-32
   4515e4:	89be                	mv	s3,a5
   4515e6:	ce3a                	sw	a4,28(sp)
   4515e8:	00050717          	auipc	a4,0x50
-  4515ec:	64c72703          	lw	a4,1612(a4) # 4a1c34 <_GLOBAL_OFFSET_TABLE_+0x4>
+  4515ec:	65872703          	lw	a4,1624(a4) # 4a1c40 <_GLOBAL_OFFSET_TABLE_+0x4>
   4515f0:	4318                	lw	a4,0(a4)
   4515f2:	eb19                	bnez	a4,451608 <os_shell_dns+0x34>
   4515f4:	0ca00593          	li	a1,202
@@ -200117,7 +200117,7 @@ Disassembly of section .text_non_rom:
   4516f8:	05052b03          	lw	s6,80(a0)
   4516fc:	44d1                	li	s1,20
   4516fe:	00050997          	auipc	s3,0x50
-  451702:	5be9a983          	lw	s3,1470(s3) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  451702:	5ca9a983          	lw	s3,1482(s3) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   451706:	029b04b3          	mul	s1,s6,s1
   45170a:	7139                	addi	sp,sp,-64
   45170c:	0009a783          	lw	a5,0(s3)
@@ -200190,7 +200190,7 @@ Disassembly of section .text_non_rom:
 004517e0 <print_netstat_out_buf_updated_len>:
   4517e0:	84aa92ef          	jal	t0,3fa82a <__riscv_save_4>
   4517e4:	00050997          	auipc	s3,0x50
-  4517e8:	4d89a983          	lw	s3,1240(s3) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4517e8:	4e49a983          	lw	s3,1252(s3) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4517ec:	716d                	addi	sp,sp,-272
   4517ee:	0009a783          	lw	a5,0(s3)
   4517f2:	00c10913          	addi	s2,sp,12
@@ -200253,7 +200253,7 @@ Disassembly of section .text_non_rom:
 004518aa <os_shell_netstat>:
   4518aa:	f9ba82ef          	jal	t0,3fa844 <__riscv_save_0>
   4518ae:	00050797          	auipc	a5,0x50
-  4518b2:	40e7a783          	lw	a5,1038(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4518b2:	41a7a783          	lw	a5,1050(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4518b6:	4398                	lw	a4,0(a5)
   4518b8:	1101                	addi	sp,sp,-32
   4518ba:	893e                	mv	s2,a5
@@ -200261,7 +200261,7 @@ Disassembly of section .text_non_rom:
   4518be:	0c900593          	li	a1,201
   4518c2:	02a04963          	bgtz	a0,4518f4 <os_shell_netstat+0x4a>
   4518c6:	00050797          	auipc	a5,0x50
-  4518ca:	36e7a783          	lw	a5,878(a5) # 4a1c34 <_GLOBAL_OFFSET_TABLE_+0x4>
+  4518ca:	37a7a783          	lw	a5,890(a5) # 4a1c40 <_GLOBAL_OFFSET_TABLE_+0x4>
   4518ce:	439c                	lw	a5,0(a5)
   4518d0:	0ca00593          	li	a1,202
   4518d4:	c385                	beqz	a5,4518f4 <os_shell_netstat+0x4a>
@@ -200410,7 +200410,7 @@ Disassembly of section .text_non_rom:
 00451a66 <lwip_ifconfig>:
   451a66:	dc5a82ef          	jal	t0,3fa82a <__riscv_save_4>
   451a6a:	00050797          	auipc	a5,0x50
-  451a6e:	2527a783          	lw	a5,594(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  451a6e:	25e7a783          	lw	a5,606(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   451a72:	4398                	lw	a4,0(a5)
   451a74:	1101                	addi	sp,sp,-32
   451a76:	c62a                	sw	a0,12(sp)
@@ -200419,7 +200419,7 @@ Disassembly of section .text_non_rom:
   451a7c:	4405                	li	s0,1
   451a7e:	cd99                	beqz	a1,451a9c <lwip_ifconfig+0x36>
   451a80:	00050797          	auipc	a5,0x50
-  451a84:	1b47a783          	lw	a5,436(a5) # 4a1c34 <_GLOBAL_OFFSET_TABLE_+0x4>
+  451a84:	1c07a783          	lw	a5,448(a5) # 4a1c40 <_GLOBAL_OFFSET_TABLE_+0x4>
   451a88:	439c                	lw	a5,0(a5)
   451a8a:	e38d                	bnez	a5,451aac <lwip_ifconfig+0x46>
   451a8c:	0ca00593          	li	a1,202
@@ -200505,7 +200505,7 @@ Disassembly of section .text_non_rom:
 00451b7e <os_shell_show_dns>:
   451b7e:	cc7a82ef          	jal	t0,3fa844 <__riscv_save_0>
   451b82:	00050417          	auipc	s0,0x50
-  451b86:	13a42403          	lw	s0,314(s0) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  451b86:	14642403          	lw	s0,326(s0) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   451b8a:	401c                	lw	a5,0(s0)
   451b8c:	1101                	addi	sp,sp,-32
   451b8e:	00055517          	auipc	a0,0x55
@@ -200550,7 +200550,7 @@ Disassembly of section .text_non_rom:
 00451c00 <dhcp_clients_info_show>:
   451c00:	c2ba82ef          	jal	t0,3fa82a <__riscv_save_4>
   451c04:	00050797          	auipc	a5,0x50
-  451c08:	0b87a783          	lw	a5,184(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  451c08:	0c47a783          	lw	a5,196(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   451c0c:	4398                	lw	a4,0(a5)
   451c0e:	1141                	addi	sp,sp,-16
   451c10:	893e                	mv	s2,a5
@@ -200867,7 +200867,7 @@ Disassembly of section .text_non_rom:
   451fcc:	8526                	mv	a0,s1
   451fce:	89ba806f          	j	3fa868 <__riscv_restore_0>
   451fd2:	00050797          	auipc	a5,0x50
-  451fd6:	cca7a783          	lw	a5,-822(a5) # 4a1c9c <_GLOBAL_OFFSET_TABLE_+0x6c>
+  451fd6:	cd67a783          	lw	a5,-810(a5) # 4a1ca8 <_GLOBAL_OFFSET_TABLE_+0x6c>
   451fda:	4701                	li	a4,0
   451fdc:	86be                	mv	a3,a5
   451fde:	4615                	li	a2,5
@@ -200909,7 +200909,7 @@ Disassembly of section .text_non_rom:
   452048:	ffca82ef          	jal	t0,3fa844 <__riscv_save_0>
   45204c:	c505                	beqz	a0,452074 <netstat_udp_sendq+0x2c>
   45204e:	00050717          	auipc	a4,0x50
-  452052:	c2a72703          	lw	a4,-982(a4) # 4a1c78 <_GLOBAL_OFFSET_TABLE_+0x48>
+  452052:	c3672703          	lw	a4,-970(a4) # 4a1c84 <_GLOBAL_OFFSET_TABLE_+0x48>
   452056:	4781                	li	a5,0
   452058:	86ba                	mv	a3,a4
   45205a:	4629                	li	a2,10
@@ -200963,7 +200963,7 @@ Disassembly of section .text_non_rom:
 004520dc <print_netstat_tcp>:
   4520dc:	f38a82ef          	jal	t0,3fa814 <__riscv_save_12>
   4520e0:	00050497          	auipc	s1,0x50
-  4520e4:	bdc4a483          	lw	s1,-1060(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4520e4:	be84a483          	lw	s1,-1048(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4520e8:	7171                	addi	sp,sp,-176
   4520ea:	409c                	lw	a5,0(s1)
   4520ec:	02c10b13          	addi	s6,sp,44
@@ -200991,29 +200991,29 @@ Disassembly of section .text_non_rom:
   452128:	14f70e63          	beq	a4,a5,452284 <print_netstat_tcp+0x1a8>
   45212c:	88ca40ef          	jal	ra,3f61b8 <__stack_chk_fail>
   452130:	00050797          	auipc	a5,0x50
-  452134:	b987a783          	lw	a5,-1128(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x98>
+  452134:	ba47a783          	lw	a5,-1116(a5) # 4a1cd4 <_GLOBAL_OFFSET_TABLE_+0x98>
   452138:	439c                	lw	a5,0(a5)
   45213a:	e785                	bnez	a5,452162 <print_netstat_tcp+0x86>
   45213c:	00050797          	auipc	a5,0x50
-  452140:	bc47a783          	lw	a5,-1084(a5) # 4a1d00 <_GLOBAL_OFFSET_TABLE_+0xd0>
+  452140:	bd07a783          	lw	a5,-1072(a5) # 4a1d0c <_GLOBAL_OFFSET_TABLE_+0xd0>
   452144:	439c                	lw	a5,0(a5)
   452146:	ef91                	bnez	a5,452162 <print_netstat_tcp+0x86>
   452148:	00050797          	auipc	a5,0x50
-  45214c:	bdc7a783          	lw	a5,-1060(a5) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xf4>
+  45214c:	be87a783          	lw	a5,-1048(a5) # 4a1d30 <_GLOBAL_OFFSET_TABLE_+0xf4>
   452150:	439c                	lw	a5,0(a5)
   452152:	eb81                	bnez	a5,452162 <print_netstat_tcp+0x86>
   452154:	00050797          	auipc	a5,0x50
-  452158:	bd87a783          	lw	a5,-1064(a5) # 4a1d2c <_GLOBAL_OFFSET_TABLE_+0xfc>
+  452158:	be47a783          	lw	a5,-1052(a5) # 4a1d38 <_GLOBAL_OFFSET_TABLE_+0xfc>
   45215c:	439c                	lw	a5,0(a5)
   45215e:	4501                	li	a0,0
   452160:	d3e9                	beqz	a5,452122 <print_netstat_tcp+0x46>
   452162:	00050a17          	auipc	s4,0x50
-  452166:	ae6a2a03          	lw	s4,-1306(s4) # 4a1c48 <_GLOBAL_OFFSET_TABLE_+0x18>
+  452166:	af2a2a03          	lw	s4,-1294(s4) # 4a1c54 <_GLOBAL_OFFSET_TABLE_+0x18>
   45216a:	4981                	li	s3,0
   45216c:	00050c17          	auipc	s8,0x50
-  452170:	bc0c2c03          	lw	s8,-1088(s8) # 4a1d2c <_GLOBAL_OFFSET_TABLE_+0xfc>
+  452170:	bccc2c03          	lw	s8,-1076(s8) # 4a1d38 <_GLOBAL_OFFSET_TABLE_+0xfc>
   452174:	00050d97          	auipc	s11,0x50
-  452178:	b8cdad83          	lw	s11,-1140(s11) # 4a1d00 <_GLOBAL_OFFSET_TABLE_+0xd0>
+  452178:	b98dad83          	lw	s11,-1128(s11) # 4a1d0c <_GLOBAL_OFFSET_TABLE_+0xd0>
   45217c:	000a2783          	lw	a5,0(s4)
   452180:	4384                	lw	s1,0(a5)
   452182:	8ca6                	mv	s9,s1
@@ -201104,7 +201104,7 @@ Disassembly of section .text_non_rom:
 0045228a <print_netstat_udp>:
   45228a:	d8aa82ef          	jal	t0,3fa814 <__riscv_save_12>
   45228e:	00050417          	auipc	s0,0x50
-  452292:	a2e42403          	lw	s0,-1490(s0) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  452292:	a3a42403          	lw	s0,-1478(s0) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   452296:	7171                	addi	sp,sp,-176
   452298:	401c                	lw	a5,0(s0)
   45229a:	02c10a93          	addi	s5,sp,44
@@ -201131,14 +201131,14 @@ Disassembly of section .text_non_rom:
   4522d6:	10f70463          	beq	a4,a5,4523de <print_netstat_udp+0x154>
   4522da:	edfa30ef          	jal	ra,3f61b8 <__stack_chk_fail>
   4522de:	00050797          	auipc	a5,0x50
-  4522e2:	9c67a783          	lw	a5,-1594(a5) # 4a1ca4 <_GLOBAL_OFFSET_TABLE_+0x74>
+  4522e2:	9d27a783          	lw	a5,-1582(a5) # 4a1cb0 <_GLOBAL_OFFSET_TABLE_+0x74>
   4522e6:	4380                	lw	s0,0(a5)
   4522e8:	c479                	beqz	s0,4523b6 <print_netstat_udp+0x12c>
   4522ea:	00055c97          	auipc	s9,0x55
   4522ee:	df2c8c93          	addi	s9,s9,-526 # 4a70dc <g_flash_protect_size_lower+0x2f8>
   4522f2:	03e00c13          	li	s8,62
   4522f6:	00050d17          	auipc	s10,0x50
-  4522fa:	946d2d03          	lw	s10,-1722(s10) # 4a1c3c <_GLOBAL_OFFSET_TABLE_+0xc>
+  4522fa:	952d2d03          	lw	s10,-1710(s10) # 4a1c48 <_GLOBAL_OFFSET_TABLE_+0xc>
   4522fe:	4d99                	li	s11,6
   452300:	4b85                	li	s7,1
   452302:	8522                	mv	a0,s0
@@ -201221,7 +201221,7 @@ Disassembly of section .text_non_rom:
 004523e4 <netstat_internal>:
   4523e4:	c60a82ef          	jal	t0,3fa844 <__riscv_save_0>
   4523e8:	00050797          	auipc	a5,0x50
-  4523ec:	8d47a783          	lw	a5,-1836(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4523ec:	8e07a783          	lw	a5,-1824(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4523f0:	4398                	lw	a4,0(a5)
   4523f2:	1141                	addi	sp,sp,-16
   4523f4:	c402                	sw	zero,8(sp)
@@ -201424,7 +201424,7 @@ Disassembly of section .text_non_rom:
 0045260e <dhcp_option_hostname>:
   45260e:	a1ca82ef          	jal	t0,3fa82a <__riscv_save_4>
   452612:	0004f917          	auipc	s2,0x4f
-  452616:	6aa92903          	lw	s2,1706(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  452616:	6b692903          	lw	s2,1718(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45261a:	00092783          	lw	a5,0(s2)
   45261e:	11258413          	addi	s0,a1,274
   452622:	7159                	addi	sp,sp,-112
@@ -201569,7 +201569,7 @@ Disassembly of section .text_non_rom:
 004527aa <dhcp_create_msg>:
   4527aa:	880a82ef          	jal	t0,3fa82a <__riscv_save_4>
   4527ae:	0004fa17          	auipc	s4,0x4f
-  4527b2:	50ea2a03          	lw	s4,1294(s4) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4527b2:	51aa2a03          	lw	s4,1306(s4) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4527b6:	000a2783          	lw	a5,0(s4)
   4527ba:	1141                	addi	sp,sp,-16
   4527bc:	0505a903          	lw	s2,80(a1)
@@ -201751,7 +201751,7 @@ Disassembly of section .text_non_rom:
   4529b6:	0505a983          	lw	s3,80(a1)
   4529ba:	44d1                	li	s1,20
   4529bc:	0004f917          	auipc	s2,0x4f
-  4529c0:	30092903          	lw	s2,768(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4529c0:	30c92903          	lw	s2,780(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4529c4:	029984b3          	mul	s1,s3,s1
   4529c8:	00092783          	lw	a5,0(s2)
   4529cc:	842e                	mv	s0,a1
@@ -201795,7 +201795,7 @@ Disassembly of section .text_non_rom:
   452a36:	0505a983          	lw	s3,80(a1)
   452a3a:	4451                	li	s0,20
   452a3c:	0004f917          	auipc	s2,0x4f
-  452a40:	28092903          	lw	s2,640(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  452a40:	28c92903          	lw	s2,652(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   452a44:	02898433          	mul	s0,s3,s0
   452a48:	1141                	addi	sp,sp,-16
   452a4a:	00092783          	lw	a5,0(s2)
@@ -201830,7 +201830,7 @@ Disassembly of section .text_non_rom:
 00452a9e <dhcp_bind>:
   452a9e:	d8da72ef          	jal	t0,3fa82a <__riscv_save_4>
   452aa2:	0004f497          	auipc	s1,0x4f
-  452aa6:	21a4a483          	lw	s1,538(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  452aa6:	2264a483          	lw	s1,550(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   452aaa:	409c                	lw	a5,0(s1)
   452aac:	1141                	addi	sp,sp,-16
   452aae:	c63e                	sw	a5,12(sp)
@@ -201993,7 +201993,7 @@ Disassembly of section .text_non_rom:
 00452c5c <dhcp_fill_options>:
   452c5c:	bc1a72ef          	jal	t0,3fa81c <__riscv_save_10>
   452c60:	0004fa17          	auipc	s4,0x4f
-  452c64:	05ca2a03          	lw	s4,92(s4) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  452c64:	068a2a03          	lw	s4,104(s4) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   452c68:	000a2783          	lw	a5,0(s4)
   452c6c:	1141                	addi	sp,sp,-16
   452c6e:	8aaa                	mv	s5,a0
@@ -202119,7 +202119,7 @@ Disassembly of section .text_non_rom:
 00452dca <dhcp_release_client>:
   452dca:	a61a72ef          	jal	t0,3fa82a <__riscv_save_4>
   452dce:	0004f917          	auipc	s2,0x4f
-  452dd2:	eee92903          	lw	s2,-274(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  452dd2:	efa92903          	lw	s2,-262(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   452dd6:	1101                	addi	sp,sp,-32
   452dd8:	00092783          	lw	a5,0(s2)
   452ddc:	00810a13          	addi	s4,sp,8
@@ -202250,7 +202250,7 @@ Disassembly of section .text_non_rom:
   452f4a:	d13ff0ef          	jal	ra,452c5c <dhcp_fill_options>
   452f4e:	4795                	li	a5,5
   452f50:	0004f617          	auipc	a2,0x4f
-  452f54:	d8462603          	lw	a2,-636(a2) # 4a1cd4 <_GLOBAL_OFFSET_TABLE_+0xa4>
+  452f54:	d9062603          	lw	a2,-624(a2) # 4a1ce0 <_GLOBAL_OFFSET_TABLE_+0xa4>
   452f58:	00f99463          	bne	s3,a5,452f60 <dhcp_re3+0x4e>
   452f5c:	00840613          	addi	a2,s0,8
   452f60:	ffc8d797          	auipc	a5,0xffc8d
@@ -202398,11 +202398,11 @@ Disassembly of section .text_non_rom:
   4530ec:	5c4c                	lw	a1,60(s0)
   4530ee:	4108                	lw	a0,0(a0)
   4530f0:	0004f797          	auipc	a5,0x4f
-  4530f4:	c287a783          	lw	a5,-984(a5) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  4530f4:	c347a783          	lw	a5,-972(a5) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   4530f8:	874a                	mv	a4,s2
   4530fa:	04300693          	li	a3,67
   4530fe:	0004f617          	auipc	a2,0x4f
-  453102:	bd662603          	lw	a2,-1066(a2) # 4a1cd4 <_GLOBAL_OFFSET_TABLE_+0xa4>
+  453102:	be262603          	lw	a2,-1054(a2) # 4a1ce0 <_GLOBAL_OFFSET_TABLE_+0xa4>
   453106:	32f150ef          	jal	ra,468c34 <udp_sendto_if_src>
   45310a:	8522                	mv	a0,s0
   45310c:	da2ff0ef          	jal	ra,4526ae <dhcp_delete_msg>
@@ -202477,7 +202477,7 @@ Disassembly of section .text_non_rom:
   4531d0:	483c                	lw	a5,80(s0)
   4531d2:	eb91                	bnez	a5,4531e6 <dhcp_handle_nak+0x26>
   4531d4:	0004f697          	auipc	a3,0x4f
-  4531d8:	b446a683          	lw	a3,-1212(a3) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  4531d8:	b506a683          	lw	a3,-1200(a3) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   4531dc:	8636                	mv	a2,a3
   4531de:	85b6                	mv	a1,a3
   4531e0:	8526                	mv	a0,s1
@@ -202520,11 +202520,11 @@ Disassembly of section .text_non_rom:
   453242:	5c4c                	lw	a1,60(s0)
   453244:	4108                	lw	a0,0(a0)
   453246:	0004f797          	auipc	a5,0x4f
-  45324a:	ad27a783          	lw	a5,-1326(a5) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45324a:	ade7a783          	lw	a5,-1314(a5) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45324e:	874a                	mv	a4,s2
   453250:	04300693          	li	a3,67
   453254:	0004f617          	auipc	a2,0x4f
-  453258:	a8062603          	lw	a2,-1408(a2) # 4a1cd4 <_GLOBAL_OFFSET_TABLE_+0xa4>
+  453258:	a8c62603          	lw	a2,-1396(a2) # 4a1ce0 <_GLOBAL_OFFSET_TABLE_+0xa4>
   45325c:	1d9150ef          	jal	ra,468c34 <udp_sendto_if_src>
   453260:	8522                	mv	a0,s0
   453262:	c4cff0ef          	jal	ra,4526ae <dhcp_delete_msg>
@@ -202642,11 +202642,11 @@ Disassembly of section .text_non_rom:
   4533ac:	5c4c                	lw	a1,60(s0)
   4533ae:	4108                	lw	a0,0(a0)
   4533b0:	0004f797          	auipc	a5,0x4f
-  4533b4:	9687a783          	lw	a5,-1688(a5) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  4533b4:	9747a783          	lw	a5,-1676(a5) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   4533b8:	874a                	mv	a4,s2
   4533ba:	04300693          	li	a3,67
   4533be:	0004f617          	auipc	a2,0x4f
-  4533c2:	91662603          	lw	a2,-1770(a2) # 4a1cd4 <_GLOBAL_OFFSET_TABLE_+0xa4>
+  4533c2:	92262603          	lw	a2,-1758(a2) # 4a1ce0 <_GLOBAL_OFFSET_TABLE_+0xa4>
   4533c6:	06f150ef          	jal	ra,468c34 <udp_sendto_if_src>
   4533ca:	8522                	mv	a0,s0
   4533cc:	ae2ff0ef          	jal	ra,4526ae <dhcp_delete_msg>
@@ -202681,7 +202681,7 @@ Disassembly of section .text_non_rom:
   453424:	5518                	lw	a4,40(a0)
   453426:	04400613          	li	a2,68
   45342a:	0004f597          	auipc	a1,0x4f
-  45342e:	8ee5a583          	lw	a1,-1810(a1) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45342e:	8fa5a583          	lw	a1,-1798(a1) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   453432:	02076713          	ori	a4,a4,32
   453436:	d518                	sw	a4,40(a0)
   453438:	00044703          	lbu	a4,0(s0)
@@ -202690,7 +202690,7 @@ Disassembly of section .text_non_rom:
   453444:	4088                	lw	a0,0(s1)
   453446:	04300613          	li	a2,67
   45344a:	0004f597          	auipc	a1,0x4f
-  45344e:	8ce5a583          	lw	a1,-1842(a1) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45344e:	8da5a583          	lw	a1,-1830(a1) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   453452:	7f4150ef          	jal	ra,468c46 <udp_connect>
   453456:	4088                	lw	a0,0(s1)
   453458:	4601                	li	a2,0
@@ -202717,7 +202717,7 @@ Disassembly of section .text_non_rom:
 00453498 <dhcp_parse_reply.isra.6>:
   453498:	b7ca72ef          	jal	t0,3fa814 <__riscv_save_12>
   45349c:	0004f917          	auipc	s2,0x4f
-  4534a0:	82092903          	lw	s2,-2016(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4534a0:	82c92903          	lw	s2,-2004(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4534a4:	00092783          	lw	a5,0(s2)
   4534a8:	7179                	addi	sp,sp,-48
   4534aa:	89ae                	mv	s3,a1
@@ -202996,7 +202996,7 @@ Disassembly of section .text_non_rom:
 004537de <dhcp_handle_ack.isra.7>:
   4537de:	84ca72ef          	jal	t0,3fa82a <__riscv_save_4>
   4537e2:	0004e917          	auipc	s2,0x4e
-  4537e6:	4da92903          	lw	s2,1242(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4537e6:	4e692903          	lw	s2,1254(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4537ea:	00092783          	lw	a5,0(s2)
   4537ee:	1101                	addi	sp,sp,-32
   4537f0:	02052023          	sw	zero,32(a0)
@@ -203126,13 +203126,13 @@ Disassembly of section .text_non_rom:
 00453954 <dhcp_recv>:
   453954:	ed7a62ef          	jal	t0,3fa82a <__riscv_save_4>
   453958:	0004ea17          	auipc	s4,0x4e
-  45395c:	364a2a03          	lw	s4,868(s4) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45395c:	370a2a03          	lw	s4,880(s4) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   453960:	000a2783          	lw	a5,0(s4)
   453964:	1101                	addi	sp,sp,-32
   453966:	8ab2                	mv	s5,a2
   453968:	ce3e                	sw	a5,28(sp)
   45396a:	0004e797          	auipc	a5,0x4e
-  45396e:	3427a783          	lw	a5,834(a5) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  45396e:	34e7a783          	lw	a5,846(a5) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   453972:	43c4                	lw	s1,4(a5)
   453974:	1084a403          	lw	s0,264(s1)
   453978:	10040463          	beqz	s0,453a80 <dhcp_recv+0x12c>
@@ -203279,7 +203279,7 @@ Disassembly of section .text_non_rom:
 00453b2a <dhcp_network_changed>:
   453b2a:	d01a62ef          	jal	t0,3fa82a <__riscv_save_4>
   453b2e:	0004e797          	auipc	a5,0x4e
-  453b32:	18e7a783          	lw	a5,398(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  453b32:	19a7a783          	lw	a5,410(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   453b36:	4398                	lw	a4,0(a5)
   453b38:	10852403          	lw	s0,264(a0)
   453b3c:	1141                	addi	sp,sp,-16
@@ -203313,7 +203313,7 @@ Disassembly of section .text_non_rom:
 00453b8c <dhcp_arp_reply>:
   453b8c:	c9fa62ef          	jal	t0,3fa82a <__riscv_save_4>
   453b90:	0004e797          	auipc	a5,0x4e
-  453b94:	12c7a783          	lw	a5,300(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  453b94:	1387a783          	lw	a5,312(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   453b98:	4398                	lw	a4,0(a5)
   453b9a:	1141                	addi	sp,sp,-16
   453b9c:	8a3e                	mv	s4,a5
@@ -203362,7 +203362,7 @@ Disassembly of section .text_non_rom:
 00453c18 <dhcp_release>:
   453c18:	c13a62ef          	jal	t0,3fa82a <__riscv_save_4>
   453c1c:	0004e797          	auipc	a5,0x4e
-  453c20:	0a07a783          	lw	a5,160(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  453c20:	0ac7a783          	lw	a5,172(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   453c24:	4398                	lw	a4,0(a5)
   453c26:	1141                	addi	sp,sp,-16
   453c28:	84be                	mv	s1,a5
@@ -203397,7 +203397,7 @@ Disassembly of section .text_non_rom:
   453c7c:	06f40023          	sb	a5,96(s0)
   453c80:	94aff0ef          	jal	ra,452dca <dhcp_release_client>
   453c84:	0004e697          	auipc	a3,0x4e
-  453c88:	0946a683          	lw	a3,148(a3) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  453c88:	0a06a683          	lw	a3,160(a3) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   453c8c:	89aa                	mv	s3,a0
   453c8e:	8636                	mv	a2,a3
   453c90:	85b6                	mv	a1,a3
@@ -203471,7 +203471,7 @@ Disassembly of section .text_non_rom:
 00453d4c <dhcp_netif_coarse_tmr>:
   453d4c:	af9a62ef          	jal	t0,3fa844 <__riscv_save_0>
   453d50:	0004e497          	auipc	s1,0x4e
-  453d54:	f6c4a483          	lw	s1,-148(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  453d54:	f784a483          	lw	s1,-136(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   453d58:	842e                	mv	s0,a1
   453d5a:	409c                	lw	a5,0(s1)
   453d5c:	0405aa23          	sw	zero,84(a1)
@@ -203502,7 +203502,7 @@ Disassembly of section .text_non_rom:
 00453da6 <dhcp_coarse_tmr>:
   453da6:	a9fa62ef          	jal	t0,3fa844 <__riscv_save_0>
   453daa:	0004e797          	auipc	a5,0x4e
-  453dae:	ea67a783          	lw	a5,-346(a5) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  453dae:	eb27a783          	lw	a5,-334(a5) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   453db2:	4380                	lw	s0,0(a5)
   453db4:	e019                	bnez	s0,453dba <dhcp_coarse_tmr+0x14>
   453db6:	ab3a606f          	j	3fa868 <__riscv_restore_0>
@@ -203599,7 +203599,7 @@ Disassembly of section .text_non_rom:
 00453ec2 <dhcp_netif_fine_tmr>:
   453ec2:	983a62ef          	jal	t0,3fa844 <__riscv_save_0>
   453ec6:	0004e497          	auipc	s1,0x4e
-  453eca:	df64a483          	lw	s1,-522(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  453eca:	e024a483          	lw	s1,-510(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   453ece:	842e                	mv	s0,a1
   453ed0:	409c                	lw	a5,0(s1)
   453ed2:	0405aa23          	sw	zero,84(a1)
@@ -203630,7 +203630,7 @@ Disassembly of section .text_non_rom:
 00453f1c <dhcp_fine_tmr>:
   453f1c:	929a62ef          	jal	t0,3fa844 <__riscv_save_0>
   453f20:	0004e797          	auipc	a5,0x4e
-  453f24:	d307a783          	lw	a5,-720(a5) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  453f24:	d3c7a783          	lw	a5,-708(a5) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   453f28:	4380                	lw	s0,0(a5)
   453f2a:	e019                	bnez	s0,453f30 <dhcp_fine_tmr+0x14>
   453f2c:	93da606f          	j	3fa868 <__riscv_restore_0>
@@ -203671,7 +203671,7 @@ Disassembly of section .text_non_rom:
 00453f8a <dhcp_stop>:
   453f8a:	8bba62ef          	jal	t0,3fa844 <__riscv_save_0>
   453f8e:	0004e797          	auipc	a5,0x4e
-  453f92:	d2e7a783          	lw	a5,-722(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  453f92:	d3a7a783          	lw	a5,-710(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   453f96:	4398                	lw	a4,0(a5)
   453f98:	1141                	addi	sp,sp,-16
   453f9a:	893e                	mv	s2,a5
@@ -203744,7 +203744,7 @@ Disassembly of section .text_non_rom:
 00454060 <dhcp_start_client.constprop.8>:
   454060:	fcaa62ef          	jal	t0,3fa82a <__riscv_save_4>
   454064:	0004e997          	auipc	s3,0x4e
-  454068:	c589a983          	lw	s3,-936(s3) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  454068:	c649a983          	lw	s3,-924(s3) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45406c:	0009a783          	lw	a5,0(s3)
   454070:	15255703          	lhu	a4,338(a0)
   454074:	1141                	addi	sp,sp,-16
@@ -203827,14 +203827,14 @@ Disassembly of section .text_non_rom:
   454152:	8b85                	andi	a5,a5,1
   454154:	cbb9                	beqz	a5,4541aa <dhcp_start+0x6c>
   454156:	0004e597          	auipc	a1,0x4e
-  45415a:	bc25a583          	lw	a1,-1086(a1) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45415a:	bce5a583          	lw	a1,-1074(a1) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45415e:	363090ef          	jal	ra,45dcc0 <netif_set_ipaddr>
   454162:	0004e597          	auipc	a1,0x4e
-  454166:	bb65a583          	lw	a1,-1098(a1) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  454166:	bc25a583          	lw	a1,-1086(a1) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45416a:	8522                	mv	a0,s0
   45416c:	3f3090ef          	jal	ra,45dd5e <netif_set_gw>
   454170:	0004e597          	auipc	a1,0x4e
-  454174:	ba85a583          	lw	a1,-1112(a1) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  454174:	bb45a583          	lw	a1,-1100(a1) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   454178:	8522                	mv	a0,s0
   45417a:	395090ef          	jal	ra,45dd0e <netif_set_netmask>
   45417e:	16042783          	lw	a5,352(s0)
@@ -204248,7 +204248,7 @@ Disassembly of section .text_non_rom:
 00454604 <dhcps_parse_option_value>:
   454604:	a10a62ef          	jal	t0,3fa814 <__riscv_save_12>
   454608:	0004d917          	auipc	s2,0x4d
-  45460c:	6b492903          	lw	s2,1716(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45460c:	6c092903          	lw	s2,1728(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   454610:	00092783          	lw	a5,0(s2)
   454614:	1141                	addi	sp,sp,-16
   454616:	8baa                	mv	s7,a0
@@ -204339,7 +204339,7 @@ Disassembly of section .text_non_rom:
 00454704 <dhcps_do_parse_options>:
   454704:	918a62ef          	jal	t0,3fa81c <__riscv_save_10>
   454708:	0004d917          	auipc	s2,0x4d
-  45470c:	5b492903          	lw	s2,1460(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45470c:	5c092903          	lw	s2,1472(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   454710:	00092783          	lw	a5,0(s2)
   454714:	1141                	addi	sp,sp,-16
   454716:	842a                	mv	s0,a0
@@ -204653,7 +204653,7 @@ Disassembly of section .text_non_rom:
 00454a84 <dhcps_parse_options>:
   454a84:	d99a52ef          	jal	t0,3fa81c <__riscv_save_10>
   454a88:	0004d497          	auipc	s1,0x4d
-  454a8c:	2344a483          	lw	s1,564(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  454a8c:	2404a483          	lw	s1,576(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   454a90:	409c                	lw	a5,0(s1)
   454a92:	1101                	addi	sp,sp,-32
   454a94:	892a                	mv	s2,a0
@@ -204792,7 +204792,7 @@ Disassembly of section .text_non_rom:
   454c08:	1754c783          	lbu	a5,373(s1)
   454c0c:	04300613          	li	a2,67
   454c10:	0004d597          	auipc	a1,0x4d
-  454c14:	1085a583          	lw	a1,264(a1) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  454c14:	1145a583          	lw	a1,276(a1) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   454c18:	02f506a3          	sb	a5,45(a0)
   454c1c:	4018                	lw	a4,0(s0)
   454c1e:	571c                	lw	a5,40(a4)
@@ -204809,7 +204809,7 @@ Disassembly of section .text_non_rom:
   454c3a:	853e                	mv	a0,a5
   454c3c:	04400613          	li	a2,68
   454c40:	0004d597          	auipc	a1,0x4d
-  454c44:	0d85a583          	lw	a1,216(a1) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  454c44:	0e45a583          	lw	a1,228(a1) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   454c48:	7ff130ef          	jal	ra,468c46 <udp_connect>
   454c4c:	401c                	lw	a5,0(s0)
   454c4e:	f16d                	bnez	a0,454c30 <dhcps_init_pcb.isra.4+0x38>
@@ -204986,7 +204986,7 @@ Disassembly of section .text_non_rom:
 00454e1c <dhcps_offer_create.isra.6>:
   454e1c:	a0fa52ef          	jal	t0,3fa82a <__riscv_save_4>
   454e20:	0004da17          	auipc	s4,0x4d
-  454e24:	e9ca2a03          	lw	s4,-356(s4) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  454e24:	ea8a2a03          	lw	s4,-344(s4) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   454e28:	000a2783          	lw	a5,0(s4)
   454e2c:	1101                	addi	sp,sp,-32
   454e2e:	892a                	mv	s2,a0
@@ -205103,7 +205103,7 @@ Disassembly of section .text_non_rom:
 00454f64 <dhcps_create_response_to_request.isra.7>:
   454f64:	8b9a52ef          	jal	t0,3fa81c <__riscv_save_10>
   454f68:	0004da97          	auipc	s5,0x4d
-  454f6c:	d54aaa83          	lw	s5,-684(s5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  454f6c:	d60aaa83          	lw	s5,-672(s5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   454f70:	000aa783          	lw	a5,0(s5)
   454f74:	1141                	addi	sp,sp,-16
   454f76:	8a2a                	mv	s4,a0
@@ -205170,7 +205170,7 @@ Disassembly of section .text_non_rom:
 00455024 <handle_inform.isra.8>:
   455024:	807a52ef          	jal	t0,3fa82a <__riscv_save_4>
   455028:	0004d797          	auipc	a5,0x4d
-  45502c:	c947a783          	lw	a5,-876(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45502c:	ca07a783          	lw	a5,-864(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   455030:	4398                	lw	a4,0(a5)
   455032:	1101                	addi	sp,sp,-32
   455034:	00011323          	sh	zero,6(sp)
@@ -205227,7 +205227,7 @@ Disassembly of section .text_non_rom:
 004550c2 <dhcps_offer_try_send_unicast.isra.9>:
   4550c2:	f68a52ef          	jal	t0,3fa82a <__riscv_save_4>
   4550c6:	0004d797          	auipc	a5,0x4d
-  4550ca:	bf67a783          	lw	a5,-1034(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4550ca:	c027a783          	lw	a5,-1022(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4550ce:	8936                	mv	s2,a3
   4550d0:	4394                	lw	a3,0(a5)
   4550d2:	7179                	addi	sp,sp,-48
@@ -205245,7 +205245,7 @@ Disassembly of section .text_non_rom:
   4550f2:	000a2503          	lw	a0,0(s4)
   4550f6:	04400693          	li	a3,68
   4550fa:	0004d617          	auipc	a2,0x4d
-  4550fe:	bda62603          	lw	a2,-1062(a2) # 4a1cd4 <_GLOBAL_OFFSET_TABLE_+0xa4>
+  4550fe:	be662603          	lw	a2,-1050(a2) # 4a1ce0 <_GLOBAL_OFFSET_TABLE_+0xa4>
   455102:	85ca                	mv	a1,s2
   455104:	331130ef          	jal	ra,468c34 <udp_sendto_if_src>
   455108:	5732                	lw	a4,44(sp)
@@ -205291,7 +205291,7 @@ Disassembly of section .text_non_rom:
 00455176 <dhcps_offer_send>:
   455176:	ecea52ef          	jal	t0,3fa844 <__riscv_save_0>
   45517a:	0004d797          	auipc	a5,0x4d
-  45517e:	b427a783          	lw	a5,-1214(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45517e:	b4e7a783          	lw	a5,-1202(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   455182:	0007a883          	lw	a7,0(a5)
   455186:	1101                	addi	sp,sp,-32
   455188:	843e                	mv	s0,a5
@@ -205353,7 +205353,7 @@ Disassembly of section .text_non_rom:
 00455214 <dhcps_send_response_to_request.isra.10>:
   455214:	e16a52ef          	jal	t0,3fa82a <__riscv_save_4>
   455218:	0004d797          	auipc	a5,0x4d
-  45521c:	aa47a783          	lw	a5,-1372(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45521c:	ab07a783          	lw	a5,-1360(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   455220:	89ba                	mv	s3,a4
   455222:	4398                	lw	a4,0(a5)
   455224:	7179                	addi	sp,sp,-48
@@ -205385,7 +205385,7 @@ Disassembly of section .text_non_rom:
   45526e:	872a                	mv	a4,a0
   455270:	04400693          	li	a3,68
   455274:	0004d617          	auipc	a2,0x4d
-  455278:	a6062603          	lw	a2,-1440(a2) # 4a1cd4 <_GLOBAL_OFFSET_TABLE_+0xa4>
+  455278:	a6c62603          	lw	a2,-1428(a2) # 4a1ce0 <_GLOBAL_OFFSET_TABLE_+0xa4>
   45527c:	b7e9                	j	455246 <dhcps_send_response_to_request.isra.10+0x32>
   45527e:	00264683          	lbu	a3,2(a2)
   455282:	01010a93          	addi	s5,sp,16
@@ -205540,7 +205540,7 @@ Disassembly of section .text_non_rom:
 004553fa <dhcps_recv>:
   4553fa:	c30a52ef          	jal	t0,3fa82a <__riscv_save_4>
   4553fe:	0004d797          	auipc	a5,0x4d
-  455402:	8be7a783          	lw	a5,-1858(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  455402:	8ca7a783          	lw	a5,-1846(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   455406:	4398                	lw	a4,0(a5)
   455408:	1141                	addi	sp,sp,-16
   45540a:	84be                	mv	s1,a5
@@ -205712,7 +205712,7 @@ Disassembly of section .text_non_rom:
   4555d6:	4bd1                	li	s7,20
   4555d8:	4c19                	li	s8,6
   4555da:	0004cc97          	auipc	s9,0x4c
-  4555de:	766cac83          	lw	s9,1894(s9) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  4555de:	772cac83          	lw	s9,1906(s9) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   4555e2:	00148513          	addi	a0,s1,1
   4555e6:	8905                	andi	a0,a0,1
   4555e8:	0ff57493          	andi	s1,a0,255
@@ -205866,7 +205866,7 @@ Disassembly of section .text_non_rom:
 004557b8 <dns_send>:
   4557b8:	85ca52ef          	jal	t0,3fa814 <__riscv_save_12>
   4557bc:	0004ca97          	auipc	s5,0x4c
-  4557c0:	500aaa83          	lw	s5,1280(s5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4557c0:	50caaa83          	lw	s5,1292(s5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4557c4:	000aa783          	lw	a5,0(s5)
   4557c8:	7139                	addi	sp,sp,-64
   4557ca:	ffc8b497          	auipc	s1,0xffc8b
@@ -205906,7 +205906,7 @@ Disassembly of section .text_non_rom:
   455832:	0cf71263          	bne	a4,a5,4558f6 <dns_send+0x13e>
   455836:	4641                	li	a2,16
   455838:	0004c597          	auipc	a1,0x4c
-  45583c:	5085a583          	lw	a1,1288(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  45583c:	5145a583          	lw	a1,1300(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   455840:	f0da50ef          	jal	ra,3fb74c <memcmp>
   455844:	d555                	beqz	a0,4557f0 <dns_send+0x38>
   455846:	12c00b93          	li	s7,300
@@ -206259,7 +206259,7 @@ Disassembly of section .text_non_rom:
   455c30:	c915                	beqz	a0,455c64 <dns_alloc_random_port+0x42>
   455c32:	3ff00993          	li	s3,1023
   455c36:	0004c917          	auipc	s2,0x4c
-  455c3a:	02292903          	lw	s2,34(s2) # 4a1c58 <_GLOBAL_OFFSET_TABLE_+0x28>
+  455c3a:	02e92903          	lw	s2,46(s2) # 4a1c64 <_GLOBAL_OFFSET_TABLE_+0x28>
   455c3e:	54e1                	li	s1,-8
   455c40:	3440d0ef          	jal	ra,462f84 <sys_arch_rand>
   455c44:	01051613          	slli	a2,a0,0x10
@@ -206611,7 +206611,7 @@ Disassembly of section .text_non_rom:
   456050:	02f50533          	mul	a0,a0,a5
   456054:	4651                	li	a2,20
   456056:	0004c597          	auipc	a1,0x4c
-  45605a:	cc25a583          	lw	a1,-830(a1) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45605a:	cce5a583          	lw	a1,-818(a1) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45605e:	bfc9                	j	456030 <dns_setserver+0x1c>
   456060:	8082                	ret
 
@@ -206628,7 +206628,7 @@ Disassembly of section .text_non_rom:
 0045607e <lwip_dns_setserver>:
   45607e:	faca42ef          	jal	t0,3fa82a <__riscv_save_4>
   456082:	0004c497          	auipc	s1,0x4c
-  456086:	c3a4a483          	lw	s1,-966(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  456086:	c464a483          	lw	s1,-954(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45608a:	1141                	addi	sp,sp,-16
   45608c:	409c                	lw	a5,0(s1)
   45608e:	898a                	mv	s3,sp
@@ -206682,7 +206682,7 @@ Disassembly of section .text_non_rom:
   45610c:	953e                	add	a0,a0,a5
   45610e:	8082                	ret
   456110:	0004c517          	auipc	a0,0x4c
-  456114:	c0852503          	lw	a0,-1016(a0) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  456114:	c1452503          	lw	a0,-1004(a0) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   456118:	8082                	ret
 
 0045611a <dns_getserver_internal>:
@@ -206701,7 +206701,7 @@ Disassembly of section .text_non_rom:
 0045613e <lwip_dns_getserver>:
   45613e:	eeca42ef          	jal	t0,3fa82a <__riscv_save_4>
   456142:	0004c497          	auipc	s1,0x4c
-  456146:	b7a4a483          	lw	s1,-1158(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  456146:	b864a483          	lw	s1,-1146(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45614a:	1141                	addi	sp,sp,-16
   45614c:	409c                	lw	a5,0(s1)
   45614e:	898a                	mv	s3,sp
@@ -206792,7 +206792,7 @@ Disassembly of section .text_non_rom:
 00456232 <process_forward_dns>:
   456232:	de2a42ef          	jal	t0,3fa814 <__riscv_save_12>
   456236:	0004cc17          	auipc	s8,0x4c
-  45623a:	a86c2c03          	lw	s8,-1402(s8) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45623a:	a92c2c03          	lw	s8,-1390(s8) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45623e:	7139                	addi	sp,sp,-64
   456240:	84ba                	mv	s1,a4
   456242:	000c2703          	lw	a4,0(s8)
@@ -206995,7 +206995,7 @@ Disassembly of section .text_non_rom:
   45647e:	004d4503          	lbu	a0,4(s10)
   456482:	4641                	li	a2,16
   456484:	0004c597          	auipc	a1,0x4c
-  456488:	8bc5a583          	lw	a1,-1860(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  456488:	8c85a583          	lw	a1,-1848(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   45648c:	03350533          	mul	a0,a0,s3
   456490:	0531                	addi	a0,a0,12
   456492:	956a                	add	a0,a0,s10
@@ -207004,7 +207004,7 @@ Disassembly of section .text_non_rom:
   45649a:	004d4503          	lbu	a0,4(s10)
   45649e:	4641                	li	a2,16
   4564a0:	0004b597          	auipc	a1,0x4b
-  4564a4:	7ac5a583          	lw	a1,1964(a1) # 4a1c4c <_GLOBAL_OFFSET_TABLE_+0x1c>
+  4564a4:	7b85a583          	lw	a1,1976(a1) # 4a1c58 <_GLOBAL_OFFSET_TABLE_+0x1c>
   4564a8:	03350533          	mul	a0,a0,s3
   4564ac:	0531                	addi	a0,a0,12
   4564ae:	956a                	add	a0,a0,s10
@@ -207127,7 +207127,7 @@ Disassembly of section .text_non_rom:
 00456614 <dns_recv>:
   456614:	a16a42ef          	jal	t0,3fa82a <__riscv_save_4>
   456618:	0004ba97          	auipc	s5,0x4b
-  45661c:	6a4aaa83          	lw	s5,1700(s5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45661c:	6b0aaa83          	lw	s5,1712(s5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   456620:	1101                	addi	sp,sp,-32
   456622:	000aa783          	lw	a5,0(s5)
   456626:	0800                	addi	s0,sp,16
@@ -207287,7 +207287,7 @@ Disassembly of section .text_non_rom:
   4567ec:	04f71463          	bne	a4,a5,456834 <dns_gethostbyname_addrtype+0x150>
   4567f0:	4641                	li	a2,16
   4567f2:	0004b597          	auipc	a1,0x4b
-  4567f6:	54e5a583          	lw	a1,1358(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  4567f6:	55a5a583          	lw	a1,1370(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   4567fa:	ffc8a517          	auipc	a0,0xffc8a
   4567fe:	cee50513          	addi	a0,a0,-786 # e04e8 <dns_servers+0x14>
   456802:	f4ba40ef          	jal	ra,3fb74c <memcmp>
@@ -207297,7 +207297,7 @@ Disassembly of section .text_non_rom:
   45680e:	bf61                	j	4567a6 <dns_gethostbyname_addrtype+0xc2>
   456810:	4641                	li	a2,16
   456812:	0004b597          	auipc	a1,0x4b
-  456816:	52e5a583          	lw	a1,1326(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  456816:	53a5a583          	lw	a1,1338(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   45681a:	8522                	mv	a0,s0
   45681c:	f31a40ef          	jal	ra,3fb74c <memcmp>
   456820:	bf75                	j	4567dc <dns_gethostbyname_addrtype+0xf8>
@@ -207411,7 +207411,7 @@ Disassembly of section .text_non_rom:
   456940:	e525                	bnez	a0,4569a8 <driverif_init+0xba>
   456942:	140408a3          	sb	zero,337(s0)
   456946:	0004b797          	auipc	a5,0x4b
-  45694a:	2fa7a783          	lw	a5,762(a5) # 4a1c40 <_GLOBAL_OFFSET_TABLE_+0x10>
+  45694a:	3067a783          	lw	a5,774(a5) # 4a1c4c <_GLOBAL_OFFSET_TABLE_+0x10>
   45694e:	0cf42e23          	sw	a5,220(s0)
   456952:	00000797          	auipc	a5,0x0
   456956:	f6078793          	addi	a5,a5,-160 # 4568b2 <driverif_output>
@@ -207568,7 +207568,7 @@ Disassembly of section .text_non_rom:
 
 00456af0 <etharp_raw>:
   456af0:	0004b317          	auipc	t1,0x4b
-  456af4:	16032303          	lw	t1,352(t1) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  456af4:	16c32303          	lw	t1,364(t1) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   456af8:	00032303          	lw	t1,0(t1)
   456afc:	00031563          	bnez	t1,456b06 <etharp_raw+0x16>
   456b00:	c509                	beqz	a0,456b0a <etharp_raw+0x1a>
@@ -207642,7 +207642,7 @@ Disassembly of section .text_non_rom:
   456bba:	882e                	mv	a6,a1
   456bbc:	4885                	li	a7,1
   456bbe:	0004b797          	auipc	a5,0x4b
-  456bc2:	11e7a783          	lw	a5,286(a5) # 4a1cdc <_GLOBAL_OFFSET_TABLE_+0xac>
+  456bc2:	12a7a783          	lw	a5,298(a5) # 4a1ce8 <_GLOBAL_OFFSET_TABLE_+0xac>
   456bc6:	00850713          	addi	a4,a0,8
   456bca:	85b6                	mv	a1,a3
   456bcc:	f25ff0ef          	jal	ra,456af0 <etharp_raw>
@@ -207788,7 +207788,7 @@ Disassembly of section .text_non_rom:
 00456d40 <etharp_ip_input>:
   456d40:	aeba32ef          	jal	t0,3fa82a <__riscv_save_4>
   456d44:	0004b797          	auipc	a5,0x4b
-  456d48:	f787a783          	lw	a5,-136(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  456d48:	f847a783          	lw	a5,-124(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   456d4c:	4398                	lw	a4,0(a5)
   456d4e:	1141                	addi	sp,sp,-16
   456d50:	89be                	mv	s3,a5
@@ -207807,7 +207807,7 @@ Disassembly of section .text_non_rom:
   456d74:	8ff9                	and	a5,a5,a4
   456d76:	cba9                	beqz	a5,456dc8 <etharp_ip_input+0x88>
   456d78:	0004b797          	auipc	a5,0x4b
-  456d7c:	ed87a783          	lw	a5,-296(a5) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  456d7c:	ee47a783          	lw	a5,-284(a5) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   456d80:	4380                	lw	s0,0(a5)
   456d82:	16450a13          	addi	s4,a0,356
   456d86:	e801                	bnez	s0,456d96 <etharp_ip_input+0x56>
@@ -207840,7 +207840,7 @@ Disassembly of section .text_non_rom:
 00456dd2 <etharp_input>:
   456dd2:	a59a32ef          	jal	t0,3fa82a <__riscv_save_4>
   456dd6:	0004b797          	auipc	a5,0x4b
-  456dda:	ee67a783          	lw	a5,-282(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  456dda:	ef27a783          	lw	a5,-270(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   456dde:	4398                	lw	a4,0(a5)
   456de0:	1101                	addi	sp,sp,-32
   456de2:	8a3e                	mv	s4,a5
@@ -207935,7 +207935,7 @@ Disassembly of section .text_non_rom:
 00456ee4 <etharp_request>:
   456ee4:	961a32ef          	jal	t0,3fa844 <__riscv_save_0>
   456ee8:	0004b617          	auipc	a2,0x4b
-  456eec:	df862603          	lw	a2,-520(a2) # 4a1ce0 <_GLOBAL_OFFSET_TABLE_+0xb0>
+  456eec:	e0462603          	lw	a2,-508(a2) # 4a1cec <_GLOBAL_OFFSET_TABLE_+0xb0>
   456ef0:	cc3ff0ef          	jal	ra,456bb2 <etharp_request_dst>
   456ef4:	975a306f          	j	3fa868 <__riscv_restore_0>
 
@@ -207961,7 +207961,7 @@ Disassembly of section .text_non_rom:
 00456f28 <etharp_gratuitous_retransmit>:
   456f28:	91da32ef          	jal	t0,3fa844 <__riscv_save_0>
   456f2c:	0004b797          	auipc	a5,0x4b
-  456f30:	d247a783          	lw	a5,-732(a5) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  456f30:	d307a783          	lw	a5,-720(a5) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   456f34:	4380                	lw	s0,0(a5)
   456f36:	4485                	li	s1,1
   456f38:	e019                	bnez	s0,456f3e <etharp_gratuitous_retransmit+0x16>
@@ -208190,7 +208190,7 @@ Disassembly of section .text_non_rom:
 004571ac <etharp_output>:
   4571ac:	e7ea32ef          	jal	t0,3fa82a <__riscv_save_4>
   4571b0:	0004b997          	auipc	s3,0x4b
-  4571b4:	b0c9a983          	lw	s3,-1268(s3) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4571b4:	b189a983          	lw	s3,-1256(s3) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4571b8:	842a                	mv	s0,a0
   4571ba:	892e                	mv	s2,a1
   4571bc:	0009a783          	lw	a5,0(s3)
@@ -208289,7 +208289,7 @@ Disassembly of section .text_non_rom:
   4572d2:	da1ff0ef          	jal	ra,457072 <etharp_query>
   4572d6:	b77d                	j	457284 <etharp_output+0xd8>
   4572d8:	0004b697          	auipc	a3,0x4b
-  4572dc:	a086a683          	lw	a3,-1528(a3) # 4a1ce0 <_GLOBAL_OFFSET_TABLE_+0xb0>
+  4572dc:	a146a683          	lw	a3,-1516(a3) # 4a1cec <_GLOBAL_OFFSET_TABLE_+0xb0>
   4572e0:	b735                	j	45720c <etharp_output+0x60>
   4572e2:	0141                	addi	sp,sp,16
   4572e4:	d7aa306f          	j	3fa85e <__riscv_restore_4>
@@ -208301,9 +208301,9 @@ Disassembly of section .text_non_rom:
   4572f2:	872e                	mv	a4,a1
   4572f4:	4885                	li	a7,1
   4572f6:	0004b797          	auipc	a5,0x4b
-  4572fa:	9e67a783          	lw	a5,-1562(a5) # 4a1cdc <_GLOBAL_OFFSET_TABLE_+0xac>
+  4572fa:	9f27a783          	lw	a5,-1550(a5) # 4a1ce8 <_GLOBAL_OFFSET_TABLE_+0xac>
   4572fe:	0004b617          	auipc	a2,0x4b
-  457302:	9e262603          	lw	a2,-1566(a2) # 4a1ce0 <_GLOBAL_OFFSET_TABLE_+0xb0>
+  457302:	9ee62603          	lw	a2,-1554(a2) # 4a1cec <_GLOBAL_OFFSET_TABLE_+0xb0>
   457306:	85b6                	mv	a1,a3
   457308:	fe8ff0ef          	jal	ra,456af0 <etharp_raw>
   45730c:	d5ca306f          	j	3fa868 <__riscv_restore_0>
@@ -208311,7 +208311,7 @@ Disassembly of section .text_non_rom:
 00457310 <ethernet_input>:
   457310:	d34a32ef          	jal	t0,3fa844 <__riscv_save_0>
   457314:	0004b917          	auipc	s2,0x4b
-  457318:	9a892903          	lw	s2,-1624(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  457318:	9b492903          	lw	s2,-1612(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45731c:	00092783          	lw	a5,0(s2)
   457320:	00a55703          	lhu	a4,10(a0)
   457324:	1141                	addi	sp,sp,-16
@@ -208481,7 +208481,7 @@ Disassembly of section .text_non_rom:
 004574f4 <ethip6_output>:
   4574f4:	b36a32ef          	jal	t0,3fa82a <__riscv_save_4>
   4574f8:	0004a797          	auipc	a5,0x4a
-  4574fc:	7c47a783          	lw	a5,1988(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4574fc:	7d07a783          	lw	a5,2000(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   457500:	4398                	lw	a4,0(a5)
   457502:	00064683          	lbu	a3,0(a2)
   457506:	1101                	addi	sp,sp,-32
@@ -208517,7 +208517,7 @@ Disassembly of section .text_non_rom:
   457566:	84ae                	mv	s1,a1
   457568:	4641                	li	a2,16
   45756a:	0004a597          	auipc	a1,0x4a
-  45756e:	7d65a583          	lw	a1,2006(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  45756e:	7e25a583          	lw	a1,2018(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   457572:	8522                	mv	a0,s0
   457574:	9d8a40ef          	jal	ra,3fb74c <memcmp>
   457578:	57f1                	li	a5,-4
@@ -208549,7 +208549,7 @@ Disassembly of section .text_non_rom:
 004575b4 <icmp_send_response>:
   4575b4:	a76a32ef          	jal	t0,3fa82a <__riscv_save_4>
   4575b8:	0004a997          	auipc	s3,0x4a
-  4575bc:	7049a983          	lw	s3,1796(s3) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4575bc:	7109a983          	lw	s3,1808(s3) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4575c0:	0009a783          	lw	a5,0(s3)
   4575c4:	1101                	addi	sp,sp,-32
   4575c6:	892a                	mv	s2,a0
@@ -208624,7 +208624,7 @@ Disassembly of section .text_non_rom:
 00457688 <icmp_input>:
   457688:	9a2a32ef          	jal	t0,3fa82a <__riscv_save_4>
   45768c:	0004a997          	auipc	s3,0x4a
-  457690:	6209a983          	lw	s3,1568(s3) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  457690:	62c9a983          	lw	s3,1580(s3) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   457694:	0089aa03          	lw	s4,8(s3)
   457698:	47cd                	li	a5,19
   45769a:	842a                	mv	s0,a0
@@ -208824,7 +208824,7 @@ Disassembly of section .text_non_rom:
 004578c4 <icmp6_send_response>:
   4578c4:	f81a22ef          	jal	t0,3fa844 <__riscv_save_0>
   4578c8:	0004a417          	auipc	s0,0x4a
-  4578cc:	3e442403          	lw	s0,996(s0) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  4578cc:	3f042403          	lw	s0,1008(s0) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   4578d0:	00042803          	lw	a6,0(s0)
   4578d4:	1141                	addi	sp,sp,-16
   4578d6:	84aa                	mv	s1,a0
@@ -208881,7 +208881,7 @@ Disassembly of section .text_non_rom:
   45794c:	a095                	j	4579b0 <icmp6_input+0x76>
   45794e:	00855603          	lhu	a2,8(a0)
   457952:	0004a917          	auipc	s2,0x4a
-  457956:	35a92903          	lw	s2,858(s2) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  457956:	36692903          	lw	s2,870(s2) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   45795a:	8a2e                	mv	s4,a1
   45795c:	02890713          	addi	a4,s2,40
   457960:	01490693          	addi	a3,s2,20
@@ -209012,7 +209012,7 @@ Disassembly of section .text_non_rom:
 00457ad0 <igmp_ip_output_if>:
   457ad0:	d75a22ef          	jal	t0,3fa844 <__riscv_save_0>
   457ad4:	0004a417          	auipc	s0,0x4a
-  457ad8:	1e842403          	lw	s0,488(s0) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  457ad8:	1f442403          	lw	s0,500(s0) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   457adc:	401c                	lw	a5,0(s0)
   457ade:	1101                	addi	sp,sp,-32
   457ae0:	8836                	mv	a6,a3
@@ -209036,13 +209036,13 @@ Disassembly of section .text_non_rom:
 00457b0e <igmp_send>:
   457b0e:	d1da22ef          	jal	t0,3fa82a <__riscv_save_4>
   457b12:	0004a497          	auipc	s1,0x4a
-  457b16:	1aa4a483          	lw	s1,426(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  457b16:	1b64a483          	lw	s1,438(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   457b1a:	409c                	lw	a5,0(s1)
   457b1c:	1101                	addi	sp,sp,-32
   457b1e:	8a2a                	mv	s4,a0
   457b20:	ce3e                	sw	a5,28(sp)
   457b22:	0004a797          	auipc	a5,0x4a
-  457b26:	1f67a783          	lw	a5,502(a5) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  457b26:	2027a783          	lw	a5,514(a5) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   457b2a:	439c                	lw	a5,0(a5)
   457b2c:	89ae                	mv	s3,a1
   457b2e:	8ab2                	mv	s5,a2
@@ -209243,7 +209243,7 @@ Disassembly of section .text_non_rom:
 00457d3a <igmp_input>:
   457d3a:	af1a22ef          	jal	t0,3fa82a <__riscv_save_4>
   457d3e:	0004a797          	auipc	a5,0x4a
-  457d42:	f7e7a783          	lw	a5,-130(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  457d42:	f8a7a783          	lw	a5,-118(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   457d46:	4398                	lw	a4,0(a5)
   457d48:	84ae                	mv	s1,a1
   457d4a:	00a55583          	lhu	a1,10(a0)
@@ -209371,7 +209371,7 @@ Disassembly of section .text_non_rom:
   457e9e:	4318                	lw	a4,0(a4)
   457ea0:	00e78963          	beq	a5,a4,457eb2 <igmp_joingroup+0x34>
   457ea4:	0004a797          	auipc	a5,0x4a
-  457ea8:	dac7a783          	lw	a5,-596(a5) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  457ea8:	db87a783          	lw	a5,-584(a5) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   457eac:	4380                	lw	s0,0(a5)
   457eae:	84ae                	mv	s1,a1
   457eb0:	e019                	bnez	s0,457eb6 <igmp_joingroup+0x38>
@@ -209456,7 +209456,7 @@ Disassembly of section .text_non_rom:
   457f8e:	4318                	lw	a4,0(a4)
   457f90:	00e78a63          	beq	a5,a4,457fa4 <igmp_leavegroup+0x3a>
   457f94:	0004a797          	auipc	a5,0x4a
-  457f98:	cbc7a783          	lw	a5,-836(a5) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  457f98:	cc87a783          	lw	a5,-824(a5) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   457f9c:	4384                	lw	s1,0(a5)
   457f9e:	892e                	mv	s2,a1
   457fa0:	89aa                	mv	s3,a0
@@ -209481,7 +209481,7 @@ Disassembly of section .text_non_rom:
 00457fd0 <igmp_tmr>:
   457fd0:	875a22ef          	jal	t0,3fa844 <__riscv_save_0>
   457fd4:	0004a797          	auipc	a5,0x4a
-  457fd8:	c7c7a783          	lw	a5,-900(a5) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  457fd8:	c887a783          	lw	a5,-888(a5) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   457fdc:	4384                	lw	s1,0(a5)
   457fde:	e099                	bnez	s1,457fe4 <igmp_tmr+0x14>
   457fe0:	889a206f          	j	3fa868 <__riscv_restore_0>
@@ -209930,7 +209930,7 @@ Disassembly of section .text_non_rom:
   458474:	00f69c63          	bne	a3,a5,45848c <ip_route_pcb+0x4a>
   458478:	85ba                	mv	a1,a4
   45847a:	0004a517          	auipc	a0,0x4a
-  45847e:	8c652503          	lw	a0,-1850(a0) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  45847e:	8d252503          	lw	a0,-1838(a0) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   458482:	244010ef          	jal	ra,4596c6 <ip6_route>
   458486:	bfe1                	j	45845e <ip_route_pcb+0x1c>
   458488:	4601                	li	a2,0
@@ -209956,8 +209956,8 @@ Disassembly of section .text_non_rom:
   4584b2:	85aa                	mv	a1,a0
   4584b4:	4501                	li	a0,0
   4584b6:	c31d                	beqz	a4,4584dc <ip4_input_accept+0x34>
-  4584b8:	00049797          	auipc	a5,0x49
-  4584bc:	7f47a783          	lw	a5,2036(a5) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  4584b8:	0004a797          	auipc	a5,0x4a
+  4584bc:	8007a783          	lw	a5,-2048(a5) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   4584c0:	579c                	lw	a5,40(a5)
   4584c2:	4505                	li	a0,1
   4584c4:	00f70c63          	beq	a4,a5,4584dc <ip4_input_accept+0x34>
@@ -209972,7 +209972,7 @@ Disassembly of section .text_non_rom:
 
 004584de <ip_init>:
   4584de:	00049797          	auipc	a5,0x49
-  4584e2:	7ce7a783          	lw	a5,1998(a5) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  4584e2:	7da7a783          	lw	a5,2010(a5) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   4584e6:	02079e23          	sh	zero,60(a5)
   4584ea:	8082                	ret
 
@@ -209986,7 +209986,7 @@ Disassembly of section .text_non_rom:
   458502:	4388                	lw	a0,0(a5)
   458504:	e921                	bnez	a0,458554 <ip4_route+0x68>
   458506:	00049797          	auipc	a5,0x49
-  45850a:	7827a783          	lw	a5,1922(a5) # 4a1c88 <_GLOBAL_OFFSET_TABLE_+0x58>
+  45850a:	78e7a783          	lw	a5,1934(a5) # 4a1c94 <_GLOBAL_OFFSET_TABLE_+0x58>
   45850e:	439c                	lw	a5,0(a5)
   458510:	c38d                	beqz	a5,458532 <ip4_route+0x46>
   458512:	1607a703          	lw	a4,352(a5)
@@ -210004,7 +210004,7 @@ Disassembly of section .text_non_rom:
   45852e:	853e                	mv	a0,a5
   458530:	c315                	beqz	a4,458554 <ip4_route+0x68>
   458532:	00049717          	auipc	a4,0x49
-  458536:	71e72703          	lw	a4,1822(a4) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  458536:	72a72703          	lw	a4,1834(a4) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   45853a:	4308                	lw	a0,0(a4)
   45853c:	ed09                	bnez	a0,458556 <ip4_route+0x6a>
   45853e:	e999                	bnez	a1,458554 <ip4_route+0x68>
@@ -210076,7 +210076,7 @@ Disassembly of section .text_non_rom:
   4585f8:	f14d                	bnez	a0,45859a <ip4_input+0x10>
   4585fa:	010a2783          	lw	a5,16(s4)
   4585fe:	00049417          	auipc	s0,0x49
-  458602:	6ae42403          	lw	s0,1710(s0) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  458602:	6ba42403          	lw	s0,1722(s0) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   458606:	02040c23          	sb	zero,56(s0)
   45860a:	d41c                	sw	a5,40(s0)
   45860c:	00ca2703          	lw	a4,12(s4)
@@ -210170,7 +210170,7 @@ Disassembly of section .text_non_rom:
   458716:	07f00793          	li	a5,127
   45871a:	f0f709e3          	beq	a4,a5,45862c <ip4_input+0xa2>
   45871e:	00049797          	auipc	a5,0x49
-  458722:	5327a783          	lw	a5,1330(a5) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  458722:	53e7a783          	lw	a5,1342(a5) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   458726:	0007a983          	lw	s3,0(a5)
   45872a:	f00981e3          	beqz	s3,45862c <ip4_input+0xa2>
   45872e:	01299563          	bne	s3,s2,458738 <ip4_input+0x1ae>
@@ -210220,7 +210220,7 @@ Disassembly of section .text_non_rom:
 004587ae <ip4_output_if_opt_src>:
   4587ae:	86ea22ef          	jal	t0,3fa81c <__riscv_save_10>
   4587b2:	00049917          	auipc	s2,0x49
-  4587b6:	50a92903          	lw	s2,1290(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4587b6:	51692903          	lw	s2,1302(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4587ba:	8cbe                	mv	s9,a5
   4587bc:	00092783          	lw	a5,0(s2)
   4587c0:	1101                	addi	sp,sp,-32
@@ -210310,7 +210310,7 @@ Disassembly of section .text_non_rom:
   4588be:	00b61123          	sh	a1,2(a2)
   4588c2:	8f5d                	or	a4,a4,a5
   4588c4:	00049797          	auipc	a5,0x49
-  4588c8:	3e87a783          	lw	a5,1000(a5) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  4588c8:	3f47a783          	lw	a5,1012(a5) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   4588cc:	03c7d503          	lhu	a0,60(a5)
   4588d0:	00851693          	slli	a3,a0,0x8
   4588d4:	8121                	srli	a0,a0,0x8
@@ -210484,7 +210484,7 @@ Disassembly of section .text_non_rom:
 00458a88 <ip4addr_aton>:
   458a88:	d95a12ef          	jal	t0,3fa81c <__riscv_save_10>
   458a8c:	00049817          	auipc	a6,0x49
-  458a90:	23082803          	lw	a6,560(a6) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  458a90:	23c82803          	lw	a6,572(a6) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   458a94:	00082783          	lw	a5,0(a6)
   458a98:	1101                	addi	sp,sp,-32
   458a9a:	4f01                	li	t5,0
@@ -210645,7 +210645,7 @@ Disassembly of section .text_non_rom:
 00458c6e <ipaddr_addr>:
   458c6e:	bd7a12ef          	jal	t0,3fa844 <__riscv_save_0>
   458c72:	00049797          	auipc	a5,0x49
-  458c76:	04a7a783          	lw	a5,74(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  458c76:	0567a783          	lw	a5,86(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   458c7a:	4398                	lw	a4,0(a5)
   458c7c:	1141                	addi	sp,sp,-16
   458c7e:	843e                	mv	s0,a5
@@ -210667,7 +210667,7 @@ Disassembly of section .text_non_rom:
 00458ca4 <ip4addr_ntoa_r>:
   458ca4:	ba1a12ef          	jal	t0,3fa844 <__riscv_save_0>
   458ca8:	00049797          	auipc	a5,0x49
-  458cac:	0147a783          	lw	a5,20(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  458cac:	0207a783          	lw	a5,32(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   458cb0:	4398                	lw	a4,0(a5)
   458cb2:	1141                	addi	sp,sp,-16
   458cb4:	8f3e                	mv	t5,a5
@@ -210739,7 +210739,7 @@ Disassembly of section .text_non_rom:
 00458d74 <lwip_inet_ntop4>:
   458d74:	ad1a12ef          	jal	t0,3fa844 <__riscv_save_0>
   458d78:	00049417          	auipc	s0,0x49
-  458d7c:	f4442403          	lw	s0,-188(s0) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  458d7c:	f5042403          	lw	s0,-176(s0) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   458d80:	401c                	lw	a5,0(s0)
   458d82:	7179                	addi	sp,sp,-48
   458d84:	00012d23          	sw	zero,26(sp)
@@ -210830,7 +210830,7 @@ Disassembly of section .text_non_rom:
 00458e8a <inet_pton4>:
   458e8a:	9bba12ef          	jal	t0,3fa844 <__riscv_save_0>
   458e8e:	00049497          	auipc	s1,0x49
-  458e92:	e2e4a483          	lw	s1,-466(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  458e92:	e3a4a483          	lw	s1,-454(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   458e96:	409c                	lw	a5,0(s1)
   458e98:	1141                	addi	sp,sp,-16
   458e9a:	c63e                	sw	a5,12(sp)
@@ -211508,7 +211508,7 @@ Disassembly of section .text_non_rom:
   4595f0:	8b85                	andi	a5,a5,1
   4595f2:	c7a9                	beqz	a5,45963c <ip6_input_accept+0x50>
   4595f4:	00048797          	auipc	a5,0x48
-  4595f8:	6b87a783          	lw	a5,1720(a5) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  4595f8:	6c47a783          	lw	a5,1732(a5) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   4595fc:	5790                	lw	a2,40(a5)
   4595fe:	57cc                	lw	a1,44(a5)
   459600:	0307a803          	lw	a6,48(a5)
@@ -211550,7 +211550,7 @@ Disassembly of section .text_non_rom:
   459664:	8522                	mv	a0,s0
   459666:	9f8a106f          	j	3fa85e <__riscv_restore_4>
   45966a:	00048797          	auipc	a5,0x48
-  45966e:	6427a783          	lw	a5,1602(a5) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  45966e:	64e7a783          	lw	a5,1614(a5) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   459672:	47c0                	lw	s0,12(a5)
   459674:	414c                	lw	a1,4(a0)
   459676:	8d81                	sub	a1,a1,s0
@@ -211564,7 +211564,7 @@ Disassembly of section .text_non_rom:
   45968c:	4405                	li	s0,1
   45968e:	bfd9                	j	459664 <ip6_process_destination_header_extension_unknown_options+0x20>
   459690:	00048797          	auipc	a5,0x48
-  459694:	61c7a783          	lw	a5,1564(a5) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  459694:	6287a783          	lw	a5,1576(a5) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   459698:	0287c683          	lbu	a3,40(a5)
   45969c:	0ff00713          	li	a4,255
   4596a0:	4405                	li	s0,1
@@ -211603,12 +211603,12 @@ Disassembly of section .text_non_rom:
   4596fa:	06e69d63          	bne	a3,a4,459774 <ip6_route+0xae>
   4596fe:	4641                	li	a2,16
   459700:	00048597          	auipc	a1,0x48
-  459704:	6405a583          	lw	a1,1600(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  459704:	64c5a583          	lw	a1,1612(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   459708:	8522                	mv	a0,s0
   45970a:	842a20ef          	jal	ra,3fb74c <memcmp>
   45970e:	10050463          	beqz	a0,459816 <ip6_route+0x150>
   459712:	00048797          	auipc	a5,0x48
-  459716:	53e7a783          	lw	a5,1342(a5) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  459716:	54a7a783          	lw	a5,1354(a5) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   45971a:	4388                	lw	a0,0(a5)
   45971c:	4615                	li	a2,5
   45971e:	10050263          	beqz	a0,459822 <ip6_route+0x15c>
@@ -211641,12 +211641,12 @@ Disassembly of section .text_non_rom:
   459774:	84ae                	mv	s1,a1
   459776:	4641                	li	a2,16
   459778:	00048597          	auipc	a1,0x48
-  45977c:	5cc5a583          	lw	a1,1484(a1) # 4a1d44 <_GLOBAL_OFFSET_TABLE_+0x114>
+  45977c:	5d85a583          	lw	a1,1496(a1) # 4a1d50 <_GLOBAL_OFFSET_TABLE_+0x114>
   459780:	fcda10ef          	jal	ra,3fb74c <memcmp>
   459784:	dd2d                	beqz	a0,4596fe <ip6_route+0x38>
   459786:	08091e63          	bnez	s2,459822 <ip6_route+0x15c>
   45978a:	00048917          	auipc	s2,0x48
-  45978e:	4c692903          	lw	s2,1222(s2) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  45978e:	4d292903          	lw	s2,1234(s2) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   459792:	00092503          	lw	a0,0(s2)
   459796:	4615                	li	a2,5
   459798:	45cd                	li	a1,19
@@ -211657,7 +211657,7 @@ Disassembly of section .text_non_rom:
   4597a4:	e141                	bnez	a0,459824 <ip6_route+0x15e>
   4597a6:	4641                	li	a2,16
   4597a8:	00048597          	auipc	a1,0x48
-  4597ac:	5985a583          	lw	a1,1432(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  4597ac:	5a45a583          	lw	a1,1444(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   4597b0:	8522                	mv	a0,s0
   4597b2:	f9ba10ef          	jal	ra,3fb74c <memcmp>
   4597b6:	c125                	beqz	a0,459816 <ip6_route+0x150>
@@ -211692,7 +211692,7 @@ Disassembly of section .text_non_rom:
   459810:	b77d                	j	4597be <ip6_route+0xf8>
   459812:	ee0416e3          	bnez	s0,4596fe <ip6_route+0x38>
   459816:	00048797          	auipc	a5,0x48
-  45981a:	4727a783          	lw	a5,1138(a5) # 4a1c88 <_GLOBAL_OFFSET_TABLE_+0x58>
+  45981a:	47e7a783          	lw	a5,1150(a5) # 4a1c94 <_GLOBAL_OFFSET_TABLE_+0x58>
   45981e:	4388                	lw	a0,0(a5)
   459820:	e525                	bnez	a0,459888 <ip6_route+0x1c2>
   459822:	4501                	li	a0,0
@@ -211879,7 +211879,7 @@ Disassembly of section .text_non_rom:
   459a2a:	e27a006f          	j	3fa850 <__riscv_restore_12>
   459a2e:	4641                	li	a2,16
   459a30:	00048597          	auipc	a1,0x48
-  459a34:	3145a583          	lw	a1,788(a1) # 4a1d44 <_GLOBAL_OFFSET_TABLE_+0x114>
+  459a34:	3205a583          	lw	a1,800(a1) # 4a1d50 <_GLOBAL_OFFSET_TABLE_+0x114>
   459a38:	8556                	mv	a0,s5
   459a3a:	d13a10ef          	jal	ra,3fb74c <memcmp>
   459a3e:	d105                	beqz	a0,45995e <ip6_select_source_address+0x2e>
@@ -211977,7 +211977,7 @@ Disassembly of section .text_non_rom:
 00459b34 <ip6_input>:
   459b34:	ce1a02ef          	jal	t0,3fa814 <__riscv_save_12>
   459b38:	00048b97          	auipc	s7,0x48
-  459b3c:	184bab83          	lw	s7,388(s7) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  459b3c:	190bab83          	lw	s7,400(s7) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   459b40:	000ba783          	lw	a5,0(s7)
   459b44:	00a55703          	lhu	a4,10(a0)
   459b48:	1141                	addi	sp,sp,-16
@@ -212017,7 +212017,7 @@ Disassembly of section .text_non_rom:
   459bb2:	3fc050ef          	jal	ra,45efae <pbuf_realloc>
   459bb6:	018a2983          	lw	s3,24(s4)
   459bba:	00048497          	auipc	s1,0x48
-  459bbe:	0f24a483          	lw	s1,242(s1) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  459bbe:	0fe4a483          	lw	s1,254(s1) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   459bc2:	0334a423          	sw	s3,40(s1)
   459bc6:	01ca2703          	lw	a4,28(s4)
   459bca:	d4d8                	sw	a4,44(s1)
@@ -212047,7 +212047,7 @@ Disassembly of section .text_non_rom:
   459c18:	0ff00713          	li	a4,255
   459c1c:	f4e781e3          	beq	a5,a4,459b5e <ip6_input+0x2a>
   459c20:	00048b17          	auipc	s6,0x48
-  459c24:	030b2b03          	lw	s6,48(s6) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  459c24:	03cb2b03          	lw	s6,60(s6) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   459c28:	000b2783          	lw	a5,0(s6)
   459c2c:	6505                	lui	a0,0x1
   459c2e:	80050513          	addi	a0,a0,-2048 # 800 <DOWNLOAD_IRQ_STACK_SIZE>
@@ -212060,14 +212060,14 @@ Disassembly of section .text_non_rom:
   459c48:	10fc1263          	bne	s8,a5,459d4c <ip6_input+0x218>
   459c4c:	4641                	li	a2,16
   459c4e:	00048597          	auipc	a1,0x48
-  459c52:	02e5a583          	lw	a1,46(a1) # 4a1c7c <_GLOBAL_OFFSET_TABLE_+0x4c>
+  459c52:	03a5a583          	lw	a1,58(a1) # 4a1c88 <_GLOBAL_OFFSET_TABLE_+0x4c>
   459c56:	02848513          	addi	a0,s1,40
   459c5a:	af3a10ef          	jal	ra,3fb74c <memcmp>
   459c5e:	e549                	bnez	a0,459ce8 <ip6_input+0x1b4>
   459c60:	8956                	mv	s2,s5
   459c62:	4641                	li	a2,16
   459c64:	00048597          	auipc	a1,0x48
-  459c68:	0dc5a583          	lw	a1,220(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  459c68:	0e85a583          	lw	a1,232(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   459c6c:	01448513          	addi	a0,s1,20
   459c70:	adda10ef          	jal	ra,3fb74c <memcmp>
   459c74:	14051063          	bnez	a0,459db4 <ip6_input+0x280>
@@ -212106,7 +212106,7 @@ Disassembly of section .text_non_rom:
   459ce6:	b7b1                	j	459c32 <ip6_input+0xfe>
   459ce8:	4641                	li	a2,16
   459cea:	00048597          	auipc	a1,0x48
-  459cee:	faa5a583          	lw	a1,-86(a1) # 4a1c94 <_GLOBAL_OFFSET_TABLE_+0x64>
+  459cee:	fb65a583          	lw	a1,-74(a1) # 4a1ca0 <_GLOBAL_OFFSET_TABLE_+0x64>
   459cf2:	02848513          	addi	a0,s1,40
   459cf6:	a57a10ef          	jal	ra,3fb74c <memcmp>
   459cfa:	d13d                	beqz	a0,459c60 <ip6_input+0x12c>
@@ -212150,13 +212150,13 @@ Disassembly of section .text_non_rom:
   459d6c:	f8f90de3          	beq	s2,a5,459d06 <ip6_input+0x1d2>
   459d70:	4641                	li	a2,16
   459d72:	00048597          	auipc	a1,0x48
-  459d76:	fd25a583          	lw	a1,-46(a1) # 4a1d44 <_GLOBAL_OFFSET_TABLE_+0x114>
+  459d76:	fde5a583          	lw	a1,-34(a1) # 4a1d50 <_GLOBAL_OFFSET_TABLE_+0x114>
   459d7a:	02848513          	addi	a0,s1,40
   459d7e:	9cfa10ef          	jal	ra,3fb74c <memcmp>
   459d82:	d151                	beqz	a0,459d06 <ip6_input+0x1d2>
   459d84:	4641                	li	a2,16
   459d86:	00048597          	auipc	a1,0x48
-  459d8a:	fbe5a583          	lw	a1,-66(a1) # 4a1d44 <_GLOBAL_OFFSET_TABLE_+0x114>
+  459d8a:	fca5a583          	lw	a1,-54(a1) # 4a1d50 <_GLOBAL_OFFSET_TABLE_+0x114>
   459d8e:	01448513          	addi	a0,s1,20
   459d92:	9bba10ef          	jal	ra,3fb74c <memcmp>
   459d96:	d925                	beqz	a0,459d06 <ip6_input+0x1d2>
@@ -212403,7 +212403,7 @@ Disassembly of section .text_non_rom:
 0045a082 <ip6_output_if_src>:
   45a082:	fa8a02ef          	jal	t0,3fa82a <__riscv_save_4>
   45a086:	00048a97          	auipc	s5,0x48
-  45a08a:	c36aaa83          	lw	s5,-970(s5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45a08a:	c42aaa83          	lw	s5,-958(s5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45a08e:	8432                	mv	s0,a2
   45a090:	000aa603          	lw	a2,0(s5)
   45a094:	7179                	addi	sp,sp,-48
@@ -212448,7 +212448,7 @@ Disassembly of section .text_non_rom:
   45a0f6:	00f49223          	sh	a5,4(s1)
   45a0fa:	000a1663          	bnez	s4,45a106 <ip6_output_if_src+0x84>
   45a0fe:	00048a17          	auipc	s4,0x48
-  45a102:	c42a2a03          	lw	s4,-958(s4) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  45a102:	c4ea2a03          	lw	s4,-946(s4) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   45a106:	000a2783          	lw	a5,0(s4)
   45a10a:	c49c                	sw	a5,8(s1)
   45a10c:	004a2783          	lw	a5,4(s4)
@@ -212538,7 +212538,7 @@ Disassembly of section .text_non_rom:
   45a1e4:	c99d                	beqz	a1,45a21a <ip6_output_if+0x4a>
   45a1e6:	4641                	li	a2,16
   45a1e8:	00048597          	auipc	a1,0x48
-  45a1ec:	b585a583          	lw	a1,-1192(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  45a1ec:	b645a583          	lw	a1,-1180(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   45a1f0:	8522                	mv	a0,s0
   45a1f2:	d5aa10ef          	jal	ra,3fb74c <memcmp>
   45a1f6:	e115                	bnez	a0,45a21a <ip6_output_if+0x4a>
@@ -212551,7 +212551,7 @@ Disassembly of section .text_non_rom:
   45a206:	e58a006f          	j	3fa85e <__riscv_restore_4>
   45a20a:	4641                	li	a2,16
   45a20c:	00048597          	auipc	a1,0x48
-  45a210:	b345a583          	lw	a1,-1228(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  45a210:	b405a583          	lw	a1,-1216(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   45a214:	d38a10ef          	jal	ra,3fb74c <memcmp>
   45a218:	d575                	beqz	a0,45a204 <ip6_output_if+0x34>
   45a21a:	884a                	mv	a6,s2
@@ -212595,7 +212595,7 @@ Disassembly of section .text_non_rom:
 0045a26c <ip6addr_aton>:
   45a26c:	da8a02ef          	jal	t0,3fa814 <__riscv_save_12>
   45a270:	00048917          	auipc	s2,0x48
-  45a274:	a4c92903          	lw	s2,-1460(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45a274:	a5892903          	lw	s2,-1448(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45a278:	00092783          	lw	a5,0(s2)
   45a27c:	1101                	addi	sp,sp,-32
   45a27e:	ce3e                	sw	a5,28(sp)
@@ -212782,7 +212782,7 @@ Disassembly of section .text_non_rom:
 0045a48c <ip6addr_ntoa_r>:
   45a48c:	b88a02ef          	jal	t0,3fa814 <__riscv_save_12>
   45a490:	00048497          	auipc	s1,0x48
-  45a494:	82c4a483          	lw	s1,-2004(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45a494:	8384a483          	lw	s1,-1992(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45a498:	409c                	lw	a5,0(s1)
   45a49a:	1101                	addi	sp,sp,-32
   45a49c:	ce3e                	sw	a5,28(sp)
@@ -213006,7 +213006,7 @@ Disassembly of section .text_non_rom:
 0045a710 <ip6_reass_free_complete_datagram>:
   45a710:	91aa02ef          	jal	t0,3fa82a <__riscv_save_4>
   45a714:	00047997          	auipc	s3,0x47
-  45a718:	5a89a983          	lw	s3,1448(s3) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45a718:	5b49a983          	lw	s3,1460(s3) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45a71c:	0009a783          	lw	a5,0(s3)
   45a720:	4144                	lw	s1,4(a0)
   45a722:	7179                	addi	sp,sp,-48
@@ -213157,7 +213157,7 @@ Disassembly of section .text_non_rom:
   45a89c:	00452c03          	lw	s8,4(a0)
   45a8a0:	8baa                	mv	s7,a0
   45a8a2:	00047497          	auipc	s1,0x47
-  45a8a6:	40a4a483          	lw	s1,1034(s1) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  45a8a6:	4164a483          	lw	s1,1046(s1) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   45a8aa:	774040ef          	jal	ra,45f01e <pbuf_clen>
   45a8ae:	002c5783          	lhu	a5,2(s8)
   45a8b2:	44d4                	lw	a3,12(s1)
@@ -213599,7 +213599,7 @@ Disassembly of section .text_non_rom:
 0045adb6 <inet_pton>:
   45adb6:	a8f9f2ef          	jal	t0,3fa844 <__riscv_save_0>
   45adba:	00047717          	auipc	a4,0x47
-  45adbe:	f0272703          	lw	a4,-254(a4) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45adbe:	f0e72703          	lw	a4,-242(a4) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45adc2:	4314                	lw	a3,0(a4)
   45adc4:	7179                	addi	sp,sp,-48
   45adc6:	893a                	mv	s2,a4
@@ -213679,7 +213679,7 @@ Disassembly of section .text_non_rom:
   45ae80:	9c59f2ef          	jal	t0,3fa844 <__riscv_save_0>
   45ae84:	4641                	li	a2,16
   45ae86:	00047597          	auipc	a1,0x47
-  45ae8a:	eba5a583          	lw	a1,-326(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  45ae8a:	ec65a583          	lw	a1,-314(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   45ae8e:	8bfa00ef          	jal	ra,3fb74c <memcmp>
   45ae92:	00153513          	seqz	a0,a0
   45ae96:	9d39f06f          	j	3fa868 <__riscv_restore_0>
@@ -213697,7 +213697,7 @@ Disassembly of section .text_non_rom:
   45aeb2:	9939f2ef          	jal	t0,3fa844 <__riscv_save_0>
   45aeb6:	4641                	li	a2,16
   45aeb8:	00047597          	auipc	a1,0x47
-  45aebc:	e8c5a583          	lw	a1,-372(a1) # 4a1d44 <_GLOBAL_OFFSET_TABLE_+0x114>
+  45aebc:	e985a583          	lw	a1,-360(a1) # 4a1d50 <_GLOBAL_OFFSET_TABLE_+0x114>
   45aec0:	88da00ef          	jal	ra,3fb74c <memcmp>
   45aec4:	00153513          	seqz	a0,a0
   45aec8:	9a19f06f          	j	3fa868 <__riscv_restore_0>
@@ -213961,7 +213961,7 @@ Disassembly of section .text_non_rom:
   45b168:	4401                	li	s0,0
   45b16a:	02800a13          	li	s4,40
   45b16e:	00047a97          	auipc	s5,0x47
-  45b172:	bd2aaa83          	lw	s5,-1070(s5) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  45b172:	bdeaaa83          	lw	s5,-1058(s5) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   45b176:	4991                	li	s3,4
   45b178:	03440533          	mul	a0,s0,s4
   45b17c:	ffc8a497          	auipc	s1,0xffc8a
@@ -214071,7 +214071,7 @@ Disassembly of section .text_non_rom:
 0045b2a2 <nd6_send_q>:
   45b2a2:	d889f2ef          	jal	t0,3fa82a <__riscv_save_4>
   45b2a6:	00047797          	auipc	a5,0x47
-  45b2aa:	a167a783          	lw	a5,-1514(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45b2aa:	a227a783          	lw	a5,-1502(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45b2ae:	4398                	lw	a4,0(a5)
   45b2b0:	1101                	addi	sp,sp,-32
   45b2b2:	0ff57693          	andi	a3,a0,255
@@ -214355,7 +214355,7 @@ Disassembly of section .text_non_rom:
   45b5dc:	be5fc0ef          	jal	ra,4581c0 <ip6_chksum_pseudo>
   45b5e0:	00a99123          	sh	a0,2(s3)
   45b5e4:	00046797          	auipc	a5,0x46
-  45b5e8:	75c7a783          	lw	a5,1884(a5) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  45b5e8:	7687a783          	lw	a5,1896(a5) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   45b5ec:	00f91363          	bne	s2,a5,45b5f2 <nd6_send_ns+0xda>
   45b5f0:	4901                	li	s2,0
   45b5f2:	8856                	mv	a6,s5
@@ -214815,7 +214815,7 @@ Disassembly of section .text_non_rom:
   45bb06:	57fd                	li	a5,-1
   45bb08:	02d51c63          	bne	a0,a3,45bb40 <nd6_get_router.constprop.6+0x4c>
   45bb0c:	00046697          	auipc	a3,0x46
-  45bb10:	1a06a683          	lw	a3,416(a3) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  45bb10:	1ac6a683          	lw	a3,428(a3) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   45bb14:	4acc                	lw	a1,20(a3)
   45bb16:	4310                	lw	a2,0(a4)
   45bb18:	57fd                	li	a5,-1
@@ -215007,7 +215007,7 @@ Disassembly of section .text_non_rom:
   45bd2a:	010007b7          	lui	a5,0x1000
   45bd2e:	bf49                	j	45bcc0 <nd6_send_na+0x9e>
   45bd30:	00046997          	auipc	s3,0x46
-  45bd34:	f7c9a983          	lw	s3,-132(s3) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  45bd34:	f889a983          	lw	s3,-120(s3) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   45bd38:	09d1                	addi	s3,s3,20
   45bd3a:	bf59                	j	45bcd0 <nd6_send_na+0xae>
 
@@ -215016,7 +215016,7 @@ Disassembly of section .text_non_rom:
   45bd40:	0a854783          	lbu	a5,168(a0)
   45bd44:	89aa                	mv	s3,a0
   45bd46:	00046a97          	auipc	s5,0x46
-  45bd4a:	ffaaaa83          	lw	s5,-6(s5) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  45bd4a:	006aaa83          	lw	s5,6(s5) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   45bd4e:	8bc1                	andi	a5,a5,16
   45bd50:	04450913          	addi	s2,a0,68
   45bd54:	e391                	bnez	a5,45bd58 <nd6_send_rs+0x1c>
@@ -215208,7 +215208,7 @@ Disassembly of section .text_non_rom:
   45bf90:	07f1                	addi	a5,a5,28
   45bf92:	fef696e3          	bne	a3,a5,45bf7e <nd6_tmr+0x128>
   45bf96:	00046997          	auipc	s3,0x46
-  45bf9a:	cba9a983          	lw	s3,-838(s3) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x20>
+  45bf9a:	cc69a983          	lw	s3,-826(s3) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x20>
   45bf9e:	0009a403          	lw	s0,0(s3)
   45bfa2:	6a85                	lui	s5,0x1
   45bfa4:	800a8a93          	addi	s5,s5,-2048 # 800 <DOWNLOAD_IRQ_STACK_SIZE>
@@ -215533,7 +215533,7 @@ Disassembly of section .text_non_rom:
 0045c348 <nd6_new_router.constprop.4>:
   45c348:	ce29e2ef          	jal	t0,3fa82a <__riscv_save_4>
   45c34c:	00046997          	auipc	s3,0x46
-  45c350:	9609a983          	lw	s3,-1696(s3) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  45c350:	96c9a983          	lw	s3,-1684(s3) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   45c354:	85aa                	mv	a1,a0
   45c356:	892a                	mv	s2,a0
   45c358:	01498513          	addi	a0,s3,20
@@ -215578,7 +215578,7 @@ Disassembly of section .text_non_rom:
   45c3d0:	c449e2ef          	jal	t0,3fa814 <__riscv_save_12>
   45c3d4:	00452d83          	lw	s11,4(a0)
   45c3d8:	00046617          	auipc	a2,0x46
-  45c3dc:	8e462603          	lw	a2,-1820(a2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45c3dc:	8f062603          	lw	a2,-1808(a2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45c3e0:	421c                	lw	a5,0(a2)
   45c3e2:	000dc703          	lbu	a4,0(s11)
   45c3e6:	711d                	addi	sp,sp,-96
@@ -215608,7 +215608,7 @@ Disassembly of section .text_non_rom:
   45c432:	02700713          	li	a4,39
   45c436:	fcb77ae3          	bleu	a1,a4,45c40a <nd6_input+0x3a>
   45c43a:	00046997          	auipc	s3,0x46
-  45c43e:	8729a983          	lw	s3,-1934(s3) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  45c43e:	87e9a983          	lw	s3,-1922(s3) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   45c442:	0149a683          	lw	a3,20(s3)
   45c446:	6731                	lui	a4,0xc
   45c448:	0ff70713          	addi	a4,a4,255 # c0ff <__bss_size__+0x2fbf>
@@ -215732,7 +215732,7 @@ Disassembly of section .text_non_rom:
   45c5d4:	e3277be3          	bleu	s2,a4,45c40a <nd6_input+0x3a>
   45c5d8:	008da703          	lw	a4,8(s11)
   45c5dc:	00045617          	auipc	a2,0x45
-  45c5e0:	6d062603          	lw	a2,1744(a2) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  45c5e0:	6dc62603          	lw	a2,1756(a2) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   45c5e4:	0ff00513          	li	a0,255
   45c5e8:	d43a                	sw	a4,40(sp)
   45c5ea:	00cda683          	lw	a3,12(s11)
@@ -215792,7 +215792,7 @@ Disassembly of section .text_non_rom:
   45c698:	d6d779e3          	bleu	a3,a4,45c40a <nd6_input+0x3a>
   45c69c:	008da703          	lw	a4,8(s11)
   45c6a0:	00045917          	auipc	s2,0x45
-  45c6a4:	60c92903          	lw	s2,1548(s2) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  45c6a4:	61892903          	lw	s2,1560(s2) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   45c6a8:	0ff00593          	li	a1,255
   45c6ac:	d43a                	sw	a4,40(sp)
   45c6ae:	00cda603          	lw	a2,12(s11)
@@ -215822,7 +215822,7 @@ Disassembly of section .text_non_rom:
   45c700:	000a0d63          	beqz	s4,45c71a <nd6_input+0x34a>
   45c704:	4641                	li	a2,16
   45c706:	00045597          	auipc	a1,0x45
-  45c70a:	63a5a583          	lw	a1,1594(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  45c70a:	6465a583          	lw	a1,1606(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   45c70e:	01490513          	addi	a0,s2,20
   45c712:	83a9f0ef          	jal	ra,3fb74c <memcmp>
   45c716:	ce050ae3          	beqz	a0,45c40a <nd6_input+0x3a>
@@ -215832,7 +215832,7 @@ Disassembly of section .text_non_rom:
   45c726:	8ace                	mv	s5,s3
   45c728:	8bda                	mv	s7,s6
   45c72a:	00045c97          	auipc	s9,0x45
-  45c72e:	616cac83          	lw	s9,1558(s9) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  45c72e:	622cac83          	lw	s9,1570(s9) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   45c732:	01490d13          	addi	s10,s2,20
   45c736:	000bc703          	lbu	a4,0(s7)
   45c73a:	01077693          	andi	a3,a4,16
@@ -215851,7 +215851,7 @@ Disassembly of section .text_non_rom:
   45c76c:	08e69c63          	bne	a3,a4,45c804 <nd6_input+0x434>
   45c770:	4641                	li	a2,16
   45c772:	00045597          	auipc	a1,0x45
-  45c776:	5ce5a583          	lw	a1,1486(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  45c776:	5da5a583          	lw	a1,1498(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   45c77a:	01490513          	addi	a0,s2,20
   45c77e:	fcf9e0ef          	jal	ra,3fb74c <memcmp>
   45c782:	e945                	bnez	a0,45c832 <nd6_input+0x462>
@@ -215994,7 +215994,7 @@ Disassembly of section .text_non_rom:
   45c944:	473d                	li	a4,15
   45c946:	acd772e3          	bleu	a3,a4,45c40a <nd6_input+0x3a>
   45c94a:	00045597          	auipc	a1,0x45
-  45c94e:	3625a583          	lw	a1,866(a1) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  45c94e:	36e5a583          	lw	a1,878(a1) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   45c952:	49d4                	lw	a3,20(a1)
   45c954:	6731                	lui	a4,0xc
   45c956:	0ff70713          	addi	a4,a4,255 # c0ff <__bss_size__+0x2fbf>
@@ -216234,7 +216234,7 @@ Disassembly of section .text_non_rom:
   45cc26:	e4f700e3          	beq	a4,a5,45ca66 <nd6_input+0x696>
   45cc2a:	4641                	li	a2,16
   45cc2c:	00045597          	auipc	a1,0x45
-  45cc30:	1145a583          	lw	a1,276(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  45cc30:	1205a583          	lw	a1,288(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   45cc34:	010d8513          	addi	a0,s11,16
   45cc38:	002dca83          	lbu	s5,2(s11)
   45cc3c:	b119e0ef          	jal	ra,3fb74c <memcmp>
@@ -216604,7 +216604,7 @@ Disassembly of section .text_non_rom:
   45d09c:	842a                	mv	s0,a0
   45d09e:	b741                	j	45d01e <nd6_reachability_hint+0x42>
   45d0a0:	00045517          	auipc	a0,0x45
-  45d0a4:	c0c52503          	lw	a0,-1012(a0) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  45d0a4:	c1852503          	lw	a0,-1000(a0) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   45d0a8:	02850513          	addi	a0,a0,40
   45d0ac:	2cd000ef          	jal	ra,45db78 <netif_find_by_ipaddr>
   45d0b0:	02800793          	li	a5,40
@@ -216633,7 +216633,7 @@ Disassembly of section .text_non_rom:
   45d0f6:	ffc88a97          	auipc	s5,0xffc88
   45d0fa:	98aa8a93          	addi	s5,s5,-1654 # e4a80 <dup_addr_detect>
   45d0fe:	00045b17          	auipc	s6,0x45
-  45d102:	c42b2b03          	lw	s6,-958(s6) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  45d102:	c4eb2b03          	lw	s6,-946(s6) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   45d106:	ffc88b97          	auipc	s7,0xffc88
   45d10a:	8ceb8b93          	addi	s7,s7,-1842 # e49d4 <default_router_list>
   45d10e:	4a15                	li	s4,5
@@ -216832,7 +216832,7 @@ Disassembly of section .text_non_rom:
 0045d318 <getaddrinfo>:
   45d318:	cfc9d2ef          	jal	t0,3fa814 <__riscv_save_12>
   45d31c:	00045797          	auipc	a5,0x45
-  45d320:	9a07a783          	lw	a5,-1632(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45d320:	9ac7a783          	lw	a5,-1620(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45d324:	4398                	lw	a4,0(a5)
   45d326:	7179                	addi	sp,sp,-48
   45d328:	cc02                	sw	zero,24(sp)
@@ -217178,7 +217178,7 @@ Disassembly of section .text_non_rom:
 0045d6b4 <netif_do_set_ipaddr>:
   45d6b4:	9909d2ef          	jal	t0,3fa844 <__riscv_save_0>
   45d6b8:	00044797          	auipc	a5,0x44
-  45d6bc:	6047a783          	lw	a5,1540(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45d6bc:	6107a783          	lw	a5,1552(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45d6c0:	4394                	lw	a3,0(a5)
   45d6c2:	1101                	addi	sp,sp,-32
   45d6c4:	8732                	mv	a4,a2
@@ -217389,7 +217389,7 @@ Disassembly of section .text_non_rom:
 0045d8d2 <netif_find>:
   45d8d2:	f4b9c2ef          	jal	t0,3fa81c <__riscv_save_10>
   45d8d6:	00044797          	auipc	a5,0x44
-  45d8da:	3e67a783          	lw	a5,998(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45d8da:	3f27a783          	lw	a5,1010(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45d8de:	4398                	lw	a4,0(a5)
   45d8e0:	1101                	addi	sp,sp,-32
   45d8e2:	89be                	mv	s3,a5
@@ -217690,7 +217690,7 @@ Disassembly of section .text_non_rom:
 0045dbe4 <netif_linklayer_event>:
   45dbe4:	c619c2ef          	jal	t0,3fa844 <__riscv_save_0>
   45dbe8:	00044417          	auipc	s0,0x44
-  45dbec:	0d442403          	lw	s0,212(s0) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45dbec:	0e042403          	lw	s0,224(s0) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45dbf0:	401c                	lw	a5,0(s0)
   45dbf2:	7179                	addi	sp,sp,-48
   45dbf4:	c62a                	sw	a0,12(sp)
@@ -217710,7 +217710,7 @@ Disassembly of section .text_non_rom:
 0045dc1a <netif_linklayer_event_callback>:
   45dc1a:	c2b9c2ef          	jal	t0,3fa844 <__riscv_save_0>
   45dc1e:	00044797          	auipc	a5,0x44
-  45dc22:	09e7a783          	lw	a5,158(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45dc22:	0aa7a783          	lw	a5,170(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45dc26:	4398                	lw	a4,0(a5)
   45dc28:	715d                	addi	sp,sp,-80
   45dc2a:	84be                	mv	s1,a5
@@ -217779,7 +217779,7 @@ Disassembly of section .text_non_rom:
 0045dcc0 <netif_set_ipaddr>:
   45dcc0:	b859c2ef          	jal	t0,3fa844 <__riscv_save_0>
   45dcc4:	00044797          	auipc	a5,0x44
-  45dcc8:	ff87a783          	lw	a5,-8(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45dcc8:	0047a783          	lw	a5,4(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45dccc:	4398                	lw	a4,0(a5)
   45dcce:	7179                	addi	sp,sp,-48
   45dcd0:	843e                	mv	s0,a5
@@ -217788,7 +217788,7 @@ Disassembly of section .text_non_rom:
   45dcd6:	84aa                	mv	s1,a0
   45dcd8:	e589                	bnez	a1,45dce2 <netif_set_ipaddr+0x22>
   45dcda:	00044597          	auipc	a1,0x44
-  45dcde:	03e5a583          	lw	a1,62(a1) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45dcde:	04a5a583          	lw	a1,74(a1) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45dce2:	01810913          	addi	s2,sp,24
   45dce6:	864a                	mv	a2,s2
   45dce8:	8526                	mv	a0,s1
@@ -217809,7 +217809,7 @@ Disassembly of section .text_non_rom:
 0045dd0e <netif_set_netmask>:
   45dd0e:	b379c2ef          	jal	t0,3fa844 <__riscv_save_0>
   45dd12:	00044797          	auipc	a5,0x44
-  45dd16:	faa7a783          	lw	a5,-86(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45dd16:	fb67a783          	lw	a5,-74(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45dd1a:	4398                	lw	a4,0(a5)
   45dd1c:	7179                	addi	sp,sp,-48
   45dd1e:	843e                	mv	s0,a5
@@ -217818,7 +217818,7 @@ Disassembly of section .text_non_rom:
   45dd24:	84aa                	mv	s1,a0
   45dd26:	e589                	bnez	a1,45dd30 <netif_set_netmask+0x22>
   45dd28:	00044597          	auipc	a1,0x44
-  45dd2c:	ff05a583          	lw	a1,-16(a1) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45dd2c:	ffc5a583          	lw	a1,-4(a1) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45dd30:	01810913          	addi	s2,sp,24
   45dd34:	864a                	mv	a2,s2
   45dd36:	8526                	mv	a0,s1
@@ -217839,7 +217839,7 @@ Disassembly of section .text_non_rom:
 0045dd5e <netif_set_gw>:
   45dd5e:	ae79c2ef          	jal	t0,3fa844 <__riscv_save_0>
   45dd62:	00044797          	auipc	a5,0x44
-  45dd66:	f5a7a783          	lw	a5,-166(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45dd66:	f667a783          	lw	a5,-154(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45dd6a:	4398                	lw	a4,0(a5)
   45dd6c:	7179                	addi	sp,sp,-48
   45dd6e:	843e                	mv	s0,a5
@@ -217848,7 +217848,7 @@ Disassembly of section .text_non_rom:
   45dd74:	84aa                	mv	s1,a0
   45dd76:	e589                	bnez	a1,45dd80 <netif_set_gw+0x22>
   45dd78:	00044597          	auipc	a1,0x44
-  45dd7c:	fa05a583          	lw	a1,-96(a1) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45dd7c:	fac5a583          	lw	a1,-84(a1) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45dd80:	01810913          	addi	s2,sp,24
   45dd84:	864a                	mv	a2,s2
   45dd86:	8526                	mv	a0,s1
@@ -217869,7 +217869,7 @@ Disassembly of section .text_non_rom:
 0045ddae <netif_set_addr>:
   45ddae:	a6f9c2ef          	jal	t0,3fa81c <__riscv_save_10>
   45ddb2:	00044797          	auipc	a5,0x44
-  45ddb6:	f0a7a783          	lw	a5,-246(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45ddb6:	f167a783          	lw	a5,-234(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45ddba:	4398                	lw	a4,0(a5)
   45ddbc:	715d                	addi	sp,sp,-80
   45ddbe:	84aa                	mv	s1,a0
@@ -217882,13 +217882,13 @@ Disassembly of section .text_non_rom:
   45ddcc:	8ab6                	mv	s5,a3
   45ddce:	e589                	bnez	a1,45ddd8 <netif_set_addr+0x2a>
   45ddd0:	00044917          	auipc	s2,0x44
-  45ddd4:	f4892903          	lw	s2,-184(s2) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45ddd4:	f5492903          	lw	s2,-172(s2) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45ddd8:	000a1663          	bnez	s4,45dde4 <netif_set_addr+0x36>
   45dddc:	00044a17          	auipc	s4,0x44
-  45dde0:	f3ca2a03          	lw	s4,-196(s4) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45dde0:	f48a2a03          	lw	s4,-184(s4) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45dde4:	000a9663          	bnez	s5,45ddf0 <netif_set_addr+0x42>
   45dde8:	00044a97          	auipc	s5,0x44
-  45ddec:	f30aaa83          	lw	s5,-208(s5) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45ddec:	f3caaa83          	lw	s5,-196(s5) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45ddf0:	00092783          	lw	a5,0(s2)
   45ddf4:	4981                	li	s3,0
   45ddf6:	e7bd                	bnez	a5,45de64 <netif_set_addr+0xb6>
@@ -217990,7 +217990,7 @@ Disassembly of section .text_non_rom:
   45df14:	0711                	addi	a4,a4,4
   45df16:	fcc79de3          	bne	a5,a2,45def0 <netif_add+0x6c>
   45df1a:	00044797          	auipc	a5,0x44
-  45df1e:	e067a783          	lw	a5,-506(a5) # 4a1d20 <_GLOBAL_OFFSET_TABLE_+0xf0>
+  45df1e:	e127a783          	lw	a5,-494(a5) # 4a1d2c <_GLOBAL_OFFSET_TABLE_+0xf0>
   45df22:	46a1                	li	a3,8
   45df24:	4601                	li	a2,0
   45df26:	45a1                	li	a1,8
@@ -218009,7 +218009,7 @@ Disassembly of section .text_non_rom:
   45df54:	cca78793          	addi	a5,a5,-822 # 45dc1a <netif_linklayer_event_callback>
   45df58:	c05c                	sw	a5,4(s0)
   45df5a:	00044797          	auipc	a5,0x44
-  45df5e:	dde7a783          	lw	a5,-546(a5) # 4a1d38 <_GLOBAL_OFFSET_TABLE_+0x108>
+  45df5e:	dea7a783          	lw	a5,-534(a5) # 4a1d44 <_GLOBAL_OFFSET_TABLE_+0x108>
   45df62:	0cf42c23          	sw	a5,216(s0)
   45df66:	0e042623          	sw	zero,236(s0)
   45df6a:	0e042823          	sw	zero,240(s0)
@@ -218068,7 +218068,7 @@ Disassembly of section .text_non_rom:
 0045e014 <netif_set_up>:
   45e014:	8319c2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e018:	00044797          	auipc	a5,0x44
-  45e01c:	ca47a783          	lw	a5,-860(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45e01c:	cb07a783          	lw	a5,-848(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45e020:	4398                	lw	a4,0(a5)
   45e022:	1141                	addi	sp,sp,-16
   45e024:	84be                	mv	s1,a5
@@ -218109,7 +218109,7 @@ Disassembly of section .text_non_rom:
 0045e080 <netif_dhcp_off>:
   45e080:	f9c9c2ef          	jal	t0,3fa81c <__riscv_save_10>
   45e084:	00044797          	auipc	a5,0x44
-  45e088:	c387a783          	lw	a5,-968(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45e088:	c447a783          	lw	a5,-956(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45e08c:	4398                	lw	a4,0(a5)
   45e08e:	7139                	addi	sp,sp,-64
   45e090:	842a                	mv	s0,a0
@@ -218168,7 +218168,7 @@ Disassembly of section .text_non_rom:
 0045e11e <netif_set_down>:
   45e11e:	f269c2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e122:	00044797          	auipc	a5,0x44
-  45e126:	b9a7a783          	lw	a5,-1126(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45e126:	ba67a783          	lw	a5,-1114(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45e12a:	4398                	lw	a4,0(a5)
   45e12c:	1141                	addi	sp,sp,-16
   45e12e:	84be                	mv	s1,a5
@@ -218274,7 +218274,7 @@ Disassembly of section .text_non_rom:
 0045e240 <netif_set_link_up>:
   45e240:	e049c2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e244:	00044797          	auipc	a5,0x44
-  45e248:	a787a783          	lw	a5,-1416(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45e248:	a847a783          	lw	a5,-1404(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45e24c:	4398                	lw	a4,0(a5)
   45e24e:	1141                	addi	sp,sp,-16
   45e250:	84be                	mv	s1,a5
@@ -218317,7 +218317,7 @@ Disassembly of section .text_non_rom:
 0045e2b2 <netif_init>:
   45e2b2:	d929c2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e2b6:	00044497          	auipc	s1,0x44
-  45e2ba:	a064a483          	lw	s1,-1530(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45e2ba:	a124a483          	lw	s1,-1518(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45e2be:	409c                	lw	a5,0(s1)
   45e2c0:	1141                	addi	sp,sp,-16
   45e2c2:	01000937          	lui	s2,0x1000
@@ -218368,7 +218368,7 @@ Disassembly of section .text_non_rom:
 0045e350 <netif_set_link_down>:
   45e350:	cf49c2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e354:	00044797          	auipc	a5,0x44
-  45e358:	9687a783          	lw	a5,-1688(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45e358:	9747a783          	lw	a5,-1676(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45e35c:	4398                	lw	a4,0(a5)
   45e35e:	1141                	addi	sp,sp,-16
   45e360:	84be                	mv	s1,a5
@@ -218409,7 +218409,7 @@ Disassembly of section .text_non_rom:
 0045e3bc <netif_ip6_addr_set_state>:
   45e3bc:	c609c2ef          	jal	t0,3fa81c <__riscv_save_10>
   45e3c0:	00044a17          	auipc	s4,0x44
-  45e3c4:	8fca2a03          	lw	s4,-1796(s4) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45e3c4:	908a2a03          	lw	s4,-1784(s4) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45e3c8:	000a2783          	lw	a5,0(s4)
   45e3cc:	1141                	addi	sp,sp,-16
   45e3ce:	c63e                	sw	a5,12(sp)
@@ -218664,7 +218664,7 @@ Disassembly of section .text_non_rom:
   45e684:	842a                	mv	s0,a0
   45e686:	ccbff0ef          	jal	ra,45e350 <netif_set_link_down>
   45e68a:	00043697          	auipc	a3,0x43
-  45e68e:	68e6a683          	lw	a3,1678(a3) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45e68e:	69a6a683          	lw	a3,1690(a3) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45e692:	8636                	mv	a2,a3
   45e694:	85b6                	mv	a1,a3
   45e696:	8522                	mv	a0,s0
@@ -218760,20 +218760,20 @@ Disassembly of section .text_non_rom:
 0045e766 <netifapi_netif_add>:
   45e766:	8de9c2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e76a:	00043797          	auipc	a5,0x43
-  45e76e:	5527a783          	lw	a5,1362(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45e76e:	55e7a783          	lw	a5,1374(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45e772:	4398                	lw	a4,0(a5)
   45e774:	7179                	addi	sp,sp,-48
   45e776:	843e                	mv	s0,a5
   45e778:	d63a                	sw	a4,44(sp)
   45e77a:	e589                	bnez	a1,45e784 <netifapi_netif_add+0x1e>
   45e77c:	00043597          	auipc	a1,0x43
-  45e780:	59c5a583          	lw	a1,1436(a1) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45e780:	5a85a583          	lw	a1,1448(a1) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45e784:	e609                	bnez	a2,45e78e <netifapi_netif_add+0x28>
   45e786:	00043617          	auipc	a2,0x43
-  45e78a:	59262603          	lw	a2,1426(a2) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45e78a:	59e62603          	lw	a2,1438(a2) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45e78e:	e689                	bnez	a3,45e798 <netifapi_netif_add+0x32>
   45e790:	00043697          	auipc	a3,0x43
-  45e794:	5886a683          	lw	a3,1416(a3) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45e794:	5946a683          	lw	a3,1428(a3) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45e798:	c62a                	sw	a0,12(sp)
   45e79a:	ca2e                	sw	a1,20(sp)
   45e79c:	00000517          	auipc	a0,0x0
@@ -218792,20 +218792,20 @@ Disassembly of section .text_non_rom:
 0045e7c0 <netifapi_netif_set_addr>:
   45e7c0:	8849c2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e7c4:	00043797          	auipc	a5,0x43
-  45e7c8:	4f87a783          	lw	a5,1272(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45e7c8:	5047a783          	lw	a5,1284(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45e7cc:	4398                	lw	a4,0(a5)
   45e7ce:	7179                	addi	sp,sp,-48
   45e7d0:	843e                	mv	s0,a5
   45e7d2:	d63a                	sw	a4,44(sp)
   45e7d4:	e589                	bnez	a1,45e7de <netifapi_netif_set_addr+0x1e>
   45e7d6:	00043597          	auipc	a1,0x43
-  45e7da:	5425a583          	lw	a1,1346(a1) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45e7da:	54e5a583          	lw	a1,1358(a1) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45e7de:	e609                	bnez	a2,45e7e8 <netifapi_netif_set_addr+0x28>
   45e7e0:	00043617          	auipc	a2,0x43
-  45e7e4:	53862603          	lw	a2,1336(a2) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45e7e4:	54462603          	lw	a2,1348(a2) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45e7e8:	e689                	bnez	a3,45e7f2 <netifapi_netif_set_addr+0x32>
   45e7ea:	00043697          	auipc	a3,0x43
-  45e7ee:	52e6a683          	lw	a3,1326(a3) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  45e7ee:	53a6a683          	lw	a3,1338(a3) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   45e7f2:	c62a                	sw	a0,12(sp)
   45e7f4:	ca2e                	sw	a1,20(sp)
   45e7f6:	00000517          	auipc	a0,0x0
@@ -218824,7 +218824,7 @@ Disassembly of section .text_non_rom:
 0045e81a <netifapi_netif_get_addr>:
   45e81a:	82a9c2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e81e:	00043417          	auipc	s0,0x43
-  45e822:	49e42403          	lw	s0,1182(s0) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45e822:	4aa42403          	lw	s0,1194(s0) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45e826:	401c                	lw	a5,0(s0)
   45e828:	7179                	addi	sp,sp,-48
   45e82a:	c62a                	sw	a0,12(sp)
@@ -218846,7 +218846,7 @@ Disassembly of section .text_non_rom:
 0045e854 <netifapi_netif_common>:
   45e854:	ff19b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e858:	00043797          	auipc	a5,0x43
-  45e85c:	4647a783          	lw	a5,1124(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45e85c:	4707a783          	lw	a5,1136(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45e860:	4394                	lw	a3,0(a5)
   45e862:	7179                	addi	sp,sp,-48
   45e864:	872a                	mv	a4,a0
@@ -218872,7 +218872,7 @@ Disassembly of section .text_non_rom:
 0045e896 <netifapi_netif_remove>:
   45e896:	faf9b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e89a:	00043617          	auipc	a2,0x43
-  45e89e:	3ca62603          	lw	a2,970(a2) # 4a1c64 <_GLOBAL_OFFSET_TABLE_+0x34>
+  45e89e:	3d662603          	lw	a2,982(a2) # 4a1c70 <_GLOBAL_OFFSET_TABLE_+0x34>
   45e8a2:	4581                	li	a1,0
   45e8a4:	fb1ff0ef          	jal	ra,45e854 <netifapi_netif_common>
   45e8a8:	fc19b06f          	j	3fa868 <__riscv_restore_0>
@@ -218880,7 +218880,7 @@ Disassembly of section .text_non_rom:
 0045e8ac <netifapi_netif_set_up>:
   45e8ac:	f999b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e8b0:	00043617          	auipc	a2,0x43
-  45e8b4:	48062603          	lw	a2,1152(a2) # 4a1d30 <_GLOBAL_OFFSET_TABLE_+0x100>
+  45e8b4:	48c62603          	lw	a2,1164(a2) # 4a1d3c <_GLOBAL_OFFSET_TABLE_+0x100>
   45e8b8:	4581                	li	a1,0
   45e8ba:	f9bff0ef          	jal	ra,45e854 <netifapi_netif_common>
   45e8be:	fab9b06f          	j	3fa868 <__riscv_restore_0>
@@ -218888,7 +218888,7 @@ Disassembly of section .text_non_rom:
 0045e8c2 <netifapi_netif_set_down>:
   45e8c2:	f839b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e8c6:	00043617          	auipc	a2,0x43
-  45e8ca:	37e62603          	lw	a2,894(a2) # 4a1c44 <_GLOBAL_OFFSET_TABLE_+0x14>
+  45e8ca:	38a62603          	lw	a2,906(a2) # 4a1c50 <_GLOBAL_OFFSET_TABLE_+0x14>
   45e8ce:	4581                	li	a1,0
   45e8d0:	f85ff0ef          	jal	ra,45e854 <netifapi_netif_common>
   45e8d4:	f959b06f          	j	3fa868 <__riscv_restore_0>
@@ -218896,7 +218896,7 @@ Disassembly of section .text_non_rom:
 0045e8d8 <netifapi_netif_set_link_up>:
   45e8d8:	f6d9b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e8dc:	00043617          	auipc	a2,0x43
-  45e8e0:	3c462603          	lw	a2,964(a2) # 4a1ca0 <_GLOBAL_OFFSET_TABLE_+0x70>
+  45e8e0:	3d062603          	lw	a2,976(a2) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x70>
   45e8e4:	4581                	li	a1,0
   45e8e6:	f6fff0ef          	jal	ra,45e854 <netifapi_netif_common>
   45e8ea:	f7f9b06f          	j	3fa868 <__riscv_restore_0>
@@ -218904,7 +218904,7 @@ Disassembly of section .text_non_rom:
 0045e8ee <netifapi_netif_set_link_down>:
   45e8ee:	f579b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e8f2:	00043617          	auipc	a2,0x43
-  45e8f6:	3d262603          	lw	a2,978(a2) # 4a1cc4 <_GLOBAL_OFFSET_TABLE_+0x94>
+  45e8f6:	3de62603          	lw	a2,990(a2) # 4a1cd0 <_GLOBAL_OFFSET_TABLE_+0x94>
   45e8fa:	4581                	li	a1,0
   45e8fc:	f59ff0ef          	jal	ra,45e854 <netifapi_netif_common>
   45e900:	f699b06f          	j	3fa868 <__riscv_restore_0>
@@ -218912,7 +218912,7 @@ Disassembly of section .text_non_rom:
 0045e904 <netifapi_dhcp_start>:
   45e904:	f419b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e908:	00043617          	auipc	a2,0x43
-  45e90c:	42062603          	lw	a2,1056(a2) # 4a1d28 <_GLOBAL_OFFSET_TABLE_+0xf8>
+  45e90c:	42c62603          	lw	a2,1068(a2) # 4a1d34 <_GLOBAL_OFFSET_TABLE_+0xf8>
   45e910:	4581                	li	a1,0
   45e912:	f43ff0ef          	jal	ra,45e854 <netifapi_netif_common>
   45e916:	f539b06f          	j	3fa868 <__riscv_restore_0>
@@ -218921,14 +218921,14 @@ Disassembly of section .text_non_rom:
   45e91a:	f2b9b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e91e:	4601                	li	a2,0
   45e920:	00043597          	auipc	a1,0x43
-  45e924:	34c5a583          	lw	a1,844(a1) # 4a1c6c <_GLOBAL_OFFSET_TABLE_+0x3c>
+  45e924:	3585a583          	lw	a1,856(a1) # 4a1c78 <_GLOBAL_OFFSET_TABLE_+0x3c>
   45e928:	f2dff0ef          	jal	ra,45e854 <netifapi_netif_common>
   45e92c:	f3d9b06f          	j	3fa868 <__riscv_restore_0>
 
 0045e930 <netifapi_call_argcb>:
   45e930:	f159b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e934:	00043797          	auipc	a5,0x43
-  45e938:	3887a783          	lw	a5,904(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45e938:	3947a783          	lw	a5,916(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45e93c:	4394                	lw	a3,0(a5)
   45e93e:	7179                	addi	sp,sp,-48
   45e940:	872a                	mv	a4,a0
@@ -218953,7 +218953,7 @@ Disassembly of section .text_non_rom:
 0045e970 <netifapi_netif_find>:
   45e970:	ed59b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e974:	00043797          	auipc	a5,0x43
-  45e978:	3487a783          	lw	a5,840(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45e978:	3547a783          	lw	a5,852(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45e97c:	4398                	lw	a4,0(a5)
   45e97e:	1101                	addi	sp,sp,-32
   45e980:	843e                	mv	s0,a5
@@ -218996,7 +218996,7 @@ Disassembly of section .text_non_rom:
 0045e9e2 <netifapi_netif_set_default>:
   45e9e2:	e639b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e9e6:	00043617          	auipc	a2,0x43
-  45e9ea:	32662603          	lw	a2,806(a2) # 4a1d0c <_GLOBAL_OFFSET_TABLE_+0xdc>
+  45e9ea:	33262603          	lw	a2,818(a2) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xdc>
   45e9ee:	4581                	li	a1,0
   45e9f0:	e65ff0ef          	jal	ra,45e854 <netifapi_netif_common>
   45e9f4:	e759b06f          	j	3fa868 <__riscv_restore_0>
@@ -219004,7 +219004,7 @@ Disassembly of section .text_non_rom:
 0045e9f8 <netifapi_netif_add_ip6_linklocal_address>:
   45e9f8:	e4d9b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45e9fc:	00043797          	auipc	a5,0x43
-  45ea00:	2c07a783          	lw	a5,704(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45ea00:	2cc7a783          	lw	a5,716(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45ea04:	4394                	lw	a3,0(a5)
   45ea06:	7179                	addi	sp,sp,-48
   45ea08:	872a                	mv	a4,a0
@@ -219033,7 +219033,7 @@ Disassembly of section .text_non_rom:
 0045ea44 <netifapi_netif_rmv_ip6_address>:
   45ea44:	e019b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45ea48:	00043797          	auipc	a5,0x43
-  45ea4c:	2747a783          	lw	a5,628(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45ea4c:	2807a783          	lw	a5,640(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45ea50:	4398                	lw	a4,0(a5)
   45ea52:	7179                	addi	sp,sp,-48
   45ea54:	843e                	mv	s0,a5
@@ -219042,7 +219042,7 @@ Disassembly of section .text_non_rom:
   45ea5a:	cd19                	beqz	a0,45ea78 <netifapi_netif_rmv_ip6_address+0x34>
   45ea5c:	c62a                	sw	a0,12(sp)
   45ea5e:	00043797          	auipc	a5,0x43
-  45ea62:	2327a783          	lw	a5,562(a5) # 4a1c90 <_GLOBAL_OFFSET_TABLE_+0x60>
+  45ea62:	23e7a783          	lw	a5,574(a5) # 4a1c9c <_GLOBAL_OFFSET_TABLE_+0x60>
   45ea66:	ca2e                	sw	a1,20(sp)
   45ea68:	00000517          	auipc	a0,0x0
   45ea6c:	c6a50513          	addi	a0,a0,-918 # 45e6d2 <netifapi_do_netif_argcb>
@@ -219060,14 +219060,14 @@ Disassembly of section .text_non_rom:
   45ea8a:	dbb9b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45ea8e:	4601                	li	a2,0
   45ea90:	00043597          	auipc	a1,0x43
-  45ea94:	25c5a583          	lw	a1,604(a1) # 4a1cec <_GLOBAL_OFFSET_TABLE_+0xbc>
+  45ea94:	2685a583          	lw	a1,616(a1) # 4a1cf8 <_GLOBAL_OFFSET_TABLE_+0xbc>
   45ea98:	dbdff0ef          	jal	ra,45e854 <netifapi_netif_common>
   45ea9c:	dcd9b06f          	j	3fa868 <__riscv_restore_0>
 
 0045eaa0 <netifapi_dhcps_start>:
   45eaa0:	da59b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45eaa4:	00043797          	auipc	a5,0x43
-  45eaa8:	2187a783          	lw	a5,536(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45eaa8:	2247a783          	lw	a5,548(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45eaac:	4394                	lw	a3,0(a5)
   45eaae:	7179                	addi	sp,sp,-48
   45eab0:	872a                	mv	a4,a0
@@ -219094,7 +219094,7 @@ Disassembly of section .text_non_rom:
   45eae4:	d619b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45eae8:	4601                	li	a2,0
   45eaea:	00043597          	auipc	a1,0x43
-  45eaee:	1c65a583          	lw	a1,454(a1) # 4a1cb0 <_GLOBAL_OFFSET_TABLE_+0x80>
+  45eaee:	1d25a583          	lw	a1,466(a1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x80>
   45eaf2:	d63ff0ef          	jal	ra,45e854 <netifapi_netif_common>
   45eaf6:	d739b06f          	j	3fa868 <__riscv_restore_0>
   45eafa:	5569                	li	a0,-6
@@ -219186,7 +219186,7 @@ Disassembly of section .text_non_rom:
   45ebe4:	22078aa3          	sb	zero,565(a5) # e4e15 <pbuf_free_ooseq_pending>
   45ebe8:	1ae040ef          	jal	ra,462d96 <sys_arch_unprotect>
   45ebec:	00043797          	auipc	a5,0x43
-  45ebf0:	0dc7a783          	lw	a5,220(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x98>
+  45ebf0:	0e87a783          	lw	a5,232(a5) # 4a1cd4 <_GLOBAL_OFFSET_TABLE_+0x98>
   45ebf4:	4380                	lw	s0,0(a5)
   45ebf6:	c801                	beqz	s0,45ec06 <pbuf_free_ooseq+0x2e>
   45ebf8:	0bc42503          	lw	a0,188(s0)
@@ -219242,7 +219242,7 @@ Disassembly of section .text_non_rom:
   45ec80:	400c                	lw	a1,0(s0)
   45ec82:	c981                	beqz	a1,45ec92 <pbuf_dma_free+0x54>
   45ec84:	00043797          	auipc	a5,0x43
-  45ec88:	0907a783          	lw	a5,144(a5) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xe4>
+  45ec88:	09c7a783          	lw	a5,156(a5) # 4a1d20 <_GLOBAL_OFFSET_TABLE_+0xe4>
   45ec8c:	4388                	lw	a0,0(a5)
   45ec8e:	ae59a0ef          	jal	ra,3f9772 <LOS_MemFree>
   45ec92:	bd79b06f          	j	3fa868 <__riscv_restore_0>
@@ -219475,7 +219475,7 @@ Disassembly of section .text_non_rom:
   45ef28:	fc078793          	addi	a5,a5,-64 # ffc0 <__bss_size__+0x6e80>
   45ef2c:	00fbf5b3          	and	a1,s7,a5
   45ef30:	00043797          	auipc	a5,0x43
-  45ef34:	de47a783          	lw	a5,-540(a5) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xe4>
+  45ef34:	df07a783          	lw	a5,-528(a5) # 4a1d20 <_GLOBAL_OFFSET_TABLE_+0xe4>
   45ef38:	4388                	lw	a0,0(a5)
   45ef3a:	01041b13          	slli	s6,s0,0x10
   45ef3e:	04000613          	li	a2,64
@@ -219750,7 +219750,7 @@ Disassembly of section .text_non_rom:
 0045f20a <pbuf_take_at>:
   45f20a:	e209b2ef          	jal	t0,3fa82a <__riscv_save_4>
   45f20e:	00043997          	auipc	s3,0x43
-  45f212:	aae9a983          	lw	s3,-1362(s3) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45f212:	aba9a983          	lw	s3,-1350(s3) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45f216:	0009a783          	lw	a5,0(s3)
   45f21a:	1141                	addi	sp,sp,-16
   45f21c:	8a2e                	mv	s4,a1
@@ -219808,7 +219808,7 @@ Disassembly of section .text_non_rom:
 0045f2ac <pbuf_try_get_at>:
   45f2ac:	d989b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45f2b0:	00043417          	auipc	s0,0x43
-  45f2b4:	a0c42403          	lw	s0,-1524(s0) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45f2b4:	a1842403          	lw	s0,-1512(s0) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45f2b8:	401c                	lw	a5,0(s0)
   45f2ba:	1141                	addi	sp,sp,-16
   45f2bc:	00a10613          	addi	a2,sp,10
@@ -219841,7 +219841,7 @@ Disassembly of section .text_non_rom:
 0045f308 <pbuf_put_at>:
   45f308:	d3c9b2ef          	jal	t0,3fa844 <__riscv_save_0>
   45f30c:	00043417          	auipc	s0,0x43
-  45f310:	9b042403          	lw	s0,-1616(s0) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45f310:	9bc42403          	lw	s0,-1604(s0) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45f314:	401c                	lw	a5,0(s0)
   45f316:	1141                	addi	sp,sp,-16
   45f318:	84b2                	mv	s1,a2
@@ -220060,7 +220060,7 @@ Disassembly of section .text_non_rom:
 0045f5a0 <ping_cfg_parse_daddr>:
   45f5a0:	a8a9b2ef          	jal	t0,3fa82a <__riscv_save_4>
   45f5a4:	00042797          	auipc	a5,0x42
-  45f5a8:	7187a783          	lw	a5,1816(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45f5a8:	7247a783          	lw	a5,1828(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45f5ac:	4398                	lw	a4,0(a5)
   45f5ae:	7139                	addi	sp,sp,-64
   45f5b0:	8a3e                	mv	s4,a5
@@ -220104,13 +220104,13 @@ Disassembly of section .text_non_rom:
   45f616:	a059b0ef          	jal	ra,3fb01a <memcpy>
   45f61a:	4641                	li	a2,16
   45f61c:	00042597          	auipc	a1,0x42
-  45f620:	7245a583          	lw	a1,1828(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  45f620:	7305a583          	lw	a1,1840(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   45f624:	854a                	mv	a0,s2
   45f626:	9269c0ef          	jal	ra,3fb74c <memcmp>
   45f62a:	c911                	beqz	a0,45f63e <ping_cfg_parse_daddr+0x9e>
   45f62c:	4641                	li	a2,16
   45f62e:	00042597          	auipc	a1,0x42
-  45f632:	61e5a583          	lw	a1,1566(a1) # 4a1c4c <_GLOBAL_OFFSET_TABLE_+0x1c>
+  45f632:	62a5a583          	lw	a1,1578(a1) # 4a1c58 <_GLOBAL_OFFSET_TABLE_+0x1c>
   45f636:	854a                	mv	a0,s2
   45f638:	9149c0ef          	jal	ra,3fb74c <memcmp>
   45f63c:	e505                	bnez	a0,45f664 <ping_cfg_parse_daddr+0xc4>
@@ -220140,7 +220140,7 @@ Disassembly of section .text_non_rom:
 0045f67a <ping_cfg_parse>:
   45f67a:	99a9b2ef          	jal	t0,3fa814 <__riscv_save_12>
   45f67e:	00042997          	auipc	s3,0x42
-  45f682:	63e9a983          	lw	s3,1598(s3) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45f682:	64a9a983          	lw	s3,1610(s3) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45f686:	7151                	addi	sp,sp,-240
   45f688:	0009a783          	lw	a5,0(s3)
   45f68c:	cc36                	sw	a3,24(sp)
@@ -220548,7 +220548,7 @@ Disassembly of section .text_non_rom:
 0045fb34 <ping_resp_process>:
   45fb34:	cf79a2ef          	jal	t0,3fa82a <__riscv_save_4>
   45fb38:	00042497          	auipc	s1,0x42
-  45fb3c:	1844a483          	lw	s1,388(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45fb3c:	1904a483          	lw	s1,400(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45fb40:	409c                	lw	a5,0(s1)
   45fb42:	7179                	addi	sp,sp,-48
   45fb44:	842a                	mv	s0,a0
@@ -220716,7 +220716,7 @@ Disassembly of section .text_non_rom:
 0045fd5a <os_ping_func>:
   45fd5a:	ad19a2ef          	jal	t0,3fa82a <__riscv_save_4>
   45fd5e:	00042917          	auipc	s2,0x42
-  45fd62:	f5e92903          	lw	s2,-162(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45fd62:	f6a92903          	lw	s2,-150(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45fd66:	7101                	addi	sp,sp,-512
   45fd68:	00092783          	lw	a5,0(s2)
   45fd6c:	898a                	mv	s3,sp
@@ -220841,7 +220841,7 @@ Disassembly of section .text_non_rom:
 0045fecc <ping_task_create.constprop.1>:
   45fecc:	9799a2ef          	jal	t0,3fa844 <__riscv_save_0>
   45fed0:	00042717          	auipc	a4,0x42
-  45fed4:	dec72703          	lw	a4,-532(a4) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45fed4:	df872703          	lw	a4,-520(a4) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45fed8:	431c                	lw	a5,0(a4)
   45feda:	7179                	addi	sp,sp,-48
   45fedc:	843a                	mv	s0,a4
@@ -220862,7 +220862,7 @@ Disassembly of section .text_non_rom:
   45ff0a:	fa270713          	addi	a4,a4,-94 # 45fea8 <ping_cmd>
   45ff0e:	c43a                	sw	a4,8(sp)
   45ff10:	00042717          	auipc	a4,0x42
-  45ff14:	d6472703          	lw	a4,-668(a4) # 4a1c74 <_GLOBAL_OFFSET_TABLE_+0x44>
+  45ff14:	d7072703          	lw	a4,-656(a4) # 4a1c80 <_GLOBAL_OFFSET_TABLE_+0x44>
   45ff18:	4318                	lw	a4,0(a4)
   45ff1a:	c82a                	sw	a0,16(sp)
   45ff1c:	002c                	addi	a1,sp,8
@@ -220903,13 +220903,13 @@ Disassembly of section .text_non_rom:
 0045ff76 <os_shell_ping>:
   45ff76:	8cf9a2ef          	jal	t0,3fa844 <__riscv_save_0>
   45ff7a:	00042797          	auipc	a5,0x42
-  45ff7e:	d427a783          	lw	a5,-702(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  45ff7e:	d4e7a783          	lw	a5,-690(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   45ff82:	4398                	lw	a4,0(a5)
   45ff84:	1101                	addi	sp,sp,-32
   45ff86:	cc02                	sw	zero,24(sp)
   45ff88:	ce3a                	sw	a4,28(sp)
   45ff8a:	00042717          	auipc	a4,0x42
-  45ff8e:	caa72703          	lw	a4,-854(a4) # 4a1c34 <_GLOBAL_OFFSET_TABLE_+0x4>
+  45ff8e:	cb672703          	lw	a4,-842(a4) # 4a1c40 <_GLOBAL_OFFSET_TABLE_+0x4>
   45ff92:	4318                	lw	a4,0(a4)
   45ff94:	893e                	mv	s2,a5
   45ff96:	ef09                	bnez	a4,45ffb0 <os_shell_ping+0x3a>
@@ -221046,7 +221046,7 @@ Disassembly of section .text_non_rom:
   460118:	8082                	ret
   46011a:	f2a9a2ef          	jal	t0,3fa844 <__riscv_save_0>
   46011e:	00042797          	auipc	a5,0x42
-  460122:	b8e7a783          	lw	a5,-1138(a5) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  460122:	b9a7a783          	lw	a5,-1126(a5) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   460126:	0387c683          	lbu	a3,56(a5)
   46012a:	84be                	mv	s1,a5
   46012c:	4781                	li	a5,0
@@ -221072,7 +221072,7 @@ Disassembly of section .text_non_rom:
 00460162 <raw_input>:
   460162:	eba9a2ef          	jal	t0,3fa81c <__riscv_save_10>
   460166:	00042497          	auipc	s1,0x42
-  46016a:	b464a483          	lw	s1,-1210(s1) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  46016a:	b524a483          	lw	s1,-1198(s1) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   46016e:	0384c703          	lbu	a4,56(s1)
   460172:	4799                	li	a5,6
   460174:	8aaa                	mv	s5,a0
@@ -221134,7 +221134,7 @@ Disassembly of section .text_non_rom:
   460206:	ce15                	beqz	a2,460242 <raw_input6+0x44>
   460208:	ce8d                	beqz	a3,460242 <raw_input6+0x44>
   46020a:	00042497          	auipc	s1,0x42
-  46020e:	aa24a483          	lw	s1,-1374(s1) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  46020e:	aae4a483          	lw	s1,-1362(s1) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   460212:	0384c703          	lbu	a4,56(s1)
   460216:	4799                	li	a5,6
   460218:	8432                	mv	s0,a2
@@ -221254,7 +221254,7 @@ Disassembly of section .text_non_rom:
 00460330 <raw_sendto_if_src>:
   460330:	cec9a2ef          	jal	t0,3fa81c <__riscv_save_10>
   460334:	00042b17          	auipc	s6,0x42
-  460338:	988b2b03          	lw	s6,-1656(s6) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  460338:	994b2b03          	lw	s6,-1644(s6) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   46033c:	000b2783          	lw	a5,0(s6)
   460340:	1141                	addi	sp,sp,-16
   460342:	c63e                	sw	a5,12(sp)
@@ -221458,7 +221458,7 @@ Disassembly of section .text_non_rom:
   460586:	0044d783          	lhu	a5,4(s1)
   46058a:	e395                	bnez	a5,4605ae <raw_sendto_if_src+0x27e>
   46058c:	00041717          	auipc	a4,0x41
-  460590:	72072703          	lw	a4,1824(a4) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  460590:	72c72703          	lw	a4,1836(a4) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   460594:	03c75783          	lhu	a5,60(a4)
   460598:	00879693          	slli	a3,a5,0x8
   46059c:	83a1                	srli	a5,a5,0x8
@@ -222003,7 +222003,7 @@ Disassembly of section .text_non_rom:
 00460b7c <lwip_socket_drop_registered_memberships>:
   460b7c:	caf992ef          	jal	t0,3fa82a <__riscv_save_4>
   460b80:	00041797          	auipc	a5,0x41
-  460b84:	13c7a783          	lw	a5,316(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  460b84:	1487a783          	lw	a5,328(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   460b88:	4398                	lw	a4,0(a5)
   460b8a:	7179                	addi	sp,sp,-48
   460b8c:	84be                	mv	s1,a5
@@ -222083,7 +222083,7 @@ Disassembly of section .text_non_rom:
 00460c4e <lwip_setsockopt_impl>:
   460c4e:	bdd992ef          	jal	t0,3fa82a <__riscv_save_4>
   460c52:	00041917          	auipc	s2,0x41
-  460c56:	06a92903          	lw	s2,106(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  460c56:	07692903          	lw	s2,118(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   460c5a:	00092783          	lw	a5,0(s2)
   460c5e:	7139                	addi	sp,sp,-64
   460c60:	c62e                	sw	a1,12(sp)
@@ -222918,7 +222918,7 @@ Disassembly of section .text_non_rom:
   4615d0:	7161                	addi	sp,sp,-432
   4615d2:	8d3a                	mv	s10,a4
   4615d4:	00040717          	auipc	a4,0x40
-  4615d8:	6e872703          	lw	a4,1768(a4) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4615d8:	6f472703          	lw	a4,1780(a4) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4615dc:	c03e                	sw	a5,0(sp)
   4615de:	431c                	lw	a5,0(a4)
   4615e0:	c63a                	sw	a4,12(sp)
@@ -223086,7 +223086,7 @@ Disassembly of section .text_non_rom:
 004617b0 <accept>:
   4617b0:	86c992ef          	jal	t0,3fa81c <__riscv_save_10>
   4617b4:	00040a17          	auipc	s4,0x40
-  4617b8:	508a2a03          	lw	s4,1288(s4) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4617b8:	514a2a03          	lw	s4,1300(s4) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4617bc:	000a2783          	lw	a5,0(s4)
   4617c0:	7139                	addi	sp,sp,-64
   4617c2:	c402                	sw	zero,8(sp)
@@ -223259,7 +223259,7 @@ Disassembly of section .text_non_rom:
 004619b2 <bind>:
   4619b2:	e79982ef          	jal	t0,3fa82a <__riscv_save_4>
   4619b6:	00040497          	auipc	s1,0x40
-  4619ba:	3064a483          	lw	s1,774(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4619ba:	3124a483          	lw	s1,786(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4619be:	409c                	lw	a5,0(s1)
   4619c0:	7179                	addi	sp,sp,-48
   4619c2:	892e                	mv	s2,a1
@@ -223390,7 +223390,7 @@ Disassembly of section .text_non_rom:
 00461b24 <connect>:
   461b24:	d07982ef          	jal	t0,3fa82a <__riscv_save_4>
   461b28:	00040497          	auipc	s1,0x40
-  461b2c:	1944a483          	lw	s1,404(s1) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  461b2c:	1a04a483          	lw	s1,416(s1) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   461b30:	409c                	lw	a5,0(s1)
   461b32:	7179                	addi	sp,sp,-48
   461b34:	d63e                	sw	a5,44(sp)
@@ -223559,7 +223559,7 @@ Disassembly of section .text_non_rom:
   461d04:	b11982ef          	jal	t0,3fa814 <__riscv_save_12>
   461d08:	8a3e                	mv	s4,a5
   461d0a:	00040797          	auipc	a5,0x40
-  461d0e:	fb27a783          	lw	a5,-78(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  461d0e:	fbe7a783          	lw	a5,-66(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   461d12:	8d3a                	mv	s10,a4
   461d14:	4398                	lw	a4,0(a5)
   461d16:	715d                	addi	sp,sp,-80
@@ -223851,7 +223851,7 @@ Disassembly of section .text_non_rom:
 00462060 <sendto>:
   462060:	fbc982ef          	jal	t0,3fa81c <__riscv_save_10>
   462064:	00040997          	auipc	s3,0x40
-  462068:	c589a983          	lw	s3,-936(s3) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  462068:	c649a983          	lw	s3,-924(s3) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   46206c:	8aba                	mv	s5,a4
   46206e:	0009a703          	lw	a4,0(s3)
   462072:	7139                	addi	sp,sp,-64
@@ -224071,7 +224071,7 @@ Disassembly of section .text_non_rom:
 004622ec <send>:
   4622ec:	d3e982ef          	jal	t0,3fa82a <__riscv_save_4>
   4622f0:	00040917          	auipc	s2,0x40
-  4622f4:	9cc92903          	lw	s2,-1588(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4622f4:	9d892903          	lw	s2,-1576(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4622f8:	00092783          	lw	a5,0(s2)
   4622fc:	1101                	addi	sp,sp,-32
   4622fe:	89aa                	mv	s3,a0
@@ -224256,7 +224256,7 @@ Disassembly of section .text_non_rom:
   4624fc:	b18982ef          	jal	t0,3fa814 <__riscv_save_12>
   462500:	8aba                	mv	s5,a4
   462502:	0003f717          	auipc	a4,0x3f
-  462506:	7ba72703          	lw	a4,1978(a4) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  462506:	7c672703          	lw	a4,1990(a4) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   46250a:	431c                	lw	a5,0(a4)
   46250c:	db010113          	addi	sp,sp,-592
   462510:	c83a                	sw	a4,16(sp)
@@ -224584,7 +224584,7 @@ Disassembly of section .text_non_rom:
   46289e:	547d                	li	s0,-1
   4628a0:	a0b1                	j	4628ec <setsockopt+0x86>
   4628a2:	0003f517          	auipc	a0,0x3f
-  4628a6:	46652503          	lw	a0,1126(a0) # 4a1d08 <_GLOBAL_OFFSET_TABLE_+0xd8>
+  4628a6:	47252503          	lw	a0,1138(a0) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xd8>
   4628aa:	c63a                	sw	a4,12(sp)
   4628ac:	c436                	sw	a3,8(sp)
   4628ae:	c232                	sw	a2,4(sp)
@@ -224598,7 +224598,7 @@ Disassembly of section .text_non_rom:
   4628c0:	b8efe0ef          	jal	ra,460c4e <lwip_setsockopt_impl>
   4628c4:	842a                	mv	s0,a0
   4628c6:	0003f517          	auipc	a0,0x3f
-  4628ca:	44252503          	lw	a0,1090(a0) # 4a1d08 <_GLOBAL_OFFSET_TABLE_+0xd8>
+  4628ca:	44e52503          	lw	a0,1102(a0) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xd8>
   4628ce:	69a000ef          	jal	ra,462f68 <sys_mutex_unlock>
   4628d2:	c811                	beqz	s0,4628e6 <setsockopt+0x80>
   4628d4:	85a2                	mv	a1,s0
@@ -224616,7 +224616,7 @@ Disassembly of section .text_non_rom:
 004628f4 <sys_msleep>:
   4628f4:	f51972ef          	jal	t0,3fa844 <__riscv_save_0>
   4628f8:	0003f797          	auipc	a5,0x3f
-  4628fc:	3c47a783          	lw	a5,964(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4628fc:	3d07a783          	lw	a5,976(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   462900:	4398                	lw	a4,0(a5)
   462902:	1141                	addi	sp,sp,-16
   462904:	843e                	mv	s0,a5
@@ -224694,7 +224694,7 @@ Disassembly of section .text_non_rom:
 004629b2 <sys_arch_mbox_handler_timeouts>:
   4629b2:	e6b972ef          	jal	t0,3fa81c <__riscv_save_10>
   4629b6:	0003f717          	auipc	a4,0x3f
-  4629ba:	30672703          	lw	a4,774(a4) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  4629ba:	31272703          	lw	a4,786(a4) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   4629be:	431c                	lw	a5,0(a4)
   4629c0:	1141                	addi	sp,sp,-16
   4629c2:	000f4437          	lui	s0,0xf4
@@ -225030,7 +225030,7 @@ Disassembly of section .text_non_rom:
 00462d56 <sys_init>:
   462d56:	aef972ef          	jal	t0,3fa844 <__riscv_save_0>
   462d5a:	0003f417          	auipc	s0,0x3f
-  462d5e:	f6242403          	lw	s0,-158(s0) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  462d5e:	f6e42403          	lw	s0,-146(s0) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   462d62:	401c                	lw	a5,0(s0)
   462d64:	1141                	addi	sp,sp,-16
   462d66:	002c                	addi	a1,sp,8
@@ -225063,7 +225063,7 @@ Disassembly of section .text_non_rom:
   462daa:	3e800793          	li	a5,1000
   462dae:	02a7b733          	mulhu	a4,a5,a0
   462db2:	0003f697          	auipc	a3,0x3f
-  462db6:	ee66a683          	lw	a3,-282(a3) # 4a1c98 <_GLOBAL_OFFSET_TABLE_+0x68>
+  462db6:	ef26a683          	lw	a3,-270(a3) # 4a1ca4 <_GLOBAL_OFFSET_TABLE_+0x68>
   462dba:	4290                	lw	a2,0(a3)
   462dbc:	4681                	li	a3,0
   462dbe:	0605                	addi	a2,a2,1
@@ -225076,7 +225076,7 @@ Disassembly of section .text_non_rom:
 00462dd2 <sys_thread_new>:
   462dd2:	a59972ef          	jal	t0,3fa82a <__riscv_save_4>
   462dd6:	0003f417          	auipc	s0,0x3f
-  462dda:	ee642403          	lw	s0,-282(s0) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  462dda:	ef242403          	lw	s0,-270(s0) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   462dde:	7139                	addi	sp,sp,-64
   462de0:	401c                	lw	a5,0(s0)
   462de2:	0824                	addi	s1,sp,24
@@ -225091,7 +225091,7 @@ Disassembly of section .text_non_rom:
   462df8:	de3e                	sw	a5,60(sp)
   462dfa:	ae7980ef          	jal	ra,3fb8e0 <memset_s>
   462dfe:	0003f797          	auipc	a5,0x3f
-  462e02:	e767a783          	lw	a5,-394(a5) # 4a1c74 <_GLOBAL_OFFSET_TABLE_+0x44>
+  462e02:	e827a783          	lw	a5,-382(a5) # 4a1c80 <_GLOBAL_OFFSET_TABLE_+0x44>
   462e06:	439c                	lw	a5,0(a5)
   462e08:	4732                	lw	a4,12(sp)
   462e0a:	85a6                	mv	a1,s1
@@ -225118,7 +225118,7 @@ Disassembly of section .text_non_rom:
 00462e3e <sys_sem_new>:
   462e3e:	a07972ef          	jal	t0,3fa844 <__riscv_save_0>
   462e42:	0003f797          	auipc	a5,0x3f
-  462e46:	e7a7a783          	lw	a5,-390(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  462e46:	e867a783          	lw	a5,-378(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   462e4a:	4398                	lw	a4,0(a5)
   462e4c:	1141                	addi	sp,sp,-16
   462e4e:	84aa                	mv	s1,a0
@@ -225137,7 +225137,7 @@ Disassembly of section .text_non_rom:
   462e6e:	47a2                	lw	a5,8(sp)
   462e70:	00479713          	slli	a4,a5,0x4
   462e74:	0003f797          	auipc	a5,0x3f
-  462e78:	ec07a783          	lw	a5,-320(a5) # 4a1d34 <_GLOBAL_OFFSET_TABLE_+0x104>
+  462e78:	ecc7a783          	lw	a5,-308(a5) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x104>
   462e7c:	439c                	lw	a5,0(a5)
   462e7e:	97ba                	add	a5,a5,a4
   462e80:	c09c                	sw	a5,0(s1)
@@ -225181,7 +225181,7 @@ Disassembly of section .text_non_rom:
   462ee6:	3e800513          	li	a0,1000
   462eea:	02953733          	mulhu	a4,a0,s1
   462eee:	0003f697          	auipc	a3,0x3f
-  462ef2:	daa6a683          	lw	a3,-598(a3) # 4a1c98 <_GLOBAL_OFFSET_TABLE_+0x68>
+  462ef2:	db66a683          	lw	a3,-586(a3) # 4a1ca4 <_GLOBAL_OFFSET_TABLE_+0x68>
   462ef6:	4290                	lw	a2,0(a3)
   462ef8:	4681                	li	a3,0
   462efa:	0605                	addi	a2,a2,1
@@ -225243,7 +225243,7 @@ Disassembly of section .text_non_rom:
 00462f84 <sys_arch_rand>:
   462f84:	8c1972ef          	jal	t0,3fa844 <__riscv_save_0>
   462f88:	0003f417          	auipc	s0,0x3f
-  462f8c:	d3442403          	lw	s0,-716(s0) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  462f8c:	d4042403          	lw	s0,-704(s0) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   462f90:	401c                	lw	a5,0(s0)
   462f92:	1141                	addi	sp,sp,-16
   462f94:	4591                	li	a1,4
@@ -225423,7 +225423,7 @@ Disassembly of section .text_non_rom:
   463150:	8a32                	mv	s4,a2
   463152:	e589                	bnez	a1,46315c <tcp_bind+0x22>
   463154:	0003f417          	auipc	s0,0x3f
-  463158:	bc442403          	lw	s0,-1084(s0) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  463158:	bd042403          	lw	s0,-1072(s0) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   46315c:	8522                	mv	a0,s0
   46315e:	eb2fa0ef          	jal	ra,45d810 <netif_ipaddr_isbrdcast>
   463162:	57b5                	li	a5,-19
@@ -225454,7 +225454,7 @@ Disassembly of section .text_non_rom:
   4631b0:	4a81                	li	s5,0
   4631b2:	4c19                	li	s8,6
   4631b4:	0003fc97          	auipc	s9,0x3f
-  4631b8:	b8ccac83          	lw	s9,-1140(s9) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  4631b8:	b98cac83          	lw	s9,-1128(s9) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   4631bc:	02e00b93          	li	s7,46
   4631c0:	000b2783          	lw	a5,0(s6)
   4631c4:	0007a903          	lw	s2,0(a5)
@@ -225467,7 +225467,7 @@ Disassembly of section .text_non_rom:
   4631da:	0cf71d63          	bne	a4,a5,4632b4 <tcp_bind+0x17a>
   4631de:	4641                	li	a2,16
   4631e0:	0003f597          	auipc	a1,0x3f
-  4631e4:	b605a583          	lw	a1,-1184(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  4631e4:	b6c5a583          	lw	a1,-1172(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   4631e8:	8522                	mv	a0,s0
   4631ea:	d62980ef          	jal	ra,3fb74c <memcmp>
   4631ee:	e519                	bnez	a0,4631fc <tcp_bind+0xc2>
@@ -226282,7 +226282,7 @@ Disassembly of section .text_non_rom:
   463b3c:	ffc81717          	auipc	a4,0xffc81
   463b40:	4af70423          	sb	a5,1192(a4) # e4fe4 <tcp_active_pcbs_changed>
   463b44:	0003e797          	auipc	a5,0x3e
-  463b48:	1ac7a783          	lw	a5,428(a5) # 4a1cf0 <_GLOBAL_OFFSET_TABLE_+0xc0>
+  463b48:	1b87a783          	lw	a5,440(a5) # 4a1cfc <_GLOBAL_OFFSET_TABLE_+0xc0>
   463b4c:	439c                	lw	a5,0(a5)
   463b4e:	02879c63          	bne	a5,s0,463b86 <tcp_close_shutdown+0xa4>
   463b52:	690020ef          	jal	ra,4661e2 <tcp_trigger_input_pcb_close>
@@ -227075,7 +227075,7 @@ Disassembly of section .text_non_rom:
   464420:	04f71863          	bne	a4,a5,464470 <tcp_netif_ip_addr_changed+0x60>
   464424:	4641                	li	a2,16
   464426:	0003e597          	auipc	a1,0x3e
-  46442a:	91a5a583          	lw	a1,-1766(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  46442a:	9265a583          	lw	a1,-1754(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   46442e:	b1e970ef          	jal	ra,3fb74c <memcmp>
   464432:	00a03533          	snez	a0,a0
   464436:	c91d                	beqz	a0,46446c <tcp_netif_ip_addr_changed+0x5c>
@@ -227119,7 +227119,7 @@ Disassembly of section .text_non_rom:
   46449e:	4380                	lw	s0,0(a5)
   4644a0:	892a                	mv	s2,a0
   4644a2:	0003e997          	auipc	s3,0x3e
-  4644a6:	89a9a983          	lw	s3,-1894(s3) # 4a1d3c <_GLOBAL_OFFSET_TABLE_+0x10c>
+  4644a6:	8a69a983          	lw	s3,-1882(s3) # 4a1d48 <_GLOBAL_OFFSET_TABLE_+0x10c>
   4644aa:	e019                	bnez	s0,4644b0 <tcp_unlock_accept+0x1e>
   4644ac:	bb29606f          	j	3fa85e <__riscv_restore_4>
   4644b0:	00092703          	lw	a4,0(s2)
@@ -227183,7 +227183,7 @@ Disassembly of section .text_non_rom:
   464544:	9782                	jalr	a5
   464546:	85a2                	mv	a1,s0
   464548:	0003d517          	auipc	a0,0x3d
-  46454c:	78052503          	lw	a0,1920(a0) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x98>
+  46454c:	78c52503          	lw	a0,1932(a0) # 4a1cd4 <_GLOBAL_OFFSET_TABLE_+0x98>
   464550:	d52ff0ef          	jal	ra,463aa2 <tcp_pcb_remove>
   464554:	8522                	mv	a0,s0
   464556:	b3bfe0ef          	jal	ra,463090 <tcp_free>
@@ -227216,7 +227216,7 @@ Disassembly of section .text_non_rom:
   4645a4:	8b85                	andi	a5,a5,1
   4645a6:	c799                	beqz	a5,4645b4 <tcp_timewait_input+0x50>
   4645a8:	0003d797          	auipc	a5,0x3d
-  4645ac:	75c7a783          	lw	a5,1884(a5) # 4a1d04 <_GLOBAL_OFFSET_TABLE_+0xd4>
+  4645ac:	7687a783          	lw	a5,1896(a5) # 4a1d10 <_GLOBAL_OFFSET_TABLE_+0xd4>
   4645b0:	439c                	lw	a5,0(a5)
   4645b2:	c93c                	sw	a5,80(a0)
   4645b4:	ffc81797          	auipc	a5,0xffc81
@@ -227359,7 +227359,7 @@ Disassembly of section .text_non_rom:
   46474c:	00275703          	lhu	a4,2(a4)
   464750:	4108                	lw	a0,0(a0)
   464752:	0003d617          	auipc	a2,0x3d
-  464756:	55a62603          	lw	a2,1370(a2) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  464756:	56662603          	lw	a2,1382(a2) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   46475a:	01460693          	addi	a3,a2,20
   46475e:	8826                	mv	a6,s1
   464760:	02860613          	addi	a2,a2,40
@@ -227384,7 +227384,7 @@ Disassembly of section .text_non_rom:
   464796:	bfc9                	j	464768 <tcp_listen_input+0x64>
   464798:	0494c783          	lbu	a5,73(s1)
   46479c:	0003d997          	auipc	s3,0x3d
-  4647a0:	5109a983          	lw	s3,1296(s3) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  4647a0:	51c9a983          	lw	s3,1308(s3) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   4647a4:	02898593          	addi	a1,s3,40
   4647a8:	0785                	addi	a5,a5,1
   4647aa:	04f484a3          	sb	a5,73(s1)
@@ -227441,7 +227441,7 @@ Disassembly of section .text_non_rom:
   464854:	8bb1                	andi	a5,a5,12
   464856:	d41c                	sw	a5,40(s0)
   464858:	0003d797          	auipc	a5,0x3d
-  46485c:	4707a783          	lw	a5,1136(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x98>
+  46485c:	47c7a783          	lw	a5,1148(a5) # 4a1cd4 <_GLOBAL_OFFSET_TABLE_+0x98>
   464860:	4398                	lw	a4,0(a5)
   464862:	10a42423          	sw	a0,264(s0)
   464866:	10a42623          	sw	a0,268(s0)
@@ -227453,7 +227453,7 @@ Disassembly of section .text_non_rom:
   46487c:	c380                	sw	s0,0(a5)
   46487e:	127030ef          	jal	ra,4681a4 <tcp_timer_needed>
   464882:	0003d797          	auipc	a5,0x3d
-  464886:	3da7a783          	lw	a5,986(a5) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x2c>
+  464886:	3e67a783          	lw	a5,998(a5) # 4a1c68 <_GLOBAL_OFFSET_TABLE_+0x2c>
   46488a:	4705                	li	a4,1
   46488c:	85a2                	mv	a1,s0
   46488e:	854a                	mv	a0,s2
@@ -228190,7 +228190,7 @@ Disassembly of section .text_non_rom:
   46517e:	00fa7a33          	and	s4,s4,a5
   465182:	05442423          	sw	s4,72(s0)
   465186:	0003d517          	auipc	a0,0x3d
-  46518a:	b2652503          	lw	a0,-1242(a0) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  46518a:	b3252503          	lw	a0,-1230(a0) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   46518e:	455c                	lw	a5,12(a0)
   465190:	a60780e3          	beqz	a5,464bf0 <tcp_receive+0x268>
   465194:	0551                	addi	a0,a0,20
@@ -228443,7 +228443,7 @@ Disassembly of section .text_non_rom:
   465492:	8522                	mv	a0,s0
   465494:	1a0020ef          	jal	ra,467634 <tcp_update_sack_for_received_ooseq_segs>
   465498:	0003d517          	auipc	a0,0x3d
-  46549c:	81452503          	lw	a0,-2028(a0) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  46549c:	82052503          	lw	a0,-2016(a0) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   4654a0:	455c                	lw	a5,12(a0)
   4654a2:	d6078463          	beqz	a5,464a0a <tcp_receive+0x82>
   4654a6:	0551                	addi	a0,a0,20
@@ -228712,7 +228712,7 @@ Disassembly of section .text_non_rom:
   4657b8:	8bc1                	andi	a5,a5,16
   4657ba:	e799                	bnez	a5,4657c8 <tcp_process+0xa8>
   4657bc:	0003c797          	auipc	a5,0x3c
-  4657c0:	5487a783          	lw	a5,1352(a5) # 4a1d04 <_GLOBAL_OFFSET_TABLE_+0xd4>
+  4657c0:	5547a783          	lw	a5,1364(a5) # 4a1d10 <_GLOBAL_OFFSET_TABLE_+0xd4>
   4657c4:	439c                	lw	a5,0(a5)
   4657c6:	c93c                	sw	a5,80(a0)
   4657c8:	0e051523          	sh	zero,234(a0)
@@ -228876,7 +228876,7 @@ Disassembly of section .text_non_rom:
   4659b2:	00275703          	lhu	a4,2(a4)
   4659b6:	4108                	lw	a0,0(a0)
   4659b8:	0003c617          	auipc	a2,0x3c
-  4659bc:	2f462603          	lw	a2,756(a2) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  4659bc:	30062603          	lw	a2,768(a2) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   4659c0:	01460693          	addi	a3,a2,20
   4659c4:	8822                	mv	a6,s0
   4659c6:	02860613          	addi	a2,a2,40
@@ -228970,7 +228970,7 @@ Disassembly of section .text_non_rom:
   465ad8:	ffc7f897          	auipc	a7,0xffc7f
   465adc:	5668d883          	lhu	a7,1382(a7) # e503e <tcplen>
   465ae0:	0003c617          	auipc	a2,0x3c
-  465ae4:	1cc62603          	lw	a2,460(a2) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  465ae4:	1d862603          	lw	a2,472(a2) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   465ae8:	01460693          	addi	a3,a2,20
   465aec:	8822                	mv	a6,s0
   465aee:	02860613          	addi	a2,a2,40
@@ -229025,16 +229025,16 @@ Disassembly of section .text_non_rom:
   465b84:	8effd0ef          	jal	ra,463472 <tcp_pcb_purge>
   465b88:	85a2                	mv	a1,s0
   465b8a:	0003c517          	auipc	a0,0x3c
-  465b8e:	13e52503          	lw	a0,318(a0) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x98>
+  465b8e:	14a52503          	lw	a0,330(a0) # 4a1cd4 <_GLOBAL_OFFSET_TABLE_+0x98>
   465b92:	d79fd0ef          	jal	ra,46390a <tcp_remove>
   465b96:	0003c797          	auipc	a5,0x3c
-  465b9a:	0c67a783          	lw	a5,198(a5) # 4a1c5c <_GLOBAL_OFFSET_TABLE_+0x2c>
+  465b9a:	0d27a783          	lw	a5,210(a5) # 4a1c68 <_GLOBAL_OFFSET_TABLE_+0x2c>
   465b9e:	4705                	li	a4,1
   465ba0:	00e78023          	sb	a4,0(a5)
   465ba4:	47a9                	li	a5,10
   465ba6:	dc1c                	sw	a5,56(s0)
   465ba8:	0003c797          	auipc	a5,0x3c
-  465bac:	17c7a783          	lw	a5,380(a5) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xf4>
+  465bac:	1887a783          	lw	a5,392(a5) # 4a1d30 <_GLOBAL_OFFSET_TABLE_+0xf4>
   465bb0:	4398                	lw	a4,0(a5)
   465bb2:	c380                	sw	s0,0(a5)
   465bb4:	d818                	sw	a4,48(s0)
@@ -229108,7 +229108,7 @@ Disassembly of section .text_non_rom:
   465c90:	47cd                	li	a5,19
   465c92:	14e7f863          	bleu	a4,a5,465de2 <tcp_input+0x166>
   465c96:	0003c917          	auipc	s2,0x3c
-  465c9a:	01692903          	lw	s2,22(s2) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  465c9a:	02292903          	lw	s2,34(s2) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   465c9e:	03894703          	lbu	a4,56(s2)
   465ca2:	4799                	li	a5,6
   465ca4:	8b2e                	mv	s6,a1
@@ -229187,14 +229187,14 @@ Disassembly of section .text_non_rom:
   465d9e:	ffc7f797          	auipc	a5,0xffc7f
   465da2:	2ae79023          	sh	a4,672(a5) # e503e <tcplen>
   465da6:	0003c997          	auipc	s3,0x3c
-  465daa:	f229a983          	lw	s3,-222(s3) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x98>
+  465daa:	f2e9a983          	lw	s3,-210(s3) # 4a1cd4 <_GLOBAL_OFFSET_TABLE_+0x98>
   465dae:	0009a403          	lw	s0,0(s3)
   465db2:	4a81                	li	s5,0
   465db4:	01490b93          	addi	s7,s2,20
   465db8:	02890c13          	addi	s8,s2,40
   465dbc:	e045                	bnez	s0,465e5c <tcp_input+0x1e0>
   465dbe:	0003c797          	auipc	a5,0x3c
-  465dc2:	f667a783          	lw	a5,-154(a5) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xf4>
+  465dc2:	f727a783          	lw	a5,-142(a5) # 4a1d30 <_GLOBAL_OFFSET_TABLE_+0xf4>
   465dc6:	4380                	lw	s0,0(a5)
   465dc8:	01490a93          	addi	s5,s2,20
   465dcc:	02890993          	addi	s3,s2,40
@@ -229345,7 +229345,7 @@ Disassembly of section .text_non_rom:
   465fba:	e2f514e3          	bne	a0,a5,465de2 <tcp_input+0x166>
   465fbe:	85a2                	mv	a1,s0
   465fc0:	0003c517          	auipc	a0,0x3c
-  465fc4:	d6452503          	lw	a0,-668(a0) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xf4>
+  465fc4:	d7052503          	lw	a0,-656(a0) # 4a1d30 <_GLOBAL_OFFSET_TABLE_+0xf4>
   465fc8:	adbfd0ef          	jal	ra,463aa2 <tcp_pcb_remove>
   465fcc:	8522                	mv	a0,s0
   465fce:	8c2fd0ef          	jal	ra,463090 <tcp_free>
@@ -229353,7 +229353,7 @@ Disassembly of section .text_non_rom:
   465fd4:	5800                	lw	s0,48(s0)
   465fd6:	fc49                	bnez	s0,465f70 <tcp_input+0x2f4>
   465fd8:	0003cc17          	auipc	s8,0x3c
-  465fdc:	d54c2c03          	lw	s8,-684(s8) # 4a1d2c <_GLOBAL_OFFSET_TABLE_+0xfc>
+  465fdc:	d60c2c03          	lw	s8,-672(s8) # 4a1d38 <_GLOBAL_OFFSET_TABLE_+0xfc>
   465fe0:	000c2983          	lw	s3,0(s8)
   465fe4:	4b81                	li	s7,0
   465fe6:	4a81                	li	s5,0
@@ -229436,7 +229436,7 @@ Disassembly of section .text_non_rom:
   4660e0:	9782                	jalr	a5
   4660e2:	85a2                	mv	a1,s0
   4660e4:	0003c517          	auipc	a0,0x3c
-  4660e8:	be452503          	lw	a0,-1052(a0) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x98>
+  4660e8:	bf052503          	lw	a0,-1040(a0) # 4a1cd4 <_GLOBAL_OFFSET_TABLE_+0x98>
   4660ec:	9b7fd0ef          	jal	ra,463aa2 <tcp_pcb_remove>
   4660f0:	8522                	mv	a0,s0
   4660f2:	f9ffc0ef          	jal	ra,463090 <tcp_free>
@@ -229823,7 +229823,7 @@ Disassembly of section .text_non_rom:
   46650a:	7139                	addi	sp,sp,-64
   46650c:	c836                	sw	a3,16(sp)
   46650e:	0003b697          	auipc	a3,0x3b
-  466512:	7ae6a683          	lw	a3,1966(a3) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  466512:	7ba6a683          	lw	a3,1978(a3) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   466516:	429c                	lw	a5,0(a3)
   466518:	06255703          	lhu	a4,98(a0)
   46651c:	c02e                	sw	a1,0(sp)
@@ -230088,7 +230088,7 @@ Disassembly of section .text_non_rom:
 00466828 <tcp_enqueue_flags>:
   466828:	802942ef          	jal	t0,3fa82a <__riscv_save_4>
   46682c:	0003b997          	auipc	s3,0x3b
-  466830:	4909a983          	lw	s3,1168(s3) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  466830:	49c9a983          	lw	s3,1180(s3) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   466834:	0009a783          	lw	a5,0(s3)
   466838:	1141                	addi	sp,sp,-16
   46683a:	6741                	lui	a4,0x10
@@ -230534,7 +230534,7 @@ Disassembly of section .text_non_rom:
 
 00466d26 <tcp_output>:
   466d26:	0003b797          	auipc	a5,0x3b
-  466d2a:	fca7a783          	lw	a5,-54(a5) # 4a1cf0 <_GLOBAL_OFFSET_TABLE_+0xc0>
+  466d2a:	fd67a783          	lw	a5,-42(a5) # 4a1cfc <_GLOBAL_OFFSET_TABLE_+0xc0>
   466d2e:	439c                	lw	a5,0(a5)
   466d30:	28a78d63          	beq	a5,a0,466fca <tcp_output+0x2a4>
   466d34:	ae9932ef          	jal	t0,3fa81c <__riscv_save_10>
@@ -231364,7 +231364,7 @@ Disassembly of section .text_non_rom:
 00467634 <tcp_update_sack_for_received_ooseq_segs>:
   467634:	9f6932ef          	jal	t0,3fa82a <__riscv_save_4>
   467638:	0003a997          	auipc	s3,0x3a
-  46763c:	6849a983          	lw	s3,1668(s3) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  46763c:	6909a983          	lw	s3,1680(s3) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   467640:	0009a783          	lw	a5,0(s3)
   467644:	1101                	addi	sp,sp,-32
   467646:	892a                	mv	s2,a0
@@ -231585,7 +231585,7 @@ Disassembly of section .text_non_rom:
 0046787c <tcp_parseopt_sack>:
   46787c:	fa1922ef          	jal	t0,3fa81c <__riscv_save_10>
   467880:	0003a997          	auipc	s3,0x3a
-  467884:	43c9a983          	lw	s3,1084(s3) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  467884:	4489a983          	lw	s3,1096(s3) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   467888:	0009a783          	lw	a5,0(s3)
   46788c:	1141                	addi	sp,sp,-16
   46788e:	8a2a                	mv	s4,a0
@@ -231950,7 +231950,7 @@ Disassembly of section .text_non_rom:
 00467c74 <tcp_sack_based_loss_recovery_alg>:
   467c74:	bb7922ef          	jal	t0,3fa82a <__riscv_save_4>
   467c78:	0003a917          	auipc	s2,0x3a
-  467c7c:	04492903          	lw	s2,68(s2) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  467c7c:	05092903          	lw	s2,80(s2) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   467c80:	00092783          	lw	a5,0(s2)
   467c84:	1141                	addi	sp,sp,-16
   467c86:	842a                	mv	s0,a0
@@ -232066,7 +232066,7 @@ Disassembly of section .text_non_rom:
 00467dd4 <tcpip_thread>:
   467dd4:	a49922ef          	jal	t0,3fa81c <__riscv_save_10>
   467dd8:	0003a797          	auipc	a5,0x3a
-  467ddc:	ee47a783          	lw	a5,-284(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  467ddc:	ef07a783          	lw	a5,-272(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   467de0:	439c                	lw	a5,0(a5)
   467de2:	1141                	addi	sp,sp,-16
   467de4:	c402                	sw	zero,8(sp)
@@ -232171,7 +232171,7 @@ Disassembly of section .text_non_rom:
 00467eea <tcpip_linklayer_event_call>:
   467eea:	941922ef          	jal	t0,3fa82a <__riscv_save_4>
   467eee:	0003a797          	auipc	a5,0x3a
-  467ef2:	dce7a783          	lw	a5,-562(a5) # 4a1cbc <_GLOBAL_OFFSET_TABLE_+0x8c>
+  467ef2:	dda7a783          	lw	a5,-550(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x8c>
   467ef6:	4398                	lw	a4,0(a5)
   467ef8:	1101                	addi	sp,sp,-32
   467efa:	ffc7d997          	auipc	s3,0xffc7d
@@ -232214,11 +232214,11 @@ Disassembly of section .text_non_rom:
   467f56:	8ef922ef          	jal	t0,3fa844 <__riscv_save_0>
   467f5a:	1605a783          	lw	a5,352(a1)
   467f5e:	0003a617          	auipc	a2,0x3a
-  467f62:	d6e62603          	lw	a2,-658(a2) # 4a1ccc <_GLOBAL_OFFSET_TABLE_+0x9c>
+  467f62:	d7a62603          	lw	a2,-646(a2) # 4a1cd8 <_GLOBAL_OFFSET_TABLE_+0x9c>
   467f66:	8be1                	andi	a5,a5,24
   467f68:	e789                	bnez	a5,467f72 <tcpip_input+0x1c>
   467f6a:	0003a617          	auipc	a2,0x3a
-  467f6e:	d1a62603          	lw	a2,-742(a2) # 4a1c84 <_GLOBAL_OFFSET_TABLE_+0x54>
+  467f6e:	d2662603          	lw	a2,-730(a2) # 4a1c90 <_GLOBAL_OFFSET_TABLE_+0x54>
   467f72:	f2bff0ef          	jal	ra,467e9c <tcpip_inpkt>
   467f76:	8f39206f          	j	3fa868 <__riscv_restore_0>
 
@@ -232432,11 +232432,11 @@ Disassembly of section .text_non_rom:
   4681ac:	439c                	lw	a5,0(a5)
   4681ae:	ef9d                	bnez	a5,4681ec <tcp_timer_needed+0x48>
   4681b0:	0003a797          	auipc	a5,0x3a
-  4681b4:	b187a783          	lw	a5,-1256(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x98>
+  4681b4:	b247a783          	lw	a5,-1244(a5) # 4a1cd4 <_GLOBAL_OFFSET_TABLE_+0x98>
   4681b8:	439c                	lw	a5,0(a5)
   4681ba:	e799                	bnez	a5,4681c8 <tcp_timer_needed+0x24>
   4681bc:	0003a797          	auipc	a5,0x3a
-  4681c0:	b687a783          	lw	a5,-1176(a5) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xf4>
+  4681c0:	b747a783          	lw	a5,-1164(a5) # 4a1d30 <_GLOBAL_OFFSET_TABLE_+0xf4>
   4681c4:	439c                	lw	a5,0(a5)
   4681c6:	c39d                	beqz	a5,4681ec <tcp_timer_needed+0x48>
   4681c8:	e7c922ef          	jal	t0,3fa844 <__riscv_save_0>
@@ -232455,11 +232455,11 @@ Disassembly of section .text_non_rom:
   4681ee:	e56922ef          	jal	t0,3fa844 <__riscv_save_0>
   4681f2:	b6dfb0ef          	jal	ra,463d5e <tcp_tmr>
   4681f6:	0003a797          	auipc	a5,0x3a
-  4681fa:	ad27a783          	lw	a5,-1326(a5) # 4a1cc8 <_GLOBAL_OFFSET_TABLE_+0x98>
+  4681fa:	ade7a783          	lw	a5,-1314(a5) # 4a1cd4 <_GLOBAL_OFFSET_TABLE_+0x98>
   4681fe:	439c                	lw	a5,0(a5)
   468200:	e799                	bnez	a5,46820e <tcpip_tcp_timer+0x20>
   468202:	0003a797          	auipc	a5,0x3a
-  468206:	b227a783          	lw	a5,-1246(a5) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xf4>
+  468206:	b2e7a783          	lw	a5,-1234(a5) # 4a1d30 <_GLOBAL_OFFSET_TABLE_+0xf4>
   46820a:	439c                	lw	a5,0(a5)
   46820c:	cf81                	beqz	a5,468224 <tcpip_tcp_timer+0x36>
   46820e:	4601                	li	a2,0
@@ -232516,12 +232516,12 @@ Disassembly of section .text_non_rom:
   4682a2:	ffc7db17          	auipc	s6,0xffc7d
   4682a6:	ddab0b13          	addi	s6,s6,-550 # e507c <timeouts_last_time>
   4682aa:	0003a497          	auipc	s1,0x3a
-  4682ae:	a5e4a483          	lw	s1,-1442(s1) # 4a1d08 <_GLOBAL_OFFSET_TABLE_+0xd8>
+  4682ae:	a6a4a483          	lw	s1,-1430(s1) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xd8>
   4682b2:	fff44413          	not	s0,s0
   4682b6:	000a2783          	lw	a5,0(s4)
   4682ba:	e795                	bnez	a5,4682e6 <sys_timeouts_mbox_fetch+0x5a>
   4682bc:	0003a517          	auipc	a0,0x3a
-  4682c0:	a4c52503          	lw	a0,-1460(a0) # 4a1d08 <_GLOBAL_OFFSET_TABLE_+0xd8>
+  4682c0:	a5852503          	lw	a0,-1448(a0) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xd8>
   4682c4:	ca5fa0ef          	jal	ra,462f68 <sys_mutex_unlock>
   4682c8:	4681                	li	a3,0
   4682ca:	4601                	li	a2,0
@@ -232529,7 +232529,7 @@ Disassembly of section .text_non_rom:
   4682ce:	854a                	mv	a0,s2
   4682d0:	9e9fa0ef          	jal	ra,462cb8 <sys_arch_mbox_fetch_ext>
   4682d4:	0003a517          	auipc	a0,0x3a
-  4682d8:	a3452503          	lw	a0,-1484(a0) # 4a1d08 <_GLOBAL_OFFSET_TABLE_+0xd8>
+  4682d8:	a4052503          	lw	a0,-1472(a0) # 4a1d14 <_GLOBAL_OFFSET_TABLE_+0xd8>
   4682dc:	c7dfa0ef          	jal	ra,462f58 <sys_mutex_lock>
   4682e0:	0141                	addi	sp,sp,16
   4682e2:	d7c9206f          	j	3fa85e <__riscv_restore_4>
@@ -232606,7 +232606,7 @@ Disassembly of section .text_non_rom:
   46839c:	ccc9206f          	j	3fa868 <__riscv_restore_0>
   4683a0:	ca4922ef          	jal	t0,3fa844 <__riscv_save_0>
   4683a4:	0003a717          	auipc	a4,0x3a
-  4683a8:	90872703          	lw	a4,-1784(a4) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  4683a8:	91472703          	lw	a4,-1772(a4) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   4683ac:	03874803          	lbu	a6,56(a4)
   4683b0:	84ba                	mv	s1,a4
   4683b2:	4781                	li	a5,0
@@ -232657,7 +232657,7 @@ Disassembly of section .text_non_rom:
   468424:	8f7f60ef          	jal	ra,45ed1a <pbuf_free>
   468428:	aa85                	j	468598 <udp_input+0x188>
   46842a:	0003a417          	auipc	s0,0x3a
-  46842e:	88242403          	lw	s0,-1918(s0) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  46842e:	88e42403          	lw	s0,-1906(s0) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   468432:	03844703          	lbu	a4,56(s0)
   468436:	4799                	li	a5,6
   468438:	89ae                	mv	s3,a1
@@ -232708,12 +232708,12 @@ Disassembly of section .text_non_rom:
   4684ca:	0cf71a63          	bne	a4,a5,46859e <udp_input+0x18e>
   4684ce:	4641                	li	a2,16
   4684d0:	0003a597          	auipc	a1,0x3a
-  4684d4:	8705a583          	lw	a1,-1936(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  4684d4:	87c5a583          	lw	a1,-1924(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   4684d8:	014d8513          	addi	a0,s11,20
   4684dc:	a70930ef          	jal	ra,3fb74c <memcmp>
   4684e0:	cd09                	beqz	a0,4684fa <udp_input+0xea>
   4684e2:	00039797          	auipc	a5,0x39
-  4684e6:	7ca7a783          	lw	a5,1994(a5) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  4684e6:	7d67a783          	lw	a5,2006(a5) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   4684ea:	07d1                	addi	a5,a5,20
   4684ec:	85be                	mv	a1,a5
   4684ee:	014d8513          	addi	a0,s11,20
@@ -232856,7 +232856,7 @@ Disassembly of section .text_non_rom:
   468694:	1759c703          	lbu	a4,373(s3)
   468698:	4632                	lw	a2,12(sp)
   46869a:	00039797          	auipc	a5,0x39
-  46869e:	6127a783          	lw	a5,1554(a5) # 4a1cac <_GLOBAL_OFFSET_TABLE_+0x7c>
+  46869e:	61e7a783          	lw	a5,1566(a5) # 4a1cb8 <_GLOBAL_OFFSET_TABLE_+0x7c>
   4686a2:	07d1                	addi	a5,a5,20
   4686a4:	00e60f23          	sb	a4,30(a2) # 1001e <__bss_size__+0x6ede>
   4686a8:	048da803          	lw	a6,72(s11)
@@ -232905,7 +232905,7 @@ Disassembly of section .text_non_rom:
   46871e:	842a                	mv	s0,a0
   468720:	89b2                	mv	s3,a2
   468722:	00039497          	auipc	s1,0x39
-  468726:	5f64a483          	lw	s1,1526(s1) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  468726:	6024a483          	lw	s1,1538(s1) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   46872a:	c191                	beqz	a1,46872e <udp_bind+0x14>
   46872c:	84ae                	mv	s1,a1
   46872e:	5569                	li	a0,-6
@@ -232919,7 +232919,7 @@ Disassembly of section .text_non_rom:
   468744:	06098963          	beqz	s3,4687b6 <udp_bind+0x9c>
   468748:	4b99                	li	s7,6
   46874a:	00039c17          	auipc	s8,0x39
-  46874e:	5f6c2c03          	lw	s8,1526(s8) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  46874e:	602c2c03          	lw	s8,1538(s8) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   468752:	02e00b13          	li	s6,46
   468756:	06091763          	bnez	s2,4687c4 <udp_bind+0xaa>
   46875a:	4651                	li	a2,20
@@ -233202,7 +233202,7 @@ Disassembly of section .text_non_rom:
   468a72:	04f89c63          	bne	a7,a5,468aca <udp_sendto_if_chksum+0x88>
   468a76:	4641                	li	a2,16
   468a78:	00039597          	auipc	a1,0x39
-  468a7c:	2c85a583          	lw	a1,712(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  468a7c:	2d45a583          	lw	a1,724(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   468a80:	8522                	mv	a0,s0
   468a82:	8922                	mv	s2,s0
   468a84:	cc9920ef          	jal	ra,3fb74c <memcmp>
@@ -233278,10 +233278,10 @@ Disassembly of section .text_non_rom:
   468b46:	00e89d63          	bne	a7,a4,468b60 <udp_sendto_chksum+0x74>
   468b4a:	4719                	li	a4,6
   468b4c:	00039b97          	auipc	s7,0x39
-  468b50:	1f4bab83          	lw	s7,500(s7) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  468b50:	200bab83          	lw	s7,512(s7) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   468b54:	00e78663          	beq	a5,a4,468b60 <udp_sendto_chksum+0x74>
   468b58:	00039b97          	auipc	s7,0x39
-  468b5c:	1c0bab83          	lw	s7,448(s7) # 4a1d18 <_GLOBAL_OFFSET_TABLE_+0xe8>
+  468b5c:	1ccbab83          	lw	s7,460(s7) # 4a1d24 <_GLOBAL_OFFSET_TABLE_+0xe8>
   468b60:	4719                	li	a4,6
   468b62:	4090                	lw	a2,0(s1)
   468b64:	00e79e63          	bne	a5,a4,468b80 <udp_sendto_chksum+0x94>
@@ -233321,7 +233321,7 @@ Disassembly of section .text_non_rom:
   468bc4:	403c                	lw	a5,64(s0)
   468bc6:	d7ed                	beqz	a5,468bb0 <udp_sendto_chksum+0xc4>
   468bc8:	00039717          	auipc	a4,0x39
-  468bcc:	10c72703          	lw	a4,268(a4) # 4a1cd4 <_GLOBAL_OFFSET_TABLE_+0xa4>
+  468bcc:	11872703          	lw	a4,280(a4) # 4a1ce0 <_GLOBAL_OFFSET_TABLE_+0xa4>
   468bd0:	4318                	lw	a4,0(a4)
   468bd2:	fce78fe3          	beq	a5,a4,468bb0 <udp_sendto_chksum+0xc4>
   468bd6:	85ca                	mv	a1,s2
@@ -233466,7 +233466,7 @@ Disassembly of section .text_non_rom:
   468d44:	02f71763          	bne	a4,a5,468d72 <udp_disconnect+0x3c>
   468d48:	4651                	li	a2,20
   468d4a:	00039597          	auipc	a1,0x39
-  468d4e:	f0e5a583          	lw	a1,-242(a1) # 4a1c58 <_GLOBAL_OFFSET_TABLE_+0x28>
+  468d4e:	f1a5a583          	lw	a1,-230(a1) # 4a1c64 <_GLOBAL_OFFSET_TABLE_+0x28>
   468d52:	0551                	addi	a0,a0,20
   468d54:	ac6920ef          	jal	ra,3fb01a <memcpy>
   468d58:	02041c23          	sh	zero,56(s0)
@@ -233549,7 +233549,7 @@ Disassembly of section .text_non_rom:
   468e2a:	02f71a63          	bne	a4,a5,468e5e <udp_netif_ip_addr_changed+0x42>
   468e2e:	4641                	li	a2,16
   468e30:	00039597          	auipc	a1,0x39
-  468e34:	f105a583          	lw	a1,-240(a1) # 4a1d40 <_GLOBAL_OFFSET_TABLE_+0x110>
+  468e34:	f1c5a583          	lw	a1,-228(a1) # 4a1d4c <_GLOBAL_OFFSET_TABLE_+0x110>
   468e38:	915920ef          	jal	ra,3fb74c <memcmp>
   468e3c:	00a03533          	snez	a0,a0
   468e40:	cd09                	beqz	a0,468e5a <udp_netif_ip_addr_changed+0x3e>
@@ -299692,7 +299692,7 @@ Disassembly of section .text_non_rom:
   4960fa:	1141                	addi	sp,sp,-16
   4960fc:	000e54b7          	lui	s1,0xe5
   496100:	c63e                	sw	a5,12(sp)
-  496102:	4fa0a0ef          	jal	ra,4a05fc <GetFirstApiVersion>
+  496102:	5080a0ef          	jal	ra,4a060a <GetFirstApiVersion>
   496106:	004aa637          	lui	a2,0x4aa
   49610a:	86aa                	mv	a3,a0
   49610c:	41c60613          	addi	a2,a2,1052 # 4aa41c <alarm_type_strings+0x668>
@@ -299714,7 +299714,7 @@ Disassembly of section .text_non_rom:
   49613e:	1141                	addi	sp,sp,-16
   496140:	000e54b7          	lui	s1,0xe5
   496144:	c63e                	sw	a5,12(sp)
-  496146:	4900a0ef          	jal	ra,4a05d6 <GetSdkApiVersion>
+  496146:	49e0a0ef          	jal	ra,4a05e4 <GetSdkApiVersion>
   49614a:	004aa637          	lui	a2,0x4aa
   49614e:	86aa                	mv	a3,a0
   496150:	41c60613          	addi	a2,a2,1052 # 4aa41c <alarm_type_strings+0x668>
@@ -307644,7 +307644,7 @@ Disassembly of section .text_non_rom:
   49b8f4:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
   49b8f8:	1141                	addi	sp,sp,-16
   49b8fa:	c63e                	sw	a5,12(sp)
-  49b8fc:	4d6040ef          	jal	ra,49fdd2 <Time_GetCurrentMs>
+  49b8fc:	4e4040ef          	jal	ra,49fde0 <Time_GetCurrentMs>
   49b900:	4732                	lw	a4,12(sp)
   49b902:	7c042783          	lw	a5,1984(s0)
   49b906:	00f70463          	beq	a4,a5,49b90e <get_current_time+0x22>
@@ -307989,7 +307989,7 @@ Disassembly of section .text_non_rom:
   49bcca:	fca768e3          	bltu	a4,a0,49bc9a <kv_set_string+0x24>
   49bcce:	45b2                	lw	a1,12(sp)
   49bcd0:	8526                	mv	a0,s1
-  49bcd2:	651040ef          	jal	ra,4a0b22 <UtilsSetValue>
+  49bcd2:	65f040ef          	jal	ra,4a0b30 <UtilsSetValue>
   49bcd6:	4781                	li	a5,0
   49bcd8:	d169                	beqz	a0,49bc9a <kv_set_string+0x24>
   49bcda:	57dd                	li	a5,-9
@@ -308030,7 +308030,7 @@ Disassembly of section .text_non_rom:
   49bd34:	8626                	mv	a2,s1
   49bd36:	85a2                	mv	a1,s0
   49bd38:	854a                	mv	a0,s2
-  49bd3a:	587040ef          	jal	ra,4a0ac0 <UtilsGetValue>
+  49bd3a:	595040ef          	jal	ra,4a0ace <UtilsGetValue>
   49bd3e:	00a05d63          	blez	a0,49bd58 <kv_get_string+0x6e>
   49bd42:	00955763          	ble	s1,a0,49bd50 <kv_get_string+0x66>
   49bd46:	942a                	add	s0,s0,a0
@@ -308161,7 +308161,7 @@ Disassembly of section .text_non_rom:
   49be9c:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
   49bea0:	1141                	addi	sp,sp,-16
   49bea2:	c63e                	sw	a5,12(sp)
-  49bea4:	72f030ef          	jal	ra,49fdd2 <Time_GetCurrentMs>
+  49bea4:	73d030ef          	jal	ra,49fde0 <Time_GetCurrentMs>
   49bea8:	eaeff0ef          	jal	ra,49b556 <Buzzer_Tick>
   49beac:	4732                	lw	a4,12(sp)
   49beae:	7c042783          	lw	a5,1984(s0)
@@ -308277,7 +308277,7 @@ Disassembly of section .text_non_rom:
   49bfe4:	4509                	li	a0,2
   49bfe6:	b14550ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
   49bfea:	4501                	li	a0,0
-  49bfec:	1c3030ef          	jal	ra,49f9ae <relay_set_state>
+  49bfec:	1d1030ef          	jal	ra,49f9bc <relay_set_state>
   49bff0:	4058                	lw	a4,4(s0)
   49bff2:	000e67b7          	lui	a5,0xe6
   49bff6:	95d78793          	addi	a5,a5,-1699 # e595d <g_running_status>
@@ -308301,14 +308301,14 @@ Disassembly of section .text_non_rom:
   49c034:	4789                	li	a5,2
   49c036:	02f71063          	bne	a4,a5,49c056 <alarm_event_handler+0xec>
   49c03a:	4505                	li	a0,1
-  49c03c:	173030ef          	jal	ra,49f9ae <relay_set_state>
+  49c03c:	181030ef          	jal	ra,49f9bc <relay_set_state>
   49c040:	004ab637          	lui	a2,0x4ab
   49c044:	004ab5b7          	lui	a1,0x4ab
   49c048:	b0860613          	addi	a2,a2,-1272 # 4aab08 <alarm_type_strings+0xd54>
   49c04c:	b2c58593          	addi	a1,a1,-1236 # 4aab2c <alarm_type_strings+0xd78>
   49c050:	450d                	li	a0,3
   49c052:	e6fff0ef          	jal	ra,49bec0 <debug_print>
-  49c056:	57d030ef          	jal	ra,49fdd2 <Time_GetCurrentMs>
+  49c056:	58b030ef          	jal	ra,49fde0 <Time_GetCurrentMs>
   49c05a:	000e67b7          	lui	a5,0xe6
   49c05e:	94a7a823          	sw	a0,-1712(a5) # e5950 <g_last_alarm_action>
   49c062:	b779                	j	49bff0 <alarm_event_handler+0x86>
@@ -308383,7 +308383,7 @@ Disassembly of section .text_non_rom:
   49c140:	4509                	li	a0,2
   49c142:	9b8550ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
   49c146:	4501                	li	a0,0
-  49c148:	067030ef          	jal	ra,49f9ae <relay_set_state>
+  49c148:	075030ef          	jal	ra,49f9bc <relay_set_state>
   49c14c:	004ab637          	lui	a2,0x4ab
   49c150:	f4060613          	addi	a2,a2,-192 # 4aaf40 <alarm_type_strings+0x118c>
   49c154:	ed040593          	addi	a1,s0,-304
@@ -308485,7 +308485,7 @@ Disassembly of section .text_non_rom:
   49c27e:	c43ff0ef          	jal	ra,49bec0 <debug_print>
   49c282:	106c                	addi	a1,sp,44
   49c284:	0068                	addi	a0,sp,12
-  49c286:	7b9030ef          	jal	ra,4a023e <WiFi_connectHotspots>
+  49c286:	7c7030ef          	jal	ra,4a024c <WiFi_connectHotspots>
   49c28a:	86aa                	mv	a3,a0
   49c28c:	1a051963          	bnez	a0,49c43e <network_task+0x270>
   49c290:	004ab637          	lui	a2,0x4ab
@@ -308500,7 +308500,7 @@ Disassembly of section .text_non_rom:
   49c2ac:	98850513          	addi	a0,a0,-1656 # e5988 <g_wifi_ssid>
   49c2b0:	00f48023          	sb	a5,0(s1)
   49c2b4:	948ae0ef          	jal	ra,44a3fc <strncpy>
-  49c2b8:	5c9030ef          	jal	ra,4a0080 <WiFi_GetLocalIP>
+  49c2b8:	5d7030ef          	jal	ra,4a008e <WiFi_GetLocalIP>
   49c2bc:	85aa                	mv	a1,a0
   49c2be:	c11d                	beqz	a0,49c2e4 <network_task+0x116>
   49c2c0:	000e6937          	lui	s2,0xe6
@@ -308524,7 +308524,7 @@ Disassembly of section .text_non_rom:
   49c300:	004ab937          	lui	s2,0x4ab
   49c304:	0e458593          	addi	a1,a1,228 # 4ab0e4 <alarm_type_strings+0x1330>
   49c308:	0f090513          	addi	a0,s2,240 # 4ab0f0 <alarm_type_strings+0x133c>
-  49c30c:	5a1030ef          	jal	ra,4a00ac <WiFi_createHotspots>
+  49c30c:	5af030ef          	jal	ra,4a00ba <WiFi_createHotspots>
   49c310:	14051963          	bnez	a0,49c462 <network_task+0x294>
   49c314:	004ab637          	lui	a2,0x4ab
   49c318:	f6440593          	addi	a1,s0,-156
@@ -308532,7 +308532,7 @@ Disassembly of section .text_non_rom:
   49c320:	10460613          	addi	a2,a2,260 # 4ab104 <alarm_type_strings+0x1350>
   49c324:	450d                	li	a0,3
   49c326:	b9bff0ef          	jal	ra,49bec0 <debug_print>
-  49c32a:	557030ef          	jal	ra,4a0080 <WiFi_GetLocalIP>
+  49c32a:	565030ef          	jal	ra,4a008e <WiFi_GetLocalIP>
   49c32e:	85aa                	mv	a1,a0
   49c330:	c11d                	beqz	a0,49c356 <network_task+0x188>
   49c332:	000e6937          	lui	s2,0xe6
@@ -308553,7 +308553,7 @@ Disassembly of section .text_non_rom:
   49c368:	450d                	li	a0,3
   49c36a:	b57ff0ef          	jal	ra,49bec0 <debug_print>
   49c36e:	4501                	li	a0,0
-  49c370:	657020ef          	jal	ra,49f1c6 <php_api_init>
+  49c370:	665020ef          	jal	ra,49f1d4 <php_api_init>
   49c374:	86aa                	mv	a3,a0
   49c376:	0e050f63          	beqz	a0,49c474 <network_task+0x2a6>
   49c37a:	004ab637          	lui	a2,0x4ab
@@ -308566,7 +308566,7 @@ Disassembly of section .text_non_rom:
   49c394:	f6440593          	addi	a1,s0,-156
   49c398:	450d                	li	a0,3
   49c39a:	b27ff0ef          	jal	ra,49bec0 <debug_print>
-  49c39e:	43a030ef          	jal	ra,49f7d8 <php_api_start_web_server>
+  49c39e:	448030ef          	jal	ra,49f7e6 <php_api_start_web_server>
   49c3a2:	86aa                	mv	a3,a0
   49c3a4:	0e051263          	bnez	a0,49c488 <network_task+0x2ba>
   49c3a8:	004ab637          	lui	a2,0x4ab
@@ -308588,7 +308588,7 @@ Disassembly of section .text_non_rom:
   49c3e2:	004abd37          	lui	s10,0x4ab
   49c3e6:	000e6b37          	lui	s6,0xe6
   49c3ea:	06300b93          	li	s7,99
-  49c3ee:	1e5030ef          	jal	ra,49fdd2 <Time_GetCurrentMs>
+  49c3ee:	1f3030ef          	jal	ra,49fde0 <Time_GetCurrentMs>
   49c3f2:	954a8713          	addi	a4,s5,-1708 # e5954 <g_last_network_check.7678>
   49c3f6:	431c                	lw	a5,0(a4)
   49c3f8:	892a                	mv	s2,a0
@@ -308608,9 +308608,9 @@ Disassembly of section .text_non_rom:
   49c426:	40f907b3          	sub	a5,s2,a5
   49c42a:	00fbf663          	bleu	a5,s7,49c436 <network_task+0x268>
   49c42e:	01272023          	sw	s2,0(a4)
-  49c432:	4ea030ef          	jal	ra,49f91c <php_api_update_web_server>
+  49c432:	4f8030ef          	jal	ra,49f92a <php_api_update_web_server>
   49c436:	4529                	li	a0,10
-  49c438:	1df030ef          	jal	ra,49fe16 <Time_DelayMs>
+  49c438:	1ed030ef          	jal	ra,49fe24 <Time_DelayMs>
   49c43c:	bf4d                	j	49c3ee <network_task+0x220>
   49c43e:	004ab637          	lui	a2,0x4ab
   49c442:	07860613          	addi	a2,a2,120 # 4ab078 <alarm_type_strings+0x12c4>
@@ -308659,7 +308659,7 @@ Disassembly of section .text_non_rom:
   49c4c8:	00044703          	lbu	a4,0(s0)
   49c4cc:	84be                	mv	s1,a5
   49c4ce:	cb2d                	beqz	a4,49c540 <handle_continuous_alarm+0x90>
-  49c4d0:	103030ef          	jal	ra,49fdd2 <Time_GetCurrentMs>
+  49c4d0:	111030ef          	jal	ra,49fde0 <Time_GetCurrentMs>
   49c4d4:	000e67b7          	lui	a5,0xe6
   49c4d8:	95078793          	addi	a5,a5,-1712 # e5950 <g_last_alarm_action>
   49c4dc:	4398                	lw	a4,0(a5)
@@ -308684,12 +308684,12 @@ Disassembly of section .text_non_rom:
   49c516:	4509                	li	a0,2
   49c518:	de3540ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
   49c51c:	0c800513          	li	a0,200
-  49c520:	0f7030ef          	jal	ra,49fe16 <Time_DelayMs>
+  49c520:	105030ef          	jal	ra,49fe24 <Time_DelayMs>
   49c524:	4585                	li	a1,1
   49c526:	4509                	li	a0,2
   49c528:	dd3540ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
   49c52c:	12c00513          	li	a0,300
-  49c530:	0e7030ef          	jal	ra,49fe16 <Time_DelayMs>
+  49c530:	0f5030ef          	jal	ra,49fe24 <Time_DelayMs>
   49c534:	4601                	li	a2,0
   49c536:	06400593          	li	a1,100
   49c53a:	4505                	li	a0,1
@@ -308706,22 +308706,22 @@ Disassembly of section .text_non_rom:
   49c55c:	4509                	li	a0,2
   49c55e:	d9d540ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
   49c562:	06400513          	li	a0,100
-  49c566:	0b1030ef          	jal	ra,49fe16 <Time_DelayMs>
+  49c566:	0bf030ef          	jal	ra,49fe24 <Time_DelayMs>
   49c56a:	4585                	li	a1,1
   49c56c:	4509                	li	a0,2
   49c56e:	d8d540ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
   49c572:	06400513          	li	a0,100
-  49c576:	0a1030ef          	jal	ra,49fe16 <Time_DelayMs>
+  49c576:	0af030ef          	jal	ra,49fe24 <Time_DelayMs>
   49c57a:	4581                	li	a1,0
   49c57c:	4509                	li	a0,2
   49c57e:	d7d540ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
   49c582:	06400513          	li	a0,100
-  49c586:	091030ef          	jal	ra,49fe16 <Time_DelayMs>
+  49c586:	09f030ef          	jal	ra,49fe24 <Time_DelayMs>
   49c58a:	4585                	li	a1,1
   49c58c:	4509                	li	a0,2
   49c58e:	d6d540ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
   49c592:	4505                	li	a0,1
-  49c594:	41a030ef          	jal	ra,49f9ae <relay_set_state>
+  49c594:	428030ef          	jal	ra,49f9bc <relay_set_state>
   49c598:	b765                	j	49c540 <handle_continuous_alarm+0x90>
   49c59a:	0141                	addi	sp,sp,16
   49c59c:	acc5e06f          	j	3fa868 <__riscv_restore_0>
@@ -308806,7 +308806,7 @@ Disassembly of section .text_non_rom:
   49c6a0:	2d090593          	addi	a1,s2,720
   49c6a4:	450d                	li	a0,3
   49c6a6:	81bff0ef          	jal	ra,49bec0 <debug_print>
-  49c6aa:	208010ef          	jal	ra,49d8b2 <nfc_clear_ndef_data>
+  49c6aa:	216010ef          	jal	ra,49d8c0 <nfc_clear_ndef_data>
   49c6ae:	18050063          	beqz	a0,49c82e <parse_wifi_config+0x28e>
   49c6b2:	004ab637          	lui	a2,0x4ab
   49c6b6:	3bc60613          	addi	a2,a2,956 # 4ab3bc <alarm_type_strings+0x1608>
@@ -308828,7 +308828,7 @@ Disassembly of section .text_non_rom:
   49c6e6:	fdaff0ef          	jal	ra,49bec0 <debug_print>
   49c6ea:	006c                	addi	a1,sp,12
   49c6ec:	4501                	li	a0,0
-  49c6ee:	3d6010ef          	jal	ra,49dac4 <NT3HWriteUserData>
+  49c6ee:	3e4010ef          	jal	ra,49dad2 <NT3HWriteUserData>
   49c6f2:	14050663          	beqz	a0,49c83e <parse_wifi_config+0x29e>
   49c6f6:	004ab637          	lui	a2,0x4ab
   49c6fa:	42860613          	addi	a2,a2,1064 # 4ab428 <alarm_type_strings+0x1674>
@@ -308840,13 +308840,13 @@ Disassembly of section .text_non_rom:
   49c70c:	4509                	li	a0,2
   49c70e:	bed540ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
   49c712:	03200513          	li	a0,50
-  49c716:	700030ef          	jal	ra,49fe16 <Time_DelayMs>
+  49c716:	70e030ef          	jal	ra,49fe24 <Time_DelayMs>
   49c71a:	4585                	li	a1,1
   49c71c:	4509                	li	a0,2
   49c71e:	bdd540ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
   49c722:	03200513          	li	a0,50
   49c726:	147d                	addi	s0,s0,-1
-  49c728:	6ee030ef          	jal	ra,49fe16 <Time_DelayMs>
+  49c728:	6fc030ef          	jal	ra,49fe24 <Time_DelayMs>
   49c72c:	fc79                	bnez	s0,49c70a <parse_wifi_config+0x16a>
   49c72e:	004ab637          	lui	a2,0x4ab
   49c732:	48060613          	addi	a2,a2,1152 # 4ab480 <alarm_type_strings+0x16cc>
@@ -308981,7 +308981,7 @@ Disassembly of section .text_non_rom:
   49c8d0:	00610513          	addi	a0,sp,6
   49c8d4:	00010323          	sb	zero,6(sp)
   49c8d8:	000103a3          	sb	zero,7(sp)
-  49c8dc:	178010ef          	jal	ra,49da54 <NT3HReadHeaderNfc>
+  49c8dc:	186010ef          	jal	ra,49da62 <NT3HReadHeaderNfc>
   49c8e0:	8baa                	mv	s7,a0
   49c8e2:	2a050a63          	beqz	a0,49cb96 <check_nfc_tag+0x334>
   49c8e6:	004ab637          	lui	a2,0x4ab
@@ -309009,7 +309009,7 @@ Disassembly of section .text_non_rom:
   49c936:	8aaa                	mv	s5,a0
   49c938:	22050d63          	beqz	a0,49cb72 <check_nfc_tag+0x310>
   49c93c:	85d2                	mv	a1,s4
-  49c93e:	665000ef          	jal	ra,49d7a2 <get_NDEFDataPackage>
+  49c93e:	673000ef          	jal	ra,49d7b0 <get_NDEFDataPackage>
   49c942:	892a                	mv	s2,a0
   49c944:	20051c63          	bnez	a0,49cb5c <check_nfc_tag+0x2fa>
   49c948:	004ab637          	lui	a2,0x4ab
@@ -309140,7 +309140,7 @@ Disassembly of section .text_non_rom:
   49caec:	4509                	li	a0,2
   49caee:	80d540ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
   49caf2:	3e800513          	li	a0,1000
-  49caf6:	320030ef          	jal	ra,49fe16 <Time_DelayMs>
+  49caf6:	32e030ef          	jal	ra,49fe24 <Time_DelayMs>
   49cafa:	4585                	li	a1,1
   49cafc:	4509                	li	a0,2
   49cafe:	ffc540ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
@@ -309204,7 +309204,7 @@ Disassembly of section .text_non_rom:
   49cbb4:	450d                	li	a0,3
   49cbb6:	b0aff0ef          	jal	ra,49bec0 <debug_print>
   49cbba:	7d000513          	li	a0,2000
-  49cbbe:	258030ef          	jal	ra,49fe16 <Time_DelayMs>
+  49cbbe:	266030ef          	jal	ra,49fe24 <Time_DelayMs>
   49cbc2:	0485                	addi	s1,s1,1
   49cbc4:	cf249be3          	bne	s1,s2,49c8ba <check_nfc_tag+0x58>
   49cbc8:	004ab637          	lui	a2,0x4ab
@@ -309234,6873 +309234,6878 @@ Disassembly of section .text_non_rom:
   49cc1c:	c395d06f          	j	3fa854 <__riscv_restore_10>
 
 0049cc20 <Main_Task>:
-  49cc20:	bfd5d2ef          	jal	t0,3fa81c <__riscv_save_10>
+  49cc20:	bf55d2ef          	jal	t0,3fa814 <__riscv_save_12>
   49cc24:	0011d7b7          	lui	a5,0x11d
   49cc28:	7c07a783          	lw	a5,1984(a5) # 11d7c0 <__rom_data0_begin__>
   49cc2c:	7179                	addi	sp,sp,-48
-  49cc2e:	000dc937          	lui	s2,0xdc
+  49cc2e:	000e6937          	lui	s2,0xe6
   49cc32:	d63e                	sw	a5,44(sp)
-  49cc34:	19e030ef          	jal	ra,49fdd2 <Time_GetCurrentMs>
-  49cc38:	8aaa                	mv	s5,a0
-  49cc3a:	198030ef          	jal	ra,49fdd2 <Time_GetCurrentMs>
-  49cc3e:	8a2a                	mv	s4,a0
-  49cc40:	192030ef          	jal	ra,49fdd2 <Time_GetCurrentMs>
+  49cc34:	1ac030ef          	jal	ra,49fde0 <Time_GetCurrentMs>
+  49cc38:	8daa                	mv	s11,a0
+  49cc3a:	1a6030ef          	jal	ra,49fde0 <Time_GetCurrentMs>
+  49cc3e:	8aaa                	mv	s5,a0
+  49cc40:	1a0030ef          	jal	ra,49fde0 <Time_GetCurrentMs>
   49cc44:	8b2a                	mv	s6,a0
-  49cc46:	18c030ef          	jal	ra,49fdd2 <Time_GetCurrentMs>
-  49cc4a:	004ab637          	lui	a2,0x4ab
-  49cc4e:	004ab5b7          	lui	a1,0x4ab
-  49cc52:	84aa                	mv	s1,a0
-  49cc54:	89860613          	addi	a2,a2,-1896 # 4aa898 <alarm_type_strings+0xae4>
-  49cc58:	8b058593          	addi	a1,a1,-1872 # 4aa8b0 <alarm_type_strings+0xafc>
-  49cc5c:	450d                	li	a0,3
-  49cc5e:	a62ff0ef          	jal	ra,49bec0 <debug_print>
-  49cc62:	004ab7b7          	lui	a5,0x4ab
-  49cc66:	8947ac83          	lw	s9,-1900(a5) # 4aa894 <alarm_type_strings+0xae0>
-  49cc6a:	000dc9b7          	lui	s3,0xdc
-  49cc6e:	004abbb7          	lui	s7,0x4ab
-  49cc72:	004abc37          	lui	s8,0x4ab
-  49cc76:	15c030ef          	jal	ra,49fdd2 <Time_GetCurrentMs>
-  49cc7a:	842a                	mv	s0,a0
-  49cc7c:	835ff0ef          	jal	ra,49c4b0 <handle_continuous_alarm>
-  49cc80:	41540733          	sub	a4,s0,s5
-  49cc84:	3e700793          	li	a5,999
-  49cc88:	06e7f963          	bleu	a4,a5,49ccfa <Main_Task+0xda>
-  49cc8c:	1b890593          	addi	a1,s2,440 # dc1b8 <g_humidity>
-  49cc90:	1b998513          	addi	a0,s3,441 # dc1b9 <g_temperature>
-  49cc94:	b9dfe0ef          	jal	ra,49b830 <dht11_read_data>
-  49cc98:	1b890a93          	addi	s5,s2,440
-  49cc9c:	1b998d13          	addi	s10,s3,441
-  49cca0:	004ab5b7          	lui	a1,0x4ab
-  49cca4:	1c051d63          	bnez	a0,49ce7e <Main_Task+0x25e>
-  49cca8:	000d4703          	lbu	a4,0(s10)
-  49ccac:	000ac683          	lbu	a3,0(s5)
-  49ccb0:	004ab637          	lui	a2,0x4ab
-  49ccb4:	8b860613          	addi	a2,a2,-1864 # 4aa8b8 <alarm_type_strings+0xb04>
-  49ccb8:	8e858593          	addi	a1,a1,-1816 # 4aa8e8 <alarm_type_strings+0xb34>
-  49ccbc:	450d                	li	a0,3
-  49ccbe:	a02ff0ef          	jal	ra,49bec0 <debug_print>
-  49ccc2:	000d4503          	lbu	a0,0(s10)
-  49ccc6:	e2ff40ef          	jal	ra,491af4 <__floatunsisf>
-  49ccca:	000ac783          	lbu	a5,0(s5)
-  49ccce:	cc2a                	sw	a0,24(sp)
-  49ccd0:	0828                	addi	a0,sp,24
-  49ccd2:	ce3e                	sw	a5,28(sp)
-  49ccd4:	000e67b7          	lui	a5,0xe6
-  49ccd8:	9607d783          	lhu	a5,-1696(a5) # e5960 <g_smoke_data>
-  49ccdc:	8aa2                	mv	s5,s0
-  49ccde:	d03e                	sw	a5,32(sp)
-  49cce0:	000e67b7          	lui	a5,0xe6
-  49cce4:	93c7c783          	lbu	a5,-1732(a5) # e593c <g_alarm_active>
-  49cce8:	02f10223          	sb	a5,36(sp)
-  49ccec:	000e67b7          	lui	a5,0xe6
-  49ccf0:	9447a783          	lw	a5,-1724(a5) # e5944 <g_current_alarm_level>
-  49ccf4:	d43e                	sw	a5,40(sp)
-  49ccf6:	16a010ef          	jal	ra,49de60 <OLED_ShowSensorData>
-  49ccfa:	409407b3          	sub	a5,s0,s1
-  49ccfe:	3e700713          	li	a4,999
-  49cd02:	04f77363          	bleu	a5,a4,49cd48 <Main_Task+0x128>
-  49cd06:	000e67b7          	lui	a5,0xe6
-  49cd0a:	9747c783          	lbu	a5,-1676(a5) # e5974 <g_wifi_connected>
-  49cd0e:	18079263          	bnez	a5,49ce92 <Main_Task+0x272>
-  49cd12:	000e6d37          	lui	s10,0xe6
-  49cd16:	9a8d0d13          	addi	s10,s10,-1624 # e59a8 <last_network_warn.7758>
-  49cd1a:	000d2703          	lw	a4,0(s10)
-  49cd1e:	6789                	lui	a5,0x2
-  49cd20:	70f78793          	addi	a5,a5,1807 # 270f <__data_size+0x148f>
-  49cd24:	40e40733          	sub	a4,s0,a4
-  49cd28:	84a2                	mv	s1,s0
-  49cd2a:	00e7ff63          	bleu	a4,a5,49cd48 <Main_Task+0x128>
-  49cd2e:	004ab637          	lui	a2,0x4ab
-  49cd32:	004ab5b7          	lui	a1,0x4ab
-  49cd36:	90860613          	addi	a2,a2,-1784 # 4aa908 <alarm_type_strings+0xb54>
-  49cd3a:	93c58593          	addi	a1,a1,-1732 # 4aa93c <alarm_type_strings+0xb88>
-  49cd3e:	4509                	li	a0,2
-  49cd40:	980ff0ef          	jal	ra,49bec0 <debug_print>
-  49cd44:	008d2023          	sw	s0,0(s10)
-  49cd48:	6785                	lui	a5,0x1
-  49cd4a:	41440733          	sub	a4,s0,s4
-  49cd4e:	38778793          	addi	a5,a5,903 # 1387 <__data_size+0x107>
-  49cd52:	0ae7ff63          	bleu	a4,a5,49ce10 <Main_Task+0x1f0>
-  49cd56:	004ab637          	lui	a2,0x4ab
-  49cd5a:	9a860613          	addi	a2,a2,-1624 # 4aa9a8 <alarm_type_strings+0xbf4>
-  49cd5e:	9c4b8593          	addi	a1,s7,-1596 # 4aa9c4 <alarm_type_strings+0xc10>
-  49cd62:	450d                	li	a0,3
-  49cd64:	95cff0ef          	jal	ra,49bec0 <debug_print>
-  49cd68:	000e6537          	lui	a0,0xe6
-  49cd6c:	96050a13          	addi	s4,a0,-1696 # e5960 <g_smoke_data>
-  49cd70:	96050513          	addi	a0,a0,-1696
-  49cd74:	667020ef          	jal	ra,49fbda <smoke_sensor_read_data>
-  49cd78:	000a5683          	lhu	a3,0(s4)
-  49cd7c:	004a2503          	lw	a0,4(s4)
-  49cd80:	c636                	sw	a3,12(sp)
-  49cd82:	c3af40ef          	jal	ra,4911bc <__extendsfdf2>
-  49cd86:	c02a                	sw	a0,0(sp)
-  49cd88:	008a2503          	lw	a0,8(s4)
-  49cd8c:	c22e                	sw	a1,4(sp)
-  49cd8e:	69b020ef          	jal	ra,49fc28 <smoke_sensor_get_level_string>
-  49cd92:	4702                	lw	a4,0(sp)
-  49cd94:	4792                	lw	a5,4(sp)
-  49cd96:	46b2                	lw	a3,12(sp)
-  49cd98:	004ab637          	lui	a2,0x4ab
-  49cd9c:	004ab5b7          	lui	a1,0x4ab
-  49cda0:	882a                	mv	a6,a0
-  49cda2:	9d460613          	addi	a2,a2,-1580 # 4aa9d4 <alarm_type_strings+0xc20>
-  49cda6:	a0858593          	addi	a1,a1,-1528 # 4aaa08 <alarm_type_strings+0xc54>
-  49cdaa:	450d                	li	a0,3
-  49cdac:	914ff0ef          	jal	ra,49bec0 <debug_print>
-  49cdb0:	000a5503          	lhu	a0,0(s4)
-  49cdb4:	d41f40ef          	jal	ra,491af4 <__floatunsisf>
-  49cdb8:	c62a                	sw	a0,12(sp)
-  49cdba:	1b894503          	lbu	a0,440(s2)
-  49cdbe:	d37f40ef          	jal	ra,491af4 <__floatunsisf>
-  49cdc2:	c02a                	sw	a0,0(sp)
-  49cdc4:	1b99c503          	lbu	a0,441(s3)
-  49cdc8:	d2df40ef          	jal	ra,491af4 <__floatunsisf>
-  49cdcc:	4632                	lw	a2,12(sp)
-  49cdce:	4582                	lw	a1,0(sp)
-  49cdd0:	a84fe0ef          	jal	ra,49b054 <alarm_system_update>
-  49cdd4:	cd01                	beqz	a0,49cdec <Main_Task+0x1cc>
-  49cdd6:	004ab637          	lui	a2,0x4ab
-  49cdda:	004ab5b7          	lui	a1,0x4ab
-  49cdde:	a1060613          	addi	a2,a2,-1520 # 4aaa10 <alarm_type_strings+0xc5c>
-  49cde2:	af858593          	addi	a1,a1,-1288 # 4aaaf8 <alarm_type_strings+0xd44>
-  49cde6:	4509                	li	a0,2
-  49cde8:	8d8ff0ef          	jal	ra,49bec0 <debug_print>
-  49cdec:	000e67b7          	lui	a5,0xe6
-  49cdf0:	95c7c783          	lbu	a5,-1700(a5) # e595c <g_nfc_initialized>
-  49cdf4:	16078763          	beqz	a5,49cf62 <Main_Task+0x342>
-  49cdf8:	a6bff0ef          	jal	ra,49c862 <check_nfc_tag>
-  49cdfc:	004ab637          	lui	a2,0x4ab
-  49ce00:	a5060613          	addi	a2,a2,-1456 # 4aaa50 <alarm_type_strings+0xc9c>
-  49ce04:	9c4b8593          	addi	a1,s7,-1596
-  49ce08:	450d                	li	a0,3
-  49ce0a:	8b6ff0ef          	jal	ra,49bec0 <debug_print>
-  49ce0e:	8a22                	mv	s4,s0
-  49ce10:	679d                	lui	a5,0x7
-  49ce12:	41640733          	sub	a4,s0,s6
-  49ce16:	52f78793          	addi	a5,a5,1327 # 752f <__ram_text_size+0x420f>
-  49ce1a:	04e7fe63          	bleu	a4,a5,49ce76 <Main_Task+0x256>
-  49ce1e:	004ab637          	lui	a2,0x4ab
-  49ce22:	a8cc0593          	addi	a1,s8,-1396 # 4aaa8c <alarm_type_strings+0xcd8>
-  49ce26:	a6c60613          	addi	a2,a2,-1428 # 4aaa6c <alarm_type_strings+0xcb8>
-  49ce2a:	450d                	li	a0,3
-  49ce2c:	894ff0ef          	jal	ra,49bec0 <debug_print>
-  49ce30:	000e67b7          	lui	a5,0xe6
-  49ce34:	9747c783          	lbu	a5,-1676(a5) # e5974 <g_wifi_connected>
-  49ce38:	000e6737          	lui	a4,0xe6
-  49ce3c:	004a95b7          	lui	a1,0x4a9
-  49ce40:	12078d63          	beqz	a5,49cf7a <Main_Task+0x35a>
-  49ce44:	000e66b7          	lui	a3,0xe6
-  49ce48:	004ab637          	lui	a2,0x4ab
-  49ce4c:	97870713          	addi	a4,a4,-1672 # e5978 <g_wifi_ip>
-  49ce50:	98868693          	addi	a3,a3,-1656 # e5988 <g_wifi_ssid>
-  49ce54:	27060613          	addi	a2,a2,624 # 4ab270 <alarm_type_strings+0x14bc>
-  49ce58:	f6458593          	addi	a1,a1,-156 # 4a8f64 <cb.8884+0x50>
-  49ce5c:	450d                	li	a0,3
-  49ce5e:	862ff0ef          	jal	ra,49bec0 <debug_print>
-  49ce62:	004ab637          	lui	a2,0x4ab
-  49ce66:	a9c60613          	addi	a2,a2,-1380 # 4aaa9c <alarm_type_strings+0xce8>
-  49ce6a:	a8cc0593          	addi	a1,s8,-1396
-  49ce6e:	450d                	li	a0,3
-  49ce70:	850ff0ef          	jal	ra,49bec0 <debug_print>
-  49ce74:	8b22                	mv	s6,s0
-  49ce76:	4529                	li	a0,10
-  49ce78:	79f020ef          	jal	ra,49fe16 <Time_DelayMs>
-  49ce7c:	bbed                	j	49cc76 <Main_Task+0x56>
-  49ce7e:	004ab637          	lui	a2,0x4ab
-  49ce82:	8f060613          	addi	a2,a2,-1808 # 4aa8f0 <alarm_type_strings+0xb3c>
-  49ce86:	8e858593          	addi	a1,a1,-1816
-  49ce8a:	4505                	li	a0,1
-  49ce8c:	834ff0ef          	jal	ra,49bec0 <debug_print>
-  49ce90:	bd0d                	j	49ccc2 <Main_Task+0xa2>
-  49ce92:	1b99c503          	lbu	a0,441(s3)
-  49ce96:	d202                	sw	zero,36(sp)
-  49ce98:	c5df40ef          	jal	ra,491af4 <__floatunsisf>
-  49ce9c:	cc2a                	sw	a0,24(sp)
-  49ce9e:	1b894503          	lbu	a0,440(s2)
-  49cea2:	c53f40ef          	jal	ra,491af4 <__floatunsisf>
-  49cea6:	000e67b7          	lui	a5,0xe6
-  49ceaa:	ce2a                	sw	a0,28(sp)
-  49ceac:	9607d503          	lhu	a0,-1696(a5) # e5960 <g_smoke_data>
-  49ceb0:	c45f40ef          	jal	ra,491af4 <__floatunsisf>
-  49ceb4:	d02a                	sw	a0,32(sp)
-  49ceb6:	39f020ef          	jal	ra,49fa54 <relay_get_state>
-  49ceba:	000e67b7          	lui	a5,0xe6
-  49cebe:	95e7c783          	lbu	a5,-1698(a5) # e595e <g_smoke_alarm_triggered>
-  49cec2:	00a03533          	snez	a0,a0
-  49cec6:	02a10223          	sb	a0,36(sp)
-  49ceca:	0828                	addi	a0,sp,24
-  49cecc:	02f102a3          	sb	a5,37(sp)
-  49ced0:	78a020ef          	jal	ra,49f65a <php_api_send_sensor_data>
-  49ced4:	000e67b7          	lui	a5,0xe6
-  49ced8:	9ac78793          	addi	a5,a5,-1620 # e59ac <send_count.7761>
-  49cedc:	4384                	lw	s1,0(a5)
-  49cede:	0485                	addi	s1,s1,1
-  49cee0:	c384                	sw	s1,0(a5)
-  49cee2:	e93d                	bnez	a0,49cf58 <Main_Task+0x338>
-  49cee4:	000e67b7          	lui	a5,0xe6
-  49cee8:	9b078793          	addi	a5,a5,-1616 # e59b0 <success_count.7762>
-  49ceec:	4398                	lw	a4,0(a5)
-  49ceee:	0705                	addi	a4,a4,1
-  49cef0:	c398                	sw	a4,0(a5)
-  49cef2:	47f9                	li	a5,30
-  49cef4:	02f4f7b3          	remu	a5,s1,a5
-  49cef8:	efb1                	bnez	a5,49cf54 <Main_Task+0x334>
-  49cefa:	000e67b7          	lui	a5,0xe6
-  49cefe:	9b07a703          	lw	a4,-1616(a5) # e59b0 <success_count.7762>
-  49cf02:	000e67b7          	lui	a5,0xe6
-  49cf06:	9387a783          	lw	a5,-1736(a5) # e5938 <fail_count.7763>
-  49cf0a:	4501                	li	a0,0
-  49cf0c:	4581                	li	a1,0
-  49cf0e:	c48d                	beqz	s1,49cf38 <Main_Task+0x318>
-  49cf10:	853a                	mv	a0,a4
-  49cf12:	c63e                	sw	a5,12(sp)
-  49cf14:	c03a                	sw	a4,0(sp)
-  49cf16:	bdff40ef          	jal	ra,491af4 <__floatunsisf>
-  49cf1a:	8d2a                	mv	s10,a0
-  49cf1c:	8526                	mv	a0,s1
-  49cf1e:	bd7f40ef          	jal	ra,491af4 <__floatunsisf>
-  49cf22:	85aa                	mv	a1,a0
-  49cf24:	856a                	mv	a0,s10
-  49cf26:	c3af30ef          	jal	ra,490360 <__divsf3>
-  49cf2a:	85e6                	mv	a1,s9
-  49cf2c:	d40f50ef          	jal	ra,49246c <__mulsf3>
-  49cf30:	a8cf40ef          	jal	ra,4911bc <__extendsfdf2>
-  49cf34:	47b2                	lw	a5,12(sp)
-  49cf36:	4702                	lw	a4,0(sp)
-  49cf38:	88ae                	mv	a7,a1
-  49cf3a:	004ab637          	lui	a2,0x4ab
-  49cf3e:	004ab5b7          	lui	a1,0x4ab
-  49cf42:	882a                	mv	a6,a0
-  49cf44:	86a6                	mv	a3,s1
-  49cf46:	94860613          	addi	a2,a2,-1720 # 4aa948 <alarm_type_strings+0xb94>
-  49cf4a:	93c58593          	addi	a1,a1,-1732 # 4aa93c <alarm_type_strings+0xb88>
-  49cf4e:	450d                	li	a0,3
-  49cf50:	f71fe0ef          	jal	ra,49bec0 <debug_print>
-  49cf54:	84a2                	mv	s1,s0
-  49cf56:	bbcd                	j	49cd48 <Main_Task+0x128>
-  49cf58:	000e67b7          	lui	a5,0xe6
-  49cf5c:	93878793          	addi	a5,a5,-1736 # e5938 <fail_count.7763>
-  49cf60:	b771                	j	49ceec <Main_Task+0x2cc>
-  49cf62:	004ab637          	lui	a2,0x4ab
-  49cf66:	004ab5b7          	lui	a1,0x4ab
-  49cf6a:	a2860613          	addi	a2,a2,-1496 # 4aaa28 <alarm_type_strings+0xc74>
-  49cf6e:	2d058593          	addi	a1,a1,720 # 4ab2d0 <alarm_type_strings+0x151c>
-  49cf72:	4509                	li	a0,2
-  49cf74:	f4dfe0ef          	jal	ra,49bec0 <debug_print>
-  49cf78:	b551                	j	49cdfc <Main_Task+0x1dc>
-  49cf7a:	004ab637          	lui	a2,0x4ab
-  49cf7e:	97870693          	addi	a3,a4,-1672
-  49cf82:	29460613          	addi	a2,a2,660 # 4ab294 <alarm_type_strings+0x14e0>
-  49cf86:	f6458593          	addi	a1,a1,-156
-  49cf8a:	450d                	li	a0,3
-  49cf8c:	f35fe0ef          	jal	ra,49bec0 <debug_print>
-  49cf90:	bdc9                	j	49ce62 <Main_Task+0x242>
+  49cc46:	19a030ef          	jal	ra,49fde0 <Time_GetCurrentMs>
+  49cc4a:	89aa                	mv	s3,a0
+  49cc4c:	194030ef          	jal	ra,49fde0 <Time_GetCurrentMs>
+  49cc50:	004ab637          	lui	a2,0x4ab
+  49cc54:	004ab5b7          	lui	a1,0x4ab
+  49cc58:	0ff57b93          	andi	s7,a0,255
+  49cc5c:	89860613          	addi	a2,a2,-1896 # 4aa898 <alarm_type_strings+0xae4>
+  49cc60:	8b058593          	addi	a1,a1,-1872 # 4aa8b0 <alarm_type_strings+0xafc>
+  49cc64:	450d                	li	a0,3
+  49cc66:	a5aff0ef          	jal	ra,49bec0 <debug_print>
+  49cc6a:	004ab7b7          	lui	a5,0x4ab
+  49cc6e:	8947ad03          	lw	s10,-1900(a5) # 4aa894 <alarm_type_strings+0xae0>
+  49cc72:	000dca37          	lui	s4,0xdc
+  49cc76:	004abc37          	lui	s8,0x4ab
+  49cc7a:	004abcb7          	lui	s9,0x4ab
+  49cc7e:	162030ef          	jal	ra,49fde0 <Time_GetCurrentMs>
+  49cc82:	842a                	mv	s0,a0
+  49cc84:	82dff0ef          	jal	ra,49c4b0 <handle_continuous_alarm>
+  49cc88:	41740733          	sub	a4,s0,s7
+  49cc8c:	47e1                	li	a5,24
+  49cc8e:	04e7f463          	bleu	a4,a5,49ccd6 <Main_Task+0xb6>
+  49cc92:	96095503          	lhu	a0,-1696(s2) # e5960 <g_smoke_data>
+  49cc96:	0ff47b93          	andi	s7,s0,255
+  49cc9a:	e5bf40ef          	jal	ra,491af4 <__floatunsisf>
+  49cc9e:	c62a                	sw	a0,12(sp)
+  49cca0:	1b8a4503          	lbu	a0,440(s4) # dc1b8 <g_humidity>
+  49cca4:	e51f40ef          	jal	ra,491af4 <__floatunsisf>
+  49cca8:	000dc7b7          	lui	a5,0xdc
+  49ccac:	c02a                	sw	a0,0(sp)
+  49ccae:	1b97c503          	lbu	a0,441(a5) # dc1b9 <g_temperature>
+  49ccb2:	e43f40ef          	jal	ra,491af4 <__floatunsisf>
+  49ccb6:	4632                	lw	a2,12(sp)
+  49ccb8:	4582                	lw	a1,0(sp)
+  49ccba:	b9afe0ef          	jal	ra,49b054 <alarm_system_update>
+  49ccbe:	cd01                	beqz	a0,49ccd6 <Main_Task+0xb6>
+  49ccc0:	004ab637          	lui	a2,0x4ab
+  49ccc4:	004ab5b7          	lui	a1,0x4ab
+  49ccc8:	8b860613          	addi	a2,a2,-1864 # 4aa8b8 <alarm_type_strings+0xb04>
+  49cccc:	af858593          	addi	a1,a1,-1288 # 4aaaf8 <alarm_type_strings+0xd44>
+  49ccd0:	4509                	li	a0,2
+  49ccd2:	9eeff0ef          	jal	ra,49bec0 <debug_print>
+  49ccd6:	41b407b3          	sub	a5,s0,s11
+  49ccda:	3e700713          	li	a4,999
+  49ccde:	06f77963          	bleu	a5,a4,49cd50 <Main_Task+0x130>
+  49cce2:	000dc4b7          	lui	s1,0xdc
+  49cce6:	1b8a0593          	addi	a1,s4,440
+  49ccea:	1b948513          	addi	a0,s1,441 # dc1b9 <g_temperature>
+  49ccee:	b43fe0ef          	jal	ra,49b830 <dht11_read_data>
+  49ccf2:	1b8a0d93          	addi	s11,s4,440
+  49ccf6:	1b948493          	addi	s1,s1,441
+  49ccfa:	004ab5b7          	lui	a1,0x4ab
+  49ccfe:	18051763          	bnez	a0,49ce8c <Main_Task+0x26c>
+  49cd02:	0004c703          	lbu	a4,0(s1)
+  49cd06:	000dc683          	lbu	a3,0(s11)
+  49cd0a:	004ab637          	lui	a2,0x4ab
+  49cd0e:	8d060613          	addi	a2,a2,-1840 # 4aa8d0 <alarm_type_strings+0xb1c>
+  49cd12:	90058593          	addi	a1,a1,-1792 # 4aa900 <alarm_type_strings+0xb4c>
+  49cd16:	450d                	li	a0,3
+  49cd18:	9a8ff0ef          	jal	ra,49bec0 <debug_print>
+  49cd1c:	0004c503          	lbu	a0,0(s1)
+  49cd20:	dd5f40ef          	jal	ra,491af4 <__floatunsisf>
+  49cd24:	000dc783          	lbu	a5,0(s11)
+  49cd28:	cc2a                	sw	a0,24(sp)
+  49cd2a:	0828                	addi	a0,sp,24
+  49cd2c:	ce3e                	sw	a5,28(sp)
+  49cd2e:	96095783          	lhu	a5,-1696(s2)
+  49cd32:	8da2                	mv	s11,s0
+  49cd34:	d03e                	sw	a5,32(sp)
+  49cd36:	000e67b7          	lui	a5,0xe6
+  49cd3a:	93c7c783          	lbu	a5,-1732(a5) # e593c <g_alarm_active>
+  49cd3e:	02f10223          	sb	a5,36(sp)
+  49cd42:	000e67b7          	lui	a5,0xe6
+  49cd46:	9447a783          	lw	a5,-1724(a5) # e5944 <g_current_alarm_level>
+  49cd4a:	d43e                	sw	a5,40(sp)
+  49cd4c:	122010ef          	jal	ra,49de6e <OLED_ShowSensorData>
+  49cd50:	413407b3          	sub	a5,s0,s3
+  49cd54:	3e700713          	li	a4,999
+  49cd58:	04f77163          	bleu	a5,a4,49cd9a <Main_Task+0x17a>
+  49cd5c:	000e67b7          	lui	a5,0xe6
+  49cd60:	9747c783          	lbu	a5,-1676(a5) # e5974 <g_wifi_connected>
+  49cd64:	12079e63          	bnez	a5,49cea0 <Main_Task+0x280>
+  49cd68:	000e64b7          	lui	s1,0xe6
+  49cd6c:	9a848493          	addi	s1,s1,-1624 # e59a8 <last_network_warn.7763>
+  49cd70:	4098                	lw	a4,0(s1)
+  49cd72:	6789                	lui	a5,0x2
+  49cd74:	70f78793          	addi	a5,a5,1807 # 270f <__data_size+0x148f>
+  49cd78:	40e40733          	sub	a4,s0,a4
+  49cd7c:	89a2                	mv	s3,s0
+  49cd7e:	00e7fe63          	bleu	a4,a5,49cd9a <Main_Task+0x17a>
+  49cd82:	004ab637          	lui	a2,0x4ab
+  49cd86:	004ab5b7          	lui	a1,0x4ab
+  49cd8a:	92060613          	addi	a2,a2,-1760 # 4aa920 <alarm_type_strings+0xb6c>
+  49cd8e:	95458593          	addi	a1,a1,-1708 # 4aa954 <alarm_type_strings+0xba0>
+  49cd92:	4509                	li	a0,2
+  49cd94:	92cff0ef          	jal	ra,49bec0 <debug_print>
+  49cd98:	c080                	sw	s0,0(s1)
+  49cd9a:	6785                	lui	a5,0x1
+  49cd9c:	41540733          	sub	a4,s0,s5
+  49cda0:	38778793          	addi	a5,a5,903 # 1387 <__data_size+0x107>
+  49cda4:	06e7fd63          	bleu	a4,a5,49ce1e <Main_Task+0x1fe>
+  49cda8:	004ab637          	lui	a2,0x4ab
+  49cdac:	9c060613          	addi	a2,a2,-1600 # 4aa9c0 <alarm_type_strings+0xc0c>
+  49cdb0:	9dcc0593          	addi	a1,s8,-1572 # 4aa9dc <alarm_type_strings+0xc28>
+  49cdb4:	450d                	li	a0,3
+  49cdb6:	90aff0ef          	jal	ra,49bec0 <debug_print>
+  49cdba:	96090513          	addi	a0,s2,-1696
+  49cdbe:	62b020ef          	jal	ra,49fbe8 <smoke_sensor_read_data>
+  49cdc2:	96090493          	addi	s1,s2,-1696
+  49cdc6:	0004d683          	lhu	a3,0(s1)
+  49cdca:	40c8                	lw	a0,4(s1)
+  49cdcc:	c636                	sw	a3,12(sp)
+  49cdce:	beef40ef          	jal	ra,4911bc <__extendsfdf2>
+  49cdd2:	c02a                	sw	a0,0(sp)
+  49cdd4:	4488                	lw	a0,8(s1)
+  49cdd6:	c22e                	sw	a1,4(sp)
+  49cdd8:	65f020ef          	jal	ra,49fc36 <smoke_sensor_get_level_string>
+  49cddc:	4792                	lw	a5,4(sp)
+  49cdde:	4702                	lw	a4,0(sp)
+  49cde0:	46b2                	lw	a3,12(sp)
+  49cde2:	004ab637          	lui	a2,0x4ab
+  49cde6:	004ab5b7          	lui	a1,0x4ab
+  49cdea:	882a                	mv	a6,a0
+  49cdec:	9ec60613          	addi	a2,a2,-1556 # 4aa9ec <alarm_type_strings+0xc38>
+  49cdf0:	a2058593          	addi	a1,a1,-1504 # 4aaa20 <alarm_type_strings+0xc6c>
+  49cdf4:	450d                	li	a0,3
+  49cdf6:	8caff0ef          	jal	ra,49bec0 <debug_print>
+  49cdfa:	000e67b7          	lui	a5,0xe6
+  49cdfe:	95c7c783          	lbu	a5,-1700(a5) # e595c <g_nfc_initialized>
+  49ce02:	16078763          	beqz	a5,49cf70 <Main_Task+0x350>
+  49ce06:	a5dff0ef          	jal	ra,49c862 <check_nfc_tag>
+  49ce0a:	004ab637          	lui	a2,0x4ab
+  49ce0e:	a5060613          	addi	a2,a2,-1456 # 4aaa50 <alarm_type_strings+0xc9c>
+  49ce12:	9dcc0593          	addi	a1,s8,-1572
+  49ce16:	450d                	li	a0,3
+  49ce18:	8a8ff0ef          	jal	ra,49bec0 <debug_print>
+  49ce1c:	8aa2                	mv	s5,s0
+  49ce1e:	679d                	lui	a5,0x7
+  49ce20:	41640733          	sub	a4,s0,s6
+  49ce24:	52f78793          	addi	a5,a5,1327 # 752f <__ram_text_size+0x420f>
+  49ce28:	04e7fe63          	bleu	a4,a5,49ce84 <Main_Task+0x264>
+  49ce2c:	004ab637          	lui	a2,0x4ab
+  49ce30:	a8cc8593          	addi	a1,s9,-1396 # 4aaa8c <alarm_type_strings+0xcd8>
+  49ce34:	a6c60613          	addi	a2,a2,-1428 # 4aaa6c <alarm_type_strings+0xcb8>
+  49ce38:	450d                	li	a0,3
+  49ce3a:	886ff0ef          	jal	ra,49bec0 <debug_print>
+  49ce3e:	000e67b7          	lui	a5,0xe6
+  49ce42:	9747c783          	lbu	a5,-1676(a5) # e5974 <g_wifi_connected>
+  49ce46:	000e6737          	lui	a4,0xe6
+  49ce4a:	004a95b7          	lui	a1,0x4a9
+  49ce4e:	12078d63          	beqz	a5,49cf88 <Main_Task+0x368>
+  49ce52:	000e66b7          	lui	a3,0xe6
+  49ce56:	004ab637          	lui	a2,0x4ab
+  49ce5a:	97870713          	addi	a4,a4,-1672 # e5978 <g_wifi_ip>
+  49ce5e:	98868693          	addi	a3,a3,-1656 # e5988 <g_wifi_ssid>
+  49ce62:	27060613          	addi	a2,a2,624 # 4ab270 <alarm_type_strings+0x14bc>
+  49ce66:	f6458593          	addi	a1,a1,-156 # 4a8f64 <cb.8884+0x50>
+  49ce6a:	450d                	li	a0,3
+  49ce6c:	854ff0ef          	jal	ra,49bec0 <debug_print>
+  49ce70:	004ab637          	lui	a2,0x4ab
+  49ce74:	a9c60613          	addi	a2,a2,-1380 # 4aaa9c <alarm_type_strings+0xce8>
+  49ce78:	a8cc8593          	addi	a1,s9,-1396
+  49ce7c:	450d                	li	a0,3
+  49ce7e:	842ff0ef          	jal	ra,49bec0 <debug_print>
+  49ce82:	8b22                	mv	s6,s0
+  49ce84:	4529                	li	a0,10
+  49ce86:	79f020ef          	jal	ra,49fe24 <Time_DelayMs>
+  49ce8a:	bbd5                	j	49cc7e <Main_Task+0x5e>
+  49ce8c:	004ab637          	lui	a2,0x4ab
+  49ce90:	90860613          	addi	a2,a2,-1784 # 4aa908 <alarm_type_strings+0xb54>
+  49ce94:	90058593          	addi	a1,a1,-1792
+  49ce98:	4505                	li	a0,1
+  49ce9a:	826ff0ef          	jal	ra,49bec0 <debug_print>
+  49ce9e:	bdbd                	j	49cd1c <Main_Task+0xfc>
+  49cea0:	000dc7b7          	lui	a5,0xdc
+  49cea4:	1b97c503          	lbu	a0,441(a5) # dc1b9 <g_temperature>
+  49cea8:	d202                	sw	zero,36(sp)
+  49ceaa:	c4bf40ef          	jal	ra,491af4 <__floatunsisf>
+  49ceae:	cc2a                	sw	a0,24(sp)
+  49ceb0:	1b8a4503          	lbu	a0,440(s4)
+  49ceb4:	c41f40ef          	jal	ra,491af4 <__floatunsisf>
+  49ceb8:	ce2a                	sw	a0,28(sp)
+  49ceba:	96095503          	lhu	a0,-1696(s2)
+  49cebe:	c37f40ef          	jal	ra,491af4 <__floatunsisf>
+  49cec2:	d02a                	sw	a0,32(sp)
+  49cec4:	39f020ef          	jal	ra,49fa62 <relay_get_state>
+  49cec8:	000e67b7          	lui	a5,0xe6
+  49cecc:	95e7c783          	lbu	a5,-1698(a5) # e595e <g_smoke_alarm_triggered>
+  49ced0:	00a03533          	snez	a0,a0
+  49ced4:	02a10223          	sb	a0,36(sp)
+  49ced8:	0828                	addi	a0,sp,24
+  49ceda:	02f102a3          	sb	a5,37(sp)
+  49cede:	78a020ef          	jal	ra,49f668 <php_api_send_sensor_data>
+  49cee2:	000e67b7          	lui	a5,0xe6
+  49cee6:	9ac78793          	addi	a5,a5,-1620 # e59ac <send_count.7766>
+  49ceea:	4384                	lw	s1,0(a5)
+  49ceec:	0485                	addi	s1,s1,1
+  49ceee:	c384                	sw	s1,0(a5)
+  49cef0:	e93d                	bnez	a0,49cf66 <Main_Task+0x346>
+  49cef2:	000e67b7          	lui	a5,0xe6
+  49cef6:	9b078793          	addi	a5,a5,-1616 # e59b0 <success_count.7767>
+  49cefa:	4398                	lw	a4,0(a5)
+  49cefc:	0705                	addi	a4,a4,1
+  49cefe:	c398                	sw	a4,0(a5)
+  49cf00:	47f9                	li	a5,30
+  49cf02:	02f4f7b3          	remu	a5,s1,a5
+  49cf06:	efb1                	bnez	a5,49cf62 <Main_Task+0x342>
+  49cf08:	000e67b7          	lui	a5,0xe6
+  49cf0c:	9b07a703          	lw	a4,-1616(a5) # e59b0 <success_count.7767>
+  49cf10:	000e67b7          	lui	a5,0xe6
+  49cf14:	9387a783          	lw	a5,-1736(a5) # e5938 <fail_count.7768>
+  49cf18:	4501                	li	a0,0
+  49cf1a:	4581                	li	a1,0
+  49cf1c:	c48d                	beqz	s1,49cf46 <Main_Task+0x326>
+  49cf1e:	853a                	mv	a0,a4
+  49cf20:	c63e                	sw	a5,12(sp)
+  49cf22:	c03a                	sw	a4,0(sp)
+  49cf24:	bd1f40ef          	jal	ra,491af4 <__floatunsisf>
+  49cf28:	89aa                	mv	s3,a0
+  49cf2a:	8526                	mv	a0,s1
+  49cf2c:	bc9f40ef          	jal	ra,491af4 <__floatunsisf>
+  49cf30:	85aa                	mv	a1,a0
+  49cf32:	854e                	mv	a0,s3
+  49cf34:	c2cf30ef          	jal	ra,490360 <__divsf3>
+  49cf38:	85ea                	mv	a1,s10
+  49cf3a:	d32f50ef          	jal	ra,49246c <__mulsf3>
+  49cf3e:	a7ef40ef          	jal	ra,4911bc <__extendsfdf2>
+  49cf42:	47b2                	lw	a5,12(sp)
+  49cf44:	4702                	lw	a4,0(sp)
+  49cf46:	88ae                	mv	a7,a1
+  49cf48:	004ab637          	lui	a2,0x4ab
+  49cf4c:	004ab5b7          	lui	a1,0x4ab
+  49cf50:	882a                	mv	a6,a0
+  49cf52:	86a6                	mv	a3,s1
+  49cf54:	96060613          	addi	a2,a2,-1696 # 4aa960 <alarm_type_strings+0xbac>
+  49cf58:	95458593          	addi	a1,a1,-1708 # 4aa954 <alarm_type_strings+0xba0>
+  49cf5c:	450d                	li	a0,3
+  49cf5e:	f63fe0ef          	jal	ra,49bec0 <debug_print>
+  49cf62:	89a2                	mv	s3,s0
+  49cf64:	bd1d                	j	49cd9a <Main_Task+0x17a>
+  49cf66:	000e67b7          	lui	a5,0xe6
+  49cf6a:	93878793          	addi	a5,a5,-1736 # e5938 <fail_count.7768>
+  49cf6e:	b771                	j	49cefa <Main_Task+0x2da>
+  49cf70:	004ab637          	lui	a2,0x4ab
+  49cf74:	004ab5b7          	lui	a1,0x4ab
+  49cf78:	a2860613          	addi	a2,a2,-1496 # 4aaa28 <alarm_type_strings+0xc74>
+  49cf7c:	2d058593          	addi	a1,a1,720 # 4ab2d0 <alarm_type_strings+0x151c>
+  49cf80:	4509                	li	a0,2
+  49cf82:	f3ffe0ef          	jal	ra,49bec0 <debug_print>
+  49cf86:	b551                	j	49ce0a <Main_Task+0x1ea>
+  49cf88:	004ab637          	lui	a2,0x4ab
+  49cf8c:	97870693          	addi	a3,a4,-1672
+  49cf90:	29460613          	addi	a2,a2,660 # 4ab294 <alarm_type_strings+0x14e0>
+  49cf94:	f6458593          	addi	a1,a1,-156
+  49cf98:	450d                	li	a0,3
+  49cf9a:	f27fe0ef          	jal	ra,49bec0 <debug_print>
+  49cf9e:	bdc9                	j	49ce70 <Main_Task+0x250>
 
-0049cf92 <led_init>:
-  49cf92:	8b35d2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49cf96:	0011d437          	lui	s0,0x11d
-  49cf9a:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49cf9e:	1141                	addi	sp,sp,-16
-  49cfa0:	4581                	li	a1,0
-  49cfa2:	4509                	li	a0,2
-  49cfa4:	c63e                	sw	a5,12(sp)
-  49cfa6:	aa8550ef          	jal	ra,3f224e <hi_io_set_func>
-  49cfaa:	4585                	li	a1,1
-  49cfac:	4509                	li	a0,2
-  49cfae:	aec540ef          	jal	ra,3f129a <hi_gpio_set_dir>
-  49cfb2:	4585                	li	a1,1
-  49cfb4:	4509                	li	a0,2
-  49cfb6:	b44540ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
-  49cfba:	004ab637          	lui	a2,0x4ab
-  49cfbe:	004a95b7          	lui	a1,0x4a9
-  49cfc2:	f7860613          	addi	a2,a2,-136 # 4aaf78 <alarm_type_strings+0x11c4>
-  49cfc6:	c4058593          	addi	a1,a1,-960 # 4a8c40 <CSWTCH.47+0x68>
-  49cfca:	450d                	li	a0,3
-  49cfcc:	ef5fe0ef          	jal	ra,49bec0 <debug_print>
-  49cfd0:	4732                	lw	a4,12(sp)
-  49cfd2:	7c042783          	lw	a5,1984(s0)
-  49cfd6:	00f70463          	beq	a4,a5,49cfde <led_init+0x4c>
-  49cfda:	9de590ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49cfde:	0141                	addi	sp,sp,16
-  49cfe0:	8895d06f          	j	3fa868 <__riscv_restore_0>
+0049cfa0 <led_init>:
+  49cfa0:	8a55d2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49cfa4:	0011d437          	lui	s0,0x11d
+  49cfa8:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49cfac:	1141                	addi	sp,sp,-16
+  49cfae:	4581                	li	a1,0
+  49cfb0:	4509                	li	a0,2
+  49cfb2:	c63e                	sw	a5,12(sp)
+  49cfb4:	a9a550ef          	jal	ra,3f224e <hi_io_set_func>
+  49cfb8:	4585                	li	a1,1
+  49cfba:	4509                	li	a0,2
+  49cfbc:	ade540ef          	jal	ra,3f129a <hi_gpio_set_dir>
+  49cfc0:	4585                	li	a1,1
+  49cfc2:	4509                	li	a0,2
+  49cfc4:	b36540ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
+  49cfc8:	004ab637          	lui	a2,0x4ab
+  49cfcc:	004a95b7          	lui	a1,0x4a9
+  49cfd0:	f7860613          	addi	a2,a2,-136 # 4aaf78 <alarm_type_strings+0x11c4>
+  49cfd4:	c4058593          	addi	a1,a1,-960 # 4a8c40 <CSWTCH.47+0x68>
+  49cfd8:	450d                	li	a0,3
+  49cfda:	ee7fe0ef          	jal	ra,49bec0 <debug_print>
+  49cfde:	4732                	lw	a4,12(sp)
+  49cfe0:	7c042783          	lw	a5,1984(s0)
+  49cfe4:	00f70463          	beq	a4,a5,49cfec <led_init+0x4c>
+  49cfe8:	9d0590ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49cfec:	0141                	addi	sp,sp,16
+  49cfee:	87b5d06f          	j	3fa868 <__riscv_restore_0>
 
-0049cfe4 <Main_Entry>:
-  49cfe4:	8475d2ef          	jal	t0,3fa82a <__riscv_save_4>
-  49cfe8:	0011d9b7          	lui	s3,0x11d
-  49cfec:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
-  49cff0:	004aa637          	lui	a2,0x4aa
-  49cff4:	004aa937          	lui	s2,0x4aa
-  49cff8:	710d                	addi	sp,sp,-352
-  49cffa:	efc60613          	addi	a2,a2,-260 # 4a9efc <alarm_type_strings+0x148>
-  49cffe:	f1490593          	addi	a1,s2,-236 # 4a9f14 <alarm_type_strings+0x160>
-  49d002:	450d                	li	a0,3
-  49d004:	14f12e23          	sw	a5,348(sp)
-  49d008:	eb9fe0ef          	jal	ra,49bec0 <debug_print>
-  49d00c:	57f020ef          	jal	ra,49fd8a <Time_Init>
-  49d010:	f83ff0ef          	jal	ra,49cf92 <led_init>
-  49d014:	be8fe0ef          	jal	ra,49b3fc <Buzzer_Init>
-  49d018:	269020ef          	jal	ra,49fa80 <smoke_sensor_init>
-  49d01c:	e45fe0ef          	jal	ra,49be60 <lightsense_init>
-  49d020:	1ed020ef          	jal	ra,49fa0c <relay_init>
-  49d024:	004aa637          	lui	a2,0x4aa
-  49d028:	004ab437          	lui	s0,0x4ab
-  49d02c:	f1c60613          	addi	a2,a2,-228 # 4a9f1c <alarm_type_strings+0x168>
-  49d030:	2d040593          	addi	a1,s0,720 # 4ab2d0 <alarm_type_strings+0x151c>
-  49d034:	450d                	li	a0,3
-  49d036:	e8bfe0ef          	jal	ra,49bec0 <debug_print>
-  49d03a:	007000ef          	jal	ra,49d840 <nfc_init>
-  49d03e:	c62a                	sw	a0,12(sp)
-  49d040:	1f400513          	li	a0,500
-  49d044:	5d3020ef          	jal	ra,49fe16 <Time_DelayMs>
-  49d048:	46b2                	lw	a3,12(sp)
-  49d04a:	000e64b7          	lui	s1,0xe6
-  49d04e:	95c48493          	addi	s1,s1,-1700 # e595c <g_nfc_initialized>
-  49d052:	4e069363          	bnez	a3,49d538 <Main_Entry+0x554>
-  49d056:	004aa637          	lui	a2,0x4aa
-  49d05a:	4785                	li	a5,1
-  49d05c:	f3860613          	addi	a2,a2,-200 # 4a9f38 <alarm_type_strings+0x184>
-  49d060:	2d040593          	addi	a1,s0,720
-  49d064:	450d                	li	a0,3
-  49d066:	00f48023          	sb	a5,0(s1)
-  49d06a:	e57fe0ef          	jal	ra,49bec0 <debug_print>
-  49d06e:	004aa637          	lui	a2,0x4aa
-  49d072:	f5860613          	addi	a2,a2,-168 # 4a9f58 <alarm_type_strings+0x1a4>
-  49d076:	2d040593          	addi	a1,s0,720
-  49d07a:	450d                	li	a0,3
-  49d07c:	e45fe0ef          	jal	ra,49bec0 <debug_print>
-  49d080:	004aa637          	lui	a2,0x4aa
-  49d084:	f8c60613          	addi	a2,a2,-116 # 4a9f8c <alarm_type_strings+0x1d8>
-  49d088:	2d040593          	addi	a1,s0,720
-  49d08c:	450d                	li	a0,3
-  49d08e:	e33fe0ef          	jal	ra,49bec0 <debug_print>
-  49d092:	004aa637          	lui	a2,0x4aa
-  49d096:	fc060613          	addi	a2,a2,-64 # 4a9fc0 <alarm_type_strings+0x20c>
-  49d09a:	2d040593          	addi	a1,s0,720
-  49d09e:	450d                	li	a0,3
-  49d0a0:	e21fe0ef          	jal	ra,49bec0 <debug_print>
-  49d0a4:	004aa637          	lui	a2,0x4aa
-  49d0a8:	fe060613          	addi	a2,a2,-32 # 4a9fe0 <alarm_type_strings+0x22c>
-  49d0ac:	2d040593          	addi	a1,s0,720
-  49d0b0:	450d                	li	a0,3
-  49d0b2:	e0ffe0ef          	jal	ra,49bec0 <debug_print>
-  49d0b6:	facff0ef          	jal	ra,49c862 <check_nfc_tag>
-  49d0ba:	46050a63          	beqz	a0,49d52e <Main_Entry+0x54a>
-  49d0be:	004aa637          	lui	a2,0x4aa
-  49d0c2:	ffc60613          	addi	a2,a2,-4 # 4a9ffc <alarm_type_strings+0x248>
-  49d0c6:	2d040593          	addi	a1,s0,720
-  49d0ca:	450d                	li	a0,3
-  49d0cc:	df5fe0ef          	jal	ra,49bec0 <debug_print>
-  49d0d0:	004aba37          	lui	s4,0x4ab
-  49d0d4:	004aa637          	lui	a2,0x4aa
-  49d0d8:	08c60613          	addi	a2,a2,140 # 4aa08c <alarm_type_strings+0x2d8>
-  49d0dc:	ed0a0593          	addi	a1,s4,-304 # 4aaed0 <alarm_type_strings+0x111c>
-  49d0e0:	450d                	li	a0,3
-  49d0e2:	ddffe0ef          	jal	ra,49bec0 <debug_print>
-  49d0e6:	4509                	li	a0,2
-  49d0e8:	915fe0ef          	jal	ra,49b9fc <key_manager_create>
-  49d0ec:	000e67b7          	lui	a5,0xe6
-  49d0f0:	94a7a423          	sw	a0,-1720(a5) # e5948 <g_key_manager>
-  49d0f4:	8452                	mv	s0,s4
-  49d0f6:	94878493          	addi	s1,a5,-1720
-  49d0fa:	4a050063          	beqz	a0,49d59a <Main_Entry+0x5b6>
-  49d0fe:	46a9                	li	a3,10
-  49d100:	12c00793          	li	a5,300
-  49d104:	3e800713          	li	a4,1000
-  49d108:	4601                	li	a2,0
-  49d10a:	45b5                	li	a1,13
-  49d10c:	95bfe0ef          	jal	ra,49ba66 <key_manager_add_key>
-  49d110:	86aa                	mv	a3,a0
-  49d112:	44054863          	bltz	a0,49d562 <Main_Entry+0x57e>
-  49d116:	004aa637          	lui	a2,0x4aa
-  49d11a:	0b060613          	addi	a2,a2,176 # 4aa0b0 <alarm_type_strings+0x2fc>
-  49d11e:	ed0a0593          	addi	a1,s4,-304
-  49d122:	450d                	li	a0,3
-  49d124:	d9dfe0ef          	jal	ra,49bec0 <debug_print>
-  49d128:	4088                	lw	a0,0(s1)
-  49d12a:	46a9                	li	a3,10
-  49d12c:	12c00793          	li	a5,300
-  49d130:	3e800713          	li	a4,1000
-  49d134:	4601                	li	a2,0
-  49d136:	45b1                	li	a1,12
-  49d138:	92ffe0ef          	jal	ra,49ba66 <key_manager_add_key>
-  49d13c:	86aa                	mv	a3,a0
-  49d13e:	42054c63          	bltz	a0,49d576 <Main_Entry+0x592>
-  49d142:	004aa637          	lui	a2,0x4aa
-  49d146:	0f060613          	addi	a2,a2,240 # 4aa0f0 <alarm_type_strings+0x33c>
-  49d14a:	ed040593          	addi	a1,s0,-304
-  49d14e:	450d                	li	a0,3
-  49d150:	d71fe0ef          	jal	ra,49bec0 <debug_print>
-  49d154:	0049c537          	lui	a0,0x49c
-  49d158:	4681                	li	a3,0
-  49d15a:	4601                	li	a2,0
-  49d15c:	4585                	li	a1,1
-  49d15e:	17050513          	addi	a0,a0,368 # 49c170 <KeyTimerCb>
-  49d162:	a3ff80ef          	jal	ra,495ba0 <osTimerNew>
-  49d166:	000e6737          	lui	a4,0xe6
-  49d16a:	94a72623          	sw	a0,-1716(a4) # e594c <g_key_timer>
-  49d16e:	40050e63          	beqz	a0,49d58a <Main_Entry+0x5a6>
-  49d172:	45a9                	li	a1,10
-  49d174:	a93f80ef          	jal	ra,495c06 <osTimerStart>
-  49d178:	004aa637          	lui	a2,0x4aa
-  49d17c:	13060613          	addi	a2,a2,304 # 4aa130 <alarm_type_strings+0x37c>
-  49d180:	ed040593          	addi	a1,s0,-304
-  49d184:	450d                	li	a0,3
-  49d186:	d3bfe0ef          	jal	ra,49bec0 <debug_print>
-  49d18a:	ab3fe0ef          	jal	ra,49bc3c <kv_init>
-  49d18e:	86aa                	mv	a3,a0
-  49d190:	004aaa37          	lui	s4,0x4aa
-  49d194:	5a051a63          	bnez	a0,49d748 <Main_Entry+0x764>
-  49d198:	004aa637          	lui	a2,0x4aa
-  49d19c:	19460613          	addi	a2,a2,404 # 4aa194 <alarm_type_strings+0x3e0>
-  49d1a0:	1b4a0593          	addi	a1,s4,436 # 4aa1b4 <alarm_type_strings+0x400>
-  49d1a4:	450d                	li	a0,3
-  49d1a6:	d1bfe0ef          	jal	ra,49bec0 <debug_print>
-  49d1aa:	004aa4b7          	lui	s1,0x4aa
-  49d1ae:	004aa637          	lui	a2,0x4aa
-  49d1b2:	1b860613          	addi	a2,a2,440 # 4aa1b8 <alarm_type_strings+0x404>
-  49d1b6:	1dc48593          	addi	a1,s1,476 # 4aa1dc <alarm_type_strings+0x428>
-  49d1ba:	450d                	li	a0,3
-  49d1bc:	d05fe0ef          	jal	ra,49bec0 <debug_print>
-  49d1c0:	004aaab7          	lui	s5,0x4aa
-  49d1c4:	4641                	li	a2,16
-  49d1c6:	18ec                	addi	a1,sp,124
-  49d1c8:	1e4a8513          	addi	a0,s5,484 # 4aa1e4 <alarm_type_strings+0x430>
-  49d1cc:	de82                	sw	zero,124(sp)
-  49d1ce:	c102                	sw	zero,128(sp)
-  49d1d0:	c302                	sw	zero,132(sp)
-  49d1d2:	c502                	sw	zero,136(sp)
-  49d1d4:	b17fe0ef          	jal	ra,49bcea <kv_get_string>
-  49d1d8:	4795                	li	a5,5
-  49d1da:	86aa                	mv	a3,a0
-  49d1dc:	8426                	mv	s0,s1
-  49d1de:	3cf51563          	bne	a0,a5,49d5a8 <Main_Entry+0x5c4>
-  49d1e2:	004aa637          	lui	a2,0x4aa
-  49d1e6:	1f060613          	addi	a2,a2,496 # 4aa1f0 <alarm_type_strings+0x43c>
-  49d1ea:	1dc48593          	addi	a1,s1,476
-  49d1ee:	450d                	li	a0,3
-  49d1f0:	cd1fe0ef          	jal	ra,49bec0 <debug_print>
-  49d1f4:	004a95b7          	lui	a1,0x4a9
-  49d1f8:	65c58593          	addi	a1,a1,1628 # 4a965c <SYSPARA_LIST+0x208>
-  49d1fc:	1e4a8513          	addi	a0,s5,484
-  49d200:	a77fe0ef          	jal	ra,49bc76 <kv_set_string>
-  49d204:	004aab37          	lui	s6,0x4aa
-  49d208:	004aa537          	lui	a0,0x4aa
-  49d20c:	224b0593          	addi	a1,s6,548 # 4aa224 <alarm_type_strings+0x470>
-  49d210:	24050513          	addi	a0,a0,576 # 4aa240 <alarm_type_strings+0x48c>
-  49d214:	a63fe0ef          	jal	ra,49bc76 <kv_set_string>
-  49d218:	3bb020ef          	jal	ra,49fdd2 <Time_GetCurrentMs>
-  49d21c:	85aa                	mv	a1,a0
-  49d21e:	8aaa                	mv	s5,a0
-  49d220:	004aa537          	lui	a0,0x4aa
-  49d224:	24c50513          	addi	a0,a0,588 # 4aa24c <alarm_type_strings+0x498>
-  49d228:	b49fe0ef          	jal	ra,49bd70 <kv_set_uint32>
-  49d22c:	004aa437          	lui	s0,0x4aa
-  49d230:	004aa537          	lui	a0,0x4aa
-  49d234:	25c40593          	addi	a1,s0,604 # 4aa25c <alarm_type_strings+0x4a8>
-  49d238:	28450513          	addi	a0,a0,644 # 4aa284 <alarm_type_strings+0x4d0>
-  49d23c:	a3bfe0ef          	jal	ra,49bc76 <kv_set_string>
-  49d240:	004aa637          	lui	a2,0x4aa
-  49d244:	29060613          	addi	a2,a2,656 # 4aa290 <alarm_type_strings+0x4dc>
-  49d248:	1dc48593          	addi	a1,s1,476
-  49d24c:	450d                	li	a0,3
-  49d24e:	c73fe0ef          	jal	ra,49bec0 <debug_print>
-  49d252:	004aa637          	lui	a2,0x4aa
-  49d256:	224b0693          	addi	a3,s6,548
-  49d25a:	2c060613          	addi	a2,a2,704 # 4aa2c0 <alarm_type_strings+0x50c>
-  49d25e:	1dc48593          	addi	a1,s1,476
-  49d262:	450d                	li	a0,3
-  49d264:	c5dfe0ef          	jal	ra,49bec0 <debug_print>
-  49d268:	004aa637          	lui	a2,0x4aa
-  49d26c:	86d6                	mv	a3,s5
-  49d26e:	2d860613          	addi	a2,a2,728 # 4aa2d8 <alarm_type_strings+0x524>
-  49d272:	1dc48593          	addi	a1,s1,476
-  49d276:	450d                	li	a0,3
-  49d278:	c49fe0ef          	jal	ra,49bec0 <debug_print>
-  49d27c:	004aa637          	lui	a2,0x4aa
-  49d280:	2f060613          	addi	a2,a2,752 # 4aa2f0 <alarm_type_strings+0x53c>
-  49d284:	1dc48593          	addi	a1,s1,476
-  49d288:	25c40693          	addi	a3,s0,604
-  49d28c:	450d                	li	a0,3
-  49d28e:	c33fe0ef          	jal	ra,49bec0 <debug_print>
-  49d292:	004aa637          	lui	a2,0x4aa
-  49d296:	30460613          	addi	a2,a2,772 # 4aa304 <alarm_type_strings+0x550>
-  49d29a:	1dc48593          	addi	a1,s1,476
-  49d29e:	450d                	li	a0,3
-  49d2a0:	c21fe0ef          	jal	ra,49bec0 <debug_print>
-  49d2a4:	004aa437          	lui	s0,0x4aa
-  49d2a8:	184c                	addi	a1,sp,52
-  49d2aa:	58440513          	addi	a0,s0,1412 # 4aa584 <alarm_type_strings+0x7d0>
-  49d2ae:	b21fe0ef          	jal	ra,49bdce <kv_get_uint32>
-  49d2b2:	c10d                	beqz	a0,49d2d4 <Main_Entry+0x2f0>
-  49d2b4:	659d                	lui	a1,0x7
-  49d2b6:	53058593          	addi	a1,a1,1328 # 7530 <__ram_text_size+0x4210>
-  49d2ba:	58440513          	addi	a0,s0,1412
-  49d2be:	ab3fe0ef          	jal	ra,49bd70 <kv_set_uint32>
-  49d2c2:	004aa637          	lui	a2,0x4aa
-  49d2c6:	59460613          	addi	a2,a2,1428 # 4aa594 <alarm_type_strings+0x7e0>
-  49d2ca:	1b4a0593          	addi	a1,s4,436
-  49d2ce:	450d                	li	a0,3
-  49d2d0:	bf1fe0ef          	jal	ra,49bec0 <debug_print>
-  49d2d4:	004aa437          	lui	s0,0x4aa
-  49d2d8:	08ac                	addi	a1,sp,88
-  49d2da:	5b440513          	addi	a0,s0,1460 # 4aa5b4 <alarm_type_strings+0x800>
-  49d2de:	af1fe0ef          	jal	ra,49bdce <kv_get_uint32>
-  49d2e2:	c10d                	beqz	a0,49d304 <Main_Entry+0x320>
-  49d2e4:	65bd                	lui	a1,0xf
-  49d2e6:	a6058593          	addi	a1,a1,-1440 # ea60 <__bss_size__+0x5920>
-  49d2ea:	5b440513          	addi	a0,s0,1460
-  49d2ee:	a83fe0ef          	jal	ra,49bd70 <kv_set_uint32>
-  49d2f2:	004aa637          	lui	a2,0x4aa
-  49d2f6:	5c460613          	addi	a2,a2,1476 # 4aa5c4 <alarm_type_strings+0x810>
-  49d2fa:	1b4a0593          	addi	a1,s4,436
-  49d2fe:	450d                	li	a0,3
-  49d300:	bc1fe0ef          	jal	ra,49bec0 <debug_print>
-  49d304:	004aa637          	lui	a2,0x4aa
-  49d308:	004ab437          	lui	s0,0x4ab
-  49d30c:	61460613          	addi	a2,a2,1556 # 4aa614 <alarm_type_strings+0x860>
-  49d310:	8e840593          	addi	a1,s0,-1816 # 4aa8e8 <alarm_type_strings+0xb34>
-  49d314:	450d                	li	a0,3
-  49d316:	babfe0ef          	jal	ra,49bec0 <debug_print>
-  49d31a:	4485                	li	s1,1
-  49d31c:	004aaa37          	lui	s4,0x4aa
-  49d320:	4a91                	li	s5,4
-  49d322:	d82fe0ef          	jal	ra,49b8a4 <dht11_init>
-  49d326:	cd1d                	beqz	a0,49d364 <Main_Entry+0x380>
-  49d328:	86a6                	mv	a3,s1
-  49d32a:	470d                	li	a4,3
-  49d32c:	638a0613          	addi	a2,s4,1592 # 4aa638 <alarm_type_strings+0x884>
-  49d330:	8e840593          	addi	a1,s0,-1816
-  49d334:	4509                	li	a0,2
-  49d336:	b8bfe0ef          	jal	ra,49bec0 <debug_print>
-  49d33a:	3e800513          	li	a0,1000
-  49d33e:	0485                	addi	s1,s1,1
-  49d340:	31b020ef          	jal	ra,49fe5a <Time_DelayMsPrecise>
-  49d344:	fd549fe3          	bne	s1,s5,49d322 <Main_Entry+0x33e>
-  49d348:	004aa637          	lui	a2,0x4aa
-  49d34c:	468d                	li	a3,3
-  49d34e:	67060613          	addi	a2,a2,1648 # 4aa670 <alarm_type_strings+0x8bc>
-  49d352:	8e840593          	addi	a1,s0,-1816
-  49d356:	4505                	li	a0,1
-  49d358:	b69fe0ef          	jal	ra,49bec0 <debug_print>
-  49d35c:	000dc7b7          	lui	a5,0xdc
-  49d360:	1a078ba3          	sb	zero,439(a5) # dc1b7 <g_dht11_connected>
-  49d364:	000dc7b7          	lui	a5,0xdc
-  49d368:	1b77c783          	lbu	a5,439(a5) # dc1b7 <g_dht11_connected>
-  49d36c:	cb91                	beqz	a5,49d380 <Main_Entry+0x39c>
-  49d36e:	004aa637          	lui	a2,0x4aa
-  49d372:	6a460613          	addi	a2,a2,1700 # 4aa6a4 <alarm_type_strings+0x8f0>
-  49d376:	8e840593          	addi	a1,s0,-1816
-  49d37a:	450d                	li	a0,3
-  49d37c:	b45fe0ef          	jal	ra,49bec0 <debug_print>
-  49d380:	0dd000ef          	jal	ra,49dc5c <OLED_Init>
-  49d384:	1ef000ef          	jal	ra,49dd72 <OLED_Refresh>
-  49d388:	004aa637          	lui	a2,0x4aa
-  49d38c:	46a1                	li	a3,8
-  49d38e:	6c460613          	addi	a2,a2,1732 # 4aa6c4 <alarm_type_strings+0x910>
-  49d392:	45f1                	li	a1,28
-  49d394:	4501                	li	a0,0
-  49d396:	20f000ef          	jal	ra,49dda4 <OLED_ShowString>
-  49d39a:	3e800513          	li	a0,1000
-  49d39e:	279020ef          	jal	ra,49fe16 <Time_DelayMs>
-  49d3a2:	004aa637          	lui	a2,0x4aa
-  49d3a6:	004ab437          	lui	s0,0x4ab
-  49d3aa:	6d460613          	addi	a2,a2,1748 # 4aa6d4 <alarm_type_strings+0x920>
-  49d3ae:	af840593          	addi	a1,s0,-1288 # 4aaaf8 <alarm_type_strings+0xd44>
-  49d3b2:	450d                	li	a0,3
-  49d3b4:	b0dfe0ef          	jal	ra,49bec0 <debug_print>
-  49d3b8:	004aa5b7          	lui	a1,0x4aa
-  49d3bc:	4661                	li	a2,24
-  49d3be:	ee458593          	addi	a1,a1,-284 # 4a9ee4 <alarm_type_strings+0x130>
-  49d3c2:	0868                	addi	a0,sp,28
-  49d3c4:	c575d0ef          	jal	ra,3fb01a <memcpy>
-  49d3c8:	0868                	addi	a0,sp,28
-  49d3ca:	c2ffd0ef          	jal	ra,49aff8 <alarm_system_init>
-  49d3ce:	38050763          	beqz	a0,49d75c <Main_Entry+0x778>
-  49d3d2:	004aa637          	lui	a2,0x4aa
-  49d3d6:	6f460613          	addi	a2,a2,1780 # 4aa6f4 <alarm_type_strings+0x940>
-  49d3da:	af840593          	addi	a1,s0,-1288
-  49d3de:	450d                	li	a0,3
-  49d3e0:	ae1fe0ef          	jal	ra,49bec0 <debug_print>
-  49d3e4:	0049c537          	lui	a0,0x49c
-  49d3e8:	f6a50513          	addi	a0,a0,-150 # 49bf6a <alarm_event_handler>
-  49d3ec:	dd5fd0ef          	jal	ra,49b1c0 <alarm_system_set_callback>
-  49d3f0:	004aa637          	lui	a2,0x4aa
-  49d3f4:	71460613          	addi	a2,a2,1812 # 4aa714 <alarm_type_strings+0x960>
-  49d3f8:	af840593          	addi	a1,s0,-1288
-  49d3fc:	450d                	li	a0,3
-  49d3fe:	ac3fe0ef          	jal	ra,49bec0 <debug_print>
-  49d402:	004aa637          	lui	a2,0x4aa
-  49d406:	004aa437          	lui	s0,0x4aa
-  49d40a:	75860613          	addi	a2,a2,1880 # 4aa758 <alarm_type_strings+0x9a4>
-  49d40e:	77c40593          	addi	a1,s0,1916 # 4aa77c <alarm_type_strings+0x9c8>
-  49d412:	450d                	li	a0,3
-  49d414:	aadfe0ef          	jal	ra,49bec0 <debug_print>
-  49d418:	0049c537          	lui	a0,0x49c
-  49d41c:	4681                	li	a3,0
-  49d41e:	4601                	li	a2,0
-  49d420:	4585                	li	a1,1
-  49d422:	e9450513          	addi	a0,a0,-364 # 49be94 <BuzzerTickCb>
-  49d426:	f7af80ef          	jal	ra,495ba0 <osTimerNew>
-  49d42a:	000e6737          	lui	a4,0xe6
-  49d42e:	94a72023          	sw	a0,-1728(a4) # e5940 <g_buzzer_tick_timer>
-  49d432:	32050d63          	beqz	a0,49d76c <Main_Entry+0x788>
-  49d436:	4595                	li	a1,5
-  49d438:	fcef80ef          	jal	ra,495c06 <osTimerStart>
-  49d43c:	004aa637          	lui	a2,0x4aa
-  49d440:	78460613          	addi	a2,a2,1924 # 4aa784 <alarm_type_strings+0x9d0>
-  49d444:	77c40593          	addi	a1,s0,1916
-  49d448:	450d                	li	a0,3
-  49d44a:	a77fe0ef          	jal	ra,49bec0 <debug_print>
-  49d44e:	06400613          	li	a2,100
-  49d452:	03200593          	li	a1,50
-  49d456:	4509                	li	a0,2
-  49d458:	86afe0ef          	jal	ra,49b4c2 <Buzzer_Alarm>
-  49d45c:	004aa637          	lui	a2,0x4aa
-  49d460:	7c460613          	addi	a2,a2,1988 # 4aa7c4 <alarm_type_strings+0xa10>
-  49d464:	f1490593          	addi	a1,s2,-236
-  49d468:	450d                	li	a0,3
-  49d46a:	a57fe0ef          	jal	ra,49bec0 <debug_print>
-  49d46e:	004aa637          	lui	a2,0x4aa
-  49d472:	7dc60613          	addi	a2,a2,2012 # 4aa7dc <alarm_type_strings+0xa28>
-  49d476:	f1490593          	addi	a1,s2,-236
-  49d47a:	450d                	li	a0,3
-  49d47c:	a45fe0ef          	jal	ra,49bec0 <debug_print>
-  49d480:	02000613          	li	a2,32
-  49d484:	4581                	li	a1,0
-  49d486:	1828                	addi	a0,sp,56
-  49d488:	e735d0ef          	jal	ra,3fb2fa <memset>
-  49d48c:	004aa7b7          	lui	a5,0x4aa
-  49d490:	7f878793          	addi	a5,a5,2040 # 4aa7f8 <alarm_type_strings+0xa44>
-  49d494:	da3e                	sw	a5,52(sp)
-  49d496:	0049d537          	lui	a0,0x49d
-  49d49a:	6789                	lui	a5,0x2
-  49d49c:	c4be                	sw	a5,72(sp)
-  49d49e:	1850                	addi	a2,sp,52
-  49d4a0:	47e1                	li	a5,24
-  49d4a2:	4581                	li	a1,0
-  49d4a4:	c2050513          	addi	a0,a0,-992 # 49cc20 <Main_Task>
-  49d4a8:	c6be                	sw	a5,76(sp)
-  49d4aa:	d42f80ef          	jal	ra,4959ec <osThreadNew>
-  49d4ae:	2c051763          	bnez	a0,49d77c <Main_Entry+0x798>
-  49d4b2:	004ab637          	lui	a2,0x4ab
-  49d4b6:	80460613          	addi	a2,a2,-2044 # 4aa804 <alarm_type_strings+0xa50>
-  49d4ba:	f1490593          	addi	a1,s2,-236
-  49d4be:	4505                	li	a0,1
-  49d4c0:	a01fe0ef          	jal	ra,49bec0 <debug_print>
-  49d4c4:	004ab637          	lui	a2,0x4ab
-  49d4c8:	83460613          	addi	a2,a2,-1996 # 4aa834 <alarm_type_strings+0xa80>
-  49d4cc:	f1490593          	addi	a1,s2,-236
-  49d4d0:	450d                	li	a0,3
-  49d4d2:	9effe0ef          	jal	ra,49bec0 <debug_print>
-  49d4d6:	02000613          	li	a2,32
-  49d4da:	4581                	li	a1,0
-  49d4dc:	08e8                	addi	a0,sp,92
-  49d4de:	e1d5d0ef          	jal	ra,3fb2fa <memset>
-  49d4e2:	004ab7b7          	lui	a5,0x4ab
-  49d4e6:	85078793          	addi	a5,a5,-1968 # 4aa850 <alarm_type_strings+0xa9c>
-  49d4ea:	ccbe                	sw	a5,88(sp)
-  49d4ec:	0049c537          	lui	a0,0x49c
-  49d4f0:	6789                	lui	a5,0x2
-  49d4f2:	d6be                	sw	a5,108(sp)
-  49d4f4:	4581                	li	a1,0
-  49d4f6:	47e1                	li	a5,24
-  49d4f8:	08b0                	addi	a2,sp,88
-  49d4fa:	1ce50513          	addi	a0,a0,462 # 49c1ce <network_task>
-  49d4fe:	d8be                	sw	a5,112(sp)
-  49d500:	cecf80ef          	jal	ra,4959ec <osThreadNew>
-  49d504:	004a95b7          	lui	a1,0x4a9
-  49d508:	28051263          	bnez	a0,49d78c <Main_Entry+0x7a8>
-  49d50c:	004ab637          	lui	a2,0x4ab
-  49d510:	85c60613          	addi	a2,a2,-1956 # 4aa85c <alarm_type_strings+0xaa8>
-  49d514:	f6458593          	addi	a1,a1,-156 # 4a8f64 <cb.8884+0x50>
-  49d518:	4505                	li	a0,1
-  49d51a:	9a7fe0ef          	jal	ra,49bec0 <debug_print>
-  49d51e:	15c12703          	lw	a4,348(sp)
-  49d522:	7c09a783          	lw	a5,1984(s3)
-  49d526:	26f70b63          	beq	a4,a5,49d79c <Main_Entry+0x7b8>
-  49d52a:	c8f580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49d52e:	004aa637          	lui	a2,0x4aa
-  49d532:	01460613          	addi	a2,a2,20 # 4aa014 <alarm_type_strings+0x260>
-  49d536:	be41                	j	49d0c6 <Main_Entry+0xe2>
-  49d538:	004aa637          	lui	a2,0x4aa
-  49d53c:	03460613          	addi	a2,a2,52 # 4aa034 <alarm_type_strings+0x280>
-  49d540:	2d040593          	addi	a1,s0,720
-  49d544:	4505                	li	a0,1
-  49d546:	97bfe0ef          	jal	ra,49bec0 <debug_print>
-  49d54a:	004aa637          	lui	a2,0x4aa
-  49d54e:	06860613          	addi	a2,a2,104 # 4aa068 <alarm_type_strings+0x2b4>
-  49d552:	2d040593          	addi	a1,s0,720
-  49d556:	4505                	li	a0,1
-  49d558:	969fe0ef          	jal	ra,49bec0 <debug_print>
-  49d55c:	00048023          	sb	zero,0(s1)
-  49d560:	be85                	j	49d0d0 <Main_Entry+0xec>
-  49d562:	004aa637          	lui	a2,0x4aa
-  49d566:	0dc60613          	addi	a2,a2,220 # 4aa0dc <alarm_type_strings+0x328>
-  49d56a:	ed0a0593          	addi	a1,s4,-304
-  49d56e:	4505                	li	a0,1
-  49d570:	951fe0ef          	jal	ra,49bec0 <debug_print>
-  49d574:	be55                	j	49d128 <Main_Entry+0x144>
-  49d576:	004aa637          	lui	a2,0x4aa
-  49d57a:	11c60613          	addi	a2,a2,284 # 4aa11c <alarm_type_strings+0x368>
-  49d57e:	ed040593          	addi	a1,s0,-304
-  49d582:	4505                	li	a0,1
-  49d584:	93dfe0ef          	jal	ra,49bec0 <debug_print>
-  49d588:	b6f1                	j	49d154 <Main_Entry+0x170>
-  49d58a:	004aa637          	lui	a2,0x4aa
-  49d58e:	15c60613          	addi	a2,a2,348 # 4aa15c <alarm_type_strings+0x3a8>
-  49d592:	ed040593          	addi	a1,s0,-304
-  49d596:	4505                	li	a0,1
-  49d598:	b6fd                	j	49d186 <Main_Entry+0x1a2>
-  49d59a:	004aa637          	lui	a2,0x4aa
-  49d59e:	17860613          	addi	a2,a2,376 # 4aa178 <alarm_type_strings+0x3c4>
-  49d5a2:	ed0a0593          	addi	a1,s4,-304
-  49d5a6:	bfc5                	j	49d596 <Main_Entry+0x5b2>
-  49d5a8:	18051663          	bnez	a0,49d734 <Main_Entry+0x750>
-  49d5ac:	004aa637          	lui	a2,0x4aa
-  49d5b0:	1dc48593          	addi	a1,s1,476
-  49d5b4:	33c60613          	addi	a2,a2,828 # 4aa33c <alarm_type_strings+0x588>
-  49d5b8:	450d                	li	a0,3
-  49d5ba:	907fe0ef          	jal	ra,49bec0 <debug_print>
-  49d5be:	18e8                	addi	a0,sp,124
-  49d5c0:	9d2aa0ef          	jal	ra,447792 <atoi>
-  49d5c4:	00150493          	addi	s1,a0,1
-  49d5c8:	004aa637          	lui	a2,0x4aa
-  49d5cc:	86a6                	mv	a3,s1
-  49d5ce:	41c60613          	addi	a2,a2,1052 # 4aa41c <alarm_type_strings+0x668>
-  49d5d2:	45c1                	li	a1,16
-  49d5d4:	0168                	addi	a0,sp,140
-  49d5d6:	9f5ac0ef          	jal	ra,449fca <snprintf>
-  49d5da:	016c                	addi	a1,sp,140
-  49d5dc:	1e4a8513          	addi	a0,s5,484
-  49d5e0:	e96fe0ef          	jal	ra,49bc76 <kv_set_string>
-  49d5e4:	04000613          	li	a2,64
-  49d5e8:	4581                	li	a1,0
-  49d5ea:	0968                	addi	a0,sp,156
-  49d5ec:	d0f5d0ef          	jal	ra,3fb2fa <memset>
-  49d5f0:	004aa537          	lui	a0,0x4aa
-  49d5f4:	04000613          	li	a2,64
-  49d5f8:	096c                	addi	a1,sp,156
-  49d5fa:	24050513          	addi	a0,a0,576 # 4aa240 <alarm_type_strings+0x48c>
-  49d5fe:	eecfe0ef          	jal	ra,49bcea <kv_get_string>
-  49d602:	86aa                	mv	a3,a0
-  49d604:	e571                	bnez	a0,49d6d0 <Main_Entry+0x6ec>
-  49d606:	004aa637          	lui	a2,0x4aa
-  49d60a:	0974                	addi	a3,sp,156
-  49d60c:	36c60613          	addi	a2,a2,876 # 4aa36c <alarm_type_strings+0x5b8>
-  49d610:	1dc40593          	addi	a1,s0,476
-  49d614:	450d                	li	a0,3
-  49d616:	8abfe0ef          	jal	ra,49bec0 <debug_print>
-  49d61a:	004aa537          	lui	a0,0x4aa
-  49d61e:	08ac                	addi	a1,sp,88
-  49d620:	24c50513          	addi	a0,a0,588 # 4aa24c <alarm_type_strings+0x498>
-  49d624:	cc82                	sw	zero,88(sp)
-  49d626:	fa8fe0ef          	jal	ra,49bdce <kv_get_uint32>
-  49d62a:	86aa                	mv	a3,a0
-  49d62c:	e955                	bnez	a0,49d6e0 <Main_Entry+0x6fc>
-  49d62e:	46e6                	lw	a3,88(sp)
-  49d630:	004aa637          	lui	a2,0x4aa
-  49d634:	3c060613          	addi	a2,a2,960 # 4aa3c0 <alarm_type_strings+0x60c>
-  49d638:	1dc40593          	addi	a1,s0,476
-  49d63c:	450d                	li	a0,3
-  49d63e:	883fe0ef          	jal	ra,49bec0 <debug_print>
-  49d642:	04000613          	li	a2,64
-  49d646:	4581                	li	a1,0
-  49d648:	09e8                	addi	a0,sp,220
-  49d64a:	cb15d0ef          	jal	ra,3fb2fa <memset>
-  49d64e:	004aa537          	lui	a0,0x4aa
-  49d652:	04000613          	li	a2,64
-  49d656:	09ec                	addi	a1,sp,220
-  49d658:	28450513          	addi	a0,a0,644 # 4aa284 <alarm_type_strings+0x4d0>
-  49d65c:	e8efe0ef          	jal	ra,49bcea <kv_get_string>
-  49d660:	86aa                	mv	a3,a0
-  49d662:	e559                	bnez	a0,49d6f0 <Main_Entry+0x70c>
-  49d664:	004aa637          	lui	a2,0x4aa
-  49d668:	09f4                	addi	a3,sp,220
-  49d66a:	42060613          	addi	a2,a2,1056 # 4aa420 <alarm_type_strings+0x66c>
-  49d66e:	1dc40593          	addi	a1,s0,476
-  49d672:	450d                	li	a0,3
-  49d674:	84dfe0ef          	jal	ra,49bec0 <debug_print>
-  49d678:	004aa637          	lui	a2,0x4aa
-  49d67c:	86a6                	mv	a3,s1
-  49d67e:	47460613          	addi	a2,a2,1140 # 4aa474 <alarm_type_strings+0x6c0>
-  49d682:	1dc40593          	addi	a1,s0,476
-  49d686:	450d                	li	a0,3
-  49d688:	839fe0ef          	jal	ra,49bec0 <debug_print>
-  49d68c:	04000613          	li	a2,64
-  49d690:	4581                	li	a1,0
-  49d692:	0a68                	addi	a0,sp,284
-  49d694:	c675d0ef          	jal	ra,3fb2fa <memset>
-  49d698:	004aaab7          	lui	s5,0x4aa
-  49d69c:	04000613          	li	a2,64
-  49d6a0:	0a6c                	addi	a1,sp,284
-  49d6a2:	490a8513          	addi	a0,s5,1168 # 4aa490 <alarm_type_strings+0x6dc>
-  49d6a6:	e44fe0ef          	jal	ra,49bcea <kv_get_string>
-  49d6aa:	86aa                	mv	a3,a0
-  49d6ac:	e931                	bnez	a0,49d700 <Main_Entry+0x71c>
-  49d6ae:	004aa637          	lui	a2,0x4aa
-  49d6b2:	0a74                	addi	a3,sp,284
-  49d6b4:	4a060613          	addi	a2,a2,1184 # 4aa4a0 <alarm_type_strings+0x6ec>
-  49d6b8:	1dc40593          	addi	a1,s0,476
-  49d6bc:	450d                	li	a0,3
-  49d6be:	803fe0ef          	jal	ra,49bec0 <debug_print>
-  49d6c2:	004aa637          	lui	a2,0x4aa
-  49d6c6:	53060613          	addi	a2,a2,1328 # 4aa530 <alarm_type_strings+0x77c>
-  49d6ca:	1dc40593          	addi	a1,s0,476
-  49d6ce:	bec1                	j	49d29e <Main_Entry+0x2ba>
+0049cff2 <Main_Entry>:
+  49cff2:	8395d2ef          	jal	t0,3fa82a <__riscv_save_4>
+  49cff6:	0011d9b7          	lui	s3,0x11d
+  49cffa:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
+  49cffe:	004aa637          	lui	a2,0x4aa
+  49d002:	004aa937          	lui	s2,0x4aa
+  49d006:	710d                	addi	sp,sp,-352
+  49d008:	efc60613          	addi	a2,a2,-260 # 4a9efc <alarm_type_strings+0x148>
+  49d00c:	f1490593          	addi	a1,s2,-236 # 4a9f14 <alarm_type_strings+0x160>
+  49d010:	450d                	li	a0,3
+  49d012:	14f12e23          	sw	a5,348(sp)
+  49d016:	eabfe0ef          	jal	ra,49bec0 <debug_print>
+  49d01a:	57f020ef          	jal	ra,49fd98 <Time_Init>
+  49d01e:	f83ff0ef          	jal	ra,49cfa0 <led_init>
+  49d022:	bdafe0ef          	jal	ra,49b3fc <Buzzer_Init>
+  49d026:	269020ef          	jal	ra,49fa8e <smoke_sensor_init>
+  49d02a:	e37fe0ef          	jal	ra,49be60 <lightsense_init>
+  49d02e:	1ed020ef          	jal	ra,49fa1a <relay_init>
+  49d032:	004aa637          	lui	a2,0x4aa
+  49d036:	004ab437          	lui	s0,0x4ab
+  49d03a:	f1c60613          	addi	a2,a2,-228 # 4a9f1c <alarm_type_strings+0x168>
+  49d03e:	2d040593          	addi	a1,s0,720 # 4ab2d0 <alarm_type_strings+0x151c>
+  49d042:	450d                	li	a0,3
+  49d044:	e7dfe0ef          	jal	ra,49bec0 <debug_print>
+  49d048:	007000ef          	jal	ra,49d84e <nfc_init>
+  49d04c:	c62a                	sw	a0,12(sp)
+  49d04e:	1f400513          	li	a0,500
+  49d052:	5d3020ef          	jal	ra,49fe24 <Time_DelayMs>
+  49d056:	46b2                	lw	a3,12(sp)
+  49d058:	000e64b7          	lui	s1,0xe6
+  49d05c:	95c48493          	addi	s1,s1,-1700 # e595c <g_nfc_initialized>
+  49d060:	4e069363          	bnez	a3,49d546 <Main_Entry+0x554>
+  49d064:	004aa637          	lui	a2,0x4aa
+  49d068:	4785                	li	a5,1
+  49d06a:	f3860613          	addi	a2,a2,-200 # 4a9f38 <alarm_type_strings+0x184>
+  49d06e:	2d040593          	addi	a1,s0,720
+  49d072:	450d                	li	a0,3
+  49d074:	00f48023          	sb	a5,0(s1)
+  49d078:	e49fe0ef          	jal	ra,49bec0 <debug_print>
+  49d07c:	004aa637          	lui	a2,0x4aa
+  49d080:	f5860613          	addi	a2,a2,-168 # 4a9f58 <alarm_type_strings+0x1a4>
+  49d084:	2d040593          	addi	a1,s0,720
+  49d088:	450d                	li	a0,3
+  49d08a:	e37fe0ef          	jal	ra,49bec0 <debug_print>
+  49d08e:	004aa637          	lui	a2,0x4aa
+  49d092:	f8c60613          	addi	a2,a2,-116 # 4a9f8c <alarm_type_strings+0x1d8>
+  49d096:	2d040593          	addi	a1,s0,720
+  49d09a:	450d                	li	a0,3
+  49d09c:	e25fe0ef          	jal	ra,49bec0 <debug_print>
+  49d0a0:	004aa637          	lui	a2,0x4aa
+  49d0a4:	fc060613          	addi	a2,a2,-64 # 4a9fc0 <alarm_type_strings+0x20c>
+  49d0a8:	2d040593          	addi	a1,s0,720
+  49d0ac:	450d                	li	a0,3
+  49d0ae:	e13fe0ef          	jal	ra,49bec0 <debug_print>
+  49d0b2:	004aa637          	lui	a2,0x4aa
+  49d0b6:	fe060613          	addi	a2,a2,-32 # 4a9fe0 <alarm_type_strings+0x22c>
+  49d0ba:	2d040593          	addi	a1,s0,720
+  49d0be:	450d                	li	a0,3
+  49d0c0:	e01fe0ef          	jal	ra,49bec0 <debug_print>
+  49d0c4:	f9eff0ef          	jal	ra,49c862 <check_nfc_tag>
+  49d0c8:	46050a63          	beqz	a0,49d53c <Main_Entry+0x54a>
+  49d0cc:	004aa637          	lui	a2,0x4aa
+  49d0d0:	ffc60613          	addi	a2,a2,-4 # 4a9ffc <alarm_type_strings+0x248>
+  49d0d4:	2d040593          	addi	a1,s0,720
+  49d0d8:	450d                	li	a0,3
+  49d0da:	de7fe0ef          	jal	ra,49bec0 <debug_print>
+  49d0de:	004aba37          	lui	s4,0x4ab
+  49d0e2:	004aa637          	lui	a2,0x4aa
+  49d0e6:	08c60613          	addi	a2,a2,140 # 4aa08c <alarm_type_strings+0x2d8>
+  49d0ea:	ed0a0593          	addi	a1,s4,-304 # 4aaed0 <alarm_type_strings+0x111c>
+  49d0ee:	450d                	li	a0,3
+  49d0f0:	dd1fe0ef          	jal	ra,49bec0 <debug_print>
+  49d0f4:	4509                	li	a0,2
+  49d0f6:	907fe0ef          	jal	ra,49b9fc <key_manager_create>
+  49d0fa:	000e67b7          	lui	a5,0xe6
+  49d0fe:	94a7a423          	sw	a0,-1720(a5) # e5948 <g_key_manager>
+  49d102:	8452                	mv	s0,s4
+  49d104:	94878493          	addi	s1,a5,-1720
+  49d108:	4a050063          	beqz	a0,49d5a8 <Main_Entry+0x5b6>
+  49d10c:	46a9                	li	a3,10
+  49d10e:	12c00793          	li	a5,300
+  49d112:	3e800713          	li	a4,1000
+  49d116:	4601                	li	a2,0
+  49d118:	45b5                	li	a1,13
+  49d11a:	94dfe0ef          	jal	ra,49ba66 <key_manager_add_key>
+  49d11e:	86aa                	mv	a3,a0
+  49d120:	44054863          	bltz	a0,49d570 <Main_Entry+0x57e>
+  49d124:	004aa637          	lui	a2,0x4aa
+  49d128:	0b060613          	addi	a2,a2,176 # 4aa0b0 <alarm_type_strings+0x2fc>
+  49d12c:	ed0a0593          	addi	a1,s4,-304
+  49d130:	450d                	li	a0,3
+  49d132:	d8ffe0ef          	jal	ra,49bec0 <debug_print>
+  49d136:	4088                	lw	a0,0(s1)
+  49d138:	46a9                	li	a3,10
+  49d13a:	12c00793          	li	a5,300
+  49d13e:	3e800713          	li	a4,1000
+  49d142:	4601                	li	a2,0
+  49d144:	45b1                	li	a1,12
+  49d146:	921fe0ef          	jal	ra,49ba66 <key_manager_add_key>
+  49d14a:	86aa                	mv	a3,a0
+  49d14c:	42054c63          	bltz	a0,49d584 <Main_Entry+0x592>
+  49d150:	004aa637          	lui	a2,0x4aa
+  49d154:	0f060613          	addi	a2,a2,240 # 4aa0f0 <alarm_type_strings+0x33c>
+  49d158:	ed040593          	addi	a1,s0,-304
+  49d15c:	450d                	li	a0,3
+  49d15e:	d63fe0ef          	jal	ra,49bec0 <debug_print>
+  49d162:	0049c537          	lui	a0,0x49c
+  49d166:	4681                	li	a3,0
+  49d168:	4601                	li	a2,0
+  49d16a:	4585                	li	a1,1
+  49d16c:	17050513          	addi	a0,a0,368 # 49c170 <KeyTimerCb>
+  49d170:	a31f80ef          	jal	ra,495ba0 <osTimerNew>
+  49d174:	000e6737          	lui	a4,0xe6
+  49d178:	94a72623          	sw	a0,-1716(a4) # e594c <g_key_timer>
+  49d17c:	40050e63          	beqz	a0,49d598 <Main_Entry+0x5a6>
+  49d180:	45a9                	li	a1,10
+  49d182:	a85f80ef          	jal	ra,495c06 <osTimerStart>
+  49d186:	004aa637          	lui	a2,0x4aa
+  49d18a:	13060613          	addi	a2,a2,304 # 4aa130 <alarm_type_strings+0x37c>
+  49d18e:	ed040593          	addi	a1,s0,-304
+  49d192:	450d                	li	a0,3
+  49d194:	d2dfe0ef          	jal	ra,49bec0 <debug_print>
+  49d198:	aa5fe0ef          	jal	ra,49bc3c <kv_init>
+  49d19c:	86aa                	mv	a3,a0
+  49d19e:	004aaa37          	lui	s4,0x4aa
+  49d1a2:	5a051a63          	bnez	a0,49d756 <Main_Entry+0x764>
+  49d1a6:	004aa637          	lui	a2,0x4aa
+  49d1aa:	19460613          	addi	a2,a2,404 # 4aa194 <alarm_type_strings+0x3e0>
+  49d1ae:	1b4a0593          	addi	a1,s4,436 # 4aa1b4 <alarm_type_strings+0x400>
+  49d1b2:	450d                	li	a0,3
+  49d1b4:	d0dfe0ef          	jal	ra,49bec0 <debug_print>
+  49d1b8:	004aa4b7          	lui	s1,0x4aa
+  49d1bc:	004aa637          	lui	a2,0x4aa
+  49d1c0:	1b860613          	addi	a2,a2,440 # 4aa1b8 <alarm_type_strings+0x404>
+  49d1c4:	1dc48593          	addi	a1,s1,476 # 4aa1dc <alarm_type_strings+0x428>
+  49d1c8:	450d                	li	a0,3
+  49d1ca:	cf7fe0ef          	jal	ra,49bec0 <debug_print>
+  49d1ce:	004aaab7          	lui	s5,0x4aa
+  49d1d2:	4641                	li	a2,16
+  49d1d4:	18ec                	addi	a1,sp,124
+  49d1d6:	1e4a8513          	addi	a0,s5,484 # 4aa1e4 <alarm_type_strings+0x430>
+  49d1da:	de82                	sw	zero,124(sp)
+  49d1dc:	c102                	sw	zero,128(sp)
+  49d1de:	c302                	sw	zero,132(sp)
+  49d1e0:	c502                	sw	zero,136(sp)
+  49d1e2:	b09fe0ef          	jal	ra,49bcea <kv_get_string>
+  49d1e6:	4795                	li	a5,5
+  49d1e8:	86aa                	mv	a3,a0
+  49d1ea:	8426                	mv	s0,s1
+  49d1ec:	3cf51563          	bne	a0,a5,49d5b6 <Main_Entry+0x5c4>
+  49d1f0:	004aa637          	lui	a2,0x4aa
+  49d1f4:	1f060613          	addi	a2,a2,496 # 4aa1f0 <alarm_type_strings+0x43c>
+  49d1f8:	1dc48593          	addi	a1,s1,476
+  49d1fc:	450d                	li	a0,3
+  49d1fe:	cc3fe0ef          	jal	ra,49bec0 <debug_print>
+  49d202:	004a95b7          	lui	a1,0x4a9
+  49d206:	65c58593          	addi	a1,a1,1628 # 4a965c <SYSPARA_LIST+0x208>
+  49d20a:	1e4a8513          	addi	a0,s5,484
+  49d20e:	a69fe0ef          	jal	ra,49bc76 <kv_set_string>
+  49d212:	004aab37          	lui	s6,0x4aa
+  49d216:	004aa537          	lui	a0,0x4aa
+  49d21a:	224b0593          	addi	a1,s6,548 # 4aa224 <alarm_type_strings+0x470>
+  49d21e:	24050513          	addi	a0,a0,576 # 4aa240 <alarm_type_strings+0x48c>
+  49d222:	a55fe0ef          	jal	ra,49bc76 <kv_set_string>
+  49d226:	3bb020ef          	jal	ra,49fde0 <Time_GetCurrentMs>
+  49d22a:	85aa                	mv	a1,a0
+  49d22c:	8aaa                	mv	s5,a0
+  49d22e:	004aa537          	lui	a0,0x4aa
+  49d232:	24c50513          	addi	a0,a0,588 # 4aa24c <alarm_type_strings+0x498>
+  49d236:	b3bfe0ef          	jal	ra,49bd70 <kv_set_uint32>
+  49d23a:	004aa437          	lui	s0,0x4aa
+  49d23e:	004aa537          	lui	a0,0x4aa
+  49d242:	25c40593          	addi	a1,s0,604 # 4aa25c <alarm_type_strings+0x4a8>
+  49d246:	28450513          	addi	a0,a0,644 # 4aa284 <alarm_type_strings+0x4d0>
+  49d24a:	a2dfe0ef          	jal	ra,49bc76 <kv_set_string>
+  49d24e:	004aa637          	lui	a2,0x4aa
+  49d252:	29060613          	addi	a2,a2,656 # 4aa290 <alarm_type_strings+0x4dc>
+  49d256:	1dc48593          	addi	a1,s1,476
+  49d25a:	450d                	li	a0,3
+  49d25c:	c65fe0ef          	jal	ra,49bec0 <debug_print>
+  49d260:	004aa637          	lui	a2,0x4aa
+  49d264:	224b0693          	addi	a3,s6,548
+  49d268:	2c060613          	addi	a2,a2,704 # 4aa2c0 <alarm_type_strings+0x50c>
+  49d26c:	1dc48593          	addi	a1,s1,476
+  49d270:	450d                	li	a0,3
+  49d272:	c4ffe0ef          	jal	ra,49bec0 <debug_print>
+  49d276:	004aa637          	lui	a2,0x4aa
+  49d27a:	86d6                	mv	a3,s5
+  49d27c:	2d860613          	addi	a2,a2,728 # 4aa2d8 <alarm_type_strings+0x524>
+  49d280:	1dc48593          	addi	a1,s1,476
+  49d284:	450d                	li	a0,3
+  49d286:	c3bfe0ef          	jal	ra,49bec0 <debug_print>
+  49d28a:	004aa637          	lui	a2,0x4aa
+  49d28e:	2f060613          	addi	a2,a2,752 # 4aa2f0 <alarm_type_strings+0x53c>
+  49d292:	1dc48593          	addi	a1,s1,476
+  49d296:	25c40693          	addi	a3,s0,604
+  49d29a:	450d                	li	a0,3
+  49d29c:	c25fe0ef          	jal	ra,49bec0 <debug_print>
+  49d2a0:	004aa637          	lui	a2,0x4aa
+  49d2a4:	30460613          	addi	a2,a2,772 # 4aa304 <alarm_type_strings+0x550>
+  49d2a8:	1dc48593          	addi	a1,s1,476
+  49d2ac:	450d                	li	a0,3
+  49d2ae:	c13fe0ef          	jal	ra,49bec0 <debug_print>
+  49d2b2:	004aa437          	lui	s0,0x4aa
+  49d2b6:	184c                	addi	a1,sp,52
+  49d2b8:	58440513          	addi	a0,s0,1412 # 4aa584 <alarm_type_strings+0x7d0>
+  49d2bc:	b13fe0ef          	jal	ra,49bdce <kv_get_uint32>
+  49d2c0:	c10d                	beqz	a0,49d2e2 <Main_Entry+0x2f0>
+  49d2c2:	659d                	lui	a1,0x7
+  49d2c4:	53058593          	addi	a1,a1,1328 # 7530 <__ram_text_size+0x4210>
+  49d2c8:	58440513          	addi	a0,s0,1412
+  49d2cc:	aa5fe0ef          	jal	ra,49bd70 <kv_set_uint32>
+  49d2d0:	004aa637          	lui	a2,0x4aa
+  49d2d4:	59460613          	addi	a2,a2,1428 # 4aa594 <alarm_type_strings+0x7e0>
+  49d2d8:	1b4a0593          	addi	a1,s4,436
+  49d2dc:	450d                	li	a0,3
+  49d2de:	be3fe0ef          	jal	ra,49bec0 <debug_print>
+  49d2e2:	004aa437          	lui	s0,0x4aa
+  49d2e6:	08ac                	addi	a1,sp,88
+  49d2e8:	5b440513          	addi	a0,s0,1460 # 4aa5b4 <alarm_type_strings+0x800>
+  49d2ec:	ae3fe0ef          	jal	ra,49bdce <kv_get_uint32>
+  49d2f0:	c10d                	beqz	a0,49d312 <Main_Entry+0x320>
+  49d2f2:	65bd                	lui	a1,0xf
+  49d2f4:	a6058593          	addi	a1,a1,-1440 # ea60 <__bss_size__+0x5920>
+  49d2f8:	5b440513          	addi	a0,s0,1460
+  49d2fc:	a75fe0ef          	jal	ra,49bd70 <kv_set_uint32>
+  49d300:	004aa637          	lui	a2,0x4aa
+  49d304:	5c460613          	addi	a2,a2,1476 # 4aa5c4 <alarm_type_strings+0x810>
+  49d308:	1b4a0593          	addi	a1,s4,436
+  49d30c:	450d                	li	a0,3
+  49d30e:	bb3fe0ef          	jal	ra,49bec0 <debug_print>
+  49d312:	004aa637          	lui	a2,0x4aa
+  49d316:	004ab437          	lui	s0,0x4ab
+  49d31a:	61460613          	addi	a2,a2,1556 # 4aa614 <alarm_type_strings+0x860>
+  49d31e:	90040593          	addi	a1,s0,-1792 # 4aa900 <alarm_type_strings+0xb4c>
+  49d322:	450d                	li	a0,3
+  49d324:	b9dfe0ef          	jal	ra,49bec0 <debug_print>
+  49d328:	4485                	li	s1,1
+  49d32a:	004aaa37          	lui	s4,0x4aa
+  49d32e:	4a91                	li	s5,4
+  49d330:	d74fe0ef          	jal	ra,49b8a4 <dht11_init>
+  49d334:	cd1d                	beqz	a0,49d372 <Main_Entry+0x380>
+  49d336:	86a6                	mv	a3,s1
+  49d338:	470d                	li	a4,3
+  49d33a:	638a0613          	addi	a2,s4,1592 # 4aa638 <alarm_type_strings+0x884>
+  49d33e:	90040593          	addi	a1,s0,-1792
+  49d342:	4509                	li	a0,2
+  49d344:	b7dfe0ef          	jal	ra,49bec0 <debug_print>
+  49d348:	3e800513          	li	a0,1000
+  49d34c:	0485                	addi	s1,s1,1
+  49d34e:	31b020ef          	jal	ra,49fe68 <Time_DelayMsPrecise>
+  49d352:	fd549fe3          	bne	s1,s5,49d330 <Main_Entry+0x33e>
+  49d356:	004aa637          	lui	a2,0x4aa
+  49d35a:	468d                	li	a3,3
+  49d35c:	67060613          	addi	a2,a2,1648 # 4aa670 <alarm_type_strings+0x8bc>
+  49d360:	90040593          	addi	a1,s0,-1792
+  49d364:	4505                	li	a0,1
+  49d366:	b5bfe0ef          	jal	ra,49bec0 <debug_print>
+  49d36a:	000dc7b7          	lui	a5,0xdc
+  49d36e:	1a078ba3          	sb	zero,439(a5) # dc1b7 <g_dht11_connected>
+  49d372:	000dc7b7          	lui	a5,0xdc
+  49d376:	1b77c783          	lbu	a5,439(a5) # dc1b7 <g_dht11_connected>
+  49d37a:	cb91                	beqz	a5,49d38e <Main_Entry+0x39c>
+  49d37c:	004aa637          	lui	a2,0x4aa
+  49d380:	6a460613          	addi	a2,a2,1700 # 4aa6a4 <alarm_type_strings+0x8f0>
+  49d384:	90040593          	addi	a1,s0,-1792
+  49d388:	450d                	li	a0,3
+  49d38a:	b37fe0ef          	jal	ra,49bec0 <debug_print>
+  49d38e:	0dd000ef          	jal	ra,49dc6a <OLED_Init>
+  49d392:	1ef000ef          	jal	ra,49dd80 <OLED_Refresh>
+  49d396:	004aa637          	lui	a2,0x4aa
+  49d39a:	46a1                	li	a3,8
+  49d39c:	6c460613          	addi	a2,a2,1732 # 4aa6c4 <alarm_type_strings+0x910>
+  49d3a0:	45f1                	li	a1,28
+  49d3a2:	4501                	li	a0,0
+  49d3a4:	20f000ef          	jal	ra,49ddb2 <OLED_ShowString>
+  49d3a8:	3e800513          	li	a0,1000
+  49d3ac:	279020ef          	jal	ra,49fe24 <Time_DelayMs>
+  49d3b0:	004aa637          	lui	a2,0x4aa
+  49d3b4:	004ab437          	lui	s0,0x4ab
+  49d3b8:	6d460613          	addi	a2,a2,1748 # 4aa6d4 <alarm_type_strings+0x920>
+  49d3bc:	af840593          	addi	a1,s0,-1288 # 4aaaf8 <alarm_type_strings+0xd44>
+  49d3c0:	450d                	li	a0,3
+  49d3c2:	afffe0ef          	jal	ra,49bec0 <debug_print>
+  49d3c6:	004aa5b7          	lui	a1,0x4aa
+  49d3ca:	4661                	li	a2,24
+  49d3cc:	ee458593          	addi	a1,a1,-284 # 4a9ee4 <alarm_type_strings+0x130>
+  49d3d0:	0868                	addi	a0,sp,28
+  49d3d2:	c495d0ef          	jal	ra,3fb01a <memcpy>
+  49d3d6:	0868                	addi	a0,sp,28
+  49d3d8:	c21fd0ef          	jal	ra,49aff8 <alarm_system_init>
+  49d3dc:	38050763          	beqz	a0,49d76a <Main_Entry+0x778>
+  49d3e0:	004aa637          	lui	a2,0x4aa
+  49d3e4:	6f460613          	addi	a2,a2,1780 # 4aa6f4 <alarm_type_strings+0x940>
+  49d3e8:	af840593          	addi	a1,s0,-1288
+  49d3ec:	450d                	li	a0,3
+  49d3ee:	ad3fe0ef          	jal	ra,49bec0 <debug_print>
+  49d3f2:	0049c537          	lui	a0,0x49c
+  49d3f6:	f6a50513          	addi	a0,a0,-150 # 49bf6a <alarm_event_handler>
+  49d3fa:	dc7fd0ef          	jal	ra,49b1c0 <alarm_system_set_callback>
+  49d3fe:	004aa637          	lui	a2,0x4aa
+  49d402:	71460613          	addi	a2,a2,1812 # 4aa714 <alarm_type_strings+0x960>
+  49d406:	af840593          	addi	a1,s0,-1288
+  49d40a:	450d                	li	a0,3
+  49d40c:	ab5fe0ef          	jal	ra,49bec0 <debug_print>
+  49d410:	004aa637          	lui	a2,0x4aa
+  49d414:	004aa437          	lui	s0,0x4aa
+  49d418:	75860613          	addi	a2,a2,1880 # 4aa758 <alarm_type_strings+0x9a4>
+  49d41c:	77c40593          	addi	a1,s0,1916 # 4aa77c <alarm_type_strings+0x9c8>
+  49d420:	450d                	li	a0,3
+  49d422:	a9ffe0ef          	jal	ra,49bec0 <debug_print>
+  49d426:	0049c537          	lui	a0,0x49c
+  49d42a:	4681                	li	a3,0
+  49d42c:	4601                	li	a2,0
+  49d42e:	4585                	li	a1,1
+  49d430:	e9450513          	addi	a0,a0,-364 # 49be94 <BuzzerTickCb>
+  49d434:	f6cf80ef          	jal	ra,495ba0 <osTimerNew>
+  49d438:	000e6737          	lui	a4,0xe6
+  49d43c:	94a72023          	sw	a0,-1728(a4) # e5940 <g_buzzer_tick_timer>
+  49d440:	32050d63          	beqz	a0,49d77a <Main_Entry+0x788>
+  49d444:	4595                	li	a1,5
+  49d446:	fc0f80ef          	jal	ra,495c06 <osTimerStart>
+  49d44a:	004aa637          	lui	a2,0x4aa
+  49d44e:	78460613          	addi	a2,a2,1924 # 4aa784 <alarm_type_strings+0x9d0>
+  49d452:	77c40593          	addi	a1,s0,1916
+  49d456:	450d                	li	a0,3
+  49d458:	a69fe0ef          	jal	ra,49bec0 <debug_print>
+  49d45c:	06400613          	li	a2,100
+  49d460:	03200593          	li	a1,50
+  49d464:	4509                	li	a0,2
+  49d466:	85cfe0ef          	jal	ra,49b4c2 <Buzzer_Alarm>
+  49d46a:	004aa637          	lui	a2,0x4aa
+  49d46e:	7c460613          	addi	a2,a2,1988 # 4aa7c4 <alarm_type_strings+0xa10>
+  49d472:	f1490593          	addi	a1,s2,-236
+  49d476:	450d                	li	a0,3
+  49d478:	a49fe0ef          	jal	ra,49bec0 <debug_print>
+  49d47c:	004aa637          	lui	a2,0x4aa
+  49d480:	7dc60613          	addi	a2,a2,2012 # 4aa7dc <alarm_type_strings+0xa28>
+  49d484:	f1490593          	addi	a1,s2,-236
+  49d488:	450d                	li	a0,3
+  49d48a:	a37fe0ef          	jal	ra,49bec0 <debug_print>
+  49d48e:	02000613          	li	a2,32
+  49d492:	4581                	li	a1,0
+  49d494:	1828                	addi	a0,sp,56
+  49d496:	e655d0ef          	jal	ra,3fb2fa <memset>
+  49d49a:	004aa7b7          	lui	a5,0x4aa
+  49d49e:	7f878793          	addi	a5,a5,2040 # 4aa7f8 <alarm_type_strings+0xa44>
+  49d4a2:	da3e                	sw	a5,52(sp)
+  49d4a4:	0049d537          	lui	a0,0x49d
+  49d4a8:	6789                	lui	a5,0x2
+  49d4aa:	c4be                	sw	a5,72(sp)
+  49d4ac:	1850                	addi	a2,sp,52
+  49d4ae:	47e1                	li	a5,24
+  49d4b0:	4581                	li	a1,0
+  49d4b2:	c2050513          	addi	a0,a0,-992 # 49cc20 <Main_Task>
+  49d4b6:	c6be                	sw	a5,76(sp)
+  49d4b8:	d34f80ef          	jal	ra,4959ec <osThreadNew>
+  49d4bc:	2c051763          	bnez	a0,49d78a <Main_Entry+0x798>
+  49d4c0:	004ab637          	lui	a2,0x4ab
+  49d4c4:	80460613          	addi	a2,a2,-2044 # 4aa804 <alarm_type_strings+0xa50>
+  49d4c8:	f1490593          	addi	a1,s2,-236
+  49d4cc:	4505                	li	a0,1
+  49d4ce:	9f3fe0ef          	jal	ra,49bec0 <debug_print>
+  49d4d2:	004ab637          	lui	a2,0x4ab
+  49d4d6:	83460613          	addi	a2,a2,-1996 # 4aa834 <alarm_type_strings+0xa80>
+  49d4da:	f1490593          	addi	a1,s2,-236
+  49d4de:	450d                	li	a0,3
+  49d4e0:	9e1fe0ef          	jal	ra,49bec0 <debug_print>
+  49d4e4:	02000613          	li	a2,32
+  49d4e8:	4581                	li	a1,0
+  49d4ea:	08e8                	addi	a0,sp,92
+  49d4ec:	e0f5d0ef          	jal	ra,3fb2fa <memset>
+  49d4f0:	004ab7b7          	lui	a5,0x4ab
+  49d4f4:	85078793          	addi	a5,a5,-1968 # 4aa850 <alarm_type_strings+0xa9c>
+  49d4f8:	ccbe                	sw	a5,88(sp)
+  49d4fa:	0049c537          	lui	a0,0x49c
+  49d4fe:	6789                	lui	a5,0x2
+  49d500:	d6be                	sw	a5,108(sp)
+  49d502:	4581                	li	a1,0
+  49d504:	47e1                	li	a5,24
+  49d506:	08b0                	addi	a2,sp,88
+  49d508:	1ce50513          	addi	a0,a0,462 # 49c1ce <network_task>
+  49d50c:	d8be                	sw	a5,112(sp)
+  49d50e:	cdef80ef          	jal	ra,4959ec <osThreadNew>
+  49d512:	004a95b7          	lui	a1,0x4a9
+  49d516:	28051263          	bnez	a0,49d79a <Main_Entry+0x7a8>
+  49d51a:	004ab637          	lui	a2,0x4ab
+  49d51e:	85c60613          	addi	a2,a2,-1956 # 4aa85c <alarm_type_strings+0xaa8>
+  49d522:	f6458593          	addi	a1,a1,-156 # 4a8f64 <cb.8884+0x50>
+  49d526:	4505                	li	a0,1
+  49d528:	999fe0ef          	jal	ra,49bec0 <debug_print>
+  49d52c:	15c12703          	lw	a4,348(sp)
+  49d530:	7c09a783          	lw	a5,1984(s3)
+  49d534:	26f70b63          	beq	a4,a5,49d7aa <Main_Entry+0x7b8>
+  49d538:	c81580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49d53c:	004aa637          	lui	a2,0x4aa
+  49d540:	01460613          	addi	a2,a2,20 # 4aa014 <alarm_type_strings+0x260>
+  49d544:	be41                	j	49d0d4 <Main_Entry+0xe2>
+  49d546:	004aa637          	lui	a2,0x4aa
+  49d54a:	03460613          	addi	a2,a2,52 # 4aa034 <alarm_type_strings+0x280>
+  49d54e:	2d040593          	addi	a1,s0,720
+  49d552:	4505                	li	a0,1
+  49d554:	96dfe0ef          	jal	ra,49bec0 <debug_print>
+  49d558:	004aa637          	lui	a2,0x4aa
+  49d55c:	06860613          	addi	a2,a2,104 # 4aa068 <alarm_type_strings+0x2b4>
+  49d560:	2d040593          	addi	a1,s0,720
+  49d564:	4505                	li	a0,1
+  49d566:	95bfe0ef          	jal	ra,49bec0 <debug_print>
+  49d56a:	00048023          	sb	zero,0(s1)
+  49d56e:	be85                	j	49d0de <Main_Entry+0xec>
+  49d570:	004aa637          	lui	a2,0x4aa
+  49d574:	0dc60613          	addi	a2,a2,220 # 4aa0dc <alarm_type_strings+0x328>
+  49d578:	ed0a0593          	addi	a1,s4,-304
+  49d57c:	4505                	li	a0,1
+  49d57e:	943fe0ef          	jal	ra,49bec0 <debug_print>
+  49d582:	be55                	j	49d136 <Main_Entry+0x144>
+  49d584:	004aa637          	lui	a2,0x4aa
+  49d588:	11c60613          	addi	a2,a2,284 # 4aa11c <alarm_type_strings+0x368>
+  49d58c:	ed040593          	addi	a1,s0,-304
+  49d590:	4505                	li	a0,1
+  49d592:	92ffe0ef          	jal	ra,49bec0 <debug_print>
+  49d596:	b6f1                	j	49d162 <Main_Entry+0x170>
+  49d598:	004aa637          	lui	a2,0x4aa
+  49d59c:	15c60613          	addi	a2,a2,348 # 4aa15c <alarm_type_strings+0x3a8>
+  49d5a0:	ed040593          	addi	a1,s0,-304
+  49d5a4:	4505                	li	a0,1
+  49d5a6:	b6fd                	j	49d194 <Main_Entry+0x1a2>
+  49d5a8:	004aa637          	lui	a2,0x4aa
+  49d5ac:	17860613          	addi	a2,a2,376 # 4aa178 <alarm_type_strings+0x3c4>
+  49d5b0:	ed0a0593          	addi	a1,s4,-304
+  49d5b4:	bfc5                	j	49d5a4 <Main_Entry+0x5b2>
+  49d5b6:	18051663          	bnez	a0,49d742 <Main_Entry+0x750>
+  49d5ba:	004aa637          	lui	a2,0x4aa
+  49d5be:	1dc48593          	addi	a1,s1,476
+  49d5c2:	33c60613          	addi	a2,a2,828 # 4aa33c <alarm_type_strings+0x588>
+  49d5c6:	450d                	li	a0,3
+  49d5c8:	8f9fe0ef          	jal	ra,49bec0 <debug_print>
+  49d5cc:	18e8                	addi	a0,sp,124
+  49d5ce:	9c4aa0ef          	jal	ra,447792 <atoi>
+  49d5d2:	00150493          	addi	s1,a0,1
+  49d5d6:	004aa637          	lui	a2,0x4aa
+  49d5da:	86a6                	mv	a3,s1
+  49d5dc:	41c60613          	addi	a2,a2,1052 # 4aa41c <alarm_type_strings+0x668>
+  49d5e0:	45c1                	li	a1,16
+  49d5e2:	0168                	addi	a0,sp,140
+  49d5e4:	9e7ac0ef          	jal	ra,449fca <snprintf>
+  49d5e8:	016c                	addi	a1,sp,140
+  49d5ea:	1e4a8513          	addi	a0,s5,484
+  49d5ee:	e88fe0ef          	jal	ra,49bc76 <kv_set_string>
+  49d5f2:	04000613          	li	a2,64
+  49d5f6:	4581                	li	a1,0
+  49d5f8:	0968                	addi	a0,sp,156
+  49d5fa:	d015d0ef          	jal	ra,3fb2fa <memset>
+  49d5fe:	004aa537          	lui	a0,0x4aa
+  49d602:	04000613          	li	a2,64
+  49d606:	096c                	addi	a1,sp,156
+  49d608:	24050513          	addi	a0,a0,576 # 4aa240 <alarm_type_strings+0x48c>
+  49d60c:	edefe0ef          	jal	ra,49bcea <kv_get_string>
+  49d610:	86aa                	mv	a3,a0
+  49d612:	e571                	bnez	a0,49d6de <Main_Entry+0x6ec>
+  49d614:	004aa637          	lui	a2,0x4aa
+  49d618:	0974                	addi	a3,sp,156
+  49d61a:	36c60613          	addi	a2,a2,876 # 4aa36c <alarm_type_strings+0x5b8>
+  49d61e:	1dc40593          	addi	a1,s0,476
+  49d622:	450d                	li	a0,3
+  49d624:	89dfe0ef          	jal	ra,49bec0 <debug_print>
+  49d628:	004aa537          	lui	a0,0x4aa
+  49d62c:	08ac                	addi	a1,sp,88
+  49d62e:	24c50513          	addi	a0,a0,588 # 4aa24c <alarm_type_strings+0x498>
+  49d632:	cc82                	sw	zero,88(sp)
+  49d634:	f9afe0ef          	jal	ra,49bdce <kv_get_uint32>
+  49d638:	86aa                	mv	a3,a0
+  49d63a:	e955                	bnez	a0,49d6ee <Main_Entry+0x6fc>
+  49d63c:	46e6                	lw	a3,88(sp)
+  49d63e:	004aa637          	lui	a2,0x4aa
+  49d642:	3c060613          	addi	a2,a2,960 # 4aa3c0 <alarm_type_strings+0x60c>
+  49d646:	1dc40593          	addi	a1,s0,476
+  49d64a:	450d                	li	a0,3
+  49d64c:	875fe0ef          	jal	ra,49bec0 <debug_print>
+  49d650:	04000613          	li	a2,64
+  49d654:	4581                	li	a1,0
+  49d656:	09e8                	addi	a0,sp,220
+  49d658:	ca35d0ef          	jal	ra,3fb2fa <memset>
+  49d65c:	004aa537          	lui	a0,0x4aa
+  49d660:	04000613          	li	a2,64
+  49d664:	09ec                	addi	a1,sp,220
+  49d666:	28450513          	addi	a0,a0,644 # 4aa284 <alarm_type_strings+0x4d0>
+  49d66a:	e80fe0ef          	jal	ra,49bcea <kv_get_string>
+  49d66e:	86aa                	mv	a3,a0
+  49d670:	e559                	bnez	a0,49d6fe <Main_Entry+0x70c>
+  49d672:	004aa637          	lui	a2,0x4aa
+  49d676:	09f4                	addi	a3,sp,220
+  49d678:	42060613          	addi	a2,a2,1056 # 4aa420 <alarm_type_strings+0x66c>
+  49d67c:	1dc40593          	addi	a1,s0,476
+  49d680:	450d                	li	a0,3
+  49d682:	83ffe0ef          	jal	ra,49bec0 <debug_print>
+  49d686:	004aa637          	lui	a2,0x4aa
+  49d68a:	86a6                	mv	a3,s1
+  49d68c:	47460613          	addi	a2,a2,1140 # 4aa474 <alarm_type_strings+0x6c0>
+  49d690:	1dc40593          	addi	a1,s0,476
+  49d694:	450d                	li	a0,3
+  49d696:	82bfe0ef          	jal	ra,49bec0 <debug_print>
+  49d69a:	04000613          	li	a2,64
+  49d69e:	4581                	li	a1,0
+  49d6a0:	0a68                	addi	a0,sp,284
+  49d6a2:	c595d0ef          	jal	ra,3fb2fa <memset>
+  49d6a6:	004aaab7          	lui	s5,0x4aa
+  49d6aa:	04000613          	li	a2,64
+  49d6ae:	0a6c                	addi	a1,sp,284
+  49d6b0:	490a8513          	addi	a0,s5,1168 # 4aa490 <alarm_type_strings+0x6dc>
+  49d6b4:	e36fe0ef          	jal	ra,49bcea <kv_get_string>
+  49d6b8:	86aa                	mv	a3,a0
+  49d6ba:	e931                	bnez	a0,49d70e <Main_Entry+0x71c>
+  49d6bc:	004aa637          	lui	a2,0x4aa
+  49d6c0:	0a74                	addi	a3,sp,284
+  49d6c2:	4a060613          	addi	a2,a2,1184 # 4aa4a0 <alarm_type_strings+0x6ec>
+  49d6c6:	1dc40593          	addi	a1,s0,476
+  49d6ca:	450d                	li	a0,3
+  49d6cc:	ff4fe0ef          	jal	ra,49bec0 <debug_print>
   49d6d0:	004aa637          	lui	a2,0x4aa
-  49d6d4:	39060613          	addi	a2,a2,912 # 4aa390 <alarm_type_strings+0x5dc>
+  49d6d4:	53060613          	addi	a2,a2,1328 # 4aa530 <alarm_type_strings+0x77c>
   49d6d8:	1dc40593          	addi	a1,s0,476
-  49d6dc:	4505                	li	a0,1
-  49d6de:	bf25                	j	49d616 <Main_Entry+0x632>
-  49d6e0:	004aa637          	lui	a2,0x4aa
-  49d6e4:	3ec60613          	addi	a2,a2,1004 # 4aa3ec <alarm_type_strings+0x638>
-  49d6e8:	1dc40593          	addi	a1,s0,476
-  49d6ec:	4505                	li	a0,1
-  49d6ee:	bf81                	j	49d63e <Main_Entry+0x65a>
-  49d6f0:	004aa637          	lui	a2,0x4aa
-  49d6f4:	44460613          	addi	a2,a2,1092 # 4aa444 <alarm_type_strings+0x690>
-  49d6f8:	1dc40593          	addi	a1,s0,476
-  49d6fc:	4505                	li	a0,1
-  49d6fe:	bf9d                	j	49d674 <Main_Entry+0x690>
-  49d700:	4795                	li	a5,5
-  49d702:	02f51163          	bne	a0,a5,49d724 <Main_Entry+0x740>
-  49d706:	004aa4b7          	lui	s1,0x4aa
-  49d70a:	4c448593          	addi	a1,s1,1220 # 4aa4c4 <alarm_type_strings+0x710>
-  49d70e:	490a8513          	addi	a0,s5,1168
-  49d712:	d64fe0ef          	jal	ra,49bc76 <kv_set_string>
-  49d716:	004aa637          	lui	a2,0x4aa
-  49d71a:	4c448693          	addi	a3,s1,1220
-  49d71e:	4e060613          	addi	a2,a2,1248 # 4aa4e0 <alarm_type_strings+0x72c>
-  49d722:	bf59                	j	49d6b8 <Main_Entry+0x6d4>
+  49d6dc:	bec1                	j	49d2ac <Main_Entry+0x2ba>
+  49d6de:	004aa637          	lui	a2,0x4aa
+  49d6e2:	39060613          	addi	a2,a2,912 # 4aa390 <alarm_type_strings+0x5dc>
+  49d6e6:	1dc40593          	addi	a1,s0,476
+  49d6ea:	4505                	li	a0,1
+  49d6ec:	bf25                	j	49d624 <Main_Entry+0x632>
+  49d6ee:	004aa637          	lui	a2,0x4aa
+  49d6f2:	3ec60613          	addi	a2,a2,1004 # 4aa3ec <alarm_type_strings+0x638>
+  49d6f6:	1dc40593          	addi	a1,s0,476
+  49d6fa:	4505                	li	a0,1
+  49d6fc:	bf81                	j	49d64c <Main_Entry+0x65a>
+  49d6fe:	004aa637          	lui	a2,0x4aa
+  49d702:	44460613          	addi	a2,a2,1092 # 4aa444 <alarm_type_strings+0x690>
+  49d706:	1dc40593          	addi	a1,s0,476
+  49d70a:	4505                	li	a0,1
+  49d70c:	bf9d                	j	49d682 <Main_Entry+0x690>
+  49d70e:	4795                	li	a5,5
+  49d710:	02f51163          	bne	a0,a5,49d732 <Main_Entry+0x740>
+  49d714:	004aa4b7          	lui	s1,0x4aa
+  49d718:	4c448593          	addi	a1,s1,1220 # 4aa4c4 <alarm_type_strings+0x710>
+  49d71c:	490a8513          	addi	a0,s5,1168
+  49d720:	d56fe0ef          	jal	ra,49bc76 <kv_set_string>
   49d724:	004aa637          	lui	a2,0x4aa
-  49d728:	50060613          	addi	a2,a2,1280 # 4aa500 <alarm_type_strings+0x74c>
-  49d72c:	1dc40593          	addi	a1,s0,476
-  49d730:	4505                	li	a0,1
-  49d732:	b771                	j	49d6be <Main_Entry+0x6da>
-  49d734:	004aa637          	lui	a2,0x4aa
-  49d738:	55460613          	addi	a2,a2,1364 # 4aa554 <alarm_type_strings+0x7a0>
-  49d73c:	1dc48593          	addi	a1,s1,476
-  49d740:	4505                	li	a0,1
-  49d742:	f7efe0ef          	jal	ra,49bec0 <debug_print>
-  49d746:	beb9                	j	49d2a4 <Main_Entry+0x2c0>
-  49d748:	004aa637          	lui	a2,0x4aa
-  49d74c:	5e460613          	addi	a2,a2,1508 # 4aa5e4 <alarm_type_strings+0x830>
-  49d750:	1b4a0593          	addi	a1,s4,436
-  49d754:	4509                	li	a0,2
-  49d756:	f6afe0ef          	jal	ra,49bec0 <debug_print>
-  49d75a:	b66d                	j	49d304 <Main_Entry+0x320>
-  49d75c:	004aa637          	lui	a2,0x4aa
-  49d760:	73860613          	addi	a2,a2,1848 # 4aa738 <alarm_type_strings+0x984>
-  49d764:	af840593          	addi	a1,s0,-1288
-  49d768:	4505                	li	a0,1
-  49d76a:	b951                	j	49d3fe <Main_Entry+0x41a>
-  49d76c:	004aa637          	lui	a2,0x4aa
-  49d770:	7a460613          	addi	a2,a2,1956 # 4aa7a4 <alarm_type_strings+0x9f0>
-  49d774:	77c40593          	addi	a1,s0,1916
-  49d778:	4505                	li	a0,1
-  49d77a:	b9c1                	j	49d44a <Main_Entry+0x466>
-  49d77c:	004ab637          	lui	a2,0x4ab
-  49d780:	81c60613          	addi	a2,a2,-2020 # 4aa81c <alarm_type_strings+0xa68>
-  49d784:	f1490593          	addi	a1,s2,-236
-  49d788:	450d                	li	a0,3
-  49d78a:	bb1d                	j	49d4c0 <Main_Entry+0x4dc>
-  49d78c:	004ab637          	lui	a2,0x4ab
-  49d790:	87860613          	addi	a2,a2,-1928 # 4aa878 <alarm_type_strings+0xac4>
-  49d794:	f6458593          	addi	a1,a1,-156
-  49d798:	450d                	li	a0,3
-  49d79a:	b341                	j	49d51a <Main_Entry+0x536>
-  49d79c:	6135                	addi	sp,sp,352
-  49d79e:	8c05d06f          	j	3fa85e <__riscv_restore_4>
+  49d728:	4c448693          	addi	a3,s1,1220
+  49d72c:	4e060613          	addi	a2,a2,1248 # 4aa4e0 <alarm_type_strings+0x72c>
+  49d730:	bf59                	j	49d6c6 <Main_Entry+0x6d4>
+  49d732:	004aa637          	lui	a2,0x4aa
+  49d736:	50060613          	addi	a2,a2,1280 # 4aa500 <alarm_type_strings+0x74c>
+  49d73a:	1dc40593          	addi	a1,s0,476
+  49d73e:	4505                	li	a0,1
+  49d740:	b771                	j	49d6cc <Main_Entry+0x6da>
+  49d742:	004aa637          	lui	a2,0x4aa
+  49d746:	55460613          	addi	a2,a2,1364 # 4aa554 <alarm_type_strings+0x7a0>
+  49d74a:	1dc48593          	addi	a1,s1,476
+  49d74e:	4505                	li	a0,1
+  49d750:	f70fe0ef          	jal	ra,49bec0 <debug_print>
+  49d754:	beb9                	j	49d2b2 <Main_Entry+0x2c0>
+  49d756:	004aa637          	lui	a2,0x4aa
+  49d75a:	5e460613          	addi	a2,a2,1508 # 4aa5e4 <alarm_type_strings+0x830>
+  49d75e:	1b4a0593          	addi	a1,s4,436
+  49d762:	4509                	li	a0,2
+  49d764:	f5cfe0ef          	jal	ra,49bec0 <debug_print>
+  49d768:	b66d                	j	49d312 <Main_Entry+0x320>
+  49d76a:	004aa637          	lui	a2,0x4aa
+  49d76e:	73860613          	addi	a2,a2,1848 # 4aa738 <alarm_type_strings+0x984>
+  49d772:	af840593          	addi	a1,s0,-1288
+  49d776:	4505                	li	a0,1
+  49d778:	b951                	j	49d40c <Main_Entry+0x41a>
+  49d77a:	004aa637          	lui	a2,0x4aa
+  49d77e:	7a460613          	addi	a2,a2,1956 # 4aa7a4 <alarm_type_strings+0x9f0>
+  49d782:	77c40593          	addi	a1,s0,1916
+  49d786:	4505                	li	a0,1
+  49d788:	b9c1                	j	49d458 <Main_Entry+0x466>
+  49d78a:	004ab637          	lui	a2,0x4ab
+  49d78e:	81c60613          	addi	a2,a2,-2020 # 4aa81c <alarm_type_strings+0xa68>
+  49d792:	f1490593          	addi	a1,s2,-236
+  49d796:	450d                	li	a0,3
+  49d798:	bb1d                	j	49d4ce <Main_Entry+0x4dc>
+  49d79a:	004ab637          	lui	a2,0x4ab
+  49d79e:	87860613          	addi	a2,a2,-1928 # 4aa878 <alarm_type_strings+0xac4>
+  49d7a2:	f6458593          	addi	a1,a1,-156
+  49d7a6:	450d                	li	a0,3
+  49d7a8:	b341                	j	49d528 <Main_Entry+0x536>
+  49d7aa:	6135                	addi	sp,sp,352
+  49d7ac:	8b25d06f          	j	3fa85e <__riscv_restore_4>
 
-0049d7a2 <get_NDEFDataPackage>:
-  49d7a2:	8885d2ef          	jal	t0,3fa82a <__riscv_save_4>
-  49d7a6:	0011d7b7          	lui	a5,0x11d
-  49d7aa:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49d7ae:	1141                	addi	sp,sp,-16
-  49d7b0:	8abe                	mv	s5,a5
-  49d7b2:	c63a                	sw	a4,12(sp)
-  49d7b4:	c119                	beqz	a0,49d7ba <get_NDEFDataPackage+0x18>
-  49d7b6:	89ae                	mv	s3,a1
-  49d7b8:	ed99                	bnez	a1,49d7d6 <get_NDEFDataPackage+0x34>
-  49d7ba:	004ab537          	lui	a0,0x4ab
-  49d7be:	4f450513          	addi	a0,a0,1268 # 4ab4f4 <alarm_type_strings+0x1740>
-  49d7c2:	ceb5c0ef          	jal	ra,3fa4ac <printf>
-  49d7c6:	557d                	li	a0,-1
-  49d7c8:	4732                	lw	a4,12(sp)
-  49d7ca:	7c0aa783          	lw	a5,1984(s5)
-  49d7ce:	06f70663          	beq	a4,a5,49d83a <get_NDEFDataPackage+0x98>
-  49d7d2:	9e7580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49d7d6:	47c1                	li	a5,16
-  49d7d8:	8a2a                	mv	s4,a0
-  49d7da:	4405                	li	s0,1
-  49d7dc:	00b7f763          	bleu	a1,a5,49d7ea <get_NDEFDataPackage+0x48>
-  49d7e0:	0045d413          	srli	s0,a1,0x4
-  49d7e4:	0405                	addi	s0,s0,1
-  49d7e6:	0ff47413          	andi	s0,s0,255
-  49d7ea:	00441513          	slli	a0,s0,0x4
-  49d7ee:	dbf5d0ef          	jal	ra,3fb5ac <malloc>
-  49d7f2:	892a                	mv	s2,a0
-  49d7f4:	4481                	li	s1,0
-  49d7f6:	cd19                	beqz	a0,49d814 <get_NDEFDataPackage+0x72>
-  49d7f8:	000e6b37          	lui	s6,0xe6
-  49d7fc:	0284c163          	blt	s1,s0,49d81e <get_NDEFDataPackage+0x7c>
-  49d800:	864e                	mv	a2,s3
-  49d802:	85ca                	mv	a1,s2
-  49d804:	8552                	mv	a0,s4
-  49d806:	8155d0ef          	jal	ra,3fb01a <memcpy>
-  49d80a:	854a                	mv	a0,s2
-  49d80c:	d875d0ef          	jal	ra,3fb592 <free>
-  49d810:	4501                	li	a0,0
-  49d812:	bf5d                	j	49d7c8 <get_NDEFDataPackage+0x26>
-  49d814:	004ab537          	lui	a0,0x4ab
-  49d818:	51c50513          	addi	a0,a0,1308 # 4ab51c <alarm_type_strings+0x1768>
-  49d81c:	b75d                	j	49d7c2 <get_NDEFDataPackage+0x20>
-  49d81e:	0ff4f513          	andi	a0,s1,255
-  49d822:	2ae1                	jal	49d9fa <NT3HReadUserData>
-  49d824:	c909                	beqz	a0,49d836 <get_NDEFDataPackage+0x94>
-  49d826:	00449513          	slli	a0,s1,0x4
-  49d82a:	4641                	li	a2,16
-  49d82c:	9b8b0593          	addi	a1,s6,-1608 # e59b8 <nfcPageBuffer>
-  49d830:	954a                	add	a0,a0,s2
-  49d832:	fe85d0ef          	jal	ra,3fb01a <memcpy>
-  49d836:	0485                	addi	s1,s1,1
-  49d838:	b7d1                	j	49d7fc <get_NDEFDataPackage+0x5a>
-  49d83a:	0141                	addi	sp,sp,16
-  49d83c:	8225d06f          	j	3fa85e <__riscv_restore_4>
+0049d7b0 <get_NDEFDataPackage>:
+  49d7b0:	87a5d2ef          	jal	t0,3fa82a <__riscv_save_4>
+  49d7b4:	0011d7b7          	lui	a5,0x11d
+  49d7b8:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49d7bc:	1141                	addi	sp,sp,-16
+  49d7be:	8abe                	mv	s5,a5
+  49d7c0:	c63a                	sw	a4,12(sp)
+  49d7c2:	c119                	beqz	a0,49d7c8 <get_NDEFDataPackage+0x18>
+  49d7c4:	89ae                	mv	s3,a1
+  49d7c6:	ed99                	bnez	a1,49d7e4 <get_NDEFDataPackage+0x34>
+  49d7c8:	004ab537          	lui	a0,0x4ab
+  49d7cc:	4f450513          	addi	a0,a0,1268 # 4ab4f4 <alarm_type_strings+0x1740>
+  49d7d0:	cdd5c0ef          	jal	ra,3fa4ac <printf>
+  49d7d4:	557d                	li	a0,-1
+  49d7d6:	4732                	lw	a4,12(sp)
+  49d7d8:	7c0aa783          	lw	a5,1984(s5)
+  49d7dc:	06f70663          	beq	a4,a5,49d848 <get_NDEFDataPackage+0x98>
+  49d7e0:	9d9580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49d7e4:	47c1                	li	a5,16
+  49d7e6:	8a2a                	mv	s4,a0
+  49d7e8:	4405                	li	s0,1
+  49d7ea:	00b7f763          	bleu	a1,a5,49d7f8 <get_NDEFDataPackage+0x48>
+  49d7ee:	0045d413          	srli	s0,a1,0x4
+  49d7f2:	0405                	addi	s0,s0,1
+  49d7f4:	0ff47413          	andi	s0,s0,255
+  49d7f8:	00441513          	slli	a0,s0,0x4
+  49d7fc:	db15d0ef          	jal	ra,3fb5ac <malloc>
+  49d800:	892a                	mv	s2,a0
+  49d802:	4481                	li	s1,0
+  49d804:	cd19                	beqz	a0,49d822 <get_NDEFDataPackage+0x72>
+  49d806:	000e6b37          	lui	s6,0xe6
+  49d80a:	0284c163          	blt	s1,s0,49d82c <get_NDEFDataPackage+0x7c>
+  49d80e:	864e                	mv	a2,s3
+  49d810:	85ca                	mv	a1,s2
+  49d812:	8552                	mv	a0,s4
+  49d814:	8075d0ef          	jal	ra,3fb01a <memcpy>
+  49d818:	854a                	mv	a0,s2
+  49d81a:	d795d0ef          	jal	ra,3fb592 <free>
+  49d81e:	4501                	li	a0,0
+  49d820:	bf5d                	j	49d7d6 <get_NDEFDataPackage+0x26>
+  49d822:	004ab537          	lui	a0,0x4ab
+  49d826:	51c50513          	addi	a0,a0,1308 # 4ab51c <alarm_type_strings+0x1768>
+  49d82a:	b75d                	j	49d7d0 <get_NDEFDataPackage+0x20>
+  49d82c:	0ff4f513          	andi	a0,s1,255
+  49d830:	2ae1                	jal	49da08 <NT3HReadUserData>
+  49d832:	c909                	beqz	a0,49d844 <get_NDEFDataPackage+0x94>
+  49d834:	00449513          	slli	a0,s1,0x4
+  49d838:	4641                	li	a2,16
+  49d83a:	9b8b0593          	addi	a1,s6,-1608 # e59b8 <nfcPageBuffer>
+  49d83e:	954a                	add	a0,a0,s2
+  49d840:	fda5d0ef          	jal	ra,3fb01a <memcpy>
+  49d844:	0485                	addi	s1,s1,1
+  49d846:	b7d1                	j	49d80a <get_NDEFDataPackage+0x5a>
+  49d848:	0141                	addi	sp,sp,16
+  49d84a:	8145d06f          	j	3fa85e <__riscv_restore_4>
 
-0049d840 <nfc_init>:
-  49d840:	8045d2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49d844:	0011d437          	lui	s0,0x11d
-  49d848:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49d84c:	1141                	addi	sp,sp,-16
-  49d84e:	4585                	li	a1,1
-  49d850:	4525                	li	a0,9
-  49d852:	c63e                	sw	a5,12(sp)
-  49d854:	ae5540ef          	jal	ra,3f2338 <hi_io_set_pull>
-  49d858:	4585                	li	a1,1
-  49d85a:	4525                	li	a0,9
-  49d85c:	9f3540ef          	jal	ra,3f224e <hi_io_set_func>
-  49d860:	4585                	li	a1,1
-  49d862:	4529                	li	a0,10
-  49d864:	ad5540ef          	jal	ra,3f2338 <hi_io_set_pull>
-  49d868:	4585                	li	a1,1
-  49d86a:	4529                	li	a0,10
-  49d86c:	9e3540ef          	jal	ra,3f224e <hi_io_set_func>
-  49d870:	65e1                	lui	a1,0x18
-  49d872:	6a058593          	addi	a1,a1,1696 # 186a0 <__bss_size__+0xf560>
-  49d876:	4505                	li	a0,1
-  49d878:	904790ef          	jal	ra,41697c <hi_i2c_init>
-  49d87c:	84aa                	mv	s1,a0
-  49d87e:	c105                	beqz	a0,49d89e <nfc_init+0x5e>
-  49d880:	85aa                	mv	a1,a0
-  49d882:	004ab537          	lui	a0,0x4ab
-  49d886:	57c50513          	addi	a0,a0,1404 # 4ab57c <alarm_type_strings+0x17c8>
-  49d88a:	c235c0ef          	jal	ra,3fa4ac <printf>
-  49d88e:	4732                	lw	a4,12(sp)
-  49d890:	7c042783          	lw	a5,1984(s0)
-  49d894:	8526                	mv	a0,s1
-  49d896:	00f70b63          	beq	a4,a5,49d8ac <nfc_init+0x6c>
-  49d89a:	91f580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49d89e:	004ab537          	lui	a0,0x4ab
-  49d8a2:	5a050513          	addi	a0,a0,1440 # 4ab5a0 <alarm_type_strings+0x17ec>
-  49d8a6:	c075c0ef          	jal	ra,3fa4ac <printf>
-  49d8aa:	b7d5                	j	49d88e <nfc_init+0x4e>
-  49d8ac:	0141                	addi	sp,sp,16
-  49d8ae:	fbb5c06f          	j	3fa868 <__riscv_restore_0>
+0049d84e <nfc_init>:
+  49d84e:	ff75c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49d852:	0011d437          	lui	s0,0x11d
+  49d856:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49d85a:	1141                	addi	sp,sp,-16
+  49d85c:	4585                	li	a1,1
+  49d85e:	4525                	li	a0,9
+  49d860:	c63e                	sw	a5,12(sp)
+  49d862:	ad7540ef          	jal	ra,3f2338 <hi_io_set_pull>
+  49d866:	4585                	li	a1,1
+  49d868:	4525                	li	a0,9
+  49d86a:	9e5540ef          	jal	ra,3f224e <hi_io_set_func>
+  49d86e:	4585                	li	a1,1
+  49d870:	4529                	li	a0,10
+  49d872:	ac7540ef          	jal	ra,3f2338 <hi_io_set_pull>
+  49d876:	4585                	li	a1,1
+  49d878:	4529                	li	a0,10
+  49d87a:	9d5540ef          	jal	ra,3f224e <hi_io_set_func>
+  49d87e:	65e1                	lui	a1,0x18
+  49d880:	6a058593          	addi	a1,a1,1696 # 186a0 <__bss_size__+0xf560>
+  49d884:	4505                	li	a0,1
+  49d886:	8f6790ef          	jal	ra,41697c <hi_i2c_init>
+  49d88a:	84aa                	mv	s1,a0
+  49d88c:	c105                	beqz	a0,49d8ac <nfc_init+0x5e>
+  49d88e:	85aa                	mv	a1,a0
+  49d890:	004ab537          	lui	a0,0x4ab
+  49d894:	57c50513          	addi	a0,a0,1404 # 4ab57c <alarm_type_strings+0x17c8>
+  49d898:	c155c0ef          	jal	ra,3fa4ac <printf>
+  49d89c:	4732                	lw	a4,12(sp)
+  49d89e:	7c042783          	lw	a5,1984(s0)
+  49d8a2:	8526                	mv	a0,s1
+  49d8a4:	00f70b63          	beq	a4,a5,49d8ba <nfc_init+0x6c>
+  49d8a8:	911580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49d8ac:	004ab537          	lui	a0,0x4ab
+  49d8b0:	5a050513          	addi	a0,a0,1440 # 4ab5a0 <alarm_type_strings+0x17ec>
+  49d8b4:	bf95c0ef          	jal	ra,3fa4ac <printf>
+  49d8b8:	b7d5                	j	49d89c <nfc_init+0x4e>
+  49d8ba:	0141                	addi	sp,sp,16
+  49d8bc:	fad5c06f          	j	3fa868 <__riscv_restore_0>
 
-0049d8b2 <nfc_clear_ndef_data>:
-  49d8b2:	f935c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49d8b6:	0011d437          	lui	s0,0x11d
-  49d8ba:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49d8be:	1141                	addi	sp,sp,-16
-  49d8c0:	c63e                	sw	a5,12(sp)
-  49d8c2:	20e5                	jal	49d9aa <NT3HEraseAllTag>
-  49d8c4:	84aa                	mv	s1,a0
-  49d8c6:	cd19                	beqz	a0,49d8e4 <nfc_clear_ndef_data+0x32>
-  49d8c8:	004ab537          	lui	a0,0x4ab
-  49d8cc:	53050513          	addi	a0,a0,1328 # 4ab530 <alarm_type_strings+0x177c>
-  49d8d0:	bdd5c0ef          	jal	ra,3fa4ac <printf>
-  49d8d4:	4732                	lw	a4,12(sp)
-  49d8d6:	7c042783          	lw	a5,1984(s0)
-  49d8da:	8526                	mv	a0,s1
-  49d8dc:	00f70963          	beq	a4,a5,49d8ee <nfc_clear_ndef_data+0x3c>
-  49d8e0:	8d9580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49d8e4:	004ab537          	lui	a0,0x4ab
-  49d8e8:	55850513          	addi	a0,a0,1368 # 4ab558 <alarm_type_strings+0x17a4>
-  49d8ec:	b7d5                	j	49d8d0 <nfc_clear_ndef_data+0x1e>
-  49d8ee:	0141                	addi	sp,sp,16
-  49d8f0:	f795c06f          	j	3fa868 <__riscv_restore_0>
+0049d8c0 <nfc_clear_ndef_data>:
+  49d8c0:	f855c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49d8c4:	0011d437          	lui	s0,0x11d
+  49d8c8:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49d8cc:	1141                	addi	sp,sp,-16
+  49d8ce:	c63e                	sw	a5,12(sp)
+  49d8d0:	20e5                	jal	49d9b8 <NT3HEraseAllTag>
+  49d8d2:	84aa                	mv	s1,a0
+  49d8d4:	cd19                	beqz	a0,49d8f2 <nfc_clear_ndef_data+0x32>
+  49d8d6:	004ab537          	lui	a0,0x4ab
+  49d8da:	53050513          	addi	a0,a0,1328 # 4ab530 <alarm_type_strings+0x177c>
+  49d8de:	bcf5c0ef          	jal	ra,3fa4ac <printf>
+  49d8e2:	4732                	lw	a4,12(sp)
+  49d8e4:	7c042783          	lw	a5,1984(s0)
+  49d8e8:	8526                	mv	a0,s1
+  49d8ea:	00f70963          	beq	a4,a5,49d8fc <nfc_clear_ndef_data+0x3c>
+  49d8ee:	8cb580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49d8f2:	004ab537          	lui	a0,0x4ab
+  49d8f6:	55850513          	addi	a0,a0,1368 # 4ab558 <alarm_type_strings+0x17a4>
+  49d8fa:	b7d5                	j	49d8de <nfc_clear_ndef_data+0x1e>
+  49d8fc:	0141                	addi	sp,sp,16
+  49d8fe:	f6b5c06f          	j	3fa868 <__riscv_restore_0>
 
-0049d8f4 <readTimeout>:
-  49d8f4:	f515c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49d8f8:	0011d437          	lui	s0,0x11d
-  49d8fc:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49d900:	1101                	addi	sp,sp,-32
-  49d902:	00a10c23          	sb	a0,24(sp)
-  49d906:	ce3e                	sw	a5,28(sp)
-  49d908:	083c                	addi	a5,sp,24
-  49d90a:	c43e                	sw	a5,8(sp)
-  49d90c:	4785                	li	a5,1
-  49d90e:	c63e                	sw	a5,12(sp)
-  49d910:	c82e                	sw	a1,16(sp)
-  49d912:	47c1                	li	a5,16
-  49d914:	0aa00593          	li	a1,170
-  49d918:	0030                	addi	a2,sp,8
-  49d91a:	4501                	li	a0,0
-  49d91c:	ca3e                	sw	a5,20(sp)
-  49d91e:	f2b780ef          	jal	ra,416848 <hi_i2c_writeread>
-  49d922:	85aa                	mv	a1,a0
-  49d924:	4505                	li	a0,1
-  49d926:	c981                	beqz	a1,49d936 <readTimeout+0x42>
-  49d928:	004ab537          	lui	a0,0x4ab
-  49d92c:	5c050513          	addi	a0,a0,1472 # 4ab5c0 <alarm_type_strings+0x180c>
-  49d930:	b7d5c0ef          	jal	ra,3fa4ac <printf>
-  49d934:	4501                	li	a0,0
-  49d936:	4772                	lw	a4,28(sp)
-  49d938:	7c042783          	lw	a5,1984(s0)
-  49d93c:	00f70463          	beq	a4,a5,49d944 <readTimeout+0x50>
-  49d940:	879580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49d944:	6105                	addi	sp,sp,32
-  49d946:	f235c06f          	j	3fa868 <__riscv_restore_0>
+0049d902 <readTimeout>:
+  49d902:	f435c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49d906:	0011d437          	lui	s0,0x11d
+  49d90a:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49d90e:	1101                	addi	sp,sp,-32
+  49d910:	00a10c23          	sb	a0,24(sp)
+  49d914:	ce3e                	sw	a5,28(sp)
+  49d916:	083c                	addi	a5,sp,24
+  49d918:	c43e                	sw	a5,8(sp)
+  49d91a:	4785                	li	a5,1
+  49d91c:	c63e                	sw	a5,12(sp)
+  49d91e:	c82e                	sw	a1,16(sp)
+  49d920:	47c1                	li	a5,16
+  49d922:	0aa00593          	li	a1,170
+  49d926:	0030                	addi	a2,sp,8
+  49d928:	4501                	li	a0,0
+  49d92a:	ca3e                	sw	a5,20(sp)
+  49d92c:	f1d780ef          	jal	ra,416848 <hi_i2c_writeread>
+  49d930:	85aa                	mv	a1,a0
+  49d932:	4505                	li	a0,1
+  49d934:	c981                	beqz	a1,49d944 <readTimeout+0x42>
+  49d936:	004ab537          	lui	a0,0x4ab
+  49d93a:	5c050513          	addi	a0,a0,1472 # 4ab5c0 <alarm_type_strings+0x180c>
+  49d93e:	b6f5c0ef          	jal	ra,3fa4ac <printf>
+  49d942:	4501                	li	a0,0
+  49d944:	4772                	lw	a4,28(sp)
+  49d946:	7c042783          	lw	a5,1984(s0)
+  49d94a:	00f70463          	beq	a4,a5,49d952 <readTimeout+0x50>
+  49d94e:	86b580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49d952:	6105                	addi	sp,sp,32
+  49d954:	f155c06f          	j	3fa868 <__riscv_restore_0>
 
-0049d94a <writeTimeout.constprop.0>:
-  49d94a:	efb5c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49d94e:	0011d437          	lui	s0,0x11d
-  49d952:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49d956:	1101                	addi	sp,sp,-32
-  49d958:	4801                	li	a6,0
-  49d95a:	ce3e                	sw	a5,28(sp)
-  49d95c:	4781                	li	a5,0
-  49d95e:	ca3e                	sw	a5,20(sp)
-  49d960:	c62a                	sw	a0,12(sp)
-  49d962:	47c5                	li	a5,17
-  49d964:	0070                	addi	a2,sp,12
-  49d966:	0aa00593          	li	a1,170
-  49d96a:	4501                	li	a0,0
-  49d96c:	cc42                	sw	a6,24(sp)
-  49d96e:	c83e                	sw	a5,16(sp)
-  49d970:	f57780ef          	jal	ra,4168c6 <hi_i2c_write>
-  49d974:	c105                	beqz	a0,49d994 <writeTimeout.constprop.0+0x4a>
-  49d976:	85aa                	mv	a1,a0
-  49d978:	004ab537          	lui	a0,0x4ab
-  49d97c:	5f050513          	addi	a0,a0,1520 # 4ab5f0 <alarm_type_strings+0x183c>
-  49d980:	b2d5c0ef          	jal	ra,3fa4ac <printf>
-  49d984:	4501                	li	a0,0
-  49d986:	4772                	lw	a4,28(sp)
-  49d988:	7c042783          	lw	a5,1984(s0)
-  49d98c:	00f70c63          	beq	a4,a5,49d9a4 <writeTimeout.constprop.0+0x5a>
-  49d990:	829580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49d994:	00049537          	lui	a0,0x49
-  49d998:	3e050513          	addi	a0,a0,992 # 493e0 <_rom_size_total+0x3c08>
-  49d99c:	e487d0ef          	jal	ra,41afe4 <usleep>
-  49d9a0:	4505                	li	a0,1
-  49d9a2:	b7d5                	j	49d986 <writeTimeout.constprop.0+0x3c>
-  49d9a4:	6105                	addi	sp,sp,32
-  49d9a6:	ec35c06f          	j	3fa868 <__riscv_restore_0>
+0049d958 <writeTimeout.constprop.0>:
+  49d958:	eed5c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49d95c:	0011d437          	lui	s0,0x11d
+  49d960:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49d964:	1101                	addi	sp,sp,-32
+  49d966:	4801                	li	a6,0
+  49d968:	ce3e                	sw	a5,28(sp)
+  49d96a:	4781                	li	a5,0
+  49d96c:	ca3e                	sw	a5,20(sp)
+  49d96e:	c62a                	sw	a0,12(sp)
+  49d970:	47c5                	li	a5,17
+  49d972:	0070                	addi	a2,sp,12
+  49d974:	0aa00593          	li	a1,170
+  49d978:	4501                	li	a0,0
+  49d97a:	cc42                	sw	a6,24(sp)
+  49d97c:	c83e                	sw	a5,16(sp)
+  49d97e:	f49780ef          	jal	ra,4168c6 <hi_i2c_write>
+  49d982:	c105                	beqz	a0,49d9a2 <writeTimeout.constprop.0+0x4a>
+  49d984:	85aa                	mv	a1,a0
+  49d986:	004ab537          	lui	a0,0x4ab
+  49d98a:	5f050513          	addi	a0,a0,1520 # 4ab5f0 <alarm_type_strings+0x183c>
+  49d98e:	b1f5c0ef          	jal	ra,3fa4ac <printf>
+  49d992:	4501                	li	a0,0
+  49d994:	4772                	lw	a4,28(sp)
+  49d996:	7c042783          	lw	a5,1984(s0)
+  49d99a:	00f70c63          	beq	a4,a5,49d9b2 <writeTimeout.constprop.0+0x5a>
+  49d99e:	81b580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49d9a2:	00049537          	lui	a0,0x49
+  49d9a6:	3e050513          	addi	a0,a0,992 # 493e0 <_rom_size_total+0x3c08>
+  49d9aa:	e3a7d0ef          	jal	ra,41afe4 <usleep>
+  49d9ae:	4505                	li	a0,1
+  49d9b0:	b7d5                	j	49d994 <writeTimeout.constprop.0+0x3c>
+  49d9b2:	6105                	addi	sp,sp,32
+  49d9b4:	eb55c06f          	j	3fa868 <__riscv_restore_0>
 
-0049d9aa <NT3HEraseAllTag>:
-  49d9aa:	e9b5c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49d9ae:	0011d437          	lui	s0,0x11d
-  49d9b2:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49d9b6:	1101                	addi	sp,sp,-32
-  49d9b8:	c602                	sw	zero,12(sp)
-  49d9ba:	ce3e                	sw	a5,28(sp)
-  49d9bc:	d00307b7          	lui	a5,0xd0030
-  49d9c0:	30178793          	addi	a5,a5,769 # d0030301 <__rom_data1_load+0xcfb7d6a1>
-  49d9c4:	c43e                	sw	a5,8(sp)
-  49d9c6:	0028                	addi	a0,sp,8
-  49d9c8:	57f9                	li	a5,-2
-  49d9ca:	c802                	sw	zero,16(sp)
-  49d9cc:	ca02                	sw	zero,20(sp)
-  49d9ce:	00010c23          	sb	zero,24(sp)
-  49d9d2:	00f10723          	sb	a5,14(sp)
-  49d9d6:	f75ff0ef          	jal	ra,49d94a <writeTimeout.constprop.0>
-  49d9da:	e511                	bnez	a0,49d9e6 <NT3HEraseAllTag+0x3c>
-  49d9dc:	000e67b7          	lui	a5,0xe6
-  49d9e0:	4719                	li	a4,6
-  49d9e2:	9ae7aa23          	sw	a4,-1612(a5) # e59b4 <errNo>
-  49d9e6:	4772                	lw	a4,28(sp)
-  49d9e8:	7c042783          	lw	a5,1984(s0)
-  49d9ec:	00f70463          	beq	a4,a5,49d9f4 <NT3HEraseAllTag+0x4a>
-  49d9f0:	fc8580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49d9f4:	6105                	addi	sp,sp,32
-  49d9f6:	e735c06f          	j	3fa868 <__riscv_restore_0>
+0049d9b8 <NT3HEraseAllTag>:
+  49d9b8:	e8d5c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49d9bc:	0011d437          	lui	s0,0x11d
+  49d9c0:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49d9c4:	1101                	addi	sp,sp,-32
+  49d9c6:	c602                	sw	zero,12(sp)
+  49d9c8:	ce3e                	sw	a5,28(sp)
+  49d9ca:	d00307b7          	lui	a5,0xd0030
+  49d9ce:	30178793          	addi	a5,a5,769 # d0030301 <__rom_data1_load+0xcfb7d6a1>
+  49d9d2:	c43e                	sw	a5,8(sp)
+  49d9d4:	0028                	addi	a0,sp,8
+  49d9d6:	57f9                	li	a5,-2
+  49d9d8:	c802                	sw	zero,16(sp)
+  49d9da:	ca02                	sw	zero,20(sp)
+  49d9dc:	00010c23          	sb	zero,24(sp)
+  49d9e0:	00f10723          	sb	a5,14(sp)
+  49d9e4:	f75ff0ef          	jal	ra,49d958 <writeTimeout.constprop.0>
+  49d9e8:	e511                	bnez	a0,49d9f4 <NT3HEraseAllTag+0x3c>
+  49d9ea:	000e67b7          	lui	a5,0xe6
+  49d9ee:	4719                	li	a4,6
+  49d9f0:	9ae7aa23          	sw	a4,-1612(a5) # e59b4 <errNo>
+  49d9f4:	4772                	lw	a4,28(sp)
+  49d9f6:	7c042783          	lw	a5,1984(s0)
+  49d9fa:	00f70463          	beq	a4,a5,49da02 <NT3HEraseAllTag+0x4a>
+  49d9fe:	fba580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49da02:	6105                	addi	sp,sp,32
+  49da04:	e655c06f          	j	3fa868 <__riscv_restore_0>
 
-0049d9fa <NT3HReadUserData>:
-  49d9fa:	e4b5c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49d9fe:	0011d7b7          	lui	a5,0x11d
-  49da02:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49da06:	1141                	addi	sp,sp,-16
-  49da08:	0505                	addi	a0,a0,1
-  49da0a:	c63a                	sw	a4,12(sp)
-  49da0c:	0ff57513          	andi	a0,a0,255
-  49da10:	03800713          	li	a4,56
-  49da14:	843e                	mv	s0,a5
-  49da16:	00a77f63          	bleu	a0,a4,49da34 <NT3HReadUserData+0x3a>
-  49da1a:	000e67b7          	lui	a5,0xe6
-  49da1e:	470d                	li	a4,3
-  49da20:	9ae7aa23          	sw	a4,-1612(a5) # e59b4 <errNo>
-  49da24:	4501                	li	a0,0
-  49da26:	4732                	lw	a4,12(sp)
-  49da28:	7c042783          	lw	a5,1984(s0)
-  49da2c:	02f70163          	beq	a4,a5,49da4e <NT3HReadUserData+0x54>
-  49da30:	f88580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49da34:	000e65b7          	lui	a1,0xe6
-  49da38:	9b858593          	addi	a1,a1,-1608 # e59b8 <nfcPageBuffer>
-  49da3c:	eb9ff0ef          	jal	ra,49d8f4 <readTimeout>
-  49da40:	f17d                	bnez	a0,49da26 <NT3HReadUserData+0x2c>
-  49da42:	000e67b7          	lui	a5,0xe6
-  49da46:	4711                	li	a4,4
-  49da48:	9ae7aa23          	sw	a4,-1612(a5) # e59b4 <errNo>
-  49da4c:	bfe9                	j	49da26 <NT3HReadUserData+0x2c>
-  49da4e:	0141                	addi	sp,sp,16
-  49da50:	e195c06f          	j	3fa868 <__riscv_restore_0>
+0049da08 <NT3HReadUserData>:
+  49da08:	e3d5c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49da0c:	0011d7b7          	lui	a5,0x11d
+  49da10:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49da14:	1141                	addi	sp,sp,-16
+  49da16:	0505                	addi	a0,a0,1
+  49da18:	c63a                	sw	a4,12(sp)
+  49da1a:	0ff57513          	andi	a0,a0,255
+  49da1e:	03800713          	li	a4,56
+  49da22:	843e                	mv	s0,a5
+  49da24:	00a77f63          	bleu	a0,a4,49da42 <NT3HReadUserData+0x3a>
+  49da28:	000e67b7          	lui	a5,0xe6
+  49da2c:	470d                	li	a4,3
+  49da2e:	9ae7aa23          	sw	a4,-1612(a5) # e59b4 <errNo>
+  49da32:	4501                	li	a0,0
+  49da34:	4732                	lw	a4,12(sp)
+  49da36:	7c042783          	lw	a5,1984(s0)
+  49da3a:	02f70163          	beq	a4,a5,49da5c <NT3HReadUserData+0x54>
+  49da3e:	f7a580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49da42:	000e65b7          	lui	a1,0xe6
+  49da46:	9b858593          	addi	a1,a1,-1608 # e59b8 <nfcPageBuffer>
+  49da4a:	eb9ff0ef          	jal	ra,49d902 <readTimeout>
+  49da4e:	f17d                	bnez	a0,49da34 <NT3HReadUserData+0x2c>
+  49da50:	000e67b7          	lui	a5,0xe6
+  49da54:	4711                	li	a4,4
+  49da56:	9ae7aa23          	sw	a4,-1612(a5) # e59b4 <errNo>
+  49da5a:	bfe9                	j	49da34 <NT3HReadUserData+0x2c>
+  49da5c:	0141                	addi	sp,sp,16
+  49da5e:	e0b5c06f          	j	3fa868 <__riscv_restore_0>
 
-0049da54 <NT3HReadHeaderNfc>:
-  49da54:	df15c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49da58:	0011d437          	lui	s0,0x11d
-  49da5c:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49da60:	1101                	addi	sp,sp,-32
-  49da62:	84aa                	mv	s1,a0
-  49da64:	00050023          	sb	zero,0(a0)
-  49da68:	4501                	li	a0,0
-  49da6a:	c62e                	sw	a1,12(sp)
-  49da6c:	ce3e                	sw	a5,28(sp)
-  49da6e:	f8dff0ef          	jal	ra,49d9fa <NT3HReadUserData>
-  49da72:	c121                	beqz	a0,49dab2 <NT3HReadHeaderNfc+0x5e>
-  49da74:	000e67b7          	lui	a5,0xe6
-  49da78:	9b878793          	addi	a5,a5,-1608 # e59b8 <nfcPageBuffer>
-  49da7c:	0007c683          	lbu	a3,0(a5)
-  49da80:	470d                	li	a4,3
-  49da82:	45b2                	lw	a1,12(sp)
-  49da84:	02e69063          	bne	a3,a4,49daa4 <NT3HReadHeaderNfc+0x50>
-  49da88:	0027c683          	lbu	a3,2(a5)
-  49da8c:	0d000713          	li	a4,208
-  49da90:	00e68a63          	beq	a3,a4,49daa4 <NT3HReadHeaderNfc+0x50>
-  49da94:	0017c703          	lbu	a4,1(a5)
-  49da98:	00e48023          	sb	a4,0(s1)
-  49da9c:	0027c783          	lbu	a5,2(a5)
-  49daa0:	00f58023          	sb	a5,0(a1)
-  49daa4:	4772                	lw	a4,28(sp)
-  49daa6:	7c042783          	lw	a5,1984(s0)
-  49daaa:	00f70a63          	beq	a4,a5,49dabe <NT3HReadHeaderNfc+0x6a>
-  49daae:	f0a580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49dab2:	000e67b7          	lui	a5,0xe6
-  49dab6:	4705                	li	a4,1
-  49dab8:	9ae7aa23          	sw	a4,-1612(a5) # e59b4 <errNo>
-  49dabc:	b7e5                	j	49daa4 <NT3HReadHeaderNfc+0x50>
-  49dabe:	6105                	addi	sp,sp,32
-  49dac0:	da95c06f          	j	3fa868 <__riscv_restore_0>
+0049da62 <NT3HReadHeaderNfc>:
+  49da62:	de35c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49da66:	0011d437          	lui	s0,0x11d
+  49da6a:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49da6e:	1101                	addi	sp,sp,-32
+  49da70:	84aa                	mv	s1,a0
+  49da72:	00050023          	sb	zero,0(a0)
+  49da76:	4501                	li	a0,0
+  49da78:	c62e                	sw	a1,12(sp)
+  49da7a:	ce3e                	sw	a5,28(sp)
+  49da7c:	f8dff0ef          	jal	ra,49da08 <NT3HReadUserData>
+  49da80:	c121                	beqz	a0,49dac0 <NT3HReadHeaderNfc+0x5e>
+  49da82:	000e67b7          	lui	a5,0xe6
+  49da86:	9b878793          	addi	a5,a5,-1608 # e59b8 <nfcPageBuffer>
+  49da8a:	0007c683          	lbu	a3,0(a5)
+  49da8e:	470d                	li	a4,3
+  49da90:	45b2                	lw	a1,12(sp)
+  49da92:	02e69063          	bne	a3,a4,49dab2 <NT3HReadHeaderNfc+0x50>
+  49da96:	0027c683          	lbu	a3,2(a5)
+  49da9a:	0d000713          	li	a4,208
+  49da9e:	00e68a63          	beq	a3,a4,49dab2 <NT3HReadHeaderNfc+0x50>
+  49daa2:	0017c703          	lbu	a4,1(a5)
+  49daa6:	00e48023          	sb	a4,0(s1)
+  49daaa:	0027c783          	lbu	a5,2(a5)
+  49daae:	00f58023          	sb	a5,0(a1)
+  49dab2:	4772                	lw	a4,28(sp)
+  49dab4:	7c042783          	lw	a5,1984(s0)
+  49dab8:	00f70a63          	beq	a4,a5,49dacc <NT3HReadHeaderNfc+0x6a>
+  49dabc:	efc580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49dac0:	000e67b7          	lui	a5,0xe6
+  49dac4:	4705                	li	a4,1
+  49dac6:	9ae7aa23          	sw	a4,-1612(a5) # e59b4 <errNo>
+  49daca:	b7e5                	j	49dab2 <NT3HReadHeaderNfc+0x50>
+  49dacc:	6105                	addi	sp,sp,32
+  49dace:	d9b5c06f          	j	3fa868 <__riscv_restore_0>
 
-0049dac4 <NT3HWriteUserData>:
-  49dac4:	d815c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49dac8:	0011d7b7          	lui	a5,0x11d
-  49dacc:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49dad0:	1101                	addi	sp,sp,-32
-  49dad2:	0505                	addi	a0,a0,1
-  49dad4:	ce3a                	sw	a4,28(sp)
-  49dad6:	0ff57513          	andi	a0,a0,255
-  49dada:	03800713          	li	a4,56
-  49dade:	843e                	mv	s0,a5
-  49dae0:	00a77f63          	bleu	a0,a4,49dafe <NT3HWriteUserData+0x3a>
-  49dae4:	000e67b7          	lui	a5,0xe6
-  49dae8:	470d                	li	a4,3
-  49daea:	9ae7aa23          	sw	a4,-1612(a5) # e59b4 <errNo>
-  49daee:	4501                	li	a0,0
-  49daf0:	4772                	lw	a4,28(sp)
-  49daf2:	7c042783          	lw	a5,1984(s0)
-  49daf6:	02f70763          	beq	a4,a5,49db24 <NT3HWriteUserData+0x60>
-  49dafa:	ebe580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49dafe:	862e                	mv	a2,a1
-  49db00:	00a10423          	sb	a0,8(sp)
-  49db04:	46c1                	li	a3,16
-  49db06:	45c1                	li	a1,16
-  49db08:	00910513          	addi	a0,sp,9
-  49db0c:	d175d0ef          	jal	ra,3fb822 <memcpy_s>
-  49db10:	0028                	addi	a0,sp,8
-  49db12:	e39ff0ef          	jal	ra,49d94a <writeTimeout.constprop.0>
-  49db16:	fd69                	bnez	a0,49daf0 <NT3HWriteUserData+0x2c>
-  49db18:	000e67b7          	lui	a5,0xe6
-  49db1c:	4715                	li	a4,5
-  49db1e:	9ae7aa23          	sw	a4,-1612(a5) # e59b4 <errNo>
-  49db22:	b7f9                	j	49daf0 <NT3HWriteUserData+0x2c>
-  49db24:	6105                	addi	sp,sp,32
-  49db26:	d435c06f          	j	3fa868 <__riscv_restore_0>
+0049dad2 <NT3HWriteUserData>:
+  49dad2:	d735c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49dad6:	0011d7b7          	lui	a5,0x11d
+  49dada:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49dade:	1101                	addi	sp,sp,-32
+  49dae0:	0505                	addi	a0,a0,1
+  49dae2:	ce3a                	sw	a4,28(sp)
+  49dae4:	0ff57513          	andi	a0,a0,255
+  49dae8:	03800713          	li	a4,56
+  49daec:	843e                	mv	s0,a5
+  49daee:	00a77f63          	bleu	a0,a4,49db0c <NT3HWriteUserData+0x3a>
+  49daf2:	000e67b7          	lui	a5,0xe6
+  49daf6:	470d                	li	a4,3
+  49daf8:	9ae7aa23          	sw	a4,-1612(a5) # e59b4 <errNo>
+  49dafc:	4501                	li	a0,0
+  49dafe:	4772                	lw	a4,28(sp)
+  49db00:	7c042783          	lw	a5,1984(s0)
+  49db04:	02f70763          	beq	a4,a5,49db32 <NT3HWriteUserData+0x60>
+  49db08:	eb0580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49db0c:	862e                	mv	a2,a1
+  49db0e:	00a10423          	sb	a0,8(sp)
+  49db12:	46c1                	li	a3,16
+  49db14:	45c1                	li	a1,16
+  49db16:	00910513          	addi	a0,sp,9
+  49db1a:	d095d0ef          	jal	ra,3fb822 <memcpy_s>
+  49db1e:	0028                	addi	a0,sp,8
+  49db20:	e39ff0ef          	jal	ra,49d958 <writeTimeout.constprop.0>
+  49db24:	fd69                	bnez	a0,49dafe <NT3HWriteUserData+0x2c>
+  49db26:	000e67b7          	lui	a5,0xe6
+  49db2a:	4715                	li	a4,5
+  49db2c:	9ae7aa23          	sw	a4,-1612(a5) # e59b4 <errNo>
+  49db30:	b7f9                	j	49dafe <NT3HWriteUserData+0x2c>
+  49db32:	6105                	addi	sp,sp,32
+  49db34:	d355c06f          	j	3fa868 <__riscv_restore_0>
 
-0049db2a <oled_show_string_direct.isra.0>:
-  49db2a:	ceb5c2ef          	jal	t0,3fa814 <__riscv_save_12>
-  49db2e:	0011d9b7          	lui	s3,0x11d
-  49db32:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
-  49db36:	1101                	addi	sp,sp,-32
-  49db38:	8c2a                	mv	s8,a0
-  49db3a:	8aae                	mv	s5,a1
-  49db3c:	8a32                	mv	s4,a2
-  49db3e:	ce3e                	sw	a5,28(sp)
-  49db40:	2bb000ef          	jal	ra,49e5fa <oled_driver_is_initialized>
-  49db44:	c519                	beqz	a0,49db52 <oled_show_string_direct.isra.0+0x28>
-  49db46:	4b1d                	li	s6,7
-  49db48:	03f00b93          	li	s7,63
-  49db4c:	000a0503          	lb	a0,0(s4)
-  49db50:	e901                	bnez	a0,49db60 <oled_show_string_direct.isra.0+0x36>
-  49db52:	4772                	lw	a4,28(sp)
-  49db54:	7c09a783          	lw	a5,1984(s3)
-  49db58:	08f70263          	beq	a4,a5,49dbdc <oled_show_string_direct.isra.0+0xb2>
-  49db5c:	e5c580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49db60:	158020ef          	jal	ra,49fcb8 <songti_font_get_char_data>
-  49db64:	8caa                	mv	s9,a0
-  49db66:	000a0503          	lb	a0,0(s4)
-  49db6a:	4481                	li	s1,0
-  49db6c:	100020ef          	jal	ra,49fc6c <songti_font_get_char_width>
-  49db70:	842a                	mv	s0,a0
-  49db72:	120020ef          	jal	ra,49fc92 <songti_font_get_char_height>
-  49db76:	8daa                	mv	s11,a0
-  49db78:	0ff4f793          	andi	a5,s1,255
-  49db7c:	01b7ea63          	bltu	a5,s11,49db90 <oled_show_string_direct.isra.0+0x66>
-  49db80:	0405                	addi	s0,s0,1
-  49db82:	9462                	add	s0,s0,s8
-  49db84:	01041c13          	slli	s8,s0,0x10
-  49db88:	010c5c13          	srli	s8,s8,0x10
-  49db8c:	0a05                	addi	s4,s4,1
-  49db8e:	bf7d                	j	49db4c <oled_show_string_direct.isra.0+0x22>
-  49db90:	009c87b3          	add	a5,s9,s1
-  49db94:	009a8d33          	add	s10,s5,s1
-  49db98:	0007c703          	lbu	a4,0(a5)
-  49db9c:	010d1693          	slli	a3,s10,0x10
-  49dba0:	4901                	li	s2,0
-  49dba2:	82c1                	srli	a3,a3,0x10
-  49dba4:	0ff97793          	andi	a5,s2,255
-  49dba8:	0087e463          	bltu	a5,s0,49dbb0 <oled_show_string_direct.isra.0+0x86>
-  49dbac:	0485                	addi	s1,s1,1
-  49dbae:	b7e9                	j	49db78 <oled_show_string_direct.isra.0+0x4e>
-  49dbb0:	412b07b3          	sub	a5,s6,s2
-  49dbb4:	40f757b3          	sra	a5,a4,a5
-  49dbb8:	8b85                	andi	a5,a5,1
-  49dbba:	cf99                	beqz	a5,49dbd8 <oled_show_string_direct.isra.0+0xae>
-  49dbbc:	01abee63          	bltu	s7,s10,49dbd8 <oled_show_string_direct.isra.0+0xae>
-  49dbc0:	012c0533          	add	a0,s8,s2
-  49dbc4:	0542                	slli	a0,a0,0x10
-  49dbc6:	85b6                	mv	a1,a3
-  49dbc8:	4605                	li	a2,1
-  49dbca:	8141                	srli	a0,a0,0x10
-  49dbcc:	c63a                	sw	a4,12(sp)
-  49dbce:	c436                	sw	a3,8(sp)
-  49dbd0:	1ad000ef          	jal	ra,49e57c <oled_driver_draw_pixel>
-  49dbd4:	4732                	lw	a4,12(sp)
-  49dbd6:	46a2                	lw	a3,8(sp)
-  49dbd8:	0905                	addi	s2,s2,1
-  49dbda:	b7e9                	j	49dba4 <oled_show_string_direct.isra.0+0x7a>
-  49dbdc:	6105                	addi	sp,sp,32
-  49dbde:	c735c06f          	j	3fa850 <__riscv_restore_12>
+0049db38 <oled_show_string_direct.isra.0>:
+  49db38:	cdd5c2ef          	jal	t0,3fa814 <__riscv_save_12>
+  49db3c:	0011d9b7          	lui	s3,0x11d
+  49db40:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
+  49db44:	1101                	addi	sp,sp,-32
+  49db46:	8c2a                	mv	s8,a0
+  49db48:	8aae                	mv	s5,a1
+  49db4a:	8a32                	mv	s4,a2
+  49db4c:	ce3e                	sw	a5,28(sp)
+  49db4e:	2bb000ef          	jal	ra,49e608 <oled_driver_is_initialized>
+  49db52:	c519                	beqz	a0,49db60 <oled_show_string_direct.isra.0+0x28>
+  49db54:	4b1d                	li	s6,7
+  49db56:	03f00b93          	li	s7,63
+  49db5a:	000a0503          	lb	a0,0(s4)
+  49db5e:	e901                	bnez	a0,49db6e <oled_show_string_direct.isra.0+0x36>
+  49db60:	4772                	lw	a4,28(sp)
+  49db62:	7c09a783          	lw	a5,1984(s3)
+  49db66:	08f70263          	beq	a4,a5,49dbea <oled_show_string_direct.isra.0+0xb2>
+  49db6a:	e4e580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49db6e:	158020ef          	jal	ra,49fcc6 <songti_font_get_char_data>
+  49db72:	8caa                	mv	s9,a0
+  49db74:	000a0503          	lb	a0,0(s4)
+  49db78:	4481                	li	s1,0
+  49db7a:	100020ef          	jal	ra,49fc7a <songti_font_get_char_width>
+  49db7e:	842a                	mv	s0,a0
+  49db80:	120020ef          	jal	ra,49fca0 <songti_font_get_char_height>
+  49db84:	8daa                	mv	s11,a0
+  49db86:	0ff4f793          	andi	a5,s1,255
+  49db8a:	01b7ea63          	bltu	a5,s11,49db9e <oled_show_string_direct.isra.0+0x66>
+  49db8e:	0405                	addi	s0,s0,1
+  49db90:	9462                	add	s0,s0,s8
+  49db92:	01041c13          	slli	s8,s0,0x10
+  49db96:	010c5c13          	srli	s8,s8,0x10
+  49db9a:	0a05                	addi	s4,s4,1
+  49db9c:	bf7d                	j	49db5a <oled_show_string_direct.isra.0+0x22>
+  49db9e:	009c87b3          	add	a5,s9,s1
+  49dba2:	009a8d33          	add	s10,s5,s1
+  49dba6:	0007c703          	lbu	a4,0(a5)
+  49dbaa:	010d1693          	slli	a3,s10,0x10
+  49dbae:	4901                	li	s2,0
+  49dbb0:	82c1                	srli	a3,a3,0x10
+  49dbb2:	0ff97793          	andi	a5,s2,255
+  49dbb6:	0087e463          	bltu	a5,s0,49dbbe <oled_show_string_direct.isra.0+0x86>
+  49dbba:	0485                	addi	s1,s1,1
+  49dbbc:	b7e9                	j	49db86 <oled_show_string_direct.isra.0+0x4e>
+  49dbbe:	412b07b3          	sub	a5,s6,s2
+  49dbc2:	40f757b3          	sra	a5,a4,a5
+  49dbc6:	8b85                	andi	a5,a5,1
+  49dbc8:	cf99                	beqz	a5,49dbe6 <oled_show_string_direct.isra.0+0xae>
+  49dbca:	01abee63          	bltu	s7,s10,49dbe6 <oled_show_string_direct.isra.0+0xae>
+  49dbce:	012c0533          	add	a0,s8,s2
+  49dbd2:	0542                	slli	a0,a0,0x10
+  49dbd4:	85b6                	mv	a1,a3
+  49dbd6:	4605                	li	a2,1
+  49dbd8:	8141                	srli	a0,a0,0x10
+  49dbda:	c63a                	sw	a4,12(sp)
+  49dbdc:	c436                	sw	a3,8(sp)
+  49dbde:	1ad000ef          	jal	ra,49e58a <oled_driver_draw_pixel>
+  49dbe2:	4732                	lw	a4,12(sp)
+  49dbe4:	46a2                	lw	a3,8(sp)
+  49dbe6:	0905                	addi	s2,s2,1
+  49dbe8:	b7e9                	j	49dbb2 <oled_show_string_direct.isra.0+0x7a>
+  49dbea:	6105                	addi	sp,sp,32
+  49dbec:	c655c06f          	j	3fa850 <__riscv_restore_12>
 
-0049dbe2 <OLED_RefreshTask>:
-  49dbe2:	c495c2ef          	jal	t0,3fa82a <__riscv_save_4>
-  49dbe6:	0011d7b7          	lui	a5,0x11d
-  49dbea:	7c07a783          	lw	a5,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49dbee:	711d                	addi	sp,sp,-96
-  49dbf0:	000e6937          	lui	s2,0xe6
-  49dbf4:	cebe                	sw	a5,92(sp)
-  49dbf6:	1dc020ef          	jal	ra,49fdd2 <Time_GetCurrentMs>
-  49dbfa:	842a                	mv	s0,a0
-  49dbfc:	004aba37          	lui	s4,0x4ab
-  49dc00:	06300993          	li	s3,99
-  49dc04:	1ce020ef          	jal	ra,49fdd2 <Time_GetCurrentMs>
-  49dc08:	84aa                	mv	s1,a0
-  49dc0a:	9cc92503          	lw	a0,-1588(s2) # e59cc <g_oled_queue>
-  49dc0e:	4681                	li	a3,0
-  49dc10:	4601                	li	a2,0
-  49dc12:	858a                	mv	a1,sp
-  49dc14:	9dcf80ef          	jal	ra,495df0 <osMessageQueueGet>
-  49dc18:	e51d                	bnez	a0,49dc46 <OLED_RefreshTask+0x64>
-  49dc1a:	04514783          	lbu	a5,69(sp)
-  49dc1e:	0050                	addi	a2,sp,4
-  49dc20:	cb99                	beqz	a5,49dc36 <OLED_RefreshTask+0x54>
-  49dc22:	4726                	lw	a4,72(sp)
-  49dc24:	04c14683          	lbu	a3,76(sp)
-  49dc28:	6eca0613          	addi	a2,s4,1772 # 4ab6ec <alarm_type_strings+0x1938>
-  49dc2c:	45b1                	li	a1,12
-  49dc2e:	0888                	addi	a0,sp,80
-  49dc30:	b9aac0ef          	jal	ra,449fca <snprintf>
-  49dc34:	0890                	addi	a2,sp,80
-  49dc36:	00215583          	lhu	a1,2(sp)
-  49dc3a:	00015503          	lhu	a0,0(sp)
-  49dc3e:	eedff0ef          	jal	ra,49db2a <oled_show_string_direct.isra.0>
-  49dc42:	0ab000ef          	jal	ra,49e4ec <oled_driver_refresh_partial>
-  49dc46:	408487b3          	sub	a5,s1,s0
-  49dc4a:	00f9f563          	bleu	a5,s3,49dc54 <OLED_RefreshTask+0x72>
-  49dc4e:	622000ef          	jal	ra,49e270 <oled_driver_refresh>
-  49dc52:	8426                	mv	s0,s1
-  49dc54:	4529                	li	a0,10
-  49dc56:	1c0020ef          	jal	ra,49fe16 <Time_DelayMs>
-  49dc5a:	b76d                	j	49dc04 <OLED_RefreshTask+0x22>
+0049dbf0 <OLED_RefreshTask>:
+  49dbf0:	c3b5c2ef          	jal	t0,3fa82a <__riscv_save_4>
+  49dbf4:	0011d7b7          	lui	a5,0x11d
+  49dbf8:	7c07a783          	lw	a5,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49dbfc:	711d                	addi	sp,sp,-96
+  49dbfe:	000e6937          	lui	s2,0xe6
+  49dc02:	cebe                	sw	a5,92(sp)
+  49dc04:	1dc020ef          	jal	ra,49fde0 <Time_GetCurrentMs>
+  49dc08:	842a                	mv	s0,a0
+  49dc0a:	004aba37          	lui	s4,0x4ab
+  49dc0e:	06300993          	li	s3,99
+  49dc12:	1ce020ef          	jal	ra,49fde0 <Time_GetCurrentMs>
+  49dc16:	84aa                	mv	s1,a0
+  49dc18:	9cc92503          	lw	a0,-1588(s2) # e59cc <g_oled_queue>
+  49dc1c:	4681                	li	a3,0
+  49dc1e:	4601                	li	a2,0
+  49dc20:	858a                	mv	a1,sp
+  49dc22:	9cef80ef          	jal	ra,495df0 <osMessageQueueGet>
+  49dc26:	e51d                	bnez	a0,49dc54 <OLED_RefreshTask+0x64>
+  49dc28:	04514783          	lbu	a5,69(sp)
+  49dc2c:	0050                	addi	a2,sp,4
+  49dc2e:	cb99                	beqz	a5,49dc44 <OLED_RefreshTask+0x54>
+  49dc30:	4726                	lw	a4,72(sp)
+  49dc32:	04c14683          	lbu	a3,76(sp)
+  49dc36:	6eca0613          	addi	a2,s4,1772 # 4ab6ec <alarm_type_strings+0x1938>
+  49dc3a:	45b1                	li	a1,12
+  49dc3c:	0888                	addi	a0,sp,80
+  49dc3e:	b8cac0ef          	jal	ra,449fca <snprintf>
+  49dc42:	0890                	addi	a2,sp,80
+  49dc44:	00215583          	lhu	a1,2(sp)
+  49dc48:	00015503          	lhu	a0,0(sp)
+  49dc4c:	eedff0ef          	jal	ra,49db38 <oled_show_string_direct.isra.0>
+  49dc50:	0ab000ef          	jal	ra,49e4fa <oled_driver_refresh_partial>
+  49dc54:	408487b3          	sub	a5,s1,s0
+  49dc58:	00f9f563          	bleu	a5,s3,49dc62 <OLED_RefreshTask+0x72>
+  49dc5c:	622000ef          	jal	ra,49e27e <oled_driver_refresh>
+  49dc60:	8426                	mv	s0,s1
+  49dc62:	4529                	li	a0,10
+  49dc64:	1c0020ef          	jal	ra,49fe24 <Time_DelayMs>
+  49dc68:	b76d                	j	49dc12 <OLED_RefreshTask+0x22>
 
-0049dc5c <OLED_Init>:
-  49dc5c:	bcf5c2ef          	jal	t0,3fa82a <__riscv_save_4>
-  49dc60:	0011d7b7          	lui	a5,0x11d
-  49dc64:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49dc68:	000e64b7          	lui	s1,0xe6
-  49dc6c:	7139                	addi	sp,sp,-64
-  49dc6e:	9c848493          	addi	s1,s1,-1592 # e59c8 <g_oled_initialized>
-  49dc72:	de3a                	sw	a4,60(sp)
-  49dc74:	0004c703          	lbu	a4,0(s1)
-  49dc78:	89be                	mv	s3,a5
-  49dc7a:	4401                	li	s0,0
-  49dc7c:	ef01                	bnez	a4,49dc94 <OLED_Init+0x38>
-  49dc7e:	674000ef          	jal	ra,49e2f2 <oled_driver_init>
-  49dc82:	842a                	mv	s0,a0
-  49dc84:	c105                	beqz	a0,49dca4 <OLED_Init+0x48>
-  49dc86:	004ab537          	lui	a0,0x4ab
-  49dc8a:	62050513          	addi	a0,a0,1568 # 4ab620 <alarm_type_strings+0x186c>
-  49dc8e:	81f5c0ef          	jal	ra,3fa4ac <printf>
-  49dc92:	547d                	li	s0,-1
-  49dc94:	5772                	lw	a4,60(sp)
-  49dc96:	7c09a783          	lw	a5,1984(s3)
-  49dc9a:	8522                	mv	a0,s0
-  49dc9c:	0af70563          	beq	a4,a5,49dd46 <OLED_Init+0xea>
-  49dca0:	d18580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49dca4:	004ab7b7          	lui	a5,0x4ab
-  49dca8:	64478793          	addi	a5,a5,1604 # 4ab644 <alarm_type_strings+0x1890>
-  49dcac:	860a                	mv	a2,sp
-  49dcae:	05000593          	li	a1,80
-  49dcb2:	4515                	li	a0,5
-  49dcb4:	000e6937          	lui	s2,0xe6
-  49dcb8:	c03e                	sw	a5,0(sp)
-  49dcba:	c202                	sw	zero,4(sp)
-  49dcbc:	c402                	sw	zero,8(sp)
-  49dcbe:	c602                	sw	zero,12(sp)
-  49dcc0:	c802                	sw	zero,16(sp)
-  49dcc2:	ca02                	sw	zero,20(sp)
-  49dcc4:	9cc90913          	addi	s2,s2,-1588 # e59cc <g_oled_queue>
-  49dcc8:	860f80ef          	jal	ra,495d28 <osMessageQueueNew>
-  49dccc:	00a92023          	sw	a0,0(s2)
-  49dcd0:	e909                	bnez	a0,49dce2 <OLED_Init+0x86>
-  49dcd2:	004ab537          	lui	a0,0x4ab
-  49dcd6:	65050513          	addi	a0,a0,1616 # 4ab650 <alarm_type_strings+0x189c>
-  49dcda:	fd25c0ef          	jal	ra,3fa4ac <printf>
-  49dcde:	296d                	jal	49e198 <oled_driver_deinit>
-  49dce0:	bf4d                	j	49dc92 <OLED_Init+0x36>
-  49dce2:	02000613          	li	a2,32
-  49dce6:	4581                	li	a1,0
-  49dce8:	0868                	addi	a0,sp,28
-  49dcea:	e105d0ef          	jal	ra,3fb2fa <memset>
-  49dcee:	004ab7b7          	lui	a5,0x4ab
-  49dcf2:	67878793          	addi	a5,a5,1656 # 4ab678 <alarm_type_strings+0x18c4>
-  49dcf6:	cc3e                	sw	a5,24(sp)
-  49dcf8:	0049e537          	lui	a0,0x49e
-  49dcfc:	40000793          	li	a5,1024
-  49dd00:	d63e                	sw	a5,44(sp)
-  49dd02:	0830                	addi	a2,sp,24
-  49dd04:	47c1                	li	a5,16
-  49dd06:	4581                	li	a1,0
-  49dd08:	be250513          	addi	a0,a0,-1054 # 49dbe2 <OLED_RefreshTask>
-  49dd0c:	d83e                	sw	a5,48(sp)
-  49dd0e:	cdff70ef          	jal	ra,4959ec <osThreadNew>
-  49dd12:	000e67b7          	lui	a5,0xe6
-  49dd16:	9ca7a823          	sw	a0,-1584(a5) # e59d0 <g_oled_task>
-  49dd1a:	ed01                	bnez	a0,49dd32 <OLED_Init+0xd6>
-  49dd1c:	004ab537          	lui	a0,0x4ab
-  49dd20:	68450513          	addi	a0,a0,1668 # 4ab684 <alarm_type_strings+0x18d0>
-  49dd24:	f885c0ef          	jal	ra,3fa4ac <printf>
-  49dd28:	00092503          	lw	a0,0(s2)
-  49dd2c:	92ef80ef          	jal	ra,495e5a <osMessageQueueDelete>
-  49dd30:	b77d                	j	49dcde <OLED_Init+0x82>
-  49dd32:	004ab537          	lui	a0,0x4ab
-  49dd36:	4785                	li	a5,1
-  49dd38:	6ac50513          	addi	a0,a0,1708 # 4ab6ac <alarm_type_strings+0x18f8>
-  49dd3c:	00f48023          	sb	a5,0(s1)
-  49dd40:	f6c5c0ef          	jal	ra,3fa4ac <printf>
-  49dd44:	bf81                	j	49dc94 <OLED_Init+0x38>
-  49dd46:	6121                	addi	sp,sp,64
-  49dd48:	b175c06f          	j	3fa85e <__riscv_restore_4>
+0049dc6a <OLED_Init>:
+  49dc6a:	bc15c2ef          	jal	t0,3fa82a <__riscv_save_4>
+  49dc6e:	0011d7b7          	lui	a5,0x11d
+  49dc72:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49dc76:	000e64b7          	lui	s1,0xe6
+  49dc7a:	7139                	addi	sp,sp,-64
+  49dc7c:	9c848493          	addi	s1,s1,-1592 # e59c8 <g_oled_initialized>
+  49dc80:	de3a                	sw	a4,60(sp)
+  49dc82:	0004c703          	lbu	a4,0(s1)
+  49dc86:	89be                	mv	s3,a5
+  49dc88:	4401                	li	s0,0
+  49dc8a:	ef01                	bnez	a4,49dca2 <OLED_Init+0x38>
+  49dc8c:	674000ef          	jal	ra,49e300 <oled_driver_init>
+  49dc90:	842a                	mv	s0,a0
+  49dc92:	c105                	beqz	a0,49dcb2 <OLED_Init+0x48>
+  49dc94:	004ab537          	lui	a0,0x4ab
+  49dc98:	62050513          	addi	a0,a0,1568 # 4ab620 <alarm_type_strings+0x186c>
+  49dc9c:	8115c0ef          	jal	ra,3fa4ac <printf>
+  49dca0:	547d                	li	s0,-1
+  49dca2:	5772                	lw	a4,60(sp)
+  49dca4:	7c09a783          	lw	a5,1984(s3)
+  49dca8:	8522                	mv	a0,s0
+  49dcaa:	0af70563          	beq	a4,a5,49dd54 <OLED_Init+0xea>
+  49dcae:	d0a580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49dcb2:	004ab7b7          	lui	a5,0x4ab
+  49dcb6:	64478793          	addi	a5,a5,1604 # 4ab644 <alarm_type_strings+0x1890>
+  49dcba:	860a                	mv	a2,sp
+  49dcbc:	05000593          	li	a1,80
+  49dcc0:	4515                	li	a0,5
+  49dcc2:	000e6937          	lui	s2,0xe6
+  49dcc6:	c03e                	sw	a5,0(sp)
+  49dcc8:	c202                	sw	zero,4(sp)
+  49dcca:	c402                	sw	zero,8(sp)
+  49dccc:	c602                	sw	zero,12(sp)
+  49dcce:	c802                	sw	zero,16(sp)
+  49dcd0:	ca02                	sw	zero,20(sp)
+  49dcd2:	9cc90913          	addi	s2,s2,-1588 # e59cc <g_oled_queue>
+  49dcd6:	852f80ef          	jal	ra,495d28 <osMessageQueueNew>
+  49dcda:	00a92023          	sw	a0,0(s2)
+  49dcde:	e909                	bnez	a0,49dcf0 <OLED_Init+0x86>
+  49dce0:	004ab537          	lui	a0,0x4ab
+  49dce4:	65050513          	addi	a0,a0,1616 # 4ab650 <alarm_type_strings+0x189c>
+  49dce8:	fc45c0ef          	jal	ra,3fa4ac <printf>
+  49dcec:	296d                	jal	49e1a6 <oled_driver_deinit>
+  49dcee:	bf4d                	j	49dca0 <OLED_Init+0x36>
+  49dcf0:	02000613          	li	a2,32
+  49dcf4:	4581                	li	a1,0
+  49dcf6:	0868                	addi	a0,sp,28
+  49dcf8:	e025d0ef          	jal	ra,3fb2fa <memset>
+  49dcfc:	004ab7b7          	lui	a5,0x4ab
+  49dd00:	67878793          	addi	a5,a5,1656 # 4ab678 <alarm_type_strings+0x18c4>
+  49dd04:	cc3e                	sw	a5,24(sp)
+  49dd06:	0049e537          	lui	a0,0x49e
+  49dd0a:	40000793          	li	a5,1024
+  49dd0e:	d63e                	sw	a5,44(sp)
+  49dd10:	0830                	addi	a2,sp,24
+  49dd12:	47c1                	li	a5,16
+  49dd14:	4581                	li	a1,0
+  49dd16:	bf050513          	addi	a0,a0,-1040 # 49dbf0 <OLED_RefreshTask>
+  49dd1a:	d83e                	sw	a5,48(sp)
+  49dd1c:	cd1f70ef          	jal	ra,4959ec <osThreadNew>
+  49dd20:	000e67b7          	lui	a5,0xe6
+  49dd24:	9ca7a823          	sw	a0,-1584(a5) # e59d0 <g_oled_task>
+  49dd28:	ed01                	bnez	a0,49dd40 <OLED_Init+0xd6>
+  49dd2a:	004ab537          	lui	a0,0x4ab
+  49dd2e:	68450513          	addi	a0,a0,1668 # 4ab684 <alarm_type_strings+0x18d0>
+  49dd32:	f7a5c0ef          	jal	ra,3fa4ac <printf>
+  49dd36:	00092503          	lw	a0,0(s2)
+  49dd3a:	920f80ef          	jal	ra,495e5a <osMessageQueueDelete>
+  49dd3e:	b77d                	j	49dcec <OLED_Init+0x82>
+  49dd40:	004ab537          	lui	a0,0x4ab
+  49dd44:	4785                	li	a5,1
+  49dd46:	6ac50513          	addi	a0,a0,1708 # 4ab6ac <alarm_type_strings+0x18f8>
+  49dd4a:	00f48023          	sb	a5,0(s1)
+  49dd4e:	f5e5c0ef          	jal	ra,3fa4ac <printf>
+  49dd52:	bf81                	j	49dca2 <OLED_Init+0x38>
+  49dd54:	6121                	addi	sp,sp,64
+  49dd56:	b095c06f          	j	3fa85e <__riscv_restore_4>
 
-0049dd4c <OLED_Clear>:
-  49dd4c:	af95c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49dd50:	0011d437          	lui	s0,0x11d
-  49dd54:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49dd58:	1141                	addi	sp,sp,-16
-  49dd5a:	c63e                	sw	a5,12(sp)
-  49dd5c:	294d                	jal	49e20e <oled_driver_clear>
-  49dd5e:	4732                	lw	a4,12(sp)
-  49dd60:	7c042783          	lw	a5,1984(s0)
-  49dd64:	00f70463          	beq	a4,a5,49dd6c <OLED_Clear+0x20>
-  49dd68:	c50580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49dd6c:	0141                	addi	sp,sp,16
-  49dd6e:	afb5c06f          	j	3fa868 <__riscv_restore_0>
+0049dd5a <OLED_Clear>:
+  49dd5a:	aeb5c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49dd5e:	0011d437          	lui	s0,0x11d
+  49dd62:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49dd66:	1141                	addi	sp,sp,-16
+  49dd68:	c63e                	sw	a5,12(sp)
+  49dd6a:	294d                	jal	49e21c <oled_driver_clear>
+  49dd6c:	4732                	lw	a4,12(sp)
+  49dd6e:	7c042783          	lw	a5,1984(s0)
+  49dd72:	00f70463          	beq	a4,a5,49dd7a <OLED_Clear+0x20>
+  49dd76:	c42580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49dd7a:	0141                	addi	sp,sp,16
+  49dd7c:	aed5c06f          	j	3fa868 <__riscv_restore_0>
 
-0049dd72 <OLED_Refresh>:
-  49dd72:	ad35c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49dd76:	0011d7b7          	lui	a5,0x11d
-  49dd7a:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49dd7e:	1141                	addi	sp,sp,-16
-  49dd80:	843e                	mv	s0,a5
-  49dd82:	c63a                	sw	a4,12(sp)
-  49dd84:	000e6737          	lui	a4,0xe6
-  49dd88:	9c874703          	lbu	a4,-1592(a4) # e59c8 <g_oled_initialized>
-  49dd8c:	c311                	beqz	a4,49dd90 <OLED_Refresh+0x1e>
-  49dd8e:	21cd                	jal	49e270 <oled_driver_refresh>
-  49dd90:	4732                	lw	a4,12(sp)
-  49dd92:	7c042783          	lw	a5,1984(s0)
-  49dd96:	00f70463          	beq	a4,a5,49dd9e <OLED_Refresh+0x2c>
-  49dd9a:	c1e580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49dd9e:	0141                	addi	sp,sp,16
-  49dda0:	ac95c06f          	j	3fa868 <__riscv_restore_0>
+0049dd80 <OLED_Refresh>:
+  49dd80:	ac55c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49dd84:	0011d7b7          	lui	a5,0x11d
+  49dd88:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49dd8c:	1141                	addi	sp,sp,-16
+  49dd8e:	843e                	mv	s0,a5
+  49dd90:	c63a                	sw	a4,12(sp)
+  49dd92:	000e6737          	lui	a4,0xe6
+  49dd96:	9c874703          	lbu	a4,-1592(a4) # e59c8 <g_oled_initialized>
+  49dd9a:	c311                	beqz	a4,49dd9e <OLED_Refresh+0x1e>
+  49dd9c:	21cd                	jal	49e27e <oled_driver_refresh>
+  49dd9e:	4732                	lw	a4,12(sp)
+  49dda0:	7c042783          	lw	a5,1984(s0)
+  49dda4:	00f70463          	beq	a4,a5,49ddac <OLED_Refresh+0x2c>
+  49dda8:	c10580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49ddac:	0141                	addi	sp,sp,16
+  49ddae:	abb5c06f          	j	3fa868 <__riscv_restore_0>
 
-0049dda4 <OLED_ShowString>:
-  49dda4:	a715c2ef          	jal	t0,3fa814 <__riscv_save_12>
-  49dda8:	0011d9b7          	lui	s3,0x11d
-  49ddac:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
-  49ddb0:	1101                	addi	sp,sp,-32
-  49ddb2:	ce3e                	sw	a5,28(sp)
-  49ddb4:	000e67b7          	lui	a5,0xe6
-  49ddb8:	9c87c783          	lbu	a5,-1592(a5) # e59c8 <g_oled_initialized>
-  49ddbc:	cb91                	beqz	a5,49ddd0 <OLED_ShowString+0x2c>
-  49ddbe:	8caa                	mv	s9,a0
-  49ddc0:	8aae                	mv	s5,a1
-  49ddc2:	8a32                	mv	s4,a2
-  49ddc4:	4b1d                	li	s6,7
-  49ddc6:	03f00b93          	li	s7,63
-  49ddca:	000a0503          	lb	a0,0(s4)
-  49ddce:	e901                	bnez	a0,49ddde <OLED_ShowString+0x3a>
-  49ddd0:	4772                	lw	a4,28(sp)
-  49ddd2:	7c09a783          	lw	a5,1984(s3)
-  49ddd6:	08f70263          	beq	a4,a5,49de5a <OLED_ShowString+0xb6>
-  49ddda:	bde580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49ddde:	6db010ef          	jal	ra,49fcb8 <songti_font_get_char_data>
-  49dde2:	8c2a                	mv	s8,a0
-  49dde4:	000a0503          	lb	a0,0(s4)
-  49dde8:	4481                	li	s1,0
-  49ddea:	683010ef          	jal	ra,49fc6c <songti_font_get_char_width>
-  49ddee:	842a                	mv	s0,a0
-  49ddf0:	6a3010ef          	jal	ra,49fc92 <songti_font_get_char_height>
-  49ddf4:	8daa                	mv	s11,a0
-  49ddf6:	0ff4f793          	andi	a5,s1,255
-  49ddfa:	01b7ea63          	bltu	a5,s11,49de0e <OLED_ShowString+0x6a>
-  49ddfe:	0405                	addi	s0,s0,1
-  49de00:	9466                	add	s0,s0,s9
-  49de02:	01041c93          	slli	s9,s0,0x10
-  49de06:	010cdc93          	srli	s9,s9,0x10
-  49de0a:	0a05                	addi	s4,s4,1
-  49de0c:	bf7d                	j	49ddca <OLED_ShowString+0x26>
-  49de0e:	009c07b3          	add	a5,s8,s1
-  49de12:	009a8d33          	add	s10,s5,s1
-  49de16:	0007c703          	lbu	a4,0(a5)
-  49de1a:	010d1693          	slli	a3,s10,0x10
-  49de1e:	4901                	li	s2,0
-  49de20:	82c1                	srli	a3,a3,0x10
-  49de22:	0ff97793          	andi	a5,s2,255
-  49de26:	0087e463          	bltu	a5,s0,49de2e <OLED_ShowString+0x8a>
-  49de2a:	0485                	addi	s1,s1,1
-  49de2c:	b7e9                	j	49ddf6 <OLED_ShowString+0x52>
-  49de2e:	412b07b3          	sub	a5,s6,s2
-  49de32:	40f757b3          	sra	a5,a4,a5
-  49de36:	8b85                	andi	a5,a5,1
-  49de38:	cf99                	beqz	a5,49de56 <OLED_ShowString+0xb2>
-  49de3a:	01abee63          	bltu	s7,s10,49de56 <OLED_ShowString+0xb2>
-  49de3e:	012c8533          	add	a0,s9,s2
-  49de42:	0542                	slli	a0,a0,0x10
-  49de44:	85b6                	mv	a1,a3
-  49de46:	4605                	li	a2,1
-  49de48:	8141                	srli	a0,a0,0x10
-  49de4a:	c63a                	sw	a4,12(sp)
-  49de4c:	c436                	sw	a3,8(sp)
-  49de4e:	72e000ef          	jal	ra,49e57c <oled_driver_draw_pixel>
-  49de52:	4732                	lw	a4,12(sp)
-  49de54:	46a2                	lw	a3,8(sp)
-  49de56:	0905                	addi	s2,s2,1
-  49de58:	b7e9                	j	49de22 <OLED_ShowString+0x7e>
-  49de5a:	6105                	addi	sp,sp,32
-  49de5c:	9f55c06f          	j	3fa850 <__riscv_restore_12>
+0049ddb2 <OLED_ShowString>:
+  49ddb2:	a635c2ef          	jal	t0,3fa814 <__riscv_save_12>
+  49ddb6:	0011d9b7          	lui	s3,0x11d
+  49ddba:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
+  49ddbe:	1101                	addi	sp,sp,-32
+  49ddc0:	ce3e                	sw	a5,28(sp)
+  49ddc2:	000e67b7          	lui	a5,0xe6
+  49ddc6:	9c87c783          	lbu	a5,-1592(a5) # e59c8 <g_oled_initialized>
+  49ddca:	cb91                	beqz	a5,49ddde <OLED_ShowString+0x2c>
+  49ddcc:	8caa                	mv	s9,a0
+  49ddce:	8aae                	mv	s5,a1
+  49ddd0:	8a32                	mv	s4,a2
+  49ddd2:	4b1d                	li	s6,7
+  49ddd4:	03f00b93          	li	s7,63
+  49ddd8:	000a0503          	lb	a0,0(s4)
+  49dddc:	e901                	bnez	a0,49ddec <OLED_ShowString+0x3a>
+  49ddde:	4772                	lw	a4,28(sp)
+  49dde0:	7c09a783          	lw	a5,1984(s3)
+  49dde4:	08f70263          	beq	a4,a5,49de68 <OLED_ShowString+0xb6>
+  49dde8:	bd0580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49ddec:	6db010ef          	jal	ra,49fcc6 <songti_font_get_char_data>
+  49ddf0:	8c2a                	mv	s8,a0
+  49ddf2:	000a0503          	lb	a0,0(s4)
+  49ddf6:	4481                	li	s1,0
+  49ddf8:	683010ef          	jal	ra,49fc7a <songti_font_get_char_width>
+  49ddfc:	842a                	mv	s0,a0
+  49ddfe:	6a3010ef          	jal	ra,49fca0 <songti_font_get_char_height>
+  49de02:	8daa                	mv	s11,a0
+  49de04:	0ff4f793          	andi	a5,s1,255
+  49de08:	01b7ea63          	bltu	a5,s11,49de1c <OLED_ShowString+0x6a>
+  49de0c:	0405                	addi	s0,s0,1
+  49de0e:	9466                	add	s0,s0,s9
+  49de10:	01041c93          	slli	s9,s0,0x10
+  49de14:	010cdc93          	srli	s9,s9,0x10
+  49de18:	0a05                	addi	s4,s4,1
+  49de1a:	bf7d                	j	49ddd8 <OLED_ShowString+0x26>
+  49de1c:	009c07b3          	add	a5,s8,s1
+  49de20:	009a8d33          	add	s10,s5,s1
+  49de24:	0007c703          	lbu	a4,0(a5)
+  49de28:	010d1693          	slli	a3,s10,0x10
+  49de2c:	4901                	li	s2,0
+  49de2e:	82c1                	srli	a3,a3,0x10
+  49de30:	0ff97793          	andi	a5,s2,255
+  49de34:	0087e463          	bltu	a5,s0,49de3c <OLED_ShowString+0x8a>
+  49de38:	0485                	addi	s1,s1,1
+  49de3a:	b7e9                	j	49de04 <OLED_ShowString+0x52>
+  49de3c:	412b07b3          	sub	a5,s6,s2
+  49de40:	40f757b3          	sra	a5,a4,a5
+  49de44:	8b85                	andi	a5,a5,1
+  49de46:	cf99                	beqz	a5,49de64 <OLED_ShowString+0xb2>
+  49de48:	01abee63          	bltu	s7,s10,49de64 <OLED_ShowString+0xb2>
+  49de4c:	012c8533          	add	a0,s9,s2
+  49de50:	0542                	slli	a0,a0,0x10
+  49de52:	85b6                	mv	a1,a3
+  49de54:	4605                	li	a2,1
+  49de56:	8141                	srli	a0,a0,0x10
+  49de58:	c63a                	sw	a4,12(sp)
+  49de5a:	c436                	sw	a3,8(sp)
+  49de5c:	72e000ef          	jal	ra,49e58a <oled_driver_draw_pixel>
+  49de60:	4732                	lw	a4,12(sp)
+  49de62:	46a2                	lw	a3,8(sp)
+  49de64:	0905                	addi	s2,s2,1
+  49de66:	b7e9                	j	49de30 <OLED_ShowString+0x7e>
+  49de68:	6105                	addi	sp,sp,32
+  49de6a:	9e75c06f          	j	3fa850 <__riscv_restore_12>
 
-0049de60 <OLED_ShowSensorData>:
-  49de60:	9e55c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49de64:	0011d7b7          	lui	a5,0x11d
-  49de68:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49de6c:	7175                	addi	sp,sp,-144
-  49de6e:	84be                	mv	s1,a5
-  49de70:	c73a                	sw	a4,140(sp)
-  49de72:	000e6737          	lui	a4,0xe6
-  49de76:	9c874703          	lbu	a4,-1592(a4) # e59c8 <g_oled_initialized>
-  49de7a:	cf49                	beqz	a4,49df14 <OLED_ShowSensorData+0xb4>
-  49de7c:	842a                	mv	s0,a0
-  49de7e:	c959                	beqz	a0,49df14 <OLED_ShowSensorData+0xb4>
-  49de80:	ecdff0ef          	jal	ra,49dd4c <OLED_Clear>
-  49de84:	4008                	lw	a0,0(s0)
-  49de86:	b36f30ef          	jal	ra,4911bc <__extendsfdf2>
-  49de8a:	004ab637          	lui	a2,0x4ab
-  49de8e:	87ae                	mv	a5,a1
-  49de90:	872a                	mv	a4,a0
-  49de92:	6f460613          	addi	a2,a2,1780 # 4ab6f4 <alarm_type_strings+0x1940>
-  49de96:	02000593          	li	a1,32
-  49de9a:	0068                	addi	a0,sp,12
-  49de9c:	92eac0ef          	jal	ra,449fca <snprintf>
-  49dea0:	46a1                	li	a3,8
-  49dea2:	0070                	addi	a2,sp,12
-  49dea4:	4581                	li	a1,0
-  49dea6:	4501                	li	a0,0
-  49dea8:	efdff0ef          	jal	ra,49dda4 <OLED_ShowString>
-  49deac:	4054                	lw	a3,4(s0)
-  49deae:	004ab637          	lui	a2,0x4ab
-  49deb2:	70060613          	addi	a2,a2,1792 # 4ab700 <alarm_type_strings+0x194c>
-  49deb6:	02000593          	li	a1,32
-  49deba:	1068                	addi	a0,sp,44
-  49debc:	90eac0ef          	jal	ra,449fca <snprintf>
-  49dec0:	46a1                	li	a3,8
-  49dec2:	1070                	addi	a2,sp,44
-  49dec4:	45a9                	li	a1,10
-  49dec6:	4501                	li	a0,0
-  49dec8:	eddff0ef          	jal	ra,49dda4 <OLED_ShowString>
-  49decc:	4414                	lw	a3,8(s0)
-  49dece:	004ab637          	lui	a2,0x4ab
-  49ded2:	71060613          	addi	a2,a2,1808 # 4ab710 <alarm_type_strings+0x195c>
-  49ded6:	02000593          	li	a1,32
-  49deda:	00e8                	addi	a0,sp,76
-  49dedc:	8eeac0ef          	jal	ra,449fca <snprintf>
-  49dee0:	46a1                	li	a3,8
-  49dee2:	00f0                	addi	a2,sp,76
-  49dee4:	45d1                	li	a1,20
-  49dee6:	4501                	li	a0,0
-  49dee8:	ebdff0ef          	jal	ra,49dda4 <OLED_ShowString>
-  49deec:	00c44783          	lbu	a5,12(s0)
-  49def0:	eb8d                	bnez	a5,49df22 <OLED_ShowSensorData+0xc2>
-  49def2:	004ab637          	lui	a2,0x4ab
-  49def6:	71c60613          	addi	a2,a2,1820 # 4ab71c <alarm_type_strings+0x1968>
-  49defa:	02000593          	li	a1,32
-  49defe:	10e8                	addi	a0,sp,108
-  49df00:	8caac0ef          	jal	ra,449fca <snprintf>
-  49df04:	46a1                	li	a3,8
-  49df06:	10f0                	addi	a2,sp,108
-  49df08:	45f9                	li	a1,30
-  49df0a:	4501                	li	a0,0
-  49df0c:	e99ff0ef          	jal	ra,49dda4 <OLED_ShowString>
-  49df10:	e63ff0ef          	jal	ra,49dd72 <OLED_Refresh>
-  49df14:	473a                	lw	a4,140(sp)
-  49df16:	7c04a783          	lw	a5,1984(s1)
-  49df1a:	02f70a63          	beq	a4,a5,49df4e <OLED_ShowSensorData+0xee>
-  49df1e:	a9a580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49df22:	481c                	lw	a5,16(s0)
-  49df24:	4705                	li	a4,1
-  49df26:	00e79763          	bne	a5,a4,49df34 <OLED_ShowSensorData+0xd4>
-  49df2a:	004ab637          	lui	a2,0x4ab
-  49df2e:	72c60613          	addi	a2,a2,1836 # 4ab72c <alarm_type_strings+0x1978>
-  49df32:	b7e1                	j	49defa <OLED_ShowSensorData+0x9a>
-  49df34:	4709                	li	a4,2
-  49df36:	00e79763          	bne	a5,a4,49df44 <OLED_ShowSensorData+0xe4>
-  49df3a:	004ab637          	lui	a2,0x4ab
-  49df3e:	74460613          	addi	a2,a2,1860 # 4ab744 <alarm_type_strings+0x1990>
-  49df42:	bf65                	j	49defa <OLED_ShowSensorData+0x9a>
-  49df44:	004ab637          	lui	a2,0x4ab
-  49df48:	75860613          	addi	a2,a2,1880 # 4ab758 <alarm_type_strings+0x19a4>
-  49df4c:	b77d                	j	49defa <OLED_ShowSensorData+0x9a>
-  49df4e:	6149                	addi	sp,sp,144
-  49df50:	9195c06f          	j	3fa868 <__riscv_restore_0>
+0049de6e <OLED_ShowSensorData>:
+  49de6e:	9d75c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49de72:	0011d7b7          	lui	a5,0x11d
+  49de76:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49de7a:	7175                	addi	sp,sp,-144
+  49de7c:	84be                	mv	s1,a5
+  49de7e:	c73a                	sw	a4,140(sp)
+  49de80:	000e6737          	lui	a4,0xe6
+  49de84:	9c874703          	lbu	a4,-1592(a4) # e59c8 <g_oled_initialized>
+  49de88:	cf49                	beqz	a4,49df22 <OLED_ShowSensorData+0xb4>
+  49de8a:	842a                	mv	s0,a0
+  49de8c:	c959                	beqz	a0,49df22 <OLED_ShowSensorData+0xb4>
+  49de8e:	ecdff0ef          	jal	ra,49dd5a <OLED_Clear>
+  49de92:	4008                	lw	a0,0(s0)
+  49de94:	b28f30ef          	jal	ra,4911bc <__extendsfdf2>
+  49de98:	004ab637          	lui	a2,0x4ab
+  49de9c:	87ae                	mv	a5,a1
+  49de9e:	872a                	mv	a4,a0
+  49dea0:	6f460613          	addi	a2,a2,1780 # 4ab6f4 <alarm_type_strings+0x1940>
+  49dea4:	02000593          	li	a1,32
+  49dea8:	0068                	addi	a0,sp,12
+  49deaa:	920ac0ef          	jal	ra,449fca <snprintf>
+  49deae:	46a1                	li	a3,8
+  49deb0:	0070                	addi	a2,sp,12
+  49deb2:	4581                	li	a1,0
+  49deb4:	4501                	li	a0,0
+  49deb6:	efdff0ef          	jal	ra,49ddb2 <OLED_ShowString>
+  49deba:	4054                	lw	a3,4(s0)
+  49debc:	004ab637          	lui	a2,0x4ab
+  49dec0:	70060613          	addi	a2,a2,1792 # 4ab700 <alarm_type_strings+0x194c>
+  49dec4:	02000593          	li	a1,32
+  49dec8:	1068                	addi	a0,sp,44
+  49deca:	900ac0ef          	jal	ra,449fca <snprintf>
+  49dece:	46a1                	li	a3,8
+  49ded0:	1070                	addi	a2,sp,44
+  49ded2:	45a9                	li	a1,10
+  49ded4:	4501                	li	a0,0
+  49ded6:	eddff0ef          	jal	ra,49ddb2 <OLED_ShowString>
+  49deda:	4414                	lw	a3,8(s0)
+  49dedc:	004ab637          	lui	a2,0x4ab
+  49dee0:	71060613          	addi	a2,a2,1808 # 4ab710 <alarm_type_strings+0x195c>
+  49dee4:	02000593          	li	a1,32
+  49dee8:	00e8                	addi	a0,sp,76
+  49deea:	8e0ac0ef          	jal	ra,449fca <snprintf>
+  49deee:	46a1                	li	a3,8
+  49def0:	00f0                	addi	a2,sp,76
+  49def2:	45d1                	li	a1,20
+  49def4:	4501                	li	a0,0
+  49def6:	ebdff0ef          	jal	ra,49ddb2 <OLED_ShowString>
+  49defa:	00c44783          	lbu	a5,12(s0)
+  49defe:	eb8d                	bnez	a5,49df30 <OLED_ShowSensorData+0xc2>
+  49df00:	004ab637          	lui	a2,0x4ab
+  49df04:	71c60613          	addi	a2,a2,1820 # 4ab71c <alarm_type_strings+0x1968>
+  49df08:	02000593          	li	a1,32
+  49df0c:	10e8                	addi	a0,sp,108
+  49df0e:	8bcac0ef          	jal	ra,449fca <snprintf>
+  49df12:	46a1                	li	a3,8
+  49df14:	10f0                	addi	a2,sp,108
+  49df16:	45f9                	li	a1,30
+  49df18:	4501                	li	a0,0
+  49df1a:	e99ff0ef          	jal	ra,49ddb2 <OLED_ShowString>
+  49df1e:	e63ff0ef          	jal	ra,49dd80 <OLED_Refresh>
+  49df22:	473a                	lw	a4,140(sp)
+  49df24:	7c04a783          	lw	a5,1984(s1)
+  49df28:	02f70a63          	beq	a4,a5,49df5c <OLED_ShowSensorData+0xee>
+  49df2c:	a8c580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49df30:	481c                	lw	a5,16(s0)
+  49df32:	4705                	li	a4,1
+  49df34:	00e79763          	bne	a5,a4,49df42 <OLED_ShowSensorData+0xd4>
+  49df38:	004ab637          	lui	a2,0x4ab
+  49df3c:	72c60613          	addi	a2,a2,1836 # 4ab72c <alarm_type_strings+0x1978>
+  49df40:	b7e1                	j	49df08 <OLED_ShowSensorData+0x9a>
+  49df42:	4709                	li	a4,2
+  49df44:	00e79763          	bne	a5,a4,49df52 <OLED_ShowSensorData+0xe4>
+  49df48:	004ab637          	lui	a2,0x4ab
+  49df4c:	74460613          	addi	a2,a2,1860 # 4ab744 <alarm_type_strings+0x1990>
+  49df50:	bf65                	j	49df08 <OLED_ShowSensorData+0x9a>
+  49df52:	004ab637          	lui	a2,0x4ab
+  49df56:	75860613          	addi	a2,a2,1880 # 4ab758 <alarm_type_strings+0x19a4>
+  49df5a:	b77d                	j	49df08 <OLED_ShowSensorData+0x9a>
+  49df5c:	6149                	addi	sp,sp,144
+  49df5e:	90b5c06f          	j	3fa868 <__riscv_restore_0>
 
-0049df54 <sw_i2c_delay>:
-  49df54:	8f15c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49df58:	0011d7b7          	lui	a5,0x11d
-  49df5c:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49df60:	1141                	addi	sp,sp,-16
-  49df62:	46a5                	li	a3,9
-  49df64:	c63a                	sw	a4,12(sp)
-  49df66:	c402                	sw	zero,8(sp)
-  49df68:	4722                	lw	a4,8(sp)
-  49df6a:	00e6d963          	ble	a4,a3,49df7c <sw_i2c_delay+0x28>
-  49df6e:	4732                	lw	a4,12(sp)
-  49df70:	7c07a783          	lw	a5,1984(a5)
-  49df74:	00f70863          	beq	a4,a5,49df84 <sw_i2c_delay+0x30>
-  49df78:	a40580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49df7c:	4722                	lw	a4,8(sp)
-  49df7e:	0705                	addi	a4,a4,1
-  49df80:	c43a                	sw	a4,8(sp)
-  49df82:	b7dd                	j	49df68 <sw_i2c_delay+0x14>
-  49df84:	0141                	addi	sp,sp,16
-  49df86:	8e35c06f          	j	3fa868 <__riscv_restore_0>
+0049df62 <sw_i2c_delay>:
+  49df62:	8e35c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49df66:	0011d7b7          	lui	a5,0x11d
+  49df6a:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49df6e:	1141                	addi	sp,sp,-16
+  49df70:	46a5                	li	a3,9
+  49df72:	c63a                	sw	a4,12(sp)
+  49df74:	c402                	sw	zero,8(sp)
+  49df76:	4722                	lw	a4,8(sp)
+  49df78:	00e6d963          	ble	a4,a3,49df8a <sw_i2c_delay+0x28>
+  49df7c:	4732                	lw	a4,12(sp)
+  49df7e:	7c07a783          	lw	a5,1984(a5)
+  49df82:	00f70863          	beq	a4,a5,49df92 <sw_i2c_delay+0x30>
+  49df86:	a32580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49df8a:	4722                	lw	a4,8(sp)
+  49df8c:	0705                	addi	a4,a4,1
+  49df8e:	c43a                	sw	a4,8(sp)
+  49df90:	b7dd                	j	49df76 <sw_i2c_delay+0x14>
+  49df92:	0141                	addi	sp,sp,16
+  49df94:	8d55c06f          	j	3fa868 <__riscv_restore_0>
 
-0049df8a <oled_driver_mark_dirty>:
-  49df8a:	8bb5c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49df8e:	0011d7b7          	lui	a5,0x11d
-  49df92:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49df96:	1141                	addi	sp,sp,-16
-  49df98:	c63a                	sw	a4,12(sp)
-  49df9a:	000e6737          	lui	a4,0xe6
-  49df9e:	9d472703          	lw	a4,-1580(a4) # e59d4 <g_oled_driver>
-  49dfa2:	cb09                	beqz	a4,49dfb4 <oled_driver_mark_dirty+0x2a>
-  49dfa4:	00c74683          	lbu	a3,12(a4)
-  49dfa8:	c691                	beqz	a3,49dfb4 <oled_driver_mark_dirty+0x2a>
-  49dfaa:	4718                	lw	a4,8(a4)
-  49dfac:	953a                	add	a0,a0,a4
-  49dfae:	4705                	li	a4,1
-  49dfb0:	00e50023          	sb	a4,0(a0)
-  49dfb4:	4732                	lw	a4,12(sp)
-  49dfb6:	7c07a783          	lw	a5,1984(a5)
-  49dfba:	00f70463          	beq	a4,a5,49dfc2 <oled_driver_mark_dirty+0x38>
-  49dfbe:	9fa580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49dfc2:	0141                	addi	sp,sp,16
-  49dfc4:	8a55c06f          	j	3fa868 <__riscv_restore_0>
+0049df98 <oled_driver_mark_dirty>:
+  49df98:	8ad5c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49df9c:	0011d7b7          	lui	a5,0x11d
+  49dfa0:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49dfa4:	1141                	addi	sp,sp,-16
+  49dfa6:	c63a                	sw	a4,12(sp)
+  49dfa8:	000e6737          	lui	a4,0xe6
+  49dfac:	9d472703          	lw	a4,-1580(a4) # e59d4 <g_oled_driver>
+  49dfb0:	cb09                	beqz	a4,49dfc2 <oled_driver_mark_dirty+0x2a>
+  49dfb2:	00c74683          	lbu	a3,12(a4)
+  49dfb6:	c691                	beqz	a3,49dfc2 <oled_driver_mark_dirty+0x2a>
+  49dfb8:	4718                	lw	a4,8(a4)
+  49dfba:	953a                	add	a0,a0,a4
+  49dfbc:	4705                	li	a4,1
+  49dfbe:	00e50023          	sb	a4,0(a0)
+  49dfc2:	4732                	lw	a4,12(sp)
+  49dfc4:	7c07a783          	lw	a5,1984(a5)
+  49dfc8:	00f70463          	beq	a4,a5,49dfd0 <oled_driver_mark_dirty+0x38>
+  49dfcc:	9ec580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49dfd0:	0141                	addi	sp,sp,16
+  49dfd2:	8975c06f          	j	3fa868 <__riscv_restore_0>
 
-0049dfc8 <sw_i2c_start>:
-  49dfc8:	87d5c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49dfcc:	0011d437          	lui	s0,0x11d
-  49dfd0:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49dfd4:	1141                	addi	sp,sp,-16
-  49dfd6:	4585                	li	a1,1
-  49dfd8:	4529                	li	a0,10
-  49dfda:	c63e                	sw	a5,12(sp)
-  49dfdc:	abe530ef          	jal	ra,3f129a <hi_gpio_set_dir>
-  49dfe0:	4585                	li	a1,1
-  49dfe2:	4525                	li	a0,9
-  49dfe4:	ab6530ef          	jal	ra,3f129a <hi_gpio_set_dir>
-  49dfe8:	4585                	li	a1,1
-  49dfea:	4529                	li	a0,10
-  49dfec:	b0e530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
-  49dff0:	4585                	li	a1,1
-  49dff2:	4525                	li	a0,9
-  49dff4:	b06530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
-  49dff8:	f5dff0ef          	jal	ra,49df54 <sw_i2c_delay>
-  49dffc:	4581                	li	a1,0
-  49dffe:	4529                	li	a0,10
-  49e000:	afa530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
-  49e004:	f51ff0ef          	jal	ra,49df54 <sw_i2c_delay>
-  49e008:	4581                	li	a1,0
-  49e00a:	4525                	li	a0,9
-  49e00c:	aee530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
-  49e010:	f45ff0ef          	jal	ra,49df54 <sw_i2c_delay>
-  49e014:	4732                	lw	a4,12(sp)
-  49e016:	7c042783          	lw	a5,1984(s0)
-  49e01a:	00f70463          	beq	a4,a5,49e022 <sw_i2c_start+0x5a>
-  49e01e:	99a580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49e022:	0141                	addi	sp,sp,16
-  49e024:	8455c06f          	j	3fa868 <__riscv_restore_0>
+0049dfd6 <sw_i2c_start>:
+  49dfd6:	86f5c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49dfda:	0011d437          	lui	s0,0x11d
+  49dfde:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49dfe2:	1141                	addi	sp,sp,-16
+  49dfe4:	4585                	li	a1,1
+  49dfe6:	4529                	li	a0,10
+  49dfe8:	c63e                	sw	a5,12(sp)
+  49dfea:	ab0530ef          	jal	ra,3f129a <hi_gpio_set_dir>
+  49dfee:	4585                	li	a1,1
+  49dff0:	4525                	li	a0,9
+  49dff2:	aa8530ef          	jal	ra,3f129a <hi_gpio_set_dir>
+  49dff6:	4585                	li	a1,1
+  49dff8:	4529                	li	a0,10
+  49dffa:	b00530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
+  49dffe:	4585                	li	a1,1
+  49e000:	4525                	li	a0,9
+  49e002:	af8530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
+  49e006:	f5dff0ef          	jal	ra,49df62 <sw_i2c_delay>
+  49e00a:	4581                	li	a1,0
+  49e00c:	4529                	li	a0,10
+  49e00e:	aec530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
+  49e012:	f51ff0ef          	jal	ra,49df62 <sw_i2c_delay>
+  49e016:	4581                	li	a1,0
+  49e018:	4525                	li	a0,9
+  49e01a:	ae0530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
+  49e01e:	f45ff0ef          	jal	ra,49df62 <sw_i2c_delay>
+  49e022:	4732                	lw	a4,12(sp)
+  49e024:	7c042783          	lw	a5,1984(s0)
+  49e028:	00f70463          	beq	a4,a5,49e030 <sw_i2c_start+0x5a>
+  49e02c:	98c580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49e030:	0141                	addi	sp,sp,16
+  49e032:	8375c06f          	j	3fa868 <__riscv_restore_0>
 
-0049e028 <sw_i2c_write_byte>:
-  49e028:	81d5c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49e02c:	0011d4b7          	lui	s1,0x11d
-  49e030:	7c04a783          	lw	a5,1984(s1) # 11d7c0 <__rom_data0_begin__>
-  49e034:	1141                	addi	sp,sp,-16
-  49e036:	4585                	li	a1,1
-  49e038:	842a                	mv	s0,a0
-  49e03a:	4529                	li	a0,10
-  49e03c:	c63e                	sw	a5,12(sp)
-  49e03e:	a5c530ef          	jal	ra,3f129a <hi_gpio_set_dir>
-  49e042:	4585                	li	a1,1
-  49e044:	4525                	li	a0,9
-  49e046:	a54530ef          	jal	ra,3f129a <hi_gpio_set_dir>
-  49e04a:	4921                	li	s2,8
-  49e04c:	00745593          	srli	a1,s0,0x7
-  49e050:	4529                	li	a0,10
-  49e052:	aa8530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
-  49e056:	effff0ef          	jal	ra,49df54 <sw_i2c_delay>
-  49e05a:	4585                	li	a1,1
-  49e05c:	4525                	li	a0,9
-  49e05e:	a9c530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
-  49e062:	ef3ff0ef          	jal	ra,49df54 <sw_i2c_delay>
-  49e066:	4581                	li	a1,0
-  49e068:	4525                	li	a0,9
-  49e06a:	a90530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
-  49e06e:	0406                	slli	s0,s0,0x1
-  49e070:	197d                	addi	s2,s2,-1
-  49e072:	ee3ff0ef          	jal	ra,49df54 <sw_i2c_delay>
-  49e076:	0ff47413          	andi	s0,s0,255
-  49e07a:	fc0919e3          	bnez	s2,49e04c <sw_i2c_write_byte+0x24>
-  49e07e:	4581                	li	a1,0
-  49e080:	4529                	li	a0,10
-  49e082:	a18530ef          	jal	ra,3f129a <hi_gpio_set_dir>
-  49e086:	4585                	li	a1,1
-  49e088:	4525                	li	a0,9
-  49e08a:	a70530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
-  49e08e:	ec7ff0ef          	jal	ra,49df54 <sw_i2c_delay>
-  49e092:	4581                	li	a1,0
-  49e094:	4525                	li	a0,9
-  49e096:	a64530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
-  49e09a:	ebbff0ef          	jal	ra,49df54 <sw_i2c_delay>
-  49e09e:	4732                	lw	a4,12(sp)
-  49e0a0:	7c04a783          	lw	a5,1984(s1)
-  49e0a4:	00f70463          	beq	a4,a5,49e0ac <sw_i2c_write_byte+0x84>
-  49e0a8:	910580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49e0ac:	0141                	addi	sp,sp,16
-  49e0ae:	fba5c06f          	j	3fa868 <__riscv_restore_0>
+0049e036 <sw_i2c_write_byte>:
+  49e036:	80f5c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49e03a:	0011d4b7          	lui	s1,0x11d
+  49e03e:	7c04a783          	lw	a5,1984(s1) # 11d7c0 <__rom_data0_begin__>
+  49e042:	1141                	addi	sp,sp,-16
+  49e044:	4585                	li	a1,1
+  49e046:	842a                	mv	s0,a0
+  49e048:	4529                	li	a0,10
+  49e04a:	c63e                	sw	a5,12(sp)
+  49e04c:	a4e530ef          	jal	ra,3f129a <hi_gpio_set_dir>
+  49e050:	4585                	li	a1,1
+  49e052:	4525                	li	a0,9
+  49e054:	a46530ef          	jal	ra,3f129a <hi_gpio_set_dir>
+  49e058:	4921                	li	s2,8
+  49e05a:	00745593          	srli	a1,s0,0x7
+  49e05e:	4529                	li	a0,10
+  49e060:	a9a530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
+  49e064:	effff0ef          	jal	ra,49df62 <sw_i2c_delay>
+  49e068:	4585                	li	a1,1
+  49e06a:	4525                	li	a0,9
+  49e06c:	a8e530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
+  49e070:	ef3ff0ef          	jal	ra,49df62 <sw_i2c_delay>
+  49e074:	4581                	li	a1,0
+  49e076:	4525                	li	a0,9
+  49e078:	a82530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
+  49e07c:	0406                	slli	s0,s0,0x1
+  49e07e:	197d                	addi	s2,s2,-1
+  49e080:	ee3ff0ef          	jal	ra,49df62 <sw_i2c_delay>
+  49e084:	0ff47413          	andi	s0,s0,255
+  49e088:	fc0919e3          	bnez	s2,49e05a <sw_i2c_write_byte+0x24>
+  49e08c:	4581                	li	a1,0
+  49e08e:	4529                	li	a0,10
+  49e090:	a0a530ef          	jal	ra,3f129a <hi_gpio_set_dir>
+  49e094:	4585                	li	a1,1
+  49e096:	4525                	li	a0,9
+  49e098:	a62530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
+  49e09c:	ec7ff0ef          	jal	ra,49df62 <sw_i2c_delay>
+  49e0a0:	4581                	li	a1,0
+  49e0a2:	4525                	li	a0,9
+  49e0a4:	a56530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
+  49e0a8:	ebbff0ef          	jal	ra,49df62 <sw_i2c_delay>
+  49e0ac:	4732                	lw	a4,12(sp)
+  49e0ae:	7c04a783          	lw	a5,1984(s1)
+  49e0b2:	00f70463          	beq	a4,a5,49e0ba <sw_i2c_write_byte+0x84>
+  49e0b6:	902580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49e0ba:	0141                	addi	sp,sp,16
+  49e0bc:	fac5c06f          	j	3fa868 <__riscv_restore_0>
 
-0049e0b2 <sw_i2c_stop>:
-  49e0b2:	f925c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49e0b6:	0011d437          	lui	s0,0x11d
-  49e0ba:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49e0be:	1141                	addi	sp,sp,-16
-  49e0c0:	4585                	li	a1,1
-  49e0c2:	4529                	li	a0,10
-  49e0c4:	c63e                	sw	a5,12(sp)
-  49e0c6:	9d4530ef          	jal	ra,3f129a <hi_gpio_set_dir>
-  49e0ca:	4585                	li	a1,1
-  49e0cc:	4525                	li	a0,9
-  49e0ce:	9cc530ef          	jal	ra,3f129a <hi_gpio_set_dir>
-  49e0d2:	4581                	li	a1,0
-  49e0d4:	4529                	li	a0,10
-  49e0d6:	a24530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
-  49e0da:	4581                	li	a1,0
-  49e0dc:	4525                	li	a0,9
-  49e0de:	a1c530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
-  49e0e2:	e73ff0ef          	jal	ra,49df54 <sw_i2c_delay>
-  49e0e6:	4585                	li	a1,1
-  49e0e8:	4525                	li	a0,9
-  49e0ea:	a10530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
-  49e0ee:	e67ff0ef          	jal	ra,49df54 <sw_i2c_delay>
-  49e0f2:	4585                	li	a1,1
-  49e0f4:	4529                	li	a0,10
-  49e0f6:	a04530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
-  49e0fa:	e5bff0ef          	jal	ra,49df54 <sw_i2c_delay>
-  49e0fe:	4732                	lw	a4,12(sp)
-  49e100:	7c042783          	lw	a5,1984(s0)
-  49e104:	00f70463          	beq	a4,a5,49e10c <sw_i2c_stop+0x5a>
-  49e108:	8b0580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49e10c:	0141                	addi	sp,sp,16
-  49e10e:	f5a5c06f          	j	3fa868 <__riscv_restore_0>
+0049e0c0 <sw_i2c_stop>:
+  49e0c0:	f845c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49e0c4:	0011d437          	lui	s0,0x11d
+  49e0c8:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49e0cc:	1141                	addi	sp,sp,-16
+  49e0ce:	4585                	li	a1,1
+  49e0d0:	4529                	li	a0,10
+  49e0d2:	c63e                	sw	a5,12(sp)
+  49e0d4:	9c6530ef          	jal	ra,3f129a <hi_gpio_set_dir>
+  49e0d8:	4585                	li	a1,1
+  49e0da:	4525                	li	a0,9
+  49e0dc:	9be530ef          	jal	ra,3f129a <hi_gpio_set_dir>
+  49e0e0:	4581                	li	a1,0
+  49e0e2:	4529                	li	a0,10
+  49e0e4:	a16530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
+  49e0e8:	4581                	li	a1,0
+  49e0ea:	4525                	li	a0,9
+  49e0ec:	a0e530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
+  49e0f0:	e73ff0ef          	jal	ra,49df62 <sw_i2c_delay>
+  49e0f4:	4585                	li	a1,1
+  49e0f6:	4525                	li	a0,9
+  49e0f8:	a02530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
+  49e0fc:	e67ff0ef          	jal	ra,49df62 <sw_i2c_delay>
+  49e100:	4585                	li	a1,1
+  49e102:	4529                	li	a0,10
+  49e104:	9f6530ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
+  49e108:	e5bff0ef          	jal	ra,49df62 <sw_i2c_delay>
+  49e10c:	4732                	lw	a4,12(sp)
+  49e10e:	7c042783          	lw	a5,1984(s0)
+  49e112:	00f70463          	beq	a4,a5,49e11a <sw_i2c_stop+0x5a>
+  49e116:	8a2580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49e11a:	0141                	addi	sp,sp,16
+  49e11c:	f4c5c06f          	j	3fa868 <__riscv_restore_0>
 
-0049e112 <oled_write_cmd>:
-  49e112:	f325c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49e116:	0011d437          	lui	s0,0x11d
-  49e11a:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49e11e:	1141                	addi	sp,sp,-16
-  49e120:	84aa                	mv	s1,a0
-  49e122:	c63e                	sw	a5,12(sp)
-  49e124:	ea5ff0ef          	jal	ra,49dfc8 <sw_i2c_start>
-  49e128:	07800513          	li	a0,120
-  49e12c:	efdff0ef          	jal	ra,49e028 <sw_i2c_write_byte>
-  49e130:	4501                	li	a0,0
-  49e132:	ef7ff0ef          	jal	ra,49e028 <sw_i2c_write_byte>
-  49e136:	8526                	mv	a0,s1
-  49e138:	ef1ff0ef          	jal	ra,49e028 <sw_i2c_write_byte>
-  49e13c:	f77ff0ef          	jal	ra,49e0b2 <sw_i2c_stop>
-  49e140:	4732                	lw	a4,12(sp)
-  49e142:	7c042783          	lw	a5,1984(s0)
-  49e146:	00f70463          	beq	a4,a5,49e14e <oled_write_cmd+0x3c>
-  49e14a:	86e580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49e14e:	0141                	addi	sp,sp,16
-  49e150:	f185c06f          	j	3fa868 <__riscv_restore_0>
+0049e120 <oled_write_cmd>:
+  49e120:	f245c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49e124:	0011d437          	lui	s0,0x11d
+  49e128:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49e12c:	1141                	addi	sp,sp,-16
+  49e12e:	84aa                	mv	s1,a0
+  49e130:	c63e                	sw	a5,12(sp)
+  49e132:	ea5ff0ef          	jal	ra,49dfd6 <sw_i2c_start>
+  49e136:	07800513          	li	a0,120
+  49e13a:	efdff0ef          	jal	ra,49e036 <sw_i2c_write_byte>
+  49e13e:	4501                	li	a0,0
+  49e140:	ef7ff0ef          	jal	ra,49e036 <sw_i2c_write_byte>
+  49e144:	8526                	mv	a0,s1
+  49e146:	ef1ff0ef          	jal	ra,49e036 <sw_i2c_write_byte>
+  49e14a:	f77ff0ef          	jal	ra,49e0c0 <sw_i2c_stop>
+  49e14e:	4732                	lw	a4,12(sp)
+  49e150:	7c042783          	lw	a5,1984(s0)
+  49e154:	00f70463          	beq	a4,a5,49e15c <oled_write_cmd+0x3c>
+  49e158:	860580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49e15c:	0141                	addi	sp,sp,16
+  49e15e:	f0a5c06f          	j	3fa868 <__riscv_restore_0>
 
-0049e154 <oled_write_data>:
-  49e154:	ef05c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49e158:	0011d437          	lui	s0,0x11d
-  49e15c:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49e160:	1141                	addi	sp,sp,-16
-  49e162:	84aa                	mv	s1,a0
-  49e164:	c63e                	sw	a5,12(sp)
-  49e166:	e63ff0ef          	jal	ra,49dfc8 <sw_i2c_start>
-  49e16a:	07800513          	li	a0,120
-  49e16e:	ebbff0ef          	jal	ra,49e028 <sw_i2c_write_byte>
-  49e172:	04000513          	li	a0,64
-  49e176:	eb3ff0ef          	jal	ra,49e028 <sw_i2c_write_byte>
-  49e17a:	8526                	mv	a0,s1
-  49e17c:	eadff0ef          	jal	ra,49e028 <sw_i2c_write_byte>
-  49e180:	f33ff0ef          	jal	ra,49e0b2 <sw_i2c_stop>
-  49e184:	4732                	lw	a4,12(sp)
-  49e186:	7c042783          	lw	a5,1984(s0)
-  49e18a:	00f70463          	beq	a4,a5,49e192 <oled_write_data+0x3e>
-  49e18e:	82a580ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49e192:	0141                	addi	sp,sp,16
-  49e194:	ed45c06f          	j	3fa868 <__riscv_restore_0>
+0049e162 <oled_write_data>:
+  49e162:	ee25c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49e166:	0011d437          	lui	s0,0x11d
+  49e16a:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49e16e:	1141                	addi	sp,sp,-16
+  49e170:	84aa                	mv	s1,a0
+  49e172:	c63e                	sw	a5,12(sp)
+  49e174:	e63ff0ef          	jal	ra,49dfd6 <sw_i2c_start>
+  49e178:	07800513          	li	a0,120
+  49e17c:	ebbff0ef          	jal	ra,49e036 <sw_i2c_write_byte>
+  49e180:	04000513          	li	a0,64
+  49e184:	eb3ff0ef          	jal	ra,49e036 <sw_i2c_write_byte>
+  49e188:	8526                	mv	a0,s1
+  49e18a:	eadff0ef          	jal	ra,49e036 <sw_i2c_write_byte>
+  49e18e:	f33ff0ef          	jal	ra,49e0c0 <sw_i2c_stop>
+  49e192:	4732                	lw	a4,12(sp)
+  49e194:	7c042783          	lw	a5,1984(s0)
+  49e198:	00f70463          	beq	a4,a5,49e1a0 <oled_write_data+0x3e>
+  49e19c:	81c580ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49e1a0:	0141                	addi	sp,sp,16
+  49e1a2:	ec65c06f          	j	3fa868 <__riscv_restore_0>
 
-0049e198 <oled_driver_deinit>:
-  49e198:	eac5c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49e19c:	0011d737          	lui	a4,0x11d
-  49e1a0:	7c072783          	lw	a5,1984(a4) # 11d7c0 <__rom_data0_begin__>
-  49e1a4:	1141                	addi	sp,sp,-16
-  49e1a6:	000e6437          	lui	s0,0xe6
-  49e1aa:	c63e                	sw	a5,12(sp)
-  49e1ac:	9d442783          	lw	a5,-1580(s0) # e59d4 <g_oled_driver>
-  49e1b0:	84ba                	mv	s1,a4
-  49e1b2:	c7a1                	beqz	a5,49e1fa <oled_driver_deinit+0x62>
-  49e1b4:	00c7c783          	lbu	a5,12(a5)
-  49e1b8:	9d440413          	addi	s0,s0,-1580
-  49e1bc:	c789                	beqz	a5,49e1c6 <oled_driver_deinit+0x2e>
-  49e1be:	0ae00513          	li	a0,174
-  49e1c2:	f51ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e1c6:	401c                	lw	a5,0(s0)
-  49e1c8:	4788                	lw	a0,8(a5)
-  49e1ca:	c119                	beqz	a0,49e1d0 <oled_driver_deinit+0x38>
-  49e1cc:	bc65d0ef          	jal	ra,3fb592 <free>
-  49e1d0:	401c                	lw	a5,0(s0)
-  49e1d2:	43c8                	lw	a0,4(a5)
-  49e1d4:	c119                	beqz	a0,49e1da <oled_driver_deinit+0x42>
-  49e1d6:	bbc5d0ef          	jal	ra,3fb592 <free>
-  49e1da:	401c                	lw	a5,0(s0)
-  49e1dc:	4388                	lw	a0,0(a5)
-  49e1de:	c119                	beqz	a0,49e1e4 <oled_driver_deinit+0x4c>
-  49e1e0:	bb25d0ef          	jal	ra,3fb592 <free>
-  49e1e4:	4008                	lw	a0,0(s0)
-  49e1e6:	bac5d0ef          	jal	ra,3fb592 <free>
-  49e1ea:	004ab537          	lui	a0,0x4ab
-  49e1ee:	76850513          	addi	a0,a0,1896 # 4ab768 <alarm_type_strings+0x19b4>
-  49e1f2:	00042023          	sw	zero,0(s0)
-  49e1f6:	ab65c0ef          	jal	ra,3fa4ac <printf>
-  49e1fa:	4732                	lw	a4,12(sp)
-  49e1fc:	7c04a783          	lw	a5,1984(s1)
-  49e200:	00f70463          	beq	a4,a5,49e208 <oled_driver_deinit+0x70>
-  49e204:	fb5570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49e208:	0141                	addi	sp,sp,16
-  49e20a:	e5e5c06f          	j	3fa868 <__riscv_restore_0>
+0049e1a6 <oled_driver_deinit>:
+  49e1a6:	e9e5c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49e1aa:	0011d737          	lui	a4,0x11d
+  49e1ae:	7c072783          	lw	a5,1984(a4) # 11d7c0 <__rom_data0_begin__>
+  49e1b2:	1141                	addi	sp,sp,-16
+  49e1b4:	000e6437          	lui	s0,0xe6
+  49e1b8:	c63e                	sw	a5,12(sp)
+  49e1ba:	9d442783          	lw	a5,-1580(s0) # e59d4 <g_oled_driver>
+  49e1be:	84ba                	mv	s1,a4
+  49e1c0:	c7a1                	beqz	a5,49e208 <oled_driver_deinit+0x62>
+  49e1c2:	00c7c783          	lbu	a5,12(a5)
+  49e1c6:	9d440413          	addi	s0,s0,-1580
+  49e1ca:	c789                	beqz	a5,49e1d4 <oled_driver_deinit+0x2e>
+  49e1cc:	0ae00513          	li	a0,174
+  49e1d0:	f51ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e1d4:	401c                	lw	a5,0(s0)
+  49e1d6:	4788                	lw	a0,8(a5)
+  49e1d8:	c119                	beqz	a0,49e1de <oled_driver_deinit+0x38>
+  49e1da:	bb85d0ef          	jal	ra,3fb592 <free>
+  49e1de:	401c                	lw	a5,0(s0)
+  49e1e0:	43c8                	lw	a0,4(a5)
+  49e1e2:	c119                	beqz	a0,49e1e8 <oled_driver_deinit+0x42>
+  49e1e4:	bae5d0ef          	jal	ra,3fb592 <free>
+  49e1e8:	401c                	lw	a5,0(s0)
+  49e1ea:	4388                	lw	a0,0(a5)
+  49e1ec:	c119                	beqz	a0,49e1f2 <oled_driver_deinit+0x4c>
+  49e1ee:	ba45d0ef          	jal	ra,3fb592 <free>
+  49e1f2:	4008                	lw	a0,0(s0)
+  49e1f4:	b9e5d0ef          	jal	ra,3fb592 <free>
+  49e1f8:	004ab537          	lui	a0,0x4ab
+  49e1fc:	76850513          	addi	a0,a0,1896 # 4ab768 <alarm_type_strings+0x19b4>
+  49e200:	00042023          	sw	zero,0(s0)
+  49e204:	aa85c0ef          	jal	ra,3fa4ac <printf>
+  49e208:	4732                	lw	a4,12(sp)
+  49e20a:	7c04a783          	lw	a5,1984(s1)
+  49e20e:	00f70463          	beq	a4,a5,49e216 <oled_driver_deinit+0x70>
+  49e212:	fa7570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49e216:	0141                	addi	sp,sp,16
+  49e218:	e505c06f          	j	3fa868 <__riscv_restore_0>
 
-0049e20e <oled_driver_clear>:
-  49e20e:	e365c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49e212:	0011d7b7          	lui	a5,0x11d
-  49e216:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49e21a:	1141                	addi	sp,sp,-16
-  49e21c:	000e6437          	lui	s0,0xe6
-  49e220:	c63a                	sw	a4,12(sp)
-  49e222:	9d442703          	lw	a4,-1580(s0) # e59d4 <g_oled_driver>
-  49e226:	84be                	mv	s1,a5
-  49e228:	cb15                	beqz	a4,49e25c <oled_driver_clear+0x4e>
-  49e22a:	00c74783          	lbu	a5,12(a4)
-  49e22e:	c79d                	beqz	a5,49e25c <oled_driver_clear+0x4e>
-  49e230:	4308                	lw	a0,0(a4)
-  49e232:	40000613          	li	a2,1024
-  49e236:	4581                	li	a1,0
-  49e238:	8c25d0ef          	jal	ra,3fb2fa <memset>
-  49e23c:	9d440413          	addi	s0,s0,-1580
-  49e240:	401c                	lw	a5,0(s0)
-  49e242:	43c8                	lw	a0,4(a5)
-  49e244:	c511                	beqz	a0,49e250 <oled_driver_clear+0x42>
-  49e246:	40000613          	li	a2,1024
-  49e24a:	4581                	li	a1,0
-  49e24c:	8ae5d0ef          	jal	ra,3fb2fa <memset>
-  49e250:	401c                	lw	a5,0(s0)
-  49e252:	4621                	li	a2,8
-  49e254:	4581                	li	a1,0
-  49e256:	4788                	lw	a0,8(a5)
-  49e258:	8a25d0ef          	jal	ra,3fb2fa <memset>
-  49e25c:	4732                	lw	a4,12(sp)
-  49e25e:	7c04a783          	lw	a5,1984(s1)
-  49e262:	00f70463          	beq	a4,a5,49e26a <oled_driver_clear+0x5c>
-  49e266:	f53570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49e26a:	0141                	addi	sp,sp,16
-  49e26c:	dfc5c06f          	j	3fa868 <__riscv_restore_0>
+0049e21c <oled_driver_clear>:
+  49e21c:	e285c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49e220:	0011d7b7          	lui	a5,0x11d
+  49e224:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49e228:	1141                	addi	sp,sp,-16
+  49e22a:	000e6437          	lui	s0,0xe6
+  49e22e:	c63a                	sw	a4,12(sp)
+  49e230:	9d442703          	lw	a4,-1580(s0) # e59d4 <g_oled_driver>
+  49e234:	84be                	mv	s1,a5
+  49e236:	cb15                	beqz	a4,49e26a <oled_driver_clear+0x4e>
+  49e238:	00c74783          	lbu	a5,12(a4)
+  49e23c:	c79d                	beqz	a5,49e26a <oled_driver_clear+0x4e>
+  49e23e:	4308                	lw	a0,0(a4)
+  49e240:	40000613          	li	a2,1024
+  49e244:	4581                	li	a1,0
+  49e246:	8b45d0ef          	jal	ra,3fb2fa <memset>
+  49e24a:	9d440413          	addi	s0,s0,-1580
+  49e24e:	401c                	lw	a5,0(s0)
+  49e250:	43c8                	lw	a0,4(a5)
+  49e252:	c511                	beqz	a0,49e25e <oled_driver_clear+0x42>
+  49e254:	40000613          	li	a2,1024
+  49e258:	4581                	li	a1,0
+  49e25a:	8a05d0ef          	jal	ra,3fb2fa <memset>
+  49e25e:	401c                	lw	a5,0(s0)
+  49e260:	4621                	li	a2,8
+  49e262:	4581                	li	a1,0
+  49e264:	4788                	lw	a0,8(a5)
+  49e266:	8945d0ef          	jal	ra,3fb2fa <memset>
+  49e26a:	4732                	lw	a4,12(sp)
+  49e26c:	7c04a783          	lw	a5,1984(s1)
+  49e270:	00f70463          	beq	a4,a5,49e278 <oled_driver_clear+0x5c>
+  49e274:	f45570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49e278:	0141                	addi	sp,sp,16
+  49e27a:	dee5c06f          	j	3fa868 <__riscv_restore_0>
 
-0049e270 <oled_driver_refresh>:
-  49e270:	dba5c2ef          	jal	t0,3fa82a <__riscv_save_4>
-  49e274:	0011d6b7          	lui	a3,0x11d
-  49e278:	7c06a783          	lw	a5,1984(a3) # 11d7c0 <__rom_data0_begin__>
-  49e27c:	1141                	addi	sp,sp,-16
-  49e27e:	000e6737          	lui	a4,0xe6
-  49e282:	c63e                	sw	a5,12(sp)
-  49e284:	9d472783          	lw	a5,-1580(a4) # e59d4 <g_oled_driver>
-  49e288:	8a36                	mv	s4,a3
-  49e28a:	cbb1                	beqz	a5,49e2de <oled_driver_refresh+0x6e>
-  49e28c:	00c7c783          	lbu	a5,12(a5)
-  49e290:	c7b9                	beqz	a5,49e2de <oled_driver_refresh+0x6e>
-  49e292:	9d470993          	addi	s3,a4,-1580
-  49e296:	0b000413          	li	s0,176
-  49e29a:	4481                	li	s1,0
-  49e29c:	08000b13          	li	s6,128
-  49e2a0:	4aa1                	li	s5,8
-  49e2a2:	8522                	mv	a0,s0
-  49e2a4:	e6fff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e2a8:	4501                	li	a0,0
-  49e2aa:	e69ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e2ae:	4541                	li	a0,16
-  49e2b0:	e63ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e2b4:	4901                	li	s2,0
-  49e2b6:	0009a783          	lw	a5,0(s3)
-  49e2ba:	00391713          	slli	a4,s2,0x3
-  49e2be:	0905                	addi	s2,s2,1
-  49e2c0:	439c                	lw	a5,0(a5)
-  49e2c2:	97ba                	add	a5,a5,a4
-  49e2c4:	97a6                	add	a5,a5,s1
-  49e2c6:	0007c503          	lbu	a0,0(a5)
-  49e2ca:	e8bff0ef          	jal	ra,49e154 <oled_write_data>
-  49e2ce:	ff6914e3          	bne	s2,s6,49e2b6 <oled_driver_refresh+0x46>
-  49e2d2:	0405                	addi	s0,s0,1
-  49e2d4:	0485                	addi	s1,s1,1
-  49e2d6:	0ff47413          	andi	s0,s0,255
-  49e2da:	fd5494e3          	bne	s1,s5,49e2a2 <oled_driver_refresh+0x32>
-  49e2de:	4732                	lw	a4,12(sp)
-  49e2e0:	7c0a2783          	lw	a5,1984(s4)
-  49e2e4:	00f70463          	beq	a4,a5,49e2ec <oled_driver_refresh+0x7c>
-  49e2e8:	ed1570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49e2ec:	0141                	addi	sp,sp,16
-  49e2ee:	d705c06f          	j	3fa85e <__riscv_restore_4>
+0049e27e <oled_driver_refresh>:
+  49e27e:	dac5c2ef          	jal	t0,3fa82a <__riscv_save_4>
+  49e282:	0011d6b7          	lui	a3,0x11d
+  49e286:	7c06a783          	lw	a5,1984(a3) # 11d7c0 <__rom_data0_begin__>
+  49e28a:	1141                	addi	sp,sp,-16
+  49e28c:	000e6737          	lui	a4,0xe6
+  49e290:	c63e                	sw	a5,12(sp)
+  49e292:	9d472783          	lw	a5,-1580(a4) # e59d4 <g_oled_driver>
+  49e296:	8a36                	mv	s4,a3
+  49e298:	cbb1                	beqz	a5,49e2ec <oled_driver_refresh+0x6e>
+  49e29a:	00c7c783          	lbu	a5,12(a5)
+  49e29e:	c7b9                	beqz	a5,49e2ec <oled_driver_refresh+0x6e>
+  49e2a0:	9d470993          	addi	s3,a4,-1580
+  49e2a4:	0b000413          	li	s0,176
+  49e2a8:	4481                	li	s1,0
+  49e2aa:	08000b13          	li	s6,128
+  49e2ae:	4aa1                	li	s5,8
+  49e2b0:	8522                	mv	a0,s0
+  49e2b2:	e6fff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e2b6:	4501                	li	a0,0
+  49e2b8:	e69ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e2bc:	4541                	li	a0,16
+  49e2be:	e63ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e2c2:	4901                	li	s2,0
+  49e2c4:	0009a783          	lw	a5,0(s3)
+  49e2c8:	00391713          	slli	a4,s2,0x3
+  49e2cc:	0905                	addi	s2,s2,1
+  49e2ce:	439c                	lw	a5,0(a5)
+  49e2d0:	97ba                	add	a5,a5,a4
+  49e2d2:	97a6                	add	a5,a5,s1
+  49e2d4:	0007c503          	lbu	a0,0(a5)
+  49e2d8:	e8bff0ef          	jal	ra,49e162 <oled_write_data>
+  49e2dc:	ff6914e3          	bne	s2,s6,49e2c4 <oled_driver_refresh+0x46>
+  49e2e0:	0405                	addi	s0,s0,1
+  49e2e2:	0485                	addi	s1,s1,1
+  49e2e4:	0ff47413          	andi	s0,s0,255
+  49e2e8:	fd5494e3          	bne	s1,s5,49e2b0 <oled_driver_refresh+0x32>
+  49e2ec:	4732                	lw	a4,12(sp)
+  49e2ee:	7c0a2783          	lw	a5,1984(s4)
+  49e2f2:	00f70463          	beq	a4,a5,49e2fa <oled_driver_refresh+0x7c>
+  49e2f6:	ec3570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49e2fa:	0141                	addi	sp,sp,16
+  49e2fc:	d625c06f          	j	3fa85e <__riscv_restore_4>
 
-0049e2f2 <oled_driver_init>:
-  49e2f2:	d525c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49e2f6:	0011d737          	lui	a4,0x11d
-  49e2fa:	7c072783          	lw	a5,1984(a4) # 11d7c0 <__rom_data0_begin__>
-  49e2fe:	000e6437          	lui	s0,0xe6
-  49e302:	1141                	addi	sp,sp,-16
-  49e304:	c63e                	sw	a5,12(sp)
-  49e306:	9d442783          	lw	a5,-1580(s0) # e59d4 <g_oled_driver>
-  49e30a:	893a                	mv	s2,a4
-  49e30c:	9d440413          	addi	s0,s0,-1580
-  49e310:	c789                	beqz	a5,49e31a <oled_driver_init+0x28>
-  49e312:	00c7c783          	lbu	a5,12(a5)
-  49e316:	4501                	li	a0,0
-  49e318:	ef91                	bnez	a5,49e334 <oled_driver_init+0x42>
-  49e31a:	4551                	li	a0,20
-  49e31c:	a905d0ef          	jal	ra,3fb5ac <malloc>
-  49e320:	c008                	sw	a0,0(s0)
-  49e322:	84aa                	mv	s1,a0
-  49e324:	ed19                	bnez	a0,49e342 <oled_driver_init+0x50>
-  49e326:	004ab537          	lui	a0,0x4ab
-  49e32a:	78c50513          	addi	a0,a0,1932 # 4ab78c <alarm_type_strings+0x19d8>
-  49e32e:	97e5c0ef          	jal	ra,3fa4ac <printf>
-  49e332:	557d                	li	a0,-1
-  49e334:	4732                	lw	a4,12(sp)
-  49e336:	7c092783          	lw	a5,1984(s2)
-  49e33a:	1af70663          	beq	a4,a5,49e4e6 <oled_driver_init+0x1f4>
-  49e33e:	e7b570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49e342:	40000513          	li	a0,1024
-  49e346:	a665d0ef          	jal	ra,3fb5ac <malloc>
-  49e34a:	c088                	sw	a0,0(s1)
-  49e34c:	4004                	lw	s1,0(s0)
-  49e34e:	409c                	lw	a5,0(s1)
-  49e350:	ef89                	bnez	a5,49e36a <oled_driver_init+0x78>
-  49e352:	004ab537          	lui	a0,0x4ab
-  49e356:	7cc50513          	addi	a0,a0,1996 # 4ab7cc <alarm_type_strings+0x1a18>
-  49e35a:	9525c0ef          	jal	ra,3fa4ac <printf>
-  49e35e:	4008                	lw	a0,0(s0)
-  49e360:	a325d0ef          	jal	ra,3fb592 <free>
-  49e364:	00042023          	sw	zero,0(s0)
-  49e368:	b7e9                	j	49e332 <oled_driver_init+0x40>
-  49e36a:	40000513          	li	a0,1024
-  49e36e:	a3e5d0ef          	jal	ra,3fb5ac <malloc>
-  49e372:	c0c8                	sw	a0,4(s1)
-  49e374:	4004                	lw	s1,0(s0)
-  49e376:	40dc                	lw	a5,4(s1)
-  49e378:	ef81                	bnez	a5,49e390 <oled_driver_init+0x9e>
-  49e37a:	004ac537          	lui	a0,0x4ac
-  49e37e:	80850513          	addi	a0,a0,-2040 # 4ab808 <alarm_type_strings+0x1a54>
-  49e382:	92a5c0ef          	jal	ra,3fa4ac <printf>
-  49e386:	401c                	lw	a5,0(s0)
-  49e388:	4388                	lw	a0,0(a5)
-  49e38a:	a085d0ef          	jal	ra,3fb592 <free>
-  49e38e:	bfc1                	j	49e35e <oled_driver_init+0x6c>
-  49e390:	4521                	li	a0,8
-  49e392:	a1a5d0ef          	jal	ra,3fb5ac <malloc>
-  49e396:	401c                	lw	a5,0(s0)
-  49e398:	c488                	sw	a0,8(s1)
-  49e39a:	479c                	lw	a5,8(a5)
-  49e39c:	ef81                	bnez	a5,49e3b4 <oled_driver_init+0xc2>
-  49e39e:	004ac537          	lui	a0,0x4ac
-  49e3a2:	84450513          	addi	a0,a0,-1980 # 4ab844 <alarm_type_strings+0x1a90>
-  49e3a6:	9065c0ef          	jal	ra,3fa4ac <printf>
-  49e3aa:	401c                	lw	a5,0(s0)
-  49e3ac:	43c8                	lw	a0,4(a5)
-  49e3ae:	9e45d0ef          	jal	ra,3fb592 <free>
-  49e3b2:	bfd1                	j	49e386 <oled_driver_init+0x94>
-  49e3b4:	fe9520ef          	jal	ra,3f139c <hi_gpio_init>
-  49e3b8:	4585                	li	a1,1
-  49e3ba:	4525                	li	a0,9
-  49e3bc:	f7d530ef          	jal	ra,3f2338 <hi_io_set_pull>
-  49e3c0:	4585                	li	a1,1
-  49e3c2:	4529                	li	a0,10
-  49e3c4:	f75530ef          	jal	ra,3f2338 <hi_io_set_pull>
-  49e3c8:	4581                	li	a1,0
-  49e3ca:	4525                	li	a0,9
-  49e3cc:	e83530ef          	jal	ra,3f224e <hi_io_set_func>
-  49e3d0:	4581                	li	a1,0
-  49e3d2:	4529                	li	a0,10
-  49e3d4:	e7b530ef          	jal	ra,3f224e <hi_io_set_func>
-  49e3d8:	4585                	li	a1,1
-  49e3da:	4525                	li	a0,9
-  49e3dc:	ebf520ef          	jal	ra,3f129a <hi_gpio_set_dir>
-  49e3e0:	4585                	li	a1,1
-  49e3e2:	4529                	li	a0,10
-  49e3e4:	eb7520ef          	jal	ra,3f129a <hi_gpio_set_dir>
-  49e3e8:	0ae00513          	li	a0,174
-  49e3ec:	d27ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e3f0:	02000513          	li	a0,32
-  49e3f4:	d1fff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e3f8:	4541                	li	a0,16
-  49e3fa:	d19ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e3fe:	0b000513          	li	a0,176
-  49e402:	d11ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e406:	0c800513          	li	a0,200
-  49e40a:	d09ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e40e:	4501                	li	a0,0
-  49e410:	d03ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e414:	4541                	li	a0,16
-  49e416:	cfdff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e41a:	04000513          	li	a0,64
-  49e41e:	cf5ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e422:	08100513          	li	a0,129
-  49e426:	cedff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e42a:	0ff00513          	li	a0,255
-  49e42e:	ce5ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e432:	0a100513          	li	a0,161
-  49e436:	cddff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e43a:	0a600513          	li	a0,166
-  49e43e:	cd5ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e442:	0a800513          	li	a0,168
-  49e446:	ccdff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e44a:	03f00513          	li	a0,63
-  49e44e:	cc5ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e452:	0a400513          	li	a0,164
-  49e456:	cbdff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e45a:	0d300513          	li	a0,211
-  49e45e:	cb5ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e462:	4501                	li	a0,0
-  49e464:	cafff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e468:	0d500513          	li	a0,213
-  49e46c:	ca7ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e470:	0f000513          	li	a0,240
-  49e474:	c9fff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e478:	0d900513          	li	a0,217
-  49e47c:	c97ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e480:	02200513          	li	a0,34
-  49e484:	c8fff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e488:	0da00513          	li	a0,218
-  49e48c:	c87ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e490:	4549                	li	a0,18
-  49e492:	c81ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e496:	0db00513          	li	a0,219
-  49e49a:	c79ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e49e:	02000513          	li	a0,32
-  49e4a2:	c71ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e4a6:	08d00513          	li	a0,141
-  49e4aa:	c69ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e4ae:	4551                	li	a0,20
-  49e4b0:	c63ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e4b4:	0af00513          	li	a0,175
-  49e4b8:	c5bff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e4bc:	d53ff0ef          	jal	ra,49e20e <oled_driver_clear>
-  49e4c0:	db1ff0ef          	jal	ra,49e270 <oled_driver_refresh>
-  49e4c4:	401c                	lw	a5,0(s0)
-  49e4c6:	4705                	li	a4,1
-  49e4c8:	6585                	lui	a1,0x1
-  49e4ca:	004ac537          	lui	a0,0x4ac
-  49e4ce:	00e78623          	sb	a4,12(a5)
-  49e4d2:	0007a823          	sw	zero,16(a5)
-  49e4d6:	81c58593          	addi	a1,a1,-2020 # 81c <DOWNLOAD_IRQ_STACK_SIZE+0x1c>
-  49e4da:	88050513          	addi	a0,a0,-1920 # 4ab880 <alarm_type_strings+0x1acc>
-  49e4de:	fcf5b0ef          	jal	ra,3fa4ac <printf>
-  49e4e2:	4501                	li	a0,0
-  49e4e4:	bd81                	j	49e334 <oled_driver_init+0x42>
-  49e4e6:	0141                	addi	sp,sp,16
-  49e4e8:	b805c06f          	j	3fa868 <__riscv_restore_0>
+0049e300 <oled_driver_init>:
+  49e300:	d445c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49e304:	0011d737          	lui	a4,0x11d
+  49e308:	7c072783          	lw	a5,1984(a4) # 11d7c0 <__rom_data0_begin__>
+  49e30c:	000e6437          	lui	s0,0xe6
+  49e310:	1141                	addi	sp,sp,-16
+  49e312:	c63e                	sw	a5,12(sp)
+  49e314:	9d442783          	lw	a5,-1580(s0) # e59d4 <g_oled_driver>
+  49e318:	893a                	mv	s2,a4
+  49e31a:	9d440413          	addi	s0,s0,-1580
+  49e31e:	c789                	beqz	a5,49e328 <oled_driver_init+0x28>
+  49e320:	00c7c783          	lbu	a5,12(a5)
+  49e324:	4501                	li	a0,0
+  49e326:	ef91                	bnez	a5,49e342 <oled_driver_init+0x42>
+  49e328:	4551                	li	a0,20
+  49e32a:	a825d0ef          	jal	ra,3fb5ac <malloc>
+  49e32e:	c008                	sw	a0,0(s0)
+  49e330:	84aa                	mv	s1,a0
+  49e332:	ed19                	bnez	a0,49e350 <oled_driver_init+0x50>
+  49e334:	004ab537          	lui	a0,0x4ab
+  49e338:	78c50513          	addi	a0,a0,1932 # 4ab78c <alarm_type_strings+0x19d8>
+  49e33c:	9705c0ef          	jal	ra,3fa4ac <printf>
+  49e340:	557d                	li	a0,-1
+  49e342:	4732                	lw	a4,12(sp)
+  49e344:	7c092783          	lw	a5,1984(s2)
+  49e348:	1af70663          	beq	a4,a5,49e4f4 <oled_driver_init+0x1f4>
+  49e34c:	e6d570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49e350:	40000513          	li	a0,1024
+  49e354:	a585d0ef          	jal	ra,3fb5ac <malloc>
+  49e358:	c088                	sw	a0,0(s1)
+  49e35a:	4004                	lw	s1,0(s0)
+  49e35c:	409c                	lw	a5,0(s1)
+  49e35e:	ef89                	bnez	a5,49e378 <oled_driver_init+0x78>
+  49e360:	004ab537          	lui	a0,0x4ab
+  49e364:	7cc50513          	addi	a0,a0,1996 # 4ab7cc <alarm_type_strings+0x1a18>
+  49e368:	9445c0ef          	jal	ra,3fa4ac <printf>
+  49e36c:	4008                	lw	a0,0(s0)
+  49e36e:	a245d0ef          	jal	ra,3fb592 <free>
+  49e372:	00042023          	sw	zero,0(s0)
+  49e376:	b7e9                	j	49e340 <oled_driver_init+0x40>
+  49e378:	40000513          	li	a0,1024
+  49e37c:	a305d0ef          	jal	ra,3fb5ac <malloc>
+  49e380:	c0c8                	sw	a0,4(s1)
+  49e382:	4004                	lw	s1,0(s0)
+  49e384:	40dc                	lw	a5,4(s1)
+  49e386:	ef81                	bnez	a5,49e39e <oled_driver_init+0x9e>
+  49e388:	004ac537          	lui	a0,0x4ac
+  49e38c:	80850513          	addi	a0,a0,-2040 # 4ab808 <alarm_type_strings+0x1a54>
+  49e390:	91c5c0ef          	jal	ra,3fa4ac <printf>
+  49e394:	401c                	lw	a5,0(s0)
+  49e396:	4388                	lw	a0,0(a5)
+  49e398:	9fa5d0ef          	jal	ra,3fb592 <free>
+  49e39c:	bfc1                	j	49e36c <oled_driver_init+0x6c>
+  49e39e:	4521                	li	a0,8
+  49e3a0:	a0c5d0ef          	jal	ra,3fb5ac <malloc>
+  49e3a4:	401c                	lw	a5,0(s0)
+  49e3a6:	c488                	sw	a0,8(s1)
+  49e3a8:	479c                	lw	a5,8(a5)
+  49e3aa:	ef81                	bnez	a5,49e3c2 <oled_driver_init+0xc2>
+  49e3ac:	004ac537          	lui	a0,0x4ac
+  49e3b0:	84450513          	addi	a0,a0,-1980 # 4ab844 <alarm_type_strings+0x1a90>
+  49e3b4:	8f85c0ef          	jal	ra,3fa4ac <printf>
+  49e3b8:	401c                	lw	a5,0(s0)
+  49e3ba:	43c8                	lw	a0,4(a5)
+  49e3bc:	9d65d0ef          	jal	ra,3fb592 <free>
+  49e3c0:	bfd1                	j	49e394 <oled_driver_init+0x94>
+  49e3c2:	fdb520ef          	jal	ra,3f139c <hi_gpio_init>
+  49e3c6:	4585                	li	a1,1
+  49e3c8:	4525                	li	a0,9
+  49e3ca:	f6f530ef          	jal	ra,3f2338 <hi_io_set_pull>
+  49e3ce:	4585                	li	a1,1
+  49e3d0:	4529                	li	a0,10
+  49e3d2:	f67530ef          	jal	ra,3f2338 <hi_io_set_pull>
+  49e3d6:	4581                	li	a1,0
+  49e3d8:	4525                	li	a0,9
+  49e3da:	e75530ef          	jal	ra,3f224e <hi_io_set_func>
+  49e3de:	4581                	li	a1,0
+  49e3e0:	4529                	li	a0,10
+  49e3e2:	e6d530ef          	jal	ra,3f224e <hi_io_set_func>
+  49e3e6:	4585                	li	a1,1
+  49e3e8:	4525                	li	a0,9
+  49e3ea:	eb1520ef          	jal	ra,3f129a <hi_gpio_set_dir>
+  49e3ee:	4585                	li	a1,1
+  49e3f0:	4529                	li	a0,10
+  49e3f2:	ea9520ef          	jal	ra,3f129a <hi_gpio_set_dir>
+  49e3f6:	0ae00513          	li	a0,174
+  49e3fa:	d27ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e3fe:	02000513          	li	a0,32
+  49e402:	d1fff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e406:	4541                	li	a0,16
+  49e408:	d19ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e40c:	0b000513          	li	a0,176
+  49e410:	d11ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e414:	0c800513          	li	a0,200
+  49e418:	d09ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e41c:	4501                	li	a0,0
+  49e41e:	d03ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e422:	4541                	li	a0,16
+  49e424:	cfdff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e428:	04000513          	li	a0,64
+  49e42c:	cf5ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e430:	08100513          	li	a0,129
+  49e434:	cedff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e438:	0ff00513          	li	a0,255
+  49e43c:	ce5ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e440:	0a100513          	li	a0,161
+  49e444:	cddff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e448:	0a600513          	li	a0,166
+  49e44c:	cd5ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e450:	0a800513          	li	a0,168
+  49e454:	ccdff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e458:	03f00513          	li	a0,63
+  49e45c:	cc5ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e460:	0a400513          	li	a0,164
+  49e464:	cbdff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e468:	0d300513          	li	a0,211
+  49e46c:	cb5ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e470:	4501                	li	a0,0
+  49e472:	cafff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e476:	0d500513          	li	a0,213
+  49e47a:	ca7ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e47e:	0f000513          	li	a0,240
+  49e482:	c9fff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e486:	0d900513          	li	a0,217
+  49e48a:	c97ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e48e:	02200513          	li	a0,34
+  49e492:	c8fff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e496:	0da00513          	li	a0,218
+  49e49a:	c87ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e49e:	4549                	li	a0,18
+  49e4a0:	c81ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e4a4:	0db00513          	li	a0,219
+  49e4a8:	c79ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e4ac:	02000513          	li	a0,32
+  49e4b0:	c71ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e4b4:	08d00513          	li	a0,141
+  49e4b8:	c69ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e4bc:	4551                	li	a0,20
+  49e4be:	c63ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e4c2:	0af00513          	li	a0,175
+  49e4c6:	c5bff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e4ca:	d53ff0ef          	jal	ra,49e21c <oled_driver_clear>
+  49e4ce:	db1ff0ef          	jal	ra,49e27e <oled_driver_refresh>
+  49e4d2:	401c                	lw	a5,0(s0)
+  49e4d4:	4705                	li	a4,1
+  49e4d6:	6585                	lui	a1,0x1
+  49e4d8:	004ac537          	lui	a0,0x4ac
+  49e4dc:	00e78623          	sb	a4,12(a5)
+  49e4e0:	0007a823          	sw	zero,16(a5)
+  49e4e4:	81c58593          	addi	a1,a1,-2020 # 81c <DOWNLOAD_IRQ_STACK_SIZE+0x1c>
+  49e4e8:	88050513          	addi	a0,a0,-1920 # 4ab880 <alarm_type_strings+0x1acc>
+  49e4ec:	fc15b0ef          	jal	ra,3fa4ac <printf>
+  49e4f0:	4501                	li	a0,0
+  49e4f2:	bd81                	j	49e342 <oled_driver_init+0x42>
+  49e4f4:	0141                	addi	sp,sp,16
+  49e4f6:	b725c06f          	j	3fa868 <__riscv_restore_0>
 
-0049e4ec <oled_driver_refresh_partial>:
-  49e4ec:	b3e5c2ef          	jal	t0,3fa82a <__riscv_save_4>
-  49e4f0:	0011d937          	lui	s2,0x11d
-  49e4f4:	7c092783          	lw	a5,1984(s2) # 11d7c0 <__rom_data0_begin__>
-  49e4f8:	1141                	addi	sp,sp,-16
-  49e4fa:	000e64b7          	lui	s1,0xe6
-  49e4fe:	c63e                	sw	a5,12(sp)
-  49e500:	9d44a783          	lw	a5,-1580(s1) # e59d4 <g_oled_driver>
-  49e504:	c3b5                	beqz	a5,49e568 <oled_driver_refresh_partial+0x7c>
-  49e506:	00c7c783          	lbu	a5,12(a5)
-  49e50a:	cfb9                	beqz	a5,49e568 <oled_driver_refresh_partial+0x7c>
-  49e50c:	9d448493          	addi	s1,s1,-1580
-  49e510:	4401                	li	s0,0
-  49e512:	08000a93          	li	s5,128
-  49e516:	4a21                	li	s4,8
-  49e518:	409c                	lw	a5,0(s1)
-  49e51a:	479c                	lw	a5,8(a5)
-  49e51c:	97a2                	add	a5,a5,s0
-  49e51e:	0007c783          	lbu	a5,0(a5)
-  49e522:	c3a1                	beqz	a5,49e562 <oled_driver_refresh_partial+0x76>
-  49e524:	fb040513          	addi	a0,s0,-80
-  49e528:	0ff57513          	andi	a0,a0,255
-  49e52c:	be7ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e530:	4501                	li	a0,0
-  49e532:	be1ff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e536:	4541                	li	a0,16
-  49e538:	bdbff0ef          	jal	ra,49e112 <oled_write_cmd>
-  49e53c:	4981                	li	s3,0
-  49e53e:	409c                	lw	a5,0(s1)
-  49e540:	00399713          	slli	a4,s3,0x3
-  49e544:	0985                	addi	s3,s3,1
-  49e546:	439c                	lw	a5,0(a5)
-  49e548:	97ba                	add	a5,a5,a4
-  49e54a:	97a2                	add	a5,a5,s0
-  49e54c:	0007c503          	lbu	a0,0(a5)
-  49e550:	c05ff0ef          	jal	ra,49e154 <oled_write_data>
-  49e554:	ff5995e3          	bne	s3,s5,49e53e <oled_driver_refresh_partial+0x52>
-  49e558:	409c                	lw	a5,0(s1)
-  49e55a:	479c                	lw	a5,8(a5)
-  49e55c:	97a2                	add	a5,a5,s0
-  49e55e:	00078023          	sb	zero,0(a5)
-  49e562:	0405                	addi	s0,s0,1
-  49e564:	fb441ae3          	bne	s0,s4,49e518 <oled_driver_refresh_partial+0x2c>
-  49e568:	4732                	lw	a4,12(sp)
-  49e56a:	7c092783          	lw	a5,1984(s2)
-  49e56e:	00f70463          	beq	a4,a5,49e576 <oled_driver_refresh_partial+0x8a>
-  49e572:	c47570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49e576:	0141                	addi	sp,sp,16
-  49e578:	ae65c06f          	j	3fa85e <__riscv_restore_4>
+0049e4fa <oled_driver_refresh_partial>:
+  49e4fa:	b305c2ef          	jal	t0,3fa82a <__riscv_save_4>
+  49e4fe:	0011d937          	lui	s2,0x11d
+  49e502:	7c092783          	lw	a5,1984(s2) # 11d7c0 <__rom_data0_begin__>
+  49e506:	1141                	addi	sp,sp,-16
+  49e508:	000e64b7          	lui	s1,0xe6
+  49e50c:	c63e                	sw	a5,12(sp)
+  49e50e:	9d44a783          	lw	a5,-1580(s1) # e59d4 <g_oled_driver>
+  49e512:	c3b5                	beqz	a5,49e576 <oled_driver_refresh_partial+0x7c>
+  49e514:	00c7c783          	lbu	a5,12(a5)
+  49e518:	cfb9                	beqz	a5,49e576 <oled_driver_refresh_partial+0x7c>
+  49e51a:	9d448493          	addi	s1,s1,-1580
+  49e51e:	4401                	li	s0,0
+  49e520:	08000a93          	li	s5,128
+  49e524:	4a21                	li	s4,8
+  49e526:	409c                	lw	a5,0(s1)
+  49e528:	479c                	lw	a5,8(a5)
+  49e52a:	97a2                	add	a5,a5,s0
+  49e52c:	0007c783          	lbu	a5,0(a5)
+  49e530:	c3a1                	beqz	a5,49e570 <oled_driver_refresh_partial+0x76>
+  49e532:	fb040513          	addi	a0,s0,-80
+  49e536:	0ff57513          	andi	a0,a0,255
+  49e53a:	be7ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e53e:	4501                	li	a0,0
+  49e540:	be1ff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e544:	4541                	li	a0,16
+  49e546:	bdbff0ef          	jal	ra,49e120 <oled_write_cmd>
+  49e54a:	4981                	li	s3,0
+  49e54c:	409c                	lw	a5,0(s1)
+  49e54e:	00399713          	slli	a4,s3,0x3
+  49e552:	0985                	addi	s3,s3,1
+  49e554:	439c                	lw	a5,0(a5)
+  49e556:	97ba                	add	a5,a5,a4
+  49e558:	97a2                	add	a5,a5,s0
+  49e55a:	0007c503          	lbu	a0,0(a5)
+  49e55e:	c05ff0ef          	jal	ra,49e162 <oled_write_data>
+  49e562:	ff5995e3          	bne	s3,s5,49e54c <oled_driver_refresh_partial+0x52>
+  49e566:	409c                	lw	a5,0(s1)
+  49e568:	479c                	lw	a5,8(a5)
+  49e56a:	97a2                	add	a5,a5,s0
+  49e56c:	00078023          	sb	zero,0(a5)
+  49e570:	0405                	addi	s0,s0,1
+  49e572:	fb441ae3          	bne	s0,s4,49e526 <oled_driver_refresh_partial+0x2c>
+  49e576:	4732                	lw	a4,12(sp)
+  49e578:	7c092783          	lw	a5,1984(s2)
+  49e57c:	00f70463          	beq	a4,a5,49e584 <oled_driver_refresh_partial+0x8a>
+  49e580:	c39570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49e584:	0141                	addi	sp,sp,16
+  49e586:	ad85c06f          	j	3fa85e <__riscv_restore_4>
 
-0049e57c <oled_driver_draw_pixel>:
-  49e57c:	ac85c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49e580:	0011d737          	lui	a4,0x11d
-  49e584:	7c072683          	lw	a3,1984(a4) # 11d7c0 <__rom_data0_begin__>
-  49e588:	1141                	addi	sp,sp,-16
-  49e58a:	843a                	mv	s0,a4
-  49e58c:	c636                	sw	a3,12(sp)
-  49e58e:	000e66b7          	lui	a3,0xe6
-  49e592:	9d46a683          	lw	a3,-1580(a3) # e59d4 <g_oled_driver>
-  49e596:	c6a1                	beqz	a3,49e5de <oled_driver_draw_pixel+0x62>
-  49e598:	00c6c703          	lbu	a4,12(a3)
-  49e59c:	c329                	beqz	a4,49e5de <oled_driver_draw_pixel+0x62>
-  49e59e:	07f00713          	li	a4,127
-  49e5a2:	87aa                	mv	a5,a0
-  49e5a4:	02a76d63          	bltu	a4,a0,49e5de <oled_driver_draw_pixel+0x62>
-  49e5a8:	03f00713          	li	a4,63
-  49e5ac:	02b76963          	bltu	a4,a1,49e5de <oled_driver_draw_pixel+0x62>
-  49e5b0:	0035d713          	srli	a4,a1,0x3
-  49e5b4:	078e                	slli	a5,a5,0x3
-  49e5b6:	97ba                	add	a5,a5,a4
-  49e5b8:	0ff77513          	andi	a0,a4,255
-  49e5bc:	4298                	lw	a4,0(a3)
-  49e5be:	0075f693          	andi	a3,a1,7
-  49e5c2:	4585                	li	a1,1
-  49e5c4:	00d595b3          	sll	a1,a1,a3
-  49e5c8:	973e                	add	a4,a4,a5
-  49e5ca:	05e2                	slli	a1,a1,0x18
-  49e5cc:	00070783          	lb	a5,0(a4)
-  49e5d0:	85e1                	srai	a1,a1,0x18
-  49e5d2:	ce09                	beqz	a2,49e5ec <oled_driver_draw_pixel+0x70>
-  49e5d4:	8ddd                	or	a1,a1,a5
-  49e5d6:	00b70023          	sb	a1,0(a4)
-  49e5da:	9b1ff0ef          	jal	ra,49df8a <oled_driver_mark_dirty>
-  49e5de:	4732                	lw	a4,12(sp)
-  49e5e0:	7c042783          	lw	a5,1984(s0)
-  49e5e4:	00f70863          	beq	a4,a5,49e5f4 <oled_driver_draw_pixel+0x78>
-  49e5e8:	bd1570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49e5ec:	fff5c593          	not	a1,a1
-  49e5f0:	8dfd                	and	a1,a1,a5
-  49e5f2:	b7d5                	j	49e5d6 <oled_driver_draw_pixel+0x5a>
-  49e5f4:	0141                	addi	sp,sp,16
-  49e5f6:	a725c06f          	j	3fa868 <__riscv_restore_0>
+0049e58a <oled_driver_draw_pixel>:
+  49e58a:	aba5c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49e58e:	0011d737          	lui	a4,0x11d
+  49e592:	7c072683          	lw	a3,1984(a4) # 11d7c0 <__rom_data0_begin__>
+  49e596:	1141                	addi	sp,sp,-16
+  49e598:	843a                	mv	s0,a4
+  49e59a:	c636                	sw	a3,12(sp)
+  49e59c:	000e66b7          	lui	a3,0xe6
+  49e5a0:	9d46a683          	lw	a3,-1580(a3) # e59d4 <g_oled_driver>
+  49e5a4:	c6a1                	beqz	a3,49e5ec <oled_driver_draw_pixel+0x62>
+  49e5a6:	00c6c703          	lbu	a4,12(a3)
+  49e5aa:	c329                	beqz	a4,49e5ec <oled_driver_draw_pixel+0x62>
+  49e5ac:	07f00713          	li	a4,127
+  49e5b0:	87aa                	mv	a5,a0
+  49e5b2:	02a76d63          	bltu	a4,a0,49e5ec <oled_driver_draw_pixel+0x62>
+  49e5b6:	03f00713          	li	a4,63
+  49e5ba:	02b76963          	bltu	a4,a1,49e5ec <oled_driver_draw_pixel+0x62>
+  49e5be:	0035d713          	srli	a4,a1,0x3
+  49e5c2:	078e                	slli	a5,a5,0x3
+  49e5c4:	97ba                	add	a5,a5,a4
+  49e5c6:	0ff77513          	andi	a0,a4,255
+  49e5ca:	4298                	lw	a4,0(a3)
+  49e5cc:	0075f693          	andi	a3,a1,7
+  49e5d0:	4585                	li	a1,1
+  49e5d2:	00d595b3          	sll	a1,a1,a3
+  49e5d6:	973e                	add	a4,a4,a5
+  49e5d8:	05e2                	slli	a1,a1,0x18
+  49e5da:	00070783          	lb	a5,0(a4)
+  49e5de:	85e1                	srai	a1,a1,0x18
+  49e5e0:	ce09                	beqz	a2,49e5fa <oled_driver_draw_pixel+0x70>
+  49e5e2:	8ddd                	or	a1,a1,a5
+  49e5e4:	00b70023          	sb	a1,0(a4)
+  49e5e8:	9b1ff0ef          	jal	ra,49df98 <oled_driver_mark_dirty>
+  49e5ec:	4732                	lw	a4,12(sp)
+  49e5ee:	7c042783          	lw	a5,1984(s0)
+  49e5f2:	00f70863          	beq	a4,a5,49e602 <oled_driver_draw_pixel+0x78>
+  49e5f6:	bc3570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49e5fa:	fff5c593          	not	a1,a1
+  49e5fe:	8dfd                	and	a1,a1,a5
+  49e600:	b7d5                	j	49e5e4 <oled_driver_draw_pixel+0x5a>
+  49e602:	0141                	addi	sp,sp,16
+  49e604:	a645c06f          	j	3fa868 <__riscv_restore_0>
 
-0049e5fa <oled_driver_is_initialized>:
-  49e5fa:	a4a5c2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49e5fe:	0011d7b7          	lui	a5,0x11d
-  49e602:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49e606:	1141                	addi	sp,sp,-16
-  49e608:	4501                	li	a0,0
-  49e60a:	c63a                	sw	a4,12(sp)
-  49e60c:	000e6737          	lui	a4,0xe6
-  49e610:	9d472703          	lw	a4,-1580(a4) # e59d4 <g_oled_driver>
-  49e614:	c319                	beqz	a4,49e61a <oled_driver_is_initialized+0x20>
-  49e616:	00c74503          	lbu	a0,12(a4)
-  49e61a:	4732                	lw	a4,12(sp)
-  49e61c:	7c07a783          	lw	a5,1984(a5)
-  49e620:	8905                	andi	a0,a0,1
-  49e622:	00f70463          	beq	a4,a5,49e62a <oled_driver_is_initialized+0x30>
-  49e626:	b93570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49e62a:	0141                	addi	sp,sp,16
-  49e62c:	a3c5c06f          	j	3fa868 <__riscv_restore_0>
+0049e608 <oled_driver_is_initialized>:
+  49e608:	a3c5c2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49e60c:	0011d7b7          	lui	a5,0x11d
+  49e610:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49e614:	1141                	addi	sp,sp,-16
+  49e616:	4501                	li	a0,0
+  49e618:	c63a                	sw	a4,12(sp)
+  49e61a:	000e6737          	lui	a4,0xe6
+  49e61e:	9d472703          	lw	a4,-1580(a4) # e59d4 <g_oled_driver>
+  49e622:	c319                	beqz	a4,49e628 <oled_driver_is_initialized+0x20>
+  49e624:	00c74503          	lbu	a0,12(a4)
+  49e628:	4732                	lw	a4,12(sp)
+  49e62a:	7c07a783          	lw	a5,1984(a5)
+  49e62e:	8905                	andi	a0,a0,1
+  49e630:	00f70463          	beq	a4,a5,49e638 <oled_driver_is_initialized+0x30>
+  49e634:	b85570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49e638:	0141                	addi	sp,sp,16
+  49e63a:	a2e5c06f          	j	3fa868 <__riscv_restore_0>
 
-0049e630 <php_api_url_decode.constprop.0>:
-  49e630:	9e45c2ef          	jal	t0,3fa814 <__riscv_save_12>
-  49e634:	0011d937          	lui	s2,0x11d
-  49e638:	7c092783          	lw	a5,1984(s2) # 11d7c0 <__rom_data0_begin__>
-  49e63c:	1141                	addi	sp,sp,-16
-  49e63e:	8aaa                	mv	s5,a0
-  49e640:	89ae                	mv	s3,a1
-  49e642:	c63e                	sw	a5,12(sp)
-  49e644:	4401                	li	s0,0
-  49e646:	4481                	li	s1,0
-  49e648:	02b00d13          	li	s10,43
-  49e64c:	02000d93          	li	s11,32
-  49e650:	009a8bb3          	add	s7,s5,s1
-  49e654:	000b8703          	lb	a4,0(s7)
-  49e658:	c709                	beqz	a4,49e662 <php_api_url_decode.constprop.0+0x32>
-  49e65a:	0fe00793          	li	a5,254
-  49e65e:	00f41c63          	bne	s0,a5,49e676 <php_api_url_decode.constprop.0+0x46>
-  49e662:	944e                	add	s0,s0,s3
-  49e664:	00040023          	sb	zero,0(s0)
-  49e668:	4732                	lw	a4,12(sp)
-  49e66a:	7c092783          	lw	a5,1984(s2)
-  49e66e:	06f70b63          	beq	a4,a5,49e6e4 <php_api_url_decode.constprop.0+0xb4>
-  49e672:	b47570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49e676:	0405                	addi	s0,s0,1
-  49e678:	02500793          	li	a5,37
-  49e67c:	00148c13          	addi	s8,s1,1
-  49e680:	00898b33          	add	s6,s3,s0
-  49e684:	04f71663          	bne	a4,a5,49e6d0 <php_api_url_decode.constprop.0+0xa0>
-  49e688:	018a8cb3          	add	s9,s5,s8
-  49e68c:	000c8503          	lb	a0,0(s9)
-  49e690:	976ab0ef          	jal	ra,449806 <isxdigit>
-  49e694:	cd15                	beqz	a0,49e6d0 <php_api_url_decode.constprop.0+0xa0>
-  49e696:	00248a13          	addi	s4,s1,2
-  49e69a:	9a56                	add	s4,s4,s5
-  49e69c:	000a0503          	lb	a0,0(s4)
-  49e6a0:	966ab0ef          	jal	ra,449806 <isxdigit>
-  49e6a4:	c515                	beqz	a0,49e6d0 <php_api_url_decode.constprop.0+0xa0>
-  49e6a6:	000cc783          	lbu	a5,0(s9)
-  49e6aa:	4641                	li	a2,16
-  49e6ac:	4581                	li	a1,0
-  49e6ae:	00f10423          	sb	a5,8(sp)
-  49e6b2:	000a4783          	lbu	a5,0(s4)
-  49e6b6:	0028                	addi	a0,sp,8
-  49e6b8:	00010523          	sb	zero,10(sp)
-  49e6bc:	00f104a3          	sb	a5,9(sp)
-  49e6c0:	ad4ac0ef          	jal	ra,44a994 <strtol>
-  49e6c4:	feab0fa3          	sb	a0,-1(s6)
-  49e6c8:	00348c13          	addi	s8,s1,3
-  49e6cc:	84e2                	mv	s1,s8
-  49e6ce:	b749                	j	49e650 <php_api_url_decode.constprop.0+0x20>
-  49e6d0:	000b8703          	lb	a4,0(s7)
-  49e6d4:	01a71563          	bne	a4,s10,49e6de <php_api_url_decode.constprop.0+0xae>
-  49e6d8:	ffbb0fa3          	sb	s11,-1(s6)
-  49e6dc:	bfc5                	j	49e6cc <php_api_url_decode.constprop.0+0x9c>
-  49e6de:	feeb0fa3          	sb	a4,-1(s6)
-  49e6e2:	b7ed                	j	49e6cc <php_api_url_decode.constprop.0+0x9c>
-  49e6e4:	0141                	addi	sp,sp,16
-  49e6e6:	96a5c06f          	j	3fa850 <__riscv_restore_12>
+0049e63e <php_api_url_decode.constprop.0>:
+  49e63e:	9d65c2ef          	jal	t0,3fa814 <__riscv_save_12>
+  49e642:	0011d937          	lui	s2,0x11d
+  49e646:	7c092783          	lw	a5,1984(s2) # 11d7c0 <__rom_data0_begin__>
+  49e64a:	1141                	addi	sp,sp,-16
+  49e64c:	8aaa                	mv	s5,a0
+  49e64e:	89ae                	mv	s3,a1
+  49e650:	c63e                	sw	a5,12(sp)
+  49e652:	4401                	li	s0,0
+  49e654:	4481                	li	s1,0
+  49e656:	02b00d13          	li	s10,43
+  49e65a:	02000d93          	li	s11,32
+  49e65e:	009a8bb3          	add	s7,s5,s1
+  49e662:	000b8703          	lb	a4,0(s7)
+  49e666:	c709                	beqz	a4,49e670 <php_api_url_decode.constprop.0+0x32>
+  49e668:	0fe00793          	li	a5,254
+  49e66c:	00f41c63          	bne	s0,a5,49e684 <php_api_url_decode.constprop.0+0x46>
+  49e670:	944e                	add	s0,s0,s3
+  49e672:	00040023          	sb	zero,0(s0)
+  49e676:	4732                	lw	a4,12(sp)
+  49e678:	7c092783          	lw	a5,1984(s2)
+  49e67c:	06f70b63          	beq	a4,a5,49e6f2 <php_api_url_decode.constprop.0+0xb4>
+  49e680:	b39570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49e684:	0405                	addi	s0,s0,1
+  49e686:	02500793          	li	a5,37
+  49e68a:	00148c13          	addi	s8,s1,1
+  49e68e:	00898b33          	add	s6,s3,s0
+  49e692:	04f71663          	bne	a4,a5,49e6de <php_api_url_decode.constprop.0+0xa0>
+  49e696:	018a8cb3          	add	s9,s5,s8
+  49e69a:	000c8503          	lb	a0,0(s9)
+  49e69e:	968ab0ef          	jal	ra,449806 <isxdigit>
+  49e6a2:	cd15                	beqz	a0,49e6de <php_api_url_decode.constprop.0+0xa0>
+  49e6a4:	00248a13          	addi	s4,s1,2
+  49e6a8:	9a56                	add	s4,s4,s5
+  49e6aa:	000a0503          	lb	a0,0(s4)
+  49e6ae:	958ab0ef          	jal	ra,449806 <isxdigit>
+  49e6b2:	c515                	beqz	a0,49e6de <php_api_url_decode.constprop.0+0xa0>
+  49e6b4:	000cc783          	lbu	a5,0(s9)
+  49e6b8:	4641                	li	a2,16
+  49e6ba:	4581                	li	a1,0
+  49e6bc:	00f10423          	sb	a5,8(sp)
+  49e6c0:	000a4783          	lbu	a5,0(s4)
+  49e6c4:	0028                	addi	a0,sp,8
+  49e6c6:	00010523          	sb	zero,10(sp)
+  49e6ca:	00f104a3          	sb	a5,9(sp)
+  49e6ce:	ac6ac0ef          	jal	ra,44a994 <strtol>
+  49e6d2:	feab0fa3          	sb	a0,-1(s6)
+  49e6d6:	00348c13          	addi	s8,s1,3
+  49e6da:	84e2                	mv	s1,s8
+  49e6dc:	b749                	j	49e65e <php_api_url_decode.constprop.0+0x20>
+  49e6de:	000b8703          	lb	a4,0(s7)
+  49e6e2:	01a71563          	bne	a4,s10,49e6ec <php_api_url_decode.constprop.0+0xae>
+  49e6e6:	ffbb0fa3          	sb	s11,-1(s6)
+  49e6ea:	bfc5                	j	49e6da <php_api_url_decode.constprop.0+0x9c>
+  49e6ec:	feeb0fa3          	sb	a4,-1(s6)
+  49e6f0:	b7ed                	j	49e6da <php_api_url_decode.constprop.0+0x9c>
+  49e6f2:	0141                	addi	sp,sp,16
+  49e6f4:	95c5c06f          	j	3fa850 <__riscv_restore_12>
 
-0049e6ea <debug_print_long.constprop.1>:
-  49e6ea:	81010113          	addi	sp,sp,-2032
-  49e6ee:	7c912223          	sw	s1,1988(sp)
-  49e6f2:	7b312e23          	sw	s3,1980(sp)
-  49e6f6:	7c112623          	sw	ra,1996(sp)
-  49e6fa:	7c812423          	sw	s0,1992(sp)
-  49e6fe:	7d212023          	sw	s2,1984(sp)
-  49e702:	7b412c23          	sw	s4,1976(sp)
-  49e706:	7b512a23          	sw	s5,1972(sp)
-  49e70a:	7b612823          	sw	s6,1968(sp)
-  49e70e:	7b712623          	sw	s7,1964(sp)
-  49e712:	7b812423          	sw	s8,1960(sp)
-  49e716:	7b912223          	sw	s9,1956(sp)
-  49e71a:	7ba12023          	sw	s10,1952(sp)
-  49e71e:	79b12e23          	sw	s11,1948(sp)
-  49e722:	6605                	lui	a2,0x1
-  49e724:	7175                	addi	sp,sp,-144
-  49e726:	0808                	addi	a0,sp,16
-  49e728:	85c60593          	addi	a1,a2,-1956 # 85c <DOWNLOAD_IRQ_STACK_SIZE+0x5c>
-  49e72c:	95aa                	add	a1,a1,a0
-  49e72e:	c194                	sw	a3,0(a1)
-  49e730:	86b2                	mv	a3,a2
-  49e732:	86060613          	addi	a2,a2,-1952
-  49e736:	962a                	add	a2,a2,a0
-  49e738:	c218                	sw	a4,0(a2)
-  49e73a:	8736                	mv	a4,a3
-  49e73c:	86468693          	addi	a3,a3,-1948
-  49e740:	96aa                	add	a3,a3,a0
-  49e742:	c29c                	sw	a5,0(a3)
-  49e744:	86870793          	addi	a5,a4,-1944
-  49e748:	97aa                	add	a5,a5,a0
-  49e74a:	0107a023          	sw	a6,0(a5)
-  49e74e:	86c70793          	addi	a5,a4,-1940
-  49e752:	97aa                	add	a5,a5,a0
-  49e754:	0117a023          	sw	a7,0(a5)
-  49e758:	0011d4b7          	lui	s1,0x11d
-  49e75c:	7c04a783          	lw	a5,1984(s1) # 11d7c0 <__rom_data0_begin__>
-  49e760:	80c70693          	addi	a3,a4,-2036
-  49e764:	96aa                	add	a3,a3,a0
-  49e766:	c29c                	sw	a5,0(a3)
-  49e768:	87ba                	mv	a5,a4
-  49e76a:	79fd                	lui	s3,0xfffff
-  49e76c:	81078793          	addi	a5,a5,-2032
-  49e770:	97aa                	add	a5,a5,a0
-  49e772:	7fc98993          	addi	s3,s3,2044 # fffff7fc <__rom_data1_load+0xffb4cb9c>
-  49e776:	85c70713          	addi	a4,a4,-1956
-  49e77a:	99be                	add	s3,s3,a5
-  49e77c:	004ac637          	lui	a2,0x4ac
-  49e780:	6585                	lui	a1,0x1
-  49e782:	00e506b3          	add	a3,a0,a4
-  49e786:	8cc60613          	addi	a2,a2,-1844 # 4ab8cc <alarm_type_strings+0x1b18>
-  49e78a:	80058593          	addi	a1,a1,-2048 # 800 <DOWNLOAD_IRQ_STACK_SIZE>
-  49e78e:	854e                	mv	a0,s3
-  49e790:	cc36                	sw	a3,24(sp)
-  49e792:	c0aae0ef          	jal	ra,44cb9c <vsnprintf>
-  49e796:	c626                	sw	s1,12(sp)
-  49e798:	06055463          	bgez	a0,49e800 <debug_print_long.constprop.1+0x116>
-  49e79c:	004ab5b7          	lui	a1,0x4ab
-  49e7a0:	004ad537          	lui	a0,0x4ad
-  49e7a4:	ea458593          	addi	a1,a1,-348 # 4aaea4 <alarm_type_strings+0x10f0>
-  49e7a8:	6c450513          	addi	a0,a0,1732 # 4ad6c4 <alarm_type_strings+0x3910>
-  49e7ac:	d015b0ef          	jal	ra,3fa4ac <printf>
-  49e7b0:	004ac437          	lui	s0,0x4ac
-  49e7b4:	90040513          	addi	a0,s0,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49e7b8:	f775c0ef          	jal	ra,3fb72e <strlen>
-  49e7bc:	c909                	beqz	a0,49e7ce <debug_print_long.constprop.1+0xe4>
-  49e7be:	004ab537          	lui	a0,0x4ab
-  49e7c2:	90040593          	addi	a1,s0,-1792
-  49e7c6:	eb050513          	addi	a0,a0,-336 # 4aaeb0 <alarm_type_strings+0x10fc>
-  49e7ca:	ce35b0ef          	jal	ra,3fa4ac <printf>
-  49e7ce:	004ab5b7          	lui	a1,0x4ab
-  49e7d2:	004ac537          	lui	a0,0x4ac
-  49e7d6:	eb858593          	addi	a1,a1,-328 # 4aaeb8 <alarm_type_strings+0x1104>
-  49e7da:	90850513          	addi	a0,a0,-1784 # 4ab908 <alarm_type_strings+0x1b54>
-  49e7de:	ccf5b0ef          	jal	ra,3fa4ac <printf>
-  49e7e2:	4401                	li	s0,0
-  49e7e4:	6785                	lui	a5,0x1
-  49e7e6:	0818                	addi	a4,sp,16
-  49e7e8:	80c78793          	addi	a5,a5,-2036 # 80c <DOWNLOAD_IRQ_STACK_SIZE+0xc>
-  49e7ec:	97ba                	add	a5,a5,a4
-  49e7ee:	4398                	lw	a4,0(a5)
-  49e7f0:	47b2                	lw	a5,12(sp)
-  49e7f2:	8522                	mv	a0,s0
-  49e7f4:	7c07a783          	lw	a5,1984(a5)
-  49e7f8:	12f70163          	beq	a4,a5,49e91a <debug_print_long.constprop.1+0x230>
-  49e7fc:	9bd570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49e800:	0c800793          	li	a5,200
-  49e804:	842a                	mv	s0,a0
-  49e806:	04a7cf63          	blt	a5,a0,49e864 <debug_print_long.constprop.1+0x17a>
-  49e80a:	004ab5b7          	lui	a1,0x4ab
-  49e80e:	004ad537          	lui	a0,0x4ad
-  49e812:	ea458593          	addi	a1,a1,-348 # 4aaea4 <alarm_type_strings+0x10f0>
-  49e816:	6c450513          	addi	a0,a0,1732 # 4ad6c4 <alarm_type_strings+0x3910>
-  49e81a:	c935b0ef          	jal	ra,3fa4ac <printf>
-  49e81e:	004ac4b7          	lui	s1,0x4ac
-  49e822:	90048513          	addi	a0,s1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49e826:	f095c0ef          	jal	ra,3fb72e <strlen>
-  49e82a:	c909                	beqz	a0,49e83c <debug_print_long.constprop.1+0x152>
-  49e82c:	004ab537          	lui	a0,0x4ab
-  49e830:	90048593          	addi	a1,s1,-1792
-  49e834:	eb050513          	addi	a0,a0,-336 # 4aaeb0 <alarm_type_strings+0x10fc>
-  49e838:	c755b0ef          	jal	ra,3fa4ac <printf>
-  49e83c:	6785                	lui	a5,0x1
-  49e83e:	0818                	addi	a4,sp,16
-  49e840:	75fd                	lui	a1,0xfffff
-  49e842:	81078793          	addi	a5,a5,-2032 # 810 <DOWNLOAD_IRQ_STACK_SIZE+0x10>
-  49e846:	97ba                	add	a5,a5,a4
-  49e848:	004ab637          	lui	a2,0x4ab
-  49e84c:	7fc58593          	addi	a1,a1,2044 # fffff7fc <__rom_data1_load+0xffb4cb9c>
-  49e850:	004ac537          	lui	a0,0x4ac
-  49e854:	eb860613          	addi	a2,a2,-328 # 4aaeb8 <alarm_type_strings+0x1104>
-  49e858:	95be                	add	a1,a1,a5
-  49e85a:	91c50513          	addi	a0,a0,-1764 # 4ab91c <alarm_type_strings+0x1b68>
-  49e85e:	c4f5b0ef          	jal	ra,3fa4ac <printf>
-  49e862:	b749                	j	49e7e4 <debug_print_long.constprop.1+0xfa>
-  49e864:	0c750913          	addi	s2,a0,199
-  49e868:	02f95933          	divu	s2,s2,a5
-  49e86c:	8a2a                	mv	s4,a0
-  49e86e:	4401                	li	s0,0
-  49e870:	4481                	li	s1,0
-  49e872:	004abc37          	lui	s8,0x4ab
-  49e876:	004adcb7          	lui	s9,0x4ad
-  49e87a:	004acb37          	lui	s6,0x4ac
-  49e87e:	004abd37          	lui	s10,0x4ab
-  49e882:	c44e                	sw	s3,8(sp)
-  49e884:	004a7db7          	lui	s11,0x4a7
-  49e888:	00148a93          	addi	s5,s1,1
-  49e88c:	0c800793          	li	a5,200
-  49e890:	0c800993          	li	s3,200
-  49e894:	02fa87b3          	mul	a5,s5,a5
-  49e898:	f3878b93          	addi	s7,a5,-200
-  49e89c:	00fa7463          	bleu	a5,s4,49e8a4 <debug_print_long.constprop.1+0x1ba>
-  49e8a0:	417a09b3          	sub	s3,s4,s7
-  49e8a4:	ecb9                	bnez	s1,49e902 <debug_print_long.constprop.1+0x218>
-  49e8a6:	ea4c0593          	addi	a1,s8,-348 # 4aaea4 <alarm_type_strings+0x10f0>
-  49e8aa:	6c4c8513          	addi	a0,s9,1732 # 4ad6c4 <alarm_type_strings+0x3910>
-  49e8ae:	bff5b0ef          	jal	ra,3fa4ac <printf>
-  49e8b2:	900b0513          	addi	a0,s6,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49e8b6:	e795c0ef          	jal	ra,3fb72e <strlen>
-  49e8ba:	c519                	beqz	a0,49e8c8 <debug_print_long.constprop.1+0x1de>
-  49e8bc:	900b0593          	addi	a1,s6,-1792
-  49e8c0:	eb0d0513          	addi	a0,s10,-336 # 4aaeb0 <alarm_type_strings+0x10fc>
-  49e8c4:	be95b0ef          	jal	ra,3fa4ac <printf>
-  49e8c8:	47a2                	lw	a5,8(sp)
-  49e8ca:	85ce                	mv	a1,s3
-  49e8cc:	00fb8633          	add	a2,s7,a5
-  49e8d0:	004ac7b7          	lui	a5,0x4ac
-  49e8d4:	92c78513          	addi	a0,a5,-1748 # 4ab92c <alarm_type_strings+0x1b78>
-  49e8d8:	bd55b0ef          	jal	ra,3fa4ac <printf>
-  49e8dc:	fff90793          	addi	a5,s2,-1
-  49e8e0:	02979863          	bne	a5,s1,49e910 <debug_print_long.constprop.1+0x226>
-  49e8e4:	004ab5b7          	lui	a1,0x4ab
-  49e8e8:	004aa537          	lui	a0,0x4aa
-  49e8ec:	eb858593          	addi	a1,a1,-328 # 4aaeb8 <alarm_type_strings+0x1104>
-  49e8f0:	a5450513          	addi	a0,a0,-1452 # 4a9a54 <CSWTCH.8+0x16c>
-  49e8f4:	bb95b0ef          	jal	ra,3fa4ac <printf>
-  49e8f8:	944e                	add	s0,s0,s3
-  49e8fa:	84d6                	mv	s1,s5
-  49e8fc:	f95916e3          	bne	s2,s5,49e888 <debug_print_long.constprop.1+0x19e>
-  49e900:	b5d5                	j	49e7e4 <debug_print_long.constprop.1+0xfa>
-  49e902:	004ac7b7          	lui	a5,0x4ac
-  49e906:	92478513          	addi	a0,a5,-1756 # 4ab924 <alarm_type_strings+0x1b70>
-  49e90a:	ba35b0ef          	jal	ra,3fa4ac <printf>
-  49e90e:	bf6d                	j	49e8c8 <debug_print_long.constprop.1+0x1de>
-  49e910:	3a0d8513          	addi	a0,s11,928 # 4a73a0 <__FUNCTION__.7722+0x128>
-  49e914:	b995b0ef          	jal	ra,3fa4ac <printf>
-  49e918:	b7c5                	j	49e8f8 <debug_print_long.constprop.1+0x20e>
-  49e91a:	6149                	addi	sp,sp,144
-  49e91c:	7cc12083          	lw	ra,1996(sp)
-  49e920:	7c812403          	lw	s0,1992(sp)
-  49e924:	7c412483          	lw	s1,1988(sp)
-  49e928:	7c012903          	lw	s2,1984(sp)
-  49e92c:	7bc12983          	lw	s3,1980(sp)
-  49e930:	7b812a03          	lw	s4,1976(sp)
-  49e934:	7b412a83          	lw	s5,1972(sp)
-  49e938:	7b012b03          	lw	s6,1968(sp)
-  49e93c:	7ac12b83          	lw	s7,1964(sp)
-  49e940:	7a812c03          	lw	s8,1960(sp)
-  49e944:	7a412c83          	lw	s9,1956(sp)
-  49e948:	7a012d03          	lw	s10,1952(sp)
-  49e94c:	79c12d83          	lw	s11,1948(sp)
-  49e950:	7f010113          	addi	sp,sp,2032
-  49e954:	8082                	ret
+0049e6f8 <debug_print_long.constprop.1>:
+  49e6f8:	81010113          	addi	sp,sp,-2032
+  49e6fc:	7c912223          	sw	s1,1988(sp)
+  49e700:	7b312e23          	sw	s3,1980(sp)
+  49e704:	7c112623          	sw	ra,1996(sp)
+  49e708:	7c812423          	sw	s0,1992(sp)
+  49e70c:	7d212023          	sw	s2,1984(sp)
+  49e710:	7b412c23          	sw	s4,1976(sp)
+  49e714:	7b512a23          	sw	s5,1972(sp)
+  49e718:	7b612823          	sw	s6,1968(sp)
+  49e71c:	7b712623          	sw	s7,1964(sp)
+  49e720:	7b812423          	sw	s8,1960(sp)
+  49e724:	7b912223          	sw	s9,1956(sp)
+  49e728:	7ba12023          	sw	s10,1952(sp)
+  49e72c:	79b12e23          	sw	s11,1948(sp)
+  49e730:	6605                	lui	a2,0x1
+  49e732:	7175                	addi	sp,sp,-144
+  49e734:	0808                	addi	a0,sp,16
+  49e736:	85c60593          	addi	a1,a2,-1956 # 85c <DOWNLOAD_IRQ_STACK_SIZE+0x5c>
+  49e73a:	95aa                	add	a1,a1,a0
+  49e73c:	c194                	sw	a3,0(a1)
+  49e73e:	86b2                	mv	a3,a2
+  49e740:	86060613          	addi	a2,a2,-1952
+  49e744:	962a                	add	a2,a2,a0
+  49e746:	c218                	sw	a4,0(a2)
+  49e748:	8736                	mv	a4,a3
+  49e74a:	86468693          	addi	a3,a3,-1948
+  49e74e:	96aa                	add	a3,a3,a0
+  49e750:	c29c                	sw	a5,0(a3)
+  49e752:	86870793          	addi	a5,a4,-1944
+  49e756:	97aa                	add	a5,a5,a0
+  49e758:	0107a023          	sw	a6,0(a5)
+  49e75c:	86c70793          	addi	a5,a4,-1940
+  49e760:	97aa                	add	a5,a5,a0
+  49e762:	0117a023          	sw	a7,0(a5)
+  49e766:	0011d4b7          	lui	s1,0x11d
+  49e76a:	7c04a783          	lw	a5,1984(s1) # 11d7c0 <__rom_data0_begin__>
+  49e76e:	80c70693          	addi	a3,a4,-2036
+  49e772:	96aa                	add	a3,a3,a0
+  49e774:	c29c                	sw	a5,0(a3)
+  49e776:	87ba                	mv	a5,a4
+  49e778:	79fd                	lui	s3,0xfffff
+  49e77a:	81078793          	addi	a5,a5,-2032
+  49e77e:	97aa                	add	a5,a5,a0
+  49e780:	7fc98993          	addi	s3,s3,2044 # fffff7fc <__rom_data1_load+0xffb4cb9c>
+  49e784:	85c70713          	addi	a4,a4,-1956
+  49e788:	99be                	add	s3,s3,a5
+  49e78a:	004ac637          	lui	a2,0x4ac
+  49e78e:	6585                	lui	a1,0x1
+  49e790:	00e506b3          	add	a3,a0,a4
+  49e794:	8cc60613          	addi	a2,a2,-1844 # 4ab8cc <alarm_type_strings+0x1b18>
+  49e798:	80058593          	addi	a1,a1,-2048 # 800 <DOWNLOAD_IRQ_STACK_SIZE>
+  49e79c:	854e                	mv	a0,s3
+  49e79e:	cc36                	sw	a3,24(sp)
+  49e7a0:	bfcae0ef          	jal	ra,44cb9c <vsnprintf>
+  49e7a4:	c626                	sw	s1,12(sp)
+  49e7a6:	06055463          	bgez	a0,49e80e <debug_print_long.constprop.1+0x116>
+  49e7aa:	004ab5b7          	lui	a1,0x4ab
+  49e7ae:	004ad537          	lui	a0,0x4ad
+  49e7b2:	ea458593          	addi	a1,a1,-348 # 4aaea4 <alarm_type_strings+0x10f0>
+  49e7b6:	6c450513          	addi	a0,a0,1732 # 4ad6c4 <alarm_type_strings+0x3910>
+  49e7ba:	cf35b0ef          	jal	ra,3fa4ac <printf>
+  49e7be:	004ac437          	lui	s0,0x4ac
+  49e7c2:	90040513          	addi	a0,s0,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49e7c6:	f695c0ef          	jal	ra,3fb72e <strlen>
+  49e7ca:	c909                	beqz	a0,49e7dc <debug_print_long.constprop.1+0xe4>
+  49e7cc:	004ab537          	lui	a0,0x4ab
+  49e7d0:	90040593          	addi	a1,s0,-1792
+  49e7d4:	eb050513          	addi	a0,a0,-336 # 4aaeb0 <alarm_type_strings+0x10fc>
+  49e7d8:	cd55b0ef          	jal	ra,3fa4ac <printf>
+  49e7dc:	004ab5b7          	lui	a1,0x4ab
+  49e7e0:	004ac537          	lui	a0,0x4ac
+  49e7e4:	eb858593          	addi	a1,a1,-328 # 4aaeb8 <alarm_type_strings+0x1104>
+  49e7e8:	90850513          	addi	a0,a0,-1784 # 4ab908 <alarm_type_strings+0x1b54>
+  49e7ec:	cc15b0ef          	jal	ra,3fa4ac <printf>
+  49e7f0:	4401                	li	s0,0
+  49e7f2:	6785                	lui	a5,0x1
+  49e7f4:	0818                	addi	a4,sp,16
+  49e7f6:	80c78793          	addi	a5,a5,-2036 # 80c <DOWNLOAD_IRQ_STACK_SIZE+0xc>
+  49e7fa:	97ba                	add	a5,a5,a4
+  49e7fc:	4398                	lw	a4,0(a5)
+  49e7fe:	47b2                	lw	a5,12(sp)
+  49e800:	8522                	mv	a0,s0
+  49e802:	7c07a783          	lw	a5,1984(a5)
+  49e806:	12f70163          	beq	a4,a5,49e928 <debug_print_long.constprop.1+0x230>
+  49e80a:	9af570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49e80e:	0c800793          	li	a5,200
+  49e812:	842a                	mv	s0,a0
+  49e814:	04a7cf63          	blt	a5,a0,49e872 <debug_print_long.constprop.1+0x17a>
+  49e818:	004ab5b7          	lui	a1,0x4ab
+  49e81c:	004ad537          	lui	a0,0x4ad
+  49e820:	ea458593          	addi	a1,a1,-348 # 4aaea4 <alarm_type_strings+0x10f0>
+  49e824:	6c450513          	addi	a0,a0,1732 # 4ad6c4 <alarm_type_strings+0x3910>
+  49e828:	c855b0ef          	jal	ra,3fa4ac <printf>
+  49e82c:	004ac4b7          	lui	s1,0x4ac
+  49e830:	90048513          	addi	a0,s1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49e834:	efb5c0ef          	jal	ra,3fb72e <strlen>
+  49e838:	c909                	beqz	a0,49e84a <debug_print_long.constprop.1+0x152>
+  49e83a:	004ab537          	lui	a0,0x4ab
+  49e83e:	90048593          	addi	a1,s1,-1792
+  49e842:	eb050513          	addi	a0,a0,-336 # 4aaeb0 <alarm_type_strings+0x10fc>
+  49e846:	c675b0ef          	jal	ra,3fa4ac <printf>
+  49e84a:	6785                	lui	a5,0x1
+  49e84c:	0818                	addi	a4,sp,16
+  49e84e:	75fd                	lui	a1,0xfffff
+  49e850:	81078793          	addi	a5,a5,-2032 # 810 <DOWNLOAD_IRQ_STACK_SIZE+0x10>
+  49e854:	97ba                	add	a5,a5,a4
+  49e856:	004ab637          	lui	a2,0x4ab
+  49e85a:	7fc58593          	addi	a1,a1,2044 # fffff7fc <__rom_data1_load+0xffb4cb9c>
+  49e85e:	004ac537          	lui	a0,0x4ac
+  49e862:	eb860613          	addi	a2,a2,-328 # 4aaeb8 <alarm_type_strings+0x1104>
+  49e866:	95be                	add	a1,a1,a5
+  49e868:	91c50513          	addi	a0,a0,-1764 # 4ab91c <alarm_type_strings+0x1b68>
+  49e86c:	c415b0ef          	jal	ra,3fa4ac <printf>
+  49e870:	b749                	j	49e7f2 <debug_print_long.constprop.1+0xfa>
+  49e872:	0c750913          	addi	s2,a0,199
+  49e876:	02f95933          	divu	s2,s2,a5
+  49e87a:	8a2a                	mv	s4,a0
+  49e87c:	4401                	li	s0,0
+  49e87e:	4481                	li	s1,0
+  49e880:	004abc37          	lui	s8,0x4ab
+  49e884:	004adcb7          	lui	s9,0x4ad
+  49e888:	004acb37          	lui	s6,0x4ac
+  49e88c:	004abd37          	lui	s10,0x4ab
+  49e890:	c44e                	sw	s3,8(sp)
+  49e892:	004a7db7          	lui	s11,0x4a7
+  49e896:	00148a93          	addi	s5,s1,1
+  49e89a:	0c800793          	li	a5,200
+  49e89e:	0c800993          	li	s3,200
+  49e8a2:	02fa87b3          	mul	a5,s5,a5
+  49e8a6:	f3878b93          	addi	s7,a5,-200
+  49e8aa:	00fa7463          	bleu	a5,s4,49e8b2 <debug_print_long.constprop.1+0x1ba>
+  49e8ae:	417a09b3          	sub	s3,s4,s7
+  49e8b2:	ecb9                	bnez	s1,49e910 <debug_print_long.constprop.1+0x218>
+  49e8b4:	ea4c0593          	addi	a1,s8,-348 # 4aaea4 <alarm_type_strings+0x10f0>
+  49e8b8:	6c4c8513          	addi	a0,s9,1732 # 4ad6c4 <alarm_type_strings+0x3910>
+  49e8bc:	bf15b0ef          	jal	ra,3fa4ac <printf>
+  49e8c0:	900b0513          	addi	a0,s6,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49e8c4:	e6b5c0ef          	jal	ra,3fb72e <strlen>
+  49e8c8:	c519                	beqz	a0,49e8d6 <debug_print_long.constprop.1+0x1de>
+  49e8ca:	900b0593          	addi	a1,s6,-1792
+  49e8ce:	eb0d0513          	addi	a0,s10,-336 # 4aaeb0 <alarm_type_strings+0x10fc>
+  49e8d2:	bdb5b0ef          	jal	ra,3fa4ac <printf>
+  49e8d6:	47a2                	lw	a5,8(sp)
+  49e8d8:	85ce                	mv	a1,s3
+  49e8da:	00fb8633          	add	a2,s7,a5
+  49e8de:	004ac7b7          	lui	a5,0x4ac
+  49e8e2:	92c78513          	addi	a0,a5,-1748 # 4ab92c <alarm_type_strings+0x1b78>
+  49e8e6:	bc75b0ef          	jal	ra,3fa4ac <printf>
+  49e8ea:	fff90793          	addi	a5,s2,-1
+  49e8ee:	02979863          	bne	a5,s1,49e91e <debug_print_long.constprop.1+0x226>
+  49e8f2:	004ab5b7          	lui	a1,0x4ab
+  49e8f6:	004aa537          	lui	a0,0x4aa
+  49e8fa:	eb858593          	addi	a1,a1,-328 # 4aaeb8 <alarm_type_strings+0x1104>
+  49e8fe:	a5450513          	addi	a0,a0,-1452 # 4a9a54 <CSWTCH.8+0x16c>
+  49e902:	bab5b0ef          	jal	ra,3fa4ac <printf>
+  49e906:	944e                	add	s0,s0,s3
+  49e908:	84d6                	mv	s1,s5
+  49e90a:	f95916e3          	bne	s2,s5,49e896 <debug_print_long.constprop.1+0x19e>
+  49e90e:	b5d5                	j	49e7f2 <debug_print_long.constprop.1+0xfa>
+  49e910:	004ac7b7          	lui	a5,0x4ac
+  49e914:	92478513          	addi	a0,a5,-1756 # 4ab924 <alarm_type_strings+0x1b70>
+  49e918:	b955b0ef          	jal	ra,3fa4ac <printf>
+  49e91c:	bf6d                	j	49e8d6 <debug_print_long.constprop.1+0x1de>
+  49e91e:	3a0d8513          	addi	a0,s11,928 # 4a73a0 <__FUNCTION__.7722+0x128>
+  49e922:	b8b5b0ef          	jal	ra,3fa4ac <printf>
+  49e926:	b7c5                	j	49e906 <debug_print_long.constprop.1+0x20e>
+  49e928:	6149                	addi	sp,sp,144
+  49e92a:	7cc12083          	lw	ra,1996(sp)
+  49e92e:	7c812403          	lw	s0,1992(sp)
+  49e932:	7c412483          	lw	s1,1988(sp)
+  49e936:	7c012903          	lw	s2,1984(sp)
+  49e93a:	7bc12983          	lw	s3,1980(sp)
+  49e93e:	7b812a03          	lw	s4,1976(sp)
+  49e942:	7b412a83          	lw	s5,1972(sp)
+  49e946:	7b012b03          	lw	s6,1968(sp)
+  49e94a:	7ac12b83          	lw	s7,1964(sp)
+  49e94e:	7a812c03          	lw	s8,1960(sp)
+  49e952:	7a412c83          	lw	s9,1956(sp)
+  49e956:	7a012d03          	lw	s10,1952(sp)
+  49e95a:	79c12d83          	lw	s11,1948(sp)
+  49e95e:	7f010113          	addi	sp,sp,2032
+  49e962:	8082                	ret
 
-0049e956 <debug_print.constprop.2>:
-  49e956:	7139                	addi	sp,sp,-64
-  49e958:	da3e                	sw	a5,52(sp)
-  49e95a:	0011d7b7          	lui	a5,0x11d
-  49e95e:	d83a                	sw	a4,48(sp)
-  49e960:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49e964:	ca26                	sw	s1,20(sp)
-  49e966:	c84a                	sw	s2,16(sp)
-  49e968:	c63a                	sw	a4,12(sp)
-  49e96a:	ce06                	sw	ra,28(sp)
-  49e96c:	cc22                	sw	s0,24(sp)
-  49e96e:	d636                	sw	a3,44(sp)
-  49e970:	dc42                	sw	a6,56(sp)
-  49e972:	de46                	sw	a7,60(sp)
-  49e974:	4709                	li	a4,2
-  49e976:	8932                	mv	s2,a2
-  49e978:	84be                	mv	s1,a5
-  49e97a:	00e50a63          	beq	a0,a4,49e98e <debug_print.constprop.2+0x38>
-  49e97e:	478d                	li	a5,3
-  49e980:	06f50863          	beq	a0,a5,49e9f0 <debug_print.constprop.2+0x9a>
-  49e984:	004ab5b7          	lui	a1,0x4ab
-  49e988:	e8c58593          	addi	a1,a1,-372 # 4aae8c <alarm_type_strings+0x10d8>
-  49e98c:	a029                	j	49e996 <debug_print.constprop.2+0x40>
-  49e98e:	004ab5b7          	lui	a1,0x4ab
-  49e992:	e9858593          	addi	a1,a1,-360 # 4aae98 <alarm_type_strings+0x10e4>
-  49e996:	004ad537          	lui	a0,0x4ad
-  49e99a:	6c450513          	addi	a0,a0,1732 # 4ad6c4 <alarm_type_strings+0x3910>
-  49e99e:	b0f5b0ef          	jal	ra,3fa4ac <printf>
-  49e9a2:	004ac437          	lui	s0,0x4ac
-  49e9a6:	90040513          	addi	a0,s0,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49e9aa:	d855c0ef          	jal	ra,3fb72e <strlen>
-  49e9ae:	c909                	beqz	a0,49e9c0 <debug_print.constprop.2+0x6a>
-  49e9b0:	004ab537          	lui	a0,0x4ab
-  49e9b4:	90040593          	addi	a1,s0,-1792
-  49e9b8:	eb050513          	addi	a0,a0,-336 # 4aaeb0 <alarm_type_strings+0x10fc>
-  49e9bc:	af15b0ef          	jal	ra,3fa4ac <printf>
-  49e9c0:	106c                	addi	a1,sp,44
-  49e9c2:	854a                	mv	a0,s2
-  49e9c4:	c42e                	sw	a1,8(sp)
-  49e9c6:	ff77f0ef          	jal	ra,41e9bc <vprintf>
-  49e9ca:	842a                	mv	s0,a0
-  49e9cc:	004ab5b7          	lui	a1,0x4ab
-  49e9d0:	004aa537          	lui	a0,0x4aa
-  49e9d4:	eb858593          	addi	a1,a1,-328 # 4aaeb8 <alarm_type_strings+0x1104>
-  49e9d8:	a5450513          	addi	a0,a0,-1452 # 4a9a54 <CSWTCH.8+0x16c>
-  49e9dc:	ad15b0ef          	jal	ra,3fa4ac <printf>
-  49e9e0:	4732                	lw	a4,12(sp)
-  49e9e2:	7c04a783          	lw	a5,1984(s1)
-  49e9e6:	8522                	mv	a0,s0
-  49e9e8:	00f70963          	beq	a4,a5,49e9fa <debug_print.constprop.2+0xa4>
-  49e9ec:	fcc570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49e9f0:	004ab5b7          	lui	a1,0x4ab
-  49e9f4:	ea458593          	addi	a1,a1,-348 # 4aaea4 <alarm_type_strings+0x10f0>
-  49e9f8:	bf79                	j	49e996 <debug_print.constprop.2+0x40>
-  49e9fa:	40f2                	lw	ra,28(sp)
-  49e9fc:	4462                	lw	s0,24(sp)
-  49e9fe:	44d2                	lw	s1,20(sp)
-  49ea00:	4942                	lw	s2,16(sp)
-  49ea02:	6121                	addi	sp,sp,64
-  49ea04:	8082                	ret
+0049e964 <debug_print.constprop.2>:
+  49e964:	7139                	addi	sp,sp,-64
+  49e966:	da3e                	sw	a5,52(sp)
+  49e968:	0011d7b7          	lui	a5,0x11d
+  49e96c:	d83a                	sw	a4,48(sp)
+  49e96e:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49e972:	ca26                	sw	s1,20(sp)
+  49e974:	c84a                	sw	s2,16(sp)
+  49e976:	c63a                	sw	a4,12(sp)
+  49e978:	ce06                	sw	ra,28(sp)
+  49e97a:	cc22                	sw	s0,24(sp)
+  49e97c:	d636                	sw	a3,44(sp)
+  49e97e:	dc42                	sw	a6,56(sp)
+  49e980:	de46                	sw	a7,60(sp)
+  49e982:	4709                	li	a4,2
+  49e984:	8932                	mv	s2,a2
+  49e986:	84be                	mv	s1,a5
+  49e988:	00e50a63          	beq	a0,a4,49e99c <debug_print.constprop.2+0x38>
+  49e98c:	478d                	li	a5,3
+  49e98e:	06f50863          	beq	a0,a5,49e9fe <debug_print.constprop.2+0x9a>
+  49e992:	004ab5b7          	lui	a1,0x4ab
+  49e996:	e8c58593          	addi	a1,a1,-372 # 4aae8c <alarm_type_strings+0x10d8>
+  49e99a:	a029                	j	49e9a4 <debug_print.constprop.2+0x40>
+  49e99c:	004ab5b7          	lui	a1,0x4ab
+  49e9a0:	e9858593          	addi	a1,a1,-360 # 4aae98 <alarm_type_strings+0x10e4>
+  49e9a4:	004ad537          	lui	a0,0x4ad
+  49e9a8:	6c450513          	addi	a0,a0,1732 # 4ad6c4 <alarm_type_strings+0x3910>
+  49e9ac:	b015b0ef          	jal	ra,3fa4ac <printf>
+  49e9b0:	004ac437          	lui	s0,0x4ac
+  49e9b4:	90040513          	addi	a0,s0,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49e9b8:	d775c0ef          	jal	ra,3fb72e <strlen>
+  49e9bc:	c909                	beqz	a0,49e9ce <debug_print.constprop.2+0x6a>
+  49e9be:	004ab537          	lui	a0,0x4ab
+  49e9c2:	90040593          	addi	a1,s0,-1792
+  49e9c6:	eb050513          	addi	a0,a0,-336 # 4aaeb0 <alarm_type_strings+0x10fc>
+  49e9ca:	ae35b0ef          	jal	ra,3fa4ac <printf>
+  49e9ce:	106c                	addi	a1,sp,44
+  49e9d0:	854a                	mv	a0,s2
+  49e9d2:	c42e                	sw	a1,8(sp)
+  49e9d4:	fe97f0ef          	jal	ra,41e9bc <vprintf>
+  49e9d8:	842a                	mv	s0,a0
+  49e9da:	004ab5b7          	lui	a1,0x4ab
+  49e9de:	004aa537          	lui	a0,0x4aa
+  49e9e2:	eb858593          	addi	a1,a1,-328 # 4aaeb8 <alarm_type_strings+0x1104>
+  49e9e6:	a5450513          	addi	a0,a0,-1452 # 4a9a54 <CSWTCH.8+0x16c>
+  49e9ea:	ac35b0ef          	jal	ra,3fa4ac <printf>
+  49e9ee:	4732                	lw	a4,12(sp)
+  49e9f0:	7c04a783          	lw	a5,1984(s1)
+  49e9f4:	8522                	mv	a0,s0
+  49e9f6:	00f70963          	beq	a4,a5,49ea08 <debug_print.constprop.2+0xa4>
+  49e9fa:	fbe570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49e9fe:	004ab5b7          	lui	a1,0x4ab
+  49ea02:	ea458593          	addi	a1,a1,-348 # 4aaea4 <alarm_type_strings+0x10f0>
+  49ea06:	bf79                	j	49e9a4 <debug_print.constprop.2+0x40>
+  49ea08:	40f2                	lw	ra,28(sp)
+  49ea0a:	4462                	lw	s0,24(sp)
+  49ea0c:	44d2                	lw	s1,20(sp)
+  49ea0e:	4942                	lw	s2,16(sp)
+  49ea10:	6121                	addi	sp,sp,64
+  49ea12:	8082                	ret
 
-0049ea06 <php_api_send_success_response>:
-  49ea06:	e255b2ef          	jal	t0,3fa82a <__riscv_save_4>
-  49ea0a:	0011d9b7          	lui	s3,0x11d
-  49ea0e:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
-  49ea12:	1101                	addi	sp,sp,-32
-  49ea14:	8a2a                	mv	s4,a0
-  49ea16:	852e                	mv	a0,a1
-  49ea18:	892e                	mv	s2,a1
-  49ea1a:	ce3e                	sw	a5,28(sp)
-  49ea1c:	d135c0ef          	jal	ra,3fb72e <strlen>
-  49ea20:	0c850593          	addi	a1,a0,200
-  49ea24:	c62a                	sw	a0,12(sp)
-  49ea26:	852e                	mv	a0,a1
-  49ea28:	c42e                	sw	a1,8(sp)
-  49ea2a:	b835c0ef          	jal	ra,3fb5ac <malloc>
-  49ea2e:	004ac4b7          	lui	s1,0x4ac
-  49ea32:	45a2                	lw	a1,8(sp)
-  49ea34:	46b2                	lw	a3,12(sp)
-  49ea36:	e115                	bnez	a0,49ea5a <php_api_send_success_response+0x54>
-  49ea38:	004ad637          	lui	a2,0x4ad
-  49ea3c:	63c60613          	addi	a2,a2,1596 # 4ad63c <alarm_type_strings+0x3888>
-  49ea40:	90048593          	addi	a1,s1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49ea44:	4505                	li	a0,1
-  49ea46:	f11ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49ea4a:	4521                	li	a0,8
-  49ea4c:	4772                	lw	a4,28(sp)
-  49ea4e:	7c09a783          	lw	a5,1984(s3)
-  49ea52:	06f70163          	beq	a4,a5,49eab4 <php_api_send_success_response+0xae>
-  49ea56:	f62570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49ea5a:	004ad637          	lui	a2,0x4ad
-  49ea5e:	66060613          	addi	a2,a2,1632 # 4ad660 <alarm_type_strings+0x38ac>
-  49ea62:	874a                	mv	a4,s2
-  49ea64:	842a                	mv	s0,a0
-  49ea66:	d64ab0ef          	jal	ra,449fca <snprintf>
-  49ea6a:	862a                	mv	a2,a0
-  49ea6c:	4681                	li	a3,0
-  49ea6e:	85a2                	mv	a1,s0
-  49ea70:	8552                	mv	a0,s4
-  49ea72:	87bc30ef          	jal	ra,4622ec <send>
-  49ea76:	02055063          	bgez	a0,49ea96 <php_api_send_success_response+0x90>
-  49ea7a:	004ad637          	lui	a2,0x4ad
-  49ea7e:	6c860613          	addi	a2,a2,1736 # 4ad6c8 <alarm_type_strings+0x3914>
-  49ea82:	90048593          	addi	a1,s1,-1792
-  49ea86:	4505                	li	a0,1
-  49ea88:	ecfff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49ea8c:	8522                	mv	a0,s0
-  49ea8e:	b055c0ef          	jal	ra,3fb592 <free>
-  49ea92:	4519                	li	a0,6
-  49ea94:	bf65                	j	49ea4c <php_api_send_success_response+0x46>
-  49ea96:	004ad637          	lui	a2,0x4ad
-  49ea9a:	86ca                	mv	a3,s2
-  49ea9c:	6e460613          	addi	a2,a2,1764 # 4ad6e4 <alarm_type_strings+0x3930>
-  49eaa0:	90048593          	addi	a1,s1,-1792
-  49eaa4:	450d                	li	a0,3
-  49eaa6:	eb1ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49eaaa:	8522                	mv	a0,s0
-  49eaac:	ae75c0ef          	jal	ra,3fb592 <free>
-  49eab0:	4501                	li	a0,0
-  49eab2:	bf69                	j	49ea4c <php_api_send_success_response+0x46>
-  49eab4:	6105                	addi	sp,sp,32
-  49eab6:	da95b06f          	j	3fa85e <__riscv_restore_4>
+0049ea14 <php_api_send_success_response>:
+  49ea14:	e175b2ef          	jal	t0,3fa82a <__riscv_save_4>
+  49ea18:	0011d9b7          	lui	s3,0x11d
+  49ea1c:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
+  49ea20:	1101                	addi	sp,sp,-32
+  49ea22:	8a2a                	mv	s4,a0
+  49ea24:	852e                	mv	a0,a1
+  49ea26:	892e                	mv	s2,a1
+  49ea28:	ce3e                	sw	a5,28(sp)
+  49ea2a:	d055c0ef          	jal	ra,3fb72e <strlen>
+  49ea2e:	0c850593          	addi	a1,a0,200
+  49ea32:	c62a                	sw	a0,12(sp)
+  49ea34:	852e                	mv	a0,a1
+  49ea36:	c42e                	sw	a1,8(sp)
+  49ea38:	b755c0ef          	jal	ra,3fb5ac <malloc>
+  49ea3c:	004ac4b7          	lui	s1,0x4ac
+  49ea40:	45a2                	lw	a1,8(sp)
+  49ea42:	46b2                	lw	a3,12(sp)
+  49ea44:	e115                	bnez	a0,49ea68 <php_api_send_success_response+0x54>
+  49ea46:	004ad637          	lui	a2,0x4ad
+  49ea4a:	63c60613          	addi	a2,a2,1596 # 4ad63c <alarm_type_strings+0x3888>
+  49ea4e:	90048593          	addi	a1,s1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49ea52:	4505                	li	a0,1
+  49ea54:	f11ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49ea58:	4521                	li	a0,8
+  49ea5a:	4772                	lw	a4,28(sp)
+  49ea5c:	7c09a783          	lw	a5,1984(s3)
+  49ea60:	06f70163          	beq	a4,a5,49eac2 <php_api_send_success_response+0xae>
+  49ea64:	f54570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49ea68:	004ad637          	lui	a2,0x4ad
+  49ea6c:	66060613          	addi	a2,a2,1632 # 4ad660 <alarm_type_strings+0x38ac>
+  49ea70:	874a                	mv	a4,s2
+  49ea72:	842a                	mv	s0,a0
+  49ea74:	d56ab0ef          	jal	ra,449fca <snprintf>
+  49ea78:	862a                	mv	a2,a0
+  49ea7a:	4681                	li	a3,0
+  49ea7c:	85a2                	mv	a1,s0
+  49ea7e:	8552                	mv	a0,s4
+  49ea80:	86dc30ef          	jal	ra,4622ec <send>
+  49ea84:	02055063          	bgez	a0,49eaa4 <php_api_send_success_response+0x90>
+  49ea88:	004ad637          	lui	a2,0x4ad
+  49ea8c:	6c860613          	addi	a2,a2,1736 # 4ad6c8 <alarm_type_strings+0x3914>
+  49ea90:	90048593          	addi	a1,s1,-1792
+  49ea94:	4505                	li	a0,1
+  49ea96:	ecfff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49ea9a:	8522                	mv	a0,s0
+  49ea9c:	af75c0ef          	jal	ra,3fb592 <free>
+  49eaa0:	4519                	li	a0,6
+  49eaa2:	bf65                	j	49ea5a <php_api_send_success_response+0x46>
+  49eaa4:	004ad637          	lui	a2,0x4ad
+  49eaa8:	86ca                	mv	a3,s2
+  49eaaa:	6e460613          	addi	a2,a2,1764 # 4ad6e4 <alarm_type_strings+0x3930>
+  49eaae:	90048593          	addi	a1,s1,-1792
+  49eab2:	450d                	li	a0,3
+  49eab4:	eb1ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49eab8:	8522                	mv	a0,s0
+  49eaba:	ad95c0ef          	jal	ra,3fb592 <free>
+  49eabe:	4501                	li	a0,0
+  49eac0:	bf69                	j	49ea5a <php_api_send_success_response+0x46>
+  49eac2:	6105                	addi	sp,sp,32
+  49eac4:	d9b5b06f          	j	3fa85e <__riscv_restore_4>
 
-0049eaba <php_api_send_error_response>:
-  49eaba:	d715b2ef          	jal	t0,3fa82a <__riscv_save_4>
-  49eabe:	0011d9b7          	lui	s3,0x11d
-  49eac2:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
-  49eac6:	1101                	addi	sp,sp,-32
-  49eac8:	8a2a                	mv	s4,a0
-  49eaca:	852e                	mv	a0,a1
-  49eacc:	892e                	mv	s2,a1
-  49eace:	ce3e                	sw	a5,28(sp)
-  49ead0:	c5f5c0ef          	jal	ra,3fb72e <strlen>
-  49ead4:	0c850593          	addi	a1,a0,200
-  49ead8:	c62a                	sw	a0,12(sp)
-  49eada:	852e                	mv	a0,a1
-  49eadc:	c42e                	sw	a1,8(sp)
-  49eade:	acf5c0ef          	jal	ra,3fb5ac <malloc>
-  49eae2:	004ac4b7          	lui	s1,0x4ac
-  49eae6:	45a2                	lw	a1,8(sp)
-  49eae8:	46b2                	lw	a3,12(sp)
-  49eaea:	e115                	bnez	a0,49eb0e <php_api_send_error_response+0x54>
-  49eaec:	004ac637          	lui	a2,0x4ac
-  49eaf0:	c8860613          	addi	a2,a2,-888 # 4abc88 <alarm_type_strings+0x1ed4>
-  49eaf4:	90048593          	addi	a1,s1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49eaf8:	4505                	li	a0,1
-  49eafa:	e5dff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49eafe:	4521                	li	a0,8
-  49eb00:	4772                	lw	a4,28(sp)
-  49eb02:	7c09a783          	lw	a5,1984(s3)
-  49eb06:	06f70163          	beq	a4,a5,49eb68 <php_api_send_error_response+0xae>
-  49eb0a:	eae570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49eb0e:	004ac637          	lui	a2,0x4ac
-  49eb12:	cac60613          	addi	a2,a2,-852 # 4abcac <alarm_type_strings+0x1ef8>
-  49eb16:	874a                	mv	a4,s2
-  49eb18:	842a                	mv	s0,a0
-  49eb1a:	cb0ab0ef          	jal	ra,449fca <snprintf>
-  49eb1e:	862a                	mv	a2,a0
-  49eb20:	4681                	li	a3,0
-  49eb22:	85a2                	mv	a1,s0
-  49eb24:	8552                	mv	a0,s4
-  49eb26:	fc6c30ef          	jal	ra,4622ec <send>
-  49eb2a:	02055063          	bgez	a0,49eb4a <php_api_send_error_response+0x90>
-  49eb2e:	004ac637          	lui	a2,0x4ac
-  49eb32:	d1c60613          	addi	a2,a2,-740 # 4abd1c <alarm_type_strings+0x1f68>
-  49eb36:	90048593          	addi	a1,s1,-1792
-  49eb3a:	4505                	li	a0,1
-  49eb3c:	e1bff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49eb40:	8522                	mv	a0,s0
-  49eb42:	a515c0ef          	jal	ra,3fb592 <free>
-  49eb46:	4519                	li	a0,6
-  49eb48:	bf65                	j	49eb00 <php_api_send_error_response+0x46>
-  49eb4a:	004ac637          	lui	a2,0x4ac
-  49eb4e:	86ca                	mv	a3,s2
-  49eb50:	d3860613          	addi	a2,a2,-712 # 4abd38 <alarm_type_strings+0x1f84>
-  49eb54:	90048593          	addi	a1,s1,-1792
-  49eb58:	4505                	li	a0,1
-  49eb5a:	dfdff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49eb5e:	8522                	mv	a0,s0
-  49eb60:	a335c0ef          	jal	ra,3fb592 <free>
-  49eb64:	4501                	li	a0,0
-  49eb66:	bf69                	j	49eb00 <php_api_send_error_response+0x46>
-  49eb68:	6105                	addi	sp,sp,32
-  49eb6a:	cf55b06f          	j	3fa85e <__riscv_restore_4>
+0049eac8 <php_api_send_error_response>:
+  49eac8:	d635b2ef          	jal	t0,3fa82a <__riscv_save_4>
+  49eacc:	0011d9b7          	lui	s3,0x11d
+  49ead0:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
+  49ead4:	1101                	addi	sp,sp,-32
+  49ead6:	8a2a                	mv	s4,a0
+  49ead8:	852e                	mv	a0,a1
+  49eada:	892e                	mv	s2,a1
+  49eadc:	ce3e                	sw	a5,28(sp)
+  49eade:	c515c0ef          	jal	ra,3fb72e <strlen>
+  49eae2:	0c850593          	addi	a1,a0,200
+  49eae6:	c62a                	sw	a0,12(sp)
+  49eae8:	852e                	mv	a0,a1
+  49eaea:	c42e                	sw	a1,8(sp)
+  49eaec:	ac15c0ef          	jal	ra,3fb5ac <malloc>
+  49eaf0:	004ac4b7          	lui	s1,0x4ac
+  49eaf4:	45a2                	lw	a1,8(sp)
+  49eaf6:	46b2                	lw	a3,12(sp)
+  49eaf8:	e115                	bnez	a0,49eb1c <php_api_send_error_response+0x54>
+  49eafa:	004ac637          	lui	a2,0x4ac
+  49eafe:	c8860613          	addi	a2,a2,-888 # 4abc88 <alarm_type_strings+0x1ed4>
+  49eb02:	90048593          	addi	a1,s1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49eb06:	4505                	li	a0,1
+  49eb08:	e5dff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49eb0c:	4521                	li	a0,8
+  49eb0e:	4772                	lw	a4,28(sp)
+  49eb10:	7c09a783          	lw	a5,1984(s3)
+  49eb14:	06f70163          	beq	a4,a5,49eb76 <php_api_send_error_response+0xae>
+  49eb18:	ea0570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49eb1c:	004ac637          	lui	a2,0x4ac
+  49eb20:	cac60613          	addi	a2,a2,-852 # 4abcac <alarm_type_strings+0x1ef8>
+  49eb24:	874a                	mv	a4,s2
+  49eb26:	842a                	mv	s0,a0
+  49eb28:	ca2ab0ef          	jal	ra,449fca <snprintf>
+  49eb2c:	862a                	mv	a2,a0
+  49eb2e:	4681                	li	a3,0
+  49eb30:	85a2                	mv	a1,s0
+  49eb32:	8552                	mv	a0,s4
+  49eb34:	fb8c30ef          	jal	ra,4622ec <send>
+  49eb38:	02055063          	bgez	a0,49eb58 <php_api_send_error_response+0x90>
+  49eb3c:	004ac637          	lui	a2,0x4ac
+  49eb40:	d1c60613          	addi	a2,a2,-740 # 4abd1c <alarm_type_strings+0x1f68>
+  49eb44:	90048593          	addi	a1,s1,-1792
+  49eb48:	4505                	li	a0,1
+  49eb4a:	e1bff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49eb4e:	8522                	mv	a0,s0
+  49eb50:	a435c0ef          	jal	ra,3fb592 <free>
+  49eb54:	4519                	li	a0,6
+  49eb56:	bf65                	j	49eb0e <php_api_send_error_response+0x46>
+  49eb58:	004ac637          	lui	a2,0x4ac
+  49eb5c:	86ca                	mv	a3,s2
+  49eb5e:	d3860613          	addi	a2,a2,-712 # 4abd38 <alarm_type_strings+0x1f84>
+  49eb62:	90048593          	addi	a1,s1,-1792
+  49eb66:	4505                	li	a0,1
+  49eb68:	dfdff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49eb6c:	8522                	mv	a0,s0
+  49eb6e:	a255c0ef          	jal	ra,3fb592 <free>
+  49eb72:	4501                	li	a0,0
+  49eb74:	bf69                	j	49eb0e <php_api_send_error_response+0x46>
+  49eb76:	6105                	addi	sp,sp,32
+  49eb78:	ce75b06f          	j	3fa85e <__riscv_restore_4>
 
-0049eb6e <php_api_send_html_response>:
-  49eb6e:	cbd5b2ef          	jal	t0,3fa82a <__riscv_save_4>
-  49eb72:	0011dab7          	lui	s5,0x11d
-  49eb76:	7c0aa783          	lw	a5,1984(s5) # 11d7c0 <__rom_data0_begin__>
-  49eb7a:	004ac9b7          	lui	s3,0x4ac
-  49eb7e:	1101                	addi	sp,sp,-32
-  49eb80:	8a2a                	mv	s4,a0
-  49eb82:	e3c98513          	addi	a0,s3,-452 # 4abe3c <alarm_type_strings+0x2088>
-  49eb86:	ce3e                	sw	a5,28(sp)
-  49eb88:	ba75c0ef          	jal	ra,3fb72e <strlen>
-  49eb8c:	12c50493          	addi	s1,a0,300
-  49eb90:	c62a                	sw	a0,12(sp)
-  49eb92:	8526                	mv	a0,s1
-  49eb94:	a195c0ef          	jal	ra,3fb5ac <malloc>
-  49eb98:	004ac937          	lui	s2,0x4ac
-  49eb9c:	46b2                	lw	a3,12(sp)
-  49eb9e:	e90d                	bnez	a0,49ebd0 <php_api_send_html_response+0x62>
-  49eba0:	004ad637          	lui	a2,0x4ad
-  49eba4:	90090593          	addi	a1,s2,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49eba8:	86a6                	mv	a3,s1
-  49ebaa:	0c860613          	addi	a2,a2,200 # 4ad0c8 <alarm_type_strings+0x3314>
-  49ebae:	4505                	li	a0,1
-  49ebb0:	da7ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49ebb4:	004ad5b7          	lui	a1,0x4ad
-  49ebb8:	10058593          	addi	a1,a1,256 # 4ad100 <alarm_type_strings+0x334c>
-  49ebbc:	8552                	mv	a0,s4
-  49ebbe:	efdff0ef          	jal	ra,49eaba <php_api_send_error_response>
-  49ebc2:	4772                	lw	a4,28(sp)
-  49ebc4:	7c0aa783          	lw	a5,1984(s5)
-  49ebc8:	08f70963          	beq	a4,a5,49ec5a <php_api_send_html_response+0xec>
-  49ebcc:	dec570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49ebd0:	004ad637          	lui	a2,0x4ad
-  49ebd4:	e3c98713          	addi	a4,s3,-452
-  49ebd8:	12860613          	addi	a2,a2,296 # 4ad128 <alarm_type_strings+0x3374>
-  49ebdc:	85a6                	mv	a1,s1
-  49ebde:	842a                	mv	s0,a0
-  49ebe0:	beaab0ef          	jal	ra,449fca <snprintf>
-  49ebe4:	89aa                	mv	s3,a0
-  49ebe6:	02956563          	bltu	a0,s1,49ec10 <php_api_send_html_response+0xa2>
-  49ebea:	004ad637          	lui	a2,0x4ad
-  49ebee:	86aa                	mv	a3,a0
-  49ebf0:	90090593          	addi	a1,s2,-1792
-  49ebf4:	8726                	mv	a4,s1
-  49ebf6:	19060613          	addi	a2,a2,400 # 4ad190 <alarm_type_strings+0x33dc>
-  49ebfa:	4505                	li	a0,1
-  49ebfc:	d5bff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49ec00:	8522                	mv	a0,s0
-  49ec02:	9915c0ef          	jal	ra,3fb592 <free>
-  49ec06:	004ad5b7          	lui	a1,0x4ad
-  49ec0a:	1d458593          	addi	a1,a1,468 # 4ad1d4 <alarm_type_strings+0x3420>
-  49ec0e:	b77d                	j	49ebbc <php_api_send_html_response+0x4e>
-  49ec10:	862a                	mv	a2,a0
-  49ec12:	4681                	li	a3,0
-  49ec14:	85a2                	mv	a1,s0
-  49ec16:	8552                	mv	a0,s4
-  49ec18:	ed4c30ef          	jal	ra,4622ec <send>
-  49ec1c:	02055063          	bgez	a0,49ec3c <php_api_send_html_response+0xce>
-  49ec20:	004ad637          	lui	a2,0x4ad
-  49ec24:	1fc60613          	addi	a2,a2,508 # 4ad1fc <alarm_type_strings+0x3448>
-  49ec28:	90090593          	addi	a1,s2,-1792
-  49ec2c:	4505                	li	a0,1
-  49ec2e:	d29ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49ec32:	8522                	mv	a0,s0
-  49ec34:	95f5c0ef          	jal	ra,3fb592 <free>
-  49ec38:	4519                	li	a0,6
-  49ec3a:	b761                	j	49ebc2 <php_api_send_html_response+0x54>
-  49ec3c:	004ad637          	lui	a2,0x4ad
-  49ec40:	86ce                	mv	a3,s3
-  49ec42:	21460613          	addi	a2,a2,532 # 4ad214 <alarm_type_strings+0x3460>
-  49ec46:	90090593          	addi	a1,s2,-1792
-  49ec4a:	450d                	li	a0,3
-  49ec4c:	d0bff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49ec50:	8522                	mv	a0,s0
-  49ec52:	9415c0ef          	jal	ra,3fb592 <free>
-  49ec56:	4501                	li	a0,0
-  49ec58:	b7ad                	j	49ebc2 <php_api_send_html_response+0x54>
-  49ec5a:	6105                	addi	sp,sp,32
-  49ec5c:	c035b06f          	j	3fa85e <__riscv_restore_4>
+0049eb7c <php_api_send_html_response>:
+  49eb7c:	caf5b2ef          	jal	t0,3fa82a <__riscv_save_4>
+  49eb80:	0011dab7          	lui	s5,0x11d
+  49eb84:	7c0aa783          	lw	a5,1984(s5) # 11d7c0 <__rom_data0_begin__>
+  49eb88:	004ac9b7          	lui	s3,0x4ac
+  49eb8c:	1101                	addi	sp,sp,-32
+  49eb8e:	8a2a                	mv	s4,a0
+  49eb90:	e3c98513          	addi	a0,s3,-452 # 4abe3c <alarm_type_strings+0x2088>
+  49eb94:	ce3e                	sw	a5,28(sp)
+  49eb96:	b995c0ef          	jal	ra,3fb72e <strlen>
+  49eb9a:	12c50493          	addi	s1,a0,300
+  49eb9e:	c62a                	sw	a0,12(sp)
+  49eba0:	8526                	mv	a0,s1
+  49eba2:	a0b5c0ef          	jal	ra,3fb5ac <malloc>
+  49eba6:	004ac937          	lui	s2,0x4ac
+  49ebaa:	46b2                	lw	a3,12(sp)
+  49ebac:	e90d                	bnez	a0,49ebde <php_api_send_html_response+0x62>
+  49ebae:	004ad637          	lui	a2,0x4ad
+  49ebb2:	90090593          	addi	a1,s2,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49ebb6:	86a6                	mv	a3,s1
+  49ebb8:	0c860613          	addi	a2,a2,200 # 4ad0c8 <alarm_type_strings+0x3314>
+  49ebbc:	4505                	li	a0,1
+  49ebbe:	da7ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49ebc2:	004ad5b7          	lui	a1,0x4ad
+  49ebc6:	10058593          	addi	a1,a1,256 # 4ad100 <alarm_type_strings+0x334c>
+  49ebca:	8552                	mv	a0,s4
+  49ebcc:	efdff0ef          	jal	ra,49eac8 <php_api_send_error_response>
+  49ebd0:	4772                	lw	a4,28(sp)
+  49ebd2:	7c0aa783          	lw	a5,1984(s5)
+  49ebd6:	08f70963          	beq	a4,a5,49ec68 <php_api_send_html_response+0xec>
+  49ebda:	dde570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49ebde:	004ad637          	lui	a2,0x4ad
+  49ebe2:	e3c98713          	addi	a4,s3,-452
+  49ebe6:	12860613          	addi	a2,a2,296 # 4ad128 <alarm_type_strings+0x3374>
+  49ebea:	85a6                	mv	a1,s1
+  49ebec:	842a                	mv	s0,a0
+  49ebee:	bdcab0ef          	jal	ra,449fca <snprintf>
+  49ebf2:	89aa                	mv	s3,a0
+  49ebf4:	02956563          	bltu	a0,s1,49ec1e <php_api_send_html_response+0xa2>
+  49ebf8:	004ad637          	lui	a2,0x4ad
+  49ebfc:	86aa                	mv	a3,a0
+  49ebfe:	90090593          	addi	a1,s2,-1792
+  49ec02:	8726                	mv	a4,s1
+  49ec04:	19060613          	addi	a2,a2,400 # 4ad190 <alarm_type_strings+0x33dc>
+  49ec08:	4505                	li	a0,1
+  49ec0a:	d5bff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49ec0e:	8522                	mv	a0,s0
+  49ec10:	9835c0ef          	jal	ra,3fb592 <free>
+  49ec14:	004ad5b7          	lui	a1,0x4ad
+  49ec18:	1d458593          	addi	a1,a1,468 # 4ad1d4 <alarm_type_strings+0x3420>
+  49ec1c:	b77d                	j	49ebca <php_api_send_html_response+0x4e>
+  49ec1e:	862a                	mv	a2,a0
+  49ec20:	4681                	li	a3,0
+  49ec22:	85a2                	mv	a1,s0
+  49ec24:	8552                	mv	a0,s4
+  49ec26:	ec6c30ef          	jal	ra,4622ec <send>
+  49ec2a:	02055063          	bgez	a0,49ec4a <php_api_send_html_response+0xce>
+  49ec2e:	004ad637          	lui	a2,0x4ad
+  49ec32:	1fc60613          	addi	a2,a2,508 # 4ad1fc <alarm_type_strings+0x3448>
+  49ec36:	90090593          	addi	a1,s2,-1792
+  49ec3a:	4505                	li	a0,1
+  49ec3c:	d29ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49ec40:	8522                	mv	a0,s0
+  49ec42:	9515c0ef          	jal	ra,3fb592 <free>
+  49ec46:	4519                	li	a0,6
+  49ec48:	b761                	j	49ebd0 <php_api_send_html_response+0x54>
+  49ec4a:	004ad637          	lui	a2,0x4ad
+  49ec4e:	86ce                	mv	a3,s3
+  49ec50:	21460613          	addi	a2,a2,532 # 4ad214 <alarm_type_strings+0x3460>
+  49ec54:	90090593          	addi	a1,s2,-1792
+  49ec58:	450d                	li	a0,3
+  49ec5a:	d0bff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49ec5e:	8522                	mv	a0,s0
+  49ec60:	9335c0ef          	jal	ra,3fb592 <free>
+  49ec64:	4501                	li	a0,0
+  49ec66:	b7ad                	j	49ebd0 <php_api_send_html_response+0x54>
+  49ec68:	6105                	addi	sp,sp,32
+  49ec6a:	bf55b06f          	j	3fa85e <__riscv_restore_4>
 
-0049ec60 <php_api_save_system_status>:
-  49ec60:	bcb5b2ef          	jal	t0,3fa82a <__riscv_save_4>
-  49ec64:	0011d7b7          	lui	a5,0x11d
-  49ec68:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49ec6c:	1141                	addi	sp,sp,-16
-  49ec6e:	842a                	mv	s0,a0
-  49ec70:	c63a                	sw	a4,12(sp)
-  49ec72:	89be                	mv	s3,a5
-  49ec74:	451d                	li	a0,7
-  49ec76:	c40d                	beqz	s0,49eca0 <php_api_save_system_status+0x40>
-  49ec78:	004ac537          	lui	a0,0x4ac
-  49ec7c:	85a2                	mv	a1,s0
-  49ec7e:	bc450513          	addi	a0,a0,-1084 # 4abbc4 <alarm_type_strings+0x1e10>
-  49ec82:	ff5fc0ef          	jal	ra,49bc76 <kv_set_string>
-  49ec86:	004ac4b7          	lui	s1,0x4ac
-  49ec8a:	c115                	beqz	a0,49ecae <php_api_save_system_status+0x4e>
-  49ec8c:	004ac637          	lui	a2,0x4ac
-  49ec90:	bd060613          	addi	a2,a2,-1072 # 4abbd0 <alarm_type_strings+0x1e1c>
-  49ec94:	90048593          	addi	a1,s1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49ec98:	4505                	li	a0,1
-  49ec9a:	cbdff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49ec9e:	4521                	li	a0,8
-  49eca0:	4732                	lw	a4,12(sp)
-  49eca2:	7c09a783          	lw	a5,1984(s3)
-  49eca6:	06f70c63          	beq	a4,a5,49ed1e <php_api_save_system_status+0xbe>
-  49ecaa:	d0e570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49ecae:	02040913          	addi	s2,s0,32
-  49ecb2:	004ac537          	lui	a0,0x4ac
-  49ecb6:	85ca                	mv	a1,s2
-  49ecb8:	bec50513          	addi	a0,a0,-1044 # 4abbec <alarm_type_strings+0x1e38>
-  49ecbc:	fbbfc0ef          	jal	ra,49bc76 <kv_set_string>
-  49ecc0:	c511                	beqz	a0,49eccc <php_api_save_system_status+0x6c>
-  49ecc2:	004ac637          	lui	a2,0x4ac
-  49ecc6:	bf860613          	addi	a2,a2,-1032 # 4abbf8 <alarm_type_strings+0x1e44>
-  49ecca:	b7e9                	j	49ec94 <php_api_save_system_status+0x34>
-  49eccc:	004ac537          	lui	a0,0x4ac
-  49ecd0:	06140593          	addi	a1,s0,97
-  49ecd4:	c1050513          	addi	a0,a0,-1008 # 4abc10 <alarm_type_strings+0x1e5c>
-  49ecd8:	f9ffc0ef          	jal	ra,49bc76 <kv_set_string>
-  49ecdc:	c511                	beqz	a0,49ece8 <php_api_save_system_status+0x88>
-  49ecde:	004ac637          	lui	a2,0x4ac
-  49ece2:	c1860613          	addi	a2,a2,-1000 # 4abc18 <alarm_type_strings+0x1e64>
-  49ece6:	b77d                	j	49ec94 <php_api_save_system_status+0x34>
-  49ece8:	004ac537          	lui	a0,0x4ac
-  49ecec:	08140593          	addi	a1,s0,129
-  49ecf0:	c3050513          	addi	a0,a0,-976 # 4abc30 <alarm_type_strings+0x1e7c>
-  49ecf4:	f83fc0ef          	jal	ra,49bc76 <kv_set_string>
-  49ecf8:	c511                	beqz	a0,49ed04 <php_api_save_system_status+0xa4>
-  49ecfa:	004ac637          	lui	a2,0x4ac
-  49ecfe:	c3c60613          	addi	a2,a2,-964 # 4abc3c <alarm_type_strings+0x1e88>
-  49ed02:	bf49                	j	49ec94 <php_api_save_system_status+0x34>
-  49ed04:	004ac637          	lui	a2,0x4ac
-  49ed08:	874a                	mv	a4,s2
-  49ed0a:	86a2                	mv	a3,s0
-  49ed0c:	c5460613          	addi	a2,a2,-940 # 4abc54 <alarm_type_strings+0x1ea0>
-  49ed10:	90048593          	addi	a1,s1,-1792
-  49ed14:	450d                	li	a0,3
-  49ed16:	c41ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49ed1a:	4501                	li	a0,0
-  49ed1c:	b751                	j	49eca0 <php_api_save_system_status+0x40>
-  49ed1e:	0141                	addi	sp,sp,16
-  49ed20:	b3f5b06f          	j	3fa85e <__riscv_restore_4>
+0049ec6e <php_api_save_system_status>:
+  49ec6e:	bbd5b2ef          	jal	t0,3fa82a <__riscv_save_4>
+  49ec72:	0011d7b7          	lui	a5,0x11d
+  49ec76:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49ec7a:	1141                	addi	sp,sp,-16
+  49ec7c:	842a                	mv	s0,a0
+  49ec7e:	c63a                	sw	a4,12(sp)
+  49ec80:	89be                	mv	s3,a5
+  49ec82:	451d                	li	a0,7
+  49ec84:	c40d                	beqz	s0,49ecae <php_api_save_system_status+0x40>
+  49ec86:	004ac537          	lui	a0,0x4ac
+  49ec8a:	85a2                	mv	a1,s0
+  49ec8c:	bc450513          	addi	a0,a0,-1084 # 4abbc4 <alarm_type_strings+0x1e10>
+  49ec90:	fe7fc0ef          	jal	ra,49bc76 <kv_set_string>
+  49ec94:	004ac4b7          	lui	s1,0x4ac
+  49ec98:	c115                	beqz	a0,49ecbc <php_api_save_system_status+0x4e>
+  49ec9a:	004ac637          	lui	a2,0x4ac
+  49ec9e:	bd060613          	addi	a2,a2,-1072 # 4abbd0 <alarm_type_strings+0x1e1c>
+  49eca2:	90048593          	addi	a1,s1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49eca6:	4505                	li	a0,1
+  49eca8:	cbdff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49ecac:	4521                	li	a0,8
+  49ecae:	4732                	lw	a4,12(sp)
+  49ecb0:	7c09a783          	lw	a5,1984(s3)
+  49ecb4:	06f70c63          	beq	a4,a5,49ed2c <php_api_save_system_status+0xbe>
+  49ecb8:	d00570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49ecbc:	02040913          	addi	s2,s0,32
+  49ecc0:	004ac537          	lui	a0,0x4ac
+  49ecc4:	85ca                	mv	a1,s2
+  49ecc6:	bec50513          	addi	a0,a0,-1044 # 4abbec <alarm_type_strings+0x1e38>
+  49ecca:	fadfc0ef          	jal	ra,49bc76 <kv_set_string>
+  49ecce:	c511                	beqz	a0,49ecda <php_api_save_system_status+0x6c>
+  49ecd0:	004ac637          	lui	a2,0x4ac
+  49ecd4:	bf860613          	addi	a2,a2,-1032 # 4abbf8 <alarm_type_strings+0x1e44>
+  49ecd8:	b7e9                	j	49eca2 <php_api_save_system_status+0x34>
+  49ecda:	004ac537          	lui	a0,0x4ac
+  49ecde:	06140593          	addi	a1,s0,97
+  49ece2:	c1050513          	addi	a0,a0,-1008 # 4abc10 <alarm_type_strings+0x1e5c>
+  49ece6:	f91fc0ef          	jal	ra,49bc76 <kv_set_string>
+  49ecea:	c511                	beqz	a0,49ecf6 <php_api_save_system_status+0x88>
+  49ecec:	004ac637          	lui	a2,0x4ac
+  49ecf0:	c1860613          	addi	a2,a2,-1000 # 4abc18 <alarm_type_strings+0x1e64>
+  49ecf4:	b77d                	j	49eca2 <php_api_save_system_status+0x34>
+  49ecf6:	004ac537          	lui	a0,0x4ac
+  49ecfa:	08140593          	addi	a1,s0,129
+  49ecfe:	c3050513          	addi	a0,a0,-976 # 4abc30 <alarm_type_strings+0x1e7c>
+  49ed02:	f75fc0ef          	jal	ra,49bc76 <kv_set_string>
+  49ed06:	c511                	beqz	a0,49ed12 <php_api_save_system_status+0xa4>
+  49ed08:	004ac637          	lui	a2,0x4ac
+  49ed0c:	c3c60613          	addi	a2,a2,-964 # 4abc3c <alarm_type_strings+0x1e88>
+  49ed10:	bf49                	j	49eca2 <php_api_save_system_status+0x34>
+  49ed12:	004ac637          	lui	a2,0x4ac
+  49ed16:	874a                	mv	a4,s2
+  49ed18:	86a2                	mv	a3,s0
+  49ed1a:	c5460613          	addi	a2,a2,-940 # 4abc54 <alarm_type_strings+0x1ea0>
+  49ed1e:	90048593          	addi	a1,s1,-1792
+  49ed22:	450d                	li	a0,3
+  49ed24:	c41ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49ed28:	4501                	li	a0,0
+  49ed2a:	b751                	j	49ecae <php_api_save_system_status+0x40>
+  49ed2c:	0141                	addi	sp,sp,16
+  49ed2e:	b315b06f          	j	3fa85e <__riscv_restore_4>
 
-0049ed24 <php_api_handle_post_request>:
-  49ed24:	af15b2ef          	jal	t0,3fa814 <__riscv_save_12>
-  49ed28:	0011d4b7          	lui	s1,0x11d
-  49ed2c:	7c04a783          	lw	a5,1984(s1) # 11d7c0 <__rom_data0_begin__>
-  49ed30:	89aa                	mv	s3,a0
-  49ed32:	852e                	mv	a0,a1
-  49ed34:	004ac5b7          	lui	a1,0x4ac
-  49ed38:	710d                	addi	sp,sp,-352
-  49ed3a:	9a058593          	addi	a1,a1,-1632 # 4ab9a0 <alarm_type_strings+0x1bec>
-  49ed3e:	14f12e23          	sw	a5,348(sp)
-  49ed42:	ad5ab0ef          	jal	ra,44a816 <strstr>
-  49ed46:	c226                	sw	s1,4(sp)
-  49ed48:	e10d                	bnez	a0,49ed6a <php_api_handle_post_request+0x46>
-  49ed4a:	004ac5b7          	lui	a1,0x4ac
-  49ed4e:	9a858593          	addi	a1,a1,-1624 # 4ab9a8 <alarm_type_strings+0x1bf4>
-  49ed52:	854e                	mv	a0,s3
-  49ed54:	d67ff0ef          	jal	ra,49eaba <php_api_send_error_response>
-  49ed58:	4792                	lw	a5,4(sp)
-  49ed5a:	15c12703          	lw	a4,348(sp)
-  49ed5e:	7c07a783          	lw	a5,1984(a5)
-  49ed62:	2af70d63          	beq	a4,a5,49f01c <php_api_handle_post_request+0x2f8>
-  49ed66:	c52570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49ed6a:	842a                	mv	s0,a0
-  49ed6c:	40000513          	li	a0,1024
-  49ed70:	83d5c0ef          	jal	ra,3fb5ac <malloc>
-  49ed74:	8a2a                	mv	s4,a0
-  49ed76:	e511                	bnez	a0,49ed82 <php_api_handle_post_request+0x5e>
-  49ed78:	004ab5b7          	lui	a1,0x4ab
-  49ed7c:	d7058593          	addi	a1,a1,-656 # 4aad70 <alarm_type_strings+0xfbc>
-  49ed80:	bfc9                	j	49ed52 <php_api_handle_post_request+0x2e>
-  49ed82:	00440593          	addi	a1,s0,4
-  49ed86:	3ff00613          	li	a2,1023
-  49ed8a:	e72ab0ef          	jal	ra,44a3fc <strncpy>
-  49ed8e:	004ac637          	lui	a2,0x4ac
-  49ed92:	004ac937          	lui	s2,0x4ac
-  49ed96:	86d2                	mv	a3,s4
-  49ed98:	9bc60613          	addi	a2,a2,-1604 # 4ab9bc <alarm_type_strings+0x1c08>
-  49ed9c:	90090593          	addi	a1,s2,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49eda0:	3e0a0fa3          	sb	zero,1023(s4)
-  49eda4:	450d                	li	a0,3
-  49eda6:	bb1ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49edaa:	0a100613          	li	a2,161
-  49edae:	4581                	li	a1,0
-  49edb0:	0828                	addi	a0,sp,24
-  49edb2:	d485c0ef          	jal	ra,3fb2fa <memset>
-  49edb6:	04000613          	li	a2,64
-  49edba:	4581                	li	a1,0
-  49edbc:	09e8                	addi	a0,sp,220
-  49edbe:	d3c5c0ef          	jal	ra,3fb2fa <memset>
-  49edc2:	04000613          	li	a2,64
-  49edc6:	4581                	li	a1,0
-  49edc8:	0a68                	addi	a0,sp,284
-  49edca:	d305c0ef          	jal	ra,3fb2fa <memset>
-  49edce:	02000613          	li	a2,32
-  49edd2:	4581                	li	a1,0
-  49edd4:	1968                	addi	a0,sp,188
-  49edd6:	d245c0ef          	jal	ra,3fb2fa <memset>
-  49edda:	004ac4b7          	lui	s1,0x4ac
-  49edde:	9cc48593          	addi	a1,s1,-1588 # 4ab9cc <alarm_type_strings+0x1c18>
-  49ede2:	8552                	mv	a0,s4
-  49ede4:	a93ab0ef          	jal	ra,44a876 <strtok>
-  49ede8:	842a                	mv	s0,a0
-  49edea:	c426                	sw	s1,8(sp)
-  49edec:	004acab7          	lui	s5,0x4ac
-  49edf0:	004acb37          	lui	s6,0x4ac
-  49edf4:	004acbb7          	lui	s7,0x4ac
-  49edf8:	004acc37          	lui	s8,0x4ac
-  49edfc:	004abcb7          	lui	s9,0x4ab
-  49ee00:	004abd37          	lui	s10,0x4ab
-  49ee04:	004acdb7          	lui	s11,0x4ac
-  49ee08:	ec11                	bnez	s0,49ee24 <php_api_handle_post_request+0x100>
-  49ee0a:	8552                	mv	a0,s4
-  49ee0c:	f865c0ef          	jal	ra,3fb592 <free>
-  49ee10:	1828                	addi	a0,sp,56
-  49ee12:	91d5c0ef          	jal	ra,3fb72e <strlen>
-  49ee16:	0e051263          	bnez	a0,49eefa <php_api_handle_post_request+0x1d6>
-  49ee1a:	004ac5b7          	lui	a1,0x4ac
-  49ee1e:	9e058593          	addi	a1,a1,-1568 # 4ab9e0 <alarm_type_strings+0x1c2c>
-  49ee22:	bf05                	j	49ed52 <php_api_handle_post_request+0x2e>
-  49ee24:	03d00593          	li	a1,61
-  49ee28:	8522                	mv	a0,s0
-  49ee2a:	9535c0ef          	jal	ra,3fb77c <strchr>
-  49ee2e:	cd15                	beqz	a0,49ee6a <php_api_handle_post_request+0x146>
-  49ee30:	00050023          	sb	zero,0(a0)
-  49ee34:	c62a                	sw	a0,12(sp)
-  49ee36:	10000513          	li	a0,256
-  49ee3a:	f725c0ef          	jal	ra,3fb5ac <malloc>
-  49ee3e:	84aa                	mv	s1,a0
-  49ee40:	c50d                	beqz	a0,49ee6a <php_api_handle_post_request+0x146>
-  49ee42:	47b2                	lw	a5,12(sp)
-  49ee44:	85aa                	mv	a1,a0
-  49ee46:	00178513          	addi	a0,a5,1
-  49ee4a:	fe6ff0ef          	jal	ra,49e630 <php_api_url_decode.constprop.0>
-  49ee4e:	bc4a8593          	addi	a1,s5,-1084 # 4abbc4 <alarm_type_strings+0x1e10>
-  49ee52:	8522                	mv	a0,s0
-  49ee54:	d4e5c0ef          	jal	ra,3fb3a2 <strcmp>
-  49ee58:	e10d                	bnez	a0,49ee7a <php_api_handle_post_request+0x156>
-  49ee5a:	467d                	li	a2,31
-  49ee5c:	85a6                	mv	a1,s1
-  49ee5e:	0828                	addi	a0,sp,24
-  49ee60:	d9cab0ef          	jal	ra,44a3fc <strncpy>
-  49ee64:	8526                	mv	a0,s1
-  49ee66:	f2c5c0ef          	jal	ra,3fb592 <free>
-  49ee6a:	47a2                	lw	a5,8(sp)
-  49ee6c:	4501                	li	a0,0
-  49ee6e:	9cc78593          	addi	a1,a5,-1588
-  49ee72:	a05ab0ef          	jal	ra,44a876 <strtok>
-  49ee76:	842a                	mv	s0,a0
-  49ee78:	bf41                	j	49ee08 <php_api_handle_post_request+0xe4>
-  49ee7a:	becb0593          	addi	a1,s6,-1044 # 4abbec <alarm_type_strings+0x1e38>
-  49ee7e:	8522                	mv	a0,s0
-  49ee80:	d225c0ef          	jal	ra,3fb3a2 <strcmp>
-  49ee84:	e509                	bnez	a0,49ee8e <php_api_handle_post_request+0x16a>
-  49ee86:	463d                	li	a2,15
-  49ee88:	85a6                	mv	a1,s1
-  49ee8a:	1828                	addi	a0,sp,56
-  49ee8c:	bfd1                	j	49ee60 <php_api_handle_post_request+0x13c>
-  49ee8e:	c10b8593          	addi	a1,s7,-1008 # 4abc10 <alarm_type_strings+0x1e5c>
-  49ee92:	8522                	mv	a0,s0
-  49ee94:	d0e5c0ef          	jal	ra,3fb3a2 <strcmp>
-  49ee98:	e511                	bnez	a0,49eea4 <php_api_handle_post_request+0x180>
-  49ee9a:	467d                	li	a2,31
-  49ee9c:	85a6                	mv	a1,s1
-  49ee9e:	07910513          	addi	a0,sp,121
-  49eea2:	bf7d                	j	49ee60 <php_api_handle_post_request+0x13c>
-  49eea4:	c30c0593          	addi	a1,s8,-976 # 4abc30 <alarm_type_strings+0x1e7c>
-  49eea8:	8522                	mv	a0,s0
-  49eeaa:	cf85c0ef          	jal	ra,3fb3a2 <strcmp>
-  49eeae:	e511                	bnez	a0,49eeba <php_api_handle_post_request+0x196>
-  49eeb0:	467d                	li	a2,31
-  49eeb2:	85a6                	mv	a1,s1
-  49eeb4:	09910513          	addi	a0,sp,153
-  49eeb8:	b765                	j	49ee60 <php_api_handle_post_request+0x13c>
-  49eeba:	fecc8593          	addi	a1,s9,-20 # 4aafec <alarm_type_strings+0x1238>
-  49eebe:	8522                	mv	a0,s0
-  49eec0:	ce25c0ef          	jal	ra,3fb3a2 <strcmp>
-  49eec4:	e511                	bnez	a0,49eed0 <php_api_handle_post_request+0x1ac>
-  49eec6:	03f00613          	li	a2,63
-  49eeca:	85a6                	mv	a1,s1
-  49eecc:	09e8                	addi	a0,sp,220
-  49eece:	bf49                	j	49ee60 <php_api_handle_post_request+0x13c>
-  49eed0:	ff8d0593          	addi	a1,s10,-8 # 4aaff8 <alarm_type_strings+0x1244>
-  49eed4:	8522                	mv	a0,s0
-  49eed6:	ccc5c0ef          	jal	ra,3fb3a2 <strcmp>
-  49eeda:	e511                	bnez	a0,49eee6 <php_api_handle_post_request+0x1c2>
-  49eedc:	03f00613          	li	a2,63
-  49eee0:	85a6                	mv	a1,s1
-  49eee2:	0a68                	addi	a0,sp,284
-  49eee4:	bfb5                	j	49ee60 <php_api_handle_post_request+0x13c>
-  49eee6:	9d0d8593          	addi	a1,s11,-1584 # 4ab9d0 <alarm_type_strings+0x1c1c>
-  49eeea:	8522                	mv	a0,s0
-  49eeec:	cb65c0ef          	jal	ra,3fb3a2 <strcmp>
-  49eef0:	f935                	bnez	a0,49ee64 <php_api_handle_post_request+0x140>
-  49eef2:	467d                	li	a2,31
-  49eef4:	85a6                	mv	a1,s1
-  49eef6:	1968                	addi	a0,sp,188
-  49eef8:	b7a5                	j	49ee60 <php_api_handle_post_request+0x13c>
-  49eefa:	0828                	addi	a0,sp,24
-  49eefc:	d65ff0ef          	jal	ra,49ec60 <php_api_save_system_status>
-  49ef00:	c511                	beqz	a0,49ef0c <php_api_handle_post_request+0x1e8>
-  49ef02:	004ac5b7          	lui	a1,0x4ac
-  49ef06:	9f858593          	addi	a1,a1,-1544 # 4ab9f8 <alarm_type_strings+0x1c44>
-  49ef0a:	b5a1                	j	49ed52 <php_api_handle_post_request+0x2e>
-  49ef0c:	09e8                	addi	a0,sp,220
-  49ef0e:	8215c0ef          	jal	ra,3fb72e <strlen>
-  49ef12:	cd25                	beqz	a0,49ef8a <php_api_handle_post_request+0x266>
-  49ef14:	004ab537          	lui	a0,0x4ab
-  49ef18:	09ec                	addi	a1,sp,220
-  49ef1a:	fec50513          	addi	a0,a0,-20 # 4aafec <alarm_type_strings+0x1238>
-  49ef1e:	d59fc0ef          	jal	ra,49bc76 <kv_set_string>
-  49ef22:	c94d                	beqz	a0,49efd4 <php_api_handle_post_request+0x2b0>
-  49ef24:	004ac637          	lui	a2,0x4ac
-  49ef28:	a1460613          	addi	a2,a2,-1516 # 4aba14 <alarm_type_strings+0x1c60>
-  49ef2c:	90090593          	addi	a1,s2,-1792
-  49ef30:	4505                	li	a0,1
-  49ef32:	a25ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49ef36:	0a68                	addi	a0,sp,284
-  49ef38:	ff65c0ef          	jal	ra,3fb72e <strlen>
-  49ef3c:	c115                	beqz	a0,49ef60 <php_api_handle_post_request+0x23c>
-  49ef3e:	004ab537          	lui	a0,0x4ab
-  49ef42:	0a6c                	addi	a1,sp,284
-  49ef44:	ff850513          	addi	a0,a0,-8 # 4aaff8 <alarm_type_strings+0x1244>
-  49ef48:	d2ffc0ef          	jal	ra,49bc76 <kv_set_string>
-  49ef4c:	cd59                	beqz	a0,49efea <php_api_handle_post_request+0x2c6>
-  49ef4e:	004ac637          	lui	a2,0x4ac
-  49ef52:	a4860613          	addi	a2,a2,-1464 # 4aba48 <alarm_type_strings+0x1c94>
-  49ef56:	90090593          	addi	a1,s2,-1792
-  49ef5a:	4505                	li	a0,1
-  49ef5c:	9fbff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49ef60:	1968                	addi	a0,sp,188
-  49ef62:	fcc5c0ef          	jal	ra,3fb72e <strlen>
-  49ef66:	c115                	beqz	a0,49ef8a <php_api_handle_post_request+0x266>
-  49ef68:	004ac537          	lui	a0,0x4ac
-  49ef6c:	196c                	addi	a1,sp,188
-  49ef6e:	9d050513          	addi	a0,a0,-1584 # 4ab9d0 <alarm_type_strings+0x1c1c>
-  49ef72:	d05fc0ef          	jal	ra,49bc76 <kv_set_string>
-  49ef76:	c941                	beqz	a0,49f006 <php_api_handle_post_request+0x2e2>
-  49ef78:	004ac637          	lui	a2,0x4ac
-  49ef7c:	a8860613          	addi	a2,a2,-1400 # 4aba88 <alarm_type_strings+0x1cd4>
-  49ef80:	90090593          	addi	a1,s2,-1792
-  49ef84:	4505                	li	a0,1
-  49ef86:	9d1ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49ef8a:	000dc537          	lui	a0,0xdc
-  49ef8e:	082c                	addi	a1,sp,24
-  49ef90:	0a100613          	li	a2,161
-  49ef94:	1c050513          	addi	a0,a0,448 # dc1c0 <g_system_status>
-  49ef98:	8825c0ef          	jal	ra,3fb01a <memcpy>
-  49ef9c:	06400613          	li	a2,100
-  49efa0:	03200593          	li	a1,50
-  49efa4:	4509                	li	a0,2
-  49efa6:	d1cfc0ef          	jal	ra,49b4c2 <Buzzer_Alarm>
-  49efaa:	004ac5b7          	lui	a1,0x4ac
-  49efae:	acc58593          	addi	a1,a1,-1332 # 4abacc <alarm_type_strings+0x1d18>
-  49efb2:	854e                	mv	a0,s3
-  49efb4:	a53ff0ef          	jal	ra,49ea06 <php_api_send_success_response>
-  49efb8:	3e800513          	li	a0,1000
-  49efbc:	65b000ef          	jal	ra,49fe16 <Time_DelayMs>
-  49efc0:	bfe720ef          	jal	ra,4113be <RebootSystem>
-  49efc4:	004ac5b7          	lui	a1,0x4ac
-  49efc8:	b1458593          	addi	a1,a1,-1260 # 4abb14 <alarm_type_strings+0x1d60>
-  49efcc:	854e                	mv	a0,s3
-  49efce:	a39ff0ef          	jal	ra,49ea06 <php_api_send_success_response>
-  49efd2:	b359                	j	49ed58 <php_api_handle_post_request+0x34>
-  49efd4:	004ac637          	lui	a2,0x4ac
-  49efd8:	09f4                	addi	a3,sp,220
-  49efda:	a2c60613          	addi	a2,a2,-1492 # 4aba2c <alarm_type_strings+0x1c78>
-  49efde:	90090593          	addi	a1,s2,-1792
-  49efe2:	450d                	li	a0,3
-  49efe4:	973ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49efe8:	b7b9                	j	49ef36 <php_api_handle_post_request+0x212>
-  49efea:	0a68                	addi	a0,sp,284
-  49efec:	f425c0ef          	jal	ra,3fb72e <strlen>
-  49eff0:	004ac637          	lui	a2,0x4ac
-  49eff4:	86aa                	mv	a3,a0
-  49eff6:	a6060613          	addi	a2,a2,-1440 # 4aba60 <alarm_type_strings+0x1cac>
-  49effa:	90090593          	addi	a1,s2,-1792
-  49effe:	450d                	li	a0,3
-  49f000:	957ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f004:	bfb1                	j	49ef60 <php_api_handle_post_request+0x23c>
-  49f006:	004ac637          	lui	a2,0x4ac
-  49f00a:	1974                	addi	a3,sp,188
-  49f00c:	aa860613          	addi	a2,a2,-1368 # 4abaa8 <alarm_type_strings+0x1cf4>
-  49f010:	90090593          	addi	a1,s2,-1792
-  49f014:	450d                	li	a0,3
-  49f016:	941ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f01a:	bf85                	j	49ef8a <php_api_handle_post_request+0x266>
-  49f01c:	6135                	addi	sp,sp,352
-  49f01e:	8335b06f          	j	3fa850 <__riscv_restore_12>
+0049ed32 <php_api_handle_post_request>:
+  49ed32:	ae35b2ef          	jal	t0,3fa814 <__riscv_save_12>
+  49ed36:	0011d4b7          	lui	s1,0x11d
+  49ed3a:	7c04a783          	lw	a5,1984(s1) # 11d7c0 <__rom_data0_begin__>
+  49ed3e:	89aa                	mv	s3,a0
+  49ed40:	852e                	mv	a0,a1
+  49ed42:	004ac5b7          	lui	a1,0x4ac
+  49ed46:	710d                	addi	sp,sp,-352
+  49ed48:	9a058593          	addi	a1,a1,-1632 # 4ab9a0 <alarm_type_strings+0x1bec>
+  49ed4c:	14f12e23          	sw	a5,348(sp)
+  49ed50:	ac7ab0ef          	jal	ra,44a816 <strstr>
+  49ed54:	c226                	sw	s1,4(sp)
+  49ed56:	e10d                	bnez	a0,49ed78 <php_api_handle_post_request+0x46>
+  49ed58:	004ac5b7          	lui	a1,0x4ac
+  49ed5c:	9a858593          	addi	a1,a1,-1624 # 4ab9a8 <alarm_type_strings+0x1bf4>
+  49ed60:	854e                	mv	a0,s3
+  49ed62:	d67ff0ef          	jal	ra,49eac8 <php_api_send_error_response>
+  49ed66:	4792                	lw	a5,4(sp)
+  49ed68:	15c12703          	lw	a4,348(sp)
+  49ed6c:	7c07a783          	lw	a5,1984(a5)
+  49ed70:	2af70d63          	beq	a4,a5,49f02a <php_api_handle_post_request+0x2f8>
+  49ed74:	c44570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49ed78:	842a                	mv	s0,a0
+  49ed7a:	40000513          	li	a0,1024
+  49ed7e:	82f5c0ef          	jal	ra,3fb5ac <malloc>
+  49ed82:	8a2a                	mv	s4,a0
+  49ed84:	e511                	bnez	a0,49ed90 <php_api_handle_post_request+0x5e>
+  49ed86:	004ab5b7          	lui	a1,0x4ab
+  49ed8a:	d7058593          	addi	a1,a1,-656 # 4aad70 <alarm_type_strings+0xfbc>
+  49ed8e:	bfc9                	j	49ed60 <php_api_handle_post_request+0x2e>
+  49ed90:	00440593          	addi	a1,s0,4
+  49ed94:	3ff00613          	li	a2,1023
+  49ed98:	e64ab0ef          	jal	ra,44a3fc <strncpy>
+  49ed9c:	004ac637          	lui	a2,0x4ac
+  49eda0:	004ac937          	lui	s2,0x4ac
+  49eda4:	86d2                	mv	a3,s4
+  49eda6:	9bc60613          	addi	a2,a2,-1604 # 4ab9bc <alarm_type_strings+0x1c08>
+  49edaa:	90090593          	addi	a1,s2,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49edae:	3e0a0fa3          	sb	zero,1023(s4)
+  49edb2:	450d                	li	a0,3
+  49edb4:	bb1ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49edb8:	0a100613          	li	a2,161
+  49edbc:	4581                	li	a1,0
+  49edbe:	0828                	addi	a0,sp,24
+  49edc0:	d3a5c0ef          	jal	ra,3fb2fa <memset>
+  49edc4:	04000613          	li	a2,64
+  49edc8:	4581                	li	a1,0
+  49edca:	09e8                	addi	a0,sp,220
+  49edcc:	d2e5c0ef          	jal	ra,3fb2fa <memset>
+  49edd0:	04000613          	li	a2,64
+  49edd4:	4581                	li	a1,0
+  49edd6:	0a68                	addi	a0,sp,284
+  49edd8:	d225c0ef          	jal	ra,3fb2fa <memset>
+  49eddc:	02000613          	li	a2,32
+  49ede0:	4581                	li	a1,0
+  49ede2:	1968                	addi	a0,sp,188
+  49ede4:	d165c0ef          	jal	ra,3fb2fa <memset>
+  49ede8:	004ac4b7          	lui	s1,0x4ac
+  49edec:	9cc48593          	addi	a1,s1,-1588 # 4ab9cc <alarm_type_strings+0x1c18>
+  49edf0:	8552                	mv	a0,s4
+  49edf2:	a85ab0ef          	jal	ra,44a876 <strtok>
+  49edf6:	842a                	mv	s0,a0
+  49edf8:	c426                	sw	s1,8(sp)
+  49edfa:	004acab7          	lui	s5,0x4ac
+  49edfe:	004acb37          	lui	s6,0x4ac
+  49ee02:	004acbb7          	lui	s7,0x4ac
+  49ee06:	004acc37          	lui	s8,0x4ac
+  49ee0a:	004abcb7          	lui	s9,0x4ab
+  49ee0e:	004abd37          	lui	s10,0x4ab
+  49ee12:	004acdb7          	lui	s11,0x4ac
+  49ee16:	ec11                	bnez	s0,49ee32 <php_api_handle_post_request+0x100>
+  49ee18:	8552                	mv	a0,s4
+  49ee1a:	f785c0ef          	jal	ra,3fb592 <free>
+  49ee1e:	1828                	addi	a0,sp,56
+  49ee20:	90f5c0ef          	jal	ra,3fb72e <strlen>
+  49ee24:	0e051263          	bnez	a0,49ef08 <php_api_handle_post_request+0x1d6>
+  49ee28:	004ac5b7          	lui	a1,0x4ac
+  49ee2c:	9e058593          	addi	a1,a1,-1568 # 4ab9e0 <alarm_type_strings+0x1c2c>
+  49ee30:	bf05                	j	49ed60 <php_api_handle_post_request+0x2e>
+  49ee32:	03d00593          	li	a1,61
+  49ee36:	8522                	mv	a0,s0
+  49ee38:	9455c0ef          	jal	ra,3fb77c <strchr>
+  49ee3c:	cd15                	beqz	a0,49ee78 <php_api_handle_post_request+0x146>
+  49ee3e:	00050023          	sb	zero,0(a0)
+  49ee42:	c62a                	sw	a0,12(sp)
+  49ee44:	10000513          	li	a0,256
+  49ee48:	f645c0ef          	jal	ra,3fb5ac <malloc>
+  49ee4c:	84aa                	mv	s1,a0
+  49ee4e:	c50d                	beqz	a0,49ee78 <php_api_handle_post_request+0x146>
+  49ee50:	47b2                	lw	a5,12(sp)
+  49ee52:	85aa                	mv	a1,a0
+  49ee54:	00178513          	addi	a0,a5,1
+  49ee58:	fe6ff0ef          	jal	ra,49e63e <php_api_url_decode.constprop.0>
+  49ee5c:	bc4a8593          	addi	a1,s5,-1084 # 4abbc4 <alarm_type_strings+0x1e10>
+  49ee60:	8522                	mv	a0,s0
+  49ee62:	d405c0ef          	jal	ra,3fb3a2 <strcmp>
+  49ee66:	e10d                	bnez	a0,49ee88 <php_api_handle_post_request+0x156>
+  49ee68:	467d                	li	a2,31
+  49ee6a:	85a6                	mv	a1,s1
+  49ee6c:	0828                	addi	a0,sp,24
+  49ee6e:	d8eab0ef          	jal	ra,44a3fc <strncpy>
+  49ee72:	8526                	mv	a0,s1
+  49ee74:	f1e5c0ef          	jal	ra,3fb592 <free>
+  49ee78:	47a2                	lw	a5,8(sp)
+  49ee7a:	4501                	li	a0,0
+  49ee7c:	9cc78593          	addi	a1,a5,-1588
+  49ee80:	9f7ab0ef          	jal	ra,44a876 <strtok>
+  49ee84:	842a                	mv	s0,a0
+  49ee86:	bf41                	j	49ee16 <php_api_handle_post_request+0xe4>
+  49ee88:	becb0593          	addi	a1,s6,-1044 # 4abbec <alarm_type_strings+0x1e38>
+  49ee8c:	8522                	mv	a0,s0
+  49ee8e:	d145c0ef          	jal	ra,3fb3a2 <strcmp>
+  49ee92:	e509                	bnez	a0,49ee9c <php_api_handle_post_request+0x16a>
+  49ee94:	463d                	li	a2,15
+  49ee96:	85a6                	mv	a1,s1
+  49ee98:	1828                	addi	a0,sp,56
+  49ee9a:	bfd1                	j	49ee6e <php_api_handle_post_request+0x13c>
+  49ee9c:	c10b8593          	addi	a1,s7,-1008 # 4abc10 <alarm_type_strings+0x1e5c>
+  49eea0:	8522                	mv	a0,s0
+  49eea2:	d005c0ef          	jal	ra,3fb3a2 <strcmp>
+  49eea6:	e511                	bnez	a0,49eeb2 <php_api_handle_post_request+0x180>
+  49eea8:	467d                	li	a2,31
+  49eeaa:	85a6                	mv	a1,s1
+  49eeac:	07910513          	addi	a0,sp,121
+  49eeb0:	bf7d                	j	49ee6e <php_api_handle_post_request+0x13c>
+  49eeb2:	c30c0593          	addi	a1,s8,-976 # 4abc30 <alarm_type_strings+0x1e7c>
+  49eeb6:	8522                	mv	a0,s0
+  49eeb8:	cea5c0ef          	jal	ra,3fb3a2 <strcmp>
+  49eebc:	e511                	bnez	a0,49eec8 <php_api_handle_post_request+0x196>
+  49eebe:	467d                	li	a2,31
+  49eec0:	85a6                	mv	a1,s1
+  49eec2:	09910513          	addi	a0,sp,153
+  49eec6:	b765                	j	49ee6e <php_api_handle_post_request+0x13c>
+  49eec8:	fecc8593          	addi	a1,s9,-20 # 4aafec <alarm_type_strings+0x1238>
+  49eecc:	8522                	mv	a0,s0
+  49eece:	cd45c0ef          	jal	ra,3fb3a2 <strcmp>
+  49eed2:	e511                	bnez	a0,49eede <php_api_handle_post_request+0x1ac>
+  49eed4:	03f00613          	li	a2,63
+  49eed8:	85a6                	mv	a1,s1
+  49eeda:	09e8                	addi	a0,sp,220
+  49eedc:	bf49                	j	49ee6e <php_api_handle_post_request+0x13c>
+  49eede:	ff8d0593          	addi	a1,s10,-8 # 4aaff8 <alarm_type_strings+0x1244>
+  49eee2:	8522                	mv	a0,s0
+  49eee4:	cbe5c0ef          	jal	ra,3fb3a2 <strcmp>
+  49eee8:	e511                	bnez	a0,49eef4 <php_api_handle_post_request+0x1c2>
+  49eeea:	03f00613          	li	a2,63
+  49eeee:	85a6                	mv	a1,s1
+  49eef0:	0a68                	addi	a0,sp,284
+  49eef2:	bfb5                	j	49ee6e <php_api_handle_post_request+0x13c>
+  49eef4:	9d0d8593          	addi	a1,s11,-1584 # 4ab9d0 <alarm_type_strings+0x1c1c>
+  49eef8:	8522                	mv	a0,s0
+  49eefa:	ca85c0ef          	jal	ra,3fb3a2 <strcmp>
+  49eefe:	f935                	bnez	a0,49ee72 <php_api_handle_post_request+0x140>
+  49ef00:	467d                	li	a2,31
+  49ef02:	85a6                	mv	a1,s1
+  49ef04:	1968                	addi	a0,sp,188
+  49ef06:	b7a5                	j	49ee6e <php_api_handle_post_request+0x13c>
+  49ef08:	0828                	addi	a0,sp,24
+  49ef0a:	d65ff0ef          	jal	ra,49ec6e <php_api_save_system_status>
+  49ef0e:	c511                	beqz	a0,49ef1a <php_api_handle_post_request+0x1e8>
+  49ef10:	004ac5b7          	lui	a1,0x4ac
+  49ef14:	9f858593          	addi	a1,a1,-1544 # 4ab9f8 <alarm_type_strings+0x1c44>
+  49ef18:	b5a1                	j	49ed60 <php_api_handle_post_request+0x2e>
+  49ef1a:	09e8                	addi	a0,sp,220
+  49ef1c:	8135c0ef          	jal	ra,3fb72e <strlen>
+  49ef20:	cd25                	beqz	a0,49ef98 <php_api_handle_post_request+0x266>
+  49ef22:	004ab537          	lui	a0,0x4ab
+  49ef26:	09ec                	addi	a1,sp,220
+  49ef28:	fec50513          	addi	a0,a0,-20 # 4aafec <alarm_type_strings+0x1238>
+  49ef2c:	d4bfc0ef          	jal	ra,49bc76 <kv_set_string>
+  49ef30:	c94d                	beqz	a0,49efe2 <php_api_handle_post_request+0x2b0>
+  49ef32:	004ac637          	lui	a2,0x4ac
+  49ef36:	a1460613          	addi	a2,a2,-1516 # 4aba14 <alarm_type_strings+0x1c60>
+  49ef3a:	90090593          	addi	a1,s2,-1792
+  49ef3e:	4505                	li	a0,1
+  49ef40:	a25ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49ef44:	0a68                	addi	a0,sp,284
+  49ef46:	fe85c0ef          	jal	ra,3fb72e <strlen>
+  49ef4a:	c115                	beqz	a0,49ef6e <php_api_handle_post_request+0x23c>
+  49ef4c:	004ab537          	lui	a0,0x4ab
+  49ef50:	0a6c                	addi	a1,sp,284
+  49ef52:	ff850513          	addi	a0,a0,-8 # 4aaff8 <alarm_type_strings+0x1244>
+  49ef56:	d21fc0ef          	jal	ra,49bc76 <kv_set_string>
+  49ef5a:	cd59                	beqz	a0,49eff8 <php_api_handle_post_request+0x2c6>
+  49ef5c:	004ac637          	lui	a2,0x4ac
+  49ef60:	a4860613          	addi	a2,a2,-1464 # 4aba48 <alarm_type_strings+0x1c94>
+  49ef64:	90090593          	addi	a1,s2,-1792
+  49ef68:	4505                	li	a0,1
+  49ef6a:	9fbff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49ef6e:	1968                	addi	a0,sp,188
+  49ef70:	fbe5c0ef          	jal	ra,3fb72e <strlen>
+  49ef74:	c115                	beqz	a0,49ef98 <php_api_handle_post_request+0x266>
+  49ef76:	004ac537          	lui	a0,0x4ac
+  49ef7a:	196c                	addi	a1,sp,188
+  49ef7c:	9d050513          	addi	a0,a0,-1584 # 4ab9d0 <alarm_type_strings+0x1c1c>
+  49ef80:	cf7fc0ef          	jal	ra,49bc76 <kv_set_string>
+  49ef84:	c941                	beqz	a0,49f014 <php_api_handle_post_request+0x2e2>
+  49ef86:	004ac637          	lui	a2,0x4ac
+  49ef8a:	a8860613          	addi	a2,a2,-1400 # 4aba88 <alarm_type_strings+0x1cd4>
+  49ef8e:	90090593          	addi	a1,s2,-1792
+  49ef92:	4505                	li	a0,1
+  49ef94:	9d1ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49ef98:	000dc537          	lui	a0,0xdc
+  49ef9c:	082c                	addi	a1,sp,24
+  49ef9e:	0a100613          	li	a2,161
+  49efa2:	1c050513          	addi	a0,a0,448 # dc1c0 <g_system_status>
+  49efa6:	8745c0ef          	jal	ra,3fb01a <memcpy>
+  49efaa:	06400613          	li	a2,100
+  49efae:	03200593          	li	a1,50
+  49efb2:	4509                	li	a0,2
+  49efb4:	d0efc0ef          	jal	ra,49b4c2 <Buzzer_Alarm>
+  49efb8:	004ac5b7          	lui	a1,0x4ac
+  49efbc:	acc58593          	addi	a1,a1,-1332 # 4abacc <alarm_type_strings+0x1d18>
+  49efc0:	854e                	mv	a0,s3
+  49efc2:	a53ff0ef          	jal	ra,49ea14 <php_api_send_success_response>
+  49efc6:	3e800513          	li	a0,1000
+  49efca:	65b000ef          	jal	ra,49fe24 <Time_DelayMs>
+  49efce:	bf0720ef          	jal	ra,4113be <RebootSystem>
+  49efd2:	004ac5b7          	lui	a1,0x4ac
+  49efd6:	b1458593          	addi	a1,a1,-1260 # 4abb14 <alarm_type_strings+0x1d60>
+  49efda:	854e                	mv	a0,s3
+  49efdc:	a39ff0ef          	jal	ra,49ea14 <php_api_send_success_response>
+  49efe0:	b359                	j	49ed66 <php_api_handle_post_request+0x34>
+  49efe2:	004ac637          	lui	a2,0x4ac
+  49efe6:	09f4                	addi	a3,sp,220
+  49efe8:	a2c60613          	addi	a2,a2,-1492 # 4aba2c <alarm_type_strings+0x1c78>
+  49efec:	90090593          	addi	a1,s2,-1792
+  49eff0:	450d                	li	a0,3
+  49eff2:	973ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49eff6:	b7b9                	j	49ef44 <php_api_handle_post_request+0x212>
+  49eff8:	0a68                	addi	a0,sp,284
+  49effa:	f345c0ef          	jal	ra,3fb72e <strlen>
+  49effe:	004ac637          	lui	a2,0x4ac
+  49f002:	86aa                	mv	a3,a0
+  49f004:	a6060613          	addi	a2,a2,-1440 # 4aba60 <alarm_type_strings+0x1cac>
+  49f008:	90090593          	addi	a1,s2,-1792
+  49f00c:	450d                	li	a0,3
+  49f00e:	957ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f012:	bfb1                	j	49ef6e <php_api_handle_post_request+0x23c>
+  49f014:	004ac637          	lui	a2,0x4ac
+  49f018:	1974                	addi	a3,sp,188
+  49f01a:	aa860613          	addi	a2,a2,-1368 # 4abaa8 <alarm_type_strings+0x1cf4>
+  49f01e:	90090593          	addi	a1,s2,-1792
+  49f022:	450d                	li	a0,3
+  49f024:	941ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f028:	bf85                	j	49ef98 <php_api_handle_post_request+0x266>
+  49f02a:	6135                	addi	sp,sp,352
+  49f02c:	8255b06f          	j	3fa850 <__riscv_restore_12>
 
-0049f022 <php_api_handle_http_request>:
-  49f022:	8095b2ef          	jal	t0,3fa82a <__riscv_save_4>
-  49f026:	0011d9b7          	lui	s3,0x11d
-  49f02a:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
-  49f02e:	1141                	addi	sp,sp,-16
-  49f030:	84aa                	mv	s1,a0
-  49f032:	6505                	lui	a0,0x1
-  49f034:	c63e                	sw	a5,12(sp)
-  49f036:	d765c0ef          	jal	ra,3fb5ac <malloc>
-  49f03a:	004ac937          	lui	s2,0x4ac
-  49f03e:	e11d                	bnez	a0,49f064 <php_api_handle_http_request+0x42>
-  49f040:	004ad637          	lui	a2,0x4ad
-  49f044:	30060613          	addi	a2,a2,768 # 4ad300 <alarm_type_strings+0x354c>
-  49f048:	90090593          	addi	a1,s2,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f04c:	4505                	li	a0,1
-  49f04e:	909ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f052:	44a1                	li	s1,8
-  49f054:	4732                	lw	a4,12(sp)
-  49f056:	7c09a783          	lw	a5,1984(s3)
-  49f05a:	8526                	mv	a0,s1
-  49f05c:	06f70e63          	beq	a4,a5,49f0d8 <php_api_handle_http_request+0xb6>
-  49f060:	958570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49f064:	6605                	lui	a2,0x1
-  49f066:	842a                	mv	s0,a0
-  49f068:	85aa                	mv	a1,a0
-  49f06a:	4681                	li	a3,0
-  49f06c:	167d                	addi	a2,a2,-1
-  49f06e:	8526                	mv	a0,s1
-  49f070:	fe1c20ef          	jal	ra,462050 <recv>
-  49f074:	02a04063          	bgtz	a0,49f094 <php_api_handle_http_request+0x72>
-  49f078:	004ac637          	lui	a2,0x4ac
-  49f07c:	96860613          	addi	a2,a2,-1688 # 4ab968 <alarm_type_strings+0x1bb4>
-  49f080:	90090593          	addi	a1,s2,-1792
-  49f084:	4505                	li	a0,1
-  49f086:	8d1ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f08a:	8522                	mv	a0,s0
-  49f08c:	d065c0ef          	jal	ra,3fb592 <free>
-  49f090:	4491                	li	s1,4
-  49f092:	b7c9                	j	49f054 <php_api_handle_http_request+0x32>
-  49f094:	9522                	add	a0,a0,s0
-  49f096:	004ac637          	lui	a2,0x4ac
-  49f09a:	00050023          	sb	zero,0(a0) # 1000 <DOWNLOAD_STACK_SIZE>
-  49f09e:	90090593          	addi	a1,s2,-1792
-  49f0a2:	86a2                	mv	a3,s0
-  49f0a4:	98060613          	addi	a2,a2,-1664 # 4ab980 <alarm_type_strings+0x1bcc>
-  49f0a8:	450d                	li	a0,3
-  49f0aa:	8adff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f0ae:	004ac5b7          	lui	a1,0x4ac
-  49f0b2:	99858593          	addi	a1,a1,-1640 # 4ab998 <alarm_type_strings+0x1be4>
-  49f0b6:	8522                	mv	a0,s0
-  49f0b8:	f5eab0ef          	jal	ra,44a816 <strstr>
-  49f0bc:	c911                	beqz	a0,49f0d0 <php_api_handle_http_request+0xae>
-  49f0be:	85a2                	mv	a1,s0
-  49f0c0:	8526                	mv	a0,s1
-  49f0c2:	c63ff0ef          	jal	ra,49ed24 <php_api_handle_post_request>
-  49f0c6:	84aa                	mv	s1,a0
-  49f0c8:	8522                	mv	a0,s0
-  49f0ca:	cc85c0ef          	jal	ra,3fb592 <free>
-  49f0ce:	b759                	j	49f054 <php_api_handle_http_request+0x32>
-  49f0d0:	8526                	mv	a0,s1
-  49f0d2:	a9dff0ef          	jal	ra,49eb6e <php_api_send_html_response>
-  49f0d6:	bfc5                	j	49f0c6 <php_api_handle_http_request+0xa4>
-  49f0d8:	0141                	addi	sp,sp,16
-  49f0da:	f845b06f          	j	3fa85e <__riscv_restore_4>
+0049f030 <php_api_handle_http_request>:
+  49f030:	ffa5b2ef          	jal	t0,3fa82a <__riscv_save_4>
+  49f034:	0011d9b7          	lui	s3,0x11d
+  49f038:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
+  49f03c:	1141                	addi	sp,sp,-16
+  49f03e:	84aa                	mv	s1,a0
+  49f040:	6505                	lui	a0,0x1
+  49f042:	c63e                	sw	a5,12(sp)
+  49f044:	d685c0ef          	jal	ra,3fb5ac <malloc>
+  49f048:	004ac937          	lui	s2,0x4ac
+  49f04c:	e11d                	bnez	a0,49f072 <php_api_handle_http_request+0x42>
+  49f04e:	004ad637          	lui	a2,0x4ad
+  49f052:	30060613          	addi	a2,a2,768 # 4ad300 <alarm_type_strings+0x354c>
+  49f056:	90090593          	addi	a1,s2,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f05a:	4505                	li	a0,1
+  49f05c:	909ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f060:	44a1                	li	s1,8
+  49f062:	4732                	lw	a4,12(sp)
+  49f064:	7c09a783          	lw	a5,1984(s3)
+  49f068:	8526                	mv	a0,s1
+  49f06a:	06f70e63          	beq	a4,a5,49f0e6 <php_api_handle_http_request+0xb6>
+  49f06e:	94a570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49f072:	6605                	lui	a2,0x1
+  49f074:	842a                	mv	s0,a0
+  49f076:	85aa                	mv	a1,a0
+  49f078:	4681                	li	a3,0
+  49f07a:	167d                	addi	a2,a2,-1
+  49f07c:	8526                	mv	a0,s1
+  49f07e:	fd3c20ef          	jal	ra,462050 <recv>
+  49f082:	02a04063          	bgtz	a0,49f0a2 <php_api_handle_http_request+0x72>
+  49f086:	004ac637          	lui	a2,0x4ac
+  49f08a:	96860613          	addi	a2,a2,-1688 # 4ab968 <alarm_type_strings+0x1bb4>
+  49f08e:	90090593          	addi	a1,s2,-1792
+  49f092:	4505                	li	a0,1
+  49f094:	8d1ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f098:	8522                	mv	a0,s0
+  49f09a:	cf85c0ef          	jal	ra,3fb592 <free>
+  49f09e:	4491                	li	s1,4
+  49f0a0:	b7c9                	j	49f062 <php_api_handle_http_request+0x32>
+  49f0a2:	9522                	add	a0,a0,s0
+  49f0a4:	004ac637          	lui	a2,0x4ac
+  49f0a8:	00050023          	sb	zero,0(a0) # 1000 <DOWNLOAD_STACK_SIZE>
+  49f0ac:	90090593          	addi	a1,s2,-1792
+  49f0b0:	86a2                	mv	a3,s0
+  49f0b2:	98060613          	addi	a2,a2,-1664 # 4ab980 <alarm_type_strings+0x1bcc>
+  49f0b6:	450d                	li	a0,3
+  49f0b8:	8adff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f0bc:	004ac5b7          	lui	a1,0x4ac
+  49f0c0:	99858593          	addi	a1,a1,-1640 # 4ab998 <alarm_type_strings+0x1be4>
+  49f0c4:	8522                	mv	a0,s0
+  49f0c6:	f50ab0ef          	jal	ra,44a816 <strstr>
+  49f0ca:	c911                	beqz	a0,49f0de <php_api_handle_http_request+0xae>
+  49f0cc:	85a2                	mv	a1,s0
+  49f0ce:	8526                	mv	a0,s1
+  49f0d0:	c63ff0ef          	jal	ra,49ed32 <php_api_handle_post_request>
+  49f0d4:	84aa                	mv	s1,a0
+  49f0d6:	8522                	mv	a0,s0
+  49f0d8:	cba5c0ef          	jal	ra,3fb592 <free>
+  49f0dc:	b759                	j	49f062 <php_api_handle_http_request+0x32>
+  49f0de:	8526                	mv	a0,s1
+  49f0e0:	a9dff0ef          	jal	ra,49eb7c <php_api_send_html_response>
+  49f0e4:	bfc5                	j	49f0d4 <php_api_handle_http_request+0xa4>
+  49f0e6:	0141                	addi	sp,sp,16
+  49f0e8:	f765b06f          	j	3fa85e <__riscv_restore_4>
 
-0049f0de <php_api_is_wifi_connected>:
-  49f0de:	f665b2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49f0e2:	0011d7b7          	lui	a5,0x11d
-  49f0e6:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49f0ea:	1141                	addi	sp,sp,-16
-  49f0ec:	c63a                	sw	a4,12(sp)
-  49f0ee:	4732                	lw	a4,12(sp)
-  49f0f0:	7c07a783          	lw	a5,1984(a5)
-  49f0f4:	00f70463          	beq	a4,a5,49f0fc <php_api_is_wifi_connected+0x1e>
-  49f0f8:	8c0570ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49f0fc:	4505                	li	a0,1
-  49f0fe:	0141                	addi	sp,sp,16
-  49f100:	f685b06f          	j	3fa868 <__riscv_restore_0>
+0049f0ec <php_api_is_wifi_connected>:
+  49f0ec:	f585b2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49f0f0:	0011d7b7          	lui	a5,0x11d
+  49f0f4:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49f0f8:	1141                	addi	sp,sp,-16
+  49f0fa:	c63a                	sw	a4,12(sp)
+  49f0fc:	4732                	lw	a4,12(sp)
+  49f0fe:	7c07a783          	lw	a5,1984(a5)
+  49f102:	00f70463          	beq	a4,a5,49f10a <php_api_is_wifi_connected+0x1e>
+  49f106:	8b2570ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49f10a:	4505                	li	a0,1
+  49f10c:	0141                	addi	sp,sp,16
+  49f10e:	f5a5b06f          	j	3fa868 <__riscv_restore_0>
 
-0049f104 <php_api_get_system_status>:
-  49f104:	f405b2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49f108:	0011d7b7          	lui	a5,0x11d
-  49f10c:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49f110:	1141                	addi	sp,sp,-16
-  49f112:	893e                	mv	s2,a5
-  49f114:	c63a                	sw	a4,12(sp)
-  49f116:	479d                	li	a5,7
-  49f118:	cd41                	beqz	a0,49f1b0 <php_api_get_system_status+0xac>
-  49f11a:	0a100613          	li	a2,161
-  49f11e:	4581                	li	a1,0
-  49f120:	842a                	mv	s0,a0
-  49f122:	9d85c0ef          	jal	ra,3fb2fa <memset>
-  49f126:	004ac537          	lui	a0,0x4ac
-  49f12a:	02000613          	li	a2,32
-  49f12e:	85a2                	mv	a1,s0
-  49f130:	bc450513          	addi	a0,a0,-1084 # 4abbc4 <alarm_type_strings+0x1e10>
-  49f134:	bb7fc0ef          	jal	ra,49bcea <kv_get_string>
-  49f138:	02040493          	addi	s1,s0,32
-  49f13c:	004ac537          	lui	a0,0x4ac
-  49f140:	4641                	li	a2,16
-  49f142:	85a6                	mv	a1,s1
-  49f144:	bec50513          	addi	a0,a0,-1044 # 4abbec <alarm_type_strings+0x1e38>
-  49f148:	ba3fc0ef          	jal	ra,49bcea <kv_get_string>
-  49f14c:	004ac537          	lui	a0,0x4ac
-  49f150:	02000613          	li	a2,32
-  49f154:	06140593          	addi	a1,s0,97
-  49f158:	c1050513          	addi	a0,a0,-1008 # 4abc10 <alarm_type_strings+0x1e5c>
-  49f15c:	b8ffc0ef          	jal	ra,49bcea <kv_get_string>
-  49f160:	004ac537          	lui	a0,0x4ac
-  49f164:	08140593          	addi	a1,s0,129
-  49f168:	02000613          	li	a2,32
-  49f16c:	c3050513          	addi	a0,a0,-976 # 4abc30 <alarm_type_strings+0x1e7c>
-  49f170:	b7bfc0ef          	jal	ra,49bcea <kv_get_string>
-  49f174:	000e65b7          	lui	a1,0xe6
-  49f178:	97858783          	lb	a5,-1672(a1) # e5978 <g_wifi_ip>
-  49f17c:	cb81                	beqz	a5,49f18c <php_api_get_system_status+0x88>
-  49f17e:	463d                	li	a2,15
-  49f180:	97858593          	addi	a1,a1,-1672
-  49f184:	03040513          	addi	a0,s0,48
-  49f188:	a74ab0ef          	jal	ra,44a3fc <strncpy>
-  49f18c:	f53ff0ef          	jal	ra,49f0de <php_api_is_wifi_connected>
-  49f190:	004ac637          	lui	a2,0x4ac
-  49f194:	004ac5b7          	lui	a1,0x4ac
-  49f198:	04a40023          	sb	a0,64(s0)
-  49f19c:	8726                	mv	a4,s1
-  49f19e:	86a2                	mv	a3,s0
-  49f1a0:	93460613          	addi	a2,a2,-1740 # 4ab934 <alarm_type_strings+0x1b80>
-  49f1a4:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f1a8:	450d                	li	a0,3
-  49f1aa:	facff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f1ae:	4781                	li	a5,0
-  49f1b0:	853e                	mv	a0,a5
-  49f1b2:	4732                	lw	a4,12(sp)
-  49f1b4:	7c092783          	lw	a5,1984(s2)
-  49f1b8:	00f70463          	beq	a4,a5,49f1c0 <php_api_get_system_status+0xbc>
-  49f1bc:	ffd560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49f1c0:	0141                	addi	sp,sp,16
-  49f1c2:	ea65b06f          	j	3fa868 <__riscv_restore_0>
+0049f112 <php_api_get_system_status>:
+  49f112:	f325b2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49f116:	0011d7b7          	lui	a5,0x11d
+  49f11a:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49f11e:	1141                	addi	sp,sp,-16
+  49f120:	893e                	mv	s2,a5
+  49f122:	c63a                	sw	a4,12(sp)
+  49f124:	479d                	li	a5,7
+  49f126:	cd41                	beqz	a0,49f1be <php_api_get_system_status+0xac>
+  49f128:	0a100613          	li	a2,161
+  49f12c:	4581                	li	a1,0
+  49f12e:	842a                	mv	s0,a0
+  49f130:	9ca5c0ef          	jal	ra,3fb2fa <memset>
+  49f134:	004ac537          	lui	a0,0x4ac
+  49f138:	02000613          	li	a2,32
+  49f13c:	85a2                	mv	a1,s0
+  49f13e:	bc450513          	addi	a0,a0,-1084 # 4abbc4 <alarm_type_strings+0x1e10>
+  49f142:	ba9fc0ef          	jal	ra,49bcea <kv_get_string>
+  49f146:	02040493          	addi	s1,s0,32
+  49f14a:	004ac537          	lui	a0,0x4ac
+  49f14e:	4641                	li	a2,16
+  49f150:	85a6                	mv	a1,s1
+  49f152:	bec50513          	addi	a0,a0,-1044 # 4abbec <alarm_type_strings+0x1e38>
+  49f156:	b95fc0ef          	jal	ra,49bcea <kv_get_string>
+  49f15a:	004ac537          	lui	a0,0x4ac
+  49f15e:	02000613          	li	a2,32
+  49f162:	06140593          	addi	a1,s0,97
+  49f166:	c1050513          	addi	a0,a0,-1008 # 4abc10 <alarm_type_strings+0x1e5c>
+  49f16a:	b81fc0ef          	jal	ra,49bcea <kv_get_string>
+  49f16e:	004ac537          	lui	a0,0x4ac
+  49f172:	08140593          	addi	a1,s0,129
+  49f176:	02000613          	li	a2,32
+  49f17a:	c3050513          	addi	a0,a0,-976 # 4abc30 <alarm_type_strings+0x1e7c>
+  49f17e:	b6dfc0ef          	jal	ra,49bcea <kv_get_string>
+  49f182:	000e65b7          	lui	a1,0xe6
+  49f186:	97858783          	lb	a5,-1672(a1) # e5978 <g_wifi_ip>
+  49f18a:	cb81                	beqz	a5,49f19a <php_api_get_system_status+0x88>
+  49f18c:	463d                	li	a2,15
+  49f18e:	97858593          	addi	a1,a1,-1672
+  49f192:	03040513          	addi	a0,s0,48
+  49f196:	a66ab0ef          	jal	ra,44a3fc <strncpy>
+  49f19a:	f53ff0ef          	jal	ra,49f0ec <php_api_is_wifi_connected>
+  49f19e:	004ac637          	lui	a2,0x4ac
+  49f1a2:	004ac5b7          	lui	a1,0x4ac
+  49f1a6:	04a40023          	sb	a0,64(s0)
+  49f1aa:	8726                	mv	a4,s1
+  49f1ac:	86a2                	mv	a3,s0
+  49f1ae:	93460613          	addi	a2,a2,-1740 # 4ab934 <alarm_type_strings+0x1b80>
+  49f1b2:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f1b6:	450d                	li	a0,3
+  49f1b8:	facff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f1bc:	4781                	li	a5,0
+  49f1be:	853e                	mv	a0,a5
+  49f1c0:	4732                	lw	a4,12(sp)
+  49f1c2:	7c092783          	lw	a5,1984(s2)
+  49f1c6:	00f70463          	beq	a4,a5,49f1ce <php_api_get_system_status+0xbc>
+  49f1ca:	fef560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49f1ce:	0141                	addi	sp,sp,16
+  49f1d0:	e985b06f          	j	3fa868 <__riscv_restore_0>
 
-0049f1c6 <php_api_init>:
-  49f1c6:	e645b2ef          	jal	t0,3fa82a <__riscv_save_4>
-  49f1ca:	0011d737          	lui	a4,0x11d
-  49f1ce:	7c072783          	lw	a5,1984(a4) # 11d7c0 <__rom_data0_begin__>
-  49f1d2:	1141                	addi	sp,sp,-16
-  49f1d4:	89ba                	mv	s3,a4
-  49f1d6:	c63e                	sw	a5,12(sp)
-  49f1d8:	000e67b7          	lui	a5,0xe6
-  49f1dc:	9e07c683          	lbu	a3,-1568(a5) # e59e0 <g_php_api_initialized>
-  49f1e0:	004ac937          	lui	s2,0x4ac
-  49f1e4:	ce81                	beqz	a3,49f1fc <php_api_init+0x36>
-  49f1e6:	004ac637          	lui	a2,0x4ac
-  49f1ea:	b6060613          	addi	a2,a2,-1184 # 4abb60 <alarm_type_strings+0x1dac>
-  49f1ee:	90090593          	addi	a1,s2,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f1f2:	4509                	li	a0,2
-  49f1f4:	f62ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f1f8:	4501                	li	a0,0
-  49f1fa:	a81d                	j	49f230 <php_api_init+0x6a>
-  49f1fc:	000dc437          	lui	s0,0xdc
-  49f200:	9e078493          	addi	s1,a5,-1568
-  49f204:	1bc40413          	addi	s0,s0,444 # dc1bc <g_buffer_size>
-  49f208:	c111                	beqz	a0,49f20c <php_api_init+0x46>
-  49f20a:	c008                	sw	a0,0(s0)
-  49f20c:	4008                	lw	a0,0(s0)
-  49f20e:	b9e5c0ef          	jal	ra,3fb5ac <malloc>
-  49f212:	000e67b7          	lui	a5,0xe6
-  49f216:	9ca7ae23          	sw	a0,-1572(a5) # e59dc <g_json_buffer>
-  49f21a:	e115                	bnez	a0,49f23e <php_api_init+0x78>
-  49f21c:	004ac637          	lui	a2,0x4ac
-  49f220:	b7460613          	addi	a2,a2,-1164 # 4abb74 <alarm_type_strings+0x1dc0>
-  49f224:	90090593          	addi	a1,s2,-1792
-  49f228:	4505                	li	a0,1
-  49f22a:	f2cff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f22e:	4521                	li	a0,8
-  49f230:	4732                	lw	a4,12(sp)
-  49f232:	7c09a783          	lw	a5,1984(s3)
-  49f236:	02f70863          	beq	a4,a5,49f266 <php_api_init+0xa0>
-  49f23a:	f7f560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49f23e:	000dc537          	lui	a0,0xdc
-  49f242:	1c050513          	addi	a0,a0,448 # dc1c0 <g_system_status>
-  49f246:	ebfff0ef          	jal	ra,49f104 <php_api_get_system_status>
-  49f24a:	4014                	lw	a3,0(s0)
-  49f24c:	004ac637          	lui	a2,0x4ac
-  49f250:	4785                	li	a5,1
-  49f252:	b9060613          	addi	a2,a2,-1136 # 4abb90 <alarm_type_strings+0x1ddc>
-  49f256:	90090593          	addi	a1,s2,-1792
-  49f25a:	450d                	li	a0,3
-  49f25c:	00f48023          	sb	a5,0(s1)
-  49f260:	ef6ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f264:	bf51                	j	49f1f8 <php_api_init+0x32>
-  49f266:	0141                	addi	sp,sp,16
-  49f268:	df65b06f          	j	3fa85e <__riscv_restore_4>
+0049f1d4 <php_api_init>:
+  49f1d4:	e565b2ef          	jal	t0,3fa82a <__riscv_save_4>
+  49f1d8:	0011d737          	lui	a4,0x11d
+  49f1dc:	7c072783          	lw	a5,1984(a4) # 11d7c0 <__rom_data0_begin__>
+  49f1e0:	1141                	addi	sp,sp,-16
+  49f1e2:	89ba                	mv	s3,a4
+  49f1e4:	c63e                	sw	a5,12(sp)
+  49f1e6:	000e67b7          	lui	a5,0xe6
+  49f1ea:	9e07c683          	lbu	a3,-1568(a5) # e59e0 <g_php_api_initialized>
+  49f1ee:	004ac937          	lui	s2,0x4ac
+  49f1f2:	ce81                	beqz	a3,49f20a <php_api_init+0x36>
+  49f1f4:	004ac637          	lui	a2,0x4ac
+  49f1f8:	b6060613          	addi	a2,a2,-1184 # 4abb60 <alarm_type_strings+0x1dac>
+  49f1fc:	90090593          	addi	a1,s2,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f200:	4509                	li	a0,2
+  49f202:	f62ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f206:	4501                	li	a0,0
+  49f208:	a81d                	j	49f23e <php_api_init+0x6a>
+  49f20a:	000dc437          	lui	s0,0xdc
+  49f20e:	9e078493          	addi	s1,a5,-1568
+  49f212:	1bc40413          	addi	s0,s0,444 # dc1bc <g_buffer_size>
+  49f216:	c111                	beqz	a0,49f21a <php_api_init+0x46>
+  49f218:	c008                	sw	a0,0(s0)
+  49f21a:	4008                	lw	a0,0(s0)
+  49f21c:	b905c0ef          	jal	ra,3fb5ac <malloc>
+  49f220:	000e67b7          	lui	a5,0xe6
+  49f224:	9ca7ae23          	sw	a0,-1572(a5) # e59dc <g_json_buffer>
+  49f228:	e115                	bnez	a0,49f24c <php_api_init+0x78>
+  49f22a:	004ac637          	lui	a2,0x4ac
+  49f22e:	b7460613          	addi	a2,a2,-1164 # 4abb74 <alarm_type_strings+0x1dc0>
+  49f232:	90090593          	addi	a1,s2,-1792
+  49f236:	4505                	li	a0,1
+  49f238:	f2cff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f23c:	4521                	li	a0,8
+  49f23e:	4732                	lw	a4,12(sp)
+  49f240:	7c09a783          	lw	a5,1984(s3)
+  49f244:	02f70863          	beq	a4,a5,49f274 <php_api_init+0xa0>
+  49f248:	f71560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49f24c:	000dc537          	lui	a0,0xdc
+  49f250:	1c050513          	addi	a0,a0,448 # dc1c0 <g_system_status>
+  49f254:	ebfff0ef          	jal	ra,49f112 <php_api_get_system_status>
+  49f258:	4014                	lw	a3,0(s0)
+  49f25a:	004ac637          	lui	a2,0x4ac
+  49f25e:	4785                	li	a5,1
+  49f260:	b9060613          	addi	a2,a2,-1136 # 4abb90 <alarm_type_strings+0x1ddc>
+  49f264:	90090593          	addi	a1,s2,-1792
+  49f268:	450d                	li	a0,3
+  49f26a:	00f48023          	sb	a5,0(s1)
+  49f26e:	ef6ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f272:	bf51                	j	49f206 <php_api_init+0x32>
+  49f274:	0141                	addi	sp,sp,16
+  49f276:	de85b06f          	j	3fa85e <__riscv_restore_4>
 
-0049f26c <php_api_send_json_data>:
-  49f26c:	da85b2ef          	jal	t0,3fa814 <__riscv_save_12>
-  49f270:	0011d7b7          	lui	a5,0x11d
-  49f274:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49f278:	7115                	addi	sp,sp,-224
-  49f27a:	c23e                	sw	a5,4(sp)
-  49f27c:	cfba                	sw	a4,220(sp)
-  49f27e:	e50d                	bnez	a0,49f2a8 <php_api_send_json_data+0x3c>
-  49f280:	004ad637          	lui	a2,0x4ad
-  49f284:	004ac5b7          	lui	a1,0x4ac
-  49f288:	24860613          	addi	a2,a2,584 # 4ad248 <alarm_type_strings+0x3494>
-  49f28c:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f290:	4505                	li	a0,1
-  49f292:	ec4ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f296:	451d                	li	a0,7
-  49f298:	4792                	lw	a5,4(sp)
-  49f29a:	477e                	lw	a4,220(sp)
-  49f29c:	7c07a783          	lw	a5,1984(a5)
-  49f2a0:	3af70a63          	beq	a4,a5,49f654 <php_api_send_json_data+0x3e8>
-  49f2a4:	f15560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49f2a8:	8a2a                	mv	s4,a0
-  49f2aa:	1828                	addi	a0,sp,56
-  49f2ac:	e59ff0ef          	jal	ra,49f104 <php_api_get_system_status>
-  49f2b0:	08a8                	addi	a0,sp,88
-  49f2b2:	c7c5c0ef          	jal	ra,3fb72e <strlen>
-  49f2b6:	ed11                	bnez	a0,49f2d2 <php_api_send_json_data+0x66>
-  49f2b8:	004ad637          	lui	a2,0x4ad
-  49f2bc:	004ac5b7          	lui	a1,0x4ac
-  49f2c0:	25c60613          	addi	a2,a2,604 # 4ad25c <alarm_type_strings+0x34a8>
-  49f2c4:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f2c8:	4505                	li	a0,1
-  49f2ca:	e8cff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f2ce:	450d                	li	a0,3
-  49f2d0:	b7e1                	j	49f298 <php_api_send_json_data+0x2c>
-  49f2d2:	4601                	li	a2,0
-  49f2d4:	4585                	li	a1,1
-  49f2d6:	4509                	li	a0,2
-  49f2d8:	91ac30ef          	jal	ra,4623f2 <socket>
-  49f2dc:	842a                	mv	s0,a0
-  49f2de:	00055f63          	bgez	a0,49f2fc <php_api_send_json_data+0x90>
-  49f2e2:	004ad637          	lui	a2,0x4ad
-  49f2e6:	004ac5b7          	lui	a1,0x4ac
-  49f2ea:	27460613          	addi	a2,a2,628 # 4ad274 <alarm_type_strings+0x34c0>
-  49f2ee:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f2f2:	4505                	li	a0,1
-  49f2f4:	e62ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f2f8:	4511                	li	a0,4
-  49f2fa:	bf79                	j	49f298 <php_api_send_json_data+0x2c>
-  49f2fc:	4795                	li	a5,5
-  49f2fe:	4721                	li	a4,8
-  49f300:	0834                	addi	a3,sp,24
-  49f302:	04300613          	li	a2,67
-  49f306:	4585                	li	a1,1
-  49f308:	cc3e                	sw	a5,24(sp)
-  49f30a:	ce02                	sw	zero,28(sp)
-  49f30c:	d5ac30ef          	jal	ra,462866 <setsockopt>
-  49f310:	4721                	li	a4,8
-  49f312:	0834                	addi	a3,sp,24
-  49f314:	04200613          	li	a2,66
-  49f318:	4585                	li	a1,1
-  49f31a:	8522                	mv	a0,s0
-  49f31c:	d4ac30ef          	jal	ra,462866 <setsockopt>
-  49f320:	4641                	li	a2,16
-  49f322:	4581                	li	a1,0
-  49f324:	1028                	addi	a0,sp,40
-  49f326:	fd55b0ef          	jal	ra,3fb2fa <memset>
-  49f32a:	500007b7          	lui	a5,0x50000
-  49f32e:	0789                	addi	a5,a5,2
-  49f330:	1070                	addi	a2,sp,44
-  49f332:	08ac                	addi	a1,sp,88
-  49f334:	4509                	li	a0,2
-  49f336:	d43e                	sw	a5,40(sp)
-  49f338:	a7fbb0ef          	jal	ra,45adb6 <inet_pton>
-  49f33c:	02a04263          	bgtz	a0,49f360 <php_api_send_json_data+0xf4>
-  49f340:	004ad637          	lui	a2,0x4ad
-  49f344:	004ac5b7          	lui	a1,0x4ac
-  49f348:	08b4                	addi	a3,sp,88
-  49f34a:	28860613          	addi	a2,a2,648 # 4ad288 <alarm_type_strings+0x34d4>
-  49f34e:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f352:	4505                	li	a0,1
-  49f354:	e02ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f358:	8522                	mv	a0,s0
-  49f35a:	94df90ef          	jal	ra,498ca6 <close>
-  49f35e:	bf85                	j	49f2ce <php_api_send_json_data+0x62>
-  49f360:	4641                	li	a2,16
-  49f362:	102c                	addi	a1,sp,40
-  49f364:	8522                	mv	a0,s0
-  49f366:	fbec20ef          	jal	ra,461b24 <connect>
-  49f36a:	02055563          	bgez	a0,49f394 <php_api_send_json_data+0x128>
-  49f36e:	004ad637          	lui	a2,0x4ad
-  49f372:	004ac5b7          	lui	a1,0x4ac
-  49f376:	05000713          	li	a4,80
-  49f37a:	08b4                	addi	a3,sp,88
-  49f37c:	2a860613          	addi	a2,a2,680 # 4ad2a8 <alarm_type_strings+0x34f4>
-  49f380:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f384:	4505                	li	a0,1
-  49f386:	dd0ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f38a:	8522                	mv	a0,s0
-  49f38c:	91bf90ef          	jal	ra,498ca6 <close>
-  49f390:	4515                	li	a0,5
-  49f392:	b719                	j	49f298 <php_api_send_json_data+0x2c>
-  49f394:	000e69b7          	lui	s3,0xe6
-  49f398:	9e498713          	addi	a4,s3,-1564 # e59e4 <g_send_counter>
-  49f39c:	431c                	lw	a5,0(a4)
-  49f39e:	9e498993          	addi	s3,s3,-1564
-  49f3a2:	0785                	addi	a5,a5,1
-  49f3a4:	c31c                	sw	a5,0(a4)
-  49f3a6:	4729                	li	a4,10
-  49f3a8:	02e7f733          	remu	a4,a5,a4
-  49f3ac:	ef19                	bnez	a4,49f3ca <php_api_send_json_data+0x15e>
-  49f3ae:	004ad637          	lui	a2,0x4ad
-  49f3b2:	004ac5b7          	lui	a1,0x4ac
-  49f3b6:	05000713          	li	a4,80
-  49f3ba:	08b4                	addi	a3,sp,88
-  49f3bc:	2c860613          	addi	a2,a2,712 # 4ad2c8 <alarm_type_strings+0x3514>
-  49f3c0:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f3c4:	450d                	li	a0,3
-  49f3c6:	d90ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f3ca:	8552                	mv	a0,s4
-  49f3cc:	b625c0ef          	jal	ra,3fb72e <strlen>
-  49f3d0:	20050913          	addi	s2,a0,512
-  49f3d4:	c42a                	sw	a0,8(sp)
-  49f3d6:	854a                	mv	a0,s2
-  49f3d8:	9d45c0ef          	jal	ra,3fb5ac <malloc>
-  49f3dc:	84aa                	mv	s1,a0
-  49f3de:	47a2                	lw	a5,8(sp)
-  49f3e0:	ed09                	bnez	a0,49f3fa <php_api_send_json_data+0x18e>
-  49f3e2:	004ad637          	lui	a2,0x4ad
-  49f3e6:	2fc60613          	addi	a2,a2,764 # 4ad2fc <alarm_type_strings+0x3548>
-  49f3ea:	004ac5b7          	lui	a1,0x4ac
-  49f3ee:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f3f2:	4505                	li	a0,1
-  49f3f4:	d62ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f3f8:	a82d                	j	49f432 <php_api_send_json_data+0x1c6>
-  49f3fa:	004ad637          	lui	a2,0x4ad
-  49f3fe:	31c60613          	addi	a2,a2,796 # 4ad31c <alarm_type_strings+0x3568>
-  49f402:	8852                	mv	a6,s4
-  49f404:	05000713          	li	a4,80
-  49f408:	08b4                	addi	a3,sp,88
-  49f40a:	85ca                	mv	a1,s2
-  49f40c:	bbfaa0ef          	jal	ra,449fca <snprintf>
-  49f410:	862a                	mv	a2,a0
-  49f412:	03256563          	bltu	a0,s2,49f43c <php_api_send_json_data+0x1d0>
-  49f416:	004ad637          	lui	a2,0x4ad
-  49f41a:	004ac5b7          	lui	a1,0x4ac
-  49f41e:	39460613          	addi	a2,a2,916 # 4ad394 <alarm_type_strings+0x35e0>
-  49f422:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f426:	4505                	li	a0,1
-  49f428:	d2eff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f42c:	8526                	mv	a0,s1
-  49f42e:	9645c0ef          	jal	ra,3fb592 <free>
-  49f432:	8522                	mv	a0,s0
-  49f434:	873f90ef          	jal	ra,498ca6 <close>
-  49f438:	4521                	li	a0,8
-  49f43a:	bdb9                	j	49f298 <php_api_send_json_data+0x2c>
-  49f43c:	4681                	li	a3,0
-  49f43e:	85a6                	mv	a1,s1
+0049f27a <php_api_send_json_data>:
+  49f27a:	d9a5b2ef          	jal	t0,3fa814 <__riscv_save_12>
+  49f27e:	0011d7b7          	lui	a5,0x11d
+  49f282:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49f286:	7115                	addi	sp,sp,-224
+  49f288:	c23e                	sw	a5,4(sp)
+  49f28a:	cfba                	sw	a4,220(sp)
+  49f28c:	e50d                	bnez	a0,49f2b6 <php_api_send_json_data+0x3c>
+  49f28e:	004ad637          	lui	a2,0x4ad
+  49f292:	004ac5b7          	lui	a1,0x4ac
+  49f296:	24860613          	addi	a2,a2,584 # 4ad248 <alarm_type_strings+0x3494>
+  49f29a:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f29e:	4505                	li	a0,1
+  49f2a0:	ec4ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f2a4:	451d                	li	a0,7
+  49f2a6:	4792                	lw	a5,4(sp)
+  49f2a8:	477e                	lw	a4,220(sp)
+  49f2aa:	7c07a783          	lw	a5,1984(a5)
+  49f2ae:	3af70a63          	beq	a4,a5,49f662 <php_api_send_json_data+0x3e8>
+  49f2b2:	f07560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49f2b6:	8a2a                	mv	s4,a0
+  49f2b8:	1828                	addi	a0,sp,56
+  49f2ba:	e59ff0ef          	jal	ra,49f112 <php_api_get_system_status>
+  49f2be:	08a8                	addi	a0,sp,88
+  49f2c0:	c6e5c0ef          	jal	ra,3fb72e <strlen>
+  49f2c4:	ed11                	bnez	a0,49f2e0 <php_api_send_json_data+0x66>
+  49f2c6:	004ad637          	lui	a2,0x4ad
+  49f2ca:	004ac5b7          	lui	a1,0x4ac
+  49f2ce:	25c60613          	addi	a2,a2,604 # 4ad25c <alarm_type_strings+0x34a8>
+  49f2d2:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f2d6:	4505                	li	a0,1
+  49f2d8:	e8cff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f2dc:	450d                	li	a0,3
+  49f2de:	b7e1                	j	49f2a6 <php_api_send_json_data+0x2c>
+  49f2e0:	4601                	li	a2,0
+  49f2e2:	4585                	li	a1,1
+  49f2e4:	4509                	li	a0,2
+  49f2e6:	90cc30ef          	jal	ra,4623f2 <socket>
+  49f2ea:	842a                	mv	s0,a0
+  49f2ec:	00055f63          	bgez	a0,49f30a <php_api_send_json_data+0x90>
+  49f2f0:	004ad637          	lui	a2,0x4ad
+  49f2f4:	004ac5b7          	lui	a1,0x4ac
+  49f2f8:	27460613          	addi	a2,a2,628 # 4ad274 <alarm_type_strings+0x34c0>
+  49f2fc:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f300:	4505                	li	a0,1
+  49f302:	e62ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f306:	4511                	li	a0,4
+  49f308:	bf79                	j	49f2a6 <php_api_send_json_data+0x2c>
+  49f30a:	4795                	li	a5,5
+  49f30c:	4721                	li	a4,8
+  49f30e:	0834                	addi	a3,sp,24
+  49f310:	04300613          	li	a2,67
+  49f314:	4585                	li	a1,1
+  49f316:	cc3e                	sw	a5,24(sp)
+  49f318:	ce02                	sw	zero,28(sp)
+  49f31a:	d4cc30ef          	jal	ra,462866 <setsockopt>
+  49f31e:	4721                	li	a4,8
+  49f320:	0834                	addi	a3,sp,24
+  49f322:	04200613          	li	a2,66
+  49f326:	4585                	li	a1,1
+  49f328:	8522                	mv	a0,s0
+  49f32a:	d3cc30ef          	jal	ra,462866 <setsockopt>
+  49f32e:	4641                	li	a2,16
+  49f330:	4581                	li	a1,0
+  49f332:	1028                	addi	a0,sp,40
+  49f334:	fc75b0ef          	jal	ra,3fb2fa <memset>
+  49f338:	500007b7          	lui	a5,0x50000
+  49f33c:	0789                	addi	a5,a5,2
+  49f33e:	1070                	addi	a2,sp,44
+  49f340:	08ac                	addi	a1,sp,88
+  49f342:	4509                	li	a0,2
+  49f344:	d43e                	sw	a5,40(sp)
+  49f346:	a71bb0ef          	jal	ra,45adb6 <inet_pton>
+  49f34a:	02a04263          	bgtz	a0,49f36e <php_api_send_json_data+0xf4>
+  49f34e:	004ad637          	lui	a2,0x4ad
+  49f352:	004ac5b7          	lui	a1,0x4ac
+  49f356:	08b4                	addi	a3,sp,88
+  49f358:	28860613          	addi	a2,a2,648 # 4ad288 <alarm_type_strings+0x34d4>
+  49f35c:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f360:	4505                	li	a0,1
+  49f362:	e02ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f366:	8522                	mv	a0,s0
+  49f368:	93ff90ef          	jal	ra,498ca6 <close>
+  49f36c:	bf85                	j	49f2dc <php_api_send_json_data+0x62>
+  49f36e:	4641                	li	a2,16
+  49f370:	102c                	addi	a1,sp,40
+  49f372:	8522                	mv	a0,s0
+  49f374:	fb0c20ef          	jal	ra,461b24 <connect>
+  49f378:	02055563          	bgez	a0,49f3a2 <php_api_send_json_data+0x128>
+  49f37c:	004ad637          	lui	a2,0x4ad
+  49f380:	004ac5b7          	lui	a1,0x4ac
+  49f384:	05000713          	li	a4,80
+  49f388:	08b4                	addi	a3,sp,88
+  49f38a:	2a860613          	addi	a2,a2,680 # 4ad2a8 <alarm_type_strings+0x34f4>
+  49f38e:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f392:	4505                	li	a0,1
+  49f394:	dd0ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f398:	8522                	mv	a0,s0
+  49f39a:	90df90ef          	jal	ra,498ca6 <close>
+  49f39e:	4515                	li	a0,5
+  49f3a0:	b719                	j	49f2a6 <php_api_send_json_data+0x2c>
+  49f3a2:	000e69b7          	lui	s3,0xe6
+  49f3a6:	9e498713          	addi	a4,s3,-1564 # e59e4 <g_send_counter>
+  49f3aa:	431c                	lw	a5,0(a4)
+  49f3ac:	9e498993          	addi	s3,s3,-1564
+  49f3b0:	0785                	addi	a5,a5,1
+  49f3b2:	c31c                	sw	a5,0(a4)
+  49f3b4:	4729                	li	a4,10
+  49f3b6:	02e7f733          	remu	a4,a5,a4
+  49f3ba:	ef19                	bnez	a4,49f3d8 <php_api_send_json_data+0x15e>
+  49f3bc:	004ad637          	lui	a2,0x4ad
+  49f3c0:	004ac5b7          	lui	a1,0x4ac
+  49f3c4:	05000713          	li	a4,80
+  49f3c8:	08b4                	addi	a3,sp,88
+  49f3ca:	2c860613          	addi	a2,a2,712 # 4ad2c8 <alarm_type_strings+0x3514>
+  49f3ce:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f3d2:	450d                	li	a0,3
+  49f3d4:	d90ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f3d8:	8552                	mv	a0,s4
+  49f3da:	b545c0ef          	jal	ra,3fb72e <strlen>
+  49f3de:	20050913          	addi	s2,a0,512
+  49f3e2:	c42a                	sw	a0,8(sp)
+  49f3e4:	854a                	mv	a0,s2
+  49f3e6:	9c65c0ef          	jal	ra,3fb5ac <malloc>
+  49f3ea:	84aa                	mv	s1,a0
+  49f3ec:	47a2                	lw	a5,8(sp)
+  49f3ee:	ed09                	bnez	a0,49f408 <php_api_send_json_data+0x18e>
+  49f3f0:	004ad637          	lui	a2,0x4ad
+  49f3f4:	2fc60613          	addi	a2,a2,764 # 4ad2fc <alarm_type_strings+0x3548>
+  49f3f8:	004ac5b7          	lui	a1,0x4ac
+  49f3fc:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f400:	4505                	li	a0,1
+  49f402:	d62ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f406:	a82d                	j	49f440 <php_api_send_json_data+0x1c6>
+  49f408:	004ad637          	lui	a2,0x4ad
+  49f40c:	31c60613          	addi	a2,a2,796 # 4ad31c <alarm_type_strings+0x3568>
+  49f410:	8852                	mv	a6,s4
+  49f412:	05000713          	li	a4,80
+  49f416:	08b4                	addi	a3,sp,88
+  49f418:	85ca                	mv	a1,s2
+  49f41a:	bb1aa0ef          	jal	ra,449fca <snprintf>
+  49f41e:	862a                	mv	a2,a0
+  49f420:	03256563          	bltu	a0,s2,49f44a <php_api_send_json_data+0x1d0>
+  49f424:	004ad637          	lui	a2,0x4ad
+  49f428:	004ac5b7          	lui	a1,0x4ac
+  49f42c:	39460613          	addi	a2,a2,916 # 4ad394 <alarm_type_strings+0x35e0>
+  49f430:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f434:	4505                	li	a0,1
+  49f436:	d2eff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f43a:	8526                	mv	a0,s1
+  49f43c:	9565c0ef          	jal	ra,3fb592 <free>
   49f440:	8522                	mv	a0,s0
-  49f442:	eabc20ef          	jal	ra,4622ec <send>
-  49f446:	8aaa                	mv	s5,a0
-  49f448:	8526                	mv	a0,s1
-  49f44a:	9485c0ef          	jal	ra,3fb592 <free>
-  49f44e:	020ad263          	bgez	s5,49f472 <php_api_send_json_data+0x206>
-  49f452:	004ad637          	lui	a2,0x4ad
-  49f456:	004ac5b7          	lui	a1,0x4ac
-  49f45a:	3b060613          	addi	a2,a2,944 # 4ad3b0 <alarm_type_strings+0x35fc>
-  49f45e:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f462:	4505                	li	a0,1
-  49f464:	cf2ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f468:	8522                	mv	a0,s0
-  49f46a:	83df90ef          	jal	ra,498ca6 <close>
-  49f46e:	4519                	li	a0,6
-  49f470:	b525                	j	49f298 <php_api_send_json_data+0x2c>
-  49f472:	0009a703          	lw	a4,0(s3)
-  49f476:	47a9                	li	a5,10
-  49f478:	02f777b3          	remu	a5,a4,a5
-  49f47c:	ef89                	bnez	a5,49f496 <php_api_send_json_data+0x22a>
-  49f47e:	004ad637          	lui	a2,0x4ad
-  49f482:	004ac5b7          	lui	a1,0x4ac
-  49f486:	86d6                	mv	a3,s5
-  49f488:	3c860613          	addi	a2,a2,968 # 4ad3c8 <alarm_type_strings+0x3614>
-  49f48c:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f490:	450d                	li	a0,3
-  49f492:	cc4ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f496:	6505                	lui	a0,0x1
-  49f498:	9145c0ef          	jal	ra,3fb5ac <malloc>
-  49f49c:	892a                	mv	s2,a0
-  49f49e:	e511                	bnez	a0,49f4aa <php_api_send_json_data+0x23e>
-  49f4a0:	004ad637          	lui	a2,0x4ad
-  49f4a4:	40860613          	addi	a2,a2,1032 # 4ad408 <alarm_type_strings+0x3654>
-  49f4a8:	b789                	j	49f3ea <php_api_send_json_data+0x17e>
-  49f4aa:	478d                	li	a5,3
-  49f4ac:	4721                	li	a4,8
-  49f4ae:	1014                	addi	a3,sp,32
-  49f4b0:	04200613          	li	a2,66
-  49f4b4:	4585                	li	a1,1
-  49f4b6:	8522                	mv	a0,s0
-  49f4b8:	d03e                	sw	a5,32(sp)
-  49f4ba:	d202                	sw	zero,36(sp)
-  49f4bc:	baac30ef          	jal	ra,462866 <setsockopt>
-  49f4c0:	6785                	lui	a5,0x1
-  49f4c2:	fff78c93          	addi	s9,a5,-1 # fff <ccause+0x3d>
-  49f4c6:	6b61                	lui	s6,0x18
-  49f4c8:	17f9                	addi	a5,a5,-2
-  49f4ca:	4a01                	li	s4,0
-  49f4cc:	4481                	li	s1,0
-  49f4ce:	4bad                	li	s7,11
-  49f4d0:	6a0b0b13          	addi	s6,s6,1696 # 186a0 <__bss_size__+0xf560>
-  49f4d4:	004acc37          	lui	s8,0x4ac
-  49f4d8:	c43e                	sw	a5,8(sp)
-  49f4da:	004add37          	lui	s10,0x4ad
-  49f4de:	004a7db7          	lui	s11,0x4a7
-  49f4e2:	4681                	li	a3,0
-  49f4e4:	409c8633          	sub	a2,s9,s1
-  49f4e8:	009905b3          	add	a1,s2,s1
-  49f4ec:	8522                	mv	a0,s0
-  49f4ee:	b63c20ef          	jal	ra,462050 <recv>
-  49f4f2:	0ea05263          	blez	a0,49f5d6 <php_api_send_json_data+0x36a>
-  49f4f6:	94aa                	add	s1,s1,a0
-  49f4f8:	9a0c0593          	addi	a1,s8,-1632 # 4ab9a0 <alarm_type_strings+0x1bec>
-  49f4fc:	854a                	mv	a0,s2
-  49f4fe:	b18ab0ef          	jal	ra,44a816 <strstr>
-  49f502:	c569                	beqz	a0,49f5cc <php_api_send_json_data+0x360>
-  49f504:	424d0593          	addi	a1,s10,1060 # 4ad424 <alarm_type_strings+0x3670>
-  49f508:	854a                	mv	a0,s2
-  49f50a:	b0cab0ef          	jal	ra,44a816 <strstr>
-  49f50e:	c14d                	beqz	a0,49f5b0 <php_api_send_json_data+0x344>
-  49f510:	0541                	addi	a0,a0,16
-  49f512:	a80a80ef          	jal	ra,447792 <atoi>
-  49f516:	c62a                	sw	a0,12(sp)
-  49f518:	9a0c0593          	addi	a1,s8,-1632
-  49f51c:	854a                	mv	a0,s2
-  49f51e:	af8ab0ef          	jal	ra,44a816 <strstr>
-  49f522:	c54d                	beqz	a0,49f5cc <php_api_send_json_data+0x360>
-  49f524:	00450713          	addi	a4,a0,4 # 1004 <DOWNLOAD_STACK_SIZE+0x4>
-  49f528:	46b2                	lw	a3,12(sp)
-  49f52a:	41270733          	sub	a4,a4,s2
-  49f52e:	40e48733          	sub	a4,s1,a4
-  49f532:	08d76d63          	bltu	a4,a3,49f5cc <php_api_send_json_data+0x360>
-  49f536:	004ad637          	lui	a2,0x4ad
-  49f53a:	004ac5b7          	lui	a1,0x4ac
-  49f53e:	43860613          	addi	a2,a2,1080 # 4ad438 <alarm_type_strings+0x3684>
-  49f542:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f546:	450d                	li	a0,3
-  49f548:	c0eff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f54c:	009907b3          	add	a5,s2,s1
-  49f550:	004ad637          	lui	a2,0x4ad
-  49f554:	004aca37          	lui	s4,0x4ac
-  49f558:	00078023          	sb	zero,0(a5)
-  49f55c:	86a6                	mv	a3,s1
-  49f55e:	4a060613          	addi	a2,a2,1184 # 4ad4a0 <alarm_type_strings+0x36ec>
-  49f562:	900a0593          	addi	a1,s4,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f566:	450d                	li	a0,3
-  49f568:	beeff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f56c:	0009a703          	lw	a4,0(s3)
-  49f570:	47a9                	li	a5,10
-  49f572:	02f777b3          	remu	a5,a4,a5
-  49f576:	ef81                	bnez	a5,49f58e <php_api_send_json_data+0x322>
-  49f578:	004ac637          	lui	a2,0x4ac
-  49f57c:	87ca                	mv	a5,s2
-  49f57e:	86a6                	mv	a3,s1
-  49f580:	8cc60613          	addi	a2,a2,-1844 # 4ab8cc <alarm_type_strings+0x1b18>
-  49f584:	900a0593          	addi	a1,s4,-1792
-  49f588:	450d                	li	a0,3
-  49f58a:	960ff0ef          	jal	ra,49e6ea <debug_print_long.constprop.1>
-  49f58e:	854a                	mv	a0,s2
-  49f590:	8025c0ef          	jal	ra,3fb592 <free>
-  49f594:	8522                	mv	a0,s0
-  49f596:	f10f90ef          	jal	ra,498ca6 <close>
-  49f59a:	0a0a8863          	beqz	s5,49f64a <php_api_send_json_data+0x3de>
-  49f59e:	000e67b7          	lui	a5,0xe6
-  49f5a2:	9e878793          	addi	a5,a5,-1560 # e59e8 <g_success_count>
-  49f5a6:	4398                	lw	a4,0(a5)
-  49f5a8:	4501                	li	a0,0
-  49f5aa:	0705                	addi	a4,a4,1
-  49f5ac:	c398                	sw	a4,0(a5)
-  49f5ae:	b1ed                	j	49f298 <php_api_send_json_data+0x2c>
-  49f5b0:	ff648513          	addi	a0,s1,-10
-  49f5b4:	2ecd8593          	addi	a1,s11,748 # 4a72ec <__FUNCTION__.7722+0x74>
-  49f5b8:	954a                	add	a0,a0,s2
-  49f5ba:	a5cab0ef          	jal	ra,44a816 <strstr>
-  49f5be:	c519                	beqz	a0,49f5cc <php_api_send_json_data+0x360>
-  49f5c0:	41250533          	sub	a0,a0,s2
-  49f5c4:	ffc48793          	addi	a5,s1,-4
-  49f5c8:	f8f552e3          	ble	a5,a0,49f54c <php_api_send_json_data+0x2e0>
-  49f5cc:	47a2                	lw	a5,8(sp)
-  49f5ce:	f697efe3          	bltu	a5,s1,49f54c <php_api_send_json_data+0x2e0>
-  49f5d2:	4a01                	li	s4,0
-  49f5d4:	b739                	j	49f4e2 <php_api_send_json_data+0x276>
-  49f5d6:	e90d                	bnez	a0,49f608 <php_api_send_json_data+0x39c>
-  49f5d8:	004ad637          	lui	a2,0x4ad
-  49f5dc:	004ac5b7          	lui	a1,0x4ac
-  49f5e0:	47460613          	addi	a2,a2,1140 # 4ad474 <alarm_type_strings+0x36c0>
-  49f5e4:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f5e8:	450d                	li	a0,3
-  49f5ea:	b6cff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f5ee:	fcb9                	bnez	s1,49f54c <php_api_send_json_data+0x2e0>
-  49f5f0:	004ad637          	lui	a2,0x4ad
-  49f5f4:	004ac5b7          	lui	a1,0x4ac
-  49f5f8:	4bc60613          	addi	a2,a2,1212 # 4ad4bc <alarm_type_strings+0x3708>
-  49f5fc:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f600:	4509                	li	a0,2
-  49f602:	b54ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f606:	b761                	j	49f58e <php_api_send_json_data+0x322>
-  49f608:	f295b0ef          	jal	ra,3fb530 <__errno>
-  49f60c:	411c                	lw	a5,0(a0)
-  49f60e:	01779a63          	bne	a5,s7,49f622 <php_api_send_json_data+0x3b6>
-  49f612:	855a                	mv	a0,s6
-  49f614:	9d17b0ef          	jal	ra,41afe4 <usleep>
-  49f618:	0a05                	addi	s4,s4,1
-  49f61a:	47a9                	li	a5,10
-  49f61c:	ecfa13e3          	bne	s4,a5,49f4e2 <php_api_send_json_data+0x276>
-  49f620:	b7f9                	j	49f5ee <php_api_send_json_data+0x382>
-  49f622:	f0f5b0ef          	jal	ra,3fb530 <__errno>
-  49f626:	411c                	lw	a5,0(a0)
-  49f628:	ff7785e3          	beq	a5,s7,49f612 <php_api_send_json_data+0x3a6>
-  49f62c:	f055b0ef          	jal	ra,3fb530 <__errno>
-  49f630:	4114                	lw	a3,0(a0)
-  49f632:	004ad637          	lui	a2,0x4ad
-  49f636:	004ac5b7          	lui	a1,0x4ac
-  49f63a:	48c60613          	addi	a2,a2,1164 # 4ad48c <alarm_type_strings+0x36d8>
-  49f63e:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f642:	4505                	li	a0,1
-  49f644:	b12ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f648:	b75d                	j	49f5ee <php_api_send_json_data+0x382>
-  49f64a:	000e67b7          	lui	a5,0xe6
-  49f64e:	9d878793          	addi	a5,a5,-1576 # e59d8 <g_failure_count>
-  49f652:	bf91                	j	49f5a6 <php_api_send_json_data+0x33a>
-  49f654:	612d                	addi	sp,sp,224
-  49f656:	9fa5b06f          	j	3fa850 <__riscv_restore_12>
+  49f442:	865f90ef          	jal	ra,498ca6 <close>
+  49f446:	4521                	li	a0,8
+  49f448:	bdb9                	j	49f2a6 <php_api_send_json_data+0x2c>
+  49f44a:	4681                	li	a3,0
+  49f44c:	85a6                	mv	a1,s1
+  49f44e:	8522                	mv	a0,s0
+  49f450:	e9dc20ef          	jal	ra,4622ec <send>
+  49f454:	8aaa                	mv	s5,a0
+  49f456:	8526                	mv	a0,s1
+  49f458:	93a5c0ef          	jal	ra,3fb592 <free>
+  49f45c:	020ad263          	bgez	s5,49f480 <php_api_send_json_data+0x206>
+  49f460:	004ad637          	lui	a2,0x4ad
+  49f464:	004ac5b7          	lui	a1,0x4ac
+  49f468:	3b060613          	addi	a2,a2,944 # 4ad3b0 <alarm_type_strings+0x35fc>
+  49f46c:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f470:	4505                	li	a0,1
+  49f472:	cf2ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f476:	8522                	mv	a0,s0
+  49f478:	82ff90ef          	jal	ra,498ca6 <close>
+  49f47c:	4519                	li	a0,6
+  49f47e:	b525                	j	49f2a6 <php_api_send_json_data+0x2c>
+  49f480:	0009a703          	lw	a4,0(s3)
+  49f484:	47a9                	li	a5,10
+  49f486:	02f777b3          	remu	a5,a4,a5
+  49f48a:	ef89                	bnez	a5,49f4a4 <php_api_send_json_data+0x22a>
+  49f48c:	004ad637          	lui	a2,0x4ad
+  49f490:	004ac5b7          	lui	a1,0x4ac
+  49f494:	86d6                	mv	a3,s5
+  49f496:	3c860613          	addi	a2,a2,968 # 4ad3c8 <alarm_type_strings+0x3614>
+  49f49a:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f49e:	450d                	li	a0,3
+  49f4a0:	cc4ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f4a4:	6505                	lui	a0,0x1
+  49f4a6:	9065c0ef          	jal	ra,3fb5ac <malloc>
+  49f4aa:	892a                	mv	s2,a0
+  49f4ac:	e511                	bnez	a0,49f4b8 <php_api_send_json_data+0x23e>
+  49f4ae:	004ad637          	lui	a2,0x4ad
+  49f4b2:	40860613          	addi	a2,a2,1032 # 4ad408 <alarm_type_strings+0x3654>
+  49f4b6:	b789                	j	49f3f8 <php_api_send_json_data+0x17e>
+  49f4b8:	478d                	li	a5,3
+  49f4ba:	4721                	li	a4,8
+  49f4bc:	1014                	addi	a3,sp,32
+  49f4be:	04200613          	li	a2,66
+  49f4c2:	4585                	li	a1,1
+  49f4c4:	8522                	mv	a0,s0
+  49f4c6:	d03e                	sw	a5,32(sp)
+  49f4c8:	d202                	sw	zero,36(sp)
+  49f4ca:	b9cc30ef          	jal	ra,462866 <setsockopt>
+  49f4ce:	6785                	lui	a5,0x1
+  49f4d0:	fff78c93          	addi	s9,a5,-1 # fff <ccause+0x3d>
+  49f4d4:	6b61                	lui	s6,0x18
+  49f4d6:	17f9                	addi	a5,a5,-2
+  49f4d8:	4a01                	li	s4,0
+  49f4da:	4481                	li	s1,0
+  49f4dc:	4bad                	li	s7,11
+  49f4de:	6a0b0b13          	addi	s6,s6,1696 # 186a0 <__bss_size__+0xf560>
+  49f4e2:	004acc37          	lui	s8,0x4ac
+  49f4e6:	c43e                	sw	a5,8(sp)
+  49f4e8:	004add37          	lui	s10,0x4ad
+  49f4ec:	004a7db7          	lui	s11,0x4a7
+  49f4f0:	4681                	li	a3,0
+  49f4f2:	409c8633          	sub	a2,s9,s1
+  49f4f6:	009905b3          	add	a1,s2,s1
+  49f4fa:	8522                	mv	a0,s0
+  49f4fc:	b55c20ef          	jal	ra,462050 <recv>
+  49f500:	0ea05263          	blez	a0,49f5e4 <php_api_send_json_data+0x36a>
+  49f504:	94aa                	add	s1,s1,a0
+  49f506:	9a0c0593          	addi	a1,s8,-1632 # 4ab9a0 <alarm_type_strings+0x1bec>
+  49f50a:	854a                	mv	a0,s2
+  49f50c:	b0aab0ef          	jal	ra,44a816 <strstr>
+  49f510:	c569                	beqz	a0,49f5da <php_api_send_json_data+0x360>
+  49f512:	424d0593          	addi	a1,s10,1060 # 4ad424 <alarm_type_strings+0x3670>
+  49f516:	854a                	mv	a0,s2
+  49f518:	afeab0ef          	jal	ra,44a816 <strstr>
+  49f51c:	c14d                	beqz	a0,49f5be <php_api_send_json_data+0x344>
+  49f51e:	0541                	addi	a0,a0,16
+  49f520:	a72a80ef          	jal	ra,447792 <atoi>
+  49f524:	c62a                	sw	a0,12(sp)
+  49f526:	9a0c0593          	addi	a1,s8,-1632
+  49f52a:	854a                	mv	a0,s2
+  49f52c:	aeaab0ef          	jal	ra,44a816 <strstr>
+  49f530:	c54d                	beqz	a0,49f5da <php_api_send_json_data+0x360>
+  49f532:	00450713          	addi	a4,a0,4 # 1004 <DOWNLOAD_STACK_SIZE+0x4>
+  49f536:	46b2                	lw	a3,12(sp)
+  49f538:	41270733          	sub	a4,a4,s2
+  49f53c:	40e48733          	sub	a4,s1,a4
+  49f540:	08d76d63          	bltu	a4,a3,49f5da <php_api_send_json_data+0x360>
+  49f544:	004ad637          	lui	a2,0x4ad
+  49f548:	004ac5b7          	lui	a1,0x4ac
+  49f54c:	43860613          	addi	a2,a2,1080 # 4ad438 <alarm_type_strings+0x3684>
+  49f550:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f554:	450d                	li	a0,3
+  49f556:	c0eff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f55a:	009907b3          	add	a5,s2,s1
+  49f55e:	004ad637          	lui	a2,0x4ad
+  49f562:	004aca37          	lui	s4,0x4ac
+  49f566:	00078023          	sb	zero,0(a5)
+  49f56a:	86a6                	mv	a3,s1
+  49f56c:	4a060613          	addi	a2,a2,1184 # 4ad4a0 <alarm_type_strings+0x36ec>
+  49f570:	900a0593          	addi	a1,s4,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f574:	450d                	li	a0,3
+  49f576:	beeff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f57a:	0009a703          	lw	a4,0(s3)
+  49f57e:	47a9                	li	a5,10
+  49f580:	02f777b3          	remu	a5,a4,a5
+  49f584:	ef81                	bnez	a5,49f59c <php_api_send_json_data+0x322>
+  49f586:	004ac637          	lui	a2,0x4ac
+  49f58a:	87ca                	mv	a5,s2
+  49f58c:	86a6                	mv	a3,s1
+  49f58e:	8cc60613          	addi	a2,a2,-1844 # 4ab8cc <alarm_type_strings+0x1b18>
+  49f592:	900a0593          	addi	a1,s4,-1792
+  49f596:	450d                	li	a0,3
+  49f598:	960ff0ef          	jal	ra,49e6f8 <debug_print_long.constprop.1>
+  49f59c:	854a                	mv	a0,s2
+  49f59e:	ff55b0ef          	jal	ra,3fb592 <free>
+  49f5a2:	8522                	mv	a0,s0
+  49f5a4:	f02f90ef          	jal	ra,498ca6 <close>
+  49f5a8:	0a0a8863          	beqz	s5,49f658 <php_api_send_json_data+0x3de>
+  49f5ac:	000e67b7          	lui	a5,0xe6
+  49f5b0:	9e878793          	addi	a5,a5,-1560 # e59e8 <g_success_count>
+  49f5b4:	4398                	lw	a4,0(a5)
+  49f5b6:	4501                	li	a0,0
+  49f5b8:	0705                	addi	a4,a4,1
+  49f5ba:	c398                	sw	a4,0(a5)
+  49f5bc:	b1ed                	j	49f2a6 <php_api_send_json_data+0x2c>
+  49f5be:	ff648513          	addi	a0,s1,-10
+  49f5c2:	2ecd8593          	addi	a1,s11,748 # 4a72ec <__FUNCTION__.7722+0x74>
+  49f5c6:	954a                	add	a0,a0,s2
+  49f5c8:	a4eab0ef          	jal	ra,44a816 <strstr>
+  49f5cc:	c519                	beqz	a0,49f5da <php_api_send_json_data+0x360>
+  49f5ce:	41250533          	sub	a0,a0,s2
+  49f5d2:	ffc48793          	addi	a5,s1,-4
+  49f5d6:	f8f552e3          	ble	a5,a0,49f55a <php_api_send_json_data+0x2e0>
+  49f5da:	47a2                	lw	a5,8(sp)
+  49f5dc:	f697efe3          	bltu	a5,s1,49f55a <php_api_send_json_data+0x2e0>
+  49f5e0:	4a01                	li	s4,0
+  49f5e2:	b739                	j	49f4f0 <php_api_send_json_data+0x276>
+  49f5e4:	e90d                	bnez	a0,49f616 <php_api_send_json_data+0x39c>
+  49f5e6:	004ad637          	lui	a2,0x4ad
+  49f5ea:	004ac5b7          	lui	a1,0x4ac
+  49f5ee:	47460613          	addi	a2,a2,1140 # 4ad474 <alarm_type_strings+0x36c0>
+  49f5f2:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f5f6:	450d                	li	a0,3
+  49f5f8:	b6cff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f5fc:	fcb9                	bnez	s1,49f55a <php_api_send_json_data+0x2e0>
+  49f5fe:	004ad637          	lui	a2,0x4ad
+  49f602:	004ac5b7          	lui	a1,0x4ac
+  49f606:	4bc60613          	addi	a2,a2,1212 # 4ad4bc <alarm_type_strings+0x3708>
+  49f60a:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f60e:	4509                	li	a0,2
+  49f610:	b54ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f614:	b761                	j	49f59c <php_api_send_json_data+0x322>
+  49f616:	f1b5b0ef          	jal	ra,3fb530 <__errno>
+  49f61a:	411c                	lw	a5,0(a0)
+  49f61c:	01779a63          	bne	a5,s7,49f630 <php_api_send_json_data+0x3b6>
+  49f620:	855a                	mv	a0,s6
+  49f622:	9c37b0ef          	jal	ra,41afe4 <usleep>
+  49f626:	0a05                	addi	s4,s4,1
+  49f628:	47a9                	li	a5,10
+  49f62a:	ecfa13e3          	bne	s4,a5,49f4f0 <php_api_send_json_data+0x276>
+  49f62e:	b7f9                	j	49f5fc <php_api_send_json_data+0x382>
+  49f630:	f015b0ef          	jal	ra,3fb530 <__errno>
+  49f634:	411c                	lw	a5,0(a0)
+  49f636:	ff7785e3          	beq	a5,s7,49f620 <php_api_send_json_data+0x3a6>
+  49f63a:	ef75b0ef          	jal	ra,3fb530 <__errno>
+  49f63e:	4114                	lw	a3,0(a0)
+  49f640:	004ad637          	lui	a2,0x4ad
+  49f644:	004ac5b7          	lui	a1,0x4ac
+  49f648:	48c60613          	addi	a2,a2,1164 # 4ad48c <alarm_type_strings+0x36d8>
+  49f64c:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f650:	4505                	li	a0,1
+  49f652:	b12ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f656:	b75d                	j	49f5fc <php_api_send_json_data+0x382>
+  49f658:	000e67b7          	lui	a5,0xe6
+  49f65c:	9d878793          	addi	a5,a5,-1576 # e59d8 <g_failure_count>
+  49f660:	bf91                	j	49f5b4 <php_api_send_json_data+0x33a>
+  49f662:	612d                	addi	sp,sp,224
+  49f664:	9ec5b06f          	j	3fa850 <__riscv_restore_12>
 
-0049f65a <php_api_send_sensor_data>:
-  49f65a:	9c25b2ef          	jal	t0,3fa81c <__riscv_save_10>
-  49f65e:	0011d9b7          	lui	s3,0x11d
-  49f662:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
-  49f666:	7115                	addi	sp,sp,-224
-  49f668:	004ac4b7          	lui	s1,0x4ac
-  49f66c:	cfbe                	sw	a5,220(sp)
-  49f66e:	e11d                	bnez	a0,49f694 <php_api_send_sensor_data+0x3a>
-  49f670:	004ad637          	lui	a2,0x4ad
-  49f674:	4e860613          	addi	a2,a2,1256 # 4ad4e8 <alarm_type_strings+0x3734>
-  49f678:	90048593          	addi	a1,s1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f67c:	4505                	li	a0,1
-  49f67e:	ad8ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f682:	441d                	li	s0,7
-  49f684:	477e                	lw	a4,220(sp)
-  49f686:	7c09a783          	lw	a5,1984(s3)
-  49f68a:	8522                	mv	a0,s0
-  49f68c:	14f70363          	beq	a4,a5,49f7d2 <php_api_send_sensor_data+0x178>
-  49f690:	b29560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49f694:	842a                	mv	s0,a0
-  49f696:	1828                	addi	a0,sp,56
-  49f698:	a6dff0ef          	jal	ra,49f104 <php_api_get_system_status>
-  49f69c:	08a8                	addi	a0,sp,88
-  49f69e:	8905c0ef          	jal	ra,3fb72e <strlen>
-  49f6a2:	ed01                	bnez	a0,49f6ba <php_api_send_sensor_data+0x60>
-  49f6a4:	004ad637          	lui	a2,0x4ad
-  49f6a8:	25c60613          	addi	a2,a2,604 # 4ad25c <alarm_type_strings+0x34a8>
-  49f6ac:	90048593          	addi	a1,s1,-1792
-  49f6b0:	4505                	li	a0,1
-  49f6b2:	aa4ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f6b6:	440d                	li	s0,3
-  49f6b8:	b7f1                	j	49f684 <php_api_send_sensor_data+0x2a>
-  49f6ba:	a25ff0ef          	jal	ra,49f0de <php_api_is_wifi_connected>
-  49f6be:	ed01                	bnez	a0,49f6d6 <php_api_send_sensor_data+0x7c>
-  49f6c0:	004ac637          	lui	a2,0x4ac
-  49f6c4:	d5060613          	addi	a2,a2,-688 # 4abd50 <alarm_type_strings+0x1f9c>
-  49f6c8:	90048593          	addi	a1,s1,-1792
-  49f6cc:	4505                	li	a0,1
-  49f6ce:	a88ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f6d2:	4409                	li	s0,2
-  49f6d4:	bf45                	j	49f684 <php_api_send_sensor_data+0x2a>
-  49f6d6:	40000513          	li	a0,1024
-  49f6da:	ed35b0ef          	jal	ra,3fb5ac <malloc>
-  49f6de:	892a                	mv	s2,a0
-  49f6e0:	ed01                	bnez	a0,49f6f8 <php_api_send_sensor_data+0x9e>
-  49f6e2:	004ad637          	lui	a2,0x4ad
-  49f6e6:	50060613          	addi	a2,a2,1280 # 4ad500 <alarm_type_strings+0x374c>
-  49f6ea:	90048593          	addi	a1,s1,-1792
-  49f6ee:	4505                	li	a0,1
-  49f6f0:	a66ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f6f4:	4421                	li	s0,8
-  49f6f6:	b779                	j	49f684 <php_api_send_sensor_data+0x2a>
-  49f6f8:	000e67b7          	lui	a5,0xe6
-  49f6fc:	95d7c883          	lbu	a7,-1699(a5) # e595d <g_running_status>
-  49f700:	4008                	lw	a0,0(s0)
-  49f702:	d646                	sw	a7,44(sp)
-  49f704:	ab9f10ef          	jal	ra,4911bc <__extendsfdf2>
-  49f708:	8a2a                	mv	s4,a0
-  49f70a:	4048                	lw	a0,4(s0)
-  49f70c:	8aae                	mv	s5,a1
-  49f70e:	aaff10ef          	jal	ra,4911bc <__extendsfdf2>
-  49f712:	8b2a                	mv	s6,a0
-  49f714:	4408                	lw	a0,8(s0)
-  49f716:	8bae                	mv	s7,a1
-  49f718:	aa5f10ef          	jal	ra,4911bc <__extendsfdf2>
-  49f71c:	00c44783          	lbu	a5,12(s0)
-  49f720:	58b2                	lw	a7,44(sp)
-  49f722:	e7a5                	bnez	a5,49f78a <php_api_send_sensor_data+0x130>
-  49f724:	004ad7b7          	lui	a5,0x4ad
-  49f728:	4e078793          	addi	a5,a5,1248 # 4ad4e0 <alarm_type_strings+0x372c>
-  49f72c:	00d44703          	lbu	a4,13(s0)
-  49f730:	e335                	bnez	a4,49f794 <php_api_send_sensor_data+0x13a>
-  49f732:	004ad737          	lui	a4,0x4ad
-  49f736:	4e070713          	addi	a4,a4,1248 # 4ad4e0 <alarm_type_strings+0x372c>
-  49f73a:	004ad637          	lui	a2,0x4ad
-  49f73e:	ce3a                	sw	a4,28(sp)
-  49f740:	cc3e                	sw	a5,24(sp)
-  49f742:	c82a                	sw	a0,16(sp)
-  49f744:	ca2e                	sw	a1,20(sp)
-  49f746:	09910793          	addi	a5,sp,153
-  49f74a:	c45a                	sw	s6,8(sp)
-  49f74c:	c65e                	sw	s7,12(sp)
-  49f74e:	c052                	sw	s4,0(sp)
-  49f750:	c256                	sw	s5,4(sp)
-  49f752:	0b910813          	addi	a6,sp,185
-  49f756:	10b8                	addi	a4,sp,104
-  49f758:	1834                	addi	a3,sp,56
-  49f75a:	52460613          	addi	a2,a2,1316 # 4ad524 <alarm_type_strings+0x3770>
-  49f75e:	40000593          	li	a1,1024
-  49f762:	854a                	mv	a0,s2
-  49f764:	867aa0ef          	jal	ra,449fca <snprintf>
-  49f768:	3ff00793          	li	a5,1023
-  49f76c:	02a7d963          	ble	a0,a5,49f79e <php_api_send_sensor_data+0x144>
-  49f770:	004ad637          	lui	a2,0x4ad
-  49f774:	5e860613          	addi	a2,a2,1512 # 4ad5e8 <alarm_type_strings+0x3834>
-  49f778:	90048593          	addi	a1,s1,-1792
-  49f77c:	4505                	li	a0,1
-  49f77e:	9d8ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f782:	854a                	mv	a0,s2
-  49f784:	e0f5b0ef          	jal	ra,3fb592 <free>
-  49f788:	b7b5                	j	49f6f4 <php_api_send_sensor_data+0x9a>
-  49f78a:	004ad7b7          	lui	a5,0x4ad
-  49f78e:	4d878793          	addi	a5,a5,1240 # 4ad4d8 <alarm_type_strings+0x3724>
-  49f792:	bf69                	j	49f72c <php_api_send_sensor_data+0xd2>
-  49f794:	004ad737          	lui	a4,0x4ad
-  49f798:	4d870713          	addi	a4,a4,1240 # 4ad4d8 <alarm_type_strings+0x3724>
-  49f79c:	bf79                	j	49f73a <php_api_send_sensor_data+0xe0>
-  49f79e:	854a                	mv	a0,s2
-  49f7a0:	acdff0ef          	jal	ra,49f26c <php_api_send_json_data>
-  49f7a4:	842a                	mv	s0,a0
-  49f7a6:	854a                	mv	a0,s2
-  49f7a8:	deb5b0ef          	jal	ra,3fb592 <free>
-  49f7ac:	e819                	bnez	s0,49f7c2 <php_api_send_sensor_data+0x168>
-  49f7ae:	004ad637          	lui	a2,0x4ad
-  49f7b2:	60460613          	addi	a2,a2,1540 # 4ad604 <alarm_type_strings+0x3850>
-  49f7b6:	90048593          	addi	a1,s1,-1792
-  49f7ba:	450d                	li	a0,3
-  49f7bc:	99aff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f7c0:	b5d1                	j	49f684 <php_api_send_sensor_data+0x2a>
-  49f7c2:	004ad637          	lui	a2,0x4ad
-  49f7c6:	62060613          	addi	a2,a2,1568 # 4ad620 <alarm_type_strings+0x386c>
-  49f7ca:	90048593          	addi	a1,s1,-1792
-  49f7ce:	4505                	li	a0,1
-  49f7d0:	b7f5                	j	49f7bc <php_api_send_sensor_data+0x162>
-  49f7d2:	612d                	addi	sp,sp,224
-  49f7d4:	8805b06f          	j	3fa854 <__riscv_restore_10>
+0049f668 <php_api_send_sensor_data>:
+  49f668:	9b45b2ef          	jal	t0,3fa81c <__riscv_save_10>
+  49f66c:	0011d9b7          	lui	s3,0x11d
+  49f670:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
+  49f674:	7115                	addi	sp,sp,-224
+  49f676:	004ac4b7          	lui	s1,0x4ac
+  49f67a:	cfbe                	sw	a5,220(sp)
+  49f67c:	e11d                	bnez	a0,49f6a2 <php_api_send_sensor_data+0x3a>
+  49f67e:	004ad637          	lui	a2,0x4ad
+  49f682:	4e860613          	addi	a2,a2,1256 # 4ad4e8 <alarm_type_strings+0x3734>
+  49f686:	90048593          	addi	a1,s1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f68a:	4505                	li	a0,1
+  49f68c:	ad8ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f690:	441d                	li	s0,7
+  49f692:	477e                	lw	a4,220(sp)
+  49f694:	7c09a783          	lw	a5,1984(s3)
+  49f698:	8522                	mv	a0,s0
+  49f69a:	14f70363          	beq	a4,a5,49f7e0 <php_api_send_sensor_data+0x178>
+  49f69e:	b1b560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49f6a2:	842a                	mv	s0,a0
+  49f6a4:	1828                	addi	a0,sp,56
+  49f6a6:	a6dff0ef          	jal	ra,49f112 <php_api_get_system_status>
+  49f6aa:	08a8                	addi	a0,sp,88
+  49f6ac:	8825c0ef          	jal	ra,3fb72e <strlen>
+  49f6b0:	ed01                	bnez	a0,49f6c8 <php_api_send_sensor_data+0x60>
+  49f6b2:	004ad637          	lui	a2,0x4ad
+  49f6b6:	25c60613          	addi	a2,a2,604 # 4ad25c <alarm_type_strings+0x34a8>
+  49f6ba:	90048593          	addi	a1,s1,-1792
+  49f6be:	4505                	li	a0,1
+  49f6c0:	aa4ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f6c4:	440d                	li	s0,3
+  49f6c6:	b7f1                	j	49f692 <php_api_send_sensor_data+0x2a>
+  49f6c8:	a25ff0ef          	jal	ra,49f0ec <php_api_is_wifi_connected>
+  49f6cc:	ed01                	bnez	a0,49f6e4 <php_api_send_sensor_data+0x7c>
+  49f6ce:	004ac637          	lui	a2,0x4ac
+  49f6d2:	d5060613          	addi	a2,a2,-688 # 4abd50 <alarm_type_strings+0x1f9c>
+  49f6d6:	90048593          	addi	a1,s1,-1792
+  49f6da:	4505                	li	a0,1
+  49f6dc:	a88ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f6e0:	4409                	li	s0,2
+  49f6e2:	bf45                	j	49f692 <php_api_send_sensor_data+0x2a>
+  49f6e4:	40000513          	li	a0,1024
+  49f6e8:	ec55b0ef          	jal	ra,3fb5ac <malloc>
+  49f6ec:	892a                	mv	s2,a0
+  49f6ee:	ed01                	bnez	a0,49f706 <php_api_send_sensor_data+0x9e>
+  49f6f0:	004ad637          	lui	a2,0x4ad
+  49f6f4:	50060613          	addi	a2,a2,1280 # 4ad500 <alarm_type_strings+0x374c>
+  49f6f8:	90048593          	addi	a1,s1,-1792
+  49f6fc:	4505                	li	a0,1
+  49f6fe:	a66ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f702:	4421                	li	s0,8
+  49f704:	b779                	j	49f692 <php_api_send_sensor_data+0x2a>
+  49f706:	000e67b7          	lui	a5,0xe6
+  49f70a:	95d7c883          	lbu	a7,-1699(a5) # e595d <g_running_status>
+  49f70e:	4008                	lw	a0,0(s0)
+  49f710:	d646                	sw	a7,44(sp)
+  49f712:	aabf10ef          	jal	ra,4911bc <__extendsfdf2>
+  49f716:	8a2a                	mv	s4,a0
+  49f718:	4048                	lw	a0,4(s0)
+  49f71a:	8aae                	mv	s5,a1
+  49f71c:	aa1f10ef          	jal	ra,4911bc <__extendsfdf2>
+  49f720:	8b2a                	mv	s6,a0
+  49f722:	4408                	lw	a0,8(s0)
+  49f724:	8bae                	mv	s7,a1
+  49f726:	a97f10ef          	jal	ra,4911bc <__extendsfdf2>
+  49f72a:	00c44783          	lbu	a5,12(s0)
+  49f72e:	58b2                	lw	a7,44(sp)
+  49f730:	e7a5                	bnez	a5,49f798 <php_api_send_sensor_data+0x130>
+  49f732:	004ad7b7          	lui	a5,0x4ad
+  49f736:	4e078793          	addi	a5,a5,1248 # 4ad4e0 <alarm_type_strings+0x372c>
+  49f73a:	00d44703          	lbu	a4,13(s0)
+  49f73e:	e335                	bnez	a4,49f7a2 <php_api_send_sensor_data+0x13a>
+  49f740:	004ad737          	lui	a4,0x4ad
+  49f744:	4e070713          	addi	a4,a4,1248 # 4ad4e0 <alarm_type_strings+0x372c>
+  49f748:	004ad637          	lui	a2,0x4ad
+  49f74c:	ce3a                	sw	a4,28(sp)
+  49f74e:	cc3e                	sw	a5,24(sp)
+  49f750:	c82a                	sw	a0,16(sp)
+  49f752:	ca2e                	sw	a1,20(sp)
+  49f754:	09910793          	addi	a5,sp,153
+  49f758:	c45a                	sw	s6,8(sp)
+  49f75a:	c65e                	sw	s7,12(sp)
+  49f75c:	c052                	sw	s4,0(sp)
+  49f75e:	c256                	sw	s5,4(sp)
+  49f760:	0b910813          	addi	a6,sp,185
+  49f764:	10b8                	addi	a4,sp,104
+  49f766:	1834                	addi	a3,sp,56
+  49f768:	52460613          	addi	a2,a2,1316 # 4ad524 <alarm_type_strings+0x3770>
+  49f76c:	40000593          	li	a1,1024
+  49f770:	854a                	mv	a0,s2
+  49f772:	859aa0ef          	jal	ra,449fca <snprintf>
+  49f776:	3ff00793          	li	a5,1023
+  49f77a:	02a7d963          	ble	a0,a5,49f7ac <php_api_send_sensor_data+0x144>
+  49f77e:	004ad637          	lui	a2,0x4ad
+  49f782:	5e860613          	addi	a2,a2,1512 # 4ad5e8 <alarm_type_strings+0x3834>
+  49f786:	90048593          	addi	a1,s1,-1792
+  49f78a:	4505                	li	a0,1
+  49f78c:	9d8ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f790:	854a                	mv	a0,s2
+  49f792:	e015b0ef          	jal	ra,3fb592 <free>
+  49f796:	b7b5                	j	49f702 <php_api_send_sensor_data+0x9a>
+  49f798:	004ad7b7          	lui	a5,0x4ad
+  49f79c:	4d878793          	addi	a5,a5,1240 # 4ad4d8 <alarm_type_strings+0x3724>
+  49f7a0:	bf69                	j	49f73a <php_api_send_sensor_data+0xd2>
+  49f7a2:	004ad737          	lui	a4,0x4ad
+  49f7a6:	4d870713          	addi	a4,a4,1240 # 4ad4d8 <alarm_type_strings+0x3724>
+  49f7aa:	bf79                	j	49f748 <php_api_send_sensor_data+0xe0>
+  49f7ac:	854a                	mv	a0,s2
+  49f7ae:	acdff0ef          	jal	ra,49f27a <php_api_send_json_data>
+  49f7b2:	842a                	mv	s0,a0
+  49f7b4:	854a                	mv	a0,s2
+  49f7b6:	ddd5b0ef          	jal	ra,3fb592 <free>
+  49f7ba:	e819                	bnez	s0,49f7d0 <php_api_send_sensor_data+0x168>
+  49f7bc:	004ad637          	lui	a2,0x4ad
+  49f7c0:	60460613          	addi	a2,a2,1540 # 4ad604 <alarm_type_strings+0x3850>
+  49f7c4:	90048593          	addi	a1,s1,-1792
+  49f7c8:	450d                	li	a0,3
+  49f7ca:	99aff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f7ce:	b5d1                	j	49f692 <php_api_send_sensor_data+0x2a>
+  49f7d0:	004ad637          	lui	a2,0x4ad
+  49f7d4:	62060613          	addi	a2,a2,1568 # 4ad620 <alarm_type_strings+0x386c>
+  49f7d8:	90048593          	addi	a1,s1,-1792
+  49f7dc:	4505                	li	a0,1
+  49f7de:	b7f5                	j	49f7ca <php_api_send_sensor_data+0x162>
+  49f7e0:	612d                	addi	sp,sp,224
+  49f7e2:	8725b06f          	j	3fa854 <__riscv_restore_10>
 
-0049f7d8 <php_api_start_web_server>:
-  49f7d8:	8525b2ef          	jal	t0,3fa82a <__riscv_save_4>
-  49f7dc:	0011d7b7          	lui	a5,0x11d
-  49f7e0:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49f7e4:	1101                	addi	sp,sp,-32
-  49f7e6:	89be                	mv	s3,a5
-  49f7e8:	ce3a                	sw	a4,28(sp)
-  49f7ea:	000e6737          	lui	a4,0xe6
-  49f7ee:	9e074703          	lbu	a4,-1568(a4) # e59e0 <g_php_api_initialized>
-  49f7f2:	004ac937          	lui	s2,0x4ac
-  49f7f6:	e315                	bnez	a4,49f81a <php_api_start_web_server+0x42>
-  49f7f8:	004ad637          	lui	a2,0x4ad
-  49f7fc:	6fc60613          	addi	a2,a2,1788 # 4ad6fc <alarm_type_strings+0x3948>
-  49f800:	90090593          	addi	a1,s2,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f804:	4505                	li	a0,1
-  49f806:	950ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f80a:	4505                	li	a0,1
-  49f80c:	4772                	lw	a4,28(sp)
-  49f80e:	7c09a783          	lw	a5,1984(s3)
-  49f812:	10f70263          	beq	a4,a5,49f916 <php_api_start_web_server+0x13e>
-  49f816:	9a3560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49f81a:	000e67b7          	lui	a5,0xe6
-  49f81e:	9ec7c703          	lbu	a4,-1556(a5) # e59ec <g_web_server_running>
-  49f822:	9ec78493          	addi	s1,a5,-1556
-  49f826:	cf01                	beqz	a4,49f83e <php_api_start_web_server+0x66>
-  49f828:	004ad637          	lui	a2,0x4ad
-  49f82c:	71860613          	addi	a2,a2,1816 # 4ad718 <alarm_type_strings+0x3964>
-  49f830:	90090593          	addi	a1,s2,-1792
-  49f834:	4509                	li	a0,2
-  49f836:	920ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f83a:	4501                	li	a0,0
-  49f83c:	bfc1                	j	49f80c <php_api_start_web_server+0x34>
-  49f83e:	4601                	li	a2,0
-  49f840:	4585                	li	a1,1
+0049f7e6 <php_api_start_web_server>:
+  49f7e6:	8445b2ef          	jal	t0,3fa82a <__riscv_save_4>
+  49f7ea:	0011d7b7          	lui	a5,0x11d
+  49f7ee:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49f7f2:	1101                	addi	sp,sp,-32
+  49f7f4:	89be                	mv	s3,a5
+  49f7f6:	ce3a                	sw	a4,28(sp)
+  49f7f8:	000e6737          	lui	a4,0xe6
+  49f7fc:	9e074703          	lbu	a4,-1568(a4) # e59e0 <g_php_api_initialized>
+  49f800:	004ac937          	lui	s2,0x4ac
+  49f804:	e315                	bnez	a4,49f828 <php_api_start_web_server+0x42>
+  49f806:	004ad637          	lui	a2,0x4ad
+  49f80a:	6fc60613          	addi	a2,a2,1788 # 4ad6fc <alarm_type_strings+0x3948>
+  49f80e:	90090593          	addi	a1,s2,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f812:	4505                	li	a0,1
+  49f814:	950ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f818:	4505                	li	a0,1
+  49f81a:	4772                	lw	a4,28(sp)
+  49f81c:	7c09a783          	lw	a5,1984(s3)
+  49f820:	10f70263          	beq	a4,a5,49f924 <php_api_start_web_server+0x13e>
+  49f824:	995560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49f828:	000e67b7          	lui	a5,0xe6
+  49f82c:	9ec7c703          	lbu	a4,-1556(a5) # e59ec <g_web_server_running>
+  49f830:	9ec78493          	addi	s1,a5,-1556
+  49f834:	cf01                	beqz	a4,49f84c <php_api_start_web_server+0x66>
+  49f836:	004ad637          	lui	a2,0x4ad
+  49f83a:	71860613          	addi	a2,a2,1816 # 4ad718 <alarm_type_strings+0x3964>
+  49f83e:	90090593          	addi	a1,s2,-1792
   49f842:	4509                	li	a0,2
-  49f844:	000dc437          	lui	s0,0xdc
-  49f848:	babc20ef          	jal	ra,4623f2 <socket>
-  49f84c:	26a42223          	sw	a0,612(s0) # dc264 <g_web_server_socket>
-  49f850:	26440413          	addi	s0,s0,612
-  49f854:	00055d63          	bgez	a0,49f86e <php_api_start_web_server+0x96>
-  49f858:	004ad637          	lui	a2,0x4ad
-  49f85c:	27460613          	addi	a2,a2,628 # 4ad274 <alarm_type_strings+0x34c0>
-  49f860:	90090593          	addi	a1,s2,-1792
-  49f864:	4505                	li	a0,1
-  49f866:	8f0ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f86a:	4511                	li	a0,4
-  49f86c:	b745                	j	49f80c <php_api_start_web_server+0x34>
-  49f86e:	4785                	li	a5,1
-  49f870:	4711                	li	a4,4
-  49f872:	0034                	addi	a3,sp,8
-  49f874:	4609                	li	a2,2
-  49f876:	4585                	li	a1,1
-  49f878:	c43e                	sw	a5,8(sp)
-  49f87a:	fedc20ef          	jal	ra,462866 <setsockopt>
-  49f87e:	00055b63          	bgez	a0,49f894 <php_api_start_web_server+0xbc>
-  49f882:	004ad637          	lui	a2,0x4ad
-  49f886:	73460613          	addi	a2,a2,1844 # 4ad734 <alarm_type_strings+0x3980>
-  49f88a:	90090593          	addi	a1,s2,-1792
-  49f88e:	4509                	li	a0,2
-  49f890:	8c6ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f894:	4641                	li	a2,16
-  49f896:	4581                	li	a1,0
-  49f898:	0068                	addi	a0,sp,12
-  49f89a:	a615b0ef          	jal	ra,3fb2fa <memset>
-  49f89e:	4008                	lw	a0,0(s0)
-  49f8a0:	500007b7          	lui	a5,0x50000
-  49f8a4:	0789                	addi	a5,a5,2
-  49f8a6:	4641                	li	a2,16
-  49f8a8:	006c                	addi	a1,sp,12
-  49f8aa:	c63e                	sw	a5,12(sp)
-  49f8ac:	c802                	sw	zero,16(sp)
-  49f8ae:	904c20ef          	jal	ra,4619b2 <bind>
-  49f8b2:	02055363          	bgez	a0,49f8d8 <php_api_start_web_server+0x100>
-  49f8b6:	004ad637          	lui	a2,0x4ad
-  49f8ba:	05000693          	li	a3,80
-  49f8be:	76060613          	addi	a2,a2,1888 # 4ad760 <alarm_type_strings+0x39ac>
-  49f8c2:	90090593          	addi	a1,s2,-1792
-  49f8c6:	4505                	li	a0,1
-  49f8c8:	88eff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f8cc:	4008                	lw	a0,0(s0)
-  49f8ce:	bd8f90ef          	jal	ra,498ca6 <close>
-  49f8d2:	57fd                	li	a5,-1
-  49f8d4:	c01c                	sw	a5,0(s0)
-  49f8d6:	bf51                	j	49f86a <php_api_start_web_server+0x92>
-  49f8d8:	4008                	lw	a0,0(s0)
-  49f8da:	4595                	li	a1,5
-  49f8dc:	b90c20ef          	jal	ra,461c6c <listen>
-  49f8e0:	00055c63          	bgez	a0,49f8f8 <php_api_start_web_server+0x120>
-  49f8e4:	004ad637          	lui	a2,0x4ad
-  49f8e8:	77860613          	addi	a2,a2,1912 # 4ad778 <alarm_type_strings+0x39c4>
-  49f8ec:	90090593          	addi	a1,s2,-1792
-  49f8f0:	4505                	li	a0,1
-  49f8f2:	864ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f8f6:	bfd9                	j	49f8cc <php_api_start_web_server+0xf4>
-  49f8f8:	004ad637          	lui	a2,0x4ad
-  49f8fc:	4785                	li	a5,1
-  49f8fe:	05000693          	li	a3,80
-  49f902:	78860613          	addi	a2,a2,1928 # 4ad788 <alarm_type_strings+0x39d4>
-  49f906:	90090593          	addi	a1,s2,-1792
-  49f90a:	450d                	li	a0,3
-  49f90c:	00f48023          	sb	a5,0(s1)
-  49f910:	846ff0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f914:	b71d                	j	49f83a <php_api_start_web_server+0x62>
-  49f916:	6105                	addi	sp,sp,32
-  49f918:	f475a06f          	j	3fa85e <__riscv_restore_4>
+  49f844:	920ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f848:	4501                	li	a0,0
+  49f84a:	bfc1                	j	49f81a <php_api_start_web_server+0x34>
+  49f84c:	4601                	li	a2,0
+  49f84e:	4585                	li	a1,1
+  49f850:	4509                	li	a0,2
+  49f852:	000dc437          	lui	s0,0xdc
+  49f856:	b9dc20ef          	jal	ra,4623f2 <socket>
+  49f85a:	26a42223          	sw	a0,612(s0) # dc264 <g_web_server_socket>
+  49f85e:	26440413          	addi	s0,s0,612
+  49f862:	00055d63          	bgez	a0,49f87c <php_api_start_web_server+0x96>
+  49f866:	004ad637          	lui	a2,0x4ad
+  49f86a:	27460613          	addi	a2,a2,628 # 4ad274 <alarm_type_strings+0x34c0>
+  49f86e:	90090593          	addi	a1,s2,-1792
+  49f872:	4505                	li	a0,1
+  49f874:	8f0ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f878:	4511                	li	a0,4
+  49f87a:	b745                	j	49f81a <php_api_start_web_server+0x34>
+  49f87c:	4785                	li	a5,1
+  49f87e:	4711                	li	a4,4
+  49f880:	0034                	addi	a3,sp,8
+  49f882:	4609                	li	a2,2
+  49f884:	4585                	li	a1,1
+  49f886:	c43e                	sw	a5,8(sp)
+  49f888:	fdfc20ef          	jal	ra,462866 <setsockopt>
+  49f88c:	00055b63          	bgez	a0,49f8a2 <php_api_start_web_server+0xbc>
+  49f890:	004ad637          	lui	a2,0x4ad
+  49f894:	73460613          	addi	a2,a2,1844 # 4ad734 <alarm_type_strings+0x3980>
+  49f898:	90090593          	addi	a1,s2,-1792
+  49f89c:	4509                	li	a0,2
+  49f89e:	8c6ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f8a2:	4641                	li	a2,16
+  49f8a4:	4581                	li	a1,0
+  49f8a6:	0068                	addi	a0,sp,12
+  49f8a8:	a535b0ef          	jal	ra,3fb2fa <memset>
+  49f8ac:	4008                	lw	a0,0(s0)
+  49f8ae:	500007b7          	lui	a5,0x50000
+  49f8b2:	0789                	addi	a5,a5,2
+  49f8b4:	4641                	li	a2,16
+  49f8b6:	006c                	addi	a1,sp,12
+  49f8b8:	c63e                	sw	a5,12(sp)
+  49f8ba:	c802                	sw	zero,16(sp)
+  49f8bc:	8f6c20ef          	jal	ra,4619b2 <bind>
+  49f8c0:	02055363          	bgez	a0,49f8e6 <php_api_start_web_server+0x100>
+  49f8c4:	004ad637          	lui	a2,0x4ad
+  49f8c8:	05000693          	li	a3,80
+  49f8cc:	76060613          	addi	a2,a2,1888 # 4ad760 <alarm_type_strings+0x39ac>
+  49f8d0:	90090593          	addi	a1,s2,-1792
+  49f8d4:	4505                	li	a0,1
+  49f8d6:	88eff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f8da:	4008                	lw	a0,0(s0)
+  49f8dc:	bcaf90ef          	jal	ra,498ca6 <close>
+  49f8e0:	57fd                	li	a5,-1
+  49f8e2:	c01c                	sw	a5,0(s0)
+  49f8e4:	bf51                	j	49f878 <php_api_start_web_server+0x92>
+  49f8e6:	4008                	lw	a0,0(s0)
+  49f8e8:	4595                	li	a1,5
+  49f8ea:	b82c20ef          	jal	ra,461c6c <listen>
+  49f8ee:	00055c63          	bgez	a0,49f906 <php_api_start_web_server+0x120>
+  49f8f2:	004ad637          	lui	a2,0x4ad
+  49f8f6:	77860613          	addi	a2,a2,1912 # 4ad778 <alarm_type_strings+0x39c4>
+  49f8fa:	90090593          	addi	a1,s2,-1792
+  49f8fe:	4505                	li	a0,1
+  49f900:	864ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f904:	bfd9                	j	49f8da <php_api_start_web_server+0xf4>
+  49f906:	004ad637          	lui	a2,0x4ad
+  49f90a:	4785                	li	a5,1
+  49f90c:	05000693          	li	a3,80
+  49f910:	78860613          	addi	a2,a2,1928 # 4ad788 <alarm_type_strings+0x39d4>
+  49f914:	90090593          	addi	a1,s2,-1792
+  49f918:	450d                	li	a0,3
+  49f91a:	00f48023          	sb	a5,0(s1)
+  49f91e:	846ff0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f922:	b71d                	j	49f848 <php_api_start_web_server+0x62>
+  49f924:	6105                	addi	sp,sp,32
+  49f926:	f395a06f          	j	3fa85e <__riscv_restore_4>
 
-0049f91c <php_api_update_web_server>:
-  49f91c:	f295a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49f920:	0011d7b7          	lui	a5,0x11d
-  49f924:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49f928:	1101                	addi	sp,sp,-32
-  49f92a:	893e                	mv	s2,a5
-  49f92c:	ce3a                	sw	a4,28(sp)
-  49f92e:	000e6737          	lui	a4,0xe6
-  49f932:	9ec74703          	lbu	a4,-1556(a4) # e59ec <g_web_server_running>
-  49f936:	4405                	li	s0,1
-  49f938:	c71d                	beqz	a4,49f966 <php_api_update_web_server+0x4a>
-  49f93a:	000dc7b7          	lui	a5,0xdc
-  49f93e:	2647a503          	lw	a0,612(a5) # dc264 <g_web_server_socket>
-  49f942:	02054263          	bltz	a0,49f966 <php_api_update_web_server+0x4a>
-  49f946:	47c1                	li	a5,16
-  49f948:	0030                	addi	a2,sp,8
-  49f94a:	006c                	addi	a1,sp,12
-  49f94c:	c43e                	sw	a5,8(sp)
-  49f94e:	e63c10ef          	jal	ra,4617b0 <accept>
-  49f952:	84aa                	mv	s1,a0
-  49f954:	04055363          	bgez	a0,49f99a <php_api_update_web_server+0x7e>
-  49f958:	bd95b0ef          	jal	ra,3fb530 <__errno>
-  49f95c:	411c                	lw	a5,0(a0)
-  49f95e:	442d                	li	s0,11
-  49f960:	00879b63          	bne	a5,s0,49f976 <php_api_update_web_server+0x5a>
-  49f964:	4401                	li	s0,0
-  49f966:	4772                	lw	a4,28(sp)
-  49f968:	7c092783          	lw	a5,1984(s2)
-  49f96c:	8522                	mv	a0,s0
-  49f96e:	02f70d63          	beq	a4,a5,49f9a8 <php_api_update_web_server+0x8c>
-  49f972:	847560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49f976:	bbb5b0ef          	jal	ra,3fb530 <__errno>
-  49f97a:	411c                	lw	a5,0(a0)
-  49f97c:	fe8784e3          	beq	a5,s0,49f964 <php_api_update_web_server+0x48>
-  49f980:	004ad637          	lui	a2,0x4ad
-  49f984:	004ac5b7          	lui	a1,0x4ac
-  49f988:	7bc60613          	addi	a2,a2,1980 # 4ad7bc <alarm_type_strings+0x3a08>
-  49f98c:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
-  49f990:	4505                	li	a0,1
-  49f992:	fc5fe0ef          	jal	ra,49e956 <debug_print.constprop.2>
-  49f996:	4411                	li	s0,4
-  49f998:	b7f9                	j	49f966 <php_api_update_web_server+0x4a>
-  49f99a:	e88ff0ef          	jal	ra,49f022 <php_api_handle_http_request>
-  49f99e:	842a                	mv	s0,a0
-  49f9a0:	8526                	mv	a0,s1
-  49f9a2:	b04f90ef          	jal	ra,498ca6 <close>
-  49f9a6:	b7c1                	j	49f966 <php_api_update_web_server+0x4a>
-  49f9a8:	6105                	addi	sp,sp,32
-  49f9aa:	ebf5a06f          	j	3fa868 <__riscv_restore_0>
+0049f92a <php_api_update_web_server>:
+  49f92a:	f1b5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49f92e:	0011d7b7          	lui	a5,0x11d
+  49f932:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49f936:	1101                	addi	sp,sp,-32
+  49f938:	893e                	mv	s2,a5
+  49f93a:	ce3a                	sw	a4,28(sp)
+  49f93c:	000e6737          	lui	a4,0xe6
+  49f940:	9ec74703          	lbu	a4,-1556(a4) # e59ec <g_web_server_running>
+  49f944:	4405                	li	s0,1
+  49f946:	c71d                	beqz	a4,49f974 <php_api_update_web_server+0x4a>
+  49f948:	000dc7b7          	lui	a5,0xdc
+  49f94c:	2647a503          	lw	a0,612(a5) # dc264 <g_web_server_socket>
+  49f950:	02054263          	bltz	a0,49f974 <php_api_update_web_server+0x4a>
+  49f954:	47c1                	li	a5,16
+  49f956:	0030                	addi	a2,sp,8
+  49f958:	006c                	addi	a1,sp,12
+  49f95a:	c43e                	sw	a5,8(sp)
+  49f95c:	e55c10ef          	jal	ra,4617b0 <accept>
+  49f960:	84aa                	mv	s1,a0
+  49f962:	04055363          	bgez	a0,49f9a8 <php_api_update_web_server+0x7e>
+  49f966:	bcb5b0ef          	jal	ra,3fb530 <__errno>
+  49f96a:	411c                	lw	a5,0(a0)
+  49f96c:	442d                	li	s0,11
+  49f96e:	00879b63          	bne	a5,s0,49f984 <php_api_update_web_server+0x5a>
+  49f972:	4401                	li	s0,0
+  49f974:	4772                	lw	a4,28(sp)
+  49f976:	7c092783          	lw	a5,1984(s2)
+  49f97a:	8522                	mv	a0,s0
+  49f97c:	02f70d63          	beq	a4,a5,49f9b6 <php_api_update_web_server+0x8c>
+  49f980:	839560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49f984:	bad5b0ef          	jal	ra,3fb530 <__errno>
+  49f988:	411c                	lw	a5,0(a0)
+  49f98a:	fe8784e3          	beq	a5,s0,49f972 <php_api_update_web_server+0x48>
+  49f98e:	004ad637          	lui	a2,0x4ad
+  49f992:	004ac5b7          	lui	a1,0x4ac
+  49f996:	7bc60613          	addi	a2,a2,1980 # 4ad7bc <alarm_type_strings+0x3a08>
+  49f99a:	90058593          	addi	a1,a1,-1792 # 4ab900 <alarm_type_strings+0x1b4c>
+  49f99e:	4505                	li	a0,1
+  49f9a0:	fc5fe0ef          	jal	ra,49e964 <debug_print.constprop.2>
+  49f9a4:	4411                	li	s0,4
+  49f9a6:	b7f9                	j	49f974 <php_api_update_web_server+0x4a>
+  49f9a8:	e88ff0ef          	jal	ra,49f030 <php_api_handle_http_request>
+  49f9ac:	842a                	mv	s0,a0
+  49f9ae:	8526                	mv	a0,s1
+  49f9b0:	af6f90ef          	jal	ra,498ca6 <close>
+  49f9b4:	b7c1                	j	49f974 <php_api_update_web_server+0x4a>
+  49f9b6:	6105                	addi	sp,sp,32
+  49f9b8:	eb15a06f          	j	3fa868 <__riscv_restore_0>
 
-0049f9ae <relay_set_state>:
-  49f9ae:	e975a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49f9b2:	0011d7b7          	lui	a5,0x11d
-  49f9b6:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49f9ba:	1141                	addi	sp,sp,-16
-  49f9bc:	843e                	mv	s0,a5
-  49f9be:	c63a                	sw	a4,12(sp)
-  49f9c0:	000e6737          	lui	a4,0xe6
-  49f9c4:	9ea72823          	sw	a0,-1552(a4) # e59f0 <g_relay_state>
-  49f9c8:	4705                	li	a4,1
-  49f9ca:	02e51463          	bne	a0,a4,49f9f2 <relay_set_state+0x44>
-  49f9ce:	4585                	li	a1,1
-  49f9d0:	4521                	li	a0,8
-  49f9d2:	929510ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
-  49f9d6:	004ae537          	lui	a0,0x4ae
-  49f9da:	45a1                	li	a1,8
-  49f9dc:	81450513          	addi	a0,a0,-2028 # 4ad814 <alarm_type_strings+0x3a60>
-  49f9e0:	acd5a0ef          	jal	ra,3fa4ac <printf>
-  49f9e4:	4732                	lw	a4,12(sp)
-  49f9e6:	7c042783          	lw	a5,1984(s0)
-  49f9ea:	00f70e63          	beq	a4,a5,49fa06 <relay_set_state+0x58>
-  49f9ee:	fca560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49f9f2:	4581                	li	a1,0
-  49f9f4:	4521                	li	a0,8
-  49f9f6:	905510ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
-  49f9fa:	004ae537          	lui	a0,0x4ae
-  49f9fe:	45a1                	li	a1,8
-  49fa00:	84050513          	addi	a0,a0,-1984 # 4ad840 <alarm_type_strings+0x3a8c>
-  49fa04:	bff1                	j	49f9e0 <relay_set_state+0x32>
-  49fa06:	0141                	addi	sp,sp,16
-  49fa08:	e615a06f          	j	3fa868 <__riscv_restore_0>
+0049f9bc <relay_set_state>:
+  49f9bc:	e895a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49f9c0:	0011d7b7          	lui	a5,0x11d
+  49f9c4:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49f9c8:	1141                	addi	sp,sp,-16
+  49f9ca:	843e                	mv	s0,a5
+  49f9cc:	c63a                	sw	a4,12(sp)
+  49f9ce:	000e6737          	lui	a4,0xe6
+  49f9d2:	9ea72823          	sw	a0,-1552(a4) # e59f0 <g_relay_state>
+  49f9d6:	4705                	li	a4,1
+  49f9d8:	02e51463          	bne	a0,a4,49fa00 <relay_set_state+0x44>
+  49f9dc:	4585                	li	a1,1
+  49f9de:	4521                	li	a0,8
+  49f9e0:	91b510ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
+  49f9e4:	004ae537          	lui	a0,0x4ae
+  49f9e8:	45a1                	li	a1,8
+  49f9ea:	81450513          	addi	a0,a0,-2028 # 4ad814 <alarm_type_strings+0x3a60>
+  49f9ee:	abf5a0ef          	jal	ra,3fa4ac <printf>
+  49f9f2:	4732                	lw	a4,12(sp)
+  49f9f4:	7c042783          	lw	a5,1984(s0)
+  49f9f8:	00f70e63          	beq	a4,a5,49fa14 <relay_set_state+0x58>
+  49f9fc:	fbc560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fa00:	4581                	li	a1,0
+  49fa02:	4521                	li	a0,8
+  49fa04:	8f7510ef          	jal	ra,3f12fa <hi_gpio_set_ouput_val>
+  49fa08:	004ae537          	lui	a0,0x4ae
+  49fa0c:	45a1                	li	a1,8
+  49fa0e:	84050513          	addi	a0,a0,-1984 # 4ad840 <alarm_type_strings+0x3a8c>
+  49fa12:	bff1                	j	49f9ee <relay_set_state+0x32>
+  49fa14:	0141                	addi	sp,sp,16
+  49fa16:	e535a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fa0c <relay_init>:
-  49fa0c:	e395a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fa10:	0011d437          	lui	s0,0x11d
-  49fa14:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49fa18:	1141                	addi	sp,sp,-16
-  49fa1a:	4581                	li	a1,0
-  49fa1c:	4521                	li	a0,8
-  49fa1e:	c63e                	sw	a5,12(sp)
-  49fa20:	82f520ef          	jal	ra,3f224e <hi_io_set_func>
-  49fa24:	4585                	li	a1,1
-  49fa26:	4521                	li	a0,8
-  49fa28:	873510ef          	jal	ra,3f129a <hi_gpio_set_dir>
-  49fa2c:	4501                	li	a0,0
-  49fa2e:	f81ff0ef          	jal	ra,49f9ae <relay_set_state>
-  49fa32:	004ad537          	lui	a0,0x4ad
-  49fa36:	45a1                	li	a1,8
-  49fa38:	7d850513          	addi	a0,a0,2008 # 4ad7d8 <alarm_type_strings+0x3a24>
-  49fa3c:	a715a0ef          	jal	ra,3fa4ac <printf>
-  49fa40:	4732                	lw	a4,12(sp)
-  49fa42:	7c042783          	lw	a5,1984(s0)
-  49fa46:	00f70463          	beq	a4,a5,49fa4e <relay_init+0x42>
-  49fa4a:	f6e560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fa4e:	0141                	addi	sp,sp,16
-  49fa50:	e195a06f          	j	3fa868 <__riscv_restore_0>
+0049fa1a <relay_init>:
+  49fa1a:	e2b5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fa1e:	0011d437          	lui	s0,0x11d
+  49fa22:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49fa26:	1141                	addi	sp,sp,-16
+  49fa28:	4581                	li	a1,0
+  49fa2a:	4521                	li	a0,8
+  49fa2c:	c63e                	sw	a5,12(sp)
+  49fa2e:	821520ef          	jal	ra,3f224e <hi_io_set_func>
+  49fa32:	4585                	li	a1,1
+  49fa34:	4521                	li	a0,8
+  49fa36:	865510ef          	jal	ra,3f129a <hi_gpio_set_dir>
+  49fa3a:	4501                	li	a0,0
+  49fa3c:	f81ff0ef          	jal	ra,49f9bc <relay_set_state>
+  49fa40:	004ad537          	lui	a0,0x4ad
+  49fa44:	45a1                	li	a1,8
+  49fa46:	7d850513          	addi	a0,a0,2008 # 4ad7d8 <alarm_type_strings+0x3a24>
+  49fa4a:	a635a0ef          	jal	ra,3fa4ac <printf>
+  49fa4e:	4732                	lw	a4,12(sp)
+  49fa50:	7c042783          	lw	a5,1984(s0)
+  49fa54:	00f70463          	beq	a4,a5,49fa5c <relay_init+0x42>
+  49fa58:	f60560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fa5c:	0141                	addi	sp,sp,16
+  49fa5e:	e0b5a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fa54 <relay_get_state>:
-  49fa54:	df15a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fa58:	0011d7b7          	lui	a5,0x11d
-  49fa5c:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49fa60:	1141                	addi	sp,sp,-16
-  49fa62:	c63a                	sw	a4,12(sp)
-  49fa64:	000e6737          	lui	a4,0xe6
-  49fa68:	9f072503          	lw	a0,-1552(a4) # e59f0 <g_relay_state>
-  49fa6c:	4732                	lw	a4,12(sp)
-  49fa6e:	7c07a783          	lw	a5,1984(a5)
-  49fa72:	00f70463          	beq	a4,a5,49fa7a <relay_get_state+0x26>
-  49fa76:	f42560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fa7a:	0141                	addi	sp,sp,16
-  49fa7c:	ded5a06f          	j	3fa868 <__riscv_restore_0>
+0049fa62 <relay_get_state>:
+  49fa62:	de35a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fa66:	0011d7b7          	lui	a5,0x11d
+  49fa6a:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49fa6e:	1141                	addi	sp,sp,-16
+  49fa70:	c63a                	sw	a4,12(sp)
+  49fa72:	000e6737          	lui	a4,0xe6
+  49fa76:	9f072503          	lw	a0,-1552(a4) # e59f0 <g_relay_state>
+  49fa7a:	4732                	lw	a4,12(sp)
+  49fa7c:	7c07a783          	lw	a5,1984(a5)
+  49fa80:	00f70463          	beq	a4,a5,49fa88 <relay_get_state+0x26>
+  49fa84:	f34560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fa88:	0141                	addi	sp,sp,16
+  49fa8a:	ddf5a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fa80 <smoke_sensor_init>:
-  49fa80:	dc55a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fa84:	0011d437          	lui	s0,0x11d
-  49fa88:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49fa8c:	1141                	addi	sp,sp,-16
-  49fa8e:	4581                	li	a1,0
-  49fa90:	452d                	li	a0,11
-  49fa92:	c63e                	sw	a5,12(sp)
-  49fa94:	fba520ef          	jal	ra,3f224e <hi_io_set_func>
-  49fa98:	4581                	li	a1,0
-  49fa9a:	4501                	li	a0,0
-  49fa9c:	9404d0ef          	jal	ra,3ecbdc <hi_adc_init>
-  49faa0:	004ae537          	lui	a0,0x4ae
-  49faa4:	89050513          	addi	a0,a0,-1904 # 4ad890 <smoke_level_strings+0x24>
-  49faa8:	a055a0ef          	jal	ra,3fa4ac <printf>
-  49faac:	004ae537          	lui	a0,0x4ae
-  49fab0:	8bc50513          	addi	a0,a0,-1860 # 4ad8bc <smoke_level_strings+0x50>
-  49fab4:	9f95a0ef          	jal	ra,3fa4ac <printf>
-  49fab8:	4732                	lw	a4,12(sp)
-  49faba:	7c042783          	lw	a5,1984(s0)
-  49fabe:	00f70463          	beq	a4,a5,49fac6 <smoke_sensor_init+0x46>
-  49fac2:	ef6560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fac6:	0141                	addi	sp,sp,16
-  49fac8:	da15a06f          	j	3fa868 <__riscv_restore_0>
+0049fa8e <smoke_sensor_init>:
+  49fa8e:	db75a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fa92:	0011d437          	lui	s0,0x11d
+  49fa96:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49fa9a:	1141                	addi	sp,sp,-16
+  49fa9c:	4581                	li	a1,0
+  49fa9e:	452d                	li	a0,11
+  49faa0:	c63e                	sw	a5,12(sp)
+  49faa2:	fac520ef          	jal	ra,3f224e <hi_io_set_func>
+  49faa6:	4581                	li	a1,0
+  49faa8:	4501                	li	a0,0
+  49faaa:	9324d0ef          	jal	ra,3ecbdc <hi_adc_init>
+  49faae:	004ae537          	lui	a0,0x4ae
+  49fab2:	89050513          	addi	a0,a0,-1904 # 4ad890 <smoke_level_strings+0x24>
+  49fab6:	9f75a0ef          	jal	ra,3fa4ac <printf>
+  49faba:	004ae537          	lui	a0,0x4ae
+  49fabe:	8bc50513          	addi	a0,a0,-1860 # 4ad8bc <smoke_level_strings+0x50>
+  49fac2:	9eb5a0ef          	jal	ra,3fa4ac <printf>
+  49fac6:	4732                	lw	a4,12(sp)
+  49fac8:	7c042783          	lw	a5,1984(s0)
+  49facc:	00f70463          	beq	a4,a5,49fad4 <smoke_sensor_init+0x46>
+  49fad0:	ee8560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fad4:	0141                	addi	sp,sp,16
+  49fad6:	d935a06f          	j	3fa868 <__riscv_restore_0>
 
-0049facc <smoke_sensor_read_raw>:
-  49facc:	d795a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fad0:	0011d437          	lui	s0,0x11d
-  49fad4:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49fad8:	1141                	addi	sp,sp,-16
-  49fada:	4701                	li	a4,0
-  49fadc:	4681                	li	a3,0
-  49fade:	4609                	li	a2,2
-  49fae0:	00a10593          	addi	a1,sp,10
-  49fae4:	4515                	li	a0,5
-  49fae6:	c63e                	sw	a5,12(sp)
-  49fae8:	00011523          	sh	zero,10(sp)
-  49faec:	e22760ef          	jal	ra,41610e <hi_adc_read>
-  49faf0:	4732                	lw	a4,12(sp)
-  49faf2:	7c042783          	lw	a5,1984(s0)
-  49faf6:	00a15503          	lhu	a0,10(sp)
-  49fafa:	00f70463          	beq	a4,a5,49fb02 <smoke_sensor_read_raw+0x36>
-  49fafe:	eba560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fb02:	0141                	addi	sp,sp,16
-  49fb04:	d655a06f          	j	3fa868 <__riscv_restore_0>
+0049fada <smoke_sensor_read_raw>:
+  49fada:	d6b5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fade:	0011d437          	lui	s0,0x11d
+  49fae2:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49fae6:	1141                	addi	sp,sp,-16
+  49fae8:	4701                	li	a4,0
+  49faea:	4681                	li	a3,0
+  49faec:	4609                	li	a2,2
+  49faee:	00a10593          	addi	a1,sp,10
+  49faf2:	4515                	li	a0,5
+  49faf4:	c63e                	sw	a5,12(sp)
+  49faf6:	00011523          	sh	zero,10(sp)
+  49fafa:	e14760ef          	jal	ra,41610e <hi_adc_read>
+  49fafe:	4732                	lw	a4,12(sp)
+  49fb00:	7c042783          	lw	a5,1984(s0)
+  49fb04:	00a15503          	lhu	a0,10(sp)
+  49fb08:	00f70463          	beq	a4,a5,49fb10 <smoke_sensor_read_raw+0x36>
+  49fb0c:	eac560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fb10:	0141                	addi	sp,sp,16
+  49fb12:	d575a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fb08 <smoke_sensor_read_voltage>:
-  49fb08:	d3d5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fb0c:	0011d437          	lui	s0,0x11d
-  49fb10:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49fb14:	1141                	addi	sp,sp,-16
-  49fb16:	c63e                	sw	a5,12(sp)
-  49fb18:	fb5ff0ef          	jal	ra,49facc <smoke_sensor_read_raw>
-  49fb1c:	c45f10ef          	jal	ra,491760 <__floatsisf>
-  49fb20:	004ae7b7          	lui	a5,0x4ae
-  49fb24:	8e47a583          	lw	a1,-1820(a5) # 4ad8e4 <smoke_level_strings+0x78>
-  49fb28:	945f20ef          	jal	ra,49246c <__mulsf3>
-  49fb2c:	004ae7b7          	lui	a5,0x4ae
-  49fb30:	8e87a583          	lw	a1,-1816(a5) # 4ad8e8 <smoke_level_strings+0x7c>
-  49fb34:	82df00ef          	jal	ra,490360 <__divsf3>
-  49fb38:	4732                	lw	a4,12(sp)
-  49fb3a:	7c042783          	lw	a5,1984(s0)
-  49fb3e:	00f70463          	beq	a4,a5,49fb46 <smoke_sensor_read_voltage+0x3e>
-  49fb42:	e76560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fb46:	0141                	addi	sp,sp,16
-  49fb48:	d215a06f          	j	3fa868 <__riscv_restore_0>
+0049fb16 <smoke_sensor_read_voltage>:
+  49fb16:	d2f5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fb1a:	0011d437          	lui	s0,0x11d
+  49fb1e:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49fb22:	1141                	addi	sp,sp,-16
+  49fb24:	c63e                	sw	a5,12(sp)
+  49fb26:	fb5ff0ef          	jal	ra,49fada <smoke_sensor_read_raw>
+  49fb2a:	c37f10ef          	jal	ra,491760 <__floatsisf>
+  49fb2e:	004ae7b7          	lui	a5,0x4ae
+  49fb32:	8e47a583          	lw	a1,-1820(a5) # 4ad8e4 <smoke_level_strings+0x78>
+  49fb36:	937f20ef          	jal	ra,49246c <__mulsf3>
+  49fb3a:	004ae7b7          	lui	a5,0x4ae
+  49fb3e:	8e87a583          	lw	a1,-1816(a5) # 4ad8e8 <smoke_level_strings+0x7c>
+  49fb42:	81ff00ef          	jal	ra,490360 <__divsf3>
+  49fb46:	4732                	lw	a4,12(sp)
+  49fb48:	7c042783          	lw	a5,1984(s0)
+  49fb4c:	00f70463          	beq	a4,a5,49fb54 <smoke_sensor_read_voltage+0x3e>
+  49fb50:	e68560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fb54:	0141                	addi	sp,sp,16
+  49fb56:	d135a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fb4c <smoke_sensor_get_level>:
-  49fb4c:	cf95a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fb50:	0011d437          	lui	s0,0x11d
-  49fb54:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49fb58:	1141                	addi	sp,sp,-16
-  49fb5a:	c63e                	sw	a5,12(sp)
-  49fb5c:	f71ff0ef          	jal	ra,49facc <smoke_sensor_read_raw>
-  49fb60:	000dc7b7          	lui	a5,0xdc
-  49fb64:	26878793          	addi	a5,a5,616 # dc268 <smoke_thresholds>
-  49fb68:	0007d683          	lhu	a3,0(a5)
-  49fb6c:	4701                	li	a4,0
-  49fb6e:	02d56263          	bltu	a0,a3,49fb92 <smoke_sensor_get_level+0x46>
-  49fb72:	0027d683          	lhu	a3,2(a5)
-  49fb76:	4705                	li	a4,1
-  49fb78:	00d56d63          	bltu	a0,a3,49fb92 <smoke_sensor_get_level+0x46>
-  49fb7c:	0047d683          	lhu	a3,4(a5)
-  49fb80:	4709                	li	a4,2
-  49fb82:	00d56863          	bltu	a0,a3,49fb92 <smoke_sensor_get_level+0x46>
-  49fb86:	0067d783          	lhu	a5,6(a5)
-  49fb8a:	470d                	li	a4,3
-  49fb8c:	00f56363          	bltu	a0,a5,49fb92 <smoke_sensor_get_level+0x46>
-  49fb90:	4711                	li	a4,4
-  49fb92:	853a                	mv	a0,a4
-  49fb94:	4732                	lw	a4,12(sp)
-  49fb96:	7c042783          	lw	a5,1984(s0)
-  49fb9a:	00f70463          	beq	a4,a5,49fba2 <smoke_sensor_get_level+0x56>
-  49fb9e:	e1a560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fba2:	0141                	addi	sp,sp,16
-  49fba4:	cc55a06f          	j	3fa868 <__riscv_restore_0>
+0049fb5a <smoke_sensor_get_level>:
+  49fb5a:	ceb5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fb5e:	0011d437          	lui	s0,0x11d
+  49fb62:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49fb66:	1141                	addi	sp,sp,-16
+  49fb68:	c63e                	sw	a5,12(sp)
+  49fb6a:	f71ff0ef          	jal	ra,49fada <smoke_sensor_read_raw>
+  49fb6e:	000dc7b7          	lui	a5,0xdc
+  49fb72:	26878793          	addi	a5,a5,616 # dc268 <smoke_thresholds>
+  49fb76:	0007d683          	lhu	a3,0(a5)
+  49fb7a:	4701                	li	a4,0
+  49fb7c:	02d56263          	bltu	a0,a3,49fba0 <smoke_sensor_get_level+0x46>
+  49fb80:	0027d683          	lhu	a3,2(a5)
+  49fb84:	4705                	li	a4,1
+  49fb86:	00d56d63          	bltu	a0,a3,49fba0 <smoke_sensor_get_level+0x46>
+  49fb8a:	0047d683          	lhu	a3,4(a5)
+  49fb8e:	4709                	li	a4,2
+  49fb90:	00d56863          	bltu	a0,a3,49fba0 <smoke_sensor_get_level+0x46>
+  49fb94:	0067d783          	lhu	a5,6(a5)
+  49fb98:	470d                	li	a4,3
+  49fb9a:	00f56363          	bltu	a0,a5,49fba0 <smoke_sensor_get_level+0x46>
+  49fb9e:	4711                	li	a4,4
+  49fba0:	853a                	mv	a0,a4
+  49fba2:	4732                	lw	a4,12(sp)
+  49fba4:	7c042783          	lw	a5,1984(s0)
+  49fba8:	00f70463          	beq	a4,a5,49fbb0 <smoke_sensor_get_level+0x56>
+  49fbac:	e0c560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fbb0:	0141                	addi	sp,sp,16
+  49fbb2:	cb75a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fba8 <smoke_sensor_check_alarm>:
-  49fba8:	c9d5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fbac:	0011d4b7          	lui	s1,0x11d
-  49fbb0:	7c04a783          	lw	a5,1984(s1) # 11d7c0 <__rom_data0_begin__>
-  49fbb4:	1141                	addi	sp,sp,-16
-  49fbb6:	842a                	mv	s0,a0
-  49fbb8:	c63e                	sw	a5,12(sp)
-  49fbba:	f13ff0ef          	jal	ra,49facc <smoke_sensor_read_raw>
-  49fbbe:	4732                	lw	a4,12(sp)
-  49fbc0:	7c04a783          	lw	a5,1984(s1)
-  49fbc4:	00853533          	sltu	a0,a0,s0
-  49fbc8:	00f70463          	beq	a4,a5,49fbd0 <smoke_sensor_check_alarm+0x28>
-  49fbcc:	dec560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fbd0:	00154513          	xori	a0,a0,1
-  49fbd4:	0141                	addi	sp,sp,16
-  49fbd6:	c935a06f          	j	3fa868 <__riscv_restore_0>
+0049fbb6 <smoke_sensor_check_alarm>:
+  49fbb6:	c8f5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fbba:	0011d4b7          	lui	s1,0x11d
+  49fbbe:	7c04a783          	lw	a5,1984(s1) # 11d7c0 <__rom_data0_begin__>
+  49fbc2:	1141                	addi	sp,sp,-16
+  49fbc4:	842a                	mv	s0,a0
+  49fbc6:	c63e                	sw	a5,12(sp)
+  49fbc8:	f13ff0ef          	jal	ra,49fada <smoke_sensor_read_raw>
+  49fbcc:	4732                	lw	a4,12(sp)
+  49fbce:	7c04a783          	lw	a5,1984(s1)
+  49fbd2:	00853533          	sltu	a0,a0,s0
+  49fbd6:	00f70463          	beq	a4,a5,49fbde <smoke_sensor_check_alarm+0x28>
+  49fbda:	dde560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fbde:	00154513          	xori	a0,a0,1
+  49fbe2:	0141                	addi	sp,sp,16
+  49fbe4:	c855a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fbda <smoke_sensor_read_data>:
-  49fbda:	c6b5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fbde:	0011d7b7          	lui	a5,0x11d
-  49fbe2:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49fbe6:	1141                	addi	sp,sp,-16
-  49fbe8:	84be                	mv	s1,a5
-  49fbea:	c63a                	sw	a4,12(sp)
-  49fbec:	c505                	beqz	a0,49fc14 <smoke_sensor_read_data+0x3a>
-  49fbee:	842a                	mv	s0,a0
-  49fbf0:	eddff0ef          	jal	ra,49facc <smoke_sensor_read_raw>
-  49fbf4:	00a41023          	sh	a0,0(s0)
-  49fbf8:	f11ff0ef          	jal	ra,49fb08 <smoke_sensor_read_voltage>
-  49fbfc:	c048                	sw	a0,4(s0)
-  49fbfe:	f4fff0ef          	jal	ra,49fb4c <smoke_sensor_get_level>
-  49fc02:	c408                	sw	a0,8(s0)
-  49fc04:	22f9                	jal	49fdd2 <Time_GetCurrentMs>
-  49fc06:	c448                	sw	a0,12(s0)
-  49fc08:	5dc00513          	li	a0,1500
-  49fc0c:	f9dff0ef          	jal	ra,49fba8 <smoke_sensor_check_alarm>
-  49fc10:	00a40823          	sb	a0,16(s0)
-  49fc14:	4732                	lw	a4,12(sp)
-  49fc16:	7c04a783          	lw	a5,1984(s1)
-  49fc1a:	00f70463          	beq	a4,a5,49fc22 <smoke_sensor_read_data+0x48>
-  49fc1e:	d9a560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fc22:	0141                	addi	sp,sp,16
-  49fc24:	c455a06f          	j	3fa868 <__riscv_restore_0>
+0049fbe8 <smoke_sensor_read_data>:
+  49fbe8:	c5d5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fbec:	0011d7b7          	lui	a5,0x11d
+  49fbf0:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49fbf4:	1141                	addi	sp,sp,-16
+  49fbf6:	84be                	mv	s1,a5
+  49fbf8:	c63a                	sw	a4,12(sp)
+  49fbfa:	c505                	beqz	a0,49fc22 <smoke_sensor_read_data+0x3a>
+  49fbfc:	842a                	mv	s0,a0
+  49fbfe:	eddff0ef          	jal	ra,49fada <smoke_sensor_read_raw>
+  49fc02:	00a41023          	sh	a0,0(s0)
+  49fc06:	f11ff0ef          	jal	ra,49fb16 <smoke_sensor_read_voltage>
+  49fc0a:	c048                	sw	a0,4(s0)
+  49fc0c:	f4fff0ef          	jal	ra,49fb5a <smoke_sensor_get_level>
+  49fc10:	c408                	sw	a0,8(s0)
+  49fc12:	22f9                	jal	49fde0 <Time_GetCurrentMs>
+  49fc14:	c448                	sw	a0,12(s0)
+  49fc16:	5dc00513          	li	a0,1500
+  49fc1a:	f9dff0ef          	jal	ra,49fbb6 <smoke_sensor_check_alarm>
+  49fc1e:	00a40823          	sb	a0,16(s0)
+  49fc22:	4732                	lw	a4,12(sp)
+  49fc24:	7c04a783          	lw	a5,1984(s1)
+  49fc28:	00f70463          	beq	a4,a5,49fc30 <smoke_sensor_read_data+0x48>
+  49fc2c:	d8c560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fc30:	0141                	addi	sp,sp,16
+  49fc32:	c375a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fc28 <smoke_sensor_get_level_string>:
-  49fc28:	c1d5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fc2c:	0011d7b7          	lui	a5,0x11d
-  49fc30:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49fc34:	1141                	addi	sp,sp,-16
-  49fc36:	c63a                	sw	a4,12(sp)
-  49fc38:	4711                	li	a4,4
-  49fc3a:	02a76163          	bltu	a4,a0,49fc5c <smoke_sensor_get_level_string+0x34>
-  49fc3e:	00251713          	slli	a4,a0,0x2
-  49fc42:	004ae537          	lui	a0,0x4ae
-  49fc46:	86c50513          	addi	a0,a0,-1940 # 4ad86c <smoke_level_strings>
-  49fc4a:	953a                	add	a0,a0,a4
-  49fc4c:	4108                	lw	a0,0(a0)
-  49fc4e:	4732                	lw	a4,12(sp)
-  49fc50:	7c07a783          	lw	a5,1984(a5)
-  49fc54:	00f70963          	beq	a4,a5,49fc66 <smoke_sensor_get_level_string+0x3e>
-  49fc58:	d60560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fc5c:	004ae537          	lui	a0,0x4ae
-  49fc60:	88050513          	addi	a0,a0,-1920 # 4ad880 <smoke_level_strings+0x14>
-  49fc64:	b7ed                	j	49fc4e <smoke_sensor_get_level_string+0x26>
-  49fc66:	0141                	addi	sp,sp,16
-  49fc68:	c015a06f          	j	3fa868 <__riscv_restore_0>
+0049fc36 <smoke_sensor_get_level_string>:
+  49fc36:	c0f5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fc3a:	0011d7b7          	lui	a5,0x11d
+  49fc3e:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49fc42:	1141                	addi	sp,sp,-16
+  49fc44:	c63a                	sw	a4,12(sp)
+  49fc46:	4711                	li	a4,4
+  49fc48:	02a76163          	bltu	a4,a0,49fc6a <smoke_sensor_get_level_string+0x34>
+  49fc4c:	00251713          	slli	a4,a0,0x2
+  49fc50:	004ae537          	lui	a0,0x4ae
+  49fc54:	86c50513          	addi	a0,a0,-1940 # 4ad86c <smoke_level_strings>
+  49fc58:	953a                	add	a0,a0,a4
+  49fc5a:	4108                	lw	a0,0(a0)
+  49fc5c:	4732                	lw	a4,12(sp)
+  49fc5e:	7c07a783          	lw	a5,1984(a5)
+  49fc62:	00f70963          	beq	a4,a5,49fc74 <smoke_sensor_get_level_string+0x3e>
+  49fc66:	d52560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fc6a:	004ae537          	lui	a0,0x4ae
+  49fc6e:	88050513          	addi	a0,a0,-1920 # 4ad880 <smoke_level_strings+0x14>
+  49fc72:	b7ed                	j	49fc5c <smoke_sensor_get_level_string+0x26>
+  49fc74:	0141                	addi	sp,sp,16
+  49fc76:	bf35a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fc6c <songti_font_get_char_width>:
-  49fc6c:	bd95a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fc70:	0011d7b7          	lui	a5,0x11d
-  49fc74:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49fc78:	1141                	addi	sp,sp,-16
-  49fc7a:	c63a                	sw	a4,12(sp)
-  49fc7c:	4732                	lw	a4,12(sp)
-  49fc7e:	7c07a783          	lw	a5,1984(a5)
-  49fc82:	00f70463          	beq	a4,a5,49fc8a <songti_font_get_char_width+0x1e>
-  49fc86:	d32560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fc8a:	4521                	li	a0,8
-  49fc8c:	0141                	addi	sp,sp,16
-  49fc8e:	bdb5a06f          	j	3fa868 <__riscv_restore_0>
+0049fc7a <songti_font_get_char_width>:
+  49fc7a:	bcb5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fc7e:	0011d7b7          	lui	a5,0x11d
+  49fc82:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49fc86:	1141                	addi	sp,sp,-16
+  49fc88:	c63a                	sw	a4,12(sp)
+  49fc8a:	4732                	lw	a4,12(sp)
+  49fc8c:	7c07a783          	lw	a5,1984(a5)
+  49fc90:	00f70463          	beq	a4,a5,49fc98 <songti_font_get_char_width+0x1e>
+  49fc94:	d24560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fc98:	4521                	li	a0,8
+  49fc9a:	0141                	addi	sp,sp,16
+  49fc9c:	bcd5a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fc92 <songti_font_get_char_height>:
-  49fc92:	bb35a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fc96:	0011d7b7          	lui	a5,0x11d
-  49fc9a:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49fc9e:	1141                	addi	sp,sp,-16
-  49fca0:	c63a                	sw	a4,12(sp)
-  49fca2:	4732                	lw	a4,12(sp)
-  49fca4:	7c07a783          	lw	a5,1984(a5)
-  49fca8:	00f70463          	beq	a4,a5,49fcb0 <songti_font_get_char_height+0x1e>
-  49fcac:	d0c560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fcb0:	4535                	li	a0,13
-  49fcb2:	0141                	addi	sp,sp,16
-  49fcb4:	bb55a06f          	j	3fa868 <__riscv_restore_0>
+0049fca0 <songti_font_get_char_height>:
+  49fca0:	ba55a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fca4:	0011d7b7          	lui	a5,0x11d
+  49fca8:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49fcac:	1141                	addi	sp,sp,-16
+  49fcae:	c63a                	sw	a4,12(sp)
+  49fcb0:	4732                	lw	a4,12(sp)
+  49fcb2:	7c07a783          	lw	a5,1984(a5)
+  49fcb6:	00f70463          	beq	a4,a5,49fcbe <songti_font_get_char_height+0x1e>
+  49fcba:	cfe560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fcbe:	4535                	li	a0,13
+  49fcc0:	0141                	addi	sp,sp,16
+  49fcc2:	ba75a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fcb8 <songti_font_get_char_data>:
-  49fcb8:	b8d5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fcbc:	0011d7b7          	lui	a5,0x11d
-  49fcc0:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49fcc4:	1141                	addi	sp,sp,-16
-  49fcc6:	05e00693          	li	a3,94
-  49fcca:	c63a                	sw	a4,12(sp)
-  49fccc:	fe050713          	addi	a4,a0,-32
-  49fcd0:	0ff77613          	andi	a2,a4,255
-  49fcd4:	004ae537          	lui	a0,0x4ae
-  49fcd8:	92c50513          	addi	a0,a0,-1748 # 4ad92c <songti_font_10x13>
-  49fcdc:	00c6e663          	bltu	a3,a2,49fce8 <songti_font_get_char_data+0x30>
-  49fce0:	46b5                	li	a3,13
-  49fce2:	02d70733          	mul	a4,a4,a3
-  49fce6:	953a                	add	a0,a0,a4
-  49fce8:	4732                	lw	a4,12(sp)
-  49fcea:	7c07a783          	lw	a5,1984(a5)
-  49fcee:	00f70463          	beq	a4,a5,49fcf6 <songti_font_get_char_data+0x3e>
-  49fcf2:	cc6560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fcf6:	0141                	addi	sp,sp,16
-  49fcf8:	b715a06f          	j	3fa868 <__riscv_restore_0>
+0049fcc6 <songti_font_get_char_data>:
+  49fcc6:	b7f5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fcca:	0011d7b7          	lui	a5,0x11d
+  49fcce:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49fcd2:	1141                	addi	sp,sp,-16
+  49fcd4:	05e00693          	li	a3,94
+  49fcd8:	c63a                	sw	a4,12(sp)
+  49fcda:	fe050713          	addi	a4,a0,-32
+  49fcde:	0ff77613          	andi	a2,a4,255
+  49fce2:	004ae537          	lui	a0,0x4ae
+  49fce6:	92c50513          	addi	a0,a0,-1748 # 4ad92c <songti_font_10x13>
+  49fcea:	00c6e663          	bltu	a3,a2,49fcf6 <songti_font_get_char_data+0x30>
+  49fcee:	46b5                	li	a3,13
+  49fcf0:	02d70733          	mul	a4,a4,a3
+  49fcf4:	953a                	add	a0,a0,a4
+  49fcf6:	4732                	lw	a4,12(sp)
+  49fcf8:	7c07a783          	lw	a5,1984(a5)
+  49fcfc:	00f70463          	beq	a4,a5,49fd04 <songti_font_get_char_data+0x3e>
+  49fd00:	cb8560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fd04:	0141                	addi	sp,sp,16
+  49fd06:	b635a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fcfc <debug_print.constprop.0>:
-  49fcfc:	7139                	addi	sp,sp,-64
-  49fcfe:	cc22                	sw	s0,24(sp)
-  49fd00:	0011d437          	lui	s0,0x11d
-  49fd04:	da3e                	sw	a5,52(sp)
-  49fd06:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49fd0a:	004ab5b7          	lui	a1,0x4ab
-  49fd0e:	004ad537          	lui	a0,0x4ad
-  49fd12:	ea458593          	addi	a1,a1,-348 # 4aaea4 <alarm_type_strings+0x10f0>
-  49fd16:	6c450513          	addi	a0,a0,1732 # 4ad6c4 <alarm_type_strings+0x3910>
-  49fd1a:	ca26                	sw	s1,20(sp)
-  49fd1c:	ce06                	sw	ra,28(sp)
-  49fd1e:	d636                	sw	a3,44(sp)
-  49fd20:	d83a                	sw	a4,48(sp)
-  49fd22:	dc42                	sw	a6,56(sp)
-  49fd24:	de46                	sw	a7,60(sp)
-  49fd26:	c63e                	sw	a5,12(sp)
-  49fd28:	004ae4b7          	lui	s1,0x4ae
-  49fd2c:	f805a0ef          	jal	ra,3fa4ac <printf>
-  49fd30:	e0048513          	addi	a0,s1,-512 # 4ade00 <songti_font_10x13+0x4d4>
-  49fd34:	9fb5b0ef          	jal	ra,3fb72e <strlen>
-  49fd38:	c909                	beqz	a0,49fd4a <debug_print.constprop.0+0x4e>
-  49fd3a:	004ab537          	lui	a0,0x4ab
-  49fd3e:	e0048593          	addi	a1,s1,-512
-  49fd42:	eb050513          	addi	a0,a0,-336 # 4aaeb0 <alarm_type_strings+0x10fc>
-  49fd46:	f665a0ef          	jal	ra,3fa4ac <printf>
-  49fd4a:	004ae537          	lui	a0,0x4ae
-  49fd4e:	106c                	addi	a1,sp,44
-  49fd50:	e0850513          	addi	a0,a0,-504 # 4ade08 <songti_font_10x13+0x4dc>
-  49fd54:	c42e                	sw	a1,8(sp)
-  49fd56:	c677e0ef          	jal	ra,41e9bc <vprintf>
-  49fd5a:	84aa                	mv	s1,a0
-  49fd5c:	004ab5b7          	lui	a1,0x4ab
-  49fd60:	004aa537          	lui	a0,0x4aa
-  49fd64:	eb858593          	addi	a1,a1,-328 # 4aaeb8 <alarm_type_strings+0x1104>
-  49fd68:	a5450513          	addi	a0,a0,-1452 # 4a9a54 <CSWTCH.8+0x16c>
-  49fd6c:	f405a0ef          	jal	ra,3fa4ac <printf>
-  49fd70:	4732                	lw	a4,12(sp)
-  49fd72:	7c042783          	lw	a5,1984(s0)
-  49fd76:	8526                	mv	a0,s1
-  49fd78:	00f70463          	beq	a4,a5,49fd80 <debug_print.constprop.0+0x84>
-  49fd7c:	c3c560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fd80:	40f2                	lw	ra,28(sp)
-  49fd82:	4462                	lw	s0,24(sp)
-  49fd84:	44d2                	lw	s1,20(sp)
-  49fd86:	6121                	addi	sp,sp,64
-  49fd88:	8082                	ret
+0049fd0a <debug_print.constprop.0>:
+  49fd0a:	7139                	addi	sp,sp,-64
+  49fd0c:	cc22                	sw	s0,24(sp)
+  49fd0e:	0011d437          	lui	s0,0x11d
+  49fd12:	da3e                	sw	a5,52(sp)
+  49fd14:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49fd18:	004ab5b7          	lui	a1,0x4ab
+  49fd1c:	004ad537          	lui	a0,0x4ad
+  49fd20:	ea458593          	addi	a1,a1,-348 # 4aaea4 <alarm_type_strings+0x10f0>
+  49fd24:	6c450513          	addi	a0,a0,1732 # 4ad6c4 <alarm_type_strings+0x3910>
+  49fd28:	ca26                	sw	s1,20(sp)
+  49fd2a:	ce06                	sw	ra,28(sp)
+  49fd2c:	d636                	sw	a3,44(sp)
+  49fd2e:	d83a                	sw	a4,48(sp)
+  49fd30:	dc42                	sw	a6,56(sp)
+  49fd32:	de46                	sw	a7,60(sp)
+  49fd34:	c63e                	sw	a5,12(sp)
+  49fd36:	004ae4b7          	lui	s1,0x4ae
+  49fd3a:	f725a0ef          	jal	ra,3fa4ac <printf>
+  49fd3e:	e0048513          	addi	a0,s1,-512 # 4ade00 <songti_font_10x13+0x4d4>
+  49fd42:	9ed5b0ef          	jal	ra,3fb72e <strlen>
+  49fd46:	c909                	beqz	a0,49fd58 <debug_print.constprop.0+0x4e>
+  49fd48:	004ab537          	lui	a0,0x4ab
+  49fd4c:	e0048593          	addi	a1,s1,-512
+  49fd50:	eb050513          	addi	a0,a0,-336 # 4aaeb0 <alarm_type_strings+0x10fc>
+  49fd54:	f585a0ef          	jal	ra,3fa4ac <printf>
+  49fd58:	004ae537          	lui	a0,0x4ae
+  49fd5c:	106c                	addi	a1,sp,44
+  49fd5e:	e0850513          	addi	a0,a0,-504 # 4ade08 <songti_font_10x13+0x4dc>
+  49fd62:	c42e                	sw	a1,8(sp)
+  49fd64:	c597e0ef          	jal	ra,41e9bc <vprintf>
+  49fd68:	84aa                	mv	s1,a0
+  49fd6a:	004ab5b7          	lui	a1,0x4ab
+  49fd6e:	004aa537          	lui	a0,0x4aa
+  49fd72:	eb858593          	addi	a1,a1,-328 # 4aaeb8 <alarm_type_strings+0x1104>
+  49fd76:	a5450513          	addi	a0,a0,-1452 # 4a9a54 <CSWTCH.8+0x16c>
+  49fd7a:	f325a0ef          	jal	ra,3fa4ac <printf>
+  49fd7e:	4732                	lw	a4,12(sp)
+  49fd80:	7c042783          	lw	a5,1984(s0)
+  49fd84:	8526                	mv	a0,s1
+  49fd86:	00f70463          	beq	a4,a5,49fd8e <debug_print.constprop.0+0x84>
+  49fd8a:	c2e560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fd8e:	40f2                	lw	ra,28(sp)
+  49fd90:	4462                	lw	s0,24(sp)
+  49fd92:	44d2                	lw	s1,20(sp)
+  49fd94:	6121                	addi	sp,sp,64
+  49fd96:	8082                	ret
 
-0049fd8a <Time_Init>:
-  49fd8a:	abb5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fd8e:	0011d437          	lui	s0,0x11d
-  49fd92:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  49fd96:	1141                	addi	sp,sp,-16
-  49fd98:	c63e                	sw	a5,12(sp)
-  49fd9a:	c21f50ef          	jal	ra,4959ba <osKernelGetTickFreq>
-  49fd9e:	000e67b7          	lui	a5,0xe6
-  49fda2:	004ae637          	lui	a2,0x4ae
-  49fda6:	004ae5b7          	lui	a1,0x4ae
-  49fdaa:	9ea7aa23          	sw	a0,-1548(a5) # e59f4 <g_tick_freq>
-  49fdae:	86aa                	mv	a3,a0
-  49fdb0:	e0860613          	addi	a2,a2,-504 # 4ade08 <songti_font_10x13+0x4dc>
-  49fdb4:	e0058593          	addi	a1,a1,-512 # 4ade00 <songti_font_10x13+0x4d4>
-  49fdb8:	450d                	li	a0,3
-  49fdba:	f43ff0ef          	jal	ra,49fcfc <debug_print.constprop.0>
-  49fdbe:	4732                	lw	a4,12(sp)
-  49fdc0:	7c042783          	lw	a5,1984(s0)
-  49fdc4:	00f70463          	beq	a4,a5,49fdcc <Time_Init+0x42>
-  49fdc8:	bf0560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fdcc:	0141                	addi	sp,sp,16
-  49fdce:	a9b5a06f          	j	3fa868 <__riscv_restore_0>
+0049fd98 <Time_Init>:
+  49fd98:	aad5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fd9c:	0011d437          	lui	s0,0x11d
+  49fda0:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  49fda4:	1141                	addi	sp,sp,-16
+  49fda6:	c63e                	sw	a5,12(sp)
+  49fda8:	c13f50ef          	jal	ra,4959ba <osKernelGetTickFreq>
+  49fdac:	000e67b7          	lui	a5,0xe6
+  49fdb0:	004ae637          	lui	a2,0x4ae
+  49fdb4:	004ae5b7          	lui	a1,0x4ae
+  49fdb8:	9ea7aa23          	sw	a0,-1548(a5) # e59f4 <g_tick_freq>
+  49fdbc:	86aa                	mv	a3,a0
+  49fdbe:	e0860613          	addi	a2,a2,-504 # 4ade08 <songti_font_10x13+0x4dc>
+  49fdc2:	e0058593          	addi	a1,a1,-512 # 4ade00 <songti_font_10x13+0x4d4>
+  49fdc6:	450d                	li	a0,3
+  49fdc8:	f43ff0ef          	jal	ra,49fd0a <debug_print.constprop.0>
+  49fdcc:	4732                	lw	a4,12(sp)
+  49fdce:	7c042783          	lw	a5,1984(s0)
+  49fdd2:	00f70463          	beq	a4,a5,49fdda <Time_Init+0x42>
+  49fdd6:	be2560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fdda:	0141                	addi	sp,sp,16
+  49fddc:	a8d5a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fdd2 <Time_GetCurrentMs>:
-  49fdd2:	a735a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fdd6:	0011d7b7          	lui	a5,0x11d
-  49fdda:	000e64b7          	lui	s1,0xe6
-  49fdde:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49fde2:	9f448493          	addi	s1,s1,-1548 # e59f4 <g_tick_freq>
-  49fde6:	4088                	lw	a0,0(s1)
-  49fde8:	1141                	addi	sp,sp,-16
-  49fdea:	c63a                	sw	a4,12(sp)
-  49fdec:	843e                	mv	s0,a5
-  49fdee:	c911                	beqz	a0,49fe02 <Time_GetCurrentMs+0x30>
-  49fdf0:	b8bf50ef          	jal	ra,49597a <osKernelGetTickCount>
-  49fdf4:	3e800793          	li	a5,1000
-  49fdf8:	02f50533          	mul	a0,a0,a5
-  49fdfc:	409c                	lw	a5,0(s1)
-  49fdfe:	02f55533          	divu	a0,a0,a5
-  49fe02:	4732                	lw	a4,12(sp)
-  49fe04:	7c042783          	lw	a5,1984(s0)
-  49fe08:	00f70463          	beq	a4,a5,49fe10 <Time_GetCurrentMs+0x3e>
-  49fe0c:	bac560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fe10:	0141                	addi	sp,sp,16
-  49fe12:	a575a06f          	j	3fa868 <__riscv_restore_0>
+0049fde0 <Time_GetCurrentMs>:
+  49fde0:	a655a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fde4:	0011d7b7          	lui	a5,0x11d
+  49fde8:	000e64b7          	lui	s1,0xe6
+  49fdec:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49fdf0:	9f448493          	addi	s1,s1,-1548 # e59f4 <g_tick_freq>
+  49fdf4:	4088                	lw	a0,0(s1)
+  49fdf6:	1141                	addi	sp,sp,-16
+  49fdf8:	c63a                	sw	a4,12(sp)
+  49fdfa:	843e                	mv	s0,a5
+  49fdfc:	c911                	beqz	a0,49fe10 <Time_GetCurrentMs+0x30>
+  49fdfe:	b7df50ef          	jal	ra,49597a <osKernelGetTickCount>
+  49fe02:	3e800793          	li	a5,1000
+  49fe06:	02f50533          	mul	a0,a0,a5
+  49fe0a:	409c                	lw	a5,0(s1)
+  49fe0c:	02f55533          	divu	a0,a0,a5
+  49fe10:	4732                	lw	a4,12(sp)
+  49fe12:	7c042783          	lw	a5,1984(s0)
+  49fe16:	00f70463          	beq	a4,a5,49fe1e <Time_GetCurrentMs+0x3e>
+  49fe1a:	b9e560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fe1e:	0141                	addi	sp,sp,16
+  49fe20:	a495a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fe16 <Time_DelayMs>:
-  49fe16:	a2f5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fe1a:	0011d737          	lui	a4,0x11d
-  49fe1e:	7c072783          	lw	a5,1984(a4) # 11d7c0 <__rom_data0_begin__>
-  49fe22:	1141                	addi	sp,sp,-16
-  49fe24:	843a                	mv	s0,a4
-  49fe26:	c63e                	sw	a5,12(sp)
-  49fe28:	000e67b7          	lui	a5,0xe6
-  49fe2c:	9f47a783          	lw	a5,-1548(a5) # e59f4 <g_tick_freq>
-  49fe30:	cb99                	beqz	a5,49fe46 <Time_DelayMs+0x30>
-  49fe32:	02a78533          	mul	a0,a5,a0
-  49fe36:	3e800793          	li	a5,1000
-  49fe3a:	02f55533          	divu	a0,a0,a5
-  49fe3e:	e111                	bnez	a0,49fe42 <Time_DelayMs+0x2c>
-  49fe40:	4505                	li	a0,1
-  49fe42:	d13f50ef          	jal	ra,495b54 <osDelay>
-  49fe46:	4732                	lw	a4,12(sp)
-  49fe48:	7c042783          	lw	a5,1984(s0)
-  49fe4c:	00f70463          	beq	a4,a5,49fe54 <Time_DelayMs+0x3e>
-  49fe50:	b68560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fe54:	0141                	addi	sp,sp,16
-  49fe56:	a135a06f          	j	3fa868 <__riscv_restore_0>
+0049fe24 <Time_DelayMs>:
+  49fe24:	a215a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fe28:	0011d737          	lui	a4,0x11d
+  49fe2c:	7c072783          	lw	a5,1984(a4) # 11d7c0 <__rom_data0_begin__>
+  49fe30:	1141                	addi	sp,sp,-16
+  49fe32:	843a                	mv	s0,a4
+  49fe34:	c63e                	sw	a5,12(sp)
+  49fe36:	000e67b7          	lui	a5,0xe6
+  49fe3a:	9f47a783          	lw	a5,-1548(a5) # e59f4 <g_tick_freq>
+  49fe3e:	cb99                	beqz	a5,49fe54 <Time_DelayMs+0x30>
+  49fe40:	02a78533          	mul	a0,a5,a0
+  49fe44:	3e800793          	li	a5,1000
+  49fe48:	02f55533          	divu	a0,a0,a5
+  49fe4c:	e111                	bnez	a0,49fe50 <Time_DelayMs+0x2c>
+  49fe4e:	4505                	li	a0,1
+  49fe50:	d05f50ef          	jal	ra,495b54 <osDelay>
+  49fe54:	4732                	lw	a4,12(sp)
+  49fe56:	7c042783          	lw	a5,1984(s0)
+  49fe5a:	00f70463          	beq	a4,a5,49fe62 <Time_DelayMs+0x3e>
+  49fe5e:	b5a560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fe62:	0141                	addi	sp,sp,16
+  49fe64:	a055a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fe5a <Time_DelayMsPrecise>:
-  49fe5a:	9eb5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fe5e:	0011d7b7          	lui	a5,0x11d
-  49fe62:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49fe66:	1141                	addi	sp,sp,-16
-  49fe68:	843e                	mv	s0,a5
-  49fe6a:	c63a                	sw	a4,12(sp)
-  49fe6c:	c519                	beqz	a0,49fe7a <Time_DelayMsPrecise+0x20>
-  49fe6e:	3e800793          	li	a5,1000
-  49fe72:	02f50533          	mul	a0,a0,a5
-  49fe76:	96e7b0ef          	jal	ra,41afe4 <usleep>
-  49fe7a:	4732                	lw	a4,12(sp)
-  49fe7c:	7c042783          	lw	a5,1984(s0)
-  49fe80:	00f70463          	beq	a4,a5,49fe88 <Time_DelayMsPrecise+0x2e>
-  49fe84:	b34560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fe88:	0141                	addi	sp,sp,16
-  49fe8a:	9df5a06f          	j	3fa868 <__riscv_restore_0>
+0049fe68 <Time_DelayMsPrecise>:
+  49fe68:	9dd5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fe6c:	0011d7b7          	lui	a5,0x11d
+  49fe70:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49fe74:	1141                	addi	sp,sp,-16
+  49fe76:	843e                	mv	s0,a5
+  49fe78:	c63a                	sw	a4,12(sp)
+  49fe7a:	c519                	beqz	a0,49fe88 <Time_DelayMsPrecise+0x20>
+  49fe7c:	3e800793          	li	a5,1000
+  49fe80:	02f50533          	mul	a0,a0,a5
+  49fe84:	9607b0ef          	jal	ra,41afe4 <usleep>
+  49fe88:	4732                	lw	a4,12(sp)
+  49fe8a:	7c042783          	lw	a5,1984(s0)
+  49fe8e:	00f70463          	beq	a4,a5,49fe96 <Time_DelayMsPrecise+0x2e>
+  49fe92:	b26560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fe96:	0141                	addi	sp,sp,16
+  49fe98:	9d15a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fe8e <Sta_GetWiFiIP.constprop.0>:
-  49fe8e:	9b75a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  49fe92:	0011d7b7          	lui	a5,0x11d
-  49fe96:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49fe9a:	1141                	addi	sp,sp,-16
-  49fe9c:	843e                	mv	s0,a5
-  49fe9e:	c63a                	sw	a4,12(sp)
-  49fea0:	c105                	beqz	a0,49fec0 <Sta_GetWiFiIP.constprop.0+0x32>
-  49fea2:	0034                	addi	a3,sp,8
-  49fea4:	0050                	addi	a2,sp,4
-  49fea6:	858a                	mv	a1,sp
-  49fea8:	973be0ef          	jal	ra,45e81a <netifapi_netif_get_addr>
-  49feac:	e911                	bnez	a0,49fec0 <Sta_GetWiFiIP.constprop.0+0x32>
-  49feae:	000dc637          	lui	a2,0xdc
-  49feb2:	46c1                	li	a3,16
-  49feb4:	27060613          	addi	a2,a2,624 # dc270 <g_IP_Addr>
-  49feb8:	858a                	mv	a1,sp
-  49feba:	4509                	li	a0,2
-  49febc:	ea9ba0ef          	jal	ra,45ad64 <inet_ntop>
-  49fec0:	4732                	lw	a4,12(sp)
-  49fec2:	7c042783          	lw	a5,1984(s0)
-  49fec6:	00f70463          	beq	a4,a5,49fece <Sta_GetWiFiIP.constprop.0+0x40>
-  49feca:	aee560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49fece:	0141                	addi	sp,sp,16
-  49fed0:	9995a06f          	j	3fa868 <__riscv_restore_0>
+0049fe9c <Sta_GetWiFiIP.constprop.0>:
+  49fe9c:	9a95a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  49fea0:	0011d7b7          	lui	a5,0x11d
+  49fea4:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49fea8:	1141                	addi	sp,sp,-16
+  49feaa:	843e                	mv	s0,a5
+  49feac:	c63a                	sw	a4,12(sp)
+  49feae:	c105                	beqz	a0,49fece <Sta_GetWiFiIP.constprop.0+0x32>
+  49feb0:	0034                	addi	a3,sp,8
+  49feb2:	0050                	addi	a2,sp,4
+  49feb4:	858a                	mv	a1,sp
+  49feb6:	965be0ef          	jal	ra,45e81a <netifapi_netif_get_addr>
+  49feba:	e911                	bnez	a0,49fece <Sta_GetWiFiIP.constprop.0+0x32>
+  49febc:	000dc637          	lui	a2,0xdc
+  49fec0:	46c1                	li	a3,16
+  49fec2:	27060613          	addi	a2,a2,624 # dc270 <g_IP_Addr>
+  49fec6:	858a                	mv	a1,sp
+  49fec8:	4509                	li	a0,2
+  49feca:	e9bba0ef          	jal	ra,45ad64 <inet_ntop>
+  49fece:	4732                	lw	a4,12(sp)
+  49fed0:	7c042783          	lw	a5,1984(s0)
+  49fed4:	00f70463          	beq	a4,a5,49fedc <Sta_GetWiFiIP.constprop.0+0x40>
+  49fed8:	ae0560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49fedc:	0141                	addi	sp,sp,16
+  49fede:	98b5a06f          	j	3fa868 <__riscv_restore_0>
 
-0049fed4 <debug_print.constprop.1>:
-  49fed4:	7139                	addi	sp,sp,-64
-  49fed6:	da3e                	sw	a5,52(sp)
-  49fed8:	0011d7b7          	lui	a5,0x11d
-  49fedc:	d83a                	sw	a4,48(sp)
-  49fede:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49fee2:	cc22                	sw	s0,24(sp)
-  49fee4:	ca26                	sw	s1,20(sp)
-  49fee6:	c63a                	sw	a4,12(sp)
-  49fee8:	ce06                	sw	ra,28(sp)
-  49feea:	c84a                	sw	s2,16(sp)
-  49feec:	d636                	sw	a3,44(sp)
-  49feee:	dc42                	sw	a6,56(sp)
-  49fef0:	de46                	sw	a7,60(sp)
-  49fef2:	4711                	li	a4,4
-  49fef4:	84be                	mv	s1,a5
-  49fef6:	4401                	li	s0,0
-  49fef8:	06e50763          	beq	a0,a4,49ff66 <debug_print.constprop.1+0x92>
-  49fefc:	4789                	li	a5,2
-  49fefe:	8932                	mv	s2,a2
-  49ff00:	00f50a63          	beq	a0,a5,49ff14 <debug_print.constprop.1+0x40>
-  49ff04:	478d                	li	a5,3
-  49ff06:	06f50863          	beq	a0,a5,49ff76 <debug_print.constprop.1+0xa2>
-  49ff0a:	004ab5b7          	lui	a1,0x4ab
-  49ff0e:	e8c58593          	addi	a1,a1,-372 # 4aae8c <alarm_type_strings+0x10d8>
-  49ff12:	a029                	j	49ff1c <debug_print.constprop.1+0x48>
-  49ff14:	004ab5b7          	lui	a1,0x4ab
-  49ff18:	e9858593          	addi	a1,a1,-360 # 4aae98 <alarm_type_strings+0x10e4>
-  49ff1c:	004ad537          	lui	a0,0x4ad
-  49ff20:	6c450513          	addi	a0,a0,1732 # 4ad6c4 <alarm_type_strings+0x3910>
-  49ff24:	d885a0ef          	jal	ra,3fa4ac <printf>
-  49ff28:	004ae437          	lui	s0,0x4ae
-  49ff2c:	0c040513          	addi	a0,s0,192 # 4ae0c0 <songti_font_10x13+0x794>
-  49ff30:	ffe5b0ef          	jal	ra,3fb72e <strlen>
-  49ff34:	c909                	beqz	a0,49ff46 <debug_print.constprop.1+0x72>
-  49ff36:	004ab537          	lui	a0,0x4ab
-  49ff3a:	0c040593          	addi	a1,s0,192
-  49ff3e:	eb050513          	addi	a0,a0,-336 # 4aaeb0 <alarm_type_strings+0x10fc>
-  49ff42:	d6a5a0ef          	jal	ra,3fa4ac <printf>
-  49ff46:	106c                	addi	a1,sp,44
-  49ff48:	854a                	mv	a0,s2
-  49ff4a:	c42e                	sw	a1,8(sp)
-  49ff4c:	a717e0ef          	jal	ra,41e9bc <vprintf>
-  49ff50:	842a                	mv	s0,a0
-  49ff52:	004ab5b7          	lui	a1,0x4ab
-  49ff56:	004aa537          	lui	a0,0x4aa
-  49ff5a:	eb858593          	addi	a1,a1,-328 # 4aaeb8 <alarm_type_strings+0x1104>
-  49ff5e:	a5450513          	addi	a0,a0,-1452 # 4a9a54 <CSWTCH.8+0x16c>
-  49ff62:	d4a5a0ef          	jal	ra,3fa4ac <printf>
-  49ff66:	4732                	lw	a4,12(sp)
-  49ff68:	7c04a783          	lw	a5,1984(s1)
-  49ff6c:	8522                	mv	a0,s0
-  49ff6e:	00f70963          	beq	a4,a5,49ff80 <debug_print.constprop.1+0xac>
-  49ff72:	a46560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  49ff76:	004ab5b7          	lui	a1,0x4ab
-  49ff7a:	ea458593          	addi	a1,a1,-348 # 4aaea4 <alarm_type_strings+0x10f0>
-  49ff7e:	bf79                	j	49ff1c <debug_print.constprop.1+0x48>
-  49ff80:	40f2                	lw	ra,28(sp)
-  49ff82:	4462                	lw	s0,24(sp)
-  49ff84:	44d2                	lw	s1,20(sp)
-  49ff86:	4942                	lw	s2,16(sp)
-  49ff88:	6121                	addi	sp,sp,64
-  49ff8a:	8082                	ret
+0049fee2 <debug_print.constprop.1>:
+  49fee2:	7139                	addi	sp,sp,-64
+  49fee4:	da3e                	sw	a5,52(sp)
+  49fee6:	0011d7b7          	lui	a5,0x11d
+  49feea:	d83a                	sw	a4,48(sp)
+  49feec:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49fef0:	cc22                	sw	s0,24(sp)
+  49fef2:	ca26                	sw	s1,20(sp)
+  49fef4:	c63a                	sw	a4,12(sp)
+  49fef6:	ce06                	sw	ra,28(sp)
+  49fef8:	c84a                	sw	s2,16(sp)
+  49fefa:	d636                	sw	a3,44(sp)
+  49fefc:	dc42                	sw	a6,56(sp)
+  49fefe:	de46                	sw	a7,60(sp)
+  49ff00:	4711                	li	a4,4
+  49ff02:	84be                	mv	s1,a5
+  49ff04:	4401                	li	s0,0
+  49ff06:	06e50763          	beq	a0,a4,49ff74 <debug_print.constprop.1+0x92>
+  49ff0a:	4789                	li	a5,2
+  49ff0c:	8932                	mv	s2,a2
+  49ff0e:	00f50a63          	beq	a0,a5,49ff22 <debug_print.constprop.1+0x40>
+  49ff12:	478d                	li	a5,3
+  49ff14:	06f50863          	beq	a0,a5,49ff84 <debug_print.constprop.1+0xa2>
+  49ff18:	004ab5b7          	lui	a1,0x4ab
+  49ff1c:	e8c58593          	addi	a1,a1,-372 # 4aae8c <alarm_type_strings+0x10d8>
+  49ff20:	a029                	j	49ff2a <debug_print.constprop.1+0x48>
+  49ff22:	004ab5b7          	lui	a1,0x4ab
+  49ff26:	e9858593          	addi	a1,a1,-360 # 4aae98 <alarm_type_strings+0x10e4>
+  49ff2a:	004ad537          	lui	a0,0x4ad
+  49ff2e:	6c450513          	addi	a0,a0,1732 # 4ad6c4 <alarm_type_strings+0x3910>
+  49ff32:	d7a5a0ef          	jal	ra,3fa4ac <printf>
+  49ff36:	004ae437          	lui	s0,0x4ae
+  49ff3a:	0c040513          	addi	a0,s0,192 # 4ae0c0 <songti_font_10x13+0x794>
+  49ff3e:	ff05b0ef          	jal	ra,3fb72e <strlen>
+  49ff42:	c909                	beqz	a0,49ff54 <debug_print.constprop.1+0x72>
+  49ff44:	004ab537          	lui	a0,0x4ab
+  49ff48:	0c040593          	addi	a1,s0,192
+  49ff4c:	eb050513          	addi	a0,a0,-336 # 4aaeb0 <alarm_type_strings+0x10fc>
+  49ff50:	d5c5a0ef          	jal	ra,3fa4ac <printf>
+  49ff54:	106c                	addi	a1,sp,44
+  49ff56:	854a                	mv	a0,s2
+  49ff58:	c42e                	sw	a1,8(sp)
+  49ff5a:	a637e0ef          	jal	ra,41e9bc <vprintf>
+  49ff5e:	842a                	mv	s0,a0
+  49ff60:	004ab5b7          	lui	a1,0x4ab
+  49ff64:	004aa537          	lui	a0,0x4aa
+  49ff68:	eb858593          	addi	a1,a1,-328 # 4aaeb8 <alarm_type_strings+0x1104>
+  49ff6c:	a5450513          	addi	a0,a0,-1452 # 4a9a54 <CSWTCH.8+0x16c>
+  49ff70:	d3c5a0ef          	jal	ra,3fa4ac <printf>
+  49ff74:	4732                	lw	a4,12(sp)
+  49ff76:	7c04a783          	lw	a5,1984(s1)
+  49ff7a:	8522                	mv	a0,s0
+  49ff7c:	00f70963          	beq	a4,a5,49ff8e <debug_print.constprop.1+0xac>
+  49ff80:	a38560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  49ff84:	004ab5b7          	lui	a1,0x4ab
+  49ff88:	ea458593          	addi	a1,a1,-348 # 4aaea4 <alarm_type_strings+0x10f0>
+  49ff8c:	bf79                	j	49ff2a <debug_print.constprop.1+0x48>
+  49ff8e:	40f2                	lw	ra,28(sp)
+  49ff90:	4462                	lw	s0,24(sp)
+  49ff92:	44d2                	lw	s1,20(sp)
+  49ff94:	4942                	lw	s2,16(sp)
+  49ff96:	6121                	addi	sp,sp,64
+  49ff98:	8082                	ret
 
-0049ff8c <WaitConnectResult>:
-  49ff8c:	89f5a2ef          	jal	t0,3fa82a <__riscv_save_4>
-  49ff90:	0011d7b7          	lui	a5,0x11d
-  49ff94:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  49ff98:	1141                	addi	sp,sp,-16
-  49ff9a:	004ae9b7          	lui	s3,0x4ae
-  49ff9e:	c63a                	sw	a4,12(sp)
-  49ffa0:	443d                	li	s0,15
-  49ffa2:	84be                	mv	s1,a5
-  49ffa4:	004aeab7          	lui	s5,0x4ae
-  49ffa8:	000e6b37          	lui	s6,0xe6
-  49ffac:	8a4e                	mv	s4,s3
-  49ffae:	4505                	li	a0,1
-  49ffb0:	8607b0ef          	jal	ra,41b010 <sleep>
-  49ffb4:	e80a8613          	addi	a2,s5,-384 # 4ade80 <songti_font_10x13+0x554>
-  49ffb8:	0c098593          	addi	a1,s3,192 # 4ae0c0 <songti_font_10x13+0x794>
-  49ffbc:	4511                	li	a0,4
-  49ffbe:	f17ff0ef          	jal	ra,49fed4 <debug_print.constprop.1>
-  49ffc2:	9f8b2903          	lw	s2,-1544(s6) # e59f8 <g_ConnectSuccess>
-  49ffc6:	4785                	li	a5,1
-  49ffc8:	147d                	addi	s0,s0,-1
-  49ffca:	04f91063          	bne	s2,a5,4a000a <WaitConnectResult+0x7e>
-  49ffce:	46bd                	li	a3,15
-  49ffd0:	004ae637          	lui	a2,0x4ae
-  49ffd4:	8e81                	sub	a3,a3,s0
-  49ffd6:	e9460613          	addi	a2,a2,-364 # 4ade94 <songti_font_10x13+0x568>
-  49ffda:	0c098593          	addi	a1,s3,192
-  49ffde:	450d                	li	a0,3
-  49ffe0:	ef5ff0ef          	jal	ra,49fed4 <debug_print.constprop.1>
-  49ffe4:	e819                	bnez	s0,49fffa <WaitConnectResult+0x6e>
-  49ffe6:	004ae637          	lui	a2,0x4ae
-  49ffea:	eb060613          	addi	a2,a2,-336 # 4adeb0 <songti_font_10x13+0x584>
-  49ffee:	0c0a0593          	addi	a1,s4,192
-  49fff2:	4505                	li	a0,1
-  49fff4:	ee1ff0ef          	jal	ra,49fed4 <debug_print.constprop.1>
-  49fff8:	4901                	li	s2,0
-  49fffa:	4732                	lw	a4,12(sp)
-  49fffc:	7c04a783          	lw	a5,1984(s1)
-  4a0000:	854a                	mv	a0,s2
-  4a0002:	00f70663          	beq	a4,a5,4a000e <WaitConnectResult+0x82>
-  4a0006:	9b2560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a000a:	f055                	bnez	s0,49ffae <WaitConnectResult+0x22>
-  4a000c:	bfe9                	j	49ffe6 <WaitConnectResult+0x5a>
-  4a000e:	0141                	addi	sp,sp,16
-  4a0010:	84f5a06f          	j	3fa85e <__riscv_restore_4>
+0049ff9a <WaitConnectResult>:
+  49ff9a:	8915a2ef          	jal	t0,3fa82a <__riscv_save_4>
+  49ff9e:	0011d7b7          	lui	a5,0x11d
+  49ffa2:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  49ffa6:	1141                	addi	sp,sp,-16
+  49ffa8:	004ae9b7          	lui	s3,0x4ae
+  49ffac:	c63a                	sw	a4,12(sp)
+  49ffae:	443d                	li	s0,15
+  49ffb0:	84be                	mv	s1,a5
+  49ffb2:	004aeab7          	lui	s5,0x4ae
+  49ffb6:	000e6b37          	lui	s6,0xe6
+  49ffba:	8a4e                	mv	s4,s3
+  49ffbc:	4505                	li	a0,1
+  49ffbe:	8527b0ef          	jal	ra,41b010 <sleep>
+  49ffc2:	e80a8613          	addi	a2,s5,-384 # 4ade80 <songti_font_10x13+0x554>
+  49ffc6:	0c098593          	addi	a1,s3,192 # 4ae0c0 <songti_font_10x13+0x794>
+  49ffca:	4511                	li	a0,4
+  49ffcc:	f17ff0ef          	jal	ra,49fee2 <debug_print.constprop.1>
+  49ffd0:	9f8b2903          	lw	s2,-1544(s6) # e59f8 <g_ConnectSuccess>
+  49ffd4:	4785                	li	a5,1
+  49ffd6:	147d                	addi	s0,s0,-1
+  49ffd8:	04f91063          	bne	s2,a5,4a0018 <WaitConnectResult+0x7e>
+  49ffdc:	46bd                	li	a3,15
+  49ffde:	004ae637          	lui	a2,0x4ae
+  49ffe2:	8e81                	sub	a3,a3,s0
+  49ffe4:	e9460613          	addi	a2,a2,-364 # 4ade94 <songti_font_10x13+0x568>
+  49ffe8:	0c098593          	addi	a1,s3,192
+  49ffec:	450d                	li	a0,3
+  49ffee:	ef5ff0ef          	jal	ra,49fee2 <debug_print.constprop.1>
+  49fff2:	e819                	bnez	s0,4a0008 <WaitConnectResult+0x6e>
+  49fff4:	004ae637          	lui	a2,0x4ae
+  49fff8:	eb060613          	addi	a2,a2,-336 # 4adeb0 <songti_font_10x13+0x584>
+  49fffc:	0c0a0593          	addi	a1,s4,192
+  4a0000:	4505                	li	a0,1
+  4a0002:	ee1ff0ef          	jal	ra,49fee2 <debug_print.constprop.1>
+  4a0006:	4901                	li	s2,0
+  4a0008:	4732                	lw	a4,12(sp)
+  4a000a:	7c04a783          	lw	a5,1984(s1)
+  4a000e:	854a                	mv	a0,s2
+  4a0010:	00f70663          	beq	a4,a5,4a001c <WaitConnectResult+0x82>
+  4a0014:	9a4560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0018:	f055                	bnez	s0,49ffbc <WaitConnectResult+0x22>
+  4a001a:	bfe9                	j	49fff4 <WaitConnectResult+0x5a>
+  4a001c:	0141                	addi	sp,sp,16
+  4a001e:	8415a06f          	j	3fa85e <__riscv_restore_4>
 
-004a0014 <ConnectionWifiChangedHandler>:
-  4a0014:	8315a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0018:	0011d7b7          	lui	a5,0x11d
-  4a001c:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a0020:	1141                	addi	sp,sp,-16
-  4a0022:	843e                	mv	s0,a5
-  4a0024:	c63a                	sw	a4,12(sp)
-  4a0026:	004ae737          	lui	a4,0x4ae
-  4a002a:	e989                	bnez	a1,4a003c <ConnectionWifiChangedHandler+0x28>
-  4a002c:	004ae637          	lui	a2,0x4ae
-  4a0030:	e3460613          	addi	a2,a2,-460 # 4ade34 <songti_font_10x13+0x508>
-  4a0034:	0c070593          	addi	a1,a4,192 # 4ae0c0 <songti_font_10x13+0x794>
-  4a0038:	4509                	li	a0,2
-  4a003a:	a005                	j	4a005a <ConnectionWifiChangedHandler+0x46>
-  4a003c:	000e67b7          	lui	a5,0xe6
-  4a0040:	4685                	li	a3,1
-  4a0042:	9f878793          	addi	a5,a5,-1544 # e59f8 <g_ConnectSuccess>
-  4a0046:	02d51363          	bne	a0,a3,4a006c <ConnectionWifiChangedHandler+0x58>
-  4a004a:	004ae637          	lui	a2,0x4ae
-  4a004e:	c388                	sw	a0,0(a5)
-  4a0050:	e5860613          	addi	a2,a2,-424 # 4ade58 <songti_font_10x13+0x52c>
-  4a0054:	0c070593          	addi	a1,a4,192
-  4a0058:	450d                	li	a0,3
-  4a005a:	e7bff0ef          	jal	ra,49fed4 <debug_print.constprop.1>
-  4a005e:	4732                	lw	a4,12(sp)
-  4a0060:	7c042783          	lw	a5,1984(s0)
-  4a0064:	00f70b63          	beq	a4,a5,4a007a <ConnectionWifiChangedHandler+0x66>
-  4a0068:	950560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a006c:	004ae637          	lui	a2,0x4ae
-  4a0070:	0007a023          	sw	zero,0(a5)
-  4a0074:	e6c60613          	addi	a2,a2,-404 # 4ade6c <songti_font_10x13+0x540>
-  4a0078:	bf75                	j	4a0034 <ConnectionWifiChangedHandler+0x20>
-  4a007a:	0141                	addi	sp,sp,16
-  4a007c:	fec5a06f          	j	3fa868 <__riscv_restore_0>
+004a0022 <ConnectionWifiChangedHandler>:
+  4a0022:	8235a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a0026:	0011d7b7          	lui	a5,0x11d
+  4a002a:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a002e:	1141                	addi	sp,sp,-16
+  4a0030:	843e                	mv	s0,a5
+  4a0032:	c63a                	sw	a4,12(sp)
+  4a0034:	004ae737          	lui	a4,0x4ae
+  4a0038:	e989                	bnez	a1,4a004a <ConnectionWifiChangedHandler+0x28>
+  4a003a:	004ae637          	lui	a2,0x4ae
+  4a003e:	e3460613          	addi	a2,a2,-460 # 4ade34 <songti_font_10x13+0x508>
+  4a0042:	0c070593          	addi	a1,a4,192 # 4ae0c0 <songti_font_10x13+0x794>
+  4a0046:	4509                	li	a0,2
+  4a0048:	a005                	j	4a0068 <ConnectionWifiChangedHandler+0x46>
+  4a004a:	000e67b7          	lui	a5,0xe6
+  4a004e:	4685                	li	a3,1
+  4a0050:	9f878793          	addi	a5,a5,-1544 # e59f8 <g_ConnectSuccess>
+  4a0054:	02d51363          	bne	a0,a3,4a007a <ConnectionWifiChangedHandler+0x58>
+  4a0058:	004ae637          	lui	a2,0x4ae
+  4a005c:	c388                	sw	a0,0(a5)
+  4a005e:	e5860613          	addi	a2,a2,-424 # 4ade58 <songti_font_10x13+0x52c>
+  4a0062:	0c070593          	addi	a1,a4,192
+  4a0066:	450d                	li	a0,3
+  4a0068:	e7bff0ef          	jal	ra,49fee2 <debug_print.constprop.1>
+  4a006c:	4732                	lw	a4,12(sp)
+  4a006e:	7c042783          	lw	a5,1984(s0)
+  4a0072:	00f70b63          	beq	a4,a5,4a0088 <ConnectionWifiChangedHandler+0x66>
+  4a0076:	942560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a007a:	004ae637          	lui	a2,0x4ae
+  4a007e:	0007a023          	sw	zero,0(a5)
+  4a0082:	e6c60613          	addi	a2,a2,-404 # 4ade6c <songti_font_10x13+0x540>
+  4a0086:	bf75                	j	4a0042 <ConnectionWifiChangedHandler+0x20>
+  4a0088:	0141                	addi	sp,sp,16
+  4a008a:	fde5a06f          	j	3fa868 <__riscv_restore_0>
 
-004a0080 <WiFi_GetLocalIP>:
-  4a0080:	fc45a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0084:	0011d7b7          	lui	a5,0x11d
-  4a0088:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a008c:	1141                	addi	sp,sp,-16
-  4a008e:	c63a                	sw	a4,12(sp)
-  4a0090:	4732                	lw	a4,12(sp)
-  4a0092:	7c07a783          	lw	a5,1984(a5)
-  4a0096:	00f70463          	beq	a4,a5,4a009e <WiFi_GetLocalIP+0x1e>
-  4a009a:	91e560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a009e:	000dc537          	lui	a0,0xdc
-  4a00a2:	27050513          	addi	a0,a0,624 # dc270 <g_IP_Addr>
-  4a00a6:	0141                	addi	sp,sp,16
-  4a00a8:	fc05a06f          	j	3fa868 <__riscv_restore_0>
+004a008e <WiFi_GetLocalIP>:
+  4a008e:	fb65a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a0092:	0011d7b7          	lui	a5,0x11d
+  4a0096:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a009a:	1141                	addi	sp,sp,-16
+  4a009c:	c63a                	sw	a4,12(sp)
+  4a009e:	4732                	lw	a4,12(sp)
+  4a00a0:	7c07a783          	lw	a5,1984(a5)
+  4a00a4:	00f70463          	beq	a4,a5,4a00ac <WiFi_GetLocalIP+0x1e>
+  4a00a8:	910560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a00ac:	000dc537          	lui	a0,0xdc
+  4a00b0:	27050513          	addi	a0,a0,624 # dc270 <g_IP_Addr>
+  4a00b4:	0141                	addi	sp,sp,16
+  4a00b6:	fb25a06f          	j	3fa868 <__riscv_restore_0>
 
-004a00ac <WiFi_createHotspots>:
-  4a00ac:	f7e5a2ef          	jal	t0,3fa82a <__riscv_save_4>
-  4a00b0:	0011d937          	lui	s2,0x11d
-  4a00b4:	7c092783          	lw	a5,1984(s2) # 11d7c0 <__rom_data0_begin__>
-  4a00b8:	004ae637          	lui	a2,0x4ae
-  4a00bc:	004ae4b7          	lui	s1,0x4ae
-  4a00c0:	7175                	addi	sp,sp,-144
-  4a00c2:	8aaa                	mv	s5,a0
-  4a00c4:	89ae                	mv	s3,a1
-  4a00c6:	f8c60613          	addi	a2,a2,-116 # 4adf8c <songti_font_10x13+0x660>
-  4a00ca:	0c048593          	addi	a1,s1,192 # 4ae0c0 <songti_font_10x13+0x794>
-  4a00ce:	450d                	li	a0,3
-  4a00d0:	c73e                	sw	a5,140(sp)
-  4a00d2:	e03ff0ef          	jal	ra,49fed4 <debug_print.constprop.1>
-  4a00d6:	3e8010ef          	jal	ra,4a14be <EnableWifi>
-  4a00da:	c505                	beqz	a0,4a0102 <WiFi_createHotspots+0x56>
-  4a00dc:	004ae637          	lui	a2,0x4ae
-  4a00e0:	842a                	mv	s0,a0
-  4a00e2:	86aa                	mv	a3,a0
-  4a00e4:	fa860613          	addi	a2,a2,-88 # 4adfa8 <songti_font_10x13+0x67c>
-  4a00e8:	0c048593          	addi	a1,s1,192
-  4a00ec:	4505                	li	a0,1
-  4a00ee:	de7ff0ef          	jal	ra,49fed4 <debug_print.constprop.1>
-  4a00f2:	473a                	lw	a4,140(sp)
-  4a00f4:	7c092783          	lw	a5,1984(s2)
-  4a00f8:	8522                	mv	a0,s0
-  4a00fa:	12f70f63          	beq	a4,a5,4a0238 <WiFi_createHotspots+0x18c>
-  4a00fe:	8ba560ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0102:	45c010ef          	jal	ra,4a155e <IsWifiActive>
-  4a0106:	4b05                	li	s6,1
-  4a0108:	842a                	mv	s0,a0
-  4a010a:	01650863          	beq	a0,s6,4a011a <WiFi_createHotspots+0x6e>
-  4a010e:	004ae637          	lui	a2,0x4ae
-  4a0112:	86aa                	mv	a3,a0
-  4a0114:	fc860613          	addi	a2,a2,-56 # 4adfc8 <songti_font_10x13+0x69c>
-  4a0118:	bfc1                	j	4a00e8 <WiFi_createHotspots+0x3c>
-  4a011a:	07400613          	li	a2,116
-  4a011e:	4581                	li	a1,0
-  4a0120:	0828                	addi	a0,sp,24
-  4a0122:	9d85b0ef          	jal	ra,3fb2fa <memset>
-  4a0126:	8556                	mv	a0,s5
-  4a0128:	e065b0ef          	jal	ra,3fb72e <strlen>
-  4a012c:	00150593          	addi	a1,a0,1
-  4a0130:	8656                	mv	a2,s5
-  4a0132:	0828                	addi	a0,sp,24
-  4a0134:	9095b0ef          	jal	ra,3fba3c <strcpy_s>
-  4a0138:	854e                	mv	a0,s3
-  4a013a:	df45b0ef          	jal	ra,3fb72e <strlen>
-  4a013e:	00150593          	addi	a1,a0,1
-  4a0142:	864e                	mv	a2,s3
-  4a0144:	00a8                	addi	a0,sp,72
-  4a0146:	8f75b0ef          	jal	ra,3fba3c <strcpy_s>
-  4a014a:	4789                	li	a5,2
-  4a014c:	de3e                	sw	a5,60(sp)
-  4a014e:	0828                	addi	a0,sp,24
-  4a0150:	4795                	li	a5,5
-  4a0152:	c0a2                	sw	s0,64(sp)
-  4a0154:	c2be                	sw	a5,68(sp)
-  4a0156:	231010ef          	jal	ra,4a1b86 <SetHotspotConfig>
-  4a015a:	842a                	mv	s0,a0
-  4a015c:	c519                	beqz	a0,4a016a <WiFi_createHotspots+0xbe>
-  4a015e:	004ae637          	lui	a2,0x4ae
-  4a0162:	86aa                	mv	a3,a0
-  4a0164:	fe860613          	addi	a2,a2,-24 # 4adfe8 <songti_font_10x13+0x6bc>
-  4a0168:	b741                	j	4a00e8 <WiFi_createHotspots+0x3c>
-  4a016a:	101010ef          	jal	ra,4a1a6a <EnableHotspot>
-  4a016e:	842a                	mv	s0,a0
-  4a0170:	c519                	beqz	a0,4a017e <WiFi_createHotspots+0xd2>
-  4a0172:	004ae637          	lui	a2,0x4ae
-  4a0176:	86aa                	mv	a3,a0
-  4a0178:	01460613          	addi	a2,a2,20 # 4ae014 <songti_font_10x13+0x6e8>
-  4a017c:	b7b5                	j	4a00e8 <WiFi_createHotspots+0x3c>
-  4a017e:	271010ef          	jal	ra,4a1bee <IsHotspotActive>
-  4a0182:	89aa                	mv	s3,a0
-  4a0184:	01650e63          	beq	a0,s6,4a01a0 <WiFi_createHotspots+0xf4>
-  4a0188:	004ae637          	lui	a2,0x4ae
-  4a018c:	86aa                	mv	a3,a0
-  4a018e:	04060613          	addi	a2,a2,64 # 4ae040 <songti_font_10x13+0x714>
-  4a0192:	0c048593          	addi	a1,s1,192
-  4a0196:	4505                	li	a0,1
-  4a0198:	d3dff0ef          	jal	ra,49fed4 <debug_print.constprop.1>
-  4a019c:	844e                	mv	s0,s3
-  4a019e:	bf91                	j	4a00f2 <WiFi_createHotspots+0x46>
-  4a01a0:	004a5537          	lui	a0,0x4a5
-  4a01a4:	f6c50513          	addi	a0,a0,-148 # 4a4f6c <g_ast_freq_map_2g+0x38>
-  4a01a8:	000e69b7          	lui	s3,0xe6
-  4a01ac:	fc4be0ef          	jal	ra,45e970 <netifapi_netif_find>
-  4a01b0:	9fc98993          	addi	s3,s3,-1540 # e59fc <g_lwip_netif>
-  4a01b4:	00a9a023          	sw	a0,0(s3)
-  4a01b8:	8a26                	mv	s4,s1
-  4a01ba:	000dc4b7          	lui	s1,0xdc
-  4a01be:	c539                	beqz	a0,4a020c <WiFi_createHotspots+0x160>
-  4a01c0:	0070                	addi	a2,sp,12
-  4a01c2:	28448593          	addi	a1,s1,644 # dc284 <g_ap_config>
-  4a01c6:	4509                	li	a0,2
-  4a01c8:	befba0ef          	jal	ra,45adb6 <inet_pton>
-  4a01cc:	28448b13          	addi	s6,s1,644
-  4a01d0:	0810                	addi	a2,sp,16
-  4a01d2:	014b0593          	addi	a1,s6,20
-  4a01d6:	4509                	li	a0,2
-  4a01d8:	bdfba0ef          	jal	ra,45adb6 <inet_pton>
-  4a01dc:	0850                	addi	a2,sp,20
-  4a01de:	028b0593          	addi	a1,s6,40
-  4a01e2:	4509                	li	a0,2
-  4a01e4:	bd3ba0ef          	jal	ra,45adb6 <inet_pton>
-  4a01e8:	0009a503          	lw	a0,0(s3)
-  4a01ec:	0854                	addi	a3,sp,20
-  4a01ee:	0810                	addi	a2,sp,16
-  4a01f0:	006c                	addi	a1,sp,12
-  4a01f2:	dcebe0ef          	jal	ra,45e7c0 <netifapi_netif_set_addr>
-  4a01f6:	004ae637          	lui	a2,0x4ae
-  4a01fa:	28448693          	addi	a3,s1,644
-  4a01fe:	06860613          	addi	a2,a2,104 # 4ae068 <songti_font_10x13+0x73c>
-  4a0202:	0c0a0593          	addi	a1,s4,192
-  4a0206:	450d                	li	a0,3
-  4a0208:	ccdff0ef          	jal	ra,49fed4 <debug_print.constprop.1>
-  4a020c:	004ae637          	lui	a2,0x4ae
+004a00ba <WiFi_createHotspots>:
+  4a00ba:	f705a2ef          	jal	t0,3fa82a <__riscv_save_4>
+  4a00be:	0011d937          	lui	s2,0x11d
+  4a00c2:	7c092783          	lw	a5,1984(s2) # 11d7c0 <__rom_data0_begin__>
+  4a00c6:	004ae637          	lui	a2,0x4ae
+  4a00ca:	004ae4b7          	lui	s1,0x4ae
+  4a00ce:	7175                	addi	sp,sp,-144
+  4a00d0:	8aaa                	mv	s5,a0
+  4a00d2:	89ae                	mv	s3,a1
+  4a00d4:	f8c60613          	addi	a2,a2,-116 # 4adf8c <songti_font_10x13+0x660>
+  4a00d8:	0c048593          	addi	a1,s1,192 # 4ae0c0 <songti_font_10x13+0x794>
+  4a00dc:	450d                	li	a0,3
+  4a00de:	c73e                	sw	a5,140(sp)
+  4a00e0:	e03ff0ef          	jal	ra,49fee2 <debug_print.constprop.1>
+  4a00e4:	3e8010ef          	jal	ra,4a14cc <EnableWifi>
+  4a00e8:	c505                	beqz	a0,4a0110 <WiFi_createHotspots+0x56>
+  4a00ea:	004ae637          	lui	a2,0x4ae
+  4a00ee:	842a                	mv	s0,a0
+  4a00f0:	86aa                	mv	a3,a0
+  4a00f2:	fa860613          	addi	a2,a2,-88 # 4adfa8 <songti_font_10x13+0x67c>
+  4a00f6:	0c048593          	addi	a1,s1,192
+  4a00fa:	4505                	li	a0,1
+  4a00fc:	de7ff0ef          	jal	ra,49fee2 <debug_print.constprop.1>
+  4a0100:	473a                	lw	a4,140(sp)
+  4a0102:	7c092783          	lw	a5,1984(s2)
+  4a0106:	8522                	mv	a0,s0
+  4a0108:	12f70f63          	beq	a4,a5,4a0246 <WiFi_createHotspots+0x18c>
+  4a010c:	8ac560ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0110:	45c010ef          	jal	ra,4a156c <IsWifiActive>
+  4a0114:	4b05                	li	s6,1
+  4a0116:	842a                	mv	s0,a0
+  4a0118:	01650863          	beq	a0,s6,4a0128 <WiFi_createHotspots+0x6e>
+  4a011c:	004ae637          	lui	a2,0x4ae
+  4a0120:	86aa                	mv	a3,a0
+  4a0122:	fc860613          	addi	a2,a2,-56 # 4adfc8 <songti_font_10x13+0x69c>
+  4a0126:	bfc1                	j	4a00f6 <WiFi_createHotspots+0x3c>
+  4a0128:	07400613          	li	a2,116
+  4a012c:	4581                	li	a1,0
+  4a012e:	0828                	addi	a0,sp,24
+  4a0130:	9ca5b0ef          	jal	ra,3fb2fa <memset>
+  4a0134:	8556                	mv	a0,s5
+  4a0136:	df85b0ef          	jal	ra,3fb72e <strlen>
+  4a013a:	00150593          	addi	a1,a0,1
+  4a013e:	8656                	mv	a2,s5
+  4a0140:	0828                	addi	a0,sp,24
+  4a0142:	8fb5b0ef          	jal	ra,3fba3c <strcpy_s>
+  4a0146:	854e                	mv	a0,s3
+  4a0148:	de65b0ef          	jal	ra,3fb72e <strlen>
+  4a014c:	00150593          	addi	a1,a0,1
+  4a0150:	864e                	mv	a2,s3
+  4a0152:	00a8                	addi	a0,sp,72
+  4a0154:	8e95b0ef          	jal	ra,3fba3c <strcpy_s>
+  4a0158:	4789                	li	a5,2
+  4a015a:	de3e                	sw	a5,60(sp)
+  4a015c:	0828                	addi	a0,sp,24
+  4a015e:	4795                	li	a5,5
+  4a0160:	c0a2                	sw	s0,64(sp)
+  4a0162:	c2be                	sw	a5,68(sp)
+  4a0164:	231010ef          	jal	ra,4a1b94 <SetHotspotConfig>
+  4a0168:	842a                	mv	s0,a0
+  4a016a:	c519                	beqz	a0,4a0178 <WiFi_createHotspots+0xbe>
+  4a016c:	004ae637          	lui	a2,0x4ae
+  4a0170:	86aa                	mv	a3,a0
+  4a0172:	fe860613          	addi	a2,a2,-24 # 4adfe8 <songti_font_10x13+0x6bc>
+  4a0176:	b741                	j	4a00f6 <WiFi_createHotspots+0x3c>
+  4a0178:	101010ef          	jal	ra,4a1a78 <EnableHotspot>
+  4a017c:	842a                	mv	s0,a0
+  4a017e:	c519                	beqz	a0,4a018c <WiFi_createHotspots+0xd2>
+  4a0180:	004ae637          	lui	a2,0x4ae
+  4a0184:	86aa                	mv	a3,a0
+  4a0186:	01460613          	addi	a2,a2,20 # 4ae014 <songti_font_10x13+0x6e8>
+  4a018a:	b7b5                	j	4a00f6 <WiFi_createHotspots+0x3c>
+  4a018c:	271010ef          	jal	ra,4a1bfc <IsHotspotActive>
+  4a0190:	89aa                	mv	s3,a0
+  4a0192:	01650e63          	beq	a0,s6,4a01ae <WiFi_createHotspots+0xf4>
+  4a0196:	004ae637          	lui	a2,0x4ae
+  4a019a:	86aa                	mv	a3,a0
+  4a019c:	04060613          	addi	a2,a2,64 # 4ae040 <songti_font_10x13+0x714>
+  4a01a0:	0c048593          	addi	a1,s1,192
+  4a01a4:	4505                	li	a0,1
+  4a01a6:	d3dff0ef          	jal	ra,49fee2 <debug_print.constprop.1>
+  4a01aa:	844e                	mv	s0,s3
+  4a01ac:	bf91                	j	4a0100 <WiFi_createHotspots+0x46>
+  4a01ae:	004a5537          	lui	a0,0x4a5
+  4a01b2:	f6c50513          	addi	a0,a0,-148 # 4a4f6c <g_ast_freq_map_2g+0x38>
+  4a01b6:	000e69b7          	lui	s3,0xe6
+  4a01ba:	fb6be0ef          	jal	ra,45e970 <netifapi_netif_find>
+  4a01be:	9fc98993          	addi	s3,s3,-1540 # e59fc <g_lwip_netif>
+  4a01c2:	00a9a023          	sw	a0,0(s3)
+  4a01c6:	8a26                	mv	s4,s1
+  4a01c8:	000dc4b7          	lui	s1,0xdc
+  4a01cc:	c539                	beqz	a0,4a021a <WiFi_createHotspots+0x160>
+  4a01ce:	0070                	addi	a2,sp,12
+  4a01d0:	28448593          	addi	a1,s1,644 # dc284 <g_ap_config>
+  4a01d4:	4509                	li	a0,2
+  4a01d6:	be1ba0ef          	jal	ra,45adb6 <inet_pton>
+  4a01da:	28448b13          	addi	s6,s1,644
+  4a01de:	0810                	addi	a2,sp,16
+  4a01e0:	014b0593          	addi	a1,s6,20
+  4a01e4:	4509                	li	a0,2
+  4a01e6:	bd1ba0ef          	jal	ra,45adb6 <inet_pton>
+  4a01ea:	0850                	addi	a2,sp,20
+  4a01ec:	028b0593          	addi	a1,s6,40
+  4a01f0:	4509                	li	a0,2
+  4a01f2:	bc5ba0ef          	jal	ra,45adb6 <inet_pton>
+  4a01f6:	0009a503          	lw	a0,0(s3)
+  4a01fa:	0854                	addi	a3,sp,20
+  4a01fc:	0810                	addi	a2,sp,16
+  4a01fe:	006c                	addi	a1,sp,12
+  4a0200:	dc0be0ef          	jal	ra,45e7c0 <netifapi_netif_set_addr>
+  4a0204:	004ae637          	lui	a2,0x4ae
+  4a0208:	28448693          	addi	a3,s1,644
+  4a020c:	06860613          	addi	a2,a2,104 # 4ae068 <songti_font_10x13+0x73c>
   4a0210:	0c0a0593          	addi	a1,s4,192
-  4a0214:	08460613          	addi	a2,a2,132 # 4ae084 <songti_font_10x13+0x758>
-  4a0218:	450d                	li	a0,3
-  4a021a:	cbbff0ef          	jal	ra,49fed4 <debug_print.constprop.1>
-  4a021e:	004ae637          	lui	a2,0x4ae
-  4a0222:	28448713          	addi	a4,s1,644
-  4a0226:	86d6                	mv	a3,s5
-  4a0228:	0a060613          	addi	a2,a2,160 # 4ae0a0 <songti_font_10x13+0x774>
-  4a022c:	0c0a0593          	addi	a1,s4,192
-  4a0230:	450d                	li	a0,3
-  4a0232:	ca3ff0ef          	jal	ra,49fed4 <debug_print.constprop.1>
-  4a0236:	bd75                	j	4a00f2 <WiFi_createHotspots+0x46>
-  4a0238:	6149                	addi	sp,sp,144
-  4a023a:	e245a06f          	j	3fa85e <__riscv_restore_4>
+  4a0214:	450d                	li	a0,3
+  4a0216:	ccdff0ef          	jal	ra,49fee2 <debug_print.constprop.1>
+  4a021a:	004ae637          	lui	a2,0x4ae
+  4a021e:	0c0a0593          	addi	a1,s4,192
+  4a0222:	08460613          	addi	a2,a2,132 # 4ae084 <songti_font_10x13+0x758>
+  4a0226:	450d                	li	a0,3
+  4a0228:	cbbff0ef          	jal	ra,49fee2 <debug_print.constprop.1>
+  4a022c:	004ae637          	lui	a2,0x4ae
+  4a0230:	28448713          	addi	a4,s1,644
+  4a0234:	86d6                	mv	a3,s5
+  4a0236:	0a060613          	addi	a2,a2,160 # 4ae0a0 <songti_font_10x13+0x774>
+  4a023a:	0c0a0593          	addi	a1,s4,192
+  4a023e:	450d                	li	a0,3
+  4a0240:	ca3ff0ef          	jal	ra,49fee2 <debug_print.constprop.1>
+  4a0244:	bd75                	j	4a0100 <WiFi_createHotspots+0x46>
+  4a0246:	6149                	addi	sp,sp,144
+  4a0248:	e165a06f          	j	3fa85e <__riscv_restore_4>
 
-004a023e <WiFi_connectHotspots>:
-  4a023e:	dec5a2ef          	jal	t0,3fa82a <__riscv_save_4>
-  4a0242:	0011d9b7          	lui	s3,0x11d
-  4a0246:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
-  4a024a:	004ae637          	lui	a2,0x4ae
-  4a024e:	004ae937          	lui	s2,0x4ae
-  4a0252:	7171                	addi	sp,sp,-176
-  4a0254:	8b2a                	mv	s6,a0
-  4a0256:	8aae                	mv	s5,a1
-  4a0258:	ec460613          	addi	a2,a2,-316 # 4adec4 <songti_font_10x13+0x598>
-  4a025c:	0c090593          	addi	a1,s2,192 # 4ae0c0 <songti_font_10x13+0x794>
-  4a0260:	450d                	li	a0,3
-  4a0262:	d73e                	sw	a5,172(sp)
-  4a0264:	c71ff0ef          	jal	ra,49fed4 <debug_print.constprop.1>
-  4a0268:	256010ef          	jal	ra,4a14be <EnableWifi>
-  4a026c:	c11d                	beqz	a0,4a0292 <WiFi_connectHotspots+0x54>
-  4a026e:	004ae637          	lui	a2,0x4ae
-  4a0272:	842a                	mv	s0,a0
-  4a0274:	edc60613          	addi	a2,a2,-292 # 4adedc <songti_font_10x13+0x5b0>
-  4a0278:	0c090593          	addi	a1,s2,192
-  4a027c:	4505                	li	a0,1
-  4a027e:	c57ff0ef          	jal	ra,49fed4 <debug_print.constprop.1>
-  4a0282:	573a                	lw	a4,172(sp)
-  4a0284:	7c09a783          	lw	a5,1984(s3)
-  4a0288:	8522                	mv	a0,s0
-  4a028a:	12f70d63          	beq	a4,a5,4a03c4 <WiFi_connectHotspots+0x186>
-  4a028e:	f2b550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0292:	2cc010ef          	jal	ra,4a155e <IsWifiActive>
-  4a0296:	4a05                	li	s4,1
-  4a0298:	842a                	mv	s0,a0
-  4a029a:	01450763          	beq	a0,s4,4a02a8 <WiFi_connectHotspots+0x6a>
-  4a029e:	004ae637          	lui	a2,0x4ae
-  4a02a2:	ef060613          	addi	a2,a2,-272 # 4adef0 <songti_font_10x13+0x5c4>
-  4a02a6:	bfc9                	j	4a0278 <WiFi_connectHotspots+0x3a>
-  4a02a8:	004a07b7          	lui	a5,0x4a0
-  4a02ac:	01478793          	addi	a5,a5,20 # 4a0014 <ConnectionWifiChangedHandler>
-  4a02b0:	0048                	addi	a0,sp,4
-  4a02b2:	c402                	sw	zero,8(sp)
-  4a02b4:	c602                	sw	zero,12(sp)
-  4a02b6:	c802                	sw	zero,16(sp)
-  4a02b8:	ca02                	sw	zero,20(sp)
-  4a02ba:	c23e                	sw	a5,4(sp)
-  4a02bc:	480010ef          	jal	ra,4a173c <RegisterWifiEvent>
-  4a02c0:	842a                	mv	s0,a0
-  4a02c2:	c511                	beqz	a0,4a02ce <WiFi_connectHotspots+0x90>
-  4a02c4:	004ae637          	lui	a2,0x4ae
-  4a02c8:	f0460613          	addi	a2,a2,-252 # 4adf04 <songti_font_10x13+0x5d8>
-  4a02cc:	b775                	j	4a0278 <WiFi_connectHotspots+0x3a>
-  4a02ce:	09400613          	li	a2,148
-  4a02d2:	4581                	li	a1,0
-  4a02d4:	0828                	addi	a0,sp,24
-  4a02d6:	8245b0ef          	jal	ra,3fb2fa <memset>
-  4a02da:	855a                	mv	a0,s6
-  4a02dc:	c002                	sw	zero,0(sp)
-  4a02de:	c505b0ef          	jal	ra,3fb72e <strlen>
-  4a02e2:	00150593          	addi	a1,a0,1
-  4a02e6:	865a                	mv	a2,s6
-  4a02e8:	0828                	addi	a0,sp,24
-  4a02ea:	f525b0ef          	jal	ra,3fba3c <strcpy_s>
-  4a02ee:	8556                	mv	a0,s5
-  4a02f0:	c3e5b0ef          	jal	ra,3fb72e <strlen>
-  4a02f4:	00150593          	addi	a1,a0,1
-  4a02f8:	8656                	mv	a2,s5
-  4a02fa:	03f10513          	addi	a0,sp,63
-  4a02fe:	f3e5b0ef          	jal	ra,3fba3c <strcpy_s>
-  4a0302:	4789                	li	a5,2
-  4a0304:	858a                	mv	a1,sp
-  4a0306:	0828                	addi	a0,sp,24
-  4a0308:	84ca                	mv	s1,s2
-  4a030a:	c13e                	sw	a5,128(sp)
-  4a030c:	28e010ef          	jal	ra,4a159a <AddDeviceConfig>
-  4a0310:	e54d                	bnez	a0,4a03ba <WiFi_connectHotspots+0x17c>
-  4a0312:	4502                	lw	a0,0(sp)
-  4a0314:	33c010ef          	jal	ra,4a1650 <ConnectTo>
-  4a0318:	842a                	mv	s0,a0
-  4a031a:	e145                	bnez	a0,4a03ba <WiFi_connectHotspots+0x17c>
-  4a031c:	c71ff0ef          	jal	ra,49ff8c <WaitConnectResult>
-  4a0320:	09451d63          	bne	a0,s4,4a03ba <WiFi_connectHotspots+0x17c>
-  4a0324:	004ae637          	lui	a2,0x4ae
-  4a0328:	0c090593          	addi	a1,s2,192
-  4a032c:	f2460613          	addi	a2,a2,-220 # 4adf24 <songti_font_10x13+0x5f8>
-  4a0330:	450d                	li	a0,3
-  4a0332:	ba3ff0ef          	jal	ra,49fed4 <debug_print.constprop.1>
-  4a0336:	004a5537          	lui	a0,0x4a5
-  4a033a:	f6c50513          	addi	a0,a0,-148 # 4a4f6c <g_ast_freq_map_2g+0x38>
-  4a033e:	000e6937          	lui	s2,0xe6
-  4a0342:	e2ebe0ef          	jal	ra,45e970 <netifapi_netif_find>
-  4a0346:	9ea92e23          	sw	a0,-1540(s2) # e59fc <g_lwip_netif>
-  4a034a:	9fc90913          	addi	s2,s2,-1540
-  4a034e:	c119                	beqz	a0,4a0354 <WiFi_connectHotspots+0x116>
-  4a0350:	defb30ef          	jal	ra,45413e <dhcp_start>
-  4a0354:	4a29                	li	s4,10
-  4a0356:	004aeab7          	lui	s5,0x4ae
-  4a035a:	00092503          	lw	a0,0(s2)
-  4a035e:	fa8b30ef          	jal	ra,453b06 <dhcp_is_bound>
-  4a0362:	e11d                	bnez	a0,4a0388 <WiFi_connectHotspots+0x14a>
-  4a0364:	00092503          	lw	a0,0(s2)
-  4a0368:	b27ff0ef          	jal	ra,49fe8e <Sta_GetWiFiIP.constprop.0>
-  4a036c:	000dc6b7          	lui	a3,0xdc
-  4a0370:	004ae637          	lui	a2,0x4ae
-  4a0374:	27068693          	addi	a3,a3,624 # dc270 <g_IP_Addr>
-  4a0378:	f3860613          	addi	a2,a2,-200 # 4adf38 <songti_font_10x13+0x60c>
-  4a037c:	0c048593          	addi	a1,s1,192
-  4a0380:	450d                	li	a0,3
-  4a0382:	b53ff0ef          	jal	ra,49fed4 <debug_print.constprop.1>
-  4a0386:	bdf5                	j	4a0282 <WiFi_connectHotspots+0x44>
-  4a0388:	f58a8613          	addi	a2,s5,-168 # 4adf58 <songti_font_10x13+0x62c>
-  4a038c:	0c048593          	addi	a1,s1,192
-  4a0390:	4511                	li	a0,4
-  4a0392:	1a7d                	addi	s4,s4,-1
-  4a0394:	b41ff0ef          	jal	ra,49fed4 <debug_print.constprop.1>
-  4a0398:	000a1d63          	bnez	s4,4a03b2 <WiFi_connectHotspots+0x174>
-  4a039c:	004ae637          	lui	a2,0x4ae
-  4a03a0:	f6c60613          	addi	a2,a2,-148 # 4adf6c <songti_font_10x13+0x640>
-  4a03a4:	0c048593          	addi	a1,s1,192
-  4a03a8:	4505                	li	a0,1
-  4a03aa:	b2bff0ef          	jal	ra,49fed4 <debug_print.constprop.1>
-  4a03ae:	5461                	li	s0,-8
-  4a03b0:	bdc9                	j	4a0282 <WiFi_connectHotspots+0x44>
-  4a03b2:	4505                	li	a0,1
-  4a03b4:	c5d7a0ef          	jal	ra,41b010 <sleep>
-  4a03b8:	b74d                	j	4a035a <WiFi_connectHotspots+0x11c>
-  4a03ba:	004ae637          	lui	a2,0x4ae
-  4a03be:	f7860613          	addi	a2,a2,-136 # 4adf78 <songti_font_10x13+0x64c>
-  4a03c2:	b7cd                	j	4a03a4 <WiFi_connectHotspots+0x166>
-  4a03c4:	614d                	addi	sp,sp,176
-  4a03c6:	c985a06f          	j	3fa85e <__riscv_restore_4>
+004a024c <WiFi_connectHotspots>:
+  4a024c:	dde5a2ef          	jal	t0,3fa82a <__riscv_save_4>
+  4a0250:	0011d9b7          	lui	s3,0x11d
+  4a0254:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
+  4a0258:	004ae637          	lui	a2,0x4ae
+  4a025c:	004ae937          	lui	s2,0x4ae
+  4a0260:	7171                	addi	sp,sp,-176
+  4a0262:	8b2a                	mv	s6,a0
+  4a0264:	8aae                	mv	s5,a1
+  4a0266:	ec460613          	addi	a2,a2,-316 # 4adec4 <songti_font_10x13+0x598>
+  4a026a:	0c090593          	addi	a1,s2,192 # 4ae0c0 <songti_font_10x13+0x794>
+  4a026e:	450d                	li	a0,3
+  4a0270:	d73e                	sw	a5,172(sp)
+  4a0272:	c71ff0ef          	jal	ra,49fee2 <debug_print.constprop.1>
+  4a0276:	256010ef          	jal	ra,4a14cc <EnableWifi>
+  4a027a:	c11d                	beqz	a0,4a02a0 <WiFi_connectHotspots+0x54>
+  4a027c:	004ae637          	lui	a2,0x4ae
+  4a0280:	842a                	mv	s0,a0
+  4a0282:	edc60613          	addi	a2,a2,-292 # 4adedc <songti_font_10x13+0x5b0>
+  4a0286:	0c090593          	addi	a1,s2,192
+  4a028a:	4505                	li	a0,1
+  4a028c:	c57ff0ef          	jal	ra,49fee2 <debug_print.constprop.1>
+  4a0290:	573a                	lw	a4,172(sp)
+  4a0292:	7c09a783          	lw	a5,1984(s3)
+  4a0296:	8522                	mv	a0,s0
+  4a0298:	12f70d63          	beq	a4,a5,4a03d2 <WiFi_connectHotspots+0x186>
+  4a029c:	f1d550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a02a0:	2cc010ef          	jal	ra,4a156c <IsWifiActive>
+  4a02a4:	4a05                	li	s4,1
+  4a02a6:	842a                	mv	s0,a0
+  4a02a8:	01450763          	beq	a0,s4,4a02b6 <WiFi_connectHotspots+0x6a>
+  4a02ac:	004ae637          	lui	a2,0x4ae
+  4a02b0:	ef060613          	addi	a2,a2,-272 # 4adef0 <songti_font_10x13+0x5c4>
+  4a02b4:	bfc9                	j	4a0286 <WiFi_connectHotspots+0x3a>
+  4a02b6:	004a07b7          	lui	a5,0x4a0
+  4a02ba:	02278793          	addi	a5,a5,34 # 4a0022 <ConnectionWifiChangedHandler>
+  4a02be:	0048                	addi	a0,sp,4
+  4a02c0:	c402                	sw	zero,8(sp)
+  4a02c2:	c602                	sw	zero,12(sp)
+  4a02c4:	c802                	sw	zero,16(sp)
+  4a02c6:	ca02                	sw	zero,20(sp)
+  4a02c8:	c23e                	sw	a5,4(sp)
+  4a02ca:	480010ef          	jal	ra,4a174a <RegisterWifiEvent>
+  4a02ce:	842a                	mv	s0,a0
+  4a02d0:	c511                	beqz	a0,4a02dc <WiFi_connectHotspots+0x90>
+  4a02d2:	004ae637          	lui	a2,0x4ae
+  4a02d6:	f0460613          	addi	a2,a2,-252 # 4adf04 <songti_font_10x13+0x5d8>
+  4a02da:	b775                	j	4a0286 <WiFi_connectHotspots+0x3a>
+  4a02dc:	09400613          	li	a2,148
+  4a02e0:	4581                	li	a1,0
+  4a02e2:	0828                	addi	a0,sp,24
+  4a02e4:	8165b0ef          	jal	ra,3fb2fa <memset>
+  4a02e8:	855a                	mv	a0,s6
+  4a02ea:	c002                	sw	zero,0(sp)
+  4a02ec:	c425b0ef          	jal	ra,3fb72e <strlen>
+  4a02f0:	00150593          	addi	a1,a0,1
+  4a02f4:	865a                	mv	a2,s6
+  4a02f6:	0828                	addi	a0,sp,24
+  4a02f8:	f445b0ef          	jal	ra,3fba3c <strcpy_s>
+  4a02fc:	8556                	mv	a0,s5
+  4a02fe:	c305b0ef          	jal	ra,3fb72e <strlen>
+  4a0302:	00150593          	addi	a1,a0,1
+  4a0306:	8656                	mv	a2,s5
+  4a0308:	03f10513          	addi	a0,sp,63
+  4a030c:	f305b0ef          	jal	ra,3fba3c <strcpy_s>
+  4a0310:	4789                	li	a5,2
+  4a0312:	858a                	mv	a1,sp
+  4a0314:	0828                	addi	a0,sp,24
+  4a0316:	84ca                	mv	s1,s2
+  4a0318:	c13e                	sw	a5,128(sp)
+  4a031a:	28e010ef          	jal	ra,4a15a8 <AddDeviceConfig>
+  4a031e:	e54d                	bnez	a0,4a03c8 <WiFi_connectHotspots+0x17c>
+  4a0320:	4502                	lw	a0,0(sp)
+  4a0322:	33c010ef          	jal	ra,4a165e <ConnectTo>
+  4a0326:	842a                	mv	s0,a0
+  4a0328:	e145                	bnez	a0,4a03c8 <WiFi_connectHotspots+0x17c>
+  4a032a:	c71ff0ef          	jal	ra,49ff9a <WaitConnectResult>
+  4a032e:	09451d63          	bne	a0,s4,4a03c8 <WiFi_connectHotspots+0x17c>
+  4a0332:	004ae637          	lui	a2,0x4ae
+  4a0336:	0c090593          	addi	a1,s2,192
+  4a033a:	f2460613          	addi	a2,a2,-220 # 4adf24 <songti_font_10x13+0x5f8>
+  4a033e:	450d                	li	a0,3
+  4a0340:	ba3ff0ef          	jal	ra,49fee2 <debug_print.constprop.1>
+  4a0344:	004a5537          	lui	a0,0x4a5
+  4a0348:	f6c50513          	addi	a0,a0,-148 # 4a4f6c <g_ast_freq_map_2g+0x38>
+  4a034c:	000e6937          	lui	s2,0xe6
+  4a0350:	e20be0ef          	jal	ra,45e970 <netifapi_netif_find>
+  4a0354:	9ea92e23          	sw	a0,-1540(s2) # e59fc <g_lwip_netif>
+  4a0358:	9fc90913          	addi	s2,s2,-1540
+  4a035c:	c119                	beqz	a0,4a0362 <WiFi_connectHotspots+0x116>
+  4a035e:	de1b30ef          	jal	ra,45413e <dhcp_start>
+  4a0362:	4a29                	li	s4,10
+  4a0364:	004aeab7          	lui	s5,0x4ae
+  4a0368:	00092503          	lw	a0,0(s2)
+  4a036c:	f9ab30ef          	jal	ra,453b06 <dhcp_is_bound>
+  4a0370:	e11d                	bnez	a0,4a0396 <WiFi_connectHotspots+0x14a>
+  4a0372:	00092503          	lw	a0,0(s2)
+  4a0376:	b27ff0ef          	jal	ra,49fe9c <Sta_GetWiFiIP.constprop.0>
+  4a037a:	000dc6b7          	lui	a3,0xdc
+  4a037e:	004ae637          	lui	a2,0x4ae
+  4a0382:	27068693          	addi	a3,a3,624 # dc270 <g_IP_Addr>
+  4a0386:	f3860613          	addi	a2,a2,-200 # 4adf38 <songti_font_10x13+0x60c>
+  4a038a:	0c048593          	addi	a1,s1,192
+  4a038e:	450d                	li	a0,3
+  4a0390:	b53ff0ef          	jal	ra,49fee2 <debug_print.constprop.1>
+  4a0394:	bdf5                	j	4a0290 <WiFi_connectHotspots+0x44>
+  4a0396:	f58a8613          	addi	a2,s5,-168 # 4adf58 <songti_font_10x13+0x62c>
+  4a039a:	0c048593          	addi	a1,s1,192
+  4a039e:	4511                	li	a0,4
+  4a03a0:	1a7d                	addi	s4,s4,-1
+  4a03a2:	b41ff0ef          	jal	ra,49fee2 <debug_print.constprop.1>
+  4a03a6:	000a1d63          	bnez	s4,4a03c0 <WiFi_connectHotspots+0x174>
+  4a03aa:	004ae637          	lui	a2,0x4ae
+  4a03ae:	f6c60613          	addi	a2,a2,-148 # 4adf6c <songti_font_10x13+0x640>
+  4a03b2:	0c048593          	addi	a1,s1,192
+  4a03b6:	4505                	li	a0,1
+  4a03b8:	b2bff0ef          	jal	ra,49fee2 <debug_print.constprop.1>
+  4a03bc:	5461                	li	s0,-8
+  4a03be:	bdc9                	j	4a0290 <WiFi_connectHotspots+0x44>
+  4a03c0:	4505                	li	a0,1
+  4a03c2:	c4f7a0ef          	jal	ra,41b010 <sleep>
+  4a03c6:	b74d                	j	4a0368 <WiFi_connectHotspots+0x11c>
+  4a03c8:	004ae637          	lui	a2,0x4ae
+  4a03cc:	f7860613          	addi	a2,a2,-136 # 4adf78 <songti_font_10x13+0x64c>
+  4a03d0:	b7cd                	j	4a03b2 <WiFi_connectHotspots+0x166>
+  4a03d2:	614d                	addi	sp,sp,176
+  4a03d4:	c8a5a06f          	j	3fa85e <__riscv_restore_4>
 
-004a03ca <GetDeviceType>:
-  4a03ca:	c7a5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a03ce:	0011d437          	lui	s0,0x11d
-  4a03d2:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a03d6:	1141                	addi	sp,sp,-16
-  4a03d8:	c63e                	sw	a5,12(sp)
-  4a03da:	ee1f50ef          	jal	ra,4962ba <HalGetDeviceType>
-  4a03de:	4732                	lw	a4,12(sp)
-  4a03e0:	7c042783          	lw	a5,1984(s0)
-  4a03e4:	00f70463          	beq	a4,a5,4a03ec <GetDeviceType+0x22>
-  4a03e8:	dd1550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a03ec:	0141                	addi	sp,sp,16
-  4a03ee:	c7a5a06f          	j	3fa868 <__riscv_restore_0>
+004a03d8 <GetDeviceType>:
+  4a03d8:	c6c5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a03dc:	0011d437          	lui	s0,0x11d
+  4a03e0:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a03e4:	1141                	addi	sp,sp,-16
+  4a03e6:	c63e                	sw	a5,12(sp)
+  4a03e8:	ed3f50ef          	jal	ra,4962ba <HalGetDeviceType>
+  4a03ec:	4732                	lw	a4,12(sp)
+  4a03ee:	7c042783          	lw	a5,1984(s0)
+  4a03f2:	00f70463          	beq	a4,a5,4a03fa <GetDeviceType+0x22>
+  4a03f6:	dc3550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a03fa:	0141                	addi	sp,sp,16
+  4a03fc:	c6c5a06f          	j	3fa868 <__riscv_restore_0>
 
-004a03f2 <GetManufacture>:
-  4a03f2:	c525a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a03f6:	0011d437          	lui	s0,0x11d
-  4a03fa:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a03fe:	1141                	addi	sp,sp,-16
-  4a0400:	c63e                	sw	a5,12(sp)
-  4a0402:	ee5f50ef          	jal	ra,4962e6 <HalGetManufacture>
-  4a0406:	4732                	lw	a4,12(sp)
-  4a0408:	7c042783          	lw	a5,1984(s0)
-  4a040c:	00f70463          	beq	a4,a5,4a0414 <GetManufacture+0x22>
-  4a0410:	da9550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0414:	0141                	addi	sp,sp,16
-  4a0416:	c525a06f          	j	3fa868 <__riscv_restore_0>
+004a0400 <GetManufacture>:
+  4a0400:	c445a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a0404:	0011d437          	lui	s0,0x11d
+  4a0408:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a040c:	1141                	addi	sp,sp,-16
+  4a040e:	c63e                	sw	a5,12(sp)
+  4a0410:	ed7f50ef          	jal	ra,4962e6 <HalGetManufacture>
+  4a0414:	4732                	lw	a4,12(sp)
+  4a0416:	7c042783          	lw	a5,1984(s0)
+  4a041a:	00f70463          	beq	a4,a5,4a0422 <GetManufacture+0x22>
+  4a041e:	d9b550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0422:	0141                	addi	sp,sp,16
+  4a0424:	c445a06f          	j	3fa868 <__riscv_restore_0>
 
-004a041a <GetBrand>:
-  4a041a:	c2a5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a041e:	0011d437          	lui	s0,0x11d
-  4a0422:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a0426:	1141                	addi	sp,sp,-16
-  4a0428:	c63e                	sw	a5,12(sp)
-  4a042a:	ee9f50ef          	jal	ra,496312 <HalGetBrand>
-  4a042e:	4732                	lw	a4,12(sp)
-  4a0430:	7c042783          	lw	a5,1984(s0)
-  4a0434:	00f70463          	beq	a4,a5,4a043c <GetBrand+0x22>
-  4a0438:	d81550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a043c:	0141                	addi	sp,sp,16
-  4a043e:	c2a5a06f          	j	3fa868 <__riscv_restore_0>
+004a0428 <GetBrand>:
+  4a0428:	c1c5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a042c:	0011d437          	lui	s0,0x11d
+  4a0430:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a0434:	1141                	addi	sp,sp,-16
+  4a0436:	c63e                	sw	a5,12(sp)
+  4a0438:	edbf50ef          	jal	ra,496312 <HalGetBrand>
+  4a043c:	4732                	lw	a4,12(sp)
+  4a043e:	7c042783          	lw	a5,1984(s0)
+  4a0442:	00f70463          	beq	a4,a5,4a044a <GetBrand+0x22>
+  4a0446:	d73550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a044a:	0141                	addi	sp,sp,16
+  4a044c:	c1c5a06f          	j	3fa868 <__riscv_restore_0>
 
-004a0442 <GetMarketName>:
-  4a0442:	c025a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0446:	0011d437          	lui	s0,0x11d
-  4a044a:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a044e:	1141                	addi	sp,sp,-16
-  4a0450:	c63e                	sw	a5,12(sp)
-  4a0452:	eedf50ef          	jal	ra,49633e <HalGetMarketName>
-  4a0456:	4732                	lw	a4,12(sp)
-  4a0458:	7c042783          	lw	a5,1984(s0)
-  4a045c:	00f70463          	beq	a4,a5,4a0464 <GetMarketName+0x22>
-  4a0460:	d59550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0464:	0141                	addi	sp,sp,16
-  4a0466:	c025a06f          	j	3fa868 <__riscv_restore_0>
+004a0450 <GetMarketName>:
+  4a0450:	bf45a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a0454:	0011d437          	lui	s0,0x11d
+  4a0458:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a045c:	1141                	addi	sp,sp,-16
+  4a045e:	c63e                	sw	a5,12(sp)
+  4a0460:	edff50ef          	jal	ra,49633e <HalGetMarketName>
+  4a0464:	4732                	lw	a4,12(sp)
+  4a0466:	7c042783          	lw	a5,1984(s0)
+  4a046a:	00f70463          	beq	a4,a5,4a0472 <GetMarketName+0x22>
+  4a046e:	d4b550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0472:	0141                	addi	sp,sp,16
+  4a0474:	bf45a06f          	j	3fa868 <__riscv_restore_0>
 
-004a046a <GetProductSeries>:
-  4a046a:	bda5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a046e:	0011d437          	lui	s0,0x11d
-  4a0472:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a0476:	1141                	addi	sp,sp,-16
-  4a0478:	c63e                	sw	a5,12(sp)
-  4a047a:	ef1f50ef          	jal	ra,49636a <HalGetProductSeries>
-  4a047e:	4732                	lw	a4,12(sp)
-  4a0480:	7c042783          	lw	a5,1984(s0)
-  4a0484:	00f70463          	beq	a4,a5,4a048c <GetProductSeries+0x22>
-  4a0488:	d31550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a048c:	0141                	addi	sp,sp,16
-  4a048e:	bda5a06f          	j	3fa868 <__riscv_restore_0>
+004a0478 <GetProductSeries>:
+  4a0478:	bcc5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a047c:	0011d437          	lui	s0,0x11d
+  4a0480:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a0484:	1141                	addi	sp,sp,-16
+  4a0486:	c63e                	sw	a5,12(sp)
+  4a0488:	ee3f50ef          	jal	ra,49636a <HalGetProductSeries>
+  4a048c:	4732                	lw	a4,12(sp)
+  4a048e:	7c042783          	lw	a5,1984(s0)
+  4a0492:	00f70463          	beq	a4,a5,4a049a <GetProductSeries+0x22>
+  4a0496:	d23550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a049a:	0141                	addi	sp,sp,16
+  4a049c:	bcc5a06f          	j	3fa868 <__riscv_restore_0>
 
-004a0492 <GetProductModel>:
-  4a0492:	bb25a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0496:	0011d437          	lui	s0,0x11d
-  4a049a:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a049e:	1141                	addi	sp,sp,-16
-  4a04a0:	c63e                	sw	a5,12(sp)
-  4a04a2:	ef5f50ef          	jal	ra,496396 <HalGetProductModel>
-  4a04a6:	4732                	lw	a4,12(sp)
-  4a04a8:	7c042783          	lw	a5,1984(s0)
-  4a04ac:	00f70463          	beq	a4,a5,4a04b4 <GetProductModel+0x22>
-  4a04b0:	d09550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a04b4:	0141                	addi	sp,sp,16
-  4a04b6:	bb25a06f          	j	3fa868 <__riscv_restore_0>
+004a04a0 <GetProductModel>:
+  4a04a0:	ba45a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a04a4:	0011d437          	lui	s0,0x11d
+  4a04a8:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a04ac:	1141                	addi	sp,sp,-16
+  4a04ae:	c63e                	sw	a5,12(sp)
+  4a04b0:	ee7f50ef          	jal	ra,496396 <HalGetProductModel>
+  4a04b4:	4732                	lw	a4,12(sp)
+  4a04b6:	7c042783          	lw	a5,1984(s0)
+  4a04ba:	00f70463          	beq	a4,a5,4a04c2 <GetProductModel+0x22>
+  4a04be:	cfb550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a04c2:	0141                	addi	sp,sp,16
+  4a04c4:	ba45a06f          	j	3fa868 <__riscv_restore_0>
 
-004a04ba <GetSoftwareModel>:
-  4a04ba:	b8a5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a04be:	0011d437          	lui	s0,0x11d
-  4a04c2:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a04c6:	1141                	addi	sp,sp,-16
-  4a04c8:	c63e                	sw	a5,12(sp)
-  4a04ca:	ef9f50ef          	jal	ra,4963c2 <HalGetSoftwareModel>
-  4a04ce:	4732                	lw	a4,12(sp)
-  4a04d0:	7c042783          	lw	a5,1984(s0)
-  4a04d4:	00f70463          	beq	a4,a5,4a04dc <GetSoftwareModel+0x22>
-  4a04d8:	ce1550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a04dc:	0141                	addi	sp,sp,16
-  4a04de:	b8a5a06f          	j	3fa868 <__riscv_restore_0>
+004a04c8 <GetSoftwareModel>:
+  4a04c8:	b7c5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a04cc:	0011d437          	lui	s0,0x11d
+  4a04d0:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a04d4:	1141                	addi	sp,sp,-16
+  4a04d6:	c63e                	sw	a5,12(sp)
+  4a04d8:	eebf50ef          	jal	ra,4963c2 <HalGetSoftwareModel>
+  4a04dc:	4732                	lw	a4,12(sp)
+  4a04de:	7c042783          	lw	a5,1984(s0)
+  4a04e2:	00f70463          	beq	a4,a5,4a04ea <GetSoftwareModel+0x22>
+  4a04e6:	cd3550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a04ea:	0141                	addi	sp,sp,16
+  4a04ec:	b7c5a06f          	j	3fa868 <__riscv_restore_0>
 
-004a04e2 <GetHardwareModel>:
-  4a04e2:	b625a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a04e6:	0011d437          	lui	s0,0x11d
-  4a04ea:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a04ee:	1141                	addi	sp,sp,-16
-  4a04f0:	c63e                	sw	a5,12(sp)
-  4a04f2:	efdf50ef          	jal	ra,4963ee <HalGetHardwareModel>
-  4a04f6:	4732                	lw	a4,12(sp)
-  4a04f8:	7c042783          	lw	a5,1984(s0)
-  4a04fc:	00f70463          	beq	a4,a5,4a0504 <GetHardwareModel+0x22>
-  4a0500:	cb9550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0504:	0141                	addi	sp,sp,16
-  4a0506:	b625a06f          	j	3fa868 <__riscv_restore_0>
+004a04f0 <GetHardwareModel>:
+  4a04f0:	b545a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a04f4:	0011d437          	lui	s0,0x11d
+  4a04f8:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a04fc:	1141                	addi	sp,sp,-16
+  4a04fe:	c63e                	sw	a5,12(sp)
+  4a0500:	eeff50ef          	jal	ra,4963ee <HalGetHardwareModel>
+  4a0504:	4732                	lw	a4,12(sp)
+  4a0506:	7c042783          	lw	a5,1984(s0)
+  4a050a:	00f70463          	beq	a4,a5,4a0512 <GetHardwareModel+0x22>
+  4a050e:	cab550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0512:	0141                	addi	sp,sp,16
+  4a0514:	b545a06f          	j	3fa868 <__riscv_restore_0>
 
-004a050a <GetSerial>:
-  4a050a:	b3a5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a050e:	0011d437          	lui	s0,0x11d
-  4a0512:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a0516:	1141                	addi	sp,sp,-16
-  4a0518:	c63e                	sw	a5,12(sp)
-  4a051a:	f01f50ef          	jal	ra,49641a <HalGetSerial>
-  4a051e:	4732                	lw	a4,12(sp)
-  4a0520:	7c042783          	lw	a5,1984(s0)
-  4a0524:	00f70463          	beq	a4,a5,4a052c <GetSerial+0x22>
-  4a0528:	c91550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a052c:	0141                	addi	sp,sp,16
-  4a052e:	b3a5a06f          	j	3fa868 <__riscv_restore_0>
+004a0518 <GetSerial>:
+  4a0518:	b2c5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a051c:	0011d437          	lui	s0,0x11d
+  4a0520:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a0524:	1141                	addi	sp,sp,-16
+  4a0526:	c63e                	sw	a5,12(sp)
+  4a0528:	ef3f50ef          	jal	ra,49641a <HalGetSerial>
+  4a052c:	4732                	lw	a4,12(sp)
+  4a052e:	7c042783          	lw	a5,1984(s0)
+  4a0532:	00f70463          	beq	a4,a5,4a053a <GetSerial+0x22>
+  4a0536:	c83550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a053a:	0141                	addi	sp,sp,16
+  4a053c:	b2c5a06f          	j	3fa868 <__riscv_restore_0>
 
-004a0532 <GetBootloaderVersion>:
-  4a0532:	b125a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0536:	0011d437          	lui	s0,0x11d
-  4a053a:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a053e:	1141                	addi	sp,sp,-16
-  4a0540:	c63e                	sw	a5,12(sp)
-  4a0542:	f05f50ef          	jal	ra,496446 <HalGetBootloaderVersion>
-  4a0546:	4732                	lw	a4,12(sp)
-  4a0548:	7c042783          	lw	a5,1984(s0)
-  4a054c:	00f70463          	beq	a4,a5,4a0554 <GetBootloaderVersion+0x22>
-  4a0550:	c69550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0554:	0141                	addi	sp,sp,16
-  4a0556:	b125a06f          	j	3fa868 <__riscv_restore_0>
+004a0540 <GetBootloaderVersion>:
+  4a0540:	b045a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a0544:	0011d437          	lui	s0,0x11d
+  4a0548:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a054c:	1141                	addi	sp,sp,-16
+  4a054e:	c63e                	sw	a5,12(sp)
+  4a0550:	ef7f50ef          	jal	ra,496446 <HalGetBootloaderVersion>
+  4a0554:	4732                	lw	a4,12(sp)
+  4a0556:	7c042783          	lw	a5,1984(s0)
+  4a055a:	00f70463          	beq	a4,a5,4a0562 <GetBootloaderVersion+0x22>
+  4a055e:	c5b550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0562:	0141                	addi	sp,sp,16
+  4a0564:	b045a06f          	j	3fa868 <__riscv_restore_0>
 
-004a055a <GetSecurityPatchTag>:
-  4a055a:	aea5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a055e:	0011d7b7          	lui	a5,0x11d
-  4a0562:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a0566:	1141                	addi	sp,sp,-16
-  4a0568:	c63a                	sw	a4,12(sp)
-  4a056a:	4732                	lw	a4,12(sp)
-  4a056c:	7c07a783          	lw	a5,1984(a5)
-  4a0570:	00f70463          	beq	a4,a5,4a0578 <GetSecurityPatchTag+0x1e>
-  4a0574:	c45550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0578:	004ae537          	lui	a0,0x4ae
-  4a057c:	12050513          	addi	a0,a0,288 # 4ae120 <OHOS_SECURITY_PATCH_TAG>
-  4a0580:	0141                	addi	sp,sp,16
-  4a0582:	ae65a06f          	j	3fa868 <__riscv_restore_0>
+004a0568 <GetSecurityPatchTag>:
+  4a0568:	adc5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a056c:	0011d7b7          	lui	a5,0x11d
+  4a0570:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a0574:	1141                	addi	sp,sp,-16
+  4a0576:	c63a                	sw	a4,12(sp)
+  4a0578:	4732                	lw	a4,12(sp)
+  4a057a:	7c07a783          	lw	a5,1984(a5)
+  4a057e:	00f70463          	beq	a4,a5,4a0586 <GetSecurityPatchTag+0x1e>
+  4a0582:	c37550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0586:	004ae537          	lui	a0,0x4ae
+  4a058a:	12050513          	addi	a0,a0,288 # 4ae120 <OHOS_SECURITY_PATCH_TAG>
+  4a058e:	0141                	addi	sp,sp,16
+  4a0590:	ad85a06f          	j	3fa868 <__riscv_restore_0>
 
-004a0586 <GetAbiList>:
-  4a0586:	abe5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a058a:	0011d437          	lui	s0,0x11d
-  4a058e:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a0592:	1141                	addi	sp,sp,-16
-  4a0594:	c63e                	sw	a5,12(sp)
-  4a0596:	eddf50ef          	jal	ra,496472 <HalGetAbiList>
-  4a059a:	4732                	lw	a4,12(sp)
-  4a059c:	7c042783          	lw	a5,1984(s0)
-  4a05a0:	00f70463          	beq	a4,a5,4a05a8 <GetAbiList+0x22>
-  4a05a4:	c15550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a05a8:	0141                	addi	sp,sp,16
-  4a05aa:	abe5a06f          	j	3fa868 <__riscv_restore_0>
+004a0594 <GetAbiList>:
+  4a0594:	ab05a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a0598:	0011d437          	lui	s0,0x11d
+  4a059c:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a05a0:	1141                	addi	sp,sp,-16
+  4a05a2:	c63e                	sw	a5,12(sp)
+  4a05a4:	ecff50ef          	jal	ra,496472 <HalGetAbiList>
+  4a05a8:	4732                	lw	a4,12(sp)
+  4a05aa:	7c042783          	lw	a5,1984(s0)
+  4a05ae:	00f70463          	beq	a4,a5,4a05b6 <GetAbiList+0x22>
+  4a05b2:	c07550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a05b6:	0141                	addi	sp,sp,16
+  4a05b8:	ab05a06f          	j	3fa868 <__riscv_restore_0>
 
-004a05ae <GetDisplayVersion>:
-  4a05ae:	a965a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a05b2:	0011d437          	lui	s0,0x11d
-  4a05b6:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a05ba:	1141                	addi	sp,sp,-16
-  4a05bc:	c63e                	sw	a5,12(sp)
-  4a05be:	ee1f50ef          	jal	ra,49649e <HalGetDisplayVersion>
-  4a05c2:	4732                	lw	a4,12(sp)
-  4a05c4:	7c042783          	lw	a5,1984(s0)
-  4a05c8:	00f70463          	beq	a4,a5,4a05d0 <GetDisplayVersion+0x22>
-  4a05cc:	bed550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a05d0:	0141                	addi	sp,sp,16
-  4a05d2:	a965a06f          	j	3fa868 <__riscv_restore_0>
+004a05bc <GetDisplayVersion>:
+  4a05bc:	a885a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a05c0:	0011d437          	lui	s0,0x11d
+  4a05c4:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a05c8:	1141                	addi	sp,sp,-16
+  4a05ca:	c63e                	sw	a5,12(sp)
+  4a05cc:	ed3f50ef          	jal	ra,49649e <HalGetDisplayVersion>
+  4a05d0:	4732                	lw	a4,12(sp)
+  4a05d2:	7c042783          	lw	a5,1984(s0)
+  4a05d6:	00f70463          	beq	a4,a5,4a05de <GetDisplayVersion+0x22>
+  4a05da:	bdf550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a05de:	0141                	addi	sp,sp,16
+  4a05e0:	a885a06f          	j	3fa868 <__riscv_restore_0>
 
-004a05d6 <GetSdkApiVersion>:
-  4a05d6:	a6e5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a05da:	0011d7b7          	lui	a5,0x11d
-  4a05de:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a05e2:	1141                	addi	sp,sp,-16
-  4a05e4:	c63a                	sw	a4,12(sp)
-  4a05e6:	4732                	lw	a4,12(sp)
-  4a05e8:	7c07a783          	lw	a5,1984(a5)
-  4a05ec:	00f70463          	beq	a4,a5,4a05f4 <GetSdkApiVersion+0x1e>
-  4a05f0:	bc9550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a05f4:	451d                	li	a0,7
-  4a05f6:	0141                	addi	sp,sp,16
-  4a05f8:	a705a06f          	j	3fa868 <__riscv_restore_0>
+004a05e4 <GetSdkApiVersion>:
+  4a05e4:	a605a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a05e8:	0011d7b7          	lui	a5,0x11d
+  4a05ec:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a05f0:	1141                	addi	sp,sp,-16
+  4a05f2:	c63a                	sw	a4,12(sp)
+  4a05f4:	4732                	lw	a4,12(sp)
+  4a05f6:	7c07a783          	lw	a5,1984(a5)
+  4a05fa:	00f70463          	beq	a4,a5,4a0602 <GetSdkApiVersion+0x1e>
+  4a05fe:	bbb550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0602:	451d                	li	a0,7
+  4a0604:	0141                	addi	sp,sp,16
+  4a0606:	a625a06f          	j	3fa868 <__riscv_restore_0>
 
-004a05fc <GetFirstApiVersion>:
-  4a05fc:	a485a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0600:	0011d437          	lui	s0,0x11d
-  4a0604:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a0608:	1141                	addi	sp,sp,-16
-  4a060a:	c63e                	sw	a5,12(sp)
-  4a060c:	f9bf50ef          	jal	ra,4965a6 <HalGetFirstApiVersion>
-  4a0610:	4732                	lw	a4,12(sp)
-  4a0612:	7c042783          	lw	a5,1984(s0)
-  4a0616:	00f70463          	beq	a4,a5,4a061e <GetFirstApiVersion+0x22>
-  4a061a:	b9f550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a061e:	0141                	addi	sp,sp,16
-  4a0620:	a485a06f          	j	3fa868 <__riscv_restore_0>
+004a060a <GetFirstApiVersion>:
+  4a060a:	a3a5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a060e:	0011d437          	lui	s0,0x11d
+  4a0612:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a0616:	1141                	addi	sp,sp,-16
+  4a0618:	c63e                	sw	a5,12(sp)
+  4a061a:	f8df50ef          	jal	ra,4965a6 <HalGetFirstApiVersion>
+  4a061e:	4732                	lw	a4,12(sp)
+  4a0620:	7c042783          	lw	a5,1984(s0)
+  4a0624:	00f70463          	beq	a4,a5,4a062c <GetFirstApiVersion+0x22>
+  4a0628:	b91550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a062c:	0141                	addi	sp,sp,16
+  4a062e:	a3a5a06f          	j	3fa868 <__riscv_restore_0>
 
-004a0624 <GetIncrementalVersion>:
-  4a0624:	a205a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0628:	0011d437          	lui	s0,0x11d
-  4a062c:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a0630:	1141                	addi	sp,sp,-16
-  4a0632:	c63e                	sw	a5,12(sp)
-  4a0634:	e97f50ef          	jal	ra,4964ca <HalGetIncrementalVersion>
-  4a0638:	4732                	lw	a4,12(sp)
-  4a063a:	7c042783          	lw	a5,1984(s0)
-  4a063e:	00f70463          	beq	a4,a5,4a0646 <GetIncrementalVersion+0x22>
-  4a0642:	b77550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0646:	0141                	addi	sp,sp,16
-  4a0648:	a205a06f          	j	3fa868 <__riscv_restore_0>
+004a0632 <GetIncrementalVersion>:
+  4a0632:	a125a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a0636:	0011d437          	lui	s0,0x11d
+  4a063a:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a063e:	1141                	addi	sp,sp,-16
+  4a0640:	c63e                	sw	a5,12(sp)
+  4a0642:	e89f50ef          	jal	ra,4964ca <HalGetIncrementalVersion>
+  4a0646:	4732                	lw	a4,12(sp)
+  4a0648:	7c042783          	lw	a5,1984(s0)
+  4a064c:	00f70463          	beq	a4,a5,4a0654 <GetIncrementalVersion+0x22>
+  4a0650:	b69550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0654:	0141                	addi	sp,sp,16
+  4a0656:	a125a06f          	j	3fa868 <__riscv_restore_0>
 
-004a064c <GetBuildType>:
-  4a064c:	9f85a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0650:	0011d437          	lui	s0,0x11d
-  4a0654:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a0658:	1141                	addi	sp,sp,-16
-  4a065a:	c63e                	sw	a5,12(sp)
-  4a065c:	e9bf50ef          	jal	ra,4964f6 <HalGetBuildType>
-  4a0660:	4732                	lw	a4,12(sp)
-  4a0662:	7c042783          	lw	a5,1984(s0)
-  4a0666:	00f70463          	beq	a4,a5,4a066e <GetBuildType+0x22>
-  4a066a:	b4f550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a066e:	0141                	addi	sp,sp,16
-  4a0670:	9f85a06f          	j	3fa868 <__riscv_restore_0>
+004a065a <GetBuildType>:
+  4a065a:	9ea5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a065e:	0011d437          	lui	s0,0x11d
+  4a0662:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a0666:	1141                	addi	sp,sp,-16
+  4a0668:	c63e                	sw	a5,12(sp)
+  4a066a:	e8df50ef          	jal	ra,4964f6 <HalGetBuildType>
+  4a066e:	4732                	lw	a4,12(sp)
+  4a0670:	7c042783          	lw	a5,1984(s0)
+  4a0674:	00f70463          	beq	a4,a5,4a067c <GetBuildType+0x22>
+  4a0678:	b41550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a067c:	0141                	addi	sp,sp,16
+  4a067e:	9ea5a06f          	j	3fa868 <__riscv_restore_0>
 
-004a0674 <GetBuildUser>:
-  4a0674:	9d05a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0678:	0011d437          	lui	s0,0x11d
-  4a067c:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a0680:	1141                	addi	sp,sp,-16
-  4a0682:	c63e                	sw	a5,12(sp)
-  4a0684:	e9ff50ef          	jal	ra,496522 <HalGetBuildUser>
-  4a0688:	4732                	lw	a4,12(sp)
-  4a068a:	7c042783          	lw	a5,1984(s0)
-  4a068e:	00f70463          	beq	a4,a5,4a0696 <GetBuildUser+0x22>
-  4a0692:	b27550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0696:	0141                	addi	sp,sp,16
-  4a0698:	9d05a06f          	j	3fa868 <__riscv_restore_0>
+004a0682 <GetBuildUser>:
+  4a0682:	9c25a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a0686:	0011d437          	lui	s0,0x11d
+  4a068a:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a068e:	1141                	addi	sp,sp,-16
+  4a0690:	c63e                	sw	a5,12(sp)
+  4a0692:	e91f50ef          	jal	ra,496522 <HalGetBuildUser>
+  4a0696:	4732                	lw	a4,12(sp)
+  4a0698:	7c042783          	lw	a5,1984(s0)
+  4a069c:	00f70463          	beq	a4,a5,4a06a4 <GetBuildUser+0x22>
+  4a06a0:	b19550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a06a4:	0141                	addi	sp,sp,16
+  4a06a6:	9c25a06f          	j	3fa868 <__riscv_restore_0>
 
-004a069c <GetBuildHost>:
-  4a069c:	9a85a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a06a0:	0011d437          	lui	s0,0x11d
-  4a06a4:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a06a8:	1141                	addi	sp,sp,-16
-  4a06aa:	c63e                	sw	a5,12(sp)
-  4a06ac:	ea3f50ef          	jal	ra,49654e <HalGetBuildHost>
-  4a06b0:	4732                	lw	a4,12(sp)
-  4a06b2:	7c042783          	lw	a5,1984(s0)
-  4a06b6:	00f70463          	beq	a4,a5,4a06be <GetBuildHost+0x22>
-  4a06ba:	aff550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a06be:	0141                	addi	sp,sp,16
-  4a06c0:	9a85a06f          	j	3fa868 <__riscv_restore_0>
+004a06aa <GetBuildHost>:
+  4a06aa:	99a5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a06ae:	0011d437          	lui	s0,0x11d
+  4a06b2:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a06b6:	1141                	addi	sp,sp,-16
+  4a06b8:	c63e                	sw	a5,12(sp)
+  4a06ba:	e95f50ef          	jal	ra,49654e <HalGetBuildHost>
+  4a06be:	4732                	lw	a4,12(sp)
+  4a06c0:	7c042783          	lw	a5,1984(s0)
+  4a06c4:	00f70463          	beq	a4,a5,4a06cc <GetBuildHost+0x22>
+  4a06c8:	af1550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a06cc:	0141                	addi	sp,sp,16
+  4a06ce:	99a5a06f          	j	3fa868 <__riscv_restore_0>
 
-004a06c4 <GetBuildTime>:
-  4a06c4:	9805a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a06c8:	0011d437          	lui	s0,0x11d
-  4a06cc:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a06d0:	1141                	addi	sp,sp,-16
-  4a06d2:	c63e                	sw	a5,12(sp)
-  4a06d4:	ea7f50ef          	jal	ra,49657a <HalGetBuildTime>
-  4a06d8:	4732                	lw	a4,12(sp)
-  4a06da:	7c042783          	lw	a5,1984(s0)
-  4a06de:	00f70463          	beq	a4,a5,4a06e6 <GetBuildTime+0x22>
-  4a06e2:	ad7550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a06e6:	0141                	addi	sp,sp,16
-  4a06e8:	9805a06f          	j	3fa868 <__riscv_restore_0>
+004a06d2 <GetBuildTime>:
+  4a06d2:	9725a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a06d6:	0011d437          	lui	s0,0x11d
+  4a06da:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a06de:	1141                	addi	sp,sp,-16
+  4a06e0:	c63e                	sw	a5,12(sp)
+  4a06e2:	e99f50ef          	jal	ra,49657a <HalGetBuildTime>
+  4a06e6:	4732                	lw	a4,12(sp)
+  4a06e8:	7c042783          	lw	a5,1984(s0)
+  4a06ec:	00f70463          	beq	a4,a5,4a06f4 <GetBuildTime+0x22>
+  4a06f0:	ac9550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a06f4:	0141                	addi	sp,sp,16
+  4a06f6:	9725a06f          	j	3fa868 <__riscv_restore_0>
 
-004a06ec <GetBuildRootHash>:
-  4a06ec:	9585a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a06f0:	0011d7b7          	lui	a5,0x11d
-  4a06f4:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a06f8:	1141                	addi	sp,sp,-16
-  4a06fa:	c63a                	sw	a4,12(sp)
-  4a06fc:	4732                	lw	a4,12(sp)
-  4a06fe:	7c07a783          	lw	a5,1984(a5)
-  4a0702:	00f70463          	beq	a4,a5,4a070a <GetBuildRootHash+0x1e>
-  4a0706:	ab3550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a070a:	004a8537          	lui	a0,0x4a8
-  4a070e:	74450513          	addi	a0,a0,1860 # 4a8744 <ssid_fields+0x310>
-  4a0712:	0141                	addi	sp,sp,16
-  4a0714:	9545a06f          	j	3fa868 <__riscv_restore_0>
+004a06fa <GetBuildRootHash>:
+  4a06fa:	94a5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a06fe:	0011d7b7          	lui	a5,0x11d
+  4a0702:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a0706:	1141                	addi	sp,sp,-16
+  4a0708:	c63a                	sw	a4,12(sp)
+  4a070a:	4732                	lw	a4,12(sp)
+  4a070c:	7c07a783          	lw	a5,1984(a5)
+  4a0710:	00f70463          	beq	a4,a5,4a0718 <GetBuildRootHash+0x1e>
+  4a0714:	aa5550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0718:	004a8537          	lui	a0,0x4a8
+  4a071c:	74450513          	addi	a0,a0,1860 # 4a8744 <ssid_fields+0x310>
+  4a0720:	0141                	addi	sp,sp,16
+  4a0722:	9465a06f          	j	3fa868 <__riscv_restore_0>
 
-004a0718 <GetOsReleaseType>:
-  4a0718:	92c5a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a071c:	0011d7b7          	lui	a5,0x11d
-  4a0720:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a0724:	1141                	addi	sp,sp,-16
-  4a0726:	c63a                	sw	a4,12(sp)
-  4a0728:	4732                	lw	a4,12(sp)
-  4a072a:	7c07a783          	lw	a5,1984(a5)
-  4a072e:	00f70463          	beq	a4,a5,4a0736 <GetOsReleaseType+0x1e>
-  4a0732:	a87550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0736:	004ae537          	lui	a0,0x4ae
-  4a073a:	11c50513          	addi	a0,a0,284 # 4ae11c <OHOS_RELEASE_TYPE>
-  4a073e:	0141                	addi	sp,sp,16
-  4a0740:	9285a06f          	j	3fa868 <__riscv_restore_0>
+004a0726 <GetOsReleaseType>:
+  4a0726:	91e5a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a072a:	0011d7b7          	lui	a5,0x11d
+  4a072e:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a0732:	1141                	addi	sp,sp,-16
+  4a0734:	c63a                	sw	a4,12(sp)
+  4a0736:	4732                	lw	a4,12(sp)
+  4a0738:	7c07a783          	lw	a5,1984(a5)
+  4a073c:	00f70463          	beq	a4,a5,4a0744 <GetOsReleaseType+0x1e>
+  4a0740:	a79550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0744:	004ae537          	lui	a0,0x4ae
+  4a0748:	11c50513          	addi	a0,a0,284 # 4ae11c <OHOS_RELEASE_TYPE>
+  4a074c:	0141                	addi	sp,sp,16
+  4a074e:	91a5a06f          	j	3fa868 <__riscv_restore_0>
 
-004a0744 <BuildOSFullName>:
-  4a0744:	9005a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0748:	0011d437          	lui	s0,0x11d
-  4a074c:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a0750:	7135                	addi	sp,sp,-160
-  4a0752:	cf3e                	sw	a5,156(sp)
-  4a0754:	656c67b7          	lui	a5,0x656c6
-  4a0758:	55278793          	addi	a5,a5,1362 # 656c6552 <__rom_data1_load+0x652138f2>
-  4a075c:	ca3e                	sw	a5,20(sp)
-  4a075e:	006577b7          	lui	a5,0x657
-  4a0762:	36178793          	addi	a5,a5,865 # 657361 <__rom_data1_load+0x1a4701>
-  4a0766:	cc3e                	sw	a5,24(sp)
-  4a0768:	fb1ff0ef          	jal	ra,4a0718 <GetOsReleaseType>
-  4a076c:	461d                	li	a2,7
-  4a076e:	084c                	addi	a1,sp,20
-  4a0770:	84aa                	mv	s1,a0
-  4a0772:	c5da90ef          	jal	ra,44a3ce <strncmp>
-  4a0776:	004ae6b7          	lui	a3,0x4ae
-  4a077a:	ed05                	bnez	a0,4a07b2 <BuildOSFullName+0x6e>
-  4a077c:	004ae637          	lui	a2,0x4ae
-  4a0780:	4881                	li	a7,0
-  4a0782:	4801                	li	a6,0
-  4a0784:	4781                	li	a5,0
-  4a0786:	470d                	li	a4,3
-  4a0788:	11068693          	addi	a3,a3,272 # 4ae110 <OHOS_OS_NAME>
-  4a078c:	0c860613          	addi	a2,a2,200 # 4ae0c8 <songti_font_10x13+0x79c>
-  4a0790:	08000593          	li	a1,128
-  4a0794:	0868                	addi	a0,sp,28
-  4a0796:	b89ce0ef          	jal	ra,46f31e <sprintf_s>
-  4a079a:	02054d63          	bltz	a0,4a07d4 <BuildOSFullName+0x90>
-  4a079e:	0868                	addi	a0,sp,28
-  4a07a0:	b37a90ef          	jal	ra,44a2d6 <strdup>
-  4a07a4:	477a                	lw	a4,156(sp)
-  4a07a6:	7c042783          	lw	a5,1984(s0)
-  4a07aa:	02f70a63          	beq	a4,a5,4a07de <BuildOSFullName+0x9a>
-  4a07ae:	a0b550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a07b2:	004ae637          	lui	a2,0x4ae
-  4a07b6:	c026                	sw	s1,0(sp)
-  4a07b8:	4881                	li	a7,0
-  4a07ba:	4801                	li	a6,0
-  4a07bc:	4781                	li	a5,0
-  4a07be:	470d                	li	a4,3
-  4a07c0:	11068693          	addi	a3,a3,272
-  4a07c4:	0d860613          	addi	a2,a2,216 # 4ae0d8 <songti_font_10x13+0x7ac>
-  4a07c8:	08000593          	li	a1,128
-  4a07cc:	0868                	addi	a0,sp,28
-  4a07ce:	b51ce0ef          	jal	ra,46f31e <sprintf_s>
-  4a07d2:	b7e1                	j	4a079a <BuildOSFullName+0x56>
-  4a07d4:	004ae537          	lui	a0,0x4ae
-  4a07d8:	10c50513          	addi	a0,a0,268 # 4ae10c <EMPTY_STR>
-  4a07dc:	b7e1                	j	4a07a4 <BuildOSFullName+0x60>
-  4a07de:	610d                	addi	sp,sp,160
-  4a07e0:	8885a06f          	j	3fa868 <__riscv_restore_0>
+004a0752 <BuildOSFullName>:
+  4a0752:	8f25a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a0756:	0011d437          	lui	s0,0x11d
+  4a075a:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a075e:	7135                	addi	sp,sp,-160
+  4a0760:	cf3e                	sw	a5,156(sp)
+  4a0762:	656c67b7          	lui	a5,0x656c6
+  4a0766:	55278793          	addi	a5,a5,1362 # 656c6552 <__rom_data1_load+0x652138f2>
+  4a076a:	ca3e                	sw	a5,20(sp)
+  4a076c:	006577b7          	lui	a5,0x657
+  4a0770:	36178793          	addi	a5,a5,865 # 657361 <__rom_data1_load+0x1a4701>
+  4a0774:	cc3e                	sw	a5,24(sp)
+  4a0776:	fb1ff0ef          	jal	ra,4a0726 <GetOsReleaseType>
+  4a077a:	461d                	li	a2,7
+  4a077c:	084c                	addi	a1,sp,20
+  4a077e:	84aa                	mv	s1,a0
+  4a0780:	c4fa90ef          	jal	ra,44a3ce <strncmp>
+  4a0784:	004ae6b7          	lui	a3,0x4ae
+  4a0788:	ed05                	bnez	a0,4a07c0 <BuildOSFullName+0x6e>
+  4a078a:	004ae637          	lui	a2,0x4ae
+  4a078e:	4881                	li	a7,0
+  4a0790:	4801                	li	a6,0
+  4a0792:	4781                	li	a5,0
+  4a0794:	470d                	li	a4,3
+  4a0796:	11068693          	addi	a3,a3,272 # 4ae110 <OHOS_OS_NAME>
+  4a079a:	0c860613          	addi	a2,a2,200 # 4ae0c8 <songti_font_10x13+0x79c>
+  4a079e:	08000593          	li	a1,128
+  4a07a2:	0868                	addi	a0,sp,28
+  4a07a4:	b7bce0ef          	jal	ra,46f31e <sprintf_s>
+  4a07a8:	02054d63          	bltz	a0,4a07e2 <BuildOSFullName+0x90>
+  4a07ac:	0868                	addi	a0,sp,28
+  4a07ae:	b29a90ef          	jal	ra,44a2d6 <strdup>
+  4a07b2:	477a                	lw	a4,156(sp)
+  4a07b4:	7c042783          	lw	a5,1984(s0)
+  4a07b8:	02f70a63          	beq	a4,a5,4a07ec <BuildOSFullName+0x9a>
+  4a07bc:	9fd550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a07c0:	004ae637          	lui	a2,0x4ae
+  4a07c4:	c026                	sw	s1,0(sp)
+  4a07c6:	4881                	li	a7,0
+  4a07c8:	4801                	li	a6,0
+  4a07ca:	4781                	li	a5,0
+  4a07cc:	470d                	li	a4,3
+  4a07ce:	11068693          	addi	a3,a3,272
+  4a07d2:	0d860613          	addi	a2,a2,216 # 4ae0d8 <songti_font_10x13+0x7ac>
+  4a07d6:	08000593          	li	a1,128
+  4a07da:	0868                	addi	a0,sp,28
+  4a07dc:	b43ce0ef          	jal	ra,46f31e <sprintf_s>
+  4a07e0:	b7e1                	j	4a07a8 <BuildOSFullName+0x56>
+  4a07e2:	004ae537          	lui	a0,0x4ae
+  4a07e6:	10c50513          	addi	a0,a0,268 # 4ae10c <EMPTY_STR>
+  4a07ea:	b7e1                	j	4a07b2 <BuildOSFullName+0x60>
+  4a07ec:	610d                	addi	sp,sp,160
+  4a07ee:	87a5a06f          	j	3fa868 <__riscv_restore_0>
 
-004a07e4 <GetOSFullName>:
-  4a07e4:	8605a2ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a07e8:	0011d7b7          	lui	a5,0x11d
-  4a07ec:	000e64b7          	lui	s1,0xe6
-  4a07f0:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a07f4:	a0048493          	addi	s1,s1,-1536 # e5a00 <osFullName.2452>
-  4a07f8:	4088                	lw	a0,0(s1)
-  4a07fa:	1141                	addi	sp,sp,-16
-  4a07fc:	c63a                	sw	a4,12(sp)
-  4a07fe:	843e                	mv	s0,a5
-  4a0800:	e909                	bnez	a0,4a0812 <GetOSFullName+0x2e>
-  4a0802:	f43ff0ef          	jal	ra,4a0744 <BuildOSFullName>
-  4a0806:	c088                	sw	a0,0(s1)
-  4a0808:	e509                	bnez	a0,4a0812 <GetOSFullName+0x2e>
-  4a080a:	004ae537          	lui	a0,0x4ae
-  4a080e:	10c50513          	addi	a0,a0,268 # 4ae10c <EMPTY_STR>
-  4a0812:	4732                	lw	a4,12(sp)
-  4a0814:	7c042783          	lw	a5,1984(s0)
-  4a0818:	00f70463          	beq	a4,a5,4a0820 <GetOSFullName+0x3c>
-  4a081c:	99d550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0820:	0141                	addi	sp,sp,16
-  4a0822:	8465a06f          	j	3fa868 <__riscv_restore_0>
+004a07f2 <GetOSFullName>:
+  4a07f2:	8525a2ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a07f6:	0011d7b7          	lui	a5,0x11d
+  4a07fa:	000e64b7          	lui	s1,0xe6
+  4a07fe:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a0802:	a0048493          	addi	s1,s1,-1536 # e5a00 <osFullName.2452>
+  4a0806:	4088                	lw	a0,0(s1)
+  4a0808:	1141                	addi	sp,sp,-16
+  4a080a:	c63a                	sw	a4,12(sp)
+  4a080c:	843e                	mv	s0,a5
+  4a080e:	e909                	bnez	a0,4a0820 <GetOSFullName+0x2e>
+  4a0810:	f43ff0ef          	jal	ra,4a0752 <BuildOSFullName>
+  4a0814:	c088                	sw	a0,0(s1)
+  4a0816:	e509                	bnez	a0,4a0820 <GetOSFullName+0x2e>
+  4a0818:	004ae537          	lui	a0,0x4ae
+  4a081c:	10c50513          	addi	a0,a0,268 # 4ae10c <EMPTY_STR>
+  4a0820:	4732                	lw	a4,12(sp)
+  4a0822:	7c042783          	lw	a5,1984(s0)
+  4a0826:	00f70463          	beq	a4,a5,4a082e <GetOSFullName+0x3c>
+  4a082a:	98f550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a082e:	0141                	addi	sp,sp,16
+  4a0830:	8385a06f          	j	3fa868 <__riscv_restore_0>
 
-004a0826 <BuildVersionId>:
-  4a0826:	8045a2ef          	jal	t0,3fa82a <__riscv_save_4>
-  4a082a:	0011d437          	lui	s0,0x11d
-  4a082e:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a0832:	714d                	addi	sp,sp,-336
-  4a0834:	14f12623          	sw	a5,332(sp)
-  4a0838:	b93ff0ef          	jal	ra,4a03ca <GetDeviceType>
-  4a083c:	de2a                	sw	a0,60(sp)
-  4a083e:	bb5ff0ef          	jal	ra,4a03f2 <GetManufacture>
-  4a0842:	dc2a                	sw	a0,56(sp)
-  4a0844:	bd7ff0ef          	jal	ra,4a041a <GetBrand>
-  4a0848:	da2a                	sw	a0,52(sp)
-  4a084a:	c21ff0ef          	jal	ra,4a046a <GetProductSeries>
-  4a084e:	d82a                	sw	a0,48(sp)
-  4a0850:	f95ff0ef          	jal	ra,4a07e4 <GetOSFullName>
-  4a0854:	d62a                	sw	a0,44(sp)
-  4a0856:	c3dff0ef          	jal	ra,4a0492 <GetProductModel>
-  4a085a:	84aa                	mv	s1,a0
-  4a085c:	c5fff0ef          	jal	ra,4a04ba <GetSoftwareModel>
-  4a0860:	892a                	mv	s2,a0
-  4a0862:	dc3ff0ef          	jal	ra,4a0624 <GetIncrementalVersion>
-  4a0866:	89aa                	mv	s3,a0
-  4a0868:	de5ff0ef          	jal	ra,4a064c <GetBuildType>
-  4a086c:	461d                	li	a2,7
-  4a086e:	58b2                	lw	a7,44(sp)
-  4a0870:	5842                	lw	a6,48(sp)
-  4a0872:	57d2                	lw	a5,52(sp)
-  4a0874:	5762                	lw	a4,56(sp)
-  4a0876:	56f2                	lw	a3,60(sp)
-  4a0878:	c432                	sw	a2,8(sp)
-  4a087a:	004ae637          	lui	a2,0x4ae
-  4a087e:	c82a                	sw	a0,16(sp)
-  4a0880:	c64e                	sw	s3,12(sp)
-  4a0882:	c24a                	sw	s2,4(sp)
-  4a0884:	c026                	sw	s1,0(sp)
-  4a0886:	0ec60613          	addi	a2,a2,236 # 4ae0ec <songti_font_10x13+0x7c0>
-  4a088a:	10000593          	li	a1,256
-  4a088e:	00e8                	addi	a0,sp,76
-  4a0890:	a8fce0ef          	jal	ra,46f31e <sprintf_s>
-  4a0894:	00054d63          	bltz	a0,4a08ae <BuildVersionId+0x88>
-  4a0898:	00e8                	addi	a0,sp,76
-  4a089a:	a3da90ef          	jal	ra,44a2d6 <strdup>
-  4a089e:	14c12703          	lw	a4,332(sp)
-  4a08a2:	7c042783          	lw	a5,1984(s0)
-  4a08a6:	00f70963          	beq	a4,a5,4a08b8 <BuildVersionId+0x92>
-  4a08aa:	90f550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a08ae:	004ae537          	lui	a0,0x4ae
-  4a08b2:	10c50513          	addi	a0,a0,268 # 4ae10c <EMPTY_STR>
-  4a08b6:	b7e5                	j	4a089e <BuildVersionId+0x78>
-  4a08b8:	6171                	addi	sp,sp,336
-  4a08ba:	fa55906f          	j	3fa85e <__riscv_restore_4>
+004a0834 <BuildVersionId>:
+  4a0834:	ff7592ef          	jal	t0,3fa82a <__riscv_save_4>
+  4a0838:	0011d437          	lui	s0,0x11d
+  4a083c:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a0840:	714d                	addi	sp,sp,-336
+  4a0842:	14f12623          	sw	a5,332(sp)
+  4a0846:	b93ff0ef          	jal	ra,4a03d8 <GetDeviceType>
+  4a084a:	de2a                	sw	a0,60(sp)
+  4a084c:	bb5ff0ef          	jal	ra,4a0400 <GetManufacture>
+  4a0850:	dc2a                	sw	a0,56(sp)
+  4a0852:	bd7ff0ef          	jal	ra,4a0428 <GetBrand>
+  4a0856:	da2a                	sw	a0,52(sp)
+  4a0858:	c21ff0ef          	jal	ra,4a0478 <GetProductSeries>
+  4a085c:	d82a                	sw	a0,48(sp)
+  4a085e:	f95ff0ef          	jal	ra,4a07f2 <GetOSFullName>
+  4a0862:	d62a                	sw	a0,44(sp)
+  4a0864:	c3dff0ef          	jal	ra,4a04a0 <GetProductModel>
+  4a0868:	84aa                	mv	s1,a0
+  4a086a:	c5fff0ef          	jal	ra,4a04c8 <GetSoftwareModel>
+  4a086e:	892a                	mv	s2,a0
+  4a0870:	dc3ff0ef          	jal	ra,4a0632 <GetIncrementalVersion>
+  4a0874:	89aa                	mv	s3,a0
+  4a0876:	de5ff0ef          	jal	ra,4a065a <GetBuildType>
+  4a087a:	461d                	li	a2,7
+  4a087c:	58b2                	lw	a7,44(sp)
+  4a087e:	5842                	lw	a6,48(sp)
+  4a0880:	57d2                	lw	a5,52(sp)
+  4a0882:	5762                	lw	a4,56(sp)
+  4a0884:	56f2                	lw	a3,60(sp)
+  4a0886:	c432                	sw	a2,8(sp)
+  4a0888:	004ae637          	lui	a2,0x4ae
+  4a088c:	c82a                	sw	a0,16(sp)
+  4a088e:	c64e                	sw	s3,12(sp)
+  4a0890:	c24a                	sw	s2,4(sp)
+  4a0892:	c026                	sw	s1,0(sp)
+  4a0894:	0ec60613          	addi	a2,a2,236 # 4ae0ec <songti_font_10x13+0x7c0>
+  4a0898:	10000593          	li	a1,256
+  4a089c:	00e8                	addi	a0,sp,76
+  4a089e:	a81ce0ef          	jal	ra,46f31e <sprintf_s>
+  4a08a2:	00054d63          	bltz	a0,4a08bc <BuildVersionId+0x88>
+  4a08a6:	00e8                	addi	a0,sp,76
+  4a08a8:	a2fa90ef          	jal	ra,44a2d6 <strdup>
+  4a08ac:	14c12703          	lw	a4,332(sp)
+  4a08b0:	7c042783          	lw	a5,1984(s0)
+  4a08b4:	00f70963          	beq	a4,a5,4a08c6 <BuildVersionId+0x92>
+  4a08b8:	901550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a08bc:	004ae537          	lui	a0,0x4ae
+  4a08c0:	10c50513          	addi	a0,a0,268 # 4ae10c <EMPTY_STR>
+  4a08c4:	b7e5                	j	4a08ac <BuildVersionId+0x78>
+  4a08c6:	6171                	addi	sp,sp,336
+  4a08c8:	f975906f          	j	3fa85e <__riscv_restore_4>
 
-004a08be <GetVersionId>:
-  4a08be:	f87592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a08c2:	0011d7b7          	lui	a5,0x11d
-  4a08c6:	000e64b7          	lui	s1,0xe6
-  4a08ca:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a08ce:	a0448493          	addi	s1,s1,-1532 # e5a04 <versionId.2474>
-  4a08d2:	4088                	lw	a0,0(s1)
-  4a08d4:	1141                	addi	sp,sp,-16
-  4a08d6:	c63a                	sw	a4,12(sp)
-  4a08d8:	843e                	mv	s0,a5
-  4a08da:	e909                	bnez	a0,4a08ec <GetVersionId+0x2e>
-  4a08dc:	f4bff0ef          	jal	ra,4a0826 <BuildVersionId>
-  4a08e0:	c088                	sw	a0,0(s1)
-  4a08e2:	e509                	bnez	a0,4a08ec <GetVersionId+0x2e>
-  4a08e4:	004ae537          	lui	a0,0x4ae
-  4a08e8:	10c50513          	addi	a0,a0,268 # 4ae10c <EMPTY_STR>
-  4a08ec:	4732                	lw	a4,12(sp)
-  4a08ee:	7c042783          	lw	a5,1984(s0)
-  4a08f2:	00f70463          	beq	a4,a5,4a08fa <GetVersionId+0x3c>
-  4a08f6:	8c3550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a08fa:	0141                	addi	sp,sp,16
-  4a08fc:	f6d5906f          	j	3fa868 <__riscv_restore_0>
+004a08cc <GetVersionId>:
+  4a08cc:	f79592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a08d0:	0011d7b7          	lui	a5,0x11d
+  4a08d4:	000e64b7          	lui	s1,0xe6
+  4a08d8:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a08dc:	a0448493          	addi	s1,s1,-1532 # e5a04 <versionId.2474>
+  4a08e0:	4088                	lw	a0,0(s1)
+  4a08e2:	1141                	addi	sp,sp,-16
+  4a08e4:	c63a                	sw	a4,12(sp)
+  4a08e6:	843e                	mv	s0,a5
+  4a08e8:	e909                	bnez	a0,4a08fa <GetVersionId+0x2e>
+  4a08ea:	f4bff0ef          	jal	ra,4a0834 <BuildVersionId>
+  4a08ee:	c088                	sw	a0,0(s1)
+  4a08f0:	e509                	bnez	a0,4a08fa <GetVersionId+0x2e>
+  4a08f2:	004ae537          	lui	a0,0x4ae
+  4a08f6:	10c50513          	addi	a0,a0,268 # 4ae10c <EMPTY_STR>
+  4a08fa:	4732                	lw	a4,12(sp)
+  4a08fc:	7c042783          	lw	a5,1984(s0)
+  4a0900:	00f70463          	beq	a4,a5,4a0908 <GetVersionId+0x3c>
+  4a0904:	8b5550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0908:	0141                	addi	sp,sp,16
+  4a090a:	f5f5906f          	j	3fa868 <__riscv_restore_0>
 
-004a0900 <GetValueByFile>:
-  4a0900:	f2b592ef          	jal	t0,3fa82a <__riscv_save_4>
-  4a0904:	0011d437          	lui	s0,0x11d
-  4a0908:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a090c:	1101                	addi	sp,sp,-32
-  4a090e:	84ae                	mv	s1,a1
-  4a0910:	082c                	addi	a1,sp,24
-  4a0912:	c632                	sw	a2,12(sp)
-  4a0914:	892a                	mv	s2,a0
-  4a0916:	ce3e                	sw	a5,28(sp)
-  4a0918:	cc02                	sw	zero,24(sp)
-  4a091a:	8e8f80ef          	jal	ra,498a02 <UtilsFileStat>
-  4a091e:	4632                	lw	a2,12(sp)
-  4a0920:	c909                	beqz	a0,4a0932 <GetValueByFile+0x32>
-  4a0922:	557d                	li	a0,-1
-  4a0924:	4772                	lw	a4,28(sp)
-  4a0926:	7c042783          	lw	a5,1984(s0)
-  4a092a:	02f70e63          	beq	a4,a5,4a0966 <GetValueByFile+0x66>
-  4a092e:	88b550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0932:	47e2                	lw	a5,24(sp)
-  4a0934:	fec7f7e3          	bleu	a2,a5,4a0922 <GetValueByFile+0x22>
-  4a0938:	854a                	mv	a0,s2
-  4a093a:	4601                	li	a2,0
-  4a093c:	4581                	li	a1,0
-  4a093e:	824f80ef          	jal	ra,498962 <UtilsFileOpen>
-  4a0942:	892a                	mv	s2,a0
-  4a0944:	fc054fe3          	bltz	a0,4a0922 <GetValueByFile+0x22>
-  4a0948:	4662                	lw	a2,24(sp)
-  4a094a:	85a6                	mv	a1,s1
-  4a094c:	866f80ef          	jal	ra,4989b2 <UtilsFileRead>
-  4a0950:	89aa                	mv	s3,a0
-  4a0952:	854a                	mv	a0,s2
-  4a0954:	836f80ef          	jal	ra,49898a <UtilsFileClose>
-  4a0958:	fc09c5e3          	bltz	s3,4a0922 <GetValueByFile+0x22>
-  4a095c:	4562                	lw	a0,24(sp)
-  4a095e:	94aa                	add	s1,s1,a0
-  4a0960:	00048023          	sb	zero,0(s1)
-  4a0964:	b7c1                	j	4a0924 <GetValueByFile+0x24>
-  4a0966:	6105                	addi	sp,sp,32
-  4a0968:	ef75906f          	j	3fa85e <__riscv_restore_4>
+004a090e <GetValueByFile>:
+  4a090e:	f1d592ef          	jal	t0,3fa82a <__riscv_save_4>
+  4a0912:	0011d437          	lui	s0,0x11d
+  4a0916:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a091a:	1101                	addi	sp,sp,-32
+  4a091c:	84ae                	mv	s1,a1
+  4a091e:	082c                	addi	a1,sp,24
+  4a0920:	c632                	sw	a2,12(sp)
+  4a0922:	892a                	mv	s2,a0
+  4a0924:	ce3e                	sw	a5,28(sp)
+  4a0926:	cc02                	sw	zero,24(sp)
+  4a0928:	8daf80ef          	jal	ra,498a02 <UtilsFileStat>
+  4a092c:	4632                	lw	a2,12(sp)
+  4a092e:	c909                	beqz	a0,4a0940 <GetValueByFile+0x32>
+  4a0930:	557d                	li	a0,-1
+  4a0932:	4772                	lw	a4,28(sp)
+  4a0934:	7c042783          	lw	a5,1984(s0)
+  4a0938:	02f70e63          	beq	a4,a5,4a0974 <GetValueByFile+0x66>
+  4a093c:	87d550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0940:	47e2                	lw	a5,24(sp)
+  4a0942:	fec7f7e3          	bleu	a2,a5,4a0930 <GetValueByFile+0x22>
+  4a0946:	854a                	mv	a0,s2
+  4a0948:	4601                	li	a2,0
+  4a094a:	4581                	li	a1,0
+  4a094c:	816f80ef          	jal	ra,498962 <UtilsFileOpen>
+  4a0950:	892a                	mv	s2,a0
+  4a0952:	fc054fe3          	bltz	a0,4a0930 <GetValueByFile+0x22>
+  4a0956:	4662                	lw	a2,24(sp)
+  4a0958:	85a6                	mv	a1,s1
+  4a095a:	858f80ef          	jal	ra,4989b2 <UtilsFileRead>
+  4a095e:	89aa                	mv	s3,a0
+  4a0960:	854a                	mv	a0,s2
+  4a0962:	828f80ef          	jal	ra,49898a <UtilsFileClose>
+  4a0966:	fc09c5e3          	bltz	s3,4a0930 <GetValueByFile+0x22>
+  4a096a:	4562                	lw	a0,24(sp)
+  4a096c:	94aa                	add	s1,s1,a0
+  4a096e:	00048023          	sb	zero,0(s1)
+  4a0972:	b7c1                	j	4a0932 <GetValueByFile+0x24>
+  4a0974:	6105                	addi	sp,sp,32
+  4a0976:	ee95906f          	j	3fa85e <__riscv_restore_4>
 
-004a096c <NewItem>:
-  4a096c:	ed9592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0970:	0011d437          	lui	s0,0x11d
-  4a0974:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a0978:	1141                	addi	sp,sp,-16
-  4a097a:	4601                	li	a2,0
-  4a097c:	4581                	li	a1,0
-  4a097e:	c63e                	sw	a5,12(sp)
-  4a0980:	fe3f70ef          	jal	ra,498962 <UtilsFileOpen>
-  4a0984:	4785                	li	a5,1
-  4a0986:	00054563          	bltz	a0,4a0990 <NewItem+0x24>
-  4a098a:	800f80ef          	jal	ra,49898a <UtilsFileClose>
-  4a098e:	4781                	li	a5,0
-  4a0990:	853e                	mv	a0,a5
-  4a0992:	4732                	lw	a4,12(sp)
-  4a0994:	7c042783          	lw	a5,1984(s0)
-  4a0998:	00f70463          	beq	a4,a5,4a09a0 <NewItem+0x34>
-  4a099c:	81d550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a09a0:	0141                	addi	sp,sp,16
-  4a09a2:	ec75906f          	j	3fa868 <__riscv_restore_0>
+004a097a <NewItem>:
+  4a097a:	ecb592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a097e:	0011d437          	lui	s0,0x11d
+  4a0982:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a0986:	1141                	addi	sp,sp,-16
+  4a0988:	4601                	li	a2,0
+  4a098a:	4581                	li	a1,0
+  4a098c:	c63e                	sw	a5,12(sp)
+  4a098e:	fd5f70ef          	jal	ra,498962 <UtilsFileOpen>
+  4a0992:	4785                	li	a5,1
+  4a0994:	00054563          	bltz	a0,4a099e <NewItem+0x24>
+  4a0998:	ff3f70ef          	jal	ra,49898a <UtilsFileClose>
+  4a099c:	4781                	li	a5,0
+  4a099e:	853e                	mv	a0,a5
+  4a09a0:	4732                	lw	a4,12(sp)
+  4a09a2:	7c042783          	lw	a5,1984(s0)
+  4a09a6:	00f70463          	beq	a4,a5,4a09ae <NewItem+0x34>
+  4a09aa:	80f550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a09ae:	0141                	addi	sp,sp,16
+  4a09b0:	eb95906f          	j	3fa868 <__riscv_restore_0>
 
-004a09a6 <GetCurrentItem>:
-  4a09a6:	e9f592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a09aa:	0011d437          	lui	s0,0x11d
-  4a09ae:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a09b2:	004ae537          	lui	a0,0x4ae
-  4a09b6:	1141                	addi	sp,sp,-16
-  4a09b8:	4601                	li	a2,0
-  4a09ba:	4589                	li	a1,2
-  4a09bc:	12c50513          	addi	a0,a0,300 # 4ae12c <OHOS_SECURITY_PATCH_TAG+0xc>
-  4a09c0:	c63e                	sw	a5,12(sp)
-  4a09c2:	fa1f70ef          	jal	ra,498962 <UtilsFileOpen>
-  4a09c6:	00055a63          	bgez	a0,4a09da <GetCurrentItem+0x34>
-  4a09ca:	4501                	li	a0,0
-  4a09cc:	4732                	lw	a4,12(sp)
-  4a09ce:	7c042783          	lw	a5,1984(s0)
-  4a09d2:	02f70463          	beq	a4,a5,4a09fa <GetCurrentItem+0x54>
-  4a09d6:	fe2550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a09da:	4611                	li	a2,4
-  4a09dc:	002c                	addi	a1,sp,8
-  4a09de:	84aa                	mv	s1,a0
-  4a09e0:	c402                	sw	zero,8(sp)
-  4a09e2:	fd1f70ef          	jal	ra,4989b2 <UtilsFileRead>
-  4a09e6:	892a                	mv	s2,a0
-  4a09e8:	8526                	mv	a0,s1
-  4a09ea:	fa1f70ef          	jal	ra,49898a <UtilsFileClose>
-  4a09ee:	fc094ee3          	bltz	s2,4a09ca <GetCurrentItem+0x24>
-  4a09f2:	0028                	addi	a0,sp,8
-  4a09f4:	d9fa60ef          	jal	ra,447792 <atoi>
-  4a09f8:	bfd1                	j	4a09cc <GetCurrentItem+0x26>
-  4a09fa:	0141                	addi	sp,sp,16
-  4a09fc:	e6d5906f          	j	3fa868 <__riscv_restore_0>
+004a09b4 <GetCurrentItem>:
+  4a09b4:	e91592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a09b8:	0011d437          	lui	s0,0x11d
+  4a09bc:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a09c0:	004ae537          	lui	a0,0x4ae
+  4a09c4:	1141                	addi	sp,sp,-16
+  4a09c6:	4601                	li	a2,0
+  4a09c8:	4589                	li	a1,2
+  4a09ca:	12c50513          	addi	a0,a0,300 # 4ae12c <OHOS_SECURITY_PATCH_TAG+0xc>
+  4a09ce:	c63e                	sw	a5,12(sp)
+  4a09d0:	f93f70ef          	jal	ra,498962 <UtilsFileOpen>
+  4a09d4:	00055a63          	bgez	a0,4a09e8 <GetCurrentItem+0x34>
+  4a09d8:	4501                	li	a0,0
+  4a09da:	4732                	lw	a4,12(sp)
+  4a09dc:	7c042783          	lw	a5,1984(s0)
+  4a09e0:	02f70463          	beq	a4,a5,4a0a08 <GetCurrentItem+0x54>
+  4a09e4:	fd4550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a09e8:	4611                	li	a2,4
+  4a09ea:	002c                	addi	a1,sp,8
+  4a09ec:	84aa                	mv	s1,a0
+  4a09ee:	c402                	sw	zero,8(sp)
+  4a09f0:	fc3f70ef          	jal	ra,4989b2 <UtilsFileRead>
+  4a09f4:	892a                	mv	s2,a0
+  4a09f6:	8526                	mv	a0,s1
+  4a09f8:	f93f70ef          	jal	ra,49898a <UtilsFileClose>
+  4a09fc:	fc094ee3          	bltz	s2,4a09d8 <GetCurrentItem+0x24>
+  4a0a00:	0028                	addi	a0,sp,8
+  4a0a02:	d91a60ef          	jal	ra,447792 <atoi>
+  4a0a06:	bfd1                	j	4a09da <GetCurrentItem+0x26>
+  4a0a08:	0141                	addi	sp,sp,16
+  4a0a0a:	e5f5906f          	j	3fa868 <__riscv_restore_0>
 
-004a0a00 <SetValueToFile>:
-  4a0a00:	e45592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0a04:	0011d437          	lui	s0,0x11d
-  4a0a08:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a0a0c:	1141                	addi	sp,sp,-16
-  4a0a0e:	84ae                	mv	s1,a1
-  4a0a10:	4601                	li	a2,0
-  4a0a12:	24200593          	li	a1,578
-  4a0a16:	c63e                	sw	a5,12(sp)
-  4a0a18:	f4bf70ef          	jal	ra,498962 <UtilsFileOpen>
-  4a0a1c:	892a                	mv	s2,a0
-  4a0a1e:	557d                	li	a0,-1
-  4a0a20:	02094063          	bltz	s2,4a0a40 <SetValueToFile+0x40>
-  4a0a24:	8526                	mv	a0,s1
-  4a0a26:	d095a0ef          	jal	ra,3fb72e <strlen>
-  4a0a2a:	862a                	mv	a2,a0
-  4a0a2c:	85a6                	mv	a1,s1
-  4a0a2e:	854a                	mv	a0,s2
-  4a0a30:	fabf70ef          	jal	ra,4989da <UtilsFileWrite>
-  4a0a34:	84aa                	mv	s1,a0
-  4a0a36:	854a                	mv	a0,s2
-  4a0a38:	f53f70ef          	jal	ra,49898a <UtilsFileClose>
-  4a0a3c:	41f4d513          	srai	a0,s1,0x1f
-  4a0a40:	4732                	lw	a4,12(sp)
-  4a0a42:	7c042783          	lw	a5,1984(s0)
-  4a0a46:	00f70463          	beq	a4,a5,4a0a4e <SetValueToFile+0x4e>
-  4a0a4a:	f6e550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0a4e:	0141                	addi	sp,sp,16
-  4a0a50:	e195906f          	j	3fa868 <__riscv_restore_0>
+004a0a0e <SetValueToFile>:
+  4a0a0e:	e37592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a0a12:	0011d437          	lui	s0,0x11d
+  4a0a16:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a0a1a:	1141                	addi	sp,sp,-16
+  4a0a1c:	84ae                	mv	s1,a1
+  4a0a1e:	4601                	li	a2,0
+  4a0a20:	24200593          	li	a1,578
+  4a0a24:	c63e                	sw	a5,12(sp)
+  4a0a26:	f3df70ef          	jal	ra,498962 <UtilsFileOpen>
+  4a0a2a:	892a                	mv	s2,a0
+  4a0a2c:	557d                	li	a0,-1
+  4a0a2e:	02094063          	bltz	s2,4a0a4e <SetValueToFile+0x40>
+  4a0a32:	8526                	mv	a0,s1
+  4a0a34:	cfb5a0ef          	jal	ra,3fb72e <strlen>
+  4a0a38:	862a                	mv	a2,a0
+  4a0a3a:	85a6                	mv	a1,s1
+  4a0a3c:	854a                	mv	a0,s2
+  4a0a3e:	f9df70ef          	jal	ra,4989da <UtilsFileWrite>
+  4a0a42:	84aa                	mv	s1,a0
+  4a0a44:	854a                	mv	a0,s2
+  4a0a46:	f45f70ef          	jal	ra,49898a <UtilsFileClose>
+  4a0a4a:	41f4d513          	srai	a0,s1,0x1f
+  4a0a4e:	4732                	lw	a4,12(sp)
+  4a0a50:	7c042783          	lw	a5,1984(s0)
+  4a0a54:	00f70463          	beq	a4,a5,4a0a5c <SetValueToFile+0x4e>
+  4a0a58:	f60550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0a5c:	0141                	addi	sp,sp,16
+  4a0a5e:	e0b5906f          	j	3fa868 <__riscv_restore_0>
 
-004a0a54 <SetCurrentItem>:
-  4a0a54:	df1592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0a58:	0011d437          	lui	s0,0x11d
-  4a0a5c:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a0a60:	1141                	addi	sp,sp,-16
-  4a0a62:	004aa637          	lui	a2,0x4aa
-  4a0a66:	86aa                	mv	a3,a0
-  4a0a68:	41c60613          	addi	a2,a2,1052 # 4aa41c <alarm_type_strings+0x668>
-  4a0a6c:	4591                	li	a1,4
-  4a0a6e:	0028                	addi	a0,sp,8
-  4a0a70:	c63e                	sw	a5,12(sp)
-  4a0a72:	c402                	sw	zero,8(sp)
-  4a0a74:	8abce0ef          	jal	ra,46f31e <sprintf_s>
-  4a0a78:	00055a63          	bgez	a0,4a0a8c <SetCurrentItem+0x38>
-  4a0a7c:	557d                	li	a0,-1
-  4a0a7e:	4732                	lw	a4,12(sp)
-  4a0a80:	7c042783          	lw	a5,1984(s0)
-  4a0a84:	02f70b63          	beq	a4,a5,4a0aba <SetCurrentItem+0x66>
-  4a0a88:	f30550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0a8c:	004ae537          	lui	a0,0x4ae
-  4a0a90:	4601                	li	a2,0
-  4a0a92:	04200593          	li	a1,66
-  4a0a96:	12c50513          	addi	a0,a0,300 # 4ae12c <OHOS_SECURITY_PATCH_TAG+0xc>
-  4a0a9a:	ec9f70ef          	jal	ra,498962 <UtilsFileOpen>
-  4a0a9e:	892a                	mv	s2,a0
-  4a0aa0:	fc054ee3          	bltz	a0,4a0a7c <SetCurrentItem+0x28>
-  4a0aa4:	4611                	li	a2,4
-  4a0aa6:	002c                	addi	a1,sp,8
-  4a0aa8:	f33f70ef          	jal	ra,4989da <UtilsFileWrite>
-  4a0aac:	84aa                	mv	s1,a0
-  4a0aae:	854a                	mv	a0,s2
-  4a0ab0:	edbf70ef          	jal	ra,49898a <UtilsFileClose>
-  4a0ab4:	41f4d513          	srai	a0,s1,0x1f
-  4a0ab8:	b7d9                	j	4a0a7e <SetCurrentItem+0x2a>
-  4a0aba:	0141                	addi	sp,sp,16
-  4a0abc:	dad5906f          	j	3fa868 <__riscv_restore_0>
+004a0a62 <SetCurrentItem>:
+  4a0a62:	de3592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a0a66:	0011d437          	lui	s0,0x11d
+  4a0a6a:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a0a6e:	1141                	addi	sp,sp,-16
+  4a0a70:	004aa637          	lui	a2,0x4aa
+  4a0a74:	86aa                	mv	a3,a0
+  4a0a76:	41c60613          	addi	a2,a2,1052 # 4aa41c <alarm_type_strings+0x668>
+  4a0a7a:	4591                	li	a1,4
+  4a0a7c:	0028                	addi	a0,sp,8
+  4a0a7e:	c63e                	sw	a5,12(sp)
+  4a0a80:	c402                	sw	zero,8(sp)
+  4a0a82:	89dce0ef          	jal	ra,46f31e <sprintf_s>
+  4a0a86:	00055a63          	bgez	a0,4a0a9a <SetCurrentItem+0x38>
+  4a0a8a:	557d                	li	a0,-1
+  4a0a8c:	4732                	lw	a4,12(sp)
+  4a0a8e:	7c042783          	lw	a5,1984(s0)
+  4a0a92:	02f70b63          	beq	a4,a5,4a0ac8 <SetCurrentItem+0x66>
+  4a0a96:	f22550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0a9a:	004ae537          	lui	a0,0x4ae
+  4a0a9e:	4601                	li	a2,0
+  4a0aa0:	04200593          	li	a1,66
+  4a0aa4:	12c50513          	addi	a0,a0,300 # 4ae12c <OHOS_SECURITY_PATCH_TAG+0xc>
+  4a0aa8:	ebbf70ef          	jal	ra,498962 <UtilsFileOpen>
+  4a0aac:	892a                	mv	s2,a0
+  4a0aae:	fc054ee3          	bltz	a0,4a0a8a <SetCurrentItem+0x28>
+  4a0ab2:	4611                	li	a2,4
+  4a0ab4:	002c                	addi	a1,sp,8
+  4a0ab6:	f25f70ef          	jal	ra,4989da <UtilsFileWrite>
+  4a0aba:	84aa                	mv	s1,a0
+  4a0abc:	854a                	mv	a0,s2
+  4a0abe:	ecdf70ef          	jal	ra,49898a <UtilsFileClose>
+  4a0ac2:	41f4d513          	srai	a0,s1,0x1f
+  4a0ac6:	b7d9                	j	4a0a8c <SetCurrentItem+0x2a>
+  4a0ac8:	0141                	addi	sp,sp,16
+  4a0aca:	d9f5906f          	j	3fa868 <__riscv_restore_0>
 
-004a0ac0 <UtilsGetValue>:
-  4a0ac0:	d6b592ef          	jal	t0,3fa82a <__riscv_save_4>
-  4a0ac4:	0011d4b7          	lui	s1,0x11d
-  4a0ac8:	7c04a783          	lw	a5,1984(s1) # 11d7c0 <__rom_data0_begin__>
-  4a0acc:	1141                	addi	sp,sp,-16
-  4a0ace:	89aa                	mv	s3,a0
-  4a0ad0:	892e                	mv	s2,a1
-  4a0ad2:	8a32                	mv	s4,a2
-  4a0ad4:	c63e                	sw	a5,12(sp)
-  4a0ad6:	2a49                	jal	4a0c68 <IsValidKey>
-  4a0ad8:	545d                	li	s0,-9
-  4a0ada:	c51d                	beqz	a0,4a0b08 <UtilsGetValue+0x48>
-  4a0adc:	02090663          	beqz	s2,4a0b08 <UtilsGetValue+0x48>
-  4a0ae0:	020a4463          	bltz	s4,4a0b08 <UtilsGetValue+0x48>
-  4a0ae4:	8652                	mv	a2,s4
-  4a0ae6:	85ca                	mv	a1,s2
-  4a0ae8:	854e                	mv	a0,s3
-  4a0aea:	2ea5                	jal	4a0e62 <GetValueByCache>
-  4a0aec:	842a                	mv	s0,a0
-  4a0aee:	cd09                	beqz	a0,4a0b08 <UtilsGetValue+0x48>
-  4a0af0:	8652                	mv	a2,s4
-  4a0af2:	85ca                	mv	a1,s2
-  4a0af4:	854e                	mv	a0,s3
-  4a0af6:	e0bff0ef          	jal	ra,4a0900 <GetValueByFile>
+004a0ace <UtilsGetValue>:
+  4a0ace:	d5d592ef          	jal	t0,3fa82a <__riscv_save_4>
+  4a0ad2:	0011d4b7          	lui	s1,0x11d
+  4a0ad6:	7c04a783          	lw	a5,1984(s1) # 11d7c0 <__rom_data0_begin__>
+  4a0ada:	1141                	addi	sp,sp,-16
+  4a0adc:	89aa                	mv	s3,a0
+  4a0ade:	892e                	mv	s2,a1
+  4a0ae0:	8a32                	mv	s4,a2
+  4a0ae2:	c63e                	sw	a5,12(sp)
+  4a0ae4:	2a49                	jal	4a0c76 <IsValidKey>
+  4a0ae6:	545d                	li	s0,-9
+  4a0ae8:	c51d                	beqz	a0,4a0b16 <UtilsGetValue+0x48>
+  4a0aea:	02090663          	beqz	s2,4a0b16 <UtilsGetValue+0x48>
+  4a0aee:	020a4463          	bltz	s4,4a0b16 <UtilsGetValue+0x48>
+  4a0af2:	8652                	mv	a2,s4
+  4a0af4:	85ca                	mv	a1,s2
+  4a0af6:	854e                	mv	a0,s3
+  4a0af8:	2ea5                	jal	4a0e70 <GetValueByCache>
   4a0afa:	842a                	mv	s0,a0
-  4a0afc:	00054e63          	bltz	a0,4a0b18 <UtilsGetValue+0x58>
-  4a0b00:	4601                	li	a2,0
-  4a0b02:	85ca                	mv	a1,s2
-  4a0b04:	854e                	mv	a0,s3
-  4a0b06:	2c89                	jal	4a0d58 <AddKVCache>
-  4a0b08:	4732                	lw	a4,12(sp)
-  4a0b0a:	7c04a783          	lw	a5,1984(s1)
-  4a0b0e:	8522                	mv	a0,s0
-  4a0b10:	00f70663          	beq	a4,a5,4a0b1c <UtilsGetValue+0x5c>
-  4a0b14:	ea4550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0b18:	547d                	li	s0,-1
-  4a0b1a:	b7fd                	j	4a0b08 <UtilsGetValue+0x48>
-  4a0b1c:	0141                	addi	sp,sp,16
-  4a0b1e:	d415906f          	j	3fa85e <__riscv_restore_4>
+  4a0afc:	cd09                	beqz	a0,4a0b16 <UtilsGetValue+0x48>
+  4a0afe:	8652                	mv	a2,s4
+  4a0b00:	85ca                	mv	a1,s2
+  4a0b02:	854e                	mv	a0,s3
+  4a0b04:	e0bff0ef          	jal	ra,4a090e <GetValueByFile>
+  4a0b08:	842a                	mv	s0,a0
+  4a0b0a:	00054e63          	bltz	a0,4a0b26 <UtilsGetValue+0x58>
+  4a0b0e:	4601                	li	a2,0
+  4a0b10:	85ca                	mv	a1,s2
+  4a0b12:	854e                	mv	a0,s3
+  4a0b14:	2c89                	jal	4a0d66 <AddKVCache>
+  4a0b16:	4732                	lw	a4,12(sp)
+  4a0b18:	7c04a783          	lw	a5,1984(s1)
+  4a0b1c:	8522                	mv	a0,s0
+  4a0b1e:	00f70663          	beq	a4,a5,4a0b2a <UtilsGetValue+0x5c>
+  4a0b22:	e96550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0b26:	547d                	li	s0,-1
+  4a0b28:	b7fd                	j	4a0b16 <UtilsGetValue+0x48>
+  4a0b2a:	0141                	addi	sp,sp,16
+  4a0b2c:	d335906f          	j	3fa85e <__riscv_restore_4>
 
-004a0b22 <UtilsSetValue>:
-  4a0b22:	d09592ef          	jal	t0,3fa82a <__riscv_save_4>
-  4a0b26:	0011d437          	lui	s0,0x11d
-  4a0b2a:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a0b2e:	1141                	addi	sp,sp,-16
-  4a0b30:	892a                	mv	s2,a0
-  4a0b32:	89ae                	mv	s3,a1
-  4a0b34:	c63e                	sw	a5,12(sp)
-  4a0b36:	2a0d                	jal	4a0c68 <IsValidKey>
-  4a0b38:	e909                	bnez	a0,4a0b4a <UtilsSetValue+0x28>
-  4a0b3a:	555d                	li	a0,-9
-  4a0b3c:	4732                	lw	a4,12(sp)
-  4a0b3e:	7c042783          	lw	a5,1984(s0)
-  4a0b42:	04f70763          	beq	a4,a5,4a0b90 <UtilsSetValue+0x6e>
-  4a0b46:	e72550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0b4a:	08000593          	li	a1,128
-  4a0b4e:	854e                	mv	a0,s3
-  4a0b50:	28c9                	jal	4a0c22 <IsValidValue>
-  4a0b52:	d565                	beqz	a0,4a0b3a <UtilsSetValue+0x18>
-  4a0b54:	e53ff0ef          	jal	ra,4a09a6 <GetCurrentItem>
-  4a0b58:	84aa                	mv	s1,a0
-  4a0b5a:	854a                	mv	a0,s2
-  4a0b5c:	e11ff0ef          	jal	ra,4a096c <NewItem>
-  4a0b60:	03100793          	li	a5,49
-  4a0b64:	8a2a                	mv	s4,a0
-  4a0b66:	0097d563          	ble	s1,a5,4a0b70 <UtilsSetValue+0x4e>
-  4a0b6a:	557d                	li	a0,-1
-  4a0b6c:	fc0a18e3          	bnez	s4,4a0b3c <UtilsSetValue+0x1a>
-  4a0b70:	85ce                	mv	a1,s3
-  4a0b72:	854a                	mv	a0,s2
-  4a0b74:	e8dff0ef          	jal	ra,4a0a00 <SetValueToFile>
-  4a0b78:	e901                	bnez	a0,4a0b88 <UtilsSetValue+0x66>
-  4a0b7a:	4605                	li	a2,1
-  4a0b7c:	85ce                	mv	a1,s3
-  4a0b7e:	854a                	mv	a0,s2
-  4a0b80:	2ae1                	jal	4a0d58 <AddKVCache>
-  4a0b82:	000a0363          	beqz	s4,4a0b88 <UtilsSetValue+0x66>
-  4a0b86:	0485                	addi	s1,s1,1
-  4a0b88:	8526                	mv	a0,s1
-  4a0b8a:	ecbff0ef          	jal	ra,4a0a54 <SetCurrentItem>
-  4a0b8e:	b77d                	j	4a0b3c <UtilsSetValue+0x1a>
-  4a0b90:	0141                	addi	sp,sp,16
-  4a0b92:	ccd5906f          	j	3fa85e <__riscv_restore_4>
+004a0b30 <UtilsSetValue>:
+  4a0b30:	cfb592ef          	jal	t0,3fa82a <__riscv_save_4>
+  4a0b34:	0011d437          	lui	s0,0x11d
+  4a0b38:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a0b3c:	1141                	addi	sp,sp,-16
+  4a0b3e:	892a                	mv	s2,a0
+  4a0b40:	89ae                	mv	s3,a1
+  4a0b42:	c63e                	sw	a5,12(sp)
+  4a0b44:	2a0d                	jal	4a0c76 <IsValidKey>
+  4a0b46:	e909                	bnez	a0,4a0b58 <UtilsSetValue+0x28>
+  4a0b48:	555d                	li	a0,-9
+  4a0b4a:	4732                	lw	a4,12(sp)
+  4a0b4c:	7c042783          	lw	a5,1984(s0)
+  4a0b50:	04f70763          	beq	a4,a5,4a0b9e <UtilsSetValue+0x6e>
+  4a0b54:	e64550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0b58:	08000593          	li	a1,128
+  4a0b5c:	854e                	mv	a0,s3
+  4a0b5e:	28c9                	jal	4a0c30 <IsValidValue>
+  4a0b60:	d565                	beqz	a0,4a0b48 <UtilsSetValue+0x18>
+  4a0b62:	e53ff0ef          	jal	ra,4a09b4 <GetCurrentItem>
+  4a0b66:	84aa                	mv	s1,a0
+  4a0b68:	854a                	mv	a0,s2
+  4a0b6a:	e11ff0ef          	jal	ra,4a097a <NewItem>
+  4a0b6e:	03100793          	li	a5,49
+  4a0b72:	8a2a                	mv	s4,a0
+  4a0b74:	0097d563          	ble	s1,a5,4a0b7e <UtilsSetValue+0x4e>
+  4a0b78:	557d                	li	a0,-1
+  4a0b7a:	fc0a18e3          	bnez	s4,4a0b4a <UtilsSetValue+0x1a>
+  4a0b7e:	85ce                	mv	a1,s3
+  4a0b80:	854a                	mv	a0,s2
+  4a0b82:	e8dff0ef          	jal	ra,4a0a0e <SetValueToFile>
+  4a0b86:	e901                	bnez	a0,4a0b96 <UtilsSetValue+0x66>
+  4a0b88:	4605                	li	a2,1
+  4a0b8a:	85ce                	mv	a1,s3
+  4a0b8c:	854a                	mv	a0,s2
+  4a0b8e:	2ae1                	jal	4a0d66 <AddKVCache>
+  4a0b90:	000a0363          	beqz	s4,4a0b96 <UtilsSetValue+0x66>
+  4a0b94:	0485                	addi	s1,s1,1
+  4a0b96:	8526                	mv	a0,s1
+  4a0b98:	ecbff0ef          	jal	ra,4a0a62 <SetCurrentItem>
+  4a0b9c:	b77d                	j	4a0b4a <UtilsSetValue+0x1a>
+  4a0b9e:	0141                	addi	sp,sp,16
+  4a0ba0:	cbf5906f          	j	3fa85e <__riscv_restore_4>
 
-004a0b96 <FreeItem>:
-  4a0b96:	caf592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0b9a:	0011d7b7          	lui	a5,0x11d
-  4a0b9e:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a0ba2:	1141                	addi	sp,sp,-16
-  4a0ba4:	843e                	mv	s0,a5
-  4a0ba6:	c63a                	sw	a4,12(sp)
-  4a0ba8:	cd09                	beqz	a0,4a0bc2 <FreeItem+0x2c>
-  4a0baa:	84aa                	mv	s1,a0
-  4a0bac:	4108                	lw	a0,0(a0)
-  4a0bae:	c119                	beqz	a0,4a0bb4 <FreeItem+0x1e>
-  4a0bb0:	9e35a0ef          	jal	ra,3fb592 <free>
-  4a0bb4:	40c8                	lw	a0,4(s1)
-  4a0bb6:	c119                	beqz	a0,4a0bbc <FreeItem+0x26>
-  4a0bb8:	9db5a0ef          	jal	ra,3fb592 <free>
-  4a0bbc:	8526                	mv	a0,s1
+004a0ba4 <FreeItem>:
+  4a0ba4:	ca1592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a0ba8:	0011d7b7          	lui	a5,0x11d
+  4a0bac:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a0bb0:	1141                	addi	sp,sp,-16
+  4a0bb2:	843e                	mv	s0,a5
+  4a0bb4:	c63a                	sw	a4,12(sp)
+  4a0bb6:	cd09                	beqz	a0,4a0bd0 <FreeItem+0x2c>
+  4a0bb8:	84aa                	mv	s1,a0
+  4a0bba:	4108                	lw	a0,0(a0)
+  4a0bbc:	c119                	beqz	a0,4a0bc2 <FreeItem+0x1e>
   4a0bbe:	9d55a0ef          	jal	ra,3fb592 <free>
-  4a0bc2:	4732                	lw	a4,12(sp)
-  4a0bc4:	7c042783          	lw	a5,1984(s0)
-  4a0bc8:	00f70463          	beq	a4,a5,4a0bd0 <FreeItem+0x3a>
-  4a0bcc:	dec550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0bd0:	0141                	addi	sp,sp,16
-  4a0bd2:	c975906f          	j	3fa868 <__riscv_restore_0>
+  4a0bc2:	40c8                	lw	a0,4(s1)
+  4a0bc4:	c119                	beqz	a0,4a0bca <FreeItem+0x26>
+  4a0bc6:	9cd5a0ef          	jal	ra,3fb592 <free>
+  4a0bca:	8526                	mv	a0,s1
+  4a0bcc:	9c75a0ef          	jal	ra,3fb592 <free>
+  4a0bd0:	4732                	lw	a4,12(sp)
+  4a0bd2:	7c042783          	lw	a5,1984(s0)
+  4a0bd6:	00f70463          	beq	a4,a5,4a0bde <FreeItem+0x3a>
+  4a0bda:	dde550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0bde:	0141                	addi	sp,sp,16
+  4a0be0:	c895906f          	j	3fa868 <__riscv_restore_0>
 
-004a0bd6 <IsValidChar>:
-  4a0bd6:	c6f592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0bda:	0011d7b7          	lui	a5,0x11d
-  4a0bde:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a0be2:	1141                	addi	sp,sp,-16
-  4a0be4:	f9f50613          	addi	a2,a0,-97
-  4a0be8:	c63a                	sw	a4,12(sp)
-  4a0bea:	4765                	li	a4,25
-  4a0bec:	4685                	li	a3,1
-  4a0bee:	00c77f63          	bleu	a2,a4,4a0c0c <IsValidChar+0x36>
-  4a0bf2:	fd050713          	addi	a4,a0,-48
-  4a0bf6:	4625                	li	a2,9
-  4a0bf8:	00e67a63          	bleu	a4,a2,4a0c0c <IsValidChar+0x36>
-  4a0bfc:	05f00713          	li	a4,95
-  4a0c00:	00e50663          	beq	a0,a4,4a0c0c <IsValidChar+0x36>
-  4a0c04:	fd250513          	addi	a0,a0,-46
-  4a0c08:	00153693          	seqz	a3,a0
-  4a0c0c:	4732                	lw	a4,12(sp)
-  4a0c0e:	7c07a783          	lw	a5,1984(a5)
-  4a0c12:	8536                	mv	a0,a3
-  4a0c14:	00f70463          	beq	a4,a5,4a0c1c <IsValidChar+0x46>
-  4a0c18:	da0550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0c1c:	0141                	addi	sp,sp,16
-  4a0c1e:	c4b5906f          	j	3fa868 <__riscv_restore_0>
+004a0be4 <IsValidChar>:
+  4a0be4:	c61592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a0be8:	0011d7b7          	lui	a5,0x11d
+  4a0bec:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a0bf0:	1141                	addi	sp,sp,-16
+  4a0bf2:	f9f50613          	addi	a2,a0,-97
+  4a0bf6:	c63a                	sw	a4,12(sp)
+  4a0bf8:	4765                	li	a4,25
+  4a0bfa:	4685                	li	a3,1
+  4a0bfc:	00c77f63          	bleu	a2,a4,4a0c1a <IsValidChar+0x36>
+  4a0c00:	fd050713          	addi	a4,a0,-48
+  4a0c04:	4625                	li	a2,9
+  4a0c06:	00e67a63          	bleu	a4,a2,4a0c1a <IsValidChar+0x36>
+  4a0c0a:	05f00713          	li	a4,95
+  4a0c0e:	00e50663          	beq	a0,a4,4a0c1a <IsValidChar+0x36>
+  4a0c12:	fd250513          	addi	a0,a0,-46
+  4a0c16:	00153693          	seqz	a3,a0
+  4a0c1a:	4732                	lw	a4,12(sp)
+  4a0c1c:	7c07a783          	lw	a5,1984(a5)
+  4a0c20:	8536                	mv	a0,a3
+  4a0c22:	00f70463          	beq	a4,a5,4a0c2a <IsValidChar+0x46>
+  4a0c26:	d92550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0c2a:	0141                	addi	sp,sp,16
+  4a0c2c:	c3d5906f          	j	3fa868 <__riscv_restore_0>
 
-004a0c22 <IsValidValue>:
-  4a0c22:	c23592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0c26:	0011d7b7          	lui	a5,0x11d
-  4a0c2a:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a0c2e:	1141                	addi	sp,sp,-16
-  4a0c30:	843e                	mv	s0,a5
-  4a0c32:	c63a                	sw	a4,12(sp)
-  4a0c34:	e909                	bnez	a0,4a0c46 <IsValidValue+0x24>
-  4a0c36:	4501                	li	a0,0
-  4a0c38:	4732                	lw	a4,12(sp)
-  4a0c3a:	7c042783          	lw	a5,1984(s0)
-  4a0c3e:	02f70263          	beq	a4,a5,4a0c62 <IsValidValue+0x40>
-  4a0c42:	d76550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0c46:	84ae                	mv	s1,a1
-  4a0c48:	08000593          	li	a1,128
-  4a0c4c:	fc0a90ef          	jal	ra,44a40c <strnlen>
-  4a0c50:	fff50713          	addi	a4,a0,-1
-  4a0c54:	07e00793          	li	a5,126
-  4a0c58:	fce7efe3          	bltu	a5,a4,4a0c36 <IsValidValue+0x14>
-  4a0c5c:	00953533          	sltu	a0,a0,s1
-  4a0c60:	bfe1                	j	4a0c38 <IsValidValue+0x16>
-  4a0c62:	0141                	addi	sp,sp,16
-  4a0c64:	c055906f          	j	3fa868 <__riscv_restore_0>
+004a0c30 <IsValidValue>:
+  4a0c30:	c15592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a0c34:	0011d7b7          	lui	a5,0x11d
+  4a0c38:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a0c3c:	1141                	addi	sp,sp,-16
+  4a0c3e:	843e                	mv	s0,a5
+  4a0c40:	c63a                	sw	a4,12(sp)
+  4a0c42:	e909                	bnez	a0,4a0c54 <IsValidValue+0x24>
+  4a0c44:	4501                	li	a0,0
+  4a0c46:	4732                	lw	a4,12(sp)
+  4a0c48:	7c042783          	lw	a5,1984(s0)
+  4a0c4c:	02f70263          	beq	a4,a5,4a0c70 <IsValidValue+0x40>
+  4a0c50:	d68550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0c54:	84ae                	mv	s1,a1
+  4a0c56:	08000593          	li	a1,128
+  4a0c5a:	fb2a90ef          	jal	ra,44a40c <strnlen>
+  4a0c5e:	fff50713          	addi	a4,a0,-1
+  4a0c62:	07e00793          	li	a5,126
+  4a0c66:	fce7efe3          	bltu	a5,a4,4a0c44 <IsValidValue+0x14>
+  4a0c6a:	00953533          	sltu	a0,a0,s1
+  4a0c6e:	bfe1                	j	4a0c46 <IsValidValue+0x16>
+  4a0c70:	0141                	addi	sp,sp,16
+  4a0c72:	bf75906f          	j	3fa868 <__riscv_restore_0>
 
-004a0c68 <IsValidKey>:
-  4a0c68:	bdd592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0c6c:	0011d4b7          	lui	s1,0x11d
-  4a0c70:	7c04a783          	lw	a5,1984(s1) # 11d7c0 <__rom_data0_begin__>
-  4a0c74:	1141                	addi	sp,sp,-16
-  4a0c76:	02000593          	li	a1,32
-  4a0c7a:	842a                	mv	s0,a0
-  4a0c7c:	c63e                	sw	a5,12(sp)
-  4a0c7e:	fa5ff0ef          	jal	ra,4a0c22 <IsValidValue>
-  4a0c82:	e909                	bnez	a0,4a0c94 <IsValidKey+0x2c>
-  4a0c84:	4501                	li	a0,0
-  4a0c86:	4732                	lw	a4,12(sp)
-  4a0c88:	7c04a783          	lw	a5,1984(s1)
-  4a0c8c:	02f70663          	beq	a4,a5,4a0cb8 <IsValidKey+0x50>
-  4a0c90:	d28550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0c94:	02000593          	li	a1,32
-  4a0c98:	8522                	mv	a0,s0
-  4a0c9a:	f72a90ef          	jal	ra,44a40c <strnlen>
-  4a0c9e:	00a40933          	add	s2,s0,a0
-  4a0ca2:	01241463          	bne	s0,s2,4a0caa <IsValidKey+0x42>
-  4a0ca6:	4505                	li	a0,1
-  4a0ca8:	bff9                	j	4a0c86 <IsValidKey+0x1e>
-  4a0caa:	00040503          	lb	a0,0(s0)
-  4a0cae:	0405                	addi	s0,s0,1
-  4a0cb0:	f27ff0ef          	jal	ra,4a0bd6 <IsValidChar>
-  4a0cb4:	f57d                	bnez	a0,4a0ca2 <IsValidKey+0x3a>
-  4a0cb6:	b7f9                	j	4a0c84 <IsValidKey+0x1c>
-  4a0cb8:	0141                	addi	sp,sp,16
-  4a0cba:	baf5906f          	j	3fa868 <__riscv_restore_0>
+004a0c76 <IsValidKey>:
+  4a0c76:	bcf592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a0c7a:	0011d4b7          	lui	s1,0x11d
+  4a0c7e:	7c04a783          	lw	a5,1984(s1) # 11d7c0 <__rom_data0_begin__>
+  4a0c82:	1141                	addi	sp,sp,-16
+  4a0c84:	02000593          	li	a1,32
+  4a0c88:	842a                	mv	s0,a0
+  4a0c8a:	c63e                	sw	a5,12(sp)
+  4a0c8c:	fa5ff0ef          	jal	ra,4a0c30 <IsValidValue>
+  4a0c90:	e909                	bnez	a0,4a0ca2 <IsValidKey+0x2c>
+  4a0c92:	4501                	li	a0,0
+  4a0c94:	4732                	lw	a4,12(sp)
+  4a0c96:	7c04a783          	lw	a5,1984(s1)
+  4a0c9a:	02f70663          	beq	a4,a5,4a0cc6 <IsValidKey+0x50>
+  4a0c9e:	d1a550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0ca2:	02000593          	li	a1,32
+  4a0ca6:	8522                	mv	a0,s0
+  4a0ca8:	f64a90ef          	jal	ra,44a40c <strnlen>
+  4a0cac:	00a40933          	add	s2,s0,a0
+  4a0cb0:	01241463          	bne	s0,s2,4a0cb8 <IsValidKey+0x42>
+  4a0cb4:	4505                	li	a0,1
+  4a0cb6:	bff9                	j	4a0c94 <IsValidKey+0x1e>
+  4a0cb8:	00040503          	lb	a0,0(s0)
+  4a0cbc:	0405                	addi	s0,s0,1
+  4a0cbe:	f27ff0ef          	jal	ra,4a0be4 <IsValidChar>
+  4a0cc2:	f57d                	bnez	a0,4a0cb0 <IsValidKey+0x3a>
+  4a0cc4:	b7f9                	j	4a0c92 <IsValidKey+0x1c>
+  4a0cc6:	0141                	addi	sp,sp,16
+  4a0cc8:	ba15906f          	j	3fa868 <__riscv_restore_0>
 
-004a0cbe <DeleteKVCache>:
-  4a0cbe:	b6d592ef          	jal	t0,3fa82a <__riscv_save_4>
-  4a0cc2:	0011d937          	lui	s2,0x11d
-  4a0cc6:	7c092783          	lw	a5,1984(s2) # 11d7c0 <__rom_data0_begin__>
-  4a0cca:	1141                	addi	sp,sp,-16
-  4a0ccc:	c63e                	sw	a5,12(sp)
-  4a0cce:	cd1d                	beqz	a0,4a0d0c <DeleteKVCache+0x4e>
-  4a0cd0:	000e64b7          	lui	s1,0xe6
-  4a0cd4:	a084a403          	lw	s0,-1528(s1) # e5a08 <g_itemHeader>
-  4a0cd8:	89aa                	mv	s3,a0
-  4a0cda:	a0848493          	addi	s1,s1,-1528
-  4a0cde:	c41d                	beqz	s0,4a0d0c <DeleteKVCache+0x4e>
-  4a0ce0:	400c                	lw	a1,0(s0)
-  4a0ce2:	854e                	mv	a0,s3
-  4a0ce4:	ebe5a0ef          	jal	ra,3fb3a2 <strcmp>
-  4a0ce8:	e90d                	bnez	a0,4a0d1a <DeleteKVCache+0x5c>
-  4a0cea:	000e6737          	lui	a4,0xe6
-  4a0cee:	a1070713          	addi	a4,a4,-1520 # e5a10 <g_sum>
-  4a0cf2:	431c                	lw	a5,0(a4)
-  4a0cf4:	17fd                	addi	a5,a5,-1
-  4a0cf6:	c31c                	sw	a5,0(a4)
-  4a0cf8:	e39d                	bnez	a5,4a0d1e <DeleteKVCache+0x60>
-  4a0cfa:	000e67b7          	lui	a5,0xe6
-  4a0cfe:	0004a023          	sw	zero,0(s1)
-  4a0d02:	a007a623          	sw	zero,-1524(a5) # e5a0c <g_itemTail>
-  4a0d06:	8522                	mv	a0,s0
-  4a0d08:	e8fff0ef          	jal	ra,4a0b96 <FreeItem>
-  4a0d0c:	4732                	lw	a4,12(sp)
-  4a0d0e:	7c092783          	lw	a5,1984(s2)
-  4a0d12:	04f70063          	beq	a4,a5,4a0d52 <DeleteKVCache+0x94>
-  4a0d16:	ca2550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0d1a:	4400                	lw	s0,8(s0)
-  4a0d1c:	b7c9                	j	4a0cde <DeleteKVCache+0x20>
-  4a0d1e:	409c                	lw	a5,0(s1)
-  4a0d20:	00879763          	bne	a5,s0,4a0d2e <DeleteKVCache+0x70>
-  4a0d24:	441c                	lw	a5,8(s0)
-  4a0d26:	c09c                	sw	a5,0(s1)
-  4a0d28:	0007a623          	sw	zero,12(a5)
-  4a0d2c:	bfe9                	j	4a0d06 <DeleteKVCache+0x48>
-  4a0d2e:	000e67b7          	lui	a5,0xe6
-  4a0d32:	a0c78793          	addi	a5,a5,-1524 # e5a0c <g_itemTail>
-  4a0d36:	4394                	lw	a3,0(a5)
-  4a0d38:	4458                	lw	a4,12(s0)
-  4a0d3a:	00869663          	bne	a3,s0,4a0d46 <DeleteKVCache+0x88>
-  4a0d3e:	c398                	sw	a4,0(a5)
-  4a0d40:	00072423          	sw	zero,8(a4)
-  4a0d44:	b7c9                	j	4a0d06 <DeleteKVCache+0x48>
-  4a0d46:	441c                	lw	a5,8(s0)
-  4a0d48:	c71c                	sw	a5,8(a4)
-  4a0d4a:	441c                	lw	a5,8(s0)
-  4a0d4c:	4458                	lw	a4,12(s0)
-  4a0d4e:	c7d8                	sw	a4,12(a5)
-  4a0d50:	bf5d                	j	4a0d06 <DeleteKVCache+0x48>
-  4a0d52:	0141                	addi	sp,sp,16
-  4a0d54:	b0b5906f          	j	3fa85e <__riscv_restore_4>
+004a0ccc <DeleteKVCache>:
+  4a0ccc:	b5f592ef          	jal	t0,3fa82a <__riscv_save_4>
+  4a0cd0:	0011d937          	lui	s2,0x11d
+  4a0cd4:	7c092783          	lw	a5,1984(s2) # 11d7c0 <__rom_data0_begin__>
+  4a0cd8:	1141                	addi	sp,sp,-16
+  4a0cda:	c63e                	sw	a5,12(sp)
+  4a0cdc:	cd1d                	beqz	a0,4a0d1a <DeleteKVCache+0x4e>
+  4a0cde:	000e64b7          	lui	s1,0xe6
+  4a0ce2:	a084a403          	lw	s0,-1528(s1) # e5a08 <g_itemHeader>
+  4a0ce6:	89aa                	mv	s3,a0
+  4a0ce8:	a0848493          	addi	s1,s1,-1528
+  4a0cec:	c41d                	beqz	s0,4a0d1a <DeleteKVCache+0x4e>
+  4a0cee:	400c                	lw	a1,0(s0)
+  4a0cf0:	854e                	mv	a0,s3
+  4a0cf2:	eb05a0ef          	jal	ra,3fb3a2 <strcmp>
+  4a0cf6:	e90d                	bnez	a0,4a0d28 <DeleteKVCache+0x5c>
+  4a0cf8:	000e6737          	lui	a4,0xe6
+  4a0cfc:	a1070713          	addi	a4,a4,-1520 # e5a10 <g_sum>
+  4a0d00:	431c                	lw	a5,0(a4)
+  4a0d02:	17fd                	addi	a5,a5,-1
+  4a0d04:	c31c                	sw	a5,0(a4)
+  4a0d06:	e39d                	bnez	a5,4a0d2c <DeleteKVCache+0x60>
+  4a0d08:	000e67b7          	lui	a5,0xe6
+  4a0d0c:	0004a023          	sw	zero,0(s1)
+  4a0d10:	a007a623          	sw	zero,-1524(a5) # e5a0c <g_itemTail>
+  4a0d14:	8522                	mv	a0,s0
+  4a0d16:	e8fff0ef          	jal	ra,4a0ba4 <FreeItem>
+  4a0d1a:	4732                	lw	a4,12(sp)
+  4a0d1c:	7c092783          	lw	a5,1984(s2)
+  4a0d20:	04f70063          	beq	a4,a5,4a0d60 <DeleteKVCache+0x94>
+  4a0d24:	c94550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0d28:	4400                	lw	s0,8(s0)
+  4a0d2a:	b7c9                	j	4a0cec <DeleteKVCache+0x20>
+  4a0d2c:	409c                	lw	a5,0(s1)
+  4a0d2e:	00879763          	bne	a5,s0,4a0d3c <DeleteKVCache+0x70>
+  4a0d32:	441c                	lw	a5,8(s0)
+  4a0d34:	c09c                	sw	a5,0(s1)
+  4a0d36:	0007a623          	sw	zero,12(a5)
+  4a0d3a:	bfe9                	j	4a0d14 <DeleteKVCache+0x48>
+  4a0d3c:	000e67b7          	lui	a5,0xe6
+  4a0d40:	a0c78793          	addi	a5,a5,-1524 # e5a0c <g_itemTail>
+  4a0d44:	4394                	lw	a3,0(a5)
+  4a0d46:	4458                	lw	a4,12(s0)
+  4a0d48:	00869663          	bne	a3,s0,4a0d54 <DeleteKVCache+0x88>
+  4a0d4c:	c398                	sw	a4,0(a5)
+  4a0d4e:	00072423          	sw	zero,8(a4)
+  4a0d52:	b7c9                	j	4a0d14 <DeleteKVCache+0x48>
+  4a0d54:	441c                	lw	a5,8(s0)
+  4a0d56:	c71c                	sw	a5,8(a4)
+  4a0d58:	441c                	lw	a5,8(s0)
+  4a0d5a:	4458                	lw	a4,12(s0)
+  4a0d5c:	c7d8                	sw	a4,12(a5)
+  4a0d5e:	bf5d                	j	4a0d14 <DeleteKVCache+0x48>
+  4a0d60:	0141                	addi	sp,sp,16
+  4a0d62:	afd5906f          	j	3fa85e <__riscv_restore_4>
 
-004a0d58 <AddKVCache>:
-  4a0d58:	ad3592ef          	jal	t0,3fa82a <__riscv_save_4>
-  4a0d5c:	0011d9b7          	lui	s3,0x11d
-  4a0d60:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
-  4a0d64:	1101                	addi	sp,sp,-32
-  4a0d66:	c632                	sw	a2,12(sp)
-  4a0d68:	ce3e                	sw	a5,28(sp)
-  4a0d6a:	c52d                	beqz	a0,4a0dd4 <AddKVCache+0x7c>
-  4a0d6c:	8a2e                	mv	s4,a1
-  4a0d6e:	c1bd                	beqz	a1,4a0dd4 <AddKVCache+0x7c>
-  4a0d70:	02000593          	li	a1,32
-  4a0d74:	8aaa                	mv	s5,a0
-  4a0d76:	e96a90ef          	jal	ra,44a40c <strnlen>
-  4a0d7a:	892a                	mv	s2,a0
-  4a0d7c:	08000593          	li	a1,128
-  4a0d80:	8552                	mv	a0,s4
-  4a0d82:	e8aa90ef          	jal	ra,44a40c <strnlen>
-  4a0d86:	47fd                	li	a5,31
-  4a0d88:	84aa                	mv	s1,a0
-  4a0d8a:	0527e563          	bltu	a5,s2,4a0dd4 <AddKVCache+0x7c>
-  4a0d8e:	07f00793          	li	a5,127
-  4a0d92:	04a7e163          	bltu	a5,a0,4a0dd4 <AddKVCache+0x7c>
-  4a0d96:	4632                	lw	a2,12(sp)
-  4a0d98:	c601                	beqz	a2,4a0da0 <AddKVCache+0x48>
-  4a0d9a:	8556                	mv	a0,s5
-  4a0d9c:	f23ff0ef          	jal	ra,4a0cbe <DeleteKVCache>
-  4a0da0:	4541                	li	a0,16
-  4a0da2:	80b5a0ef          	jal	ra,3fb5ac <malloc>
-  4a0da6:	842a                	mv	s0,a0
-  4a0da8:	c515                	beqz	a0,4a0dd4 <AddKVCache+0x7c>
-  4a0daa:	46c1                	li	a3,16
-  4a0dac:	4601                	li	a2,0
-  4a0dae:	45c1                	li	a1,16
-  4a0db0:	b315a0ef          	jal	ra,3fb8e0 <memset_s>
-  4a0db4:	0905                	addi	s2,s2,1
-  4a0db6:	854a                	mv	a0,s2
-  4a0db8:	ff45a0ef          	jal	ra,3fb5ac <malloc>
-  4a0dbc:	0485                	addi	s1,s1,1
-  4a0dbe:	c008                	sw	a0,0(s0)
-  4a0dc0:	8526                	mv	a0,s1
-  4a0dc2:	fea5a0ef          	jal	ra,3fb5ac <malloc>
-  4a0dc6:	401c                	lw	a5,0(s0)
-  4a0dc8:	c048                	sw	a0,4(s0)
-  4a0dca:	c391                	beqz	a5,4a0dce <AddKVCache+0x76>
-  4a0dcc:	e919                	bnez	a0,4a0de2 <AddKVCache+0x8a>
-  4a0dce:	8522                	mv	a0,s0
-  4a0dd0:	dc7ff0ef          	jal	ra,4a0b96 <FreeItem>
-  4a0dd4:	4772                	lw	a4,28(sp)
-  4a0dd6:	7c09a783          	lw	a5,1984(s3)
-  4a0dda:	08f70163          	beq	a4,a5,4a0e5c <AddKVCache+0x104>
-  4a0dde:	bda550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0de2:	8656                	mv	a2,s5
-  4a0de4:	85ca                	mv	a1,s2
-  4a0de6:	853e                	mv	a0,a5
-  4a0de8:	c555a0ef          	jal	ra,3fba3c <strcpy_s>
-  4a0dec:	f16d                	bnez	a0,4a0dce <AddKVCache+0x76>
-  4a0dee:	4048                	lw	a0,4(s0)
-  4a0df0:	8652                	mv	a2,s4
-  4a0df2:	85a6                	mv	a1,s1
-  4a0df4:	c495a0ef          	jal	ra,3fba3c <strcpy_s>
-  4a0df8:	f979                	bnez	a0,4a0dce <AddKVCache+0x76>
-  4a0dfa:	000e64b7          	lui	s1,0xe6
-  4a0dfe:	000e67b7          	lui	a5,0xe6
-  4a0e02:	a1048613          	addi	a2,s1,-1520 # e5a10 <g_sum>
-  4a0e06:	a0878793          	addi	a5,a5,-1528 # e5a08 <g_itemHeader>
-  4a0e0a:	4218                	lw	a4,0(a2)
-  4a0e0c:	4394                	lw	a3,0(a5)
-  4a0e0e:	00042623          	sw	zero,12(s0)
-  4a0e12:	00042423          	sw	zero,8(s0)
-  4a0e16:	0705                	addi	a4,a4,1
-  4a0e18:	a1048493          	addi	s1,s1,-1520
-  4a0e1c:	ea81                	bnez	a3,4a0e2c <AddKVCache+0xd4>
-  4a0e1e:	c380                	sw	s0,0(a5)
-  4a0e20:	000e67b7          	lui	a5,0xe6
-  4a0e24:	a087a623          	sw	s0,-1524(a5) # e5a0c <g_itemTail>
-  4a0e28:	c218                	sw	a4,0(a2)
-  4a0e2a:	b76d                	j	4a0dd4 <AddKVCache+0x7c>
-  4a0e2c:	c414                	sw	a3,8(s0)
-  4a0e2e:	c6c0                	sw	s0,12(a3)
-  4a0e30:	c380                	sw	s0,0(a5)
-  4a0e32:	c098                	sw	a4,0(s1)
-  4a0e34:	4929                	li	s2,10
-  4a0e36:	000e6a37          	lui	s4,0xe6
-  4a0e3a:	409c                	lw	a5,0(s1)
-  4a0e3c:	f8f95ce3          	ble	a5,s2,4a0dd4 <AddKVCache+0x7c>
-  4a0e40:	a0ca0413          	addi	s0,s4,-1524 # e5a0c <g_itemTail>
-  4a0e44:	4008                	lw	a0,0(s0)
-  4a0e46:	455c                	lw	a5,12(a0)
-  4a0e48:	c01c                	sw	a5,0(s0)
-  4a0e4a:	d4dff0ef          	jal	ra,4a0b96 <FreeItem>
-  4a0e4e:	401c                	lw	a5,0(s0)
-  4a0e50:	0007a423          	sw	zero,8(a5)
-  4a0e54:	409c                	lw	a5,0(s1)
-  4a0e56:	17fd                	addi	a5,a5,-1
-  4a0e58:	c09c                	sw	a5,0(s1)
-  4a0e5a:	b7c5                	j	4a0e3a <AddKVCache+0xe2>
-  4a0e5c:	6105                	addi	sp,sp,32
-  4a0e5e:	a015906f          	j	3fa85e <__riscv_restore_4>
+004a0d66 <AddKVCache>:
+  4a0d66:	ac5592ef          	jal	t0,3fa82a <__riscv_save_4>
+  4a0d6a:	0011d9b7          	lui	s3,0x11d
+  4a0d6e:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
+  4a0d72:	1101                	addi	sp,sp,-32
+  4a0d74:	c632                	sw	a2,12(sp)
+  4a0d76:	ce3e                	sw	a5,28(sp)
+  4a0d78:	c52d                	beqz	a0,4a0de2 <AddKVCache+0x7c>
+  4a0d7a:	8a2e                	mv	s4,a1
+  4a0d7c:	c1bd                	beqz	a1,4a0de2 <AddKVCache+0x7c>
+  4a0d7e:	02000593          	li	a1,32
+  4a0d82:	8aaa                	mv	s5,a0
+  4a0d84:	e88a90ef          	jal	ra,44a40c <strnlen>
+  4a0d88:	892a                	mv	s2,a0
+  4a0d8a:	08000593          	li	a1,128
+  4a0d8e:	8552                	mv	a0,s4
+  4a0d90:	e7ca90ef          	jal	ra,44a40c <strnlen>
+  4a0d94:	47fd                	li	a5,31
+  4a0d96:	84aa                	mv	s1,a0
+  4a0d98:	0527e563          	bltu	a5,s2,4a0de2 <AddKVCache+0x7c>
+  4a0d9c:	07f00793          	li	a5,127
+  4a0da0:	04a7e163          	bltu	a5,a0,4a0de2 <AddKVCache+0x7c>
+  4a0da4:	4632                	lw	a2,12(sp)
+  4a0da6:	c601                	beqz	a2,4a0dae <AddKVCache+0x48>
+  4a0da8:	8556                	mv	a0,s5
+  4a0daa:	f23ff0ef          	jal	ra,4a0ccc <DeleteKVCache>
+  4a0dae:	4541                	li	a0,16
+  4a0db0:	ffc5a0ef          	jal	ra,3fb5ac <malloc>
+  4a0db4:	842a                	mv	s0,a0
+  4a0db6:	c515                	beqz	a0,4a0de2 <AddKVCache+0x7c>
+  4a0db8:	46c1                	li	a3,16
+  4a0dba:	4601                	li	a2,0
+  4a0dbc:	45c1                	li	a1,16
+  4a0dbe:	b235a0ef          	jal	ra,3fb8e0 <memset_s>
+  4a0dc2:	0905                	addi	s2,s2,1
+  4a0dc4:	854a                	mv	a0,s2
+  4a0dc6:	fe65a0ef          	jal	ra,3fb5ac <malloc>
+  4a0dca:	0485                	addi	s1,s1,1
+  4a0dcc:	c008                	sw	a0,0(s0)
+  4a0dce:	8526                	mv	a0,s1
+  4a0dd0:	fdc5a0ef          	jal	ra,3fb5ac <malloc>
+  4a0dd4:	401c                	lw	a5,0(s0)
+  4a0dd6:	c048                	sw	a0,4(s0)
+  4a0dd8:	c391                	beqz	a5,4a0ddc <AddKVCache+0x76>
+  4a0dda:	e919                	bnez	a0,4a0df0 <AddKVCache+0x8a>
+  4a0ddc:	8522                	mv	a0,s0
+  4a0dde:	dc7ff0ef          	jal	ra,4a0ba4 <FreeItem>
+  4a0de2:	4772                	lw	a4,28(sp)
+  4a0de4:	7c09a783          	lw	a5,1984(s3)
+  4a0de8:	08f70163          	beq	a4,a5,4a0e6a <AddKVCache+0x104>
+  4a0dec:	bcc550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0df0:	8656                	mv	a2,s5
+  4a0df2:	85ca                	mv	a1,s2
+  4a0df4:	853e                	mv	a0,a5
+  4a0df6:	c475a0ef          	jal	ra,3fba3c <strcpy_s>
+  4a0dfa:	f16d                	bnez	a0,4a0ddc <AddKVCache+0x76>
+  4a0dfc:	4048                	lw	a0,4(s0)
+  4a0dfe:	8652                	mv	a2,s4
+  4a0e00:	85a6                	mv	a1,s1
+  4a0e02:	c3b5a0ef          	jal	ra,3fba3c <strcpy_s>
+  4a0e06:	f979                	bnez	a0,4a0ddc <AddKVCache+0x76>
+  4a0e08:	000e64b7          	lui	s1,0xe6
+  4a0e0c:	000e67b7          	lui	a5,0xe6
+  4a0e10:	a1048613          	addi	a2,s1,-1520 # e5a10 <g_sum>
+  4a0e14:	a0878793          	addi	a5,a5,-1528 # e5a08 <g_itemHeader>
+  4a0e18:	4218                	lw	a4,0(a2)
+  4a0e1a:	4394                	lw	a3,0(a5)
+  4a0e1c:	00042623          	sw	zero,12(s0)
+  4a0e20:	00042423          	sw	zero,8(s0)
+  4a0e24:	0705                	addi	a4,a4,1
+  4a0e26:	a1048493          	addi	s1,s1,-1520
+  4a0e2a:	ea81                	bnez	a3,4a0e3a <AddKVCache+0xd4>
+  4a0e2c:	c380                	sw	s0,0(a5)
+  4a0e2e:	000e67b7          	lui	a5,0xe6
+  4a0e32:	a087a623          	sw	s0,-1524(a5) # e5a0c <g_itemTail>
+  4a0e36:	c218                	sw	a4,0(a2)
+  4a0e38:	b76d                	j	4a0de2 <AddKVCache+0x7c>
+  4a0e3a:	c414                	sw	a3,8(s0)
+  4a0e3c:	c6c0                	sw	s0,12(a3)
+  4a0e3e:	c380                	sw	s0,0(a5)
+  4a0e40:	c098                	sw	a4,0(s1)
+  4a0e42:	4929                	li	s2,10
+  4a0e44:	000e6a37          	lui	s4,0xe6
+  4a0e48:	409c                	lw	a5,0(s1)
+  4a0e4a:	f8f95ce3          	ble	a5,s2,4a0de2 <AddKVCache+0x7c>
+  4a0e4e:	a0ca0413          	addi	s0,s4,-1524 # e5a0c <g_itemTail>
+  4a0e52:	4008                	lw	a0,0(s0)
+  4a0e54:	455c                	lw	a5,12(a0)
+  4a0e56:	c01c                	sw	a5,0(s0)
+  4a0e58:	d4dff0ef          	jal	ra,4a0ba4 <FreeItem>
+  4a0e5c:	401c                	lw	a5,0(s0)
+  4a0e5e:	0007a423          	sw	zero,8(a5)
+  4a0e62:	409c                	lw	a5,0(s1)
+  4a0e64:	17fd                	addi	a5,a5,-1
+  4a0e66:	c09c                	sw	a5,0(s1)
+  4a0e68:	b7c5                	j	4a0e48 <AddKVCache+0xe2>
+  4a0e6a:	6105                	addi	sp,sp,32
+  4a0e6c:	9f35906f          	j	3fa85e <__riscv_restore_4>
 
-004a0e62 <GetValueByCache>:
-  4a0e62:	9c9592ef          	jal	t0,3fa82a <__riscv_save_4>
-  4a0e66:	0011d7b7          	lui	a5,0x11d
-  4a0e6a:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a0e6e:	1141                	addi	sp,sp,-16
-  4a0e70:	84be                	mv	s1,a5
-  4a0e72:	c63a                	sw	a4,12(sp)
-  4a0e74:	e909                	bnez	a0,4a0e86 <GetValueByCache+0x24>
-  4a0e76:	557d                	li	a0,-1
-  4a0e78:	4732                	lw	a4,12(sp)
-  4a0e7a:	7c04a783          	lw	a5,1984(s1)
-  4a0e7e:	04f70963          	beq	a4,a5,4a0ed0 <GetValueByCache+0x6e>
-  4a0e82:	b36550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0e86:	892e                	mv	s2,a1
-  4a0e88:	d5fd                	beqz	a1,4a0e76 <GetValueByCache+0x14>
-  4a0e8a:	000e67b7          	lui	a5,0xe6
-  4a0e8e:	a087a403          	lw	s0,-1528(a5) # e5a08 <g_itemHeader>
-  4a0e92:	8a2a                	mv	s4,a0
-  4a0e94:	89b2                	mv	s3,a2
-  4a0e96:	d065                	beqz	s0,4a0e76 <GetValueByCache+0x14>
-  4a0e98:	400c                	lw	a1,0(s0)
-  4a0e9a:	8552                	mv	a0,s4
-  4a0e9c:	d065a0ef          	jal	ra,3fb3a2 <strcmp>
-  4a0ea0:	e515                	bnez	a0,4a0ecc <GetValueByCache+0x6a>
-  4a0ea2:	4048                	lw	a0,4(s0)
-  4a0ea4:	08000593          	li	a1,128
-  4a0ea8:	d64a90ef          	jal	ra,44a40c <strnlen>
-  4a0eac:	07f00793          	li	a5,127
-  4a0eb0:	fca7e3e3          	bltu	a5,a0,4a0e76 <GetValueByCache+0x14>
-  4a0eb4:	fd3571e3          	bleu	s3,a0,4a0e76 <GetValueByCache+0x14>
-  4a0eb8:	4050                	lw	a2,4(s0)
-  4a0eba:	85ce                	mv	a1,s3
-  4a0ebc:	854a                	mv	a0,s2
-  4a0ebe:	b7f5a0ef          	jal	ra,3fba3c <strcpy_s>
-  4a0ec2:	00a03533          	snez	a0,a0
-  4a0ec6:	40a00533          	neg	a0,a0
-  4a0eca:	b77d                	j	4a0e78 <GetValueByCache+0x16>
-  4a0ecc:	4400                	lw	s0,8(s0)
-  4a0ece:	b7e1                	j	4a0e96 <GetValueByCache+0x34>
-  4a0ed0:	0141                	addi	sp,sp,16
-  4a0ed2:	98d5906f          	j	3fa85e <__riscv_restore_4>
+004a0e70 <GetValueByCache>:
+  4a0e70:	9bb592ef          	jal	t0,3fa82a <__riscv_save_4>
+  4a0e74:	0011d7b7          	lui	a5,0x11d
+  4a0e78:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a0e7c:	1141                	addi	sp,sp,-16
+  4a0e7e:	84be                	mv	s1,a5
+  4a0e80:	c63a                	sw	a4,12(sp)
+  4a0e82:	e909                	bnez	a0,4a0e94 <GetValueByCache+0x24>
+  4a0e84:	557d                	li	a0,-1
+  4a0e86:	4732                	lw	a4,12(sp)
+  4a0e88:	7c04a783          	lw	a5,1984(s1)
+  4a0e8c:	04f70963          	beq	a4,a5,4a0ede <GetValueByCache+0x6e>
+  4a0e90:	b28550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0e94:	892e                	mv	s2,a1
+  4a0e96:	d5fd                	beqz	a1,4a0e84 <GetValueByCache+0x14>
+  4a0e98:	000e67b7          	lui	a5,0xe6
+  4a0e9c:	a087a403          	lw	s0,-1528(a5) # e5a08 <g_itemHeader>
+  4a0ea0:	8a2a                	mv	s4,a0
+  4a0ea2:	89b2                	mv	s3,a2
+  4a0ea4:	d065                	beqz	s0,4a0e84 <GetValueByCache+0x14>
+  4a0ea6:	400c                	lw	a1,0(s0)
+  4a0ea8:	8552                	mv	a0,s4
+  4a0eaa:	cf85a0ef          	jal	ra,3fb3a2 <strcmp>
+  4a0eae:	e515                	bnez	a0,4a0eda <GetValueByCache+0x6a>
+  4a0eb0:	4048                	lw	a0,4(s0)
+  4a0eb2:	08000593          	li	a1,128
+  4a0eb6:	d56a90ef          	jal	ra,44a40c <strnlen>
+  4a0eba:	07f00793          	li	a5,127
+  4a0ebe:	fca7e3e3          	bltu	a5,a0,4a0e84 <GetValueByCache+0x14>
+  4a0ec2:	fd3571e3          	bleu	s3,a0,4a0e84 <GetValueByCache+0x14>
+  4a0ec6:	4050                	lw	a2,4(s0)
+  4a0ec8:	85ce                	mv	a1,s3
+  4a0eca:	854a                	mv	a0,s2
+  4a0ecc:	b715a0ef          	jal	ra,3fba3c <strcpy_s>
+  4a0ed0:	00a03533          	snez	a0,a0
+  4a0ed4:	40a00533          	neg	a0,a0
+  4a0ed8:	b77d                	j	4a0e86 <GetValueByCache+0x16>
+  4a0eda:	4400                	lw	s0,8(s0)
+  4a0edc:	b7e1                	j	4a0ea4 <GetValueByCache+0x34>
+  4a0ede:	0141                	addi	sp,sp,16
+  4a0ee0:	97f5906f          	j	3fa85e <__riscv_restore_4>
 
-004a0ed6 <DispatchStaConnectEvent>:
-  4a0ed6:	96f592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a0eda:	0011d7b7          	lui	a5,0x11d
-  4a0ede:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a0ee2:	4114                	lw	a3,0(a0)
-  4a0ee4:	1101                	addi	sp,sp,-32
-  4a0ee6:	ce3a                	sw	a4,28(sp)
-  4a0ee8:	c402                	sw	zero,8(sp)
-  4a0eea:	c602                	sw	zero,12(sp)
-  4a0eec:	c802                	sw	zero,16(sp)
-  4a0eee:	ca02                	sw	zero,20(sp)
-  4a0ef0:	cc02                	sw	zero,24(sp)
-  4a0ef2:	4721                	li	a4,8
-  4a0ef4:	84aa                	mv	s1,a0
-  4a0ef6:	842e                	mv	s0,a1
-  4a0ef8:	893e                	mv	s2,a5
-  4a0efa:	02e69e63          	bne	a3,a4,4a0f36 <DispatchStaConnectEvent+0x60>
-  4a0efe:	45dc                	lw	a5,12(a1)
-  4a0f00:	c385                	beqz	a5,4a0f20 <DispatchStaConnectEvent+0x4a>
-  4a0f02:	00450613          	addi	a2,a0,4
-  4a0f06:	4599                	li	a1,6
-  4a0f08:	4699                	li	a3,6
-  4a0f0a:	0068                	addi	a0,sp,12
-  4a0f0c:	9175a0ef          	jal	ra,3fb822 <memcpy_s>
-  4a0f10:	85aa                	mv	a1,a0
-  4a0f12:	cd11                	beqz	a0,4a0f2e <DispatchStaConnectEvent+0x58>
-  4a0f14:	004ae537          	lui	a0,0x4ae
-  4a0f18:	25450513          	addi	a0,a0,596 # 4ae254 <OHOS_SECURITY_PATCH_TAG+0x134>
-  4a0f1c:	d90590ef          	jal	ra,3fa4ac <printf>
-  4a0f20:	4772                	lw	a4,28(sp)
-  4a0f22:	7c092783          	lw	a5,1984(s2)
-  4a0f26:	02f70963          	beq	a4,a5,4a0f58 <DispatchStaConnectEvent+0x82>
-  4a0f2a:	a8e550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0f2e:	445c                	lw	a5,12(s0)
-  4a0f30:	0028                	addi	a0,sp,8
-  4a0f32:	9782                	jalr	a5
-  4a0f34:	b7f5                	j	4a0f20 <DispatchStaConnectEvent+0x4a>
-  4a0f36:	499c                	lw	a5,16(a1)
-  4a0f38:	d7e5                	beqz	a5,4a0f20 <DispatchStaConnectEvent+0x4a>
-  4a0f3a:	00450613          	addi	a2,a0,4
-  4a0f3e:	4599                	li	a1,6
-  4a0f40:	4699                	li	a3,6
-  4a0f42:	0068                	addi	a0,sp,12
-  4a0f44:	8df5a0ef          	jal	ra,3fb822 <memcpy_s>
-  4a0f48:	85aa                	mv	a1,a0
-  4a0f4a:	f569                	bnez	a0,4a0f14 <DispatchStaConnectEvent+0x3e>
-  4a0f4c:	00a4d783          	lhu	a5,10(s1)
-  4a0f50:	00f11c23          	sh	a5,24(sp)
-  4a0f54:	481c                	lw	a5,16(s0)
-  4a0f56:	bfe9                	j	4a0f30 <DispatchStaConnectEvent+0x5a>
-  4a0f58:	6105                	addi	sp,sp,32
-  4a0f5a:	90f5906f          	j	3fa868 <__riscv_restore_0>
+004a0ee4 <DispatchStaConnectEvent>:
+  4a0ee4:	961592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a0ee8:	0011d7b7          	lui	a5,0x11d
+  4a0eec:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a0ef0:	4114                	lw	a3,0(a0)
+  4a0ef2:	1101                	addi	sp,sp,-32
+  4a0ef4:	ce3a                	sw	a4,28(sp)
+  4a0ef6:	c402                	sw	zero,8(sp)
+  4a0ef8:	c602                	sw	zero,12(sp)
+  4a0efa:	c802                	sw	zero,16(sp)
+  4a0efc:	ca02                	sw	zero,20(sp)
+  4a0efe:	cc02                	sw	zero,24(sp)
+  4a0f00:	4721                	li	a4,8
+  4a0f02:	84aa                	mv	s1,a0
+  4a0f04:	842e                	mv	s0,a1
+  4a0f06:	893e                	mv	s2,a5
+  4a0f08:	02e69e63          	bne	a3,a4,4a0f44 <DispatchStaConnectEvent+0x60>
+  4a0f0c:	45dc                	lw	a5,12(a1)
+  4a0f0e:	c385                	beqz	a5,4a0f2e <DispatchStaConnectEvent+0x4a>
+  4a0f10:	00450613          	addi	a2,a0,4
+  4a0f14:	4599                	li	a1,6
+  4a0f16:	4699                	li	a3,6
+  4a0f18:	0068                	addi	a0,sp,12
+  4a0f1a:	9095a0ef          	jal	ra,3fb822 <memcpy_s>
+  4a0f1e:	85aa                	mv	a1,a0
+  4a0f20:	cd11                	beqz	a0,4a0f3c <DispatchStaConnectEvent+0x58>
+  4a0f22:	004ae537          	lui	a0,0x4ae
+  4a0f26:	25450513          	addi	a0,a0,596 # 4ae254 <OHOS_SECURITY_PATCH_TAG+0x134>
+  4a0f2a:	d82590ef          	jal	ra,3fa4ac <printf>
+  4a0f2e:	4772                	lw	a4,28(sp)
+  4a0f30:	7c092783          	lw	a5,1984(s2)
+  4a0f34:	02f70963          	beq	a4,a5,4a0f66 <DispatchStaConnectEvent+0x82>
+  4a0f38:	a80550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0f3c:	445c                	lw	a5,12(s0)
+  4a0f3e:	0028                	addi	a0,sp,8
+  4a0f40:	9782                	jalr	a5
+  4a0f42:	b7f5                	j	4a0f2e <DispatchStaConnectEvent+0x4a>
+  4a0f44:	499c                	lw	a5,16(a1)
+  4a0f46:	d7e5                	beqz	a5,4a0f2e <DispatchStaConnectEvent+0x4a>
+  4a0f48:	00450613          	addi	a2,a0,4
+  4a0f4c:	4599                	li	a1,6
+  4a0f4e:	4699                	li	a3,6
+  4a0f50:	0068                	addi	a0,sp,12
+  4a0f52:	8d15a0ef          	jal	ra,3fb822 <memcpy_s>
+  4a0f56:	85aa                	mv	a1,a0
+  4a0f58:	f569                	bnez	a0,4a0f22 <DispatchStaConnectEvent+0x3e>
+  4a0f5a:	00a4d783          	lhu	a5,10(s1)
+  4a0f5e:	00f11c23          	sh	a5,24(sp)
+  4a0f62:	481c                	lw	a5,16(s0)
+  4a0f64:	bfe9                	j	4a0f3e <DispatchStaConnectEvent+0x5a>
+  4a0f66:	6105                	addi	sp,sp,32
+  4a0f68:	9015906f          	j	3fa868 <__riscv_restore_0>
 
-004a0f5e <StaConnect>:
-  4a0f5e:	8cd592ef          	jal	t0,3fa82a <__riscv_save_4>
-  4a0f62:	0011d7b7          	lui	a5,0x11d
-  4a0f66:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a0f6a:	000e64b7          	lui	s1,0xe6
-  4a0f6e:	7135                	addi	sp,sp,-160
-  4a0f70:	cf3a                	sw	a4,156(sp)
-  4a0f72:	a1448713          	addi	a4,s1,-1516 # e5a14 <g_connectState>
-  4a0f76:	00072a03          	lw	s4,0(a4)
-  4a0f7a:	00072023          	sw	zero,0(a4)
-  4a0f7e:	892e                	mv	s2,a1
-  4a0f80:	89be                	mv	s3,a5
-  4a0f82:	a1448493          	addi	s1,s1,-1516
-  4a0f86:	ed0d                	bnez	a0,4a0fc0 <StaConnect+0x62>
-  4a0f88:	852e                	mv	a0,a1
-  4a0f8a:	e2ce30ef          	jal	ra,4845b6 <hi_wifi_sta_connect>
-  4a0f8e:	842a                	mv	s0,a0
-  4a0f90:	07400693          	li	a3,116
-  4a0f94:	4601                	li	a2,0
-  4a0f96:	07400593          	li	a1,116
-  4a0f9a:	854a                	mv	a0,s2
-  4a0f9c:	9455a0ef          	jal	ra,3fb8e0 <memset_s>
-  4a0fa0:	c519                	beqz	a0,4a0fae <StaConnect+0x50>
-  4a0fa2:	004ae537          	lui	a0,0x4ae
-  4a0fa6:	3c050513          	addi	a0,a0,960 # 4ae3c0 <OHOS_SECURITY_PATCH_TAG+0x2a0>
-  4a0faa:	d02590ef          	jal	ra,3fa4ac <printf>
-  4a0fae:	4501                	li	a0,0
-  4a0fb0:	ec35                	bnez	s0,4a102c <StaConnect+0xce>
-  4a0fb2:	477a                	lw	a4,156(sp)
-  4a0fb4:	7c09a783          	lw	a5,1984(s3)
-  4a0fb8:	0af70363          	beq	a4,a5,4a105e <StaConnect+0x100>
-  4a0fbc:	9fc550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a0fc0:	842a                	mv	s0,a0
-  4a0fc2:	4581                	li	a1,0
-  4a0fc4:	8ab2                	mv	s5,a2
-  4a0fc6:	850a                	mv	a0,sp
-  4a0fc8:	09c00613          	li	a2,156
-  4a0fcc:	b2e5a0ef          	jal	ra,3fb2fa <memset>
-  4a0fd0:	07400693          	li	a3,116
-  4a0fd4:	864a                	mv	a2,s2
-  4a0fd6:	07400593          	li	a1,116
-  4a0fda:	850a                	mv	a0,sp
-  4a0fdc:	06810a23          	sb	s0,116(sp)
-  4a0fe0:	8435a0ef          	jal	ra,3fb822 <memcpy_s>
-  4a0fe4:	4785                	li	a5,1
-  4a0fe6:	842a                	mv	s0,a0
-  4a0fe8:	02fa9a63          	bne	s5,a5,4a101c <StaConnect+0xbe>
-  4a0fec:	004ae637          	lui	a2,0x4ae
-  4a0ff0:	46b1                	li	a3,12
-  4a0ff2:	38060613          	addi	a2,a2,896 # 4ae380 <OHOS_SECURITY_PATCH_TAG+0x260>
-  4a0ff6:	04100593          	li	a1,65
-  4a0ffa:	1028                	addi	a0,sp,40
-  4a0ffc:	8275a0ef          	jal	ra,3fb822 <memcpy_s>
-  4a1000:	942a                	add	s0,s0,a0
-  4a1002:	02000693          	li	a3,32
-  4a1006:	02890613          	addi	a2,s2,40
-  4a100a:	02000593          	li	a1,32
-  4a100e:	07510513          	addi	a0,sp,117
-  4a1012:	8115a0ef          	jal	ra,3fb822 <memcpy_s>
-  4a1016:	4789                	li	a5,2
-  4a1018:	942a                	add	s0,s0,a0
-  4a101a:	cd3e                	sw	a5,152(sp)
-  4a101c:	cc09                	beqz	s0,4a1036 <StaConnect+0xd8>
-  4a101e:	004ae537          	lui	a0,0x4ae
-  4a1022:	85a2                	mv	a1,s0
-  4a1024:	38c50513          	addi	a0,a0,908 # 4ae38c <OHOS_SECURITY_PATCH_TAG+0x26c>
-  4a1028:	c84590ef          	jal	ra,3fa4ac <printf>
-  4a102c:	0144a023          	sw	s4,0(s1)
-  4a1030:	f8000513          	li	a0,-128
-  4a1034:	bfbd                	j	4a0fb2 <StaConnect+0x54>
-  4a1036:	850a                	mv	a0,sp
-  4a1038:	db4e30ef          	jal	ra,4845ec <hi_wifi_sta_fast_connect>
-  4a103c:	842a                	mv	s0,a0
-  4a103e:	09c00693          	li	a3,156
-  4a1042:	4601                	li	a2,0
-  4a1044:	09c00593          	li	a1,156
-  4a1048:	850a                	mv	a0,sp
-  4a104a:	8975a0ef          	jal	ra,3fb8e0 <memset_s>
-  4a104e:	d129                	beqz	a0,4a0f90 <StaConnect+0x32>
-  4a1050:	004ae537          	lui	a0,0x4ae
-  4a1054:	3c050513          	addi	a0,a0,960 # 4ae3c0 <OHOS_SECURITY_PATCH_TAG+0x2a0>
-  4a1058:	c54590ef          	jal	ra,3fa4ac <printf>
-  4a105c:	bf15                	j	4a0f90 <StaConnect+0x32>
-  4a105e:	610d                	addi	sp,sp,160
-  4a1060:	ffe5906f          	j	3fa85e <__riscv_restore_4>
+004a0f6c <StaConnect>:
+  4a0f6c:	8bf592ef          	jal	t0,3fa82a <__riscv_save_4>
+  4a0f70:	0011d7b7          	lui	a5,0x11d
+  4a0f74:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a0f78:	000e64b7          	lui	s1,0xe6
+  4a0f7c:	7135                	addi	sp,sp,-160
+  4a0f7e:	cf3a                	sw	a4,156(sp)
+  4a0f80:	a1448713          	addi	a4,s1,-1516 # e5a14 <g_connectState>
+  4a0f84:	00072a03          	lw	s4,0(a4)
+  4a0f88:	00072023          	sw	zero,0(a4)
+  4a0f8c:	892e                	mv	s2,a1
+  4a0f8e:	89be                	mv	s3,a5
+  4a0f90:	a1448493          	addi	s1,s1,-1516
+  4a0f94:	ed0d                	bnez	a0,4a0fce <StaConnect+0x62>
+  4a0f96:	852e                	mv	a0,a1
+  4a0f98:	e1ee30ef          	jal	ra,4845b6 <hi_wifi_sta_connect>
+  4a0f9c:	842a                	mv	s0,a0
+  4a0f9e:	07400693          	li	a3,116
+  4a0fa2:	4601                	li	a2,0
+  4a0fa4:	07400593          	li	a1,116
+  4a0fa8:	854a                	mv	a0,s2
+  4a0faa:	9375a0ef          	jal	ra,3fb8e0 <memset_s>
+  4a0fae:	c519                	beqz	a0,4a0fbc <StaConnect+0x50>
+  4a0fb0:	004ae537          	lui	a0,0x4ae
+  4a0fb4:	3c050513          	addi	a0,a0,960 # 4ae3c0 <OHOS_SECURITY_PATCH_TAG+0x2a0>
+  4a0fb8:	cf4590ef          	jal	ra,3fa4ac <printf>
+  4a0fbc:	4501                	li	a0,0
+  4a0fbe:	ec35                	bnez	s0,4a103a <StaConnect+0xce>
+  4a0fc0:	477a                	lw	a4,156(sp)
+  4a0fc2:	7c09a783          	lw	a5,1984(s3)
+  4a0fc6:	0af70363          	beq	a4,a5,4a106c <StaConnect+0x100>
+  4a0fca:	9ee550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a0fce:	842a                	mv	s0,a0
+  4a0fd0:	4581                	li	a1,0
+  4a0fd2:	8ab2                	mv	s5,a2
+  4a0fd4:	850a                	mv	a0,sp
+  4a0fd6:	09c00613          	li	a2,156
+  4a0fda:	b205a0ef          	jal	ra,3fb2fa <memset>
+  4a0fde:	07400693          	li	a3,116
+  4a0fe2:	864a                	mv	a2,s2
+  4a0fe4:	07400593          	li	a1,116
+  4a0fe8:	850a                	mv	a0,sp
+  4a0fea:	06810a23          	sb	s0,116(sp)
+  4a0fee:	8355a0ef          	jal	ra,3fb822 <memcpy_s>
+  4a0ff2:	4785                	li	a5,1
+  4a0ff4:	842a                	mv	s0,a0
+  4a0ff6:	02fa9a63          	bne	s5,a5,4a102a <StaConnect+0xbe>
+  4a0ffa:	004ae637          	lui	a2,0x4ae
+  4a0ffe:	46b1                	li	a3,12
+  4a1000:	38060613          	addi	a2,a2,896 # 4ae380 <OHOS_SECURITY_PATCH_TAG+0x260>
+  4a1004:	04100593          	li	a1,65
+  4a1008:	1028                	addi	a0,sp,40
+  4a100a:	8195a0ef          	jal	ra,3fb822 <memcpy_s>
+  4a100e:	942a                	add	s0,s0,a0
+  4a1010:	02000693          	li	a3,32
+  4a1014:	02890613          	addi	a2,s2,40
+  4a1018:	02000593          	li	a1,32
+  4a101c:	07510513          	addi	a0,sp,117
+  4a1020:	8035a0ef          	jal	ra,3fb822 <memcpy_s>
+  4a1024:	4789                	li	a5,2
+  4a1026:	942a                	add	s0,s0,a0
+  4a1028:	cd3e                	sw	a5,152(sp)
+  4a102a:	cc09                	beqz	s0,4a1044 <StaConnect+0xd8>
+  4a102c:	004ae537          	lui	a0,0x4ae
+  4a1030:	85a2                	mv	a1,s0
+  4a1032:	38c50513          	addi	a0,a0,908 # 4ae38c <OHOS_SECURITY_PATCH_TAG+0x26c>
+  4a1036:	c76590ef          	jal	ra,3fa4ac <printf>
+  4a103a:	0144a023          	sw	s4,0(s1)
+  4a103e:	f8000513          	li	a0,-128
+  4a1042:	bfbd                	j	4a0fc0 <StaConnect+0x54>
+  4a1044:	850a                	mv	a0,sp
+  4a1046:	da6e30ef          	jal	ra,4845ec <hi_wifi_sta_fast_connect>
+  4a104a:	842a                	mv	s0,a0
+  4a104c:	09c00693          	li	a3,156
+  4a1050:	4601                	li	a2,0
+  4a1052:	09c00593          	li	a1,156
+  4a1056:	850a                	mv	a0,sp
+  4a1058:	8895a0ef          	jal	ra,3fb8e0 <memset_s>
+  4a105c:	d129                	beqz	a0,4a0f9e <StaConnect+0x32>
+  4a105e:	004ae537          	lui	a0,0x4ae
+  4a1062:	3c050513          	addi	a0,a0,960 # 4ae3c0 <OHOS_SECURITY_PATCH_TAG+0x2a0>
+  4a1066:	c46590ef          	jal	ra,3fa4ac <printf>
+  4a106a:	bf15                	j	4a0f9e <StaConnect+0x32>
+  4a106c:	610d                	addi	sp,sp,160
+  4a106e:	ff05906f          	j	3fa85e <__riscv_restore_4>
 
-004a1064 <RegisterHisiCallback>:
-  4a1064:	fe0592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a1068:	0011d437          	lui	s0,0x11d
-  4a106c:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a1070:	004a1537          	lui	a0,0x4a1
-  4a1074:	1141                	addi	sp,sp,-16
-  4a1076:	40a50513          	addi	a0,a0,1034 # 4a140a <HiWifiWpaEventCb>
-  4a107a:	c63e                	sw	a5,12(sp)
-  4a107c:	840e40ef          	jal	ra,4850bc <hi_wifi_register_event_callback>
-  4a1080:	c519                	beqz	a0,4a108e <RegisterHisiCallback+0x2a>
-  4a1082:	004ae537          	lui	a0,0x4ae
-  4a1086:	31450513          	addi	a0,a0,788 # 4ae314 <OHOS_SECURITY_PATCH_TAG+0x1f4>
-  4a108a:	c22590ef          	jal	ra,3fa4ac <printf>
-  4a108e:	4601                	li	a2,0
-  4a1090:	4581                	li	a1,0
-  4a1092:	4505                	li	a0,1
-  4a1094:	fa5e30ef          	jal	ra,485038 <hi_wifi_config_callback>
-  4a1098:	c519                	beqz	a0,4a10a6 <RegisterHisiCallback+0x42>
-  4a109a:	004ae537          	lui	a0,0x4ae
-  4a109e:	35450513          	addi	a0,a0,852 # 4ae354 <OHOS_SECURITY_PATCH_TAG+0x234>
-  4a10a2:	c0a590ef          	jal	ra,3fa4ac <printf>
-  4a10a6:	4732                	lw	a4,12(sp)
-  4a10a8:	7c042783          	lw	a5,1984(s0)
-  4a10ac:	00f70463          	beq	a4,a5,4a10b4 <RegisterHisiCallback+0x50>
-  4a10b0:	908550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a10b4:	0141                	addi	sp,sp,16
-  4a10b6:	fb25906f          	j	3fa868 <__riscv_restore_0>
+004a1072 <RegisterHisiCallback>:
+  4a1072:	fd2592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a1076:	0011d437          	lui	s0,0x11d
+  4a107a:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a107e:	004a1537          	lui	a0,0x4a1
+  4a1082:	1141                	addi	sp,sp,-16
+  4a1084:	41850513          	addi	a0,a0,1048 # 4a1418 <HiWifiWpaEventCb>
+  4a1088:	c63e                	sw	a5,12(sp)
+  4a108a:	832e40ef          	jal	ra,4850bc <hi_wifi_register_event_callback>
+  4a108e:	c519                	beqz	a0,4a109c <RegisterHisiCallback+0x2a>
+  4a1090:	004ae537          	lui	a0,0x4ae
+  4a1094:	31450513          	addi	a0,a0,788 # 4ae314 <OHOS_SECURITY_PATCH_TAG+0x1f4>
+  4a1098:	c14590ef          	jal	ra,3fa4ac <printf>
+  4a109c:	4601                	li	a2,0
+  4a109e:	4581                	li	a1,0
+  4a10a0:	4505                	li	a0,1
+  4a10a2:	f97e30ef          	jal	ra,485038 <hi_wifi_config_callback>
+  4a10a6:	c519                	beqz	a0,4a10b4 <RegisterHisiCallback+0x42>
+  4a10a8:	004ae537          	lui	a0,0x4ae
+  4a10ac:	35450513          	addi	a0,a0,852 # 4ae354 <OHOS_SECURITY_PATCH_TAG+0x234>
+  4a10b0:	bfc590ef          	jal	ra,3fa4ac <printf>
+  4a10b4:	4732                	lw	a4,12(sp)
+  4a10b6:	7c042783          	lw	a5,1984(s0)
+  4a10ba:	00f70463          	beq	a4,a5,4a10c2 <RegisterHisiCallback+0x50>
+  4a10be:	8fa550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a10c2:	0141                	addi	sp,sp,16
+  4a10c4:	fa45906f          	j	3fa868 <__riscv_restore_0>
 
-004a10ba <StaSetLocaladdr>:
-  4a10ba:	f8a592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a10be:	0011d7b7          	lui	a5,0x11d
-  4a10c2:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a10c6:	1141                	addi	sp,sp,-16
-  4a10c8:	843e                	mv	s0,a5
-  4a10ca:	c63a                	sw	a4,12(sp)
-  4a10cc:	ed11                	bnez	a0,4a10e8 <StaSetLocaladdr+0x2e>
-  4a10ce:	004ae537          	lui	a0,0x4ae
-  4a10d2:	3ec50513          	addi	a0,a0,1004 # 4ae3ec <OHOS_SECURITY_PATCH_TAG+0x2cc>
-  4a10d6:	bd6590ef          	jal	ra,3fa4ac <printf>
-  4a10da:	4732                	lw	a4,12(sp)
-  4a10dc:	7c042783          	lw	a5,1984(s0)
-  4a10e0:	00f70d63          	beq	a4,a5,4a10fa <StaSetLocaladdr+0x40>
-  4a10e4:	8d4550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a10e8:	c02e                	sw	a1,0(sp)
-  4a10ea:	c232                	sw	a2,4(sp)
-  4a10ec:	c436                	sw	a3,8(sp)
-  4a10ee:	0030                	addi	a2,sp,8
-  4a10f0:	868a                	mv	a3,sp
-  4a10f2:	004c                	addi	a1,sp,4
-  4a10f4:	eccbd0ef          	jal	ra,45e7c0 <netifapi_netif_set_addr>
-  4a10f8:	b7cd                	j	4a10da <StaSetLocaladdr+0x20>
-  4a10fa:	0141                	addi	sp,sp,16
-  4a10fc:	f6c5906f          	j	3fa868 <__riscv_restore_0>
+004a10c8 <StaSetLocaladdr>:
+  4a10c8:	f7c592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a10cc:	0011d7b7          	lui	a5,0x11d
+  4a10d0:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a10d4:	1141                	addi	sp,sp,-16
+  4a10d6:	843e                	mv	s0,a5
+  4a10d8:	c63a                	sw	a4,12(sp)
+  4a10da:	ed11                	bnez	a0,4a10f6 <StaSetLocaladdr+0x2e>
+  4a10dc:	004ae537          	lui	a0,0x4ae
+  4a10e0:	3ec50513          	addi	a0,a0,1004 # 4ae3ec <OHOS_SECURITY_PATCH_TAG+0x2cc>
+  4a10e4:	bc8590ef          	jal	ra,3fa4ac <printf>
+  4a10e8:	4732                	lw	a4,12(sp)
+  4a10ea:	7c042783          	lw	a5,1984(s0)
+  4a10ee:	00f70d63          	beq	a4,a5,4a1108 <StaSetLocaladdr+0x40>
+  4a10f2:	8c6550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a10f6:	c02e                	sw	a1,0(sp)
+  4a10f8:	c232                	sw	a2,4(sp)
+  4a10fa:	c436                	sw	a3,8(sp)
+  4a10fc:	0030                	addi	a2,sp,8
+  4a10fe:	868a                	mv	a3,sp
+  4a1100:	004c                	addi	a1,sp,4
+  4a1102:	ebebd0ef          	jal	ra,45e7c0 <netifapi_netif_set_addr>
+  4a1106:	b7cd                	j	4a10e8 <StaSetLocaladdr+0x20>
+  4a1108:	0141                	addi	sp,sp,16
+  4a110a:	f5e5906f          	j	3fa868 <__riscv_restore_0>
 
-004a1100 <StaSetDNSServer>:
-  4a1100:	f44592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a1104:	0011d7b7          	lui	a5,0x11d
-  4a1108:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a110c:	1141                	addi	sp,sp,-16
-  4a110e:	842a                	mv	s0,a0
-  4a1110:	c63a                	sw	a4,12(sp)
-  4a1112:	4709                	li	a4,2
-  4a1114:	84be                	mv	s1,a5
-  4a1116:	02e50663          	beq	a0,a4,4a1142 <StaSetDNSServer+0x42>
-  4a111a:	c202                	sw	zero,4(sp)
-  4a111c:	004c                	addi	a1,sp,4
-  4a111e:	4501                	li	a0,0
-  4a1120:	f5fb40ef          	jal	ra,45607e <lwip_dns_setserver>
-  4a1124:	4789                	li	a5,2
-  4a1126:	02f40f63          	beq	s0,a5,4a1164 <StaSetDNSServer+0x64>
-  4a112a:	c402                	sw	zero,8(sp)
-  4a112c:	002c                	addi	a1,sp,8
-  4a112e:	4505                	li	a0,1
-  4a1130:	f4fb40ef          	jal	ra,45607e <lwip_dns_setserver>
-  4a1134:	4732                	lw	a4,12(sp)
-  4a1136:	7c04a783          	lw	a5,1984(s1)
-  4a113a:	04f70663          	beq	a4,a5,4a1186 <StaSetDNSServer+0x86>
-  4a113e:	87a550ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a1142:	000dc7b7          	lui	a5,0xdc
-  4a1146:	2c07a783          	lw	a5,704(a5) # dc2c0 <g_networkId>
-  4a114a:	09400713          	li	a4,148
-  4a114e:	02e78733          	mul	a4,a5,a4
-  4a1152:	000dc7b7          	lui	a5,0xdc
-  4a1156:	2c478793          	addi	a5,a5,708 # dc2c4 <g_wifiConfigs>
-  4a115a:	97ba                	add	a5,a5,a4
-  4a115c:	0847a783          	lw	a5,132(a5)
-  4a1160:	c23e                	sw	a5,4(sp)
-  4a1162:	bf6d                	j	4a111c <StaSetDNSServer+0x1c>
-  4a1164:	000dc7b7          	lui	a5,0xdc
-  4a1168:	2c07a783          	lw	a5,704(a5) # dc2c0 <g_networkId>
-  4a116c:	09400713          	li	a4,148
-  4a1170:	02e78733          	mul	a4,a5,a4
-  4a1174:	000dc7b7          	lui	a5,0xdc
-  4a1178:	2c478793          	addi	a5,a5,708 # dc2c4 <g_wifiConfigs>
-  4a117c:	97ba                	add	a5,a5,a4
-  4a117e:	0887a783          	lw	a5,136(a5)
-  4a1182:	c43e                	sw	a5,8(sp)
-  4a1184:	b765                	j	4a112c <StaSetDNSServer+0x2c>
-  4a1186:	0141                	addi	sp,sp,16
-  4a1188:	ee05906f          	j	3fa868 <__riscv_restore_0>
+004a110e <StaSetDNSServer>:
+  4a110e:	f36592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a1112:	0011d7b7          	lui	a5,0x11d
+  4a1116:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a111a:	1141                	addi	sp,sp,-16
+  4a111c:	842a                	mv	s0,a0
+  4a111e:	c63a                	sw	a4,12(sp)
+  4a1120:	4709                	li	a4,2
+  4a1122:	84be                	mv	s1,a5
+  4a1124:	02e50663          	beq	a0,a4,4a1150 <StaSetDNSServer+0x42>
+  4a1128:	c202                	sw	zero,4(sp)
+  4a112a:	004c                	addi	a1,sp,4
+  4a112c:	4501                	li	a0,0
+  4a112e:	f51b40ef          	jal	ra,45607e <lwip_dns_setserver>
+  4a1132:	4789                	li	a5,2
+  4a1134:	02f40f63          	beq	s0,a5,4a1172 <StaSetDNSServer+0x64>
+  4a1138:	c402                	sw	zero,8(sp)
+  4a113a:	002c                	addi	a1,sp,8
+  4a113c:	4505                	li	a0,1
+  4a113e:	f41b40ef          	jal	ra,45607e <lwip_dns_setserver>
+  4a1142:	4732                	lw	a4,12(sp)
+  4a1144:	7c04a783          	lw	a5,1984(s1)
+  4a1148:	04f70663          	beq	a4,a5,4a1194 <StaSetDNSServer+0x86>
+  4a114c:	86c550ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a1150:	000dc7b7          	lui	a5,0xdc
+  4a1154:	2c07a783          	lw	a5,704(a5) # dc2c0 <g_networkId>
+  4a1158:	09400713          	li	a4,148
+  4a115c:	02e78733          	mul	a4,a5,a4
+  4a1160:	000dc7b7          	lui	a5,0xdc
+  4a1164:	2c478793          	addi	a5,a5,708 # dc2c4 <g_wifiConfigs>
+  4a1168:	97ba                	add	a5,a5,a4
+  4a116a:	0847a783          	lw	a5,132(a5)
+  4a116e:	c23e                	sw	a5,4(sp)
+  4a1170:	bf6d                	j	4a112a <StaSetDNSServer+0x1c>
+  4a1172:	000dc7b7          	lui	a5,0xdc
+  4a1176:	2c07a783          	lw	a5,704(a5) # dc2c0 <g_networkId>
+  4a117a:	09400713          	li	a4,148
+  4a117e:	02e78733          	mul	a4,a5,a4
+  4a1182:	000dc7b7          	lui	a5,0xdc
+  4a1186:	2c478793          	addi	a5,a5,708 # dc2c4 <g_wifiConfigs>
+  4a118a:	97ba                	add	a5,a5,a4
+  4a118c:	0887a783          	lw	a5,136(a5)
+  4a1190:	c43e                	sw	a5,8(sp)
+  4a1192:	b765                	j	4a113a <StaSetDNSServer+0x2c>
+  4a1194:	0141                	addi	sp,sp,16
+  4a1196:	ed25906f          	j	3fa868 <__riscv_restore_0>
 
-004a118c <StaSetWifiNetConfig>:
-  4a118c:	e9e592ef          	jal	t0,3fa82a <__riscv_save_4>
-  4a1190:	0011d937          	lui	s2,0x11d
-  4a1194:	7c092783          	lw	a5,1984(s2) # 11d7c0 <__rom_data0_begin__>
-  4a1198:	8aaa                	mv	s5,a0
-  4a119a:	004a5537          	lui	a0,0x4a5
-  4a119e:	1141                	addi	sp,sp,-16
-  4a11a0:	f6c50513          	addi	a0,a0,-148 # 4a4f6c <g_ast_freq_map_2g+0x38>
-  4a11a4:	c63e                	sw	a5,12(sp)
-  4a11a6:	f2cbc0ef          	jal	ra,45d8d2 <netif_find>
-  4a11aa:	ed11                	bnez	a0,4a11c6 <StaSetWifiNetConfig+0x3a>
-  4a11ac:	004ae537          	lui	a0,0x4ae
-  4a11b0:	41450513          	addi	a0,a0,1044 # 4ae414 <OHOS_SECURITY_PATCH_TAG+0x2f4>
-  4a11b4:	af8590ef          	jal	ra,3fa4ac <printf>
-  4a11b8:	4732                	lw	a4,12(sp)
-  4a11ba:	7c092783          	lw	a5,1984(s2)
-  4a11be:	08f70f63          	beq	a4,a5,4a125c <StaSetWifiNetConfig+0xd0>
-  4a11c2:	ff7540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a11c6:	000dc9b7          	lui	s3,0xdc
-  4a11ca:	2c098993          	addi	s3,s3,704 # dc2c0 <g_networkId>
-  4a11ce:	0009a703          	lw	a4,0(s3)
-  4a11d2:	09400a13          	li	s4,148
-  4a11d6:	000dc7b7          	lui	a5,0xdc
-  4a11da:	03470733          	mul	a4,a4,s4
-  4a11de:	2c478413          	addi	s0,a5,708 # dc2c4 <g_wifiConfigs>
-  4a11e2:	4789                	li	a5,2
-  4a11e4:	84aa                	mv	s1,a0
-  4a11e6:	9722                	add	a4,a4,s0
-  4a11e8:	5f38                	lw	a4,120(a4)
-  4a11ea:	02fa9f63          	bne	s5,a5,4a1228 <StaSetWifiNetConfig+0x9c>
-  4a11ee:	4785                	li	a5,1
-  4a11f0:	00f71563          	bne	a4,a5,4a11fa <StaSetWifiNetConfig+0x6e>
-  4a11f4:	f10bd0ef          	jal	ra,45e904 <netifapi_dhcp_start>
-  4a11f8:	b7c1                	j	4a11b8 <StaSetWifiNetConfig+0x2c>
-  4a11fa:	ff5d                	bnez	a4,4a11b8 <StaSetWifiNetConfig+0x2c>
-  4a11fc:	edcbd0ef          	jal	ra,45e8d8 <netifapi_netif_set_link_up>
-  4a1200:	0009a783          	lw	a5,0(s3)
-  4a1204:	8526                	mv	a0,s1
-  4a1206:	034787b3          	mul	a5,a5,s4
-  4a120a:	97a2                	add	a5,a5,s0
-  4a120c:	08c7a683          	lw	a3,140(a5)
-  4a1210:	5ff0                	lw	a2,124(a5)
-  4a1212:	0807a583          	lw	a1,128(a5)
-  4a1216:	ea5ff0ef          	jal	ra,4a10ba <StaSetLocaladdr>
-  4a121a:	8526                	mv	a0,s1
-  4a121c:	e90bd0ef          	jal	ra,45e8ac <netifapi_netif_set_up>
-  4a1220:	4509                	li	a0,2
-  4a1222:	edfff0ef          	jal	ra,4a1100 <StaSetDNSServer>
-  4a1226:	bf49                	j	4a11b8 <StaSetWifiNetConfig+0x2c>
-  4a1228:	4785                	li	a5,1
-  4a122a:	00f71b63          	bne	a4,a5,4a1240 <StaSetWifiNetConfig+0xb4>
-  4a122e:	eecbd0ef          	jal	ra,45e91a <netifapi_dhcp_stop>
-  4a1232:	4681                	li	a3,0
-  4a1234:	4601                	li	a2,0
-  4a1236:	4581                	li	a1,0
-  4a1238:	8526                	mv	a0,s1
-  4a123a:	e81ff0ef          	jal	ra,4a10ba <StaSetLocaladdr>
-  4a123e:	bfad                	j	4a11b8 <StaSetWifiNetConfig+0x2c>
-  4a1240:	ff25                	bnez	a4,4a11b8 <StaSetWifiNetConfig+0x2c>
-  4a1242:	eacbd0ef          	jal	ra,45e8ee <netifapi_netif_set_link_down>
+004a119a <StaSetWifiNetConfig>:
+  4a119a:	e90592ef          	jal	t0,3fa82a <__riscv_save_4>
+  4a119e:	0011d937          	lui	s2,0x11d
+  4a11a2:	7c092783          	lw	a5,1984(s2) # 11d7c0 <__rom_data0_begin__>
+  4a11a6:	8aaa                	mv	s5,a0
+  4a11a8:	004a5537          	lui	a0,0x4a5
+  4a11ac:	1141                	addi	sp,sp,-16
+  4a11ae:	f6c50513          	addi	a0,a0,-148 # 4a4f6c <g_ast_freq_map_2g+0x38>
+  4a11b2:	c63e                	sw	a5,12(sp)
+  4a11b4:	f1ebc0ef          	jal	ra,45d8d2 <netif_find>
+  4a11b8:	ed11                	bnez	a0,4a11d4 <StaSetWifiNetConfig+0x3a>
+  4a11ba:	004ae537          	lui	a0,0x4ae
+  4a11be:	41450513          	addi	a0,a0,1044 # 4ae414 <OHOS_SECURITY_PATCH_TAG+0x2f4>
+  4a11c2:	aea590ef          	jal	ra,3fa4ac <printf>
+  4a11c6:	4732                	lw	a4,12(sp)
+  4a11c8:	7c092783          	lw	a5,1984(s2)
+  4a11cc:	08f70f63          	beq	a4,a5,4a126a <StaSetWifiNetConfig+0xd0>
+  4a11d0:	fe9540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a11d4:	000dc9b7          	lui	s3,0xdc
+  4a11d8:	2c098993          	addi	s3,s3,704 # dc2c0 <g_networkId>
+  4a11dc:	0009a703          	lw	a4,0(s3)
+  4a11e0:	09400a13          	li	s4,148
+  4a11e4:	000dc7b7          	lui	a5,0xdc
+  4a11e8:	03470733          	mul	a4,a4,s4
+  4a11ec:	2c478413          	addi	s0,a5,708 # dc2c4 <g_wifiConfigs>
+  4a11f0:	4789                	li	a5,2
+  4a11f2:	84aa                	mv	s1,a0
+  4a11f4:	9722                	add	a4,a4,s0
+  4a11f6:	5f38                	lw	a4,120(a4)
+  4a11f8:	02fa9f63          	bne	s5,a5,4a1236 <StaSetWifiNetConfig+0x9c>
+  4a11fc:	4785                	li	a5,1
+  4a11fe:	00f71563          	bne	a4,a5,4a1208 <StaSetWifiNetConfig+0x6e>
+  4a1202:	f02bd0ef          	jal	ra,45e904 <netifapi_dhcp_start>
+  4a1206:	b7c1                	j	4a11c6 <StaSetWifiNetConfig+0x2c>
+  4a1208:	ff5d                	bnez	a4,4a11c6 <StaSetWifiNetConfig+0x2c>
+  4a120a:	ecebd0ef          	jal	ra,45e8d8 <netifapi_netif_set_link_up>
+  4a120e:	0009a783          	lw	a5,0(s3)
+  4a1212:	8526                	mv	a0,s1
+  4a1214:	034787b3          	mul	a5,a5,s4
+  4a1218:	97a2                	add	a5,a5,s0
+  4a121a:	08c7a683          	lw	a3,140(a5)
+  4a121e:	5ff0                	lw	a2,124(a5)
+  4a1220:	0807a583          	lw	a1,128(a5)
+  4a1224:	ea5ff0ef          	jal	ra,4a10c8 <StaSetLocaladdr>
+  4a1228:	8526                	mv	a0,s1
+  4a122a:	e82bd0ef          	jal	ra,45e8ac <netifapi_netif_set_up>
+  4a122e:	4509                	li	a0,2
+  4a1230:	edfff0ef          	jal	ra,4a110e <StaSetDNSServer>
+  4a1234:	bf49                	j	4a11c6 <StaSetWifiNetConfig+0x2c>
+  4a1236:	4785                	li	a5,1
+  4a1238:	00f71b63          	bne	a4,a5,4a124e <StaSetWifiNetConfig+0xb4>
+  4a123c:	edebd0ef          	jal	ra,45e91a <netifapi_dhcp_stop>
+  4a1240:	4681                	li	a3,0
+  4a1242:	4601                	li	a2,0
+  4a1244:	4581                	li	a1,0
   4a1246:	8526                	mv	a0,s1
-  4a1248:	e7abd0ef          	jal	ra,45e8c2 <netifapi_netif_set_down>
-  4a124c:	8526                	mv	a0,s1
-  4a124e:	4681                	li	a3,0
-  4a1250:	4601                	li	a2,0
-  4a1252:	4581                	li	a1,0
-  4a1254:	e67ff0ef          	jal	ra,4a10ba <StaSetLocaladdr>
-  4a1258:	450d                	li	a0,3
-  4a125a:	b7e1                	j	4a1222 <StaSetWifiNetConfig+0x96>
-  4a125c:	0141                	addi	sp,sp,16
-  4a125e:	e005906f          	j	3fa85e <__riscv_restore_4>
+  4a1248:	e81ff0ef          	jal	ra,4a10c8 <StaSetLocaladdr>
+  4a124c:	bfad                	j	4a11c6 <StaSetWifiNetConfig+0x2c>
+  4a124e:	ff25                	bnez	a4,4a11c6 <StaSetWifiNetConfig+0x2c>
+  4a1250:	e9ebd0ef          	jal	ra,45e8ee <netifapi_netif_set_link_down>
+  4a1254:	8526                	mv	a0,s1
+  4a1256:	e6cbd0ef          	jal	ra,45e8c2 <netifapi_netif_set_down>
+  4a125a:	8526                	mv	a0,s1
+  4a125c:	4681                	li	a3,0
+  4a125e:	4601                	li	a2,0
+  4a1260:	4581                	li	a1,0
+  4a1262:	e67ff0ef          	jal	ra,4a10c8 <StaSetLocaladdr>
+  4a1266:	450d                	li	a0,3
+  4a1268:	b7e1                	j	4a1230 <StaSetWifiNetConfig+0x96>
+  4a126a:	0141                	addi	sp,sp,16
+  4a126c:	df25906f          	j	3fa85e <__riscv_restore_4>
 
-004a1262 <DispatchScanStateChangeEvent.isra.0>:
-  4a1262:	de2592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a1266:	0011d7b7          	lui	a5,0x11d
-  4a126a:	7c07a683          	lw	a3,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a126e:	1141                	addi	sp,sp,-16
-  4a1270:	843e                	mv	s0,a5
-  4a1272:	c636                	sw	a3,12(sp)
-  4a1274:	c591                	beqz	a1,4a1280 <DispatchScanStateChangeEvent.isra.0+0x1e>
-  4a1276:	872e                	mv	a4,a1
-  4a1278:	ea19                	bnez	a2,4a128e <DispatchScanStateChangeEvent.isra.0+0x2c>
-  4a127a:	4581                	li	a1,0
-  4a127c:	4501                	li	a0,0
-  4a127e:	9702                	jalr	a4
-  4a1280:	4732                	lw	a4,12(sp)
-  4a1282:	7c042783          	lw	a5,1984(s0)
-  4a1286:	00f70c63          	beq	a4,a5,4a129e <DispatchScanStateChangeEvent.isra.0+0x3c>
-  4a128a:	f2f540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a128e:	4114                	lw	a3,0(a0)
-  4a1290:	4785                	li	a5,1
-  4a1292:	fef697e3          	bne	a3,a5,4a1280 <DispatchScanStateChangeEvent.isra.0+0x1e>
-  4a1296:	00455583          	lhu	a1,4(a0)
-  4a129a:	4505                	li	a0,1
-  4a129c:	b7cd                	j	4a127e <DispatchScanStateChangeEvent.isra.0+0x1c>
-  4a129e:	0141                	addi	sp,sp,16
-  4a12a0:	dc85906f          	j	3fa868 <__riscv_restore_0>
+004a1270 <DispatchScanStateChangeEvent.isra.0>:
+  4a1270:	dd4592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a1274:	0011d7b7          	lui	a5,0x11d
+  4a1278:	7c07a683          	lw	a3,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a127c:	1141                	addi	sp,sp,-16
+  4a127e:	843e                	mv	s0,a5
+  4a1280:	c636                	sw	a3,12(sp)
+  4a1282:	c591                	beqz	a1,4a128e <DispatchScanStateChangeEvent.isra.0+0x1e>
+  4a1284:	872e                	mv	a4,a1
+  4a1286:	ea19                	bnez	a2,4a129c <DispatchScanStateChangeEvent.isra.0+0x2c>
+  4a1288:	4581                	li	a1,0
+  4a128a:	4501                	li	a0,0
+  4a128c:	9702                	jalr	a4
+  4a128e:	4732                	lw	a4,12(sp)
+  4a1290:	7c042783          	lw	a5,1984(s0)
+  4a1294:	00f70c63          	beq	a4,a5,4a12ac <DispatchScanStateChangeEvent.isra.0+0x3c>
+  4a1298:	f21540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a129c:	4114                	lw	a3,0(a0)
+  4a129e:	4785                	li	a5,1
+  4a12a0:	fef697e3          	bne	a3,a5,4a128e <DispatchScanStateChangeEvent.isra.0+0x1e>
+  4a12a4:	00455583          	lhu	a1,4(a0)
+  4a12a8:	4505                	li	a0,1
+  4a12aa:	b7cd                	j	4a128c <DispatchScanStateChangeEvent.isra.0+0x1c>
+  4a12ac:	0141                	addi	sp,sp,16
+  4a12ae:	dba5906f          	j	3fa868 <__riscv_restore_0>
 
-004a12a4 <DispatchApStartEvent.isra.1>:
-  4a12a4:	da0592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a12a8:	0011d7b7          	lui	a5,0x11d
-  4a12ac:	7c07a683          	lw	a3,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a12b0:	1141                	addi	sp,sp,-16
-  4a12b2:	843e                	mv	s0,a5
-  4a12b4:	c636                	sw	a3,12(sp)
-  4a12b6:	c501                	beqz	a0,4a12be <DispatchApStartEvent.isra.1+0x1a>
-  4a12b8:	872a                	mv	a4,a0
-  4a12ba:	4505                	li	a0,1
-  4a12bc:	9702                	jalr	a4
-  4a12be:	4732                	lw	a4,12(sp)
-  4a12c0:	7c042783          	lw	a5,1984(s0)
-  4a12c4:	00f70463          	beq	a4,a5,4a12cc <DispatchApStartEvent.isra.1+0x28>
-  4a12c8:	ef1540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a12cc:	0141                	addi	sp,sp,16
-  4a12ce:	d9a5906f          	j	3fa868 <__riscv_restore_0>
+004a12b2 <DispatchApStartEvent.isra.1>:
+  4a12b2:	d92592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a12b6:	0011d7b7          	lui	a5,0x11d
+  4a12ba:	7c07a683          	lw	a3,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a12be:	1141                	addi	sp,sp,-16
+  4a12c0:	843e                	mv	s0,a5
+  4a12c2:	c636                	sw	a3,12(sp)
+  4a12c4:	c501                	beqz	a0,4a12cc <DispatchApStartEvent.isra.1+0x1a>
+  4a12c6:	872a                	mv	a4,a0
+  4a12c8:	4505                	li	a0,1
+  4a12ca:	9702                	jalr	a4
+  4a12cc:	4732                	lw	a4,12(sp)
+  4a12ce:	7c042783          	lw	a5,1984(s0)
+  4a12d2:	00f70463          	beq	a4,a5,4a12da <DispatchApStartEvent.isra.1+0x28>
+  4a12d6:	ee3540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a12da:	0141                	addi	sp,sp,16
+  4a12dc:	d8c5906f          	j	3fa868 <__riscv_restore_0>
 
-004a12d2 <DispatchConnectEvent.isra.2>:
-  4a12d2:	d72592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a12d6:	0011d7b7          	lui	a5,0x11d
-  4a12da:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a12de:	715d                	addi	sp,sp,-80
-  4a12e0:	893e                	mv	s2,a5
-  4a12e2:	c6ba                	sw	a4,76(sp)
-  4a12e4:	4198                	lw	a4,0(a1)
-  4a12e6:	c339                	beqz	a4,4a132c <DispatchConnectEvent.isra.2+0x5a>
-  4a12e8:	842a                	mv	s0,a0
-  4a12ea:	84ae                	mv	s1,a1
-  4a12ec:	04000613          	li	a2,64
-  4a12f0:	4581                	li	a1,0
-  4a12f2:	0068                	addi	a0,sp,12
-  4a12f4:	8065a0ef          	jal	ra,3fb2fa <memset>
-  4a12f8:	401c                	lw	a5,0(s0)
-  4a12fa:	4709                	li	a4,2
-  4a12fc:	06e79163          	bne	a5,a4,4a135e <DispatchConnectEvent.isra.2+0x8c>
-  4a1300:	000e67b7          	lui	a5,0xe6
-  4a1304:	4705                	li	a4,1
-  4a1306:	02100593          	li	a1,33
-  4a130a:	02100693          	li	a3,33
-  4a130e:	00440613          	addi	a2,s0,4
-  4a1312:	0068                	addi	a0,sp,12
-  4a1314:	a0e7aa23          	sw	a4,-1516(a5) # e5a14 <g_connectState>
-  4a1318:	d0a5a0ef          	jal	ra,3fb822 <memcpy_s>
-  4a131c:	85aa                	mv	a1,a0
-  4a131e:	cd11                	beqz	a0,4a133a <DispatchConnectEvent.isra.2+0x68>
-  4a1320:	004ae537          	lui	a0,0x4ae
-  4a1324:	21450513          	addi	a0,a0,532 # 4ae214 <OHOS_SECURITY_PATCH_TAG+0xf4>
-  4a1328:	984590ef          	jal	ra,3fa4ac <printf>
-  4a132c:	4736                	lw	a4,76(sp)
-  4a132e:	7c092783          	lw	a5,1984(s2)
-  4a1332:	06f70b63          	beq	a4,a5,4a13a8 <DispatchConnectEvent.isra.2+0xd6>
-  4a1336:	e83540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a133a:	4599                	li	a1,6
-  4a133c:	4699                	li	a3,6
-  4a133e:	02540613          	addi	a2,s0,37
-  4a1342:	02d10513          	addi	a0,sp,45
-  4a1346:	cdc5a0ef          	jal	ra,3fb822 <memcpy_s>
-  4a134a:	85aa                	mv	a1,a0
-  4a134c:	f971                	bnez	a0,4a1320 <DispatchConnectEvent.isra.2+0x4e>
-  4a134e:	4509                	li	a0,2
-  4a1350:	e3dff0ef          	jal	ra,4a118c <StaSetWifiNetConfig>
-  4a1354:	409c                	lw	a5,0(s1)
-  4a1356:	006c                	addi	a1,sp,12
-  4a1358:	4505                	li	a0,1
-  4a135a:	9782                	jalr	a5
-  4a135c:	bfc1                	j	4a132c <DispatchConnectEvent.isra.2+0x5a>
-  4a135e:	4729                	li	a4,10
-  4a1360:	00e79963          	bne	a5,a4,4a1372 <DispatchConnectEvent.isra.2+0xa0>
-  4a1364:	000e6737          	lui	a4,0xe6
-  4a1368:	a1472683          	lw	a3,-1516(a4) # e5a14 <g_connectState>
-  4a136c:	4705                	li	a4,1
-  4a136e:	fae68fe3          	beq	a3,a4,4a132c <DispatchConnectEvent.isra.2+0x5a>
-  4a1372:	4705                	li	a4,1
-  4a1374:	04e11223          	sh	a4,68(sp)
-  4a1378:	470d                	li	a4,3
-  4a137a:	02e79063          	bne	a5,a4,4a139a <DispatchConnectEvent.isra.2+0xc8>
-  4a137e:	4599                	li	a1,6
-  4a1380:	4699                	li	a3,6
-  4a1382:	00440613          	addi	a2,s0,4
-  4a1386:	02d10513          	addi	a0,sp,45
-  4a138a:	c985a0ef          	jal	ra,3fb822 <memcpy_s>
-  4a138e:	85aa                	mv	a1,a0
-  4a1390:	f941                	bnez	a0,4a1320 <DispatchConnectEvent.isra.2+0x4e>
-  4a1392:	00a45783          	lhu	a5,10(s0)
-  4a1396:	04f11223          	sh	a5,68(sp)
-  4a139a:	450d                	li	a0,3
-  4a139c:	df1ff0ef          	jal	ra,4a118c <StaSetWifiNetConfig>
-  4a13a0:	409c                	lw	a5,0(s1)
-  4a13a2:	006c                	addi	a1,sp,12
-  4a13a4:	4501                	li	a0,0
-  4a13a6:	bf55                	j	4a135a <DispatchConnectEvent.isra.2+0x88>
-  4a13a8:	6161                	addi	sp,sp,80
-  4a13aa:	cbe5906f          	j	3fa868 <__riscv_restore_0>
+004a12e0 <DispatchConnectEvent.isra.2>:
+  4a12e0:	d64592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a12e4:	0011d7b7          	lui	a5,0x11d
+  4a12e8:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a12ec:	715d                	addi	sp,sp,-80
+  4a12ee:	893e                	mv	s2,a5
+  4a12f0:	c6ba                	sw	a4,76(sp)
+  4a12f2:	4198                	lw	a4,0(a1)
+  4a12f4:	c339                	beqz	a4,4a133a <DispatchConnectEvent.isra.2+0x5a>
+  4a12f6:	842a                	mv	s0,a0
+  4a12f8:	84ae                	mv	s1,a1
+  4a12fa:	04000613          	li	a2,64
+  4a12fe:	4581                	li	a1,0
+  4a1300:	0068                	addi	a0,sp,12
+  4a1302:	ff9590ef          	jal	ra,3fb2fa <memset>
+  4a1306:	401c                	lw	a5,0(s0)
+  4a1308:	4709                	li	a4,2
+  4a130a:	06e79163          	bne	a5,a4,4a136c <DispatchConnectEvent.isra.2+0x8c>
+  4a130e:	000e67b7          	lui	a5,0xe6
+  4a1312:	4705                	li	a4,1
+  4a1314:	02100593          	li	a1,33
+  4a1318:	02100693          	li	a3,33
+  4a131c:	00440613          	addi	a2,s0,4
+  4a1320:	0068                	addi	a0,sp,12
+  4a1322:	a0e7aa23          	sw	a4,-1516(a5) # e5a14 <g_connectState>
+  4a1326:	cfc5a0ef          	jal	ra,3fb822 <memcpy_s>
+  4a132a:	85aa                	mv	a1,a0
+  4a132c:	cd11                	beqz	a0,4a1348 <DispatchConnectEvent.isra.2+0x68>
+  4a132e:	004ae537          	lui	a0,0x4ae
+  4a1332:	21450513          	addi	a0,a0,532 # 4ae214 <OHOS_SECURITY_PATCH_TAG+0xf4>
+  4a1336:	976590ef          	jal	ra,3fa4ac <printf>
+  4a133a:	4736                	lw	a4,76(sp)
+  4a133c:	7c092783          	lw	a5,1984(s2)
+  4a1340:	06f70b63          	beq	a4,a5,4a13b6 <DispatchConnectEvent.isra.2+0xd6>
+  4a1344:	e75540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a1348:	4599                	li	a1,6
+  4a134a:	4699                	li	a3,6
+  4a134c:	02540613          	addi	a2,s0,37
+  4a1350:	02d10513          	addi	a0,sp,45
+  4a1354:	cce5a0ef          	jal	ra,3fb822 <memcpy_s>
+  4a1358:	85aa                	mv	a1,a0
+  4a135a:	f971                	bnez	a0,4a132e <DispatchConnectEvent.isra.2+0x4e>
+  4a135c:	4509                	li	a0,2
+  4a135e:	e3dff0ef          	jal	ra,4a119a <StaSetWifiNetConfig>
+  4a1362:	409c                	lw	a5,0(s1)
+  4a1364:	006c                	addi	a1,sp,12
+  4a1366:	4505                	li	a0,1
+  4a1368:	9782                	jalr	a5
+  4a136a:	bfc1                	j	4a133a <DispatchConnectEvent.isra.2+0x5a>
+  4a136c:	4729                	li	a4,10
+  4a136e:	00e79963          	bne	a5,a4,4a1380 <DispatchConnectEvent.isra.2+0xa0>
+  4a1372:	000e6737          	lui	a4,0xe6
+  4a1376:	a1472683          	lw	a3,-1516(a4) # e5a14 <g_connectState>
+  4a137a:	4705                	li	a4,1
+  4a137c:	fae68fe3          	beq	a3,a4,4a133a <DispatchConnectEvent.isra.2+0x5a>
+  4a1380:	4705                	li	a4,1
+  4a1382:	04e11223          	sh	a4,68(sp)
+  4a1386:	470d                	li	a4,3
+  4a1388:	02e79063          	bne	a5,a4,4a13a8 <DispatchConnectEvent.isra.2+0xc8>
+  4a138c:	4599                	li	a1,6
+  4a138e:	4699                	li	a3,6
+  4a1390:	00440613          	addi	a2,s0,4
+  4a1394:	02d10513          	addi	a0,sp,45
+  4a1398:	c8a5a0ef          	jal	ra,3fb822 <memcpy_s>
+  4a139c:	85aa                	mv	a1,a0
+  4a139e:	f941                	bnez	a0,4a132e <DispatchConnectEvent.isra.2+0x4e>
+  4a13a0:	00a45783          	lhu	a5,10(s0)
+  4a13a4:	04f11223          	sh	a5,68(sp)
+  4a13a8:	450d                	li	a0,3
+  4a13aa:	df1ff0ef          	jal	ra,4a119a <StaSetWifiNetConfig>
+  4a13ae:	409c                	lw	a5,0(s1)
+  4a13b0:	006c                	addi	a1,sp,12
+  4a13b2:	4501                	li	a0,0
+  4a13b4:	bf55                	j	4a1368 <DispatchConnectEvent.isra.2+0x88>
+  4a13b6:	6161                	addi	sp,sp,80
+  4a13b8:	cb05906f          	j	3fa868 <__riscv_restore_0>
 
-004a13ae <DispatchEvent>:
-  4a13ae:	c96592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a13b2:	0011d737          	lui	a4,0x11d
-  4a13b6:	7c072783          	lw	a5,1984(a4) # 11d7c0 <__rom_data0_begin__>
-  4a13ba:	1141                	addi	sp,sp,-16
-  4a13bc:	46a5                	li	a3,9
-  4a13be:	c63e                	sw	a5,12(sp)
-  4a13c0:	411c                	lw	a5,0(a0)
-  4a13c2:	843a                	mv	s0,a4
-  4a13c4:	17fd                	addi	a5,a5,-1
-  4a13c6:	00f6ee63          	bltu	a3,a5,4a13e2 <DispatchEvent+0x34>
-  4a13ca:	004ae737          	lui	a4,0x4ae
-  4a13ce:	078a                	slli	a5,a5,0x2
-  4a13d0:	13870713          	addi	a4,a4,312 # 4ae138 <OHOS_SECURITY_PATCH_TAG+0x18>
-  4a13d4:	97ba                	add	a5,a5,a4
-  4a13d6:	439c                	lw	a5,0(a5)
-  4a13d8:	8782                	jr	a5
-  4a13da:	41cc                	lw	a1,4(a1)
-  4a13dc:	4605                	li	a2,1
-  4a13de:	e85ff0ef          	jal	ra,4a1262 <DispatchScanStateChangeEvent.isra.0>
-  4a13e2:	4732                	lw	a4,12(sp)
-  4a13e4:	7c042783          	lw	a5,1984(s0)
-  4a13e8:	00f70e63          	beq	a4,a5,4a1404 <DispatchEvent+0x56>
-  4a13ec:	dcd540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a13f0:	ee3ff0ef          	jal	ra,4a12d2 <DispatchConnectEvent.isra.2>
-  4a13f4:	b7fd                	j	4a13e2 <DispatchEvent+0x34>
-  4a13f6:	ae1ff0ef          	jal	ra,4a0ed6 <DispatchStaConnectEvent>
-  4a13fa:	b7e5                	j	4a13e2 <DispatchEvent+0x34>
-  4a13fc:	4588                	lw	a0,8(a1)
-  4a13fe:	ea7ff0ef          	jal	ra,4a12a4 <DispatchApStartEvent.isra.1>
-  4a1402:	b7c5                	j	4a13e2 <DispatchEvent+0x34>
-  4a1404:	0141                	addi	sp,sp,16
-  4a1406:	c625906f          	j	3fa868 <__riscv_restore_0>
+004a13bc <DispatchEvent>:
+  4a13bc:	c88592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a13c0:	0011d737          	lui	a4,0x11d
+  4a13c4:	7c072783          	lw	a5,1984(a4) # 11d7c0 <__rom_data0_begin__>
+  4a13c8:	1141                	addi	sp,sp,-16
+  4a13ca:	46a5                	li	a3,9
+  4a13cc:	c63e                	sw	a5,12(sp)
+  4a13ce:	411c                	lw	a5,0(a0)
+  4a13d0:	843a                	mv	s0,a4
+  4a13d2:	17fd                	addi	a5,a5,-1
+  4a13d4:	00f6ee63          	bltu	a3,a5,4a13f0 <DispatchEvent+0x34>
+  4a13d8:	004ae737          	lui	a4,0x4ae
+  4a13dc:	078a                	slli	a5,a5,0x2
+  4a13de:	13870713          	addi	a4,a4,312 # 4ae138 <OHOS_SECURITY_PATCH_TAG+0x18>
+  4a13e2:	97ba                	add	a5,a5,a4
+  4a13e4:	439c                	lw	a5,0(a5)
+  4a13e6:	8782                	jr	a5
+  4a13e8:	41cc                	lw	a1,4(a1)
+  4a13ea:	4605                	li	a2,1
+  4a13ec:	e85ff0ef          	jal	ra,4a1270 <DispatchScanStateChangeEvent.isra.0>
+  4a13f0:	4732                	lw	a4,12(sp)
+  4a13f2:	7c042783          	lw	a5,1984(s0)
+  4a13f6:	00f70e63          	beq	a4,a5,4a1412 <DispatchEvent+0x56>
+  4a13fa:	dbf540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a13fe:	ee3ff0ef          	jal	ra,4a12e0 <DispatchConnectEvent.isra.2>
+  4a1402:	b7fd                	j	4a13f0 <DispatchEvent+0x34>
+  4a1404:	ae1ff0ef          	jal	ra,4a0ee4 <DispatchStaConnectEvent>
+  4a1408:	b7e5                	j	4a13f0 <DispatchEvent+0x34>
+  4a140a:	4588                	lw	a0,8(a1)
+  4a140c:	ea7ff0ef          	jal	ra,4a12b2 <DispatchApStartEvent.isra.1>
+  4a1410:	b7c5                	j	4a13f0 <DispatchEvent+0x34>
+  4a1412:	0141                	addi	sp,sp,16
+  4a1414:	c545906f          	j	3fa868 <__riscv_restore_0>
 
-004a140a <HiWifiWpaEventCb>:
-  4a140a:	c20592ef          	jal	t0,3fa82a <__riscv_save_4>
-  4a140e:	0011d7b7          	lui	a5,0x11d
-  4a1412:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a1416:	1141                	addi	sp,sp,-16
-  4a1418:	84be                	mv	s1,a5
-  4a141a:	c63a                	sw	a4,12(sp)
-  4a141c:	c505                	beqz	a0,4a1444 <HiWifiWpaEventCb+0x3a>
-  4a141e:	89aa                	mv	s3,a0
-  4a1420:	29f1                	jal	4a18fc <LockWifiEventLock>
-  4a1422:	e10d                	bnez	a0,4a1444 <HiWifiWpaEventCb+0x3a>
-  4a1424:	000e6437          	lui	s0,0xe6
-  4a1428:	a1840413          	addi	s0,s0,-1512 # e5a18 <g_wifiEvents>
-  4a142c:	4901                	li	s2,0
-  4a142e:	4a29                	li	s4,10
-  4a1430:	400c                	lw	a1,0(s0)
-  4a1432:	c581                	beqz	a1,4a143a <HiWifiWpaEventCb+0x30>
-  4a1434:	854e                	mv	a0,s3
-  4a1436:	f79ff0ef          	jal	ra,4a13ae <DispatchEvent>
-  4a143a:	0905                	addi	s2,s2,1
-  4a143c:	0411                	addi	s0,s0,4
-  4a143e:	ff4919e3          	bne	s2,s4,4a1430 <HiWifiWpaEventCb+0x26>
-  4a1442:	2329                	jal	4a194c <UnlockWifiEventLock>
-  4a1444:	4732                	lw	a4,12(sp)
-  4a1446:	7c04a783          	lw	a5,1984(s1)
-  4a144a:	00f70463          	beq	a4,a5,4a1452 <HiWifiWpaEventCb+0x48>
-  4a144e:	d6b540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a1452:	0141                	addi	sp,sp,16
-  4a1454:	c0a5906f          	j	3fa85e <__riscv_restore_4>
+004a1418 <HiWifiWpaEventCb>:
+  4a1418:	c12592ef          	jal	t0,3fa82a <__riscv_save_4>
+  4a141c:	0011d7b7          	lui	a5,0x11d
+  4a1420:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a1424:	1141                	addi	sp,sp,-16
+  4a1426:	84be                	mv	s1,a5
+  4a1428:	c63a                	sw	a4,12(sp)
+  4a142a:	c505                	beqz	a0,4a1452 <HiWifiWpaEventCb+0x3a>
+  4a142c:	89aa                	mv	s3,a0
+  4a142e:	29f1                	jal	4a190a <LockWifiEventLock>
+  4a1430:	e10d                	bnez	a0,4a1452 <HiWifiWpaEventCb+0x3a>
+  4a1432:	000e6437          	lui	s0,0xe6
+  4a1436:	a1840413          	addi	s0,s0,-1512 # e5a18 <g_wifiEvents>
+  4a143a:	4901                	li	s2,0
+  4a143c:	4a29                	li	s4,10
+  4a143e:	400c                	lw	a1,0(s0)
+  4a1440:	c581                	beqz	a1,4a1448 <HiWifiWpaEventCb+0x30>
+  4a1442:	854e                	mv	a0,s3
+  4a1444:	f79ff0ef          	jal	ra,4a13bc <DispatchEvent>
+  4a1448:	0905                	addi	s2,s2,1
+  4a144a:	0411                	addi	s0,s0,4
+  4a144c:	ff4919e3          	bne	s2,s4,4a143e <HiWifiWpaEventCb+0x26>
+  4a1450:	2329                	jal	4a195a <UnlockWifiEventLock>
+  4a1452:	4732                	lw	a4,12(sp)
+  4a1454:	7c04a783          	lw	a5,1984(s1)
+  4a1458:	00f70463          	beq	a4,a5,4a1460 <HiWifiWpaEventCb+0x48>
+  4a145c:	d5d540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a1460:	0141                	addi	sp,sp,16
+  4a1462:	bfc5906f          	j	3fa85e <__riscv_restore_4>
 
-004a1458 <WriteNetworkConfig.constprop.4>:
-  4a1458:	bec592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a145c:	0011d437          	lui	s0,0x11d
-  4a1460:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a1464:	892a                	mv	s2,a0
-  4a1466:	004ae537          	lui	a0,0x4ae
-  4a146a:	1141                	addi	sp,sp,-16
-  4a146c:	4601                	li	a2,0
-  4a146e:	24200593          	li	a1,578
-  4a1472:	44c50513          	addi	a0,a0,1100 # 4ae44c <OHOS_SECURITY_PATCH_TAG+0x32c>
-  4a1476:	c63e                	sw	a5,12(sp)
-  4a1478:	ceaf70ef          	jal	ra,498962 <UtilsFileOpen>
-  4a147c:	f8000793          	li	a5,-128
-  4a1480:	00054f63          	bltz	a0,4a149e <WriteNetworkConfig.constprop.4+0x46>
-  4a1484:	09400613          	li	a2,148
-  4a1488:	85ca                	mv	a1,s2
-  4a148a:	84aa                	mv	s1,a0
-  4a148c:	d4ef70ef          	jal	ra,4989da <UtilsFileWrite>
-  4a1490:	00055f63          	bgez	a0,4a14ae <WriteNetworkConfig.constprop.4+0x56>
-  4a1494:	8526                	mv	a0,s1
-  4a1496:	cf4f70ef          	jal	ra,49898a <UtilsFileClose>
-  4a149a:	f8000793          	li	a5,-128
-  4a149e:	853e                	mv	a0,a5
-  4a14a0:	4732                	lw	a4,12(sp)
-  4a14a2:	7c042783          	lw	a5,1984(s0)
-  4a14a6:	00f70963          	beq	a4,a5,4a14b8 <WriteNetworkConfig.constprop.4+0x60>
-  4a14aa:	d0f540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a14ae:	8526                	mv	a0,s1
-  4a14b0:	cdaf70ef          	jal	ra,49898a <UtilsFileClose>
-  4a14b4:	4781                	li	a5,0
-  4a14b6:	b7e5                	j	4a149e <WriteNetworkConfig.constprop.4+0x46>
-  4a14b8:	0141                	addi	sp,sp,16
-  4a14ba:	bae5906f          	j	3fa868 <__riscv_restore_0>
+004a1466 <WriteNetworkConfig.constprop.4>:
+  4a1466:	bde592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a146a:	0011d437          	lui	s0,0x11d
+  4a146e:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a1472:	892a                	mv	s2,a0
+  4a1474:	004ae537          	lui	a0,0x4ae
+  4a1478:	1141                	addi	sp,sp,-16
+  4a147a:	4601                	li	a2,0
+  4a147c:	24200593          	li	a1,578
+  4a1480:	44c50513          	addi	a0,a0,1100 # 4ae44c <OHOS_SECURITY_PATCH_TAG+0x32c>
+  4a1484:	c63e                	sw	a5,12(sp)
+  4a1486:	cdcf70ef          	jal	ra,498962 <UtilsFileOpen>
+  4a148a:	f8000793          	li	a5,-128
+  4a148e:	00054f63          	bltz	a0,4a14ac <WriteNetworkConfig.constprop.4+0x46>
+  4a1492:	09400613          	li	a2,148
+  4a1496:	85ca                	mv	a1,s2
+  4a1498:	84aa                	mv	s1,a0
+  4a149a:	d40f70ef          	jal	ra,4989da <UtilsFileWrite>
+  4a149e:	00055f63          	bgez	a0,4a14bc <WriteNetworkConfig.constprop.4+0x56>
+  4a14a2:	8526                	mv	a0,s1
+  4a14a4:	ce6f70ef          	jal	ra,49898a <UtilsFileClose>
+  4a14a8:	f8000793          	li	a5,-128
+  4a14ac:	853e                	mv	a0,a5
+  4a14ae:	4732                	lw	a4,12(sp)
+  4a14b0:	7c042783          	lw	a5,1984(s0)
+  4a14b4:	00f70963          	beq	a4,a5,4a14c6 <WriteNetworkConfig.constprop.4+0x60>
+  4a14b8:	d01540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a14bc:	8526                	mv	a0,s1
+  4a14be:	cccf70ef          	jal	ra,49898a <UtilsFileClose>
+  4a14c2:	4781                	li	a5,0
+  4a14c4:	b7e5                	j	4a14ac <WriteNetworkConfig.constprop.4+0x46>
+  4a14c6:	0141                	addi	sp,sp,16
+  4a14c8:	ba05906f          	j	3fa868 <__riscv_restore_0>
 
-004a14be <EnableWifi>:
-  4a14be:	b86592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a14c2:	0011d437          	lui	s0,0x11d
-  4a14c6:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a14ca:	1101                	addi	sp,sp,-32
-  4a14cc:	ce3e                	sw	a5,28(sp)
-  4a14ce:	2e41                	jal	4a185e <LockWifiGlobalLock>
-  4a14d0:	c501                	beqz	a0,4a14d8 <EnableWifi+0x1a>
-  4a14d2:	f8000513          	li	a0,-128
-  4a14d6:	a821                	j	4a14ee <EnableWifi+0x30>
-  4a14d8:	000e64b7          	lui	s1,0xe6
-  4a14dc:	a4048493          	addi	s1,s1,-1472 # e5a40 <g_wifiStaStatus>
-  4a14e0:	409c                	lw	a5,0(s1)
-  4a14e2:	4905                	li	s2,1
-  4a14e4:	01279c63          	bne	a5,s2,4a14fc <EnableWifi+0x3e>
-  4a14e8:	26d9                	jal	4a18ae <UnlockWifiGlobalLock>
-  4a14ea:	f565                	bnez	a0,4a14d2 <EnableWifi+0x14>
-  4a14ec:	5561                	li	a0,-8
-  4a14ee:	4772                	lw	a4,28(sp)
-  4a14f0:	7c042783          	lw	a5,1984(s0)
-  4a14f4:	06f70263          	beq	a4,a5,4a1558 <EnableWifi+0x9a>
-  4a14f8:	cc1540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a14fc:	47c5                	li	a5,17
-  4a14fe:	004c                	addi	a1,sp,4
-  4a1500:	0028                	addi	a0,sp,8
-  4a1502:	c402                	sw	zero,8(sp)
-  4a1504:	c602                	sw	zero,12(sp)
-  4a1506:	c802                	sw	zero,16(sp)
-  4a1508:	ca02                	sw	zero,20(sp)
-  4a150a:	00010c23          	sb	zero,24(sp)
-  4a150e:	c23e                	sw	a5,4(sp)
-  4a1510:	eb0e30ef          	jal	ra,484bc0 <hi_wifi_sta_start>
-  4a1514:	c919                	beqz	a0,4a152a <EnableWifi+0x6c>
-  4a1516:	004ae537          	lui	a0,0x4ae
-  4a151a:	29450513          	addi	a0,a0,660 # 4ae294 <OHOS_SECURITY_PATCH_TAG+0x174>
-  4a151e:	f8f580ef          	jal	ra,3fa4ac <printf>
-  4a1522:	2671                	jal	4a18ae <UnlockWifiGlobalLock>
-  4a1524:	f55d                	bnez	a0,4a14d2 <EnableWifi+0x14>
-  4a1526:	5565                	li	a0,-7
-  4a1528:	b7d9                	j	4a14ee <EnableWifi+0x30>
-  4a152a:	65c1                	lui	a1,0x10
-  4a152c:	06400693          	li	a3,100
-  4a1530:	06400613          	li	a2,100
-  4a1534:	15fd                	addi	a1,a1,-1
-  4a1536:	4505                	li	a0,1
-  4a1538:	881e30ef          	jal	ra,484db8 <hi_wifi_sta_set_reconnect_policy>
-  4a153c:	c909                	beqz	a0,4a154e <EnableWifi+0x90>
-  4a153e:	004ae537          	lui	a0,0x4ae
-  4a1542:	2c050513          	addi	a0,a0,704 # 4ae2c0 <OHOS_SECURITY_PATCH_TAG+0x1a0>
-  4a1546:	f67580ef          	jal	ra,3fa4ac <printf>
-  4a154a:	2695                	jal	4a18ae <UnlockWifiGlobalLock>
-  4a154c:	b759                	j	4a14d2 <EnableWifi+0x14>
-  4a154e:	0124a023          	sw	s2,0(s1)
-  4a1552:	2eb1                	jal	4a18ae <UnlockWifiGlobalLock>
-  4a1554:	dd49                	beqz	a0,4a14ee <EnableWifi+0x30>
-  4a1556:	bfb5                	j	4a14d2 <EnableWifi+0x14>
-  4a1558:	6105                	addi	sp,sp,32
-  4a155a:	b0e5906f          	j	3fa868 <__riscv_restore_0>
+004a14cc <EnableWifi>:
+  4a14cc:	b78592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a14d0:	0011d437          	lui	s0,0x11d
+  4a14d4:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a14d8:	1101                	addi	sp,sp,-32
+  4a14da:	ce3e                	sw	a5,28(sp)
+  4a14dc:	2e41                	jal	4a186c <LockWifiGlobalLock>
+  4a14de:	c501                	beqz	a0,4a14e6 <EnableWifi+0x1a>
+  4a14e0:	f8000513          	li	a0,-128
+  4a14e4:	a821                	j	4a14fc <EnableWifi+0x30>
+  4a14e6:	000e64b7          	lui	s1,0xe6
+  4a14ea:	a4048493          	addi	s1,s1,-1472 # e5a40 <g_wifiStaStatus>
+  4a14ee:	409c                	lw	a5,0(s1)
+  4a14f0:	4905                	li	s2,1
+  4a14f2:	01279c63          	bne	a5,s2,4a150a <EnableWifi+0x3e>
+  4a14f6:	26d9                	jal	4a18bc <UnlockWifiGlobalLock>
+  4a14f8:	f565                	bnez	a0,4a14e0 <EnableWifi+0x14>
+  4a14fa:	5561                	li	a0,-8
+  4a14fc:	4772                	lw	a4,28(sp)
+  4a14fe:	7c042783          	lw	a5,1984(s0)
+  4a1502:	06f70263          	beq	a4,a5,4a1566 <EnableWifi+0x9a>
+  4a1506:	cb3540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a150a:	47c5                	li	a5,17
+  4a150c:	004c                	addi	a1,sp,4
+  4a150e:	0028                	addi	a0,sp,8
+  4a1510:	c402                	sw	zero,8(sp)
+  4a1512:	c602                	sw	zero,12(sp)
+  4a1514:	c802                	sw	zero,16(sp)
+  4a1516:	ca02                	sw	zero,20(sp)
+  4a1518:	00010c23          	sb	zero,24(sp)
+  4a151c:	c23e                	sw	a5,4(sp)
+  4a151e:	ea2e30ef          	jal	ra,484bc0 <hi_wifi_sta_start>
+  4a1522:	c919                	beqz	a0,4a1538 <EnableWifi+0x6c>
+  4a1524:	004ae537          	lui	a0,0x4ae
+  4a1528:	29450513          	addi	a0,a0,660 # 4ae294 <OHOS_SECURITY_PATCH_TAG+0x174>
+  4a152c:	f81580ef          	jal	ra,3fa4ac <printf>
+  4a1530:	2671                	jal	4a18bc <UnlockWifiGlobalLock>
+  4a1532:	f55d                	bnez	a0,4a14e0 <EnableWifi+0x14>
+  4a1534:	5565                	li	a0,-7
+  4a1536:	b7d9                	j	4a14fc <EnableWifi+0x30>
+  4a1538:	65c1                	lui	a1,0x10
+  4a153a:	06400693          	li	a3,100
+  4a153e:	06400613          	li	a2,100
+  4a1542:	15fd                	addi	a1,a1,-1
+  4a1544:	4505                	li	a0,1
+  4a1546:	873e30ef          	jal	ra,484db8 <hi_wifi_sta_set_reconnect_policy>
+  4a154a:	c909                	beqz	a0,4a155c <EnableWifi+0x90>
+  4a154c:	004ae537          	lui	a0,0x4ae
+  4a1550:	2c050513          	addi	a0,a0,704 # 4ae2c0 <OHOS_SECURITY_PATCH_TAG+0x1a0>
+  4a1554:	f59580ef          	jal	ra,3fa4ac <printf>
+  4a1558:	2695                	jal	4a18bc <UnlockWifiGlobalLock>
+  4a155a:	b759                	j	4a14e0 <EnableWifi+0x14>
+  4a155c:	0124a023          	sw	s2,0(s1)
+  4a1560:	2eb1                	jal	4a18bc <UnlockWifiGlobalLock>
+  4a1562:	dd49                	beqz	a0,4a14fc <EnableWifi+0x30>
+  4a1564:	bfb5                	j	4a14e0 <EnableWifi+0x14>
+  4a1566:	6105                	addi	sp,sp,32
+  4a1568:	b005906f          	j	3fa868 <__riscv_restore_0>
 
-004a155e <IsWifiActive>:
-  4a155e:	ae6592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a1562:	0011d437          	lui	s0,0x11d
-  4a1566:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a156a:	1141                	addi	sp,sp,-16
-  4a156c:	c63e                	sw	a5,12(sp)
-  4a156e:	2cc5                	jal	4a185e <LockWifiGlobalLock>
-  4a1570:	c919                	beqz	a0,4a1586 <IsWifiActive+0x28>
-  4a1572:	f8000493          	li	s1,-128
-  4a1576:	4732                	lw	a4,12(sp)
-  4a1578:	7c042783          	lw	a5,1984(s0)
-  4a157c:	8526                	mv	a0,s1
-  4a157e:	00f70b63          	beq	a4,a5,4a1594 <IsWifiActive+0x36>
-  4a1582:	c37540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a1586:	000e67b7          	lui	a5,0xe6
-  4a158a:	a407a483          	lw	s1,-1472(a5) # e5a40 <g_wifiStaStatus>
-  4a158e:	2605                	jal	4a18ae <UnlockWifiGlobalLock>
-  4a1590:	d17d                	beqz	a0,4a1576 <IsWifiActive+0x18>
-  4a1592:	b7c5                	j	4a1572 <IsWifiActive+0x14>
-  4a1594:	0141                	addi	sp,sp,16
-  4a1596:	ad25906f          	j	3fa868 <__riscv_restore_0>
+004a156c <IsWifiActive>:
+  4a156c:	ad8592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a1570:	0011d437          	lui	s0,0x11d
+  4a1574:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a1578:	1141                	addi	sp,sp,-16
+  4a157a:	c63e                	sw	a5,12(sp)
+  4a157c:	2cc5                	jal	4a186c <LockWifiGlobalLock>
+  4a157e:	c919                	beqz	a0,4a1594 <IsWifiActive+0x28>
+  4a1580:	f8000493          	li	s1,-128
+  4a1584:	4732                	lw	a4,12(sp)
+  4a1586:	7c042783          	lw	a5,1984(s0)
+  4a158a:	8526                	mv	a0,s1
+  4a158c:	00f70b63          	beq	a4,a5,4a15a2 <IsWifiActive+0x36>
+  4a1590:	c29540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a1594:	000e67b7          	lui	a5,0xe6
+  4a1598:	a407a483          	lw	s1,-1472(a5) # e5a40 <g_wifiStaStatus>
+  4a159c:	2605                	jal	4a18bc <UnlockWifiGlobalLock>
+  4a159e:	d17d                	beqz	a0,4a1584 <IsWifiActive+0x18>
+  4a15a0:	b7c5                	j	4a1580 <IsWifiActive+0x14>
+  4a15a2:	0141                	addi	sp,sp,16
+  4a15a4:	ac45906f          	j	3fa868 <__riscv_restore_0>
 
-004a159a <AddDeviceConfig>:
-  4a159a:	a90592ef          	jal	t0,3fa82a <__riscv_save_4>
-  4a159e:	0011d7b7          	lui	a5,0x11d
-  4a15a2:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a15a6:	1101                	addi	sp,sp,-32
-  4a15a8:	862a                	mv	a2,a0
-  4a15aa:	ce3a                	sw	a4,28(sp)
-  4a15ac:	c632                	sw	a2,12(sp)
-  4a15ae:	89be                	mv	s3,a5
-  4a15b0:	557d                	li	a0,-1
-  4a15b2:	ca01                	beqz	a2,4a15c2 <AddDeviceConfig+0x28>
-  4a15b4:	892e                	mv	s2,a1
-  4a15b6:	c591                	beqz	a1,4a15c2 <AddDeviceConfig+0x28>
-  4a15b8:	245d                	jal	4a185e <LockWifiGlobalLock>
-  4a15ba:	4632                	lw	a2,12(sp)
-  4a15bc:	c911                	beqz	a0,4a15d0 <AddDeviceConfig+0x36>
-  4a15be:	f8000513          	li	a0,-128
-  4a15c2:	4772                	lw	a4,28(sp)
-  4a15c4:	7c09a783          	lw	a5,1984(s3)
-  4a15c8:	08f70163          	beq	a4,a5,4a164a <AddDeviceConfig+0xb0>
-  4a15cc:	bed540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a15d0:	000dc437          	lui	s0,0xdc
-  4a15d4:	2c440793          	addi	a5,s0,708 # dc2c4 <g_wifiConfigs>
-  4a15d8:	4481                	li	s1,0
-  4a15da:	2c440413          	addi	s0,s0,708
-  4a15de:	4729                	li	a4,10
-  4a15e0:	57f4                	lw	a3,108(a5)
-  4a15e2:	02969c63          	bne	a3,s1,4a161a <AddDeviceConfig+0x80>
-  4a15e6:	0485                	addi	s1,s1,1
-  4a15e8:	09478793          	addi	a5,a5,148
-  4a15ec:	fee49ae3          	bne	s1,a4,4a15e0 <AddDeviceConfig+0x46>
-  4a15f0:	004ae537          	lui	a0,0x4ae
-  4a15f4:	19850513          	addi	a0,a0,408 # 4ae198 <OHOS_SECURITY_PATCH_TAG+0x78>
-  4a15f8:	eb5580ef          	jal	ra,3fa4ac <printf>
-  4a15fc:	2c4d                	jal	4a18ae <UnlockWifiGlobalLock>
-  4a15fe:	f161                	bnez	a0,4a15be <AddDeviceConfig+0x24>
-  4a1600:	5561                	li	a0,-8
-  4a1602:	b7c1                	j	4a15c2 <AddDeviceConfig+0x28>
-  4a1604:	c62e                	sw	a1,12(sp)
-  4a1606:	2465                	jal	4a18ae <UnlockWifiGlobalLock>
-  4a1608:	45b2                	lw	a1,12(sp)
-  4a160a:	f955                	bnez	a0,4a15be <AddDeviceConfig+0x24>
-  4a160c:	004ae537          	lui	a0,0x4ae
-  4a1610:	16050513          	addi	a0,a0,352 # 4ae160 <OHOS_SECURITY_PATCH_TAG+0x40>
-  4a1614:	e99580ef          	jal	ra,3fa4ac <printf>
-  4a1618:	b75d                	j	4a15be <AddDeviceConfig+0x24>
-  4a161a:	09400793          	li	a5,148
-  4a161e:	02f487b3          	mul	a5,s1,a5
-  4a1622:	09400593          	li	a1,148
-  4a1626:	09400693          	li	a3,148
-  4a162a:	943e                	add	s0,s0,a5
-  4a162c:	8522                	mv	a0,s0
-  4a162e:	9f45a0ef          	jal	ra,3fb822 <memcpy_s>
-  4a1632:	85aa                	mv	a1,a0
-  4a1634:	f961                	bnez	a0,4a1604 <AddDeviceConfig+0x6a>
-  4a1636:	d464                	sw	s1,108(s0)
-  4a1638:	8522                	mv	a0,s0
-  4a163a:	e1fff0ef          	jal	ra,4a1458 <WriteNetworkConfig.constprop.4>
-  4a163e:	f141                	bnez	a0,4a15be <AddDeviceConfig+0x24>
-  4a1640:	24bd                	jal	4a18ae <UnlockWifiGlobalLock>
-  4a1642:	fd35                	bnez	a0,4a15be <AddDeviceConfig+0x24>
-  4a1644:	00992023          	sw	s1,0(s2)
-  4a1648:	bfad                	j	4a15c2 <AddDeviceConfig+0x28>
-  4a164a:	6105                	addi	sp,sp,32
-  4a164c:	a125906f          	j	3fa85e <__riscv_restore_4>
+004a15a8 <AddDeviceConfig>:
+  4a15a8:	a82592ef          	jal	t0,3fa82a <__riscv_save_4>
+  4a15ac:	0011d7b7          	lui	a5,0x11d
+  4a15b0:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a15b4:	1101                	addi	sp,sp,-32
+  4a15b6:	862a                	mv	a2,a0
+  4a15b8:	ce3a                	sw	a4,28(sp)
+  4a15ba:	c632                	sw	a2,12(sp)
+  4a15bc:	89be                	mv	s3,a5
+  4a15be:	557d                	li	a0,-1
+  4a15c0:	ca01                	beqz	a2,4a15d0 <AddDeviceConfig+0x28>
+  4a15c2:	892e                	mv	s2,a1
+  4a15c4:	c591                	beqz	a1,4a15d0 <AddDeviceConfig+0x28>
+  4a15c6:	245d                	jal	4a186c <LockWifiGlobalLock>
+  4a15c8:	4632                	lw	a2,12(sp)
+  4a15ca:	c911                	beqz	a0,4a15de <AddDeviceConfig+0x36>
+  4a15cc:	f8000513          	li	a0,-128
+  4a15d0:	4772                	lw	a4,28(sp)
+  4a15d2:	7c09a783          	lw	a5,1984(s3)
+  4a15d6:	08f70163          	beq	a4,a5,4a1658 <AddDeviceConfig+0xb0>
+  4a15da:	bdf540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a15de:	000dc437          	lui	s0,0xdc
+  4a15e2:	2c440793          	addi	a5,s0,708 # dc2c4 <g_wifiConfigs>
+  4a15e6:	4481                	li	s1,0
+  4a15e8:	2c440413          	addi	s0,s0,708
+  4a15ec:	4729                	li	a4,10
+  4a15ee:	57f4                	lw	a3,108(a5)
+  4a15f0:	02969c63          	bne	a3,s1,4a1628 <AddDeviceConfig+0x80>
+  4a15f4:	0485                	addi	s1,s1,1
+  4a15f6:	09478793          	addi	a5,a5,148
+  4a15fa:	fee49ae3          	bne	s1,a4,4a15ee <AddDeviceConfig+0x46>
+  4a15fe:	004ae537          	lui	a0,0x4ae
+  4a1602:	19850513          	addi	a0,a0,408 # 4ae198 <OHOS_SECURITY_PATCH_TAG+0x78>
+  4a1606:	ea7580ef          	jal	ra,3fa4ac <printf>
+  4a160a:	2c4d                	jal	4a18bc <UnlockWifiGlobalLock>
+  4a160c:	f161                	bnez	a0,4a15cc <AddDeviceConfig+0x24>
+  4a160e:	5561                	li	a0,-8
+  4a1610:	b7c1                	j	4a15d0 <AddDeviceConfig+0x28>
+  4a1612:	c62e                	sw	a1,12(sp)
+  4a1614:	2465                	jal	4a18bc <UnlockWifiGlobalLock>
+  4a1616:	45b2                	lw	a1,12(sp)
+  4a1618:	f955                	bnez	a0,4a15cc <AddDeviceConfig+0x24>
+  4a161a:	004ae537          	lui	a0,0x4ae
+  4a161e:	16050513          	addi	a0,a0,352 # 4ae160 <OHOS_SECURITY_PATCH_TAG+0x40>
+  4a1622:	e8b580ef          	jal	ra,3fa4ac <printf>
+  4a1626:	b75d                	j	4a15cc <AddDeviceConfig+0x24>
+  4a1628:	09400793          	li	a5,148
+  4a162c:	02f487b3          	mul	a5,s1,a5
+  4a1630:	09400593          	li	a1,148
+  4a1634:	09400693          	li	a3,148
+  4a1638:	943e                	add	s0,s0,a5
+  4a163a:	8522                	mv	a0,s0
+  4a163c:	9e65a0ef          	jal	ra,3fb822 <memcpy_s>
+  4a1640:	85aa                	mv	a1,a0
+  4a1642:	f961                	bnez	a0,4a1612 <AddDeviceConfig+0x6a>
+  4a1644:	d464                	sw	s1,108(s0)
+  4a1646:	8522                	mv	a0,s0
+  4a1648:	e1fff0ef          	jal	ra,4a1466 <WriteNetworkConfig.constprop.4>
+  4a164c:	f141                	bnez	a0,4a15cc <AddDeviceConfig+0x24>
+  4a164e:	24bd                	jal	4a18bc <UnlockWifiGlobalLock>
+  4a1650:	fd35                	bnez	a0,4a15cc <AddDeviceConfig+0x24>
+  4a1652:	00992023          	sw	s1,0(s2)
+  4a1656:	bfad                	j	4a15d0 <AddDeviceConfig+0x28>
+  4a1658:	6105                	addi	sp,sp,32
+  4a165a:	a045906f          	j	3fa85e <__riscv_restore_4>
 
-004a1650 <ConnectTo>:
-  4a1650:	9da592ef          	jal	t0,3fa82a <__riscv_save_4>
-  4a1654:	0011da37          	lui	s4,0x11d
-  4a1658:	7c0a2783          	lw	a5,1984(s4) # 11d7c0 <__rom_data0_begin__>
-  4a165c:	7119                	addi	sp,sp,-128
-  4a165e:	84aa                	mv	s1,a0
-  4a1660:	debe                	sw	a5,124(sp)
-  4a1662:	47a5                	li	a5,9
-  4a1664:	557d                	li	a0,-1
-  4a1666:	0297e863          	bltu	a5,s1,4a1696 <ConnectTo+0x46>
-  4a166a:	2ad5                	jal	4a185e <LockWifiGlobalLock>
-  4a166c:	c501                	beqz	a0,4a1674 <ConnectTo+0x24>
-  4a166e:	f8000513          	li	a0,-128
-  4a1672:	a015                	j	4a1696 <ConnectTo+0x46>
-  4a1674:	09400413          	li	s0,148
-  4a1678:	02848433          	mul	s0,s1,s0
-  4a167c:	000dc9b7          	lui	s3,0xdc
-  4a1680:	2c498993          	addi	s3,s3,708 # dc2c4 <g_wifiConfigs>
-  4a1684:	00898933          	add	s2,s3,s0
-  4a1688:	06c92783          	lw	a5,108(s2)
-  4a168c:	00978c63          	beq	a5,s1,4a16a4 <ConnectTo+0x54>
-  4a1690:	2c39                	jal	4a18ae <UnlockWifiGlobalLock>
-  4a1692:	fd71                	bnez	a0,4a166e <ConnectTo+0x1e>
-  4a1694:	5569                	li	a0,-6
-  4a1696:	5776                	lw	a4,124(sp)
-  4a1698:	7c0a2783          	lw	a5,1984(s4)
-  4a169c:	08f70d63          	beq	a4,a5,4a1736 <ConnectTo+0xe6>
-  4a16a0:	b19540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a16a4:	000dc737          	lui	a4,0xdc
-  4a16a8:	07400613          	li	a2,116
-  4a16ac:	4581                	li	a1,0
-  4a16ae:	0028                	addi	a0,sp,8
-  4a16b0:	2cf72023          	sw	a5,704(a4) # dc2c0 <g_networkId>
-  4a16b4:	c47590ef          	jal	ra,3fb2fa <memset>
-  4a16b8:	06892503          	lw	a0,104(s2)
-  4a16bc:	2295                	jal	4a1820 <HoSecToHiSec>
-  4a16be:	d62a                	sw	a0,44(sp)
-  4a16c0:	02100693          	li	a3,33
-  4a16c4:	864a                	mv	a2,s2
-  4a16c6:	02100593          	li	a1,33
-  4a16ca:	0028                	addi	a0,sp,8
-  4a16cc:	9565a0ef          	jal	ra,3fb822 <memcpy_s>
-  4a16d0:	02740613          	addi	a2,s0,39
-  4a16d4:	84aa                	mv	s1,a0
-  4a16d6:	04100693          	li	a3,65
-  4a16da:	964e                	add	a2,a2,s3
-  4a16dc:	04100593          	li	a1,65
-  4a16e0:	1808                	addi	a0,sp,48
-  4a16e2:	9405a0ef          	jal	ra,3fb822 <memcpy_s>
-  4a16e6:	02140613          	addi	a2,s0,33
-  4a16ea:	94aa                	add	s1,s1,a0
-  4a16ec:	4699                	li	a3,6
-  4a16ee:	964e                	add	a2,a2,s3
-  4a16f0:	4599                	li	a1,6
-  4a16f2:	07110513          	addi	a0,sp,113
-  4a16f6:	92c5a0ef          	jal	ra,3fb822 <memcpy_s>
-  4a16fa:	94aa                	add	s1,s1,a0
-  4a16fc:	2a4d                	jal	4a18ae <UnlockWifiGlobalLock>
-  4a16fe:	f925                	bnez	a0,4a166e <ConnectTo+0x1e>
-  4a1700:	c889                	beqz	s1,4a1712 <ConnectTo+0xc2>
-  4a1702:	004ae537          	lui	a0,0x4ae
-  4a1706:	85a6                	mv	a1,s1
-  4a1708:	1e050513          	addi	a0,a0,480 # 4ae1e0 <OHOS_SECURITY_PATCH_TAG+0xc0>
-  4a170c:	da1580ef          	jal	ra,3fa4ac <printf>
-  4a1710:	bfb9                	j	4a166e <ConnectTo+0x1e>
-  4a1712:	07092503          	lw	a0,112(s2)
-  4a1716:	2451                	jal	4a199a <FrequencyToChannel>
-  4a1718:	842a                	mv	s0,a0
-  4a171a:	22cd                	jal	4a18fc <LockWifiEventLock>
-  4a171c:	f929                	bnez	a0,4a166e <ConnectTo+0x1e>
-  4a171e:	07492603          	lw	a2,116(s2)
-  4a1722:	002c                	addi	a1,sp,8
-  4a1724:	8522                	mv	a0,s0
-  4a1726:	839ff0ef          	jal	ra,4a0f5e <StaConnect>
-  4a172a:	c119                	beqz	a0,4a1730 <ConnectTo+0xe0>
-  4a172c:	2405                	jal	4a194c <UnlockWifiEventLock>
-  4a172e:	b781                	j	4a166e <ConnectTo+0x1e>
-  4a1730:	2c31                	jal	4a194c <UnlockWifiEventLock>
-  4a1732:	d135                	beqz	a0,4a1696 <ConnectTo+0x46>
-  4a1734:	bf2d                	j	4a166e <ConnectTo+0x1e>
-  4a1736:	6109                	addi	sp,sp,128
-  4a1738:	9265906f          	j	3fa85e <__riscv_restore_4>
+004a165e <ConnectTo>:
+  4a165e:	9cc592ef          	jal	t0,3fa82a <__riscv_save_4>
+  4a1662:	0011da37          	lui	s4,0x11d
+  4a1666:	7c0a2783          	lw	a5,1984(s4) # 11d7c0 <__rom_data0_begin__>
+  4a166a:	7119                	addi	sp,sp,-128
+  4a166c:	84aa                	mv	s1,a0
+  4a166e:	debe                	sw	a5,124(sp)
+  4a1670:	47a5                	li	a5,9
+  4a1672:	557d                	li	a0,-1
+  4a1674:	0297e863          	bltu	a5,s1,4a16a4 <ConnectTo+0x46>
+  4a1678:	2ad5                	jal	4a186c <LockWifiGlobalLock>
+  4a167a:	c501                	beqz	a0,4a1682 <ConnectTo+0x24>
+  4a167c:	f8000513          	li	a0,-128
+  4a1680:	a015                	j	4a16a4 <ConnectTo+0x46>
+  4a1682:	09400413          	li	s0,148
+  4a1686:	02848433          	mul	s0,s1,s0
+  4a168a:	000dc9b7          	lui	s3,0xdc
+  4a168e:	2c498993          	addi	s3,s3,708 # dc2c4 <g_wifiConfigs>
+  4a1692:	00898933          	add	s2,s3,s0
+  4a1696:	06c92783          	lw	a5,108(s2)
+  4a169a:	00978c63          	beq	a5,s1,4a16b2 <ConnectTo+0x54>
+  4a169e:	2c39                	jal	4a18bc <UnlockWifiGlobalLock>
+  4a16a0:	fd71                	bnez	a0,4a167c <ConnectTo+0x1e>
+  4a16a2:	5569                	li	a0,-6
+  4a16a4:	5776                	lw	a4,124(sp)
+  4a16a6:	7c0a2783          	lw	a5,1984(s4)
+  4a16aa:	08f70d63          	beq	a4,a5,4a1744 <ConnectTo+0xe6>
+  4a16ae:	b0b540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a16b2:	000dc737          	lui	a4,0xdc
+  4a16b6:	07400613          	li	a2,116
+  4a16ba:	4581                	li	a1,0
+  4a16bc:	0028                	addi	a0,sp,8
+  4a16be:	2cf72023          	sw	a5,704(a4) # dc2c0 <g_networkId>
+  4a16c2:	c39590ef          	jal	ra,3fb2fa <memset>
+  4a16c6:	06892503          	lw	a0,104(s2)
+  4a16ca:	2295                	jal	4a182e <HoSecToHiSec>
+  4a16cc:	d62a                	sw	a0,44(sp)
+  4a16ce:	02100693          	li	a3,33
+  4a16d2:	864a                	mv	a2,s2
+  4a16d4:	02100593          	li	a1,33
+  4a16d8:	0028                	addi	a0,sp,8
+  4a16da:	9485a0ef          	jal	ra,3fb822 <memcpy_s>
+  4a16de:	02740613          	addi	a2,s0,39
+  4a16e2:	84aa                	mv	s1,a0
+  4a16e4:	04100693          	li	a3,65
+  4a16e8:	964e                	add	a2,a2,s3
+  4a16ea:	04100593          	li	a1,65
+  4a16ee:	1808                	addi	a0,sp,48
+  4a16f0:	9325a0ef          	jal	ra,3fb822 <memcpy_s>
+  4a16f4:	02140613          	addi	a2,s0,33
+  4a16f8:	94aa                	add	s1,s1,a0
+  4a16fa:	4699                	li	a3,6
+  4a16fc:	964e                	add	a2,a2,s3
+  4a16fe:	4599                	li	a1,6
+  4a1700:	07110513          	addi	a0,sp,113
+  4a1704:	91e5a0ef          	jal	ra,3fb822 <memcpy_s>
+  4a1708:	94aa                	add	s1,s1,a0
+  4a170a:	2a4d                	jal	4a18bc <UnlockWifiGlobalLock>
+  4a170c:	f925                	bnez	a0,4a167c <ConnectTo+0x1e>
+  4a170e:	c889                	beqz	s1,4a1720 <ConnectTo+0xc2>
+  4a1710:	004ae537          	lui	a0,0x4ae
+  4a1714:	85a6                	mv	a1,s1
+  4a1716:	1e050513          	addi	a0,a0,480 # 4ae1e0 <OHOS_SECURITY_PATCH_TAG+0xc0>
+  4a171a:	d93580ef          	jal	ra,3fa4ac <printf>
+  4a171e:	bfb9                	j	4a167c <ConnectTo+0x1e>
+  4a1720:	07092503          	lw	a0,112(s2)
+  4a1724:	2451                	jal	4a19a8 <FrequencyToChannel>
+  4a1726:	842a                	mv	s0,a0
+  4a1728:	22cd                	jal	4a190a <LockWifiEventLock>
+  4a172a:	f929                	bnez	a0,4a167c <ConnectTo+0x1e>
+  4a172c:	07492603          	lw	a2,116(s2)
+  4a1730:	002c                	addi	a1,sp,8
+  4a1732:	8522                	mv	a0,s0
+  4a1734:	839ff0ef          	jal	ra,4a0f6c <StaConnect>
+  4a1738:	c119                	beqz	a0,4a173e <ConnectTo+0xe0>
+  4a173a:	2405                	jal	4a195a <UnlockWifiEventLock>
+  4a173c:	b781                	j	4a167c <ConnectTo+0x1e>
+  4a173e:	2c31                	jal	4a195a <UnlockWifiEventLock>
+  4a1740:	d135                	beqz	a0,4a16a4 <ConnectTo+0x46>
+  4a1742:	bf2d                	j	4a167c <ConnectTo+0x1e>
+  4a1744:	6109                	addi	sp,sp,128
+  4a1746:	9185906f          	j	3fa85e <__riscv_restore_4>
 
-004a173c <RegisterWifiEvent>:
-  4a173c:	908592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a1740:	0011d7b7          	lui	a5,0x11d
-  4a1744:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a1748:	1101                	addi	sp,sp,-32
-  4a174a:	843e                	mv	s0,a5
-  4a174c:	ce3a                	sw	a4,28(sp)
-  4a174e:	c915                	beqz	a0,4a1782 <RegisterWifiEvent+0x46>
-  4a1750:	84aa                	mv	s1,a0
-  4a1752:	226d                	jal	4a18fc <LockWifiEventLock>
-  4a1754:	c911                	beqz	a0,4a1768 <RegisterWifiEvent+0x2c>
-  4a1756:	f8000513          	li	a0,-128
-  4a175a:	4772                	lw	a4,28(sp)
-  4a175c:	7c042783          	lw	a5,1984(s0)
-  4a1760:	04f70663          	beq	a4,a5,4a17ac <RegisterWifiEvent+0x70>
-  4a1764:	a55540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a1768:	000e67b7          	lui	a5,0xe6
-  4a176c:	a1878693          	addi	a3,a5,-1512 # e5a18 <g_wifiEvents>
-  4a1770:	4701                	li	a4,0
-  4a1772:	a1878793          	addi	a5,a5,-1512
-  4a1776:	45a9                	li	a1,10
-  4a1778:	4290                	lw	a2,0(a3)
-  4a177a:	00961663          	bne	a2,s1,4a1786 <RegisterWifiEvent+0x4a>
-  4a177e:	22f9                	jal	4a194c <UnlockWifiEventLock>
-  4a1780:	f979                	bnez	a0,4a1756 <RegisterWifiEvent+0x1a>
-  4a1782:	557d                	li	a0,-1
-  4a1784:	bfd9                	j	4a175a <RegisterWifiEvent+0x1e>
-  4a1786:	ca09                	beqz	a2,4a1798 <RegisterWifiEvent+0x5c>
-  4a1788:	0705                	addi	a4,a4,1
-  4a178a:	0691                	addi	a3,a3,4
-  4a178c:	feb716e3          	bne	a4,a1,4a1778 <RegisterWifiEvent+0x3c>
-  4a1790:	2a75                	jal	4a194c <UnlockWifiEventLock>
-  4a1792:	f171                	bnez	a0,4a1756 <RegisterWifiEvent+0x1a>
-  4a1794:	5561                	li	a0,-8
-  4a1796:	b7d1                	j	4a175a <RegisterWifiEvent+0x1e>
-  4a1798:	070a                	slli	a4,a4,0x2
-  4a179a:	97ba                	add	a5,a5,a4
-  4a179c:	c384                	sw	s1,0(a5)
-  4a179e:	227d                	jal	4a194c <UnlockWifiEventLock>
-  4a17a0:	f95d                	bnez	a0,4a1756 <RegisterWifiEvent+0x1a>
-  4a17a2:	c62a                	sw	a0,12(sp)
-  4a17a4:	8c1ff0ef          	jal	ra,4a1064 <RegisterHisiCallback>
-  4a17a8:	4532                	lw	a0,12(sp)
-  4a17aa:	bf45                	j	4a175a <RegisterWifiEvent+0x1e>
-  4a17ac:	6105                	addi	sp,sp,32
-  4a17ae:	8ba5906f          	j	3fa868 <__riscv_restore_0>
+004a174a <RegisterWifiEvent>:
+  4a174a:	8fa592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a174e:	0011d7b7          	lui	a5,0x11d
+  4a1752:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a1756:	1101                	addi	sp,sp,-32
+  4a1758:	843e                	mv	s0,a5
+  4a175a:	ce3a                	sw	a4,28(sp)
+  4a175c:	c915                	beqz	a0,4a1790 <RegisterWifiEvent+0x46>
+  4a175e:	84aa                	mv	s1,a0
+  4a1760:	226d                	jal	4a190a <LockWifiEventLock>
+  4a1762:	c911                	beqz	a0,4a1776 <RegisterWifiEvent+0x2c>
+  4a1764:	f8000513          	li	a0,-128
+  4a1768:	4772                	lw	a4,28(sp)
+  4a176a:	7c042783          	lw	a5,1984(s0)
+  4a176e:	04f70663          	beq	a4,a5,4a17ba <RegisterWifiEvent+0x70>
+  4a1772:	a47540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a1776:	000e67b7          	lui	a5,0xe6
+  4a177a:	a1878693          	addi	a3,a5,-1512 # e5a18 <g_wifiEvents>
+  4a177e:	4701                	li	a4,0
+  4a1780:	a1878793          	addi	a5,a5,-1512
+  4a1784:	45a9                	li	a1,10
+  4a1786:	4290                	lw	a2,0(a3)
+  4a1788:	00961663          	bne	a2,s1,4a1794 <RegisterWifiEvent+0x4a>
+  4a178c:	22f9                	jal	4a195a <UnlockWifiEventLock>
+  4a178e:	f979                	bnez	a0,4a1764 <RegisterWifiEvent+0x1a>
+  4a1790:	557d                	li	a0,-1
+  4a1792:	bfd9                	j	4a1768 <RegisterWifiEvent+0x1e>
+  4a1794:	ca09                	beqz	a2,4a17a6 <RegisterWifiEvent+0x5c>
+  4a1796:	0705                	addi	a4,a4,1
+  4a1798:	0691                	addi	a3,a3,4
+  4a179a:	feb716e3          	bne	a4,a1,4a1786 <RegisterWifiEvent+0x3c>
+  4a179e:	2a75                	jal	4a195a <UnlockWifiEventLock>
+  4a17a0:	f171                	bnez	a0,4a1764 <RegisterWifiEvent+0x1a>
+  4a17a2:	5561                	li	a0,-8
+  4a17a4:	b7d1                	j	4a1768 <RegisterWifiEvent+0x1e>
+  4a17a6:	070a                	slli	a4,a4,0x2
+  4a17a8:	97ba                	add	a5,a5,a4
+  4a17aa:	c384                	sw	s1,0(a5)
+  4a17ac:	227d                	jal	4a195a <UnlockWifiEventLock>
+  4a17ae:	f95d                	bnez	a0,4a1764 <RegisterWifiEvent+0x1a>
+  4a17b0:	c62a                	sw	a0,12(sp)
+  4a17b2:	8c1ff0ef          	jal	ra,4a1072 <RegisterHisiCallback>
+  4a17b6:	4532                	lw	a0,12(sp)
+  4a17b8:	bf45                	j	4a1768 <RegisterWifiEvent+0x1e>
+  4a17ba:	6105                	addi	sp,sp,32
+  4a17bc:	8ac5906f          	j	3fa868 <__riscv_restore_0>
 
-004a17b2 <InitWifiGlobalLock>:
-  4a17b2:	892592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a17b6:	0011d7b7          	lui	a5,0x11d
-  4a17ba:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a17be:	000e64b7          	lui	s1,0xe6
-  4a17c2:	1101                	addi	sp,sp,-32
-  4a17c4:	a4848493          	addi	s1,s1,-1464 # e5a48 <g_wifiGlobalLock>
-  4a17c8:	ce3a                	sw	a4,28(sp)
-  4a17ca:	4098                	lw	a4,0(s1)
-  4a17cc:	843e                	mv	s0,a5
-  4a17ce:	ef09                	bnez	a4,4a17e8 <InitWifiGlobalLock+0x36>
-  4a17d0:	004ae5b7          	lui	a1,0x4ae
-  4a17d4:	4641                	li	a2,16
-  4a17d6:	46858593          	addi	a1,a1,1128 # 4ae468 <OHOS_SECURITY_PATCH_TAG+0x348>
-  4a17da:	0068                	addi	a0,sp,12
-  4a17dc:	83f590ef          	jal	ra,3fb01a <memcpy>
-  4a17e0:	0068                	addi	a0,sp,12
-  4a17e2:	c70f40ef          	jal	ra,495c52 <osMutexNew>
-  4a17e6:	c088                	sw	a0,0(s1)
-  4a17e8:	000e64b7          	lui	s1,0xe6
-  4a17ec:	a4448493          	addi	s1,s1,-1468 # e5a44 <g_wifiEventLock>
-  4a17f0:	409c                	lw	a5,0(s1)
-  4a17f2:	ef89                	bnez	a5,4a180c <InitWifiGlobalLock+0x5a>
-  4a17f4:	004ae5b7          	lui	a1,0x4ae
-  4a17f8:	4641                	li	a2,16
-  4a17fa:	47858593          	addi	a1,a1,1144 # 4ae478 <OHOS_SECURITY_PATCH_TAG+0x358>
-  4a17fe:	0068                	addi	a0,sp,12
-  4a1800:	81b590ef          	jal	ra,3fb01a <memcpy>
-  4a1804:	0068                	addi	a0,sp,12
-  4a1806:	c4cf40ef          	jal	ra,495c52 <osMutexNew>
-  4a180a:	c088                	sw	a0,0(s1)
-  4a180c:	4772                	lw	a4,28(sp)
-  4a180e:	7c042783          	lw	a5,1984(s0)
-  4a1812:	00f70463          	beq	a4,a5,4a181a <InitWifiGlobalLock+0x68>
-  4a1816:	9a3540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a181a:	6105                	addi	sp,sp,32
-  4a181c:	84c5906f          	j	3fa868 <__riscv_restore_0>
+004a17c0 <InitWifiGlobalLock>:
+  4a17c0:	884592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a17c4:	0011d7b7          	lui	a5,0x11d
+  4a17c8:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a17cc:	000e64b7          	lui	s1,0xe6
+  4a17d0:	1101                	addi	sp,sp,-32
+  4a17d2:	a4848493          	addi	s1,s1,-1464 # e5a48 <g_wifiGlobalLock>
+  4a17d6:	ce3a                	sw	a4,28(sp)
+  4a17d8:	4098                	lw	a4,0(s1)
+  4a17da:	843e                	mv	s0,a5
+  4a17dc:	ef09                	bnez	a4,4a17f6 <InitWifiGlobalLock+0x36>
+  4a17de:	004ae5b7          	lui	a1,0x4ae
+  4a17e2:	4641                	li	a2,16
+  4a17e4:	46858593          	addi	a1,a1,1128 # 4ae468 <OHOS_SECURITY_PATCH_TAG+0x348>
+  4a17e8:	0068                	addi	a0,sp,12
+  4a17ea:	831590ef          	jal	ra,3fb01a <memcpy>
+  4a17ee:	0068                	addi	a0,sp,12
+  4a17f0:	c62f40ef          	jal	ra,495c52 <osMutexNew>
+  4a17f4:	c088                	sw	a0,0(s1)
+  4a17f6:	000e64b7          	lui	s1,0xe6
+  4a17fa:	a4448493          	addi	s1,s1,-1468 # e5a44 <g_wifiEventLock>
+  4a17fe:	409c                	lw	a5,0(s1)
+  4a1800:	ef89                	bnez	a5,4a181a <InitWifiGlobalLock+0x5a>
+  4a1802:	004ae5b7          	lui	a1,0x4ae
+  4a1806:	4641                	li	a2,16
+  4a1808:	47858593          	addi	a1,a1,1144 # 4ae478 <OHOS_SECURITY_PATCH_TAG+0x358>
+  4a180c:	0068                	addi	a0,sp,12
+  4a180e:	80d590ef          	jal	ra,3fb01a <memcpy>
+  4a1812:	0068                	addi	a0,sp,12
+  4a1814:	c3ef40ef          	jal	ra,495c52 <osMutexNew>
+  4a1818:	c088                	sw	a0,0(s1)
+  4a181a:	4772                	lw	a4,28(sp)
+  4a181c:	7c042783          	lw	a5,1984(s0)
+  4a1820:	00f70463          	beq	a4,a5,4a1828 <InitWifiGlobalLock+0x68>
+  4a1824:	995540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a1828:	6105                	addi	sp,sp,32
+  4a182a:	83e5906f          	j	3fa868 <__riscv_restore_0>
 
-004a1820 <HoSecToHiSec>:
-  4a1820:	824592ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a1824:	0011d7b7          	lui	a5,0x11d
-  4a1828:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a182c:	1141                	addi	sp,sp,-16
-  4a182e:	468d                	li	a3,3
-  4a1830:	c63a                	sw	a4,12(sp)
-  4a1832:	873e                	mv	a4,a5
-  4a1834:	47a5                	li	a5,9
-  4a1836:	00a6e963          	bltu	a3,a0,4a1848 <HoSecToHiSec+0x28>
-  4a183a:	004ae7b7          	lui	a5,0x4ae
-  4a183e:	48878793          	addi	a5,a5,1160 # 4ae488 <CSWTCH.14>
-  4a1842:	953e                	add	a0,a0,a5
-  4a1844:	00054783          	lbu	a5,0(a0)
-  4a1848:	853e                	mv	a0,a5
-  4a184a:	46b2                	lw	a3,12(sp)
-  4a184c:	7c072783          	lw	a5,1984(a4)
-  4a1850:	00f68463          	beq	a3,a5,4a1858 <HoSecToHiSec+0x38>
-  4a1854:	965540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a1858:	0141                	addi	sp,sp,16
-  4a185a:	80e5906f          	j	3fa868 <__riscv_restore_0>
+004a182e <HoSecToHiSec>:
+  4a182e:	816592ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a1832:	0011d7b7          	lui	a5,0x11d
+  4a1836:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a183a:	1141                	addi	sp,sp,-16
+  4a183c:	468d                	li	a3,3
+  4a183e:	c63a                	sw	a4,12(sp)
+  4a1840:	873e                	mv	a4,a5
+  4a1842:	47a5                	li	a5,9
+  4a1844:	00a6e963          	bltu	a3,a0,4a1856 <HoSecToHiSec+0x28>
+  4a1848:	004ae7b7          	lui	a5,0x4ae
+  4a184c:	48878793          	addi	a5,a5,1160 # 4ae488 <CSWTCH.14>
+  4a1850:	953e                	add	a0,a0,a5
+  4a1852:	00054783          	lbu	a5,0(a0)
+  4a1856:	853e                	mv	a0,a5
+  4a1858:	46b2                	lw	a3,12(sp)
+  4a185a:	7c072783          	lw	a5,1984(a4)
+  4a185e:	00f68463          	beq	a3,a5,4a1866 <HoSecToHiSec+0x38>
+  4a1862:	957540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a1866:	0141                	addi	sp,sp,16
+  4a1868:	8005906f          	j	3fa868 <__riscv_restore_0>
 
-004a185e <LockWifiGlobalLock>:
-  4a185e:	fe7582ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a1862:	0011d7b7          	lui	a5,0x11d
-  4a1866:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a186a:	1141                	addi	sp,sp,-16
-  4a186c:	843e                	mv	s0,a5
-  4a186e:	c63a                	sw	a4,12(sp)
-  4a1870:	000e6737          	lui	a4,0xe6
-  4a1874:	a4872503          	lw	a0,-1464(a4) # e5a48 <g_wifiGlobalLock>
-  4a1878:	f8000793          	li	a5,-128
-  4a187c:	cd11                	beqz	a0,4a1898 <LockWifiGlobalLock+0x3a>
-  4a187e:	55fd                	li	a1,-1
-  4a1880:	c18f40ef          	jal	ra,495c98 <osMutexAcquire>
-  4a1884:	4781                	li	a5,0
-  4a1886:	c909                	beqz	a0,4a1898 <LockWifiGlobalLock+0x3a>
-  4a1888:	004ae537          	lui	a0,0x4ae
-  4a188c:	4bc50513          	addi	a0,a0,1212 # 4ae4bc <CSWTCH.14+0x34>
-  4a1890:	c1d580ef          	jal	ra,3fa4ac <printf>
-  4a1894:	f8000793          	li	a5,-128
-  4a1898:	853e                	mv	a0,a5
-  4a189a:	4732                	lw	a4,12(sp)
-  4a189c:	7c042783          	lw	a5,1984(s0)
-  4a18a0:	00f70463          	beq	a4,a5,4a18a8 <LockWifiGlobalLock+0x4a>
-  4a18a4:	915540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a18a8:	0141                	addi	sp,sp,16
-  4a18aa:	fbf5806f          	j	3fa868 <__riscv_restore_0>
+004a186c <LockWifiGlobalLock>:
+  4a186c:	fd9582ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a1870:	0011d7b7          	lui	a5,0x11d
+  4a1874:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a1878:	1141                	addi	sp,sp,-16
+  4a187a:	843e                	mv	s0,a5
+  4a187c:	c63a                	sw	a4,12(sp)
+  4a187e:	000e6737          	lui	a4,0xe6
+  4a1882:	a4872503          	lw	a0,-1464(a4) # e5a48 <g_wifiGlobalLock>
+  4a1886:	f8000793          	li	a5,-128
+  4a188a:	cd11                	beqz	a0,4a18a6 <LockWifiGlobalLock+0x3a>
+  4a188c:	55fd                	li	a1,-1
+  4a188e:	c0af40ef          	jal	ra,495c98 <osMutexAcquire>
+  4a1892:	4781                	li	a5,0
+  4a1894:	c909                	beqz	a0,4a18a6 <LockWifiGlobalLock+0x3a>
+  4a1896:	004ae537          	lui	a0,0x4ae
+  4a189a:	4bc50513          	addi	a0,a0,1212 # 4ae4bc <CSWTCH.14+0x34>
+  4a189e:	c0f580ef          	jal	ra,3fa4ac <printf>
+  4a18a2:	f8000793          	li	a5,-128
+  4a18a6:	853e                	mv	a0,a5
+  4a18a8:	4732                	lw	a4,12(sp)
+  4a18aa:	7c042783          	lw	a5,1984(s0)
+  4a18ae:	00f70463          	beq	a4,a5,4a18b6 <LockWifiGlobalLock+0x4a>
+  4a18b2:	907540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a18b6:	0141                	addi	sp,sp,16
+  4a18b8:	fb15806f          	j	3fa868 <__riscv_restore_0>
 
-004a18ae <UnlockWifiGlobalLock>:
-  4a18ae:	f97582ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a18b2:	0011d7b7          	lui	a5,0x11d
-  4a18b6:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a18ba:	1141                	addi	sp,sp,-16
-  4a18bc:	843e                	mv	s0,a5
-  4a18be:	c63a                	sw	a4,12(sp)
-  4a18c0:	000e6737          	lui	a4,0xe6
-  4a18c4:	a4872503          	lw	a0,-1464(a4) # e5a48 <g_wifiGlobalLock>
-  4a18c8:	f8000793          	li	a5,-128
-  4a18cc:	cd09                	beqz	a0,4a18e6 <UnlockWifiGlobalLock+0x38>
-  4a18ce:	c22f40ef          	jal	ra,495cf0 <osMutexRelease>
-  4a18d2:	4781                	li	a5,0
-  4a18d4:	c909                	beqz	a0,4a18e6 <UnlockWifiGlobalLock+0x38>
-  4a18d6:	004ae537          	lui	a0,0x4ae
-  4a18da:	51050513          	addi	a0,a0,1296 # 4ae510 <CSWTCH.14+0x88>
-  4a18de:	bcf580ef          	jal	ra,3fa4ac <printf>
-  4a18e2:	f8000793          	li	a5,-128
-  4a18e6:	853e                	mv	a0,a5
-  4a18e8:	4732                	lw	a4,12(sp)
-  4a18ea:	7c042783          	lw	a5,1984(s0)
-  4a18ee:	00f70463          	beq	a4,a5,4a18f6 <UnlockWifiGlobalLock+0x48>
-  4a18f2:	8c7540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a18f6:	0141                	addi	sp,sp,16
-  4a18f8:	f715806f          	j	3fa868 <__riscv_restore_0>
+004a18bc <UnlockWifiGlobalLock>:
+  4a18bc:	f89582ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a18c0:	0011d7b7          	lui	a5,0x11d
+  4a18c4:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a18c8:	1141                	addi	sp,sp,-16
+  4a18ca:	843e                	mv	s0,a5
+  4a18cc:	c63a                	sw	a4,12(sp)
+  4a18ce:	000e6737          	lui	a4,0xe6
+  4a18d2:	a4872503          	lw	a0,-1464(a4) # e5a48 <g_wifiGlobalLock>
+  4a18d6:	f8000793          	li	a5,-128
+  4a18da:	cd09                	beqz	a0,4a18f4 <UnlockWifiGlobalLock+0x38>
+  4a18dc:	c14f40ef          	jal	ra,495cf0 <osMutexRelease>
+  4a18e0:	4781                	li	a5,0
+  4a18e2:	c909                	beqz	a0,4a18f4 <UnlockWifiGlobalLock+0x38>
+  4a18e4:	004ae537          	lui	a0,0x4ae
+  4a18e8:	51050513          	addi	a0,a0,1296 # 4ae510 <CSWTCH.14+0x88>
+  4a18ec:	bc1580ef          	jal	ra,3fa4ac <printf>
+  4a18f0:	f8000793          	li	a5,-128
+  4a18f4:	853e                	mv	a0,a5
+  4a18f6:	4732                	lw	a4,12(sp)
+  4a18f8:	7c042783          	lw	a5,1984(s0)
+  4a18fc:	00f70463          	beq	a4,a5,4a1904 <UnlockWifiGlobalLock+0x48>
+  4a1900:	8b9540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a1904:	0141                	addi	sp,sp,16
+  4a1906:	f635806f          	j	3fa868 <__riscv_restore_0>
 
-004a18fc <LockWifiEventLock>:
-  4a18fc:	f49582ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a1900:	0011d7b7          	lui	a5,0x11d
-  4a1904:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a1908:	1141                	addi	sp,sp,-16
-  4a190a:	843e                	mv	s0,a5
-  4a190c:	c63a                	sw	a4,12(sp)
-  4a190e:	000e6737          	lui	a4,0xe6
-  4a1912:	a4472503          	lw	a0,-1468(a4) # e5a44 <g_wifiEventLock>
-  4a1916:	f8000793          	li	a5,-128
-  4a191a:	cd11                	beqz	a0,4a1936 <LockWifiEventLock+0x3a>
-  4a191c:	55fd                	li	a1,-1
-  4a191e:	b7af40ef          	jal	ra,495c98 <osMutexAcquire>
-  4a1922:	4781                	li	a5,0
-  4a1924:	c909                	beqz	a0,4a1936 <LockWifiEventLock+0x3a>
-  4a1926:	004ae537          	lui	a0,0x4ae
-  4a192a:	48c50513          	addi	a0,a0,1164 # 4ae48c <CSWTCH.14+0x4>
-  4a192e:	b7f580ef          	jal	ra,3fa4ac <printf>
-  4a1932:	f8000793          	li	a5,-128
-  4a1936:	853e                	mv	a0,a5
-  4a1938:	4732                	lw	a4,12(sp)
-  4a193a:	7c042783          	lw	a5,1984(s0)
-  4a193e:	00f70463          	beq	a4,a5,4a1946 <LockWifiEventLock+0x4a>
-  4a1942:	877540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a1946:	0141                	addi	sp,sp,16
-  4a1948:	f215806f          	j	3fa868 <__riscv_restore_0>
+004a190a <LockWifiEventLock>:
+  4a190a:	f3b582ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a190e:	0011d7b7          	lui	a5,0x11d
+  4a1912:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a1916:	1141                	addi	sp,sp,-16
+  4a1918:	843e                	mv	s0,a5
+  4a191a:	c63a                	sw	a4,12(sp)
+  4a191c:	000e6737          	lui	a4,0xe6
+  4a1920:	a4472503          	lw	a0,-1468(a4) # e5a44 <g_wifiEventLock>
+  4a1924:	f8000793          	li	a5,-128
+  4a1928:	cd11                	beqz	a0,4a1944 <LockWifiEventLock+0x3a>
+  4a192a:	55fd                	li	a1,-1
+  4a192c:	b6cf40ef          	jal	ra,495c98 <osMutexAcquire>
+  4a1930:	4781                	li	a5,0
+  4a1932:	c909                	beqz	a0,4a1944 <LockWifiEventLock+0x3a>
+  4a1934:	004ae537          	lui	a0,0x4ae
+  4a1938:	48c50513          	addi	a0,a0,1164 # 4ae48c <CSWTCH.14+0x4>
+  4a193c:	b71580ef          	jal	ra,3fa4ac <printf>
+  4a1940:	f8000793          	li	a5,-128
+  4a1944:	853e                	mv	a0,a5
+  4a1946:	4732                	lw	a4,12(sp)
+  4a1948:	7c042783          	lw	a5,1984(s0)
+  4a194c:	00f70463          	beq	a4,a5,4a1954 <LockWifiEventLock+0x4a>
+  4a1950:	869540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a1954:	0141                	addi	sp,sp,16
+  4a1956:	f135806f          	j	3fa868 <__riscv_restore_0>
 
-004a194c <UnlockWifiEventLock>:
-  4a194c:	ef9582ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a1950:	0011d7b7          	lui	a5,0x11d
-  4a1954:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a1958:	1141                	addi	sp,sp,-16
-  4a195a:	843e                	mv	s0,a5
-  4a195c:	c63a                	sw	a4,12(sp)
-  4a195e:	000e6737          	lui	a4,0xe6
-  4a1962:	a4472503          	lw	a0,-1468(a4) # e5a44 <g_wifiEventLock>
-  4a1966:	f8000793          	li	a5,-128
-  4a196a:	cd09                	beqz	a0,4a1984 <UnlockWifiEventLock+0x38>
-  4a196c:	b84f40ef          	jal	ra,495cf0 <osMutexRelease>
-  4a1970:	4781                	li	a5,0
-  4a1972:	c909                	beqz	a0,4a1984 <UnlockWifiEventLock+0x38>
-  4a1974:	004ae537          	lui	a0,0x4ae
-  4a1978:	4e450513          	addi	a0,a0,1252 # 4ae4e4 <CSWTCH.14+0x5c>
-  4a197c:	b31580ef          	jal	ra,3fa4ac <printf>
-  4a1980:	f8000793          	li	a5,-128
-  4a1984:	853e                	mv	a0,a5
-  4a1986:	4732                	lw	a4,12(sp)
-  4a1988:	7c042783          	lw	a5,1984(s0)
-  4a198c:	00f70463          	beq	a4,a5,4a1994 <UnlockWifiEventLock+0x48>
-  4a1990:	829540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a1994:	0141                	addi	sp,sp,16
-  4a1996:	ed35806f          	j	3fa868 <__riscv_restore_0>
+004a195a <UnlockWifiEventLock>:
+  4a195a:	eeb582ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a195e:	0011d7b7          	lui	a5,0x11d
+  4a1962:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a1966:	1141                	addi	sp,sp,-16
+  4a1968:	843e                	mv	s0,a5
+  4a196a:	c63a                	sw	a4,12(sp)
+  4a196c:	000e6737          	lui	a4,0xe6
+  4a1970:	a4472503          	lw	a0,-1468(a4) # e5a44 <g_wifiEventLock>
+  4a1974:	f8000793          	li	a5,-128
+  4a1978:	cd09                	beqz	a0,4a1992 <UnlockWifiEventLock+0x38>
+  4a197a:	b76f40ef          	jal	ra,495cf0 <osMutexRelease>
+  4a197e:	4781                	li	a5,0
+  4a1980:	c909                	beqz	a0,4a1992 <UnlockWifiEventLock+0x38>
+  4a1982:	004ae537          	lui	a0,0x4ae
+  4a1986:	4e450513          	addi	a0,a0,1252 # 4ae4e4 <CSWTCH.14+0x5c>
+  4a198a:	b23580ef          	jal	ra,3fa4ac <printf>
+  4a198e:	f8000793          	li	a5,-128
+  4a1992:	853e                	mv	a0,a5
+  4a1994:	4732                	lw	a4,12(sp)
+  4a1996:	7c042783          	lw	a5,1984(s0)
+  4a199a:	00f70463          	beq	a4,a5,4a19a2 <UnlockWifiEventLock+0x48>
+  4a199e:	81b540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a19a2:	0141                	addi	sp,sp,16
+  4a19a4:	ec55806f          	j	3fa868 <__riscv_restore_0>
 
-004a199a <FrequencyToChannel>:
-  4a199a:	eab582ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a199e:	0011d737          	lui	a4,0x11d
-  4a19a2:	7c072683          	lw	a3,1984(a4) # 11d7c0 <__rom_data0_begin__>
-  4a19a6:	1141                	addi	sp,sp,-16
-  4a19a8:	87aa                	mv	a5,a0
-  4a19aa:	c636                	sw	a3,12(sp)
-  4a19ac:	6685                	lui	a3,0x1
-  4a19ae:	9b468613          	addi	a2,a3,-1612 # 9b4 <DOWNLOAD_IRQ_STACK_SIZE+0x1b4>
-  4a19b2:	4539                	li	a0,14
-  4a19b4:	00c78f63          	beq	a5,a2,4a19d2 <FrequencyToChannel+0x38>
-  4a19b8:	96b68693          	addi	a3,a3,-1685
-  4a19bc:	4501                	li	a0,0
-  4a19be:	00f6fa63          	bleu	a5,a3,4a19d2 <FrequencyToChannel+0x38>
-  4a19c2:	757d                	lui	a0,0xfffff
-  4a19c4:	69450513          	addi	a0,a0,1684 # fffff694 <__rom_data1_load+0xffb4ca34>
-  4a19c8:	953e                	add	a0,a0,a5
-  4a19ca:	4795                	li	a5,5
-  4a19cc:	02f55533          	divu	a0,a0,a5
-  4a19d0:	0505                	addi	a0,a0,1
-  4a19d2:	46b2                	lw	a3,12(sp)
-  4a19d4:	7c072783          	lw	a5,1984(a4)
-  4a19d8:	00f68463          	beq	a3,a5,4a19e0 <FrequencyToChannel+0x46>
-  4a19dc:	fdc540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a19e0:	0141                	addi	sp,sp,16
-  4a19e2:	e875806f          	j	3fa868 <__riscv_restore_0>
+004a19a8 <FrequencyToChannel>:
+  4a19a8:	e9d582ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a19ac:	0011d737          	lui	a4,0x11d
+  4a19b0:	7c072683          	lw	a3,1984(a4) # 11d7c0 <__rom_data0_begin__>
+  4a19b4:	1141                	addi	sp,sp,-16
+  4a19b6:	87aa                	mv	a5,a0
+  4a19b8:	c636                	sw	a3,12(sp)
+  4a19ba:	6685                	lui	a3,0x1
+  4a19bc:	9b468613          	addi	a2,a3,-1612 # 9b4 <DOWNLOAD_IRQ_STACK_SIZE+0x1b4>
+  4a19c0:	4539                	li	a0,14
+  4a19c2:	00c78f63          	beq	a5,a2,4a19e0 <FrequencyToChannel+0x38>
+  4a19c6:	96b68693          	addi	a3,a3,-1685
+  4a19ca:	4501                	li	a0,0
+  4a19cc:	00f6fa63          	bleu	a5,a3,4a19e0 <FrequencyToChannel+0x38>
+  4a19d0:	757d                	lui	a0,0xfffff
+  4a19d2:	69450513          	addi	a0,a0,1684 # fffff694 <__rom_data1_load+0xffb4ca34>
+  4a19d6:	953e                	add	a0,a0,a5
+  4a19d8:	4795                	li	a5,5
+  4a19da:	02f55533          	divu	a0,a0,a5
+  4a19de:	0505                	addi	a0,a0,1
+  4a19e0:	46b2                	lw	a3,12(sp)
+  4a19e2:	7c072783          	lw	a5,1984(a4)
+  4a19e6:	00f68463          	beq	a3,a5,4a19ee <FrequencyToChannel+0x46>
+  4a19ea:	fce540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a19ee:	0141                	addi	sp,sp,16
+  4a19f0:	e795806f          	j	3fa868 <__riscv_restore_0>
 
-004a19e6 <SetHotspotIpConfig>:
-  4a19e6:	e5f582ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a19ea:	0011d437          	lui	s0,0x11d
-  4a19ee:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a19f2:	004a5537          	lui	a0,0x4a5
-  4a19f6:	1141                	addi	sp,sp,-16
-  4a19f8:	f2050513          	addi	a0,a0,-224 # 4a4f20 <g_hi1131_rf_pll_cfg_table+0x128>
-  4a19fc:	c63e                	sw	a5,12(sp)
-  4a19fe:	ed5bb0ef          	jal	ra,45d8d2 <netif_find>
-  4a1a02:	e10d                	bnez	a0,4a1a24 <SetHotspotIpConfig+0x3e>
-  4a1a04:	004ae537          	lui	a0,0x4ae
-  4a1a08:	63450513          	addi	a0,a0,1588 # 4ae634 <CSWTCH.14+0x1ac>
-  4a1a0c:	aa1580ef          	jal	ra,3fa4ac <printf>
-  4a1a10:	f8000793          	li	a5,-128
-  4a1a14:	853e                	mv	a0,a5
-  4a1a16:	4732                	lw	a4,12(sp)
-  4a1a18:	7c042783          	lw	a5,1984(s0)
-  4a1a1c:	04f70463          	beq	a4,a5,4a1a64 <SetHotspotIpConfig+0x7e>
-  4a1a20:	f98540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a1a24:	0105b7b7          	lui	a5,0x105b
-  4a1a28:	01000737          	lui	a4,0x1000
-  4a1a2c:	8c078793          	addi	a5,a5,-1856 # 105a8c0 <__rom_data1_load+0xba7c60>
-  4a1a30:	177d                	addi	a4,a4,-1
-  4a1a32:	0034                	addi	a3,sp,8
-  4a1a34:	0050                	addi	a2,sp,4
-  4a1a36:	858a                	mv	a1,sp
-  4a1a38:	c03e                	sw	a5,0(sp)
-  4a1a3a:	c43e                	sw	a5,8(sp)
-  4a1a3c:	84aa                	mv	s1,a0
-  4a1a3e:	c23a                	sw	a4,4(sp)
-  4a1a40:	d81bc0ef          	jal	ra,45e7c0 <netifapi_netif_set_addr>
-  4a1a44:	4601                	li	a2,0
-  4a1a46:	4581                	li	a1,0
-  4a1a48:	8526                	mv	a0,s1
-  4a1a4a:	856bd0ef          	jal	ra,45eaa0 <netifapi_dhcps_start>
-  4a1a4e:	4781                	li	a5,0
-  4a1a50:	d171                	beqz	a0,4a1a14 <SetHotspotIpConfig+0x2e>
-  4a1a52:	004ae537          	lui	a0,0x4ae
-  4a1a56:	64850513          	addi	a0,a0,1608 # 4ae648 <CSWTCH.14+0x1c0>
-  4a1a5a:	a53580ef          	jal	ra,3fa4ac <printf>
-  4a1a5e:	bb7e30ef          	jal	ra,485614 <hi_wifi_softap_stop>
-  4a1a62:	b77d                	j	4a1a10 <SetHotspotIpConfig+0x2a>
-  4a1a64:	0141                	addi	sp,sp,16
-  4a1a66:	e035806f          	j	3fa868 <__riscv_restore_0>
+004a19f4 <SetHotspotIpConfig>:
+  4a19f4:	e51582ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a19f8:	0011d437          	lui	s0,0x11d
+  4a19fc:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a1a00:	004a5537          	lui	a0,0x4a5
+  4a1a04:	1141                	addi	sp,sp,-16
+  4a1a06:	f2050513          	addi	a0,a0,-224 # 4a4f20 <g_hi1131_rf_pll_cfg_table+0x128>
+  4a1a0a:	c63e                	sw	a5,12(sp)
+  4a1a0c:	ec7bb0ef          	jal	ra,45d8d2 <netif_find>
+  4a1a10:	e10d                	bnez	a0,4a1a32 <SetHotspotIpConfig+0x3e>
+  4a1a12:	004ae537          	lui	a0,0x4ae
+  4a1a16:	63450513          	addi	a0,a0,1588 # 4ae634 <CSWTCH.14+0x1ac>
+  4a1a1a:	a93580ef          	jal	ra,3fa4ac <printf>
+  4a1a1e:	f8000793          	li	a5,-128
+  4a1a22:	853e                	mv	a0,a5
+  4a1a24:	4732                	lw	a4,12(sp)
+  4a1a26:	7c042783          	lw	a5,1984(s0)
+  4a1a2a:	04f70463          	beq	a4,a5,4a1a72 <SetHotspotIpConfig+0x7e>
+  4a1a2e:	f8a540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a1a32:	0105b7b7          	lui	a5,0x105b
+  4a1a36:	01000737          	lui	a4,0x1000
+  4a1a3a:	8c078793          	addi	a5,a5,-1856 # 105a8c0 <__rom_data1_load+0xba7c60>
+  4a1a3e:	177d                	addi	a4,a4,-1
+  4a1a40:	0034                	addi	a3,sp,8
+  4a1a42:	0050                	addi	a2,sp,4
+  4a1a44:	858a                	mv	a1,sp
+  4a1a46:	c03e                	sw	a5,0(sp)
+  4a1a48:	c43e                	sw	a5,8(sp)
+  4a1a4a:	84aa                	mv	s1,a0
+  4a1a4c:	c23a                	sw	a4,4(sp)
+  4a1a4e:	d73bc0ef          	jal	ra,45e7c0 <netifapi_netif_set_addr>
+  4a1a52:	4601                	li	a2,0
+  4a1a54:	4581                	li	a1,0
+  4a1a56:	8526                	mv	a0,s1
+  4a1a58:	848bd0ef          	jal	ra,45eaa0 <netifapi_dhcps_start>
+  4a1a5c:	4781                	li	a5,0
+  4a1a5e:	d171                	beqz	a0,4a1a22 <SetHotspotIpConfig+0x2e>
+  4a1a60:	004ae537          	lui	a0,0x4ae
+  4a1a64:	64850513          	addi	a0,a0,1608 # 4ae648 <CSWTCH.14+0x1c0>
+  4a1a68:	a45580ef          	jal	ra,3fa4ac <printf>
+  4a1a6c:	ba9e30ef          	jal	ra,485614 <hi_wifi_softap_stop>
+  4a1a70:	b77d                	j	4a1a1e <SetHotspotIpConfig+0x2a>
+  4a1a72:	0141                	addi	sp,sp,16
+  4a1a74:	df55806f          	j	3fa868 <__riscv_restore_0>
 
-004a1a6a <EnableHotspot>:
-  4a1a6a:	dc1582ef          	jal	t0,3fa82a <__riscv_save_4>
-  4a1a6e:	0011d9b7          	lui	s3,0x11d
-  4a1a72:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
-  4a1a76:	7119                	addi	sp,sp,-128
-  4a1a78:	debe                	sw	a5,124(sp)
-  4a1a7a:	de5ff0ef          	jal	ra,4a185e <LockWifiGlobalLock>
-  4a1a7e:	c501                	beqz	a0,4a1a86 <EnableHotspot+0x1c>
-  4a1a80:	f8000513          	li	a0,-128
-  4a1a84:	a831                	j	4a1aa0 <EnableHotspot+0x36>
-  4a1a86:	000e67b7          	lui	a5,0xe6
-  4a1a8a:	ac07a683          	lw	a3,-1344(a5) # e5ac0 <g_wifiApStatus>
-  4a1a8e:	4705                	li	a4,1
-  4a1a90:	ac078913          	addi	s2,a5,-1344
-  4a1a94:	00e69d63          	bne	a3,a4,4a1aae <EnableHotspot+0x44>
-  4a1a98:	e17ff0ef          	jal	ra,4a18ae <UnlockWifiGlobalLock>
-  4a1a9c:	f175                	bnez	a0,4a1a80 <EnableHotspot+0x16>
-  4a1a9e:	5561                	li	a0,-8
-  4a1aa0:	5776                	lw	a4,124(sp)
-  4a1aa2:	7c09a783          	lw	a5,1984(s3)
-  4a1aa6:	0cf70d63          	beq	a4,a5,4a1b80 <EnableHotspot+0x116>
-  4a1aaa:	f0e540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a1aae:	07000613          	li	a2,112
-  4a1ab2:	4581                	li	a1,0
-  4a1ab4:	0068                	addi	a0,sp,12
-  4a1ab6:	845590ef          	jal	ra,3fb2fa <memset>
-  4a1aba:	4799                	li	a5,6
-  4a1abc:	000e6437          	lui	s0,0xe6
-  4a1ac0:	06f10723          	sb	a5,110(sp)
-  4a1ac4:	a4c40793          	addi	a5,s0,-1460 # e5a4c <g_wifiApConfig>
-  4a1ac8:	57dc                	lw	a5,44(a5)
-  4a1aca:	a4c40493          	addi	s1,s0,-1460
-  4a1ace:	c399                	beqz	a5,4a1ad4 <EnableHotspot+0x6a>
-  4a1ad0:	06f10723          	sb	a5,110(sp)
-  4a1ad4:	50c8                	lw	a0,36(s1)
-  4a1ad6:	d4bff0ef          	jal	ra,4a1820 <HoSecToHiSec>
-  4a1ada:	a4c40613          	addi	a2,s0,-1460
-  4a1ade:	daaa                	sw	a0,116(sp)
-  4a1ae0:	02100693          	li	a3,33
-  4a1ae4:	02100593          	li	a1,33
-  4a1ae8:	0068                	addi	a0,sp,12
-  4a1aea:	d39590ef          	jal	ra,3fb822 <memcpy_s>
-  4a1aee:	842a                	mv	s0,a0
-  4a1af0:	04100593          	li	a1,65
-  4a1af4:	04100693          	li	a3,65
-  4a1af8:	03048613          	addi	a2,s1,48
-  4a1afc:	02d10513          	addi	a0,sp,45
-  4a1b00:	d23590ef          	jal	ra,3fb822 <memcpy_s>
-  4a1b04:	00a405b3          	add	a1,s0,a0
-  4a1b08:	c991                	beqz	a1,4a1b1c <EnableHotspot+0xb2>
-  4a1b0a:	004ae537          	lui	a0,0x4ae
-  4a1b0e:	55850513          	addi	a0,a0,1368 # 4ae558 <CSWTCH.14+0xd0>
-  4a1b12:	99b580ef          	jal	ra,3fa4ac <printf>
-  4a1b16:	d99ff0ef          	jal	ra,4a18ae <UnlockWifiGlobalLock>
-  4a1b1a:	b79d                	j	4a1a80 <EnableHotspot+0x16>
-  4a1b1c:	000e65b7          	lui	a1,0xe6
-  4a1b20:	47c5                	li	a5,17
-  4a1b22:	ac458593          	addi	a1,a1,-1340 # e5ac4 <g_wifiIfName>
-  4a1b26:	0030                	addi	a2,sp,8
-  4a1b28:	0068                	addi	a0,sp,12
-  4a1b2a:	c43e                	sw	a5,8(sp)
-  4a1b2c:	9bbe30ef          	jal	ra,4854e6 <hi_wifi_softap_start>
-  4a1b30:	85aa                	mv	a1,a0
-  4a1b32:	cd01                	beqz	a0,4a1b4a <EnableHotspot+0xe0>
-  4a1b34:	004ae537          	lui	a0,0x4ae
-  4a1b38:	58c50513          	addi	a0,a0,1420 # 4ae58c <CSWTCH.14+0x104>
-  4a1b3c:	971580ef          	jal	ra,3fa4ac <printf>
-  4a1b40:	d6fff0ef          	jal	ra,4a18ae <UnlockWifiGlobalLock>
-  4a1b44:	fd15                	bnez	a0,4a1a80 <EnableHotspot+0x16>
-  4a1b46:	5565                	li	a0,-7
-  4a1b48:	bfa1                	j	4a1aa0 <EnableHotspot+0x36>
-  4a1b4a:	07000593          	li	a1,112
-  4a1b4e:	07000693          	li	a3,112
-  4a1b52:	4601                	li	a2,0
-  4a1b54:	0068                	addi	a0,sp,12
-  4a1b56:	d8b590ef          	jal	ra,3fb8e0 <memset_s>
-  4a1b5a:	85aa                	mv	a1,a0
-  4a1b5c:	c511                	beqz	a0,4a1b68 <EnableHotspot+0xfe>
-  4a1b5e:	004ae537          	lui	a0,0x4ae
-  4a1b62:	5c850513          	addi	a0,a0,1480 # 4ae5c8 <CSWTCH.14+0x140>
-  4a1b66:	b775                	j	4a1b12 <EnableHotspot+0xa8>
-  4a1b68:	4785                	li	a5,1
-  4a1b6a:	00f92023          	sw	a5,0(s2)
-  4a1b6e:	d41ff0ef          	jal	ra,4a18ae <UnlockWifiGlobalLock>
-  4a1b72:	f00517e3          	bnez	a0,4a1a80 <EnableHotspot+0x16>
-  4a1b76:	e71ff0ef          	jal	ra,4a19e6 <SetHotspotIpConfig>
-  4a1b7a:	f20503e3          	beqz	a0,4a1aa0 <EnableHotspot+0x36>
-  4a1b7e:	b709                	j	4a1a80 <EnableHotspot+0x16>
-  4a1b80:	6109                	addi	sp,sp,128
-  4a1b82:	cdd5806f          	j	3fa85e <__riscv_restore_4>
+004a1a78 <EnableHotspot>:
+  4a1a78:	db3582ef          	jal	t0,3fa82a <__riscv_save_4>
+  4a1a7c:	0011d9b7          	lui	s3,0x11d
+  4a1a80:	7c09a783          	lw	a5,1984(s3) # 11d7c0 <__rom_data0_begin__>
+  4a1a84:	7119                	addi	sp,sp,-128
+  4a1a86:	debe                	sw	a5,124(sp)
+  4a1a88:	de5ff0ef          	jal	ra,4a186c <LockWifiGlobalLock>
+  4a1a8c:	c501                	beqz	a0,4a1a94 <EnableHotspot+0x1c>
+  4a1a8e:	f8000513          	li	a0,-128
+  4a1a92:	a831                	j	4a1aae <EnableHotspot+0x36>
+  4a1a94:	000e67b7          	lui	a5,0xe6
+  4a1a98:	ac07a683          	lw	a3,-1344(a5) # e5ac0 <g_wifiApStatus>
+  4a1a9c:	4705                	li	a4,1
+  4a1a9e:	ac078913          	addi	s2,a5,-1344
+  4a1aa2:	00e69d63          	bne	a3,a4,4a1abc <EnableHotspot+0x44>
+  4a1aa6:	e17ff0ef          	jal	ra,4a18bc <UnlockWifiGlobalLock>
+  4a1aaa:	f175                	bnez	a0,4a1a8e <EnableHotspot+0x16>
+  4a1aac:	5561                	li	a0,-8
+  4a1aae:	5776                	lw	a4,124(sp)
+  4a1ab0:	7c09a783          	lw	a5,1984(s3)
+  4a1ab4:	0cf70d63          	beq	a4,a5,4a1b8e <EnableHotspot+0x116>
+  4a1ab8:	f00540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a1abc:	07000613          	li	a2,112
+  4a1ac0:	4581                	li	a1,0
+  4a1ac2:	0068                	addi	a0,sp,12
+  4a1ac4:	837590ef          	jal	ra,3fb2fa <memset>
+  4a1ac8:	4799                	li	a5,6
+  4a1aca:	000e6437          	lui	s0,0xe6
+  4a1ace:	06f10723          	sb	a5,110(sp)
+  4a1ad2:	a4c40793          	addi	a5,s0,-1460 # e5a4c <g_wifiApConfig>
+  4a1ad6:	57dc                	lw	a5,44(a5)
+  4a1ad8:	a4c40493          	addi	s1,s0,-1460
+  4a1adc:	c399                	beqz	a5,4a1ae2 <EnableHotspot+0x6a>
+  4a1ade:	06f10723          	sb	a5,110(sp)
+  4a1ae2:	50c8                	lw	a0,36(s1)
+  4a1ae4:	d4bff0ef          	jal	ra,4a182e <HoSecToHiSec>
+  4a1ae8:	a4c40613          	addi	a2,s0,-1460
+  4a1aec:	daaa                	sw	a0,116(sp)
+  4a1aee:	02100693          	li	a3,33
+  4a1af2:	02100593          	li	a1,33
+  4a1af6:	0068                	addi	a0,sp,12
+  4a1af8:	d2b590ef          	jal	ra,3fb822 <memcpy_s>
+  4a1afc:	842a                	mv	s0,a0
+  4a1afe:	04100593          	li	a1,65
+  4a1b02:	04100693          	li	a3,65
+  4a1b06:	03048613          	addi	a2,s1,48
+  4a1b0a:	02d10513          	addi	a0,sp,45
+  4a1b0e:	d15590ef          	jal	ra,3fb822 <memcpy_s>
+  4a1b12:	00a405b3          	add	a1,s0,a0
+  4a1b16:	c991                	beqz	a1,4a1b2a <EnableHotspot+0xb2>
+  4a1b18:	004ae537          	lui	a0,0x4ae
+  4a1b1c:	55850513          	addi	a0,a0,1368 # 4ae558 <CSWTCH.14+0xd0>
+  4a1b20:	98d580ef          	jal	ra,3fa4ac <printf>
+  4a1b24:	d99ff0ef          	jal	ra,4a18bc <UnlockWifiGlobalLock>
+  4a1b28:	b79d                	j	4a1a8e <EnableHotspot+0x16>
+  4a1b2a:	000e65b7          	lui	a1,0xe6
+  4a1b2e:	47c5                	li	a5,17
+  4a1b30:	ac458593          	addi	a1,a1,-1340 # e5ac4 <g_wifiIfName>
+  4a1b34:	0030                	addi	a2,sp,8
+  4a1b36:	0068                	addi	a0,sp,12
+  4a1b38:	c43e                	sw	a5,8(sp)
+  4a1b3a:	9ade30ef          	jal	ra,4854e6 <hi_wifi_softap_start>
+  4a1b3e:	85aa                	mv	a1,a0
+  4a1b40:	cd01                	beqz	a0,4a1b58 <EnableHotspot+0xe0>
+  4a1b42:	004ae537          	lui	a0,0x4ae
+  4a1b46:	58c50513          	addi	a0,a0,1420 # 4ae58c <CSWTCH.14+0x104>
+  4a1b4a:	963580ef          	jal	ra,3fa4ac <printf>
+  4a1b4e:	d6fff0ef          	jal	ra,4a18bc <UnlockWifiGlobalLock>
+  4a1b52:	fd15                	bnez	a0,4a1a8e <EnableHotspot+0x16>
+  4a1b54:	5565                	li	a0,-7
+  4a1b56:	bfa1                	j	4a1aae <EnableHotspot+0x36>
+  4a1b58:	07000593          	li	a1,112
+  4a1b5c:	07000693          	li	a3,112
+  4a1b60:	4601                	li	a2,0
+  4a1b62:	0068                	addi	a0,sp,12
+  4a1b64:	d7d590ef          	jal	ra,3fb8e0 <memset_s>
+  4a1b68:	85aa                	mv	a1,a0
+  4a1b6a:	c511                	beqz	a0,4a1b76 <EnableHotspot+0xfe>
+  4a1b6c:	004ae537          	lui	a0,0x4ae
+  4a1b70:	5c850513          	addi	a0,a0,1480 # 4ae5c8 <CSWTCH.14+0x140>
+  4a1b74:	b775                	j	4a1b20 <EnableHotspot+0xa8>
+  4a1b76:	4785                	li	a5,1
+  4a1b78:	00f92023          	sw	a5,0(s2)
+  4a1b7c:	d41ff0ef          	jal	ra,4a18bc <UnlockWifiGlobalLock>
+  4a1b80:	f00517e3          	bnez	a0,4a1a8e <EnableHotspot+0x16>
+  4a1b84:	e71ff0ef          	jal	ra,4a19f4 <SetHotspotIpConfig>
+  4a1b88:	f20503e3          	beqz	a0,4a1aae <EnableHotspot+0x36>
+  4a1b8c:	b709                	j	4a1a8e <EnableHotspot+0x16>
+  4a1b8e:	6109                	addi	sp,sp,128
+  4a1b90:	ccf5806f          	j	3fa85e <__riscv_restore_4>
 
-004a1b86 <SetHotspotConfig>:
-  4a1b86:	cbf582ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a1b8a:	0011d7b7          	lui	a5,0x11d
-  4a1b8e:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
-  4a1b92:	1101                	addi	sp,sp,-32
-  4a1b94:	862a                	mv	a2,a0
-  4a1b96:	ce3a                	sw	a4,28(sp)
-  4a1b98:	c632                	sw	a2,12(sp)
-  4a1b9a:	843e                	mv	s0,a5
-  4a1b9c:	557d                	li	a0,-1
-  4a1b9e:	c619                	beqz	a2,4a1bac <SetHotspotConfig+0x26>
-  4a1ba0:	cbfff0ef          	jal	ra,4a185e <LockWifiGlobalLock>
-  4a1ba4:	4632                	lw	a2,12(sp)
-  4a1ba6:	c911                	beqz	a0,4a1bba <SetHotspotConfig+0x34>
-  4a1ba8:	f8000513          	li	a0,-128
-  4a1bac:	4772                	lw	a4,28(sp)
-  4a1bae:	7c042783          	lw	a5,1984(s0)
-  4a1bb2:	02f70b63          	beq	a4,a5,4a1be8 <SetHotspotConfig+0x62>
-  4a1bb6:	e02540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a1bba:	000e6537          	lui	a0,0xe6
-  4a1bbe:	07400693          	li	a3,116
-  4a1bc2:	07400593          	li	a1,116
-  4a1bc6:	a4c50513          	addi	a0,a0,-1460 # e5a4c <g_wifiApConfig>
-  4a1bca:	c59590ef          	jal	ra,3fb822 <memcpy_s>
-  4a1bce:	c62a                	sw	a0,12(sp)
-  4a1bd0:	cdfff0ef          	jal	ra,4a18ae <UnlockWifiGlobalLock>
-  4a1bd4:	f971                	bnez	a0,4a1ba8 <SetHotspotConfig+0x22>
-  4a1bd6:	45b2                	lw	a1,12(sp)
-  4a1bd8:	d9f1                	beqz	a1,4a1bac <SetHotspotConfig+0x26>
-  4a1bda:	004ae537          	lui	a0,0x4ae
-  4a1bde:	5fc50513          	addi	a0,a0,1532 # 4ae5fc <CSWTCH.14+0x174>
-  4a1be2:	8cb580ef          	jal	ra,3fa4ac <printf>
-  4a1be6:	b7c9                	j	4a1ba8 <SetHotspotConfig+0x22>
-  4a1be8:	6105                	addi	sp,sp,32
-  4a1bea:	c7f5806f          	j	3fa868 <__riscv_restore_0>
+004a1b94 <SetHotspotConfig>:
+  4a1b94:	cb1582ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a1b98:	0011d7b7          	lui	a5,0x11d
+  4a1b9c:	7c07a703          	lw	a4,1984(a5) # 11d7c0 <__rom_data0_begin__>
+  4a1ba0:	1101                	addi	sp,sp,-32
+  4a1ba2:	862a                	mv	a2,a0
+  4a1ba4:	ce3a                	sw	a4,28(sp)
+  4a1ba6:	c632                	sw	a2,12(sp)
+  4a1ba8:	843e                	mv	s0,a5
+  4a1baa:	557d                	li	a0,-1
+  4a1bac:	c619                	beqz	a2,4a1bba <SetHotspotConfig+0x26>
+  4a1bae:	cbfff0ef          	jal	ra,4a186c <LockWifiGlobalLock>
+  4a1bb2:	4632                	lw	a2,12(sp)
+  4a1bb4:	c911                	beqz	a0,4a1bc8 <SetHotspotConfig+0x34>
+  4a1bb6:	f8000513          	li	a0,-128
+  4a1bba:	4772                	lw	a4,28(sp)
+  4a1bbc:	7c042783          	lw	a5,1984(s0)
+  4a1bc0:	02f70b63          	beq	a4,a5,4a1bf6 <SetHotspotConfig+0x62>
+  4a1bc4:	df4540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a1bc8:	000e6537          	lui	a0,0xe6
+  4a1bcc:	07400693          	li	a3,116
+  4a1bd0:	07400593          	li	a1,116
+  4a1bd4:	a4c50513          	addi	a0,a0,-1460 # e5a4c <g_wifiApConfig>
+  4a1bd8:	c4b590ef          	jal	ra,3fb822 <memcpy_s>
+  4a1bdc:	c62a                	sw	a0,12(sp)
+  4a1bde:	cdfff0ef          	jal	ra,4a18bc <UnlockWifiGlobalLock>
+  4a1be2:	f971                	bnez	a0,4a1bb6 <SetHotspotConfig+0x22>
+  4a1be4:	45b2                	lw	a1,12(sp)
+  4a1be6:	d9f1                	beqz	a1,4a1bba <SetHotspotConfig+0x26>
+  4a1be8:	004ae537          	lui	a0,0x4ae
+  4a1bec:	5fc50513          	addi	a0,a0,1532 # 4ae5fc <CSWTCH.14+0x174>
+  4a1bf0:	8bd580ef          	jal	ra,3fa4ac <printf>
+  4a1bf4:	b7c9                	j	4a1bb6 <SetHotspotConfig+0x22>
+  4a1bf6:	6105                	addi	sp,sp,32
+  4a1bf8:	c715806f          	j	3fa868 <__riscv_restore_0>
 
-004a1bee <IsHotspotActive>:
-  4a1bee:	c57582ef          	jal	t0,3fa844 <__riscv_save_0>
-  4a1bf2:	0011d437          	lui	s0,0x11d
-  4a1bf6:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
-  4a1bfa:	1141                	addi	sp,sp,-16
-  4a1bfc:	c63e                	sw	a5,12(sp)
-  4a1bfe:	c61ff0ef          	jal	ra,4a185e <LockWifiGlobalLock>
-  4a1c02:	c919                	beqz	a0,4a1c18 <IsHotspotActive+0x2a>
-  4a1c04:	f8000493          	li	s1,-128
-  4a1c08:	4732                	lw	a4,12(sp)
-  4a1c0a:	7c042783          	lw	a5,1984(s0)
-  4a1c0e:	8526                	mv	a0,s1
-  4a1c10:	00f70c63          	beq	a4,a5,4a1c28 <IsHotspotActive+0x3a>
-  4a1c14:	da4540ef          	jal	ra,3f61b8 <__stack_chk_fail>
-  4a1c18:	000e67b7          	lui	a5,0xe6
-  4a1c1c:	ac07a483          	lw	s1,-1344(a5) # e5ac0 <g_wifiApStatus>
-  4a1c20:	c8fff0ef          	jal	ra,4a18ae <UnlockWifiGlobalLock>
-  4a1c24:	d175                	beqz	a0,4a1c08 <IsHotspotActive+0x1a>
-  4a1c26:	bff9                	j	4a1c04 <IsHotspotActive+0x16>
-  4a1c28:	0141                	addi	sp,sp,16
-  4a1c2a:	c3f5806f          	j	3fa868 <__riscv_restore_0>
-	...
+004a1bfc <IsHotspotActive>:
+  4a1bfc:	c49582ef          	jal	t0,3fa844 <__riscv_save_0>
+  4a1c00:	0011d437          	lui	s0,0x11d
+  4a1c04:	7c042783          	lw	a5,1984(s0) # 11d7c0 <__rom_data0_begin__>
+  4a1c08:	1141                	addi	sp,sp,-16
+  4a1c0a:	c63e                	sw	a5,12(sp)
+  4a1c0c:	c61ff0ef          	jal	ra,4a186c <LockWifiGlobalLock>
+  4a1c10:	c919                	beqz	a0,4a1c26 <IsHotspotActive+0x2a>
+  4a1c12:	f8000493          	li	s1,-128
+  4a1c16:	4732                	lw	a4,12(sp)
+  4a1c18:	7c042783          	lw	a5,1984(s0)
+  4a1c1c:	8526                	mv	a0,s1
+  4a1c1e:	00f70c63          	beq	a4,a5,4a1c36 <IsHotspotActive+0x3a>
+  4a1c22:	d96540ef          	jal	ra,3f61b8 <__stack_chk_fail>
+  4a1c26:	000e67b7          	lui	a5,0xe6
+  4a1c2a:	ac07a483          	lw	s1,-1344(a5) # e5ac0 <g_wifiApStatus>
+  4a1c2e:	c8fff0ef          	jal	ra,4a18bc <UnlockWifiGlobalLock>
+  4a1c32:	d175                	beqz	a0,4a1c16 <IsHotspotActive+0x1a>
+  4a1c34:	bff9                	j	4a1c12 <IsHotspotActive+0x16>
+  4a1c36:	0141                	addi	sp,sp,16
+  4a1c38:	c315806f          	j	3fa868 <__riscv_restore_0>
 
-004a1c30 <_GLOBAL_OFFSET_TABLE_>:
-  4a1c30:	00000000 000e5070 000e084c 0044f186     ....pP..L.....D.
-  4a1c40:	004571ac 0045e11e 000dc000 004a71fc     .qE...E......qJ.
-  4a1c50:	000e4e10 004500e0 004a7168 000e4fe4     .N....E.hqJ..O..
-  4a1c60:	0044feca 0045e18a 000e4a80 00453f8a     ..D...E..J...?E.
-  4a1c70:	0044ff9e 0011acd4 000e0754 004a71b8     ..D.....T....qJ.
-  4a1c80:	00450740 00458414 000e4e0c 004505c0     @.E...E..N....E.
-  4a1c90:	0045e64e 004a71c8 0011acb4 000e4aa0     N.E..qJ......J..
-  4a1ca0:	0045e240 000e5080 004506e0 000e085c     @.E..P....E.\...
-  4a1cb0:	004554f4 0045009c 004504c8 0011d7c0     .TE...E...E.....
-  4a1cc0:	000e0848 0045e350 000e4fe0 00457480     H...P.E..O...tE.
-  4a1cd0:	004503e2 004a71a4 000e03f2 004a7160     ..E..qJ.....`qJ.
-  4a1ce0:	004a7158 0044fdb4 000e4a84 0045db3e     XqJ...D..J..>.E.
-  4a1cf0:	000e5034 00450420 00450236 000e03f1     4P.. .E.6.E.....
-  4a1d00:	000e4fe8 000e4ff0 000e5060 0045d99a     .O...O..`P....E.
-  4a1d10:	00450378 0011d7fc 004a7190 0044fa50     x.E......qJ.P.D.
-  4a1d20:	004574f4 000e4ff8 0045413e 000e4fec     .tE..O..>AE..O..
-  4a1d30:	0045e014 0011ac6c 00467f56 000e03f0     ..E.l...V.F.....
-  4a1d40:	004a71d8 004a71ec ffffffff 00000000     .qJ..qJ.........
-	...
+004a1c3c <_GLOBAL_OFFSET_TABLE_>:
+  4a1c3c:	00000000 000e5070 000e084c 0044f186     ....pP..L.....D.
+  4a1c4c:	004571ac 0045e11e 000dc000 004a71fc     .qE...E......qJ.
+  4a1c5c:	000e4e10 004500e0 004a7168 000e4fe4     .N....E.hqJ..O..
+  4a1c6c:	0044feca 0045e18a 000e4a80 00453f8a     ..D...E..J...?E.
+  4a1c7c:	0044ff9e 0011acd4 000e0754 004a71b8     ..D.....T....qJ.
+  4a1c8c:	00450740 00458414 000e4e0c 004505c0     @.E...E..N....E.
+  4a1c9c:	0045e64e 004a71c8 0011acb4 000e4aa0     N.E..qJ......J..
+  4a1cac:	0045e240 000e5080 004506e0 000e085c     @.E..P....E.\...
+  4a1cbc:	004554f4 0045009c 004504c8 0011d7c0     .TE...E...E.....
+  4a1ccc:	000e0848 0045e350 000e4fe0 00457480     H...P.E..O...tE.
+  4a1cdc:	004503e2 004a71a4 000e03f2 004a7160     ..E..qJ.....`qJ.
+  4a1cec:	004a7158 0044fdb4 000e4a84 0045db3e     XqJ...D..J..>.E.
+  4a1cfc:	000e5034 00450420 00450236 000e03f1     4P.. .E.6.E.....
+  4a1d0c:	000e4fe8 000e4ff0 000e5060 0045d99a     .O...O..`P....E.
+  4a1d1c:	00450378 0011d7fc 004a7190 0044fa50     x.E......qJ.P.D.
+  4a1d2c:	004574f4 000e4ff8 0045413e 000e4fec     .tE..O..>AE..O..
+  4a1d3c:	0045e014 0011ac6c 00467f56 000e03f0     ..E.l...V.F.....
+  4a1d4c:	004a71d8 004a71ec ffffffff 00000000     .qJ..qJ.........
+  4a1d5c:	00000000                                ....
 
 004a1d60 <__text_cache_end2_>:
   4a1d60:	7070615b          	0x7070615b
@@ -318476,18 +318481,18 @@ Disassembly of section .text_non_rom:
   4a944c:	6170 6172 0a0d 0000                         para....
 
 004a9454 <SYSPARA_LIST>:
-  4a9454:	950c 004a 03ca 004a 9518 004a 03f2 004a     ..J...J...J...J.
-  4a9464:	9524 004a 041a 004a 952c 004a 0442 004a     $.J...J.,.J.B.J.
-  4a9474:	9538 004a 046a 004a 9548 004a 0492 004a     8.J.j.J.H.J...J.
-  4a9484:	9558 004a 04ba 004a 9568 004a 04e2 004a     X.J...J.h.J...J.
-  4a9494:	9578 004a 050a 004a 9580 004a 07e4 004a     x.J...J...J...J.
-  4a94a4:	958c 004a 05ae 004a 959c 004a 0532 004a     ..J...J...J.2.J.
-  4a94b4:	95b0 004a 055a 004a 95c4 004a 0586 004a     ..J.Z.J...J...J.
+  4a9454:	950c 004a 03d8 004a 9518 004a 0400 004a     ..J...J...J...J.
+  4a9464:	9524 004a 0428 004a 952c 004a 0450 004a     $.J.(.J.,.J.P.J.
+  4a9474:	9538 004a 0478 004a 9548 004a 04a0 004a     8.J.x.J.H.J...J.
+  4a9484:	9558 004a 04c8 004a 9568 004a 04f0 004a     X.J...J.h.J...J.
+  4a9494:	9578 004a 0518 004a 9580 004a 07f2 004a     x.J...J...J...J.
+  4a94a4:	958c 004a 05bc 004a 959c 004a 0540 004a     ..J...J...J.@.J.
+  4a94b4:	95b0 004a 0568 004a 95c4 004a 0594 004a     ..J.h.J...J...J.
   4a94c4:	95cc 004a 6132 0049 95dc 004a 60ee 0049     ..J.2aI...J..`I.
-  4a94d4:	95ec 004a 0624 004a 9600 004a 08be 004a     ..J.$.J...J...J.
-  4a94e4:	960c 004a 064c 004a 9618 004a 0674 004a     ..J.L.J...J.t.J.
-  4a94f4:	9624 004a 069c 004a 9630 004a 06c4 004a     $.J...J.0.J...J.
-  4a9504:	963c 004a 06ec 004a 6544 6976 6563 7954     <.J...J.DeviceTy
+  4a94d4:	95ec 004a 0632 004a 9600 004a 08cc 004a     ..J.2.J...J...J.
+  4a94e4:	960c 004a 065a 004a 9618 004a 0682 004a     ..J.Z.J...J...J.
+  4a94f4:	9624 004a 06aa 004a 9630 004a 06d2 004a     $.J...J.0.J...J.
+  4a9504:	963c 004a 06fa 004a 6544 6976 6563 7954     <.J...J.DeviceTy
   4a9514:	6570 0000 614d 756e 6166 7463 7275 0065     pe..Manufacture.
   4a9524:	7242 6e61 0064 0000 614d 6b72 7465 614e     Brand...MarketNa
   4a9534:	656d 0000 7250 646f 6375 5374 7265 6569     me..ProductSerie
@@ -318670,7 +318675,7 @@ Disassembly of section .text_non_rom:
   4a9da8:	8dec 004a 9dd8 004a 8f80 004a               ..J...J...J.
 
 004a9db4 <alarm_type_strings>:
-  4a9db4:	9dc0 004a 9dcc 004a aa08 004a 4554 504d     ..J...J...J.TEMP
+  4a9db4:	9dc0 004a 9dcc 004a aa20 004a 4554 504d     ..J...J. .J.TEMP
   4a9dc4:	5245 5441 5255 0045 5548 494d 4944 5954     ERATURE.HUMIDITY
   4a9dd4:	0000 0000 4559 4c4c 574f 0000 6e49 6176     ....YELLOW..Inva
   4a9de4:	696c 2064 6170 6172 656d 6574 7372 203a     lid parameters: 
@@ -318689,7 +318694,7 @@ Disassembly of section .text_non_rom:
   4a9eb4:	9d88 a7e5 e58b 968c aee5 e68c 9088 bcef     ................
   4a9ec4:	e488 bfbd 94e7 41a8 4344 e934 9a80 81e9     .......ADC4.....
   4a9ed4:	ef93 8cbc 5047 4f49 ef36 89bc 0a0d 0000     ....GPIO6.......
-  4a9ee4:	0000 41f0 0000 420c 0000 4270 0000 428c     ...A...B..pB...B
+  4a9ee4:	0000 41c8 0000 41f0 0000 4248 0000 4270     ...A...A..HB..pB
   4a9ef4:	0000 447a 8000 44bb b3e7 e7bb 9fbb 88e5     ..zD...D........
   4a9f04:	e59d 8ba7 8ce5 e596 80bc a7e5 008b 0000     ................
   4a9f14:	5953 5453 4d45 0000 ade6 e5a3 a89c 88e5     SYSTEM..........
@@ -318846,30 +318851,30 @@ Disassembly of section .text_non_rom:
   4aa884:	88e5 e59b babb 88e6 e590 9f8a 0000 0000     ................
   4aa894:	0000 42c8 b8e4 e4bb bbbb 8ae5 e5a1 80bc     ...B............
   4aa8a4:	a7e5 e88b 90bf a1e8 008c 0000 414d 4e49     ............MAIN
-  4aa8b4:	0000 0000 b8e6 e6a9 bfb9 bae5 e4a6 a0bc     ................
-  4aa8c4:	84e6 e59f a899 203a b9e6 e5bf a6ba 253d     ......: ......=%
-  4aa8d4:	2564 2c25 e620 a9b8 bae5 3da6 6425 b0c2     d%%, ......=%d..
-  4aa8e4:	0043 0000 4844 3154 0031 0000 bce4 e6a0     C...DHT11.......
-  4aa8f4:	9f84 99e5 e8a8 bbaf 8fe5 e596 b1a4 b4e8     ................
-  4aa904:	00a5 0000 9ae2 20a0 bde7 e791 9cbb 9ce6     ....... ........
-  4aa914:	e8aa 9ebf 8ee6 efa5 8cbc b7e8 e8b3 87bf     ................
-  4aa924:	bce4 e6a0 9f84 99e5 e6a8 b095 8de6 e5ae     ................
-  4aa934:	918f 80e9 0081 0000 4553 534e 524f 535f     ........SENSOR_S
-  4aa944:	4e45 0044 9ff0 8a93 e420 a0bc 84e6 e59f     END..... .......
-  4aa954:	a899 95e6 e6b0 ae8d 8fe5 e991 8180 bbe7     ................
-  4aa964:	e89f a1ae 203a 80e6 e5bb 918f 80e9 3d81     ....: .........=
-  4aa974:	6425 ace6 2ca1 e620 9088 8ae5 3d9f 6425     %d..., ......=%d
-  4aa984:	ace6 2ca1 e520 b1a4 b4e8 3da5 6425 ace6     ..., ......=%d..
-  4aa994:	2ca1 e620 9088 8ae5 e79f 878e 253d 312e     ., .........=%.1
-  4aa9a4:	2566 0025 bce5 e580 8ba7 aee8 e5be 87a4     f%%.............
-  4aa9b4:	8ee6 e5a7 b688 91e5 e6a8 9f9c 0000 0000     ................
-  4aa9c4:	4544 4956 4543 435f 4e4f 5254 4c4f 0000     DEVICE_CONTROL..
-  4aa9d4:	83e7 e99f be9b bce4 e6a0 9f84 99e5 3aa8     ...............:
-  4aa9e4:	4120 4344 80e5 3dbc 6425 202c 94e7 e5b5      ADC...=%d, ....
-  4aa9f4:	8b8e 253d 322e 5666 202c ade7 e789 a7ba     ..=%.2fV, ......
-  4aaa04:	253d 0073 4d53 4b4f 0045 0000 a3e6 e680     =%s.SMOKE.......
-  4aaa14:	8bb5 88e5 e6b0 a58a ade8 e4a6 8bba bbe4     ................
-  4aaa24:	00b6 0000 464e e643 a1a8 9de5 e697 aa9c     ....NFC.........
+  4aa8b4:	0000 0000 a3e6 e680 8bb5 88e5 e6b0 a58a     ................
+  4aa8c4:	ade8 e4a6 8bba bbe4 00b6 0000 b8e6 e6a9     ................
+  4aa8d4:	bfb9 bae5 e4a6 a0bc 84e6 e59f a899 203a     ..............: 
+  4aa8e4:	b9e6 e5bf a6ba 253d 2564 2c25 e620 a9b8     ......=%d%%, ...
+  4aa8f4:	bae5 3da6 6425 b0c2 0043 0000 4844 3154     ...=%d..C...DHT1
+  4aa904:	0031 0000 bce4 e6a0 9f84 99e5 e8a8 bbaf     1...............
+  4aa914:	8fe5 e596 b1a4 b4e8 00a5 0000 9ae2 20a0     ............... 
+  4aa924:	bde7 e791 9cbb 9ce6 e8aa 9ebf 8ee6 efa5     ................
+  4aa934:	8cbc b7e8 e8b3 87bf bce4 e6a0 9f84 99e5     ................
+  4aa944:	e6a8 b095 8de6 e5ae 918f 80e9 0081 0000     ................
+  4aa954:	4553 534e 524f 535f 4e45 0044 9ff0 8a93     SENSOR_SEND.....
+  4aa964:	e420 a0bc 84e6 e59f a899 95e6 e6b0 ae8d      ...............
+  4aa974:	8fe5 e991 8180 bbe7 e89f a1ae 203a 80e6     ............: ..
+  4aa984:	e5bb 918f 80e9 3d81 6425 ace6 2ca1 e620     .......=%d..., .
+  4aa994:	9088 8ae5 3d9f 6425 ace6 2ca1 e520 b1a4     .....=%d..., ...
+  4aa9a4:	b4e8 3da5 6425 ace6 2ca1 e620 9088 8ae5     ...=%d..., .....
+  4aa9b4:	e79f 878e 253d 312e 2566 0025 bce5 e580     ....=%.1f%%.....
+  4aa9c4:	8ba7 aee8 e5be 87a4 8ee6 e5a7 b688 91e5     ................
+  4aa9d4:	e6a8 9f9c 0000 0000 4544 4956 4543 435f     ........DEVICE_C
+  4aa9e4:	4e4f 5254 4c4f 0000 83e7 e99f be9b bce4     ONTROL..........
+  4aa9f4:	e6a0 9f84 99e5 3aa8 4120 4344 80e5 3dbc     .......: ADC...=
+  4aaa04:	6425 202c 94e7 e5b5 8b8e 253d 322e 5666     %d, ......=%.2fV
+  4aaa14:	202c ade7 e789 a7ba 253d 0073 4d53 4b4f     , ......=%s.SMOK
+  4aaa24:	0045 0000 464e e643 a1a8 9de5 e697 aa9c     E...NFC.........
   4aaa34:	88e5 e59d 8ba7 8ce5 ef96 8cbc b7e8 e8b3     ................
   4aaa44:	87bf a3e6 e680 8bb5 0000 0000 aee8 e5be     ................
   4aaa54:	87a4 8ee6 e5a7 b688 91e5 e6a8 9f9c aee5     ................
@@ -319766,9 +319771,9 @@ Disassembly of section .text_non_rom:
 
 004ae120 <OHOS_SECURITY_PATCH_TAG>:
   4ae120:	3032 3232 302d 2d36 3130 0000 564b 465f     2022-06-01..KV_F
-  4ae130:	4c49 5f45 5553 004d 13da 004a 13f0 004a     ILE_SUM...J...J.
-  4ae140:	13f0 004a 13e2 004a 13e2 004a 13e2 004a     ..J...J...J...J.
-  4ae150:	13fc 004a 13f6 004a 13f6 004a 13f0 004a     ..J...J...J...J.
+  4ae130:	4c49 5f45 5553 004d 13e8 004a 13fe 004a     ILE_SUM...J...J.
+  4ae140:	13fe 004a 13f0 004a 13f0 004a 13f0 004a     ..J...J...J...J.
+  4ae150:	140a 004a 1404 004a 1404 004a 13fe 004a     ..J...J...J...J.
   4ae160:	775b 6669 5f69 6573 7672 6369 5d65 413a     [wifi_service]:A
   4ae170:	6464 6544 6976 6563 6f43 666e 6769 6d20     ddDeviceConfig m
   4ae180:	6d65 7063 2079 6166 6c69 6465 202c 7265     emcpy failed, er

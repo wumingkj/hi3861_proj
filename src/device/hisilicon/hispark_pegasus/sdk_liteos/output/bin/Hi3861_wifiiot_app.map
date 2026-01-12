@@ -36300,391 +36300,390 @@ Linker script and memory map
  .text.check_nfc_tag
                 0x000000000049c862      0x3be ohos\libs\libstartup.a(libstartup.main.o)
  .text.Main_Task
-                0x000000000049cc20      0x372 ohos\libs\libstartup.a(libstartup.main.o)
+                0x000000000049cc20      0x380 ohos\libs\libstartup.a(libstartup.main.o)
                 0x000000000049cc20                Main_Task
  .text.led_init
-                0x000000000049cf92       0x52 ohos\libs\libstartup.a(libstartup.main.o)
-                0x000000000049cf92                led_init
+                0x000000000049cfa0       0x52 ohos\libs\libstartup.a(libstartup.main.o)
+                0x000000000049cfa0                led_init
  .text.Main_Entry
-                0x000000000049cfe4      0x7be ohos\libs\libstartup.a(libstartup.main.o)
+                0x000000000049cff2      0x7be ohos\libs\libstartup.a(libstartup.main.o)
  .text.get_NDEFDataPackage
-                0x000000000049d7a2       0x9e ohos\libs\libstartup.a(libstartup.nfc.o)
-                0x000000000049d7a2                get_NDEFDataPackage
+                0x000000000049d7b0       0x9e ohos\libs\libstartup.a(libstartup.nfc.o)
+                0x000000000049d7b0                get_NDEFDataPackage
  .text.nfc_init
-                0x000000000049d840       0x72 ohos\libs\libstartup.a(libstartup.nfc.o)
-                0x000000000049d840                nfc_init
+                0x000000000049d84e       0x72 ohos\libs\libstartup.a(libstartup.nfc.o)
+                0x000000000049d84e                nfc_init
  .text.nfc_clear_ndef_data
-                0x000000000049d8b2       0x42 ohos\libs\libstartup.a(libstartup.nfc.o)
-                0x000000000049d8b2                nfc_clear_ndef_data
+                0x000000000049d8c0       0x42 ohos\libs\libstartup.a(libstartup.nfc.o)
+                0x000000000049d8c0                nfc_clear_ndef_data
  .text.readTimeout
-                0x000000000049d8f4       0x56 ohos\libs\libstartup.a(libstartup.NT3H.o)
+                0x000000000049d902       0x56 ohos\libs\libstartup.a(libstartup.NT3H.o)
  .text.writeTimeout.constprop.0
-                0x000000000049d94a       0x60 ohos\libs\libstartup.a(libstartup.NT3H.o)
+                0x000000000049d958       0x60 ohos\libs\libstartup.a(libstartup.NT3H.o)
  .text.NT3HEraseAllTag
-                0x000000000049d9aa       0x50 ohos\libs\libstartup.a(libstartup.NT3H.o)
-                0x000000000049d9aa                NT3HEraseAllTag
+                0x000000000049d9b8       0x50 ohos\libs\libstartup.a(libstartup.NT3H.o)
+                0x000000000049d9b8                NT3HEraseAllTag
  .text.NT3HReadUserData
-                0x000000000049d9fa       0x5a ohos\libs\libstartup.a(libstartup.NT3H.o)
-                0x000000000049d9fa                NT3HReadUserData
+                0x000000000049da08       0x5a ohos\libs\libstartup.a(libstartup.NT3H.o)
+                0x000000000049da08                NT3HReadUserData
  .text.NT3HReadHeaderNfc
-                0x000000000049da54       0x70 ohos\libs\libstartup.a(libstartup.NT3H.o)
-                0x000000000049da54                NT3HReadHeaderNfc
+                0x000000000049da62       0x70 ohos\libs\libstartup.a(libstartup.NT3H.o)
+                0x000000000049da62                NT3HReadHeaderNfc
  .text.NT3HWriteUserData
-                0x000000000049dac4       0x66 ohos\libs\libstartup.a(libstartup.NT3H.o)
-                0x000000000049dac4                NT3HWriteUserData
+                0x000000000049dad2       0x66 ohos\libs\libstartup.a(libstartup.NT3H.o)
+                0x000000000049dad2                NT3HWriteUserData
  .text.oled_show_string_direct.isra.0
-                0x000000000049db2a       0xb8 ohos\libs\libstartup.a(libstartup.oled.o)
+                0x000000000049db38       0xb8 ohos\libs\libstartup.a(libstartup.oled.o)
  .text.OLED_RefreshTask
-                0x000000000049dbe2       0x7a ohos\libs\libstartup.a(libstartup.oled.o)
+                0x000000000049dbf0       0x7a ohos\libs\libstartup.a(libstartup.oled.o)
  .text.OLED_Init
-                0x000000000049dc5c       0xf0 ohos\libs\libstartup.a(libstartup.oled.o)
-                0x000000000049dc5c                OLED_Init
+                0x000000000049dc6a       0xf0 ohos\libs\libstartup.a(libstartup.oled.o)
+                0x000000000049dc6a                OLED_Init
  .text.OLED_Clear
-                0x000000000049dd4c       0x26 ohos\libs\libstartup.a(libstartup.oled.o)
-                0x000000000049dd4c                OLED_Clear
+                0x000000000049dd5a       0x26 ohos\libs\libstartup.a(libstartup.oled.o)
+                0x000000000049dd5a                OLED_Clear
  .text.OLED_Refresh
-                0x000000000049dd72       0x32 ohos\libs\libstartup.a(libstartup.oled.o)
-                0x000000000049dd72                OLED_Refresh
+                0x000000000049dd80       0x32 ohos\libs\libstartup.a(libstartup.oled.o)
+                0x000000000049dd80                OLED_Refresh
  .text.OLED_ShowString
-                0x000000000049dda4       0xbc ohos\libs\libstartup.a(libstartup.oled.o)
-                0x000000000049dda4                OLED_ShowString
+                0x000000000049ddb2       0xbc ohos\libs\libstartup.a(libstartup.oled.o)
+                0x000000000049ddb2                OLED_ShowString
  .text.OLED_ShowSensorData
-                0x000000000049de60       0xf4 ohos\libs\libstartup.a(libstartup.oled.o)
-                0x000000000049de60                OLED_ShowSensorData
+                0x000000000049de6e       0xf4 ohos\libs\libstartup.a(libstartup.oled.o)
+                0x000000000049de6e                OLED_ShowSensorData
  .text.sw_i2c_delay
-                0x000000000049df54       0x36 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x000000000049df62       0x36 ohos\libs\libstartup.a(libstartup.oled_driver.o)
  .text.oled_driver_mark_dirty
-                0x000000000049df8a       0x3e ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x000000000049df98       0x3e ohos\libs\libstartup.a(libstartup.oled_driver.o)
  .text.sw_i2c_start
-                0x000000000049dfc8       0x60 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x000000000049dfd6       0x60 ohos\libs\libstartup.a(libstartup.oled_driver.o)
  .text.sw_i2c_write_byte
-                0x000000000049e028       0x8a ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x000000000049e036       0x8a ohos\libs\libstartup.a(libstartup.oled_driver.o)
  .text.sw_i2c_stop
-                0x000000000049e0b2       0x60 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x000000000049e0c0       0x60 ohos\libs\libstartup.a(libstartup.oled_driver.o)
  .text.oled_write_cmd
-                0x000000000049e112       0x42 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x000000000049e120       0x42 ohos\libs\libstartup.a(libstartup.oled_driver.o)
  .text.oled_write_data
-                0x000000000049e154       0x44 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x000000000049e162       0x44 ohos\libs\libstartup.a(libstartup.oled_driver.o)
  .text.oled_driver_deinit
-                0x000000000049e198       0x76 ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x000000000049e198                oled_driver_deinit
+                0x000000000049e1a6       0x76 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x000000000049e1a6                oled_driver_deinit
  .text.oled_driver_clear
-                0x000000000049e20e       0x62 ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x000000000049e20e                oled_driver_clear
+                0x000000000049e21c       0x62 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x000000000049e21c                oled_driver_clear
  .text.oled_driver_refresh
-                0x000000000049e270       0x82 ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x000000000049e270                oled_driver_refresh
+                0x000000000049e27e       0x82 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x000000000049e27e                oled_driver_refresh
  .text.oled_driver_init
-                0x000000000049e2f2      0x1fa ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x000000000049e2f2                oled_driver_init
+                0x000000000049e300      0x1fa ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x000000000049e300                oled_driver_init
  .text.oled_driver_refresh_partial
-                0x000000000049e4ec       0x90 ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x000000000049e4ec                oled_driver_refresh_partial
+                0x000000000049e4fa       0x90 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x000000000049e4fa                oled_driver_refresh_partial
  .text.oled_driver_draw_pixel
-                0x000000000049e57c       0x7e ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x000000000049e57c                oled_driver_draw_pixel
+                0x000000000049e58a       0x7e ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x000000000049e58a                oled_driver_draw_pixel
  .text.oled_driver_is_initialized
-                0x000000000049e5fa       0x36 ohos\libs\libstartup.a(libstartup.oled_driver.o)
-                0x000000000049e5fa                oled_driver_is_initialized
+                0x000000000049e608       0x36 ohos\libs\libstartup.a(libstartup.oled_driver.o)
+                0x000000000049e608                oled_driver_is_initialized
  .text.php_api_url_decode.constprop.0
-                0x000000000049e630       0xba ohos\libs\libstartup.a(libstartup.php_api.o)
+                0x000000000049e63e       0xba ohos\libs\libstartup.a(libstartup.php_api.o)
  .text.debug_print_long.constprop.1
-                0x000000000049e6ea      0x26c ohos\libs\libstartup.a(libstartup.php_api.o)
+                0x000000000049e6f8      0x26c ohos\libs\libstartup.a(libstartup.php_api.o)
  .text.debug_print.constprop.2
-                0x000000000049e956       0xb0 ohos\libs\libstartup.a(libstartup.php_api.o)
+                0x000000000049e964       0xb0 ohos\libs\libstartup.a(libstartup.php_api.o)
  .text.php_api_send_success_response
-                0x000000000049ea06       0xb4 ohos\libs\libstartup.a(libstartup.php_api.o)
+                0x000000000049ea14       0xb4 ohos\libs\libstartup.a(libstartup.php_api.o)
  .text.php_api_send_error_response
-                0x000000000049eaba       0xb4 ohos\libs\libstartup.a(libstartup.php_api.o)
+                0x000000000049eac8       0xb4 ohos\libs\libstartup.a(libstartup.php_api.o)
  .text.php_api_send_html_response
-                0x000000000049eb6e       0xf2 ohos\libs\libstartup.a(libstartup.php_api.o)
+                0x000000000049eb7c       0xf2 ohos\libs\libstartup.a(libstartup.php_api.o)
  .text.php_api_save_system_status
-                0x000000000049ec60       0xc4 ohos\libs\libstartup.a(libstartup.php_api.o)
-                0x000000000049ec60                php_api_save_system_status
+                0x000000000049ec6e       0xc4 ohos\libs\libstartup.a(libstartup.php_api.o)
+                0x000000000049ec6e                php_api_save_system_status
  .text.php_api_handle_post_request
-                0x000000000049ed24      0x2fe ohos\libs\libstartup.a(libstartup.php_api.o)
+                0x000000000049ed32      0x2fe ohos\libs\libstartup.a(libstartup.php_api.o)
  .text.php_api_handle_http_request
-                0x000000000049f022       0xbc ohos\libs\libstartup.a(libstartup.php_api.o)
-                0x000000000049f022                php_api_handle_http_request
+                0x000000000049f030       0xbc ohos\libs\libstartup.a(libstartup.php_api.o)
+                0x000000000049f030                php_api_handle_http_request
  .text.php_api_is_wifi_connected
-                0x000000000049f0de       0x26 ohos\libs\libstartup.a(libstartup.php_api.o)
-                0x000000000049f0de                php_api_is_wifi_connected
+                0x000000000049f0ec       0x26 ohos\libs\libstartup.a(libstartup.php_api.o)
+                0x000000000049f0ec                php_api_is_wifi_connected
  .text.php_api_get_system_status
-                0x000000000049f104       0xc2 ohos\libs\libstartup.a(libstartup.php_api.o)
-                0x000000000049f104                php_api_get_system_status
+                0x000000000049f112       0xc2 ohos\libs\libstartup.a(libstartup.php_api.o)
+                0x000000000049f112                php_api_get_system_status
  .text.php_api_init
-                0x000000000049f1c6       0xa6 ohos\libs\libstartup.a(libstartup.php_api.o)
-                0x000000000049f1c6                php_api_init
+                0x000000000049f1d4       0xa6 ohos\libs\libstartup.a(libstartup.php_api.o)
+                0x000000000049f1d4                php_api_init
  .text.php_api_send_json_data
-                0x000000000049f26c      0x3ee ohos\libs\libstartup.a(libstartup.php_api.o)
-                0x000000000049f26c                php_api_send_json_data
+                0x000000000049f27a      0x3ee ohos\libs\libstartup.a(libstartup.php_api.o)
+                0x000000000049f27a                php_api_send_json_data
  .text.php_api_send_sensor_data
-                0x000000000049f65a      0x17e ohos\libs\libstartup.a(libstartup.php_api.o)
-                0x000000000049f65a                php_api_send_sensor_data
+                0x000000000049f668      0x17e ohos\libs\libstartup.a(libstartup.php_api.o)
+                0x000000000049f668                php_api_send_sensor_data
  .text.php_api_start_web_server
-                0x000000000049f7d8      0x144 ohos\libs\libstartup.a(libstartup.php_api.o)
-                0x000000000049f7d8                php_api_start_web_server
+                0x000000000049f7e6      0x144 ohos\libs\libstartup.a(libstartup.php_api.o)
+                0x000000000049f7e6                php_api_start_web_server
  .text.php_api_update_web_server
-                0x000000000049f91c       0x92 ohos\libs\libstartup.a(libstartup.php_api.o)
-                0x000000000049f91c                php_api_update_web_server
+                0x000000000049f92a       0x92 ohos\libs\libstartup.a(libstartup.php_api.o)
+                0x000000000049f92a                php_api_update_web_server
  .text.relay_set_state
-                0x000000000049f9ae       0x5e ohos\libs\libstartup.a(libstartup.relay.o)
-                0x000000000049f9ae                relay_set_state
+                0x000000000049f9bc       0x5e ohos\libs\libstartup.a(libstartup.relay.o)
+                0x000000000049f9bc                relay_set_state
  .text.relay_init
-                0x000000000049fa0c       0x48 ohos\libs\libstartup.a(libstartup.relay.o)
-                0x000000000049fa0c                relay_init
+                0x000000000049fa1a       0x48 ohos\libs\libstartup.a(libstartup.relay.o)
+                0x000000000049fa1a                relay_init
  .text.relay_get_state
-                0x000000000049fa54       0x2c ohos\libs\libstartup.a(libstartup.relay.o)
-                0x000000000049fa54                relay_get_state
+                0x000000000049fa62       0x2c ohos\libs\libstartup.a(libstartup.relay.o)
+                0x000000000049fa62                relay_get_state
  .text.smoke_sensor_init
-                0x000000000049fa80       0x4c ohos\libs\libstartup.a(libstartup.smoke.o)
-                0x000000000049fa80                smoke_sensor_init
+                0x000000000049fa8e       0x4c ohos\libs\libstartup.a(libstartup.smoke.o)
+                0x000000000049fa8e                smoke_sensor_init
  .text.smoke_sensor_read_raw
-                0x000000000049facc       0x3c ohos\libs\libstartup.a(libstartup.smoke.o)
-                0x000000000049facc                smoke_sensor_read_raw
+                0x000000000049fada       0x3c ohos\libs\libstartup.a(libstartup.smoke.o)
+                0x000000000049fada                smoke_sensor_read_raw
  .text.smoke_sensor_read_voltage
-                0x000000000049fb08       0x44 ohos\libs\libstartup.a(libstartup.smoke.o)
-                0x000000000049fb08                smoke_sensor_read_voltage
+                0x000000000049fb16       0x44 ohos\libs\libstartup.a(libstartup.smoke.o)
+                0x000000000049fb16                smoke_sensor_read_voltage
  .text.smoke_sensor_get_level
-                0x000000000049fb4c       0x5c ohos\libs\libstartup.a(libstartup.smoke.o)
-                0x000000000049fb4c                smoke_sensor_get_level
+                0x000000000049fb5a       0x5c ohos\libs\libstartup.a(libstartup.smoke.o)
+                0x000000000049fb5a                smoke_sensor_get_level
  .text.smoke_sensor_check_alarm
-                0x000000000049fba8       0x32 ohos\libs\libstartup.a(libstartup.smoke.o)
-                0x000000000049fba8                smoke_sensor_check_alarm
+                0x000000000049fbb6       0x32 ohos\libs\libstartup.a(libstartup.smoke.o)
+                0x000000000049fbb6                smoke_sensor_check_alarm
  .text.smoke_sensor_read_data
-                0x000000000049fbda       0x4e ohos\libs\libstartup.a(libstartup.smoke.o)
-                0x000000000049fbda                smoke_sensor_read_data
+                0x000000000049fbe8       0x4e ohos\libs\libstartup.a(libstartup.smoke.o)
+                0x000000000049fbe8                smoke_sensor_read_data
  .text.smoke_sensor_get_level_string
-                0x000000000049fc28       0x44 ohos\libs\libstartup.a(libstartup.smoke.o)
-                0x000000000049fc28                smoke_sensor_get_level_string
+                0x000000000049fc36       0x44 ohos\libs\libstartup.a(libstartup.smoke.o)
+                0x000000000049fc36                smoke_sensor_get_level_string
  .text.songti_font_get_char_width
-                0x000000000049fc6c       0x26 ohos\libs\libstartup.a(libstartup.songti_font.o)
-                0x000000000049fc6c                songti_font_get_char_width
+                0x000000000049fc7a       0x26 ohos\libs\libstartup.a(libstartup.songti_font.o)
+                0x000000000049fc7a                songti_font_get_char_width
  .text.songti_font_get_char_height
-                0x000000000049fc92       0x26 ohos\libs\libstartup.a(libstartup.songti_font.o)
-                0x000000000049fc92                songti_font_get_char_height
+                0x000000000049fca0       0x26 ohos\libs\libstartup.a(libstartup.songti_font.o)
+                0x000000000049fca0                songti_font_get_char_height
  .text.songti_font_get_char_data
-                0x000000000049fcb8       0x44 ohos\libs\libstartup.a(libstartup.songti_font.o)
-                0x000000000049fcb8                songti_font_get_char_data
+                0x000000000049fcc6       0x44 ohos\libs\libstartup.a(libstartup.songti_font.o)
+                0x000000000049fcc6                songti_font_get_char_data
  .text.debug_print.constprop.0
-                0x000000000049fcfc       0x8e ohos\libs\libstartup.a(libstartup.time.o)
+                0x000000000049fd0a       0x8e ohos\libs\libstartup.a(libstartup.time.o)
  .text.Time_Init
-                0x000000000049fd8a       0x48 ohos\libs\libstartup.a(libstartup.time.o)
-                0x000000000049fd8a                Time_Init
+                0x000000000049fd98       0x48 ohos\libs\libstartup.a(libstartup.time.o)
+                0x000000000049fd98                Time_Init
  .text.Time_GetCurrentMs
-                0x000000000049fdd2       0x44 ohos\libs\libstartup.a(libstartup.time.o)
-                0x000000000049fdd2                Time_GetCurrentMs
+                0x000000000049fde0       0x44 ohos\libs\libstartup.a(libstartup.time.o)
+                0x000000000049fde0                Time_GetCurrentMs
  .text.Time_DelayMs
-                0x000000000049fe16       0x44 ohos\libs\libstartup.a(libstartup.time.o)
-                0x000000000049fe16                Time_DelayMs
+                0x000000000049fe24       0x44 ohos\libs\libstartup.a(libstartup.time.o)
+                0x000000000049fe24                Time_DelayMs
  .text.Time_DelayMsPrecise
-                0x000000000049fe5a       0x34 ohos\libs\libstartup.a(libstartup.time.o)
-                0x000000000049fe5a                Time_DelayMsPrecise
+                0x000000000049fe68       0x34 ohos\libs\libstartup.a(libstartup.time.o)
+                0x000000000049fe68                Time_DelayMsPrecise
  .text.Sta_GetWiFiIP.constprop.0
-                0x000000000049fe8e       0x46 ohos\libs\libstartup.a(libstartup.wifi.o)
+                0x000000000049fe9c       0x46 ohos\libs\libstartup.a(libstartup.wifi.o)
  .text.debug_print.constprop.1
-                0x000000000049fed4       0xb8 ohos\libs\libstartup.a(libstartup.wifi.o)
+                0x000000000049fee2       0xb8 ohos\libs\libstartup.a(libstartup.wifi.o)
  .text.WaitConnectResult
-                0x000000000049ff8c       0x88 ohos\libs\libstartup.a(libstartup.wifi.o)
+                0x000000000049ff9a       0x88 ohos\libs\libstartup.a(libstartup.wifi.o)
  .text.ConnectionWifiChangedHandler
-                0x00000000004a0014       0x6c ohos\libs\libstartup.a(libstartup.wifi.o)
+                0x00000000004a0022       0x6c ohos\libs\libstartup.a(libstartup.wifi.o)
  .text.WiFi_GetLocalIP
-                0x00000000004a0080       0x2c ohos\libs\libstartup.a(libstartup.wifi.o)
-                0x00000000004a0080                WiFi_GetLocalIP
+                0x00000000004a008e       0x2c ohos\libs\libstartup.a(libstartup.wifi.o)
+                0x00000000004a008e                WiFi_GetLocalIP
  .text.WiFi_createHotspots
-                0x00000000004a00ac      0x192 ohos\libs\libstartup.a(libstartup.wifi.o)
-                0x00000000004a00ac                WiFi_createHotspots
+                0x00000000004a00ba      0x192 ohos\libs\libstartup.a(libstartup.wifi.o)
+                0x00000000004a00ba                WiFi_createHotspots
  .text.WiFi_connectHotspots
-                0x00000000004a023e      0x18c ohos\libs\libstartup.a(libstartup.wifi.o)
-                0x00000000004a023e                WiFi_connectHotspots
+                0x00000000004a024c      0x18c ohos\libs\libstartup.a(libstartup.wifi.o)
+                0x00000000004a024c                WiFi_connectHotspots
  .text.GetDeviceType
-                0x00000000004a03ca       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a03ca                GetDeviceType
+                0x00000000004a03d8       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a03d8                GetDeviceType
  .text.GetManufacture
-                0x00000000004a03f2       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a03f2                GetManufacture
+                0x00000000004a0400       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a0400                GetManufacture
  .text.GetBrand
-                0x00000000004a041a       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a041a                GetBrand
+                0x00000000004a0428       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a0428                GetBrand
  .text.GetMarketName
-                0x00000000004a0442       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a0442                GetMarketName
+                0x00000000004a0450       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a0450                GetMarketName
  .text.GetProductSeries
-                0x00000000004a046a       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a046a                GetProductSeries
+                0x00000000004a0478       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a0478                GetProductSeries
  .text.GetProductModel
-                0x00000000004a0492       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a0492                GetProductModel
+                0x00000000004a04a0       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a04a0                GetProductModel
  .text.GetSoftwareModel
-                0x00000000004a04ba       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a04ba                GetSoftwareModel
+                0x00000000004a04c8       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a04c8                GetSoftwareModel
  .text.GetHardwareModel
-                0x00000000004a04e2       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a04e2                GetHardwareModel
+                0x00000000004a04f0       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a04f0                GetHardwareModel
  .text.GetSerial
-                0x00000000004a050a       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a050a                GetSerial
+                0x00000000004a0518       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a0518                GetSerial
  .text.GetBootloaderVersion
-                0x00000000004a0532       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a0532                GetBootloaderVersion
+                0x00000000004a0540       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a0540                GetBootloaderVersion
  .text.GetSecurityPatchTag
-                0x00000000004a055a       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a055a                GetSecurityPatchTag
+                0x00000000004a0568       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a0568                GetSecurityPatchTag
  .text.GetAbiList
-                0x00000000004a0586       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a0586                GetAbiList
+                0x00000000004a0594       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a0594                GetAbiList
  .text.GetDisplayVersion
-                0x00000000004a05ae       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a05ae                GetDisplayVersion
+                0x00000000004a05bc       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a05bc                GetDisplayVersion
  .text.GetSdkApiVersion
-                0x00000000004a05d6       0x26 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a05d6                GetSdkApiVersion
+                0x00000000004a05e4       0x26 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a05e4                GetSdkApiVersion
  .text.GetFirstApiVersion
-                0x00000000004a05fc       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a05fc                GetFirstApiVersion
+                0x00000000004a060a       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a060a                GetFirstApiVersion
  .text.GetIncrementalVersion
-                0x00000000004a0624       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a0624                GetIncrementalVersion
+                0x00000000004a0632       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a0632                GetIncrementalVersion
  .text.GetBuildType
-                0x00000000004a064c       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a064c                GetBuildType
+                0x00000000004a065a       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a065a                GetBuildType
  .text.GetBuildUser
-                0x00000000004a0674       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a0674                GetBuildUser
+                0x00000000004a0682       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a0682                GetBuildUser
  .text.GetBuildHost
-                0x00000000004a069c       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a069c                GetBuildHost
+                0x00000000004a06aa       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a06aa                GetBuildHost
  .text.GetBuildTime
-                0x00000000004a06c4       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a06c4                GetBuildTime
+                0x00000000004a06d2       0x28 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a06d2                GetBuildTime
  .text.GetBuildRootHash
-                0x00000000004a06ec       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a06ec                GetBuildRootHash
+                0x00000000004a06fa       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a06fa                GetBuildRootHash
  .text.GetOsReleaseType
-                0x00000000004a0718       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a0718                GetOsReleaseType
+                0x00000000004a0726       0x2c ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a0726                GetOsReleaseType
  .text.BuildOSFullName
-                0x00000000004a0744       0xa0 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a0752       0xa0 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
  .text.GetOSFullName
-                0x00000000004a07e4       0x42 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a07e4                GetOSFullName
+                0x00000000004a07f2       0x42 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a07f2                GetOSFullName
  .text.BuildVersionId
-                0x00000000004a0826       0x98 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a0834       0x98 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
  .text.GetVersionId
-                0x00000000004a08be       0x42 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
-                0x00000000004a08be                GetVersionId
+                0x00000000004a08cc       0x42 ohos\libs\libsysparam.a(libsysparam.parameter_common.o)
+                0x00000000004a08cc                GetVersionId
  .text.GetValueByFile
-                0x00000000004a0900       0x6c ohos\libs\libutils_kv_store.a(libutils_kv_store.kv_store.o)
- .text.NewItem  0x00000000004a096c       0x3a ohos\libs\libutils_kv_store.a(libutils_kv_store.kv_store.o)
+                0x00000000004a090e       0x6c ohos\libs\libutils_kv_store.a(libutils_kv_store.kv_store.o)
+ .text.NewItem  0x00000000004a097a       0x3a ohos\libs\libutils_kv_store.a(libutils_kv_store.kv_store.o)
  .text.GetCurrentItem
-                0x00000000004a09a6       0x5a ohos\libs\libutils_kv_store.a(libutils_kv_store.kv_store.o)
+                0x00000000004a09b4       0x5a ohos\libs\libutils_kv_store.a(libutils_kv_store.kv_store.o)
  .text.SetValueToFile
-                0x00000000004a0a00       0x54 ohos\libs\libutils_kv_store.a(libutils_kv_store.kv_store.o)
+                0x00000000004a0a0e       0x54 ohos\libs\libutils_kv_store.a(libutils_kv_store.kv_store.o)
  .text.SetCurrentItem
-                0x00000000004a0a54       0x6c ohos\libs\libutils_kv_store.a(libutils_kv_store.kv_store.o)
+                0x00000000004a0a62       0x6c ohos\libs\libutils_kv_store.a(libutils_kv_store.kv_store.o)
  .text.UtilsGetValue
-                0x00000000004a0ac0       0x62 ohos\libs\libutils_kv_store.a(libutils_kv_store.kv_store.o)
-                0x00000000004a0ac0                UtilsGetValue
+                0x00000000004a0ace       0x62 ohos\libs\libutils_kv_store.a(libutils_kv_store.kv_store.o)
+                0x00000000004a0ace                UtilsGetValue
  .text.UtilsSetValue
-                0x00000000004a0b22       0x74 ohos\libs\libutils_kv_store.a(libutils_kv_store.kv_store.o)
-                0x00000000004a0b22                UtilsSetValue
+                0x00000000004a0b30       0x74 ohos\libs\libutils_kv_store.a(libutils_kv_store.kv_store.o)
+                0x00000000004a0b30                UtilsSetValue
  .text.FreeItem
-                0x00000000004a0b96       0x40 ohos\libs\libutils_kv_store.a(libutils_kv_store.kvstore_common.o)
+                0x00000000004a0ba4       0x40 ohos\libs\libutils_kv_store.a(libutils_kv_store.kvstore_common.o)
  .text.IsValidChar
-                0x00000000004a0bd6       0x4c ohos\libs\libutils_kv_store.a(libutils_kv_store.kvstore_common.o)
-                0x00000000004a0bd6                IsValidChar
+                0x00000000004a0be4       0x4c ohos\libs\libutils_kv_store.a(libutils_kv_store.kvstore_common.o)
+                0x00000000004a0be4                IsValidChar
  .text.IsValidValue
-                0x00000000004a0c22       0x46 ohos\libs\libutils_kv_store.a(libutils_kv_store.kvstore_common.o)
-                0x00000000004a0c22                IsValidValue
+                0x00000000004a0c30       0x46 ohos\libs\libutils_kv_store.a(libutils_kv_store.kvstore_common.o)
+                0x00000000004a0c30                IsValidValue
  .text.IsValidKey
-                0x00000000004a0c68       0x56 ohos\libs\libutils_kv_store.a(libutils_kv_store.kvstore_common.o)
-                0x00000000004a0c68                IsValidKey
+                0x00000000004a0c76       0x56 ohos\libs\libutils_kv_store.a(libutils_kv_store.kvstore_common.o)
+                0x00000000004a0c76                IsValidKey
  .text.DeleteKVCache
-                0x00000000004a0cbe       0x9a ohos\libs\libutils_kv_store.a(libutils_kv_store.kvstore_common.o)
-                0x00000000004a0cbe                DeleteKVCache
+                0x00000000004a0ccc       0x9a ohos\libs\libutils_kv_store.a(libutils_kv_store.kvstore_common.o)
+                0x00000000004a0ccc                DeleteKVCache
  .text.AddKVCache
-                0x00000000004a0d58      0x10a ohos\libs\libutils_kv_store.a(libutils_kv_store.kvstore_common.o)
-                0x00000000004a0d58                AddKVCache
+                0x00000000004a0d66      0x10a ohos\libs\libutils_kv_store.a(libutils_kv_store.kvstore_common.o)
+                0x00000000004a0d66                AddKVCache
  .text.GetValueByCache
-                0x00000000004a0e62       0x74 ohos\libs\libutils_kv_store.a(libutils_kv_store.kvstore_common.o)
-                0x00000000004a0e62                GetValueByCache
+                0x00000000004a0e70       0x74 ohos\libs\libutils_kv_store.a(libutils_kv_store.kvstore_common.o)
+                0x00000000004a0e70                GetValueByCache
  .text.DispatchStaConnectEvent
-                0x00000000004a0ed6       0x88 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a0ee4       0x88 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
  .text.StaConnect
-                0x00000000004a0f5e      0x106 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a0f6c      0x106 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
  .text.RegisterHisiCallback
-                0x00000000004a1064       0x56 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a1072       0x56 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
  .text.StaSetLocaladdr
-                0x00000000004a10ba       0x46 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a10c8       0x46 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
  .text.StaSetDNSServer
-                0x00000000004a1100       0x8c ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a110e       0x8c ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
  .text.StaSetWifiNetConfig
-                0x00000000004a118c       0xd6 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a119a       0xd6 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
  .text.DispatchScanStateChangeEvent.isra.0
-                0x00000000004a1262       0x42 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a1270       0x42 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
  .text.DispatchApStartEvent.isra.1
-                0x00000000004a12a4       0x2e ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a12b2       0x2e ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
  .text.DispatchConnectEvent.isra.2
-                0x00000000004a12d2       0xdc ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a12e0       0xdc ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
  .text.DispatchEvent
-                0x00000000004a13ae       0x5c ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a13bc       0x5c ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
  .text.HiWifiWpaEventCb
-                0x00000000004a140a       0x4e ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a1418       0x4e ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
  .text.WriteNetworkConfig.constprop.4
-                0x00000000004a1458       0x66 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a1466       0x66 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
  .text.EnableWifi
-                0x00000000004a14be       0xa0 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
-                0x00000000004a14be                EnableWifi
+                0x00000000004a14cc       0xa0 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a14cc                EnableWifi
  .text.IsWifiActive
-                0x00000000004a155e       0x3c ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
-                0x00000000004a155e                IsWifiActive
+                0x00000000004a156c       0x3c ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a156c                IsWifiActive
  .text.AddDeviceConfig
-                0x00000000004a159a       0xb6 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
-                0x00000000004a159a                AddDeviceConfig
+                0x00000000004a15a8       0xb6 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a15a8                AddDeviceConfig
  .text.ConnectTo
-                0x00000000004a1650       0xec ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
-                0x00000000004a1650                ConnectTo
+                0x00000000004a165e       0xec ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a165e                ConnectTo
  .text.RegisterWifiEvent
-                0x00000000004a173c       0x76 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
-                0x00000000004a173c                RegisterWifiEvent
+                0x00000000004a174a       0x76 ohos\libs\libwifiservice.a(libwifiservice.wifi_device.o)
+                0x00000000004a174a                RegisterWifiEvent
  .text.InitWifiGlobalLock
-                0x00000000004a17b2       0x6e ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
+                0x00000000004a17c0       0x6e ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
  .text.HoSecToHiSec
-                0x00000000004a1820       0x3e ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
-                0x00000000004a1820                HoSecToHiSec
+                0x00000000004a182e       0x3e ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
+                0x00000000004a182e                HoSecToHiSec
  .text.LockWifiGlobalLock
-                0x00000000004a185e       0x50 ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
-                0x00000000004a185e                LockWifiGlobalLock
+                0x00000000004a186c       0x50 ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
+                0x00000000004a186c                LockWifiGlobalLock
  .text.UnlockWifiGlobalLock
-                0x00000000004a18ae       0x4e ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
-                0x00000000004a18ae                UnlockWifiGlobalLock
+                0x00000000004a18bc       0x4e ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
+                0x00000000004a18bc                UnlockWifiGlobalLock
  .text.LockWifiEventLock
-                0x00000000004a18fc       0x50 ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
-                0x00000000004a18fc                LockWifiEventLock
+                0x00000000004a190a       0x50 ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
+                0x00000000004a190a                LockWifiEventLock
  .text.UnlockWifiEventLock
-                0x00000000004a194c       0x4e ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
-                0x00000000004a194c                UnlockWifiEventLock
+                0x00000000004a195a       0x4e ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
+                0x00000000004a195a                UnlockWifiEventLock
  .text.FrequencyToChannel
-                0x00000000004a199a       0x4c ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
-                0x00000000004a199a                FrequencyToChannel
+                0x00000000004a19a8       0x4c ohos\libs\libwifiservice.a(libwifiservice.wifi_device_util.o)
+                0x00000000004a19a8                FrequencyToChannel
  .text.SetHotspotIpConfig
-                0x00000000004a19e6       0x84 ohos\libs\libwifiservice.a(libwifiservice.wifi_hotspot.o)
+                0x00000000004a19f4       0x84 ohos\libs\libwifiservice.a(libwifiservice.wifi_hotspot.o)
  .text.EnableHotspot
-                0x00000000004a1a6a      0x11c ohos\libs\libwifiservice.a(libwifiservice.wifi_hotspot.o)
-                0x00000000004a1a6a                EnableHotspot
+                0x00000000004a1a78      0x11c ohos\libs\libwifiservice.a(libwifiservice.wifi_hotspot.o)
+                0x00000000004a1a78                EnableHotspot
  .text.SetHotspotConfig
-                0x00000000004a1b86       0x68 ohos\libs\libwifiservice.a(libwifiservice.wifi_hotspot.o)
-                0x00000000004a1b86                SetHotspotConfig
+                0x00000000004a1b94       0x68 ohos\libs\libwifiservice.a(libwifiservice.wifi_hotspot.o)
+                0x00000000004a1b94                SetHotspotConfig
  .text.IsHotspotActive
-                0x00000000004a1bee       0x40 ohos\libs\libwifiservice.a(libwifiservice.wifi_hotspot.o)
-                0x00000000004a1bee                IsHotspotActive
+                0x00000000004a1bfc       0x40 ohos\libs\libwifiservice.a(libwifiservice.wifi_hotspot.o)
+                0x00000000004a1bfc                IsHotspotActive
  SORT_BY_NAME(*)(EXCLUDE_FILE(*libasm_flash.o) .got*)
- *fill*         0x00000000004a1c2e        0x2 
- .got           0x00000000004a1c30      0x118 build\libs\hi3861\release\no_mesh\libwifi_base.o
-                0x00000000004a1c30                _GLOBAL_OFFSET_TABLE_
- .got.plt       0x00000000004a1d48        0x8 build\libs\hi3861\release\no_mesh\libwifi_base.o
+ .got           0x00000000004a1c3c      0x118 build\libs\hi3861\release\no_mesh\libwifi_base.o
+                0x00000000004a1c3c                _GLOBAL_OFFSET_TABLE_
+ .got.plt       0x00000000004a1d54        0x8 build\libs\hi3861\release\no_mesh\libwifi_base.o
                 0x00000000004a1d60                . = ALIGN (0x20)
- *fill*         0x00000000004a1d50       0x10 
+ *fill*         0x00000000004a1d5c        0x4 
                 0x00000000004a1d60                __text_cache_end2_ = .
  SORT_BY_NAME(*)(.rodata*)
  .rodata.app_demo_upg_check_chip_product.str1.4
@@ -41428,7 +41427,7 @@ Linker script and memory map
  .bss.g_kv_initialized
                 0x00000000000e5934        0x1 ohos\libs\libstartup.a(libstartup.kv.o)
  *fill*         0x00000000000e5935        0x3 
- .bss.fail_count.7763
+ .bss.fail_count.7768
                 0x00000000000e5938        0x4 ohos\libs\libstartup.a(libstartup.main.o)
  .bss.g_alarm_active
                 0x00000000000e593c        0x1 ohos\libs\libstartup.a(libstartup.main.o)
@@ -41473,11 +41472,11 @@ Linker script and memory map
  .bss.g_wifi_ssid
                 0x00000000000e5988       0x20 ohos\libs\libstartup.a(libstartup.main.o)
                 0x00000000000e5988                g_wifi_ssid
- .bss.last_network_warn.7758
+ .bss.last_network_warn.7763
                 0x00000000000e59a8        0x4 ohos\libs\libstartup.a(libstartup.main.o)
- .bss.send_count.7761
+ .bss.send_count.7766
                 0x00000000000e59ac        0x4 ohos\libs\libstartup.a(libstartup.main.o)
- .bss.success_count.7762
+ .bss.success_count.7767
                 0x00000000000e59b0        0x4 ohos\libs\libstartup.a(libstartup.main.o)
  .bss.errNo     0x00000000000e59b4        0x4 ohos\libs\libstartup.a(libstartup.NT3H.o)
                 0x00000000000e59b4                errNo

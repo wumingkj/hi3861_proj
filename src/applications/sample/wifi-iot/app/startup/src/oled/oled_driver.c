@@ -8,27 +8,17 @@
 // 全局驱动实例 - 改为指针
 static oled_driver_t* g_oled_driver = NULL;
 
-// 软件I2C延时函数
-static void sw_i2c_delay(void)
-{
-    for (volatile int i = 0; i < 10; i++); // 简单延时
-}
-
 // 软件I2C起始信号
-static void sw_i2c_start(void)
-{
+static void sw_i2c_start(void) {
     hi_gpio_set_dir(OLED_SW_I2C_SDA_PIN, HI_GPIO_DIR_OUT);
     hi_gpio_set_dir(OLED_SW_I2C_SCL_PIN, HI_GPIO_DIR_OUT);
     
     hi_gpio_set_ouput_val(OLED_SW_I2C_SDA_PIN, 1);
     hi_gpio_set_ouput_val(OLED_SW_I2C_SCL_PIN, 1);
-    sw_i2c_delay();
     
     hi_gpio_set_ouput_val(OLED_SW_I2C_SDA_PIN, 0);
-    sw_i2c_delay();
     
     hi_gpio_set_ouput_val(OLED_SW_I2C_SCL_PIN, 0);
-    sw_i2c_delay();
 }
 
 // 软件I2C停止信号
@@ -39,13 +29,10 @@ static void sw_i2c_stop(void)
     
     hi_gpio_set_ouput_val(OLED_SW_I2C_SDA_PIN, 0);
     hi_gpio_set_ouput_val(OLED_SW_I2C_SCL_PIN, 0);
-    sw_i2c_delay();
     
     hi_gpio_set_ouput_val(OLED_SW_I2C_SCL_PIN, 1);
-    sw_i2c_delay();
     
     hi_gpio_set_ouput_val(OLED_SW_I2C_SDA_PIN, 1);
-    sw_i2c_delay();
 }
 
 // 软件I2C写字节
@@ -63,13 +50,10 @@ static void sw_i2c_write_byte(uint8_t data)
     
     for (int i = 0; i < 8; i++) {
         hi_gpio_set_ouput_val(OLED_SW_I2C_SDA_PIN, (data & 0x80) ? 1 : 0);
-        sw_i2c_delay();
         
         hi_gpio_set_ouput_val(OLED_SW_I2C_SCL_PIN, 1);
-        sw_i2c_delay();
         
         hi_gpio_set_ouput_val(OLED_SW_I2C_SCL_PIN, 0);
-        sw_i2c_delay();
         
         data <<= 1;
     }
@@ -77,15 +61,8 @@ static void sw_i2c_write_byte(uint8_t data)
     // 等待ACK（简化处理，不检查返回值）
     hi_gpio_set_dir(OLED_SW_I2C_SDA_PIN, HI_GPIO_DIR_IN);
     hi_gpio_set_ouput_val(OLED_SW_I2C_SCL_PIN, 1);
-    sw_i2c_delay();
     hi_gpio_set_ouput_val(OLED_SW_I2C_SCL_PIN, 0);
-    sw_i2c_delay();
 }
-
-// 删除未使用的软件I2C函数定义
-// 删除sw_i2c_read_byte函数 (第79行)
-// 删除sw_i2c_ack函数 (第104行)  
-// 删除sw_i2c_nack函数 (第118行)
 
 // 写命令到OLED（软件I2C版本）
 static void oled_write_cmd(uint8_t cmd)

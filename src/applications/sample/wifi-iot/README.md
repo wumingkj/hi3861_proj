@@ -18,6 +18,18 @@ applications/sample/wifi-iot/         # Sample code
     ├── iothardware                # Sample code for LED operations
     ├── samgr                      # Sample code for the service framework
     └── startup
+        ├──main.c
+        ├──debug.h
+        └──src
+            ├──oled
+            |   ├──oled.c
+            |   └──oled.h
+            ├──php_api
+            |   ├──php_api.c
+            |   └──php_api.h
+            ├──sensor
+            |   ├──sensor.c
+            |   └──sensor.h
 ```
 
 ## Repositories Involved<a name="section1718733212019"></a>

@@ -180,11 +180,12 @@ static void handle_continuous_alarm(void) {
                 LED_OFF();
                 Time_DelayMs(300);
                 Buzzer_Alarm(1, 100, 0);  // 单次短促报警
+                relay_set_state(RELAY_OFF);  // 断开继电器
                 break;
 
             case ALARM_LEVEL_RED:
                 // 红色报警：蜂鸣器持续报警 + LED快速闪烁 + 继电器闭合
-                Buzzer_Alarm(3, 100, 0);  // 2次短促报警
+                Buzzer_Alarm(3, 100, 0);  // 3次短促报警
                 LED_ON();
                 Time_DelayMs(100);
                 LED_OFF();
@@ -259,7 +260,7 @@ static void handle_key_event(uint8_t key_index, key_event_t event) {
 
                 log_i("KEY", "✅ 所有报警已关闭，系统状态重置为正常");
                 // 蜂鸣器提示音表示操作完成
-                Buzzer_Alarm(2, 500, 100);
+                Buzzer_Alarm(2, 200, 100);
             }
             break;
 
@@ -678,6 +679,8 @@ void Main_Task(void* arg) {
     // 传感器数据发送时间戳（1秒间隔）- 新增
     uint32_t g_last_sensor_send = Time_GetCurrentMs();
 
+    uint8_t g_last_alarm_update = Time_GetCurrentMs();
+
     log_i("MAIN", "主任务开始运行");
 
     // 主循环
@@ -686,6 +689,21 @@ void Main_Task(void* arg) {
 
         // ==================== 持续报警处理（每次循环都检查） ====================
         handle_continuous_alarm();
+
+        if(current_time_ms - g_last_alarm_update >=25) {
+            g_last_alarm_update = current_time_ms;
+            // 使用报警系统库更新传感器数据
+            float temperature = (float)g_temperature;
+            float humidity = (float)g_humidity;
+            float smoke = (float)g_smoke_data.raw_value;  // 使用原始ADC值作为烟雾浓度
+
+                        // 调用报警系统更新函数
+            bool has_alarm = alarm_system_update(temperature, humidity, smoke);
+
+            if (has_alarm) {
+                log_w("ALARM_SYSTEM", "检测到报警事件");
+            }
+        }
 
         // ==================== 数据获取类操作（2秒间隔） ====================
         if (current_time_ms - g_last_data_acquisition >= 1000) {
@@ -765,18 +783,6 @@ void Main_Task(void* arg) {
             smoke_sensor_read_data(&g_smoke_data);
             log_i("SMOKE", "烟雾传感器: ADC值=%d, 电压=%.2fV, 等级=%s", g_smoke_data.raw_value, g_smoke_data.voltage,
                   smoke_sensor_get_level_string(g_smoke_data.level));
-
-            // 使用报警系统库更新传感器数据
-            float temperature = (float)g_temperature;
-            float humidity = (float)g_humidity;
-            float smoke = (float)g_smoke_data.raw_value;  // 使用原始ADC值作为烟雾浓度
-
-            // 调用报警系统更新函数
-            bool has_alarm = alarm_system_update(temperature, humidity, smoke);
-
-            if (has_alarm) {
-                log_w("ALARM_SYSTEM", "检测到报警事件");
-            }
 
             // 2. NFC标签检测
             if (g_nfc_initialized) {
@@ -1009,10 +1015,10 @@ static void Main_Entry(void) {
     // 初始化报警系统
     log_i("ALARM_SYSTEM", "正在初始化报警系统...");
     alarm_config_t alarm_config = {
-        .temp_yellow_threshold = 30.0f,     // 温度黄色报警阈值
-        .temp_red_threshold = 35.0f,        // 温度红色报警阈值
-        .hum_yellow_threshold = 60.0f,      // 湿度黄色报警阈值（低于阈值报警）
-        .hum_red_threshold = 70.0f,         // 湿度红色报警阈值（低于阈值报警）
+        .temp_yellow_threshold = 25.0f,     // 温度黄色报警阈值
+        .temp_red_threshold = 30.0f,        // 温度红色报警阈值
+        .hum_yellow_threshold = 50.0f,      // 湿度黄色报警阈值（低于阈值报警）
+        .hum_red_threshold = 60.0f,         // 湿度红色报警阈值（低于阈值报警）
         .smoke_yellow_threshold = 1000.0f,  // 烟雾黄色报警阈值（ADC值）
         .smoke_red_threshold = 1500.0f      // 烟雾红色报警阈值（ADC值）
     };
