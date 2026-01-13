@@ -122,7 +122,7 @@ void alarm_event_handler(const alarm_event_t* event) {
     if (event == NULL)
         return;
 
-    log_i("ALARM_SYSTEM", "报警事件: 类型=%s, 级别=%s, 值=%.1f, 阈值=%.1f", alarm_system_get_type_string(event->type),
+    log_i("ALARM_SYSTEM", "报警事件: 类型=%s, 级别=%s, 值=%u, 阈值=%u", alarm_system_get_type_string(event->type),
           alarm_system_get_level_string(event->level), event->value, event->threshold);
 
     // 更新报警状态
@@ -223,9 +223,11 @@ static void handle_key_event(uint8_t key_index, key_event_t event) {
             // log_i("KEY", "按键%d短按", key_index + 1);
             //  按键1短按：切换LED状态
             if (key_index == 0) {
+
             }
             // 按键2短按：切换电机启停
             if (key_index == 1) {
+
             }
             break;
 
@@ -648,7 +650,7 @@ static bool check_nfc_tag(void) {
 
             return true;  // 检测成功，退出
         } else {
-            log_i("NFC", "❌ 第 %d 次尝试失败", attempt);
+log_i("NFC", "❌ 第 %d 次尝试失败", attempt);
 
             // 等待后重试
             if (attempt < max_attempts) {
@@ -824,6 +826,8 @@ static void Main_Entry(void) {
     lightsense_init();
     relay_init();  // 新增继电器初始化
 
+    Buzzer_PlayLittleStar();
+
     // NFC初始化 - 改进初始化逻辑，基于template.c
     log_i("NFC", "正在初始化NFC模块...");
 
@@ -888,22 +892,23 @@ static void Main_Entry(void) {
         // KV断电保存验证测试
         log_i("KV_TEST", "开始KV断电保存验证测试...");
 
-        // 检查是否是第一次运行
-        char boot_count_str[16] = {0};
-        kv_result_t boot_count_result = kv_get_string("boot_count", boot_count_str, sizeof(boot_count_str));
+        // 检查启动计数（使用uint32 API）
+        uint32_t boot_count = 0;
+        kv_result_t boot_count_result = kv_get_uint32("boot_count", &boot_count);
 
         if (boot_count_result == KV_ERROR_KEY_NOT_FOUND) {
             // 第一次运行：设置初始数据
             log_i("KV_TEST", "检测到第一次运行，设置初始KV数据...");
 
-            // 设置启动计数为1
-            kv_set_string("boot_count", "1");
+            // 设置启动计数为1（使用uint32 API）
+            kv_set_uint32("boot_count", 1);
+            boot_count = 1;
 
             // 设置测试字符串
             const char* test_string = "Hi3861_KV_Test_FirstBoot";
             kv_set_string("test_key", test_string);
 
-            // 设置时间戳
+            // 设置时间戳（使用uint32 API）
             uint32_t current_time = Time_GetCurrentMs();
             kv_set_uint32("first_boot_time", current_time);
 
@@ -920,12 +925,9 @@ static void Main_Entry(void) {
             // 后续运行：验证数据是否保存
             log_i("KV_TEST", "检测到后续运行，验证KV数据保存...");
 
-            // 读取并更新启动计数
-            int boot_count = atoi(boot_count_str);
+            // 更新启动计数（使用uint32 API）
             boot_count++;
-            char new_boot_count[16];
-            snprintf(new_boot_count, sizeof(new_boot_count), "%d", boot_count);
-            kv_set_string("boot_count", new_boot_count);
+            kv_set_uint32("boot_count", boot_count);
 
             // 验证测试字符串
             char test_buffer[64] = {0};
@@ -934,8 +936,9 @@ static void Main_Entry(void) {
                 log_i("KV_TEST", "✅ 测试字符串验证成功: %s", test_buffer);
             } else {
                 log_e("KV_TEST", "❌ 测试字符串验证失败，错误码: %d", test_result);
-            }  // 添加缺失的右大括号
-            // 验证启动时间
+            }
+
+            // 验证启动时间（使用uint32 API）
             uint32_t first_boot_time = 0;
             kv_result_t time_result = kv_get_uint32("first_boot_time", &first_boot_time);
             if (time_result == KV_SUCCESS) {
@@ -954,7 +957,8 @@ static void Main_Entry(void) {
             }
 
             // 显示启动次数
-            log_i("KV_TEST", "📊 当前启动次数: %d", boot_count);
+            log_i("KV_TEST", "📊 当前启动次数: %u", boot_count);
+
             // 验证中文支持
             char chinese_buffer[64] = {0};
             kv_result_t chinese_result = kv_get_string("chinese_test", chinese_buffer, sizeof(chinese_buffer));
@@ -963,7 +967,6 @@ static void Main_Entry(void) {
             } else if (chinese_result == KV_ERROR_KEY_NOT_FOUND) {
                 // 如果是第一次看到中文测试失败，可能是之前没有设置，现在设置一下
                 const char* chinese_test = "KV存储测试-中文验证";
-
                 kv_set_string("chinese_test", chinese_test);
                 log_i("KV_TEST", "💡 设置中文字符串: %s", chinese_test);
             } else {
@@ -975,7 +978,7 @@ static void Main_Entry(void) {
             log_e("KV_TEST", "❌ 启动计数读取失败，错误码: %d", boot_count_result);
         }
 
-        // 初始化默认配置（如果不存在）
+        // 初始化默认配置（使用uint32 API）
         uint32_t scan_timeout, connect_timeout;
         if (kv_get_uint32("scan_timeout", &scan_timeout) != KV_SUCCESS) {
             kv_set_uint32("scan_timeout", 30000);

@@ -16,10 +16,10 @@ static const char* alarm_type_strings[] = {"TEMPERATURE", "HUMIDITY", "SMOKE"};
 
 // 默认报警配置
 const alarm_config_t DEFAULT_ALARM_CONFIG = {
-    .temp_yellow_threshold = 25.0f,     // 温度黄色报警阈值
-    .temp_red_threshold = 30.0f,        // 温度红色报警阈值
-    .hum_yellow_threshold = 50.0f,      // 湿度黄色报警阈值
-    .hum_red_threshold = 60.0f,         // 湿度红色报警阈值
+    .temp_yellow_threshold = 25,     // 温度黄色报警阈值
+    .temp_red_threshold = 30,        // 温度红色报警阈值
+    .hum_yellow_threshold = 50,      // 湿度黄色报警阈值
+    .hum_red_threshold = 60,         // 湿度红色报警阈值
     .smoke_yellow_threshold = 1000,  // 烟雾黄色报警阈值
     .smoke_red_threshold = 1500      // 烟雾红色报警阈值
 };
@@ -41,10 +41,10 @@ bool alarm_system_init(const alarm_config_t* config) {
             memcpy(&temp_config, &DEFAULT_ALARM_CONFIG, sizeof(alarm_config_t));
             
             // 将默认配置写入KV库
-            kv_set_float("alarm_temp_yellow", temp_config.temp_yellow_threshold);
-            kv_set_float("alarm_temp_red", temp_config.temp_red_threshold);
-            kv_set_float("alarm_hum_yellow", temp_config.hum_yellow_threshold);
-            kv_set_float("alarm_hum_red", temp_config.hum_red_threshold);
+            kv_set_uint32("alarm_temp_yellow", temp_config.temp_yellow_threshold);
+            kv_set_uint32("alarm_temp_red", temp_config.temp_red_threshold);
+            kv_set_uint32("alarm_hum_yellow", temp_config.hum_yellow_threshold);
+            kv_set_uint32("alarm_hum_red", temp_config.hum_red_threshold);
             kv_set_uint32("alarm_smoke_yellow", temp_config.smoke_yellow_threshold);
             kv_set_uint32("alarm_smoke_red", temp_config.smoke_red_threshold);
             
@@ -61,14 +61,14 @@ bool alarm_system_init(const alarm_config_t* config) {
     g_alarm_status.hum_alarm_level = ALARM_LEVEL_NONE;
     g_alarm_status.smoke_alarm_level = ALARM_LEVEL_NONE;
     
-    printf("Alarm system initialized: T(Y:%.1f,R:%.1f) H(Y:%.1f,R:%.1f) S(Y:%.1f,R:%.1f)\n",
+    printf("Alarm system initialized: T(Y:%u,R:%u) H(Y:%u,R:%u) S(Y:%u,R:%u)\n",
            g_alarm_config.temp_yellow_threshold, g_alarm_config.temp_red_threshold,
            g_alarm_config.hum_yellow_threshold, g_alarm_config.hum_red_threshold,
            g_alarm_config.smoke_yellow_threshold, g_alarm_config.smoke_red_threshold);
-    
+
     return true;
 }
-bool alarm_system_update(float temperature, float humidity, float smoke) {
+bool alarm_system_update(uint32_t temperature, uint32_t humidity, uint32_t smoke) {
     bool has_alarm = false;
     bool has_clear_alarm = false;
     alarm_event_t event = {0};
@@ -245,16 +245,16 @@ static bool alarm_system_load_config_from_kv(alarm_config_t* config) {
     bool success = true;
 
     // 尝试从KV读取所有阈值
-    if (kv_get_float("alarm_temp_yellow", &config->temp_yellow_threshold) != KV_SUCCESS) {
+    if (kv_get_uint32("alarm_temp_yellow", &config->temp_yellow_threshold) != KV_SUCCESS) {
         success = false;
     }
-    if (kv_get_float("alarm_temp_red", &config->temp_red_threshold) != KV_SUCCESS) {
+    if (kv_get_uint32("alarm_temp_red", &config->temp_red_threshold) != KV_SUCCESS) {
         success = false;
     }
-    if (kv_get_float("alarm_hum_yellow", &config->hum_yellow_threshold) != KV_SUCCESS) {
+    if (kv_get_uint32("alarm_hum_yellow", &config->hum_yellow_threshold) != KV_SUCCESS) {
         success = false;
     }
-    if (kv_get_float("alarm_hum_red", &config->hum_red_threshold) != KV_SUCCESS) {
+    if (kv_get_uint32("alarm_hum_red", &config->hum_red_threshold) != KV_SUCCESS) {
         success = false;
     }
     if (kv_get_uint32("alarm_smoke_yellow", &config->smoke_yellow_threshold) != KV_SUCCESS) {

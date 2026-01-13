@@ -3,6 +3,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <stdio.h>  // 添加printf头文件
 
 // 报警级别定义
 typedef enum {
@@ -22,8 +23,8 @@ typedef enum {
 typedef struct {
     alarm_type_t type;        // 报警类型
     alarm_level_t level;      // 报警级别
-    float value;              // 当前值
-    float threshold;          // 阈值
+    uint32_t value;            // 当前值（改为整型）
+    uint32_t threshold;        // 阈值（改为整型）
     uint32_t timestamp;       // 时间戳
 } alarm_event_t;
 
@@ -32,15 +33,15 @@ typedef void (*alarm_callback_t)(const alarm_event_t* event);
 
 // 报警系统配置结构体
 typedef struct {
-    // 温度阈值配置
-    float temp_yellow_threshold;  // 黄色报警温度阈值
-    float temp_red_threshold;     // 红色报警温度阈值
+    // 温度阈值配置（改为整型，单位：0.1°C）
+    uint32_t temp_yellow_threshold;  // 黄色报警温度阈值
+    uint32_t temp_red_threshold;     // 红色报警温度阈值
     
-    // 湿度阈值配置
-    float hum_yellow_threshold;   // 黄色报警湿度阈值
-    float hum_red_threshold;      // 红色报警湿度阈值
+    // 湿度阈值配置（改为整型，单位：0.1%）
+    uint32_t hum_yellow_threshold;   // 黄色报警湿度阈值
+    uint32_t hum_red_threshold;      // 红色报警湿度阈值
     
-    // 烟雾阈值配置
+    // 烟雾阈值配置（保持整型）
     uint32_t smoke_yellow_threshold; // 黄色报警烟雾阈值
     uint32_t smoke_red_threshold;    // 红色报警烟雾阈值
 } alarm_config_t;
@@ -66,13 +67,13 @@ bool alarm_system_init(const alarm_config_t* config);
 void alarm_system_deinit(void);
 
 /**
- * @brief 更新传感器数据并检测报警
- * @param temperature 温度值
- * @param humidity 湿度值
+ * @brief 更新传感器数据并检测报警（改为整型）
+ * @param temperature 温度值（单位：0.1°C）
+ * @param humidity 湿度值（单位：0.1%）
  * @param smoke 烟雾浓度值
  * @return true 有报警，false 无报警
  */
-bool alarm_system_update(float temperature, float humidity, float smoke);
+bool alarm_system_update(uint32_t temperature, uint32_t humidity, uint32_t smoke);
 
 /**
  * @brief 设置报警回调函数

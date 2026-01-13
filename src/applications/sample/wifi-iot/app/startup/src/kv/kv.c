@@ -17,6 +17,8 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>  // 添加stdlib.h以使用atof函数
+#include <math.h>    // 用于isnan和isinf函数
+#include <limits.h>  // 用于UINT32_MAX
 
 // 模块状态
 static bool g_kv_initialized = false;
@@ -113,15 +115,22 @@ kv_result_t kv_set_uint32(const char* key, uint32_t value) {
         return KV_ERROR_INVALID_PARAM;
     }
     
-    // 将uint32转换为字符串存储 - 使用sprintf
+    // 将uint32转换为字符串存储 - 使用snprintf确保安全
     char value_str[16];
-    if (sprintf(value_str, "%u", value) < 0) {
+    int len = snprintf(value_str, sizeof(value_str), "%u", value);
+    
+    // 检查转换是否成功
+    if (len < 0) {
         return KV_ERROR_WRITE_FAILED;
+    }
+    
+    // 检查缓冲区是否足够
+    if (len >= (int)sizeof(value_str)) {
+        return KV_ERROR_VALUE_TOO_LONG;
     }
     
     return kv_set_string(key, value_str);
 }
-
 kv_result_t kv_get_uint32(const char* key, uint32_t* value) {
     if (!g_kv_initialized) {
         return KV_ERROR_NOT_INITIALIZED;
@@ -138,7 +147,12 @@ kv_result_t kv_get_uint32(const char* key, uint32_t* value) {
         return ret;
     }
     
-    // 转换为uint32 - 使用strtoul代替sscanf
+    // 检查字符串是否为空
+    if (value_str[0] == '\0') {
+        return KV_ERROR_READ_FAILED;
+    }
+    
+    // 转换为uint32 - 使用strtoul
     char* endptr;
     unsigned long tmp = strtoul(value_str, &endptr, 10);
     
@@ -149,6 +163,11 @@ kv_result_t kv_get_uint32(const char* key, uint32_t* value) {
     
     // 检查是否溢出
     if (tmp > UINT32_MAX) {
+        return KV_ERROR_READ_FAILED;
+    }
+    
+    // 检查转换后的值是否合理（不能为0，除非原始字符串就是"0"）
+    if (tmp == 0 && strcmp(value_str, "0") != 0) {
         return KV_ERROR_READ_FAILED;
     }
     
@@ -165,15 +184,27 @@ kv_result_t kv_set_float(const char* key, float value) {
         return KV_ERROR_INVALID_PARAM;
     }
     
-    // 将float转换为字符串存储 - 使用sprintf
+    // 检查浮点数是否有效
+    if (isnan(value) || isinf(value)) {
+        return KV_ERROR_INVALID_PARAM;
+    }
+    
+    // 将float转换为字符串存储 - 使用snprintf确保安全
     char value_str[32];
-    if (sprintf(value_str, "%.2f", value) < 0) {
+    int len = snprintf(value_str, sizeof(value_str), "%.2f", value);
+    
+    // 检查转换是否成功
+    if (len < 0) {
         return KV_ERROR_WRITE_FAILED;
+    }
+    
+    // 检查缓冲区是否足够
+    if (len >= (int)sizeof(value_str)) {
+        return KV_ERROR_VALUE_TOO_LONG;
     }
     
     return kv_set_string(key, value_str);
 }
-
 kv_result_t kv_get_float(const char* key, float* value) {
     if (!g_kv_initialized) {
         return KV_ERROR_NOT_INITIALIZED;
@@ -190,9 +221,43 @@ kv_result_t kv_get_float(const char* key, float* value) {
         return ret;
     }
     
-    // 转换为float - 使用atof代替sscanf
-    *value = (float)atof(value_str);
+    // 检查字符串是否为空
+    if (value_str[0] == '\0') {
+        return KV_ERROR_READ_FAILED;
+    }
     
+    // 转换为float - 使用strtof代替atof，提供错误检查
+    char* endptr;
+    float tmp = strtof(value_str, &endptr);
+    
+    // 检查转换是否成功
+    if (endptr == value_str || *endptr != '\0') {
+        return KV_ERROR_READ_FAILED;
+    }
+    
+    // 检查是否为NaN或无穷大
+    if (isnan(tmp) || isinf(tmp)) {
+        return KV_ERROR_READ_FAILED;
+    }
+    
+    // 检查转换后的值是否合理（不能为0，除非原始字符串就是"0"或"0.0"等）
+    if (tmp == 0.0f) {
+        // 检查原始字符串是否为有效的0表示
+        int is_valid_zero = 0;
+        if (strcmp(value_str, "0") == 0 || 
+            strcmp(value_str, "0.0") == 0 || 
+            strcmp(value_str, "0.00") == 0 ||
+            strcmp(value_str, "0.000") == 0) {
+            is_valid_zero = 1;
+        }
+        
+        // 如果不是有效的0表示，则认为是转换错误
+        if (!is_valid_zero) {
+            return KV_ERROR_READ_FAILED;
+        }
+    }
+    
+    *value = tmp;
     return KV_SUCCESS;
 }
 

@@ -53,7 +53,7 @@ static const char* g_webpage_html =
     "    <style>"
     "        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }"
     "        .container { max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; "
-    "box-shadow: 0 2px 4px rgba(0,0,0,0.1); }"
+"box-shadow: 0 2px 4px rgba(0,0,0,0.1); }"
     "        h1 { color: #333; text-align: center; }"
     "        h2 { color: #555; border-bottom: 1px solid #ddd; padding-bottom: 10px; }"
     "        .form-group { margin-bottom: 15px; }"
@@ -326,19 +326,19 @@ php_api_result_t php_api_save_system_status(const php_api_system_status_t* statu
     }
 
     // 保存报警阈值配置（修改为使用kv_set_float，与报警库保持一致）
-    if (kv_set_float("alarm_temp_yellow", status->alarm_temp_yellow) != KV_SUCCESS) {
+    if (kv_set_uint32("alarm_temp_yellow", status->alarm_temp_yellow) != KV_SUCCESS) {
         log_e("PHP_API", "保存温度黄色报警阈值失败");
     }
 
-    if (kv_set_float("alarm_temp_red", status->alarm_temp_red) != KV_SUCCESS) {
+    if (kv_set_uint32("alarm_temp_red", status->alarm_temp_red) != KV_SUCCESS) {
         log_e("PHP_API", "保存温度红色报警阈值失败");
     }
 
-    if (kv_set_float("alarm_hum_yellow", status->alarm_hum_yellow) != KV_SUCCESS) {
+    if (kv_set_uint32("alarm_hum_yellow", status->alarm_hum_yellow) != KV_SUCCESS) {
         log_e("PHP_API", "保存湿度黄色报警阈值失败");
     }
 
-    if (kv_set_float("alarm_hum_red", status->alarm_hum_red) != KV_SUCCESS) {
+    if (kv_set_uint32("alarm_hum_red", status->alarm_hum_red) != KV_SUCCESS) {
         log_e("PHP_API", "保存湿度红色报警阈值失败");
     }
 
@@ -351,7 +351,7 @@ php_api_result_t php_api_save_system_status(const php_api_system_status_t* statu
     }
 
     log_i("PHP_API", "系统状态保存成功: 设备=%s, 服务器IP=%s", status->device_name, status->server_ip);
-    log_i("PHP_API", "报警阈值保存: 温度黄/红=%.1f/%.1f°C, 湿度黄/红=%d/%d%%, 烟雾黄/红=%d/%d", 
+    log_i("PHP_API", "报警阈值保存: 温度黄/红=%u/%u°C, 湿度黄/红=%u/%u%%, 烟雾黄/红=%u/%u", 
           status->alarm_temp_yellow, status->alarm_temp_red,
           status->alarm_hum_yellow, status->alarm_hum_red,
           status->alarm_smoke_yellow, status->alarm_smoke_red);
