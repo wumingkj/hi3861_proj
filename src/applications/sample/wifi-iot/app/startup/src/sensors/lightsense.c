@@ -18,6 +18,7 @@
 
 #include "lightsense.h"
 #include "adc.h"
+#include "time.h"  // 使用新的时间库
 #include <unistd.h>
 #include <stdio.h>
 
@@ -80,5 +81,5 @@ void lightsense_task(void)
                (state == LIGHTSENSE_DARK) ? "黑暗" : "明亮");
     }
     
-    usleep(10 * 1000);  // 10ms延时
+    Time_DelayMs(10);  // 10ms延时
 }

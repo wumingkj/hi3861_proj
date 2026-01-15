@@ -14,6 +14,7 @@
 
 extern void Buzzer_Alarm(uint32_t duration_ms, uint32_t freq_hz, uint32_t volume);
 extern char g_wifi_ip[16];  // 生成的代码片段
+extern bool g_wifi_connected;
 
 // 在全局变量定义前添加函数声明
 static php_api_result_t php_api_handle_post_request(int client_socket, const char* request);
@@ -157,7 +158,7 @@ static const char* g_webpage_html =
     "                        <div class=\"threshold-label\">烟雾红色报警阈值:</div>"
     "                        <input type=\"number\" id=\"alarm_smoke_red\" name=\"alarm_smoke_red\" "
     "class=\"threshold-input\" "
-    "value=\"1500\" min=\"0\" max=\"2150\" step=\"1\" required>"
+    "value=\"1001\" min=\"0\" max=\"2150\" step=\"1\" required>"
     "                    </div>"
     "                </div>"
     "                <div style=\"margin-top: 10px; font-size: 12px; color: #6c757d;\">"
@@ -997,7 +998,7 @@ static void php_api_url_decode(const char* src, char* dst, size_t dst_size) {
 bool php_api_is_wifi_connected(void) {
     // 这里需要根据实际的WiFi API来获取连接状态
     // 暂时返回true表示已连接
-    return true;
+    return g_wifi_connected;
 }
 
 /**
@@ -1097,7 +1098,7 @@ php_api_result_t php_api_update_web_server(void) {
     php_api_result_t result = php_api_handle_http_request(client_socket);
 
     // 关闭客户端连接
-    close(client_socket);
+    //close(client_socket);
 
     return result;
 }

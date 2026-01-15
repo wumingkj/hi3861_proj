@@ -15,10 +15,28 @@
 
 #include "ohos_init.h"
 #include "demosdk.h"
+#include "stdio.h"
+#include "stdlib.h"
+#include "time.h"
+
+#define N 100
 
 void DemoSdkMain(void)
 {
+    char* chs = "DemoSdkMain";
     DemoSdkEntry();
+    int size = 2048;
+    char* str = (char*)malloc(sizeof(char)*size);
+    Time_DelayMs(100);
+    memset(str, 0, size);
+    memcpy(str, chs, strlen(chs));
+
+    for (int i = 0; i < N; i++) {
+        memset(str, 0, 1);
+    }
+    
+
+    free(str);
 }
 
 SYS_RUN(DemoSdkMain);

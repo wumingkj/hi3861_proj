@@ -9,8 +9,8 @@ typedef struct {
     float temperature;      // 温度 (°C)
     int humidity;           // 湿度 (%)
     int smoke_value;        // 烟雾值 (ADC值)
-    bool alarm_active;      // 报警是否激活
-    int alarm_level;        // 报警等级 (0:正常, 1:黄色报警, 2:红色报警)
+    bool alarm_active[3];   // 报警是否激活 [温度, 湿度, 烟雾]
+    int alarm_level[3];     // 报警等级 [温度, 湿度, 烟雾] (0:正常, 1:黄色报警, 2:红色报警)
 } oled_sensor_data_t;
 
 // OLED初始化函数

@@ -19,6 +19,7 @@
 #include "dht11.h"
 #include <unistd.h>
 #include "hi_time.h"
+#include "time.h"
 
 
 //DHT11输出配置
@@ -55,7 +56,7 @@ void dht11_reset(void)
 {                 
 	hi_gpio_set_dir(DHT11_PIN, HI_GPIO_DIR_OUT);             // 设置GPIO为输出模式
 	DHT11_DQ_OUT(0); //拉低DQ
-	hi_udelay(20*1000);    //拉低至少18ms
+	Time_DelayMs(20);    //拉低至少18ms
 	DHT11_DQ_OUT(1); //DQ=1 
 	hi_udelay(30);     //30US
 }

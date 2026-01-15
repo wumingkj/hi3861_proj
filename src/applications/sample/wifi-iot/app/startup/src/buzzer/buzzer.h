@@ -24,6 +24,7 @@
 #define NOTE_B4  494
 #define NOTE_C5  523
 
+
 // 初始化PWM蜂鸣器硬件
 void Buzzer_Init(void);
 

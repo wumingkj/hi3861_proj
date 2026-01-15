@@ -80,7 +80,7 @@ bool alarm_system_update(uint32_t temperature, uint32_t humidity, uint32_t smoke
             event.type = ALARM_TYPE_TEMPERATURE;
             event.level = ALARM_LEVEL_RED;
             event.value = temperature;
-            event.threshold = g_alarm_config.temp_red_threshold;
+            event.threshold = g_alarm_config.temp_red_threshold; // 使用全局配置中的阈值
             has_alarm = true;
         }
     } else if (temperature >= g_alarm_config.temp_yellow_threshold) {
@@ -89,7 +89,7 @@ bool alarm_system_update(uint32_t temperature, uint32_t humidity, uint32_t smoke
             event.type = ALARM_TYPE_TEMPERATURE;
             event.level = ALARM_LEVEL_YELLOW;
             event.value = temperature;
-            event.threshold = g_alarm_config.temp_yellow_threshold;
+            event.threshold = g_alarm_config.temp_yellow_threshold; // 使用全局配置中的阈值
             has_alarm = true;
         }
     } else {
@@ -98,7 +98,7 @@ bool alarm_system_update(uint32_t temperature, uint32_t humidity, uint32_t smoke
             event.type = ALARM_TYPE_TEMPERATURE;
             event.level = ALARM_LEVEL_NONE;
             event.value = temperature;
-            event.threshold = 0;
+            event.threshold = g_alarm_config.temp_red_threshold; // 使用全局配置中的阈值，而不是0
             has_clear_alarm = true;
         }
     }
@@ -110,7 +110,7 @@ bool alarm_system_update(uint32_t temperature, uint32_t humidity, uint32_t smoke
             event.type = ALARM_TYPE_HUMIDITY;
             event.level = ALARM_LEVEL_RED;
             event.value = humidity;
-            event.threshold = g_alarm_config.hum_red_threshold;
+            event.threshold = g_alarm_config.hum_red_threshold; // 使用全局配置中的阈值
             has_alarm = true;
         }
     } else if (humidity >= g_alarm_config.hum_yellow_threshold) {
@@ -119,7 +119,7 @@ bool alarm_system_update(uint32_t temperature, uint32_t humidity, uint32_t smoke
             event.type = ALARM_TYPE_HUMIDITY;
             event.level = ALARM_LEVEL_YELLOW;
             event.value = humidity;
-            event.threshold = g_alarm_config.hum_yellow_threshold;
+            event.threshold = g_alarm_config.hum_yellow_threshold; // 使用全局配置中的阈值
             has_alarm = true;
         }
     } else {
@@ -128,7 +128,7 @@ bool alarm_system_update(uint32_t temperature, uint32_t humidity, uint32_t smoke
             event.type = ALARM_TYPE_HUMIDITY;
             event.level = ALARM_LEVEL_NONE;
             event.value = humidity;
-            event.threshold = 0;
+            event.threshold = g_alarm_config.hum_red_threshold; // 使用全局配置中的阈值，而不是0
             has_clear_alarm = true;
         }
     }
@@ -140,7 +140,7 @@ bool alarm_system_update(uint32_t temperature, uint32_t humidity, uint32_t smoke
             event.type = ALARM_TYPE_SMOKE;
             event.level = ALARM_LEVEL_RED;
             event.value = smoke;
-            event.threshold = g_alarm_config.smoke_red_threshold;
+            event.threshold = g_alarm_config.smoke_red_threshold; // 使用全局配置中的阈值
             has_alarm = true;
         }
     } else if (smoke >= g_alarm_config.smoke_yellow_threshold) {
@@ -149,7 +149,7 @@ bool alarm_system_update(uint32_t temperature, uint32_t humidity, uint32_t smoke
             event.type = ALARM_TYPE_SMOKE;
             event.level = ALARM_LEVEL_YELLOW;
             event.value = smoke;
-            event.threshold = g_alarm_config.smoke_yellow_threshold;
+            event.threshold = g_alarm_config.smoke_yellow_threshold; // 使用全局配置中的阈值
             has_alarm = true;
         }
     } else {
@@ -158,7 +158,7 @@ bool alarm_system_update(uint32_t temperature, uint32_t humidity, uint32_t smoke
             event.type = ALARM_TYPE_SMOKE;
             event.level = ALARM_LEVEL_NONE;
             event.value = smoke;
-            event.threshold = 0;
+            event.threshold = g_alarm_config.smoke_red_threshold; // 使用全局配置中的阈值，而不是0
             has_clear_alarm = true;
         }
     }

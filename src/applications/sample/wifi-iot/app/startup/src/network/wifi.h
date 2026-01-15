@@ -56,4 +56,19 @@ WifiErrorCode WiFi_startAPAndConnectSTA(const char *ap_ssid, const char *ap_pass
                                        const char *sta_ssid, const char *sta_password);
 
 
+// 新增：WiFi连接状态枚举
+typedef enum {
+  WIFI_STATE_IDLE = 0,
+  WIFI_STATE_CONNECTING,
+  WIFI_STATE_WAITING_DHCP,
+  WIFI_STATE_CONNECTED,
+  WIFI_STATE_FAILED
+} wifi_connect_state_t;
+
+// 新增：非阻塞WiFi连接函数
+WifiErrorCode WiFi_connectHotspotsAsync(const char *ssid, const char *psk);
+WifiErrorCode WiFi_processConnection(void);
+wifi_connect_state_t WiFi_getConnectionState(void);
+bool WiFi_isConnecting(void);
+
 #endif

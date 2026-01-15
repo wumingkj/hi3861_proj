@@ -82,5 +82,5 @@ void relay_task(void)
                (g_relay_state == RELAY_ON) ? "闭合（ON）" : "断开（OFF）");
     }
     
-    usleep(10 * 1000);  // 10ms延时
+    Time_DelayMs(10);  // 10ms延时
 }

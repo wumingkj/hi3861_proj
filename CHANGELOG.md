@@ -20,10 +20,6 @@
 
 #### 2. API接口更新
 ```c
-// 旧API (已移除)
-nv_result_t nv_init(nv_config_t *config);
-nv_result_t nv_set_string(const char *key, const char *value);
-nv_result_t nv_get_string(const char *key, char *buffer, size_t buffer_size);
 
 // 新API
 kv_result_t kv_init(void);
@@ -55,8 +51,6 @@ kv_result_t kv_get_string(const char *key, char *buffer, size_t buffer_size);
 
 #### 1. 代码变更
 ```bash
-# 删除旧NV模块
-rmdir /s /q "src/applications/sample/wifi-iot/app/startup/src/nv"
 
 # 添加新KV模块
 # kv.h 和 kv.c 已自动创建

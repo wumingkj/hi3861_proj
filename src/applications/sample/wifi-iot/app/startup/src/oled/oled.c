@@ -6,6 +6,7 @@
 #include "cmsis_os2.h"
 #include "time.h"  // 添加时间库支持
 #include <stdlib.h>  // 添加malloc/free支持
+#include "alarm_system.h"  // 添加报警系统库头文件
 
 // 显示请求队列结构 - 优化内存使用
 typedef struct {
@@ -69,7 +70,7 @@ static void OLED_RefreshTask(void* arg)
         if (osMessageQueueGet(g_oled_queue, &request, NULL, 0) == osOK) {
             // 直接在前缓冲区绘制，减少内存使用
             if (request.is_num) {
-                char num_str[12];
+                char num_str[16];
                 snprintf(num_str, sizeof(num_str), "%*lu", request.num_len, request.num_value);
                 oled_show_string_direct(request.x, request.y, num_str, request.size);
             } else {
@@ -215,7 +216,7 @@ void OLED_ShowNum(uint16_t x, uint16_t y, uint32_t num, uint8_t len, uint8_t siz
     OLED_ShowString(x, y, num_str, size);
 }
 
-// 直接显示温湿度数据（新增）
+// 直接显示温湿度数据（修改为支持多报警类型）
 void OLED_ShowSensorData(const oled_sensor_data_t* sensor_data)
 {
     if (!g_oled_initialized || sensor_data == NULL) {
@@ -227,33 +228,62 @@ void OLED_ShowSensorData(const oled_sensor_data_t* sensor_data)
     char temp_str[32];
     char hum_str[32];
     char smoke_str[32];
-    char status_str[32];
+    char alarm_str[64];
     
-    // 显示温度
-    snprintf(temp_str, sizeof(temp_str), "Temp: %.1fC", sensor_data->temperature);
+    // 显示温度（使用缩写）
+    snprintf(temp_str, sizeof(temp_str), "T: %.1fC", sensor_data->temperature);
     OLED_ShowString(0, 0, temp_str, 8);
     
-    // 显示湿度
-    snprintf(hum_str, sizeof(hum_str), "Humidity: %d%%", sensor_data->humidity);
+    // 显示湿度（使用缩写）
+    snprintf(hum_str, sizeof(hum_str), "H: %d%%", sensor_data->humidity);
     OLED_ShowString(0, 10, hum_str, 8);
     
-    // 显示烟雾值
-    snprintf(smoke_str, sizeof(smoke_str), "Smoke: %d", sensor_data->smoke_value);
+    // 显示烟雾值（使用缩写）
+    snprintf(smoke_str, sizeof(smoke_str), "S: %d", sensor_data->smoke_value);
     OLED_ShowString(0, 20, smoke_str, 8);
     
-    // 显示当前状态
-    if (!sensor_data->alarm_active) {
-        snprintf(status_str, sizeof(status_str), "Running");
-    } else {
-        if (sensor_data->alarm_level == 1) {
-            snprintf(status_str, sizeof(status_str), "YellowAlarm");
-        } else if (sensor_data->alarm_level == 2) {
-            snprintf(status_str, sizeof(status_str), "RedAlarm");
-        } else {
-            snprintf(status_str, sizeof(status_str), "Unknown");
+    // 显示报警状态（支持多报警类型）
+    int y_pos = 30;
+    bool has_alarm = false;
+    
+    // 报警类型名称（使用缩写）
+    const char* alarm_names[] = {"T", "H", "S"};
+    
+    for (int i = 0; i < 3; i++) {
+        if (sensor_data->alarm_active[i]) {
+            has_alarm = true;
+            const char* level_str = "";
+            
+            // 修复报警等级比较：使用枚举值而不是整数
+            switch ((alarm_level_t)sensor_data->alarm_level[i]) {
+                case ALARM_LEVEL_YELLOW: 
+                    level_str = "Y";  // 黄色报警缩写
+                    break;
+                case ALARM_LEVEL_RED: 
+                    level_str = "R";  // 红色报警缩写
+                    break;
+                case ALARM_LEVEL_NONE:
+                default: 
+                    level_str = "N";  // 正常状态缩写
+                    break;
+            }
+            
+            // 使用更简洁的显示格式
+            snprintf(alarm_str, sizeof(alarm_str), "%s:%s", alarm_names[i], level_str);
+            OLED_ShowString(0, y_pos, alarm_str, 8);
+            y_pos += 10; // 每行间隔10像素
+            
+            // 检查是否超出屏幕范围
+            if (y_pos >= OLED_HEIGHT - 10) {
+                break; // 超出屏幕范围，停止显示
+            }
         }
     }
-    OLED_ShowString(20, 30, status_str, 8);
+    
+    // 如果没有报警，显示运行状态
+    if (!has_alarm) {
+        OLED_ShowString(20, 30, "Running", 8);
+    }
     
     // 刷新显示
     OLED_Refresh();

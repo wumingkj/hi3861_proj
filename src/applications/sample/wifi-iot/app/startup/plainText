@@ -23,9 +23,9 @@ static void Main_Entry(void) {
     Time_Init();
     led_init();
     Buzzer_Init();
-    
-    // 2. 功能模块初始化
-    nv_init(&nv_config);
+    smoke_sensor_init();
+    lightsense_init();
+    relay_init();  // 新增继电器初始化
     dht11_init();
     
     // 3. 定时器和任务创建
