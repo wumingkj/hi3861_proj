@@ -1,6 +1,7 @@
 #include "time.h"
 #include <stdio.h>
 #include <unistd.h>  // 添加usleep支持
+#include "hi_time.h"  // hi_get_us()
 
 static uint32_t g_tick_freq = 0;
 
@@ -18,6 +19,12 @@ uint32_t Time_GetCurrentMs(void)
         return 0;
     }
     return (osKernelGetTickCount() * 1000) / g_tick_freq;
+}
+
+// 获取当前时间（微秒），1µs 精度
+uint64_t Time_GetCurrentUs(void)
+{
+    return hi_get_us();
 }
 
 // 获取系统tick频率

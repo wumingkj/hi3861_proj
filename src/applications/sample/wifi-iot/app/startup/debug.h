@@ -22,7 +22,7 @@
 
 // 调试级别定义
 typedef enum {
-    DEBUG_LEVEL_NONE = 0,  // 无调试信息
+    DEBUG_LEVEL_NONE,      // 无调试信息
     DEBUG_LEVEL_ERROR,     // 错误级别
     DEBUG_LEVEL_WARN,      // 警告级别
     DEBUG_LEVEL_INFO,      // 信息级别

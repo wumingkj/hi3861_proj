@@ -12,6 +12,9 @@ void Time_Init(void);
 // 获取当前时间（毫秒）
 uint32_t Time_GetCurrentMs(void);
 
+// 获取当前时间（微秒），1µs 精度
+uint64_t Time_GetCurrentUs(void);
+
 // 获取系统tick频率
 uint32_t Time_GetTickFrequency(void);
 

@@ -9,18 +9,22 @@
 #include "dht11.h"
 #include "hi_gpio.h"
 #include "hi_io.h"
+#include "hi_time.h"
+#include "hi_timer.h"
 #include "key_manager.h"  // 新增按键管理器头文件
 #include "kv.h"           // 新增KV存储模块头文件
 #include "lightsense.h"
 #include "nfc.h"
 #include "ohos_init.h"
 #include "oled.h"
+#include "oled_driver.h"
+#include "bitmap_logo.h"   // 开机 Logo
 #include "php_api.h"  // 恢复PHP API模块头文件
-#include "relay.h"    // 新增继电器头文件
 #include "smoke.h"
 #include "time.h"  // 使用新的时间库
 #include "wifi.h"  // 修改为相对路径
-// #define DEFAULT_DEBUG_LEVEL 0
+
+#define DEFAULT_DEBUG_LEVEL DEBUG_LEVEL_INFO
 #include "debug.h"  // 新增调试头文件
 
 // http://192.168.0.1
@@ -70,6 +74,19 @@ osTimerId_t g_key_timer = NULL;  // 新增按键定时器
 
 // 全局按键管理器
 key_manager_t* g_key_manager = NULL;
+
+// MG995 舵机控制（GPIO5，标准50Hz软件PWM）
+#define SERVO_PIN     HI_IO_NAME_GPIO_5
+#define SERVO_GPIO_FUN HI_IO_FUNC_GPIO_5_GPIO
+#define SERVO_ANGLE_MIN 0
+#define SERVO_ANGLE_MAX 180
+#define SERVO_PULSES 50       // 大扭矩舵机惯性大，多发几拍确保到位
+#define SERVO_PERIOD_US 20000 // 50Hz = 20ms 周期
+static uint16_t g_servo_angle = 90;  // 当前角度 0~180（默认中位90）
+
+static void servo_init(void);
+static void servo_set_angle(uint16_t angle);
+static void servo_test(void);
 
 uint8_t g_running_status = 0;
 
@@ -348,19 +365,18 @@ static void handle_continuous_alarm(void) {
       break;
   }
 
-  // 风扇控制：只在状态变化时更新继电器
-  bool current_fan_state = need_fan;
-
-  if (current_fan_state != last_fan_state) {
-    if (current_fan_state) {
-      relay_set_state(RELAY_ON);  // 开启风扇
-      log_i("RELAY", "🔧 风扇已开启 - 温度红色或烟雾黄色报警");
-    } else {
-      relay_set_state(RELAY_OFF);  // 关闭风扇
-      log_i("RELAY", "🔧 风扇已关闭 - 报警解除或不需要风扇");
-    }
-    last_fan_state = current_fan_state;
-  }
+  // 风扇控制 [已注释：继电器 GPIO8 腾给步进电机]
+  // bool current_fan_state = need_fan;
+  // if (current_fan_state != last_fan_state) {
+  //   if (current_fan_state) {
+  //     relay_set_state(RELAY_ON);
+  //     log_i("RELAY", "🔧 风扇已开启 - 温度红色或烟雾黄色报警");
+  //   } else {
+  //     relay_set_state(RELAY_OFF);
+  //     log_i("RELAY", "🔧 风扇已关闭 - 报警解除或不需要风扇");
+  //   }
+  //   last_fan_state = current_fan_state;
+  // }
 
   // 蜂鸣器控制：只在报警状态变化时停止蜂鸣器
   if (any_alarm_active != last_alarm_state) {
@@ -380,10 +396,16 @@ static void handle_continuous_alarm(void) {
 static void handle_key_event(uint8_t key_index, key_event_t event) {
   switch (event) {
     case KEY_EVENT_PRESS:
-      // log_i("KEY", "按键%d按下", key_index + 1);
+      // 按键按下：驱动舵机到指定角度
+      if (key_index == 0) {
+        servo_set_angle(SERVO_ANGLE_MIN);    // KEY1 → 舵机 0°
+      } else if (key_index == 1) {
+        servo_set_angle(SERVO_ANGLE_MAX);    // KEY2 → 舵机 180°
+      }
       break;
     case KEY_EVENT_RELEASE:
       // log_i("KEY", "按键%d释放", key_index + 1);
+      // 舵机位置由 KEY_EVENT_PRESS 设定，释放无需额外处理
       break;
 
     case KEY_EVENT_SHORT_PRESS:
@@ -424,10 +446,10 @@ static void handle_key_event(uint8_t key_index, key_event_t event) {
         }
         g_running_status = 0;
 
-        // 停止蜂鸣器和LED报警，断开继电器
+        // 停止蜂鸣器和LED报警
         Buzzer_Stop();
         LED_OFF();
-        relay_set_state(RELAY_OFF);  // 断开继电器
+        // relay_set_state(RELAY_OFF);  // 继电器已注释
 
         log_i("KEY", "✅ 所有报警已关闭，系统状态重置为正常");
         // 蜂鸣器提示音表示操作完成
@@ -446,7 +468,7 @@ static void handle_key_event(uint8_t key_index, key_event_t event) {
       break;
 
     case KEY_EVENT_HOLD:
-      // 保持按下状态，这里不记录日志
+      // 舵机位置由 KEY_EVENT_PRESS 设定，保持按下无需额外处理
       break;
 
     default:
@@ -953,14 +975,34 @@ void Main_Task(void* arg) {
       } else {
         log_e("DHT11", "传感器读取失败");
       }
-      // 显示传感器数据到OLED
-      oled_sensor_data_t data = {.temperature = (float)g_temperature,
-                                 .humidity = g_humidity,
-                                 .smoke_value = g_smoke_data.raw_value,
-                                 .alarm_active = g_alarm_active,
-                                 .alarm_level = g_current_alarm_level};
+      // ========== OLED 传感器显示已注释，改为后台屏幕测试 ==========
+      // 需要 OLED 显示时取消注释下方代码块
+      /* OLED_Clear();
 
-      OLED_ShowSensorData(&data);
+      // 构建报警状态字符串
+      char alarm_str[48] = "";
+      const char* alarm_names[] = {"T", "H", "S"};
+      for (int i = 0; i < 3; i++) {
+        if (g_alarm_active[i]) {
+          char lvl = 'N';
+          switch (g_current_alarm_level[i]) {
+            case ALARM_LEVEL_YELLOW: lvl = 'Y'; break;
+            case ALARM_LEVEL_RED:    lvl = 'R'; break;
+            default:                 lvl = 'N'; break;
+          }
+          char tmp[16];
+          snprintf(tmp, sizeof(tmp), "%s:%c ", alarm_names[i], lvl);
+          strncat(alarm_str, tmp, sizeof(alarm_str) - strlen(alarm_str) - 1);
+        }
+      }
+
+      if (strlen(alarm_str) > 0) {
+        OLED_Printf(8, "T:%.1fC\nH:%d%%\nS:%d\n%s", (float)g_temperature,
+                    g_humidity, g_smoke_data.raw_value, alarm_str);
+      } else {
+        OLED_Printf(8, "T:%.1fC\nH:%d%%\nS:%d", (float)g_temperature,
+                    g_humidity, g_smoke_data.raw_value);
+      } */
     }
 
     // ==================== 传感器数据发送（1秒间隔）- 新增 ====================
@@ -1054,6 +1096,74 @@ void Main_Task(void* arg) {
   }
 }
 
+/**
+ * @brief MG995 舵机测试
+ *        从 0° 递增到 180°，再递减回 0°，验证全行程
+ */
+static void servo_test(void)
+{
+    log_i("SERVO", "========== MG995 舵机全行程测试开始 ==========");
+
+    // 0° → 180°，每 30° 一步
+    for (uint16_t a = 0; a <= 180; a += 30) {
+        log_i("SERVO", "  舵机转到 %d°", a);
+        servo_set_angle(a);
+        Time_DelayMs(600);
+    }
+    // 180° → 0°，每 30° 一步
+    for (uint16_t a = 150; a > 0; a -= 30) {
+        log_i("SERVO", "  舵机转到 %d°", a);
+        servo_set_angle(a);
+        Time_DelayMs(600);
+    }
+    servo_set_angle(0);
+    Time_DelayMs(600);
+
+    log_i("SERVO", "========== MG995 舵机全行程测试完成 ✅ 归位 0° ==========");
+}
+
+/**
+ * @brief MG995 舵机初始化（GPIO5 输出）
+ */
+static void servo_init(void)
+{
+    hi_gpio_init();
+    hi_io_set_func(SERVO_PIN, SERVO_GPIO_FUN);
+    hi_gpio_set_dir(SERVO_PIN, HI_GPIO_DIR_OUT);
+    g_servo_angle = 90;
+    hi_gpio_set_ouput_val(SERVO_PIN, HI_GPIO_VALUE0);
+}
+
+/**
+ * @brief 设置舵机角度（0~180°）
+ *        MG995 标准 50Hz：0°→500us，180°→2500us 脉宽，周期 20ms
+ *        继续发送多拍以保证大扭矩舵机充分到位并保持
+ */
+static void servo_set_angle(uint16_t angle)
+{
+    if (angle > SERVO_ANGLE_MAX) {
+        angle = SERVO_ANGLE_MAX;
+    }
+    if (angle > 0 && angle < SERVO_ANGLE_MIN) {
+        angle = SERVO_ANGLE_MIN;
+    }
+
+    g_servo_angle = angle;
+
+    /* 角度→脉宽(us)：0°→500us  180°→2500us */
+    uint32_t time = (uint32_t)(angle - SERVO_ANGLE_MIN) * (2500 - 500) /
+                    (SERVO_ANGLE_MAX - SERVO_ANGLE_MIN) + 500;
+
+    for (uint8_t i = 0; i < SERVO_PULSES; i++) {
+        hi_gpio_set_ouput_val(SERVO_PIN, HI_GPIO_VALUE1);
+        hi_udelay(time);
+        hi_gpio_set_ouput_val(SERVO_PIN, HI_GPIO_VALUE0);
+        hi_udelay(SERVO_PERIOD_US - time);
+    }
+
+    log_i("SERVO", "MG995 角度 = %d° (脉宽 %uus)", angle, time);
+}
+
 static void Main_Entry(void) {
   log_i("SYSTEM", "系统初始化开始");
   // 初始化库
@@ -1062,7 +1172,12 @@ static void Main_Entry(void) {
   Buzzer_Init();
   smoke_sensor_init();
   lightsense_init();
-  relay_init();  // 新增继电器初始化
+  // relay_init();  // 继电器已注释（GPIO8 腾给步进电机）
+  servo_init();  // 舵机初始化（GPIO5）
+
+  // === 舵机测试 ===
+  servo_test();
+  // ================
 
   // NFC初始化 - 改进初始化逻辑，基于template.c
   log_i("NFC", "正在初始化NFC模块...");
@@ -1270,11 +1385,223 @@ static void Main_Entry(void) {
     log_i("DHT11", "DHT11传感器初始化成功");
   }
 
-  OLED_Init();
+  OLED_Init(1);
+  OLED_Invert(false);
+  OLED_SetContrast(255);
   OLED_Refresh();
-  OLED_ShowString(0, 28, "Hello world!", 8);
 
+  // ========== 显示开机 Logo ==========
+  OLED_ShowBitmap(0, 0, 128, 64, gImage_logo);
+  Time_DelayMs(3000);  // 显示 3 秒
+
+  // ========== OLED 屏幕测试（5分钟完整测试） ==========
+
+  // -------------------- 测试1：逐字打印 + 续接 --------------------
+  OLED_Clear();
+  char text[] = "Welcome to OLED Test!\nThis is a long message\nfor testing word wrap\nand line continuation!\nLets see how it handles\nmulti-line text!\n";
+  int text_len = (int)strlen(text);
+  for (int i = 0; i < text_len; i++) {
+    OLED_Printf(8, "%c", text[i]);
+    Time_DelayMs(50);
+  }
+  OLED_Printf(8, "Done!");
   Time_DelayMs(1000);
+
+  /*
+  // -------------------- 测试2：\t 对齐 + 刷新率测试 --------------------
+  OLED_Clear();
+  OLED_Printf(8, "FPS Test...");
+  Time_DelayMs(1000);
+
+  uint32_t frame_cnt = 0;
+  uint32_t fps_t0 = Time_GetCurrentMs();
+  while (Time_GetCurrentMs() - fps_t0 < 10000) {  // 测10秒
+    OLED_Clear();
+    frame_cnt++;
+
+    // 动态内容：不同帧显示不同行数，让渲染时间有波动
+    uint32_t t = Time_GetCurrentMs() - fps_t0;
+    uint32_t phase = (t / 2000) % 3;  // 每2秒切换一次模式
+
+    if (phase == 0) {
+      // 模式A：单行简单
+      OLED_Printf(8, "Frame %lu  t=%lu", frame_cnt, t);
+    } else if (phase == 1) {
+      // 模式B：表格多行
+      OLED_Printf(8, "Frame:%lu\nCol1\tCol2\tCol3\nA\t16\t32\nB\t64\t128", frame_cnt);
+    } else {
+      // 模式C：长文本 + 数字混合
+      OLED_Printf(8, "F:%lu  %lums\nData:%lu %lu %lu\nTest:\tOK\tPASS",
+                  frame_cnt, t, frame_cnt * 3, frame_cnt * 7, frame_cnt * 11);
+    }
+
+    Time_DelayMs(50);
+  }
+
+  // 显示平均刷新率
+  uint32_t elapsed = Time_GetCurrentMs() - fps_t0;
+  if (elapsed == 0) elapsed = 1;
+  uint32_t avg_fps = frame_cnt * 1000 / elapsed;
+  uint32_t avg_ms = elapsed / frame_cnt;
+  OLED_Clear();
+  OLED_Printf(8, "FPS: %lu  %lums", avg_fps, avg_ms);
+  OLED_Printf(8, "Frames: %lu", frame_cnt);
+  OLED_Printf(8, "Time: %lums", elapsed);
+  Time_DelayMs(3000);
+
+  // -------------------- 测试3：亮度渐变（对比度 0~255~0） --------------------
+  OLED_Clear();
+  OLED_Printf(8, "Brightness Test");
+  Time_DelayMs(1000);
+
+  // 由暗到亮
+  for (int c = 0; c <= 255; c += 5) {
+    OLED_SetContrast((uint8_t)c);
+    OLED_Clear();
+    OLED_Printf(8, "Brightness: %d/255", c);
+    OLED_Printf(8, "Rising...");
+    Time_DelayMs(30);
+  }
+  // 由亮到暗
+  for (int c = 255; c >= 0; c -= 5) {
+    OLED_SetContrast((uint8_t)c);
+    OLED_Clear();
+    OLED_Printf(8, "Brightness: %d/255", c);
+    OLED_Printf(8, "Falling...");
+    Time_DelayMs(30);
+  }
+  OLED_SetContrast(255);  // 恢复最亮
+  OLED_Clear();
+  OLED_Printf(8, "Brightness: OK!");
+  Time_DelayMs(1500);
+
+  // -------------------- 测试4：翻转闪烁 --------------------
+  OLED_Clear();
+  OLED_Printf(8, "Invert Test");
+  Time_DelayMs(1000);
+
+  for (int i = 0; i < 8; i++) {
+    OLED_Clear();
+    OLED_Invert((i % 2) == 0);
+    OLED_Printf(8, "Invert: %s", (i % 2) == 0 ? "ON" : "OFF");
+    Time_DelayMs(500);
+  }
+  OLED_Invert(false);  // 恢复正常
+  Time_DelayMs(1000);
+
+  // -------------------- 测试5：全字库展示 --------------------
+  OLED_Clear();
+  OLED_Printf(8, "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%%^&*()_");
+  Time_DelayMs(4000);
+
+  // -------------------- 测试6：屏幕开关闪烁 --------------------
+  OLED_Clear();
+  OLED_Printf(8, "Display ON/OFF");
+  Time_DelayMs(1000);
+
+  for (int i = 0; i < 6; i++) {
+    OLED_DisplayOn(false);
+    Time_DelayMs(300);
+    OLED_DisplayOn(true);
+    Time_DelayMs(300);
+  }
+  Time_DelayMs(1000);
+  */
+
+  // -------------------- Printf 随机字符串全管线 FPS 测试 --------------------
+  {
+    #define PRINTF_FPS_CNT 10000
+
+    OLED_Clear();
+    OLED_Printf(8, "Printf FPS Test (%d)...", PRINTF_FPS_CNT);
+    log_i("FPS", "====== Printf Random FPS Test ======");
+    log_i("FPS", "Samples: %d", PRINTF_FPS_CNT);
+    OLED_Flush();
+    Time_DelayMs(500);
+
+    uint64_t sum = 0;
+    uint32_t t_min = 0xFFFFFFFF;
+    uint32_t t_max = 0;
+    uint64_t fps_acc = 0;
+    int fps_cnt = 0;
+
+    // 预分配字符串缓冲区：一行长串，Printf 会自动换行占满屏幕
+    // 满屏约 14 字/行 * 7 行 = 98 个字节（size=8, 9px 间距）
+    // 再加 FPS 前缀，总共 ~120 字
+    static char s_rand_text[140];
+
+    hi_watchdog_disable();
+
+    static char s_fps_str[12] = "..";
+    uint32_t rng_seed = 1;
+
+    for (int i = 0; i < PRINTF_FPS_CNT; i++) {
+      uint64_t t0 = Time_GetCurrentUs();
+
+      // ========== 现场生成随机可打印 ASCII 字符串 ==========
+      // FPS 前缀 + 随机字符填满缓冲区 → Printf 自动换行渲染
+      int pos = snprintf(s_rand_text, sizeof(s_rand_text), "FPS:%s ", s_fps_str);
+      rng_seed = (uint32_t)(i * 2654435761U);  // 每帧不同种子
+      while (pos < (int)(sizeof(s_rand_text) - 5)) {
+        rng_seed = rng_seed * 1103515245U + 12345U;
+        char c = (char)(' ' + (int)(rng_seed % 95));
+        if (c == '%') c = ' ';   // 过滤 %，避免 vsnprintf 解析格式
+        s_rand_text[pos++] = c;
+      }
+      s_rand_text[pos] = '\0';
+
+      // ======== 走完整 Printf 管线 ========
+      // Clear + Printf + Flush → 全链路：文本缓冲 → 渲染任务 → I2C 刷新
+      OLED_Clear();
+      OLED_Printf(8, "%s", s_rand_text);
+      OLED_Flush();
+
+      uint64_t dt = Time_GetCurrentUs() - t0;
+
+      fps_acc += dt;
+      fps_cnt++;
+      if (fps_acc >= 1000000) {
+        uint32_t avg_fps_1s = (fps_acc > 0) ? (uint32_t)((uint64_t)fps_cnt * 1000000 / fps_acc) : 0;
+        snprintf(s_fps_str, sizeof(s_fps_str), "%lu", avg_fps_1s);
+        fps_acc = 0;
+        fps_cnt = 0;
+      }
+
+      sum += dt;
+      if (dt < t_min) t_min = (uint32_t)dt;
+      if (dt > t_max) t_max = (uint32_t)dt;
+    }
+
+    hi_watchdog_enable();
+
+    uint32_t avg_t = (uint32_t)(sum / PRINTF_FPS_CNT);
+
+    OLED_Clear();
+    OLED_Printf(8, "min=%luus  max=%luus", t_min, t_max);
+    log_i("FPS", "min=%lu  max=%lu", t_min, t_max);
+    OLED_Printf(8, "avg_dt=%luus", avg_t);
+    log_i("FPS", "avg_dt=%luus", avg_t);
+    OLED_Flush();
+    Time_DelayMs(5000);
+
+    OLED_Clear();
+    OLED_Printf(8, "1000000/%lu=%lu", avg_t, 1000000 / avg_t);
+    log_i("FPS", "1000000 / %lu = %lu (Avg FPS)", avg_t, 1000000 / avg_t);
+    OLED_Printf(8, "minFPS=1000000/%lu=%lu", t_max, 1000000 / t_max);
+    log_i("FPS", "1000000 / %lu = %lu (Min FPS)", t_max, 1000000 / t_max);
+    OLED_Printf(8, "maxFPS=1000000/%lu=%lu", t_min, 1000000 / t_min);
+    log_i("FPS", "1000000 / %lu = %lu (Max FPS)", t_min, 1000000 / t_min);
+    OLED_Flush();
+    Time_DelayMs(10000);
+  }
+
+  // -------------------- 测试完成 --------------------
+  OLED_Clear();
+  OLED_Printf(8, "All Tests Done!");
+  OLED_Printf(8, "OLED OK!");
+  log_i("FPS", "====== Printf Random FPS Test Done ======");
+  Time_DelayMs(3000);
+  // ========== OLED 屏幕测试结束 ==========
 
   // 创建蜂鸣器tick定时器
   log_i("BUZZER", "正在创建蜂鸣器定时器...");

@@ -28,8 +28,9 @@ static_library("startup") {
         "src/sensors/adc.c",    # 新增ADC库
         "src/sensors/smoke.c",  # 新增烟雾传感器库
         "src/sensors/lightsense.c", # 新增光敏传感器库
-        "src/sensors/relay.c",  # 新增继电器库
-        "src/alarm_system/alarm_system.c", # 新增闹钟系统库
+        "src/sensors/relay.c",   # 继电器已注释（GPIO1 腾给步进电机）
+        "src/step_motor/step_motor.c",  # 新增步进电机
+        "src/alarm_system/alarm_system.c", # 新增报警系统库
 
 
         "src/nfc/nfc.c",         # 新增NFC库
@@ -53,6 +54,7 @@ static_library("startup") {
         "src/php_api",          # 新增PHP API库头文件路径
         "src/key_manager",      # 新增按键管理库头文件路径
         "src/alarm_system",     # 新增闹钟系统库头文件路径
+        "src/step_motor",       # 新增步进电机头文件路径
 
         "src/nfc",              # 新增NFC库头文件路径
         "src/nfc/ndef",         # 新增NDEF协议头文件路径
